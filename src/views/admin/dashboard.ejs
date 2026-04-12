@@ -1,0 +1,58 @@
+<div class="header-row">
+  <h1>Tiles</h1>
+  <a href="/admin/tiles/new" class="btn btn-primary">+ Add New Tile</a>
+</div>
+
+<% if (tiles.length === 0) { %>
+  <div class="card" style="text-align:center; color:#6b7280;">
+    <p>No tiles yet. Click "Add New Tile" to get started.</p>
+  </div>
+<% } else { %>
+  <ul class="tile-list" id="tile-list">
+    <% tiles.forEach(function(tile) { %>
+      <li class="tile-item" data-id="<%= tile.id %>">
+        <span class="drag-handle" title="Drag to reorder">&#9776;</span>
+        <div class="tile-swatch" style="background-color: <%= tile.color %>; color: <%= tile.text_color %>;">
+          <% if (tile.icon_svg) { %><%- tile.icon_svg %><% } %>
+        </div>
+        <div class="tile-info">
+          <div class="tile-title"><%= tile.title %></div>
+          <div class="tile-url"><%= tile.url %></div>
+        </div>
+        <div class="tile-badges">
+          <% if (!tile.is_visible) { %><span class="badge badge-hidden">Hidden</span><% } %>
+          <span class="badge badge-size"><%= tile.size %></span>
+        </div>
+        <div class="tile-actions">
+          <a href="/admin/tiles/<%= tile.id %>/edit" class="btn btn-secondary btn-sm">Edit</a>
+          <form method="POST" action="/admin/tiles/<%= tile.id %>/delete" style="display:inline;" onsubmit="return confirm('Delete this tile?')">
+            <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+          </form>
+        </div>
+      </li>
+    <% }); %>
+  </ul>
+<% } %>
+
+<script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.6/Sortable.min.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var el = document.getElementById('tile-list');
+    if (!el) return;
+    Sortable.create(el, {
+      handle: '.drag-handle',
+      animation: 150,
+      ghostClass: 'sortable-ghost',
+      onEnd: function() {
+        var ids = Array.from(el.querySelectorAll('.tile-item')).map(function(item) {
+          return item.dataset.id;
+        });
+        fetch('/admin/tiles/reorder', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ order: ids })
+        });
+      }
+    });
+  });
+</script>

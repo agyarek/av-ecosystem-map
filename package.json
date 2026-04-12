@@ -1,0 +1,25 @@
+{
+  "name": "kofiagyare.com",
+  "version": "1.0.0",
+  "description": "Personal website for Kofi Agyare — a single-page grid of content tiles with an admin CMS",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "npx nodemon src/server.js"
+  },
+  "keywords": [],
+  "author": "Kofi Agyare",
+  "license": "MIT",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "better-sqlite3": "^11.7.0",
+    "better-sqlite3-session-store": "^0.1.0",
+    "dotenv": "^16.4.7",
+    "ejs": "^3.1.10",
+    "express": "^4.21.2",
+    "express-session": "^1.18.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  }
+}

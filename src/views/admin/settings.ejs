@@ -1,0 +1,50 @@
+<h1>Site Settings</h1>
+
+<div class="card">
+  <form method="POST" action="/admin/settings">
+
+    <div class="form-group">
+      <label for="site_title">Site Title</label>
+      <input type="text" id="site_title" name="site_title" value="<%= settings.site_title || '' %>">
+    </div>
+
+    <div class="form-group">
+      <label for="site_tagline">Site Tagline</label>
+      <input type="text" id="site_tagline" name="site_tagline" value="<%= settings.site_tagline || '' %>" placeholder="A short description...">
+    </div>
+
+    <div class="form-group">
+      <label for="background_color">Background Color</label>
+      <div class="color-input-wrapper">
+        <input type="color" id="bg-color-picker" value="<%= settings.background_color || '#F9FAFB' %>" oninput="document.getElementById('background_color').value=this.value">
+        <input type="text" id="background_color" name="background_color" value="<%= settings.background_color || '#F9FAFB' %>" oninput="document.getElementById('bg-color-picker').value=this.value">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="font_family">Font Family</label>
+      <select id="font_family" name="font_family">
+        <% var fonts = [
+          'Inter, system-ui, sans-serif',
+          'Georgia, serif',
+          'Menlo, Monaco, monospace',
+          '-apple-system, BlinkMacSystemFont, sans-serif',
+          'Palatino, \"Palatino Linotype\", serif',
+          'Verdana, Geneva, sans-serif'
+        ]; %>
+        <% fonts.forEach(function(f) { %>
+          <option value="<%= f %>" <%= (settings.font_family === f) ? 'selected' : '' %>><%= f.split(',')[0] %></option>
+        <% }); %>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="grid_gap">Grid Gap (px)</label>
+      <input type="number" id="grid_gap" name="grid_gap" value="<%= settings.grid_gap || '16' %>" min="0" max="64">
+    </div>
+
+    <div class="actions">
+      <button type="submit" class="btn btn-primary">Save Settings</button>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,86 @@
+<h1><%= isNew ? 'New Tile' : 'Edit Tile' %></h1>
+
+<div class="card">
+  <form method="POST" action="<%= isNew ? '/admin/tiles' : '/admin/tiles/' + tile.id %>">
+
+    <div class="form-group">
+      <label for="title">Title *</label>
+      <input type="text" id="title" name="title" required value="<%= tile.title || '' %>" placeholder="e.g. LinkedIn">
+    </div>
+
+    <div class="form-group">
+      <label for="url">URL *</label>
+      <input type="url" id="url" name="url" required value="<%= tile.url || '' %>" placeholder="https://linkedin.com/in/kofiagyare">
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="color">Background Color</label>
+        <div class="color-input-wrapper">
+          <input type="color" id="color-picker" value="<%= tile.color || '#2563EB' %>" oninput="document.getElementById('color').value=this.value">
+          <input type="text" id="color" name="color" value="<%= tile.color || '#2563EB' %>" pattern="#[0-9A-Fa-f]{6}" oninput="document.getElementById('color-picker').value=this.value">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="text_color">Text Color</label>
+        <div class="color-input-wrapper">
+          <input type="color" id="text-color-picker" value="<%= tile.text_color || '#FFFFFF' %>" oninput="document.getElementById('text_color').value=this.value">
+          <input type="text" id="text_color" name="text_color" value="<%= tile.text_color || '#FFFFFF' %>" pattern="#[0-9A-Fa-f]{6}" oninput="document.getElementById('text-color-picker').value=this.value">
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="icon">Icon</label>
+      <select id="icon" name="icon">
+        <option value="">None</option>
+        <% iconNames.forEach(function(name) { %>
+          <option value="<%= name %>" <%= (tile.icon === name) ? 'selected' : '' %>><%= name %></option>
+        <% }); %>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label>Size</label>
+      <div class="radio-group">
+        <label><input type="radio" name="size" value="small" <%= (tile.size === 'small') ? 'checked' : '' %>> Small</label>
+        <label><input type="radio" name="size" value="medium" <%= (!tile.size || tile.size === 'medium') ? 'checked' : '' %>> Medium</label>
+        <label><input type="radio" name="size" value="large" <%= (tile.size === 'large') ? 'checked' : '' %>> Large</label>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="checkbox-group">
+        <input type="checkbox" id="is_visible" name="is_visible" value="1" <%= (typeof tile.is_visible === 'undefined' || tile.is_visible) ? 'checked' : '' %>>
+        <label for="is_visible" style="margin-bottom:0;">Visible</label>
+      </div>
+    </div>
+
+    <div style="margin-top:1rem;">
+      <button type="button" class="advanced-toggle" onclick="document.getElementById('advanced').classList.toggle('show'); this.textContent = this.textContent === 'Show advanced options' ? 'Hide advanced options' : 'Show advanced options';">Show advanced options</button>
+    </div>
+
+    <div id="advanced" class="advanced-fields">
+      <div class="form-group" style="margin-top:1rem;">
+        <label for="content_type">Content Type</label>
+        <select id="content_type" name="content_type">
+          <% contentTypes.forEach(function(ct) { %>
+            <option value="<%= ct %>" <%= (tile.content_type === ct) ? 'selected' : '' %>><%= ct.replace(/_/g, ' ') %></option>
+          <% }); %>
+        </select>
+        <p class="help">V2 feature: Only "link" is active in the current version.</p>
+      </div>
+
+      <div class="form-group">
+        <label for="content_config">Content Config (JSON)</label>
+        <textarea id="content_config" name="content_config" placeholder='{"key": "value"}'><%= tile.content_config || '' %></textarea>
+        <p class="help">JSON configuration for the selected content type. Leave empty for simple links.</p>
+      </div>
+    </div>
+
+    <div class="actions">
+      <button type="submit" class="btn btn-primary"><%= isNew ? 'Create Tile' : 'Save Changes' %></button>
+      <a href="/admin" class="btn btn-secondary">Cancel</a>
+    </div>
+  </form>
+</div>

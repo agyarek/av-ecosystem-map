@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= settings.site_title || 'My Site' %></title>
+  <% if (settings.site_tagline) { %><meta name="description" content="<%= settings.site_tagline %>"><% } %>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: <%= settings.background_color || '#F9FAFB' %>;
+      --font: <%= settings.font_family || 'Inter, system-ui, sans-serif' %>;
+      --gap: <%= settings.grid_gap || '16' %>px;
+    }
+
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      min-height: 100vh;
+      padding: var(--gap);
+    }
+
+    header {
+      text-align: center;
+      padding: 2rem 1rem 1rem;
+    }
+    header h1 {
+      font-size: clamp(1.5rem, 4vw, 2.5rem);
+      color: #1f2937;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+    header p {
+      color: #6b7280;
+      font-size: clamp(0.875rem, 2vw, 1.125rem);
+      margin-top: 0.5rem;
+    }
+
+    .tile-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: var(--gap);
+      max-width: 1200px;
+      margin: 1.5rem auto;
+      padding: 0 var(--gap);
+    }
+
+    .tile {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      border-radius: 12px;
+      padding: 2rem 1.5rem;
+      min-height: 160px;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .tile:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    }
+    .tile:active {
+      transform: translateY(-1px);
+    }
+
+    .tile--small { min-height: 120px; padding: 1.5rem 1rem; }
+    .tile--medium { grid-column: span 1; }
+    .tile--large { grid-column: 1 / -1; min-height: 180px; }
+
+    .tile__icon {
+      margin-bottom: 0.75rem;
+    }
+    .tile__icon svg {
+      width: 32px;
+      height: 32px;
+    }
+
+    .tile__title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      text-align: center;
+    }
+    .tile--small .tile__title { font-size: 1rem; }
+    .tile--large .tile__title { font-size: 1.5rem; }
+
+    .tile__content {
+      margin-top: 0.75rem;
+      font-size: 0.875rem;
+      text-align: center;
+      opacity: 0.9;
+    }
+
+    @media (max-width: 600px) {
+      .tile-grid {
+        grid-template-columns: 1fr;
+      }
+      .tile--large { grid-column: span 1; }
+      header { padding: 1.5rem 1rem 0.5rem; }
+    }
+
+    @media (min-width: 601px) and (max-width: 900px) {
+      .tile-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1><%= settings.site_title || 'My Site' %></h1>
+    <% if (settings.site_tagline) { %><p><%= settings.site_tagline %></p><% } %>
+  </header>
+  <main class="tile-grid">
+    <% tiles.forEach(function(tile) { %>
+    <a href="<%- tile.url %>" class="tile tile--<%= tile.size %>"
+       style="background-color: <%= tile.color %>; color: <%= tile.text_color %>"
+       <% if (tile.url.startsWith('http')) { %>target="_blank" rel="noopener noreferrer"<% } %>>
+      <% if (tile.icon_svg) { %><span class="tile__icon"><%- tile.icon_svg %></span><% } %>
+      <h2 class="tile__title"><%= tile.title %></h2>
+      <% if (tile.cached_content) { %><div class="tile__content"><%- tile.cached_content %></div><% } %>
+    </a>
+    <% }); %>
+  </main>
+</body>
+</html>

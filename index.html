@@ -51,7 +51,13 @@ header.site .htitle{font-size:17px;font-weight:800;letter-spacing:-.01em;white-s
 header.site .hbyline{font-size:11.5px;color:#a1a1aa;line-height:1.45}
 header.site .hbyline a{color:#22d3ee;text-decoration:none;font-weight:600}
 header.site .hbyline a:hover{text-decoration:underline}
-#searchWrap{margin-left:auto;position:relative}
+#aboutLink{
+  margin-left:auto;flex:none;
+  font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:9.5px;font-weight:600;letter-spacing:.1em;
+  color:#a1a1aa;border:1px solid #3f3f46;border-radius:var(--r-pill);padding:7px 12px;
+}
+#aboutLink:hover{color:#22d3ee;border-color:#22d3ee}
+#searchWrap{position:relative}
 #searchBox{
   font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12.5px;
   background:#18181b;color:#fff;border:1px solid #3f3f46;border-radius:var(--r-chip);
@@ -109,14 +115,14 @@ header.site .hbyline a:hover{text-decoration:underline}
 #journey{max-width:1240px;margin:0 auto;padding:38px 20px 8px}
 #journey h2{font-size:clamp(22px,3.4vw,30px);font-weight:800;letter-spacing:-.02em;margin-top:6px}
 #journey .jintro{max-width:760px;color:var(--muted2);margin-top:8px;font-size:14.5px}
-#jboard{position:relative;margin-top:26px;padding:56px}
+#jboard{position:relative;margin-top:26px;padding:82px 80px}
 #trackSvg{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;overflow:visible}
 .jgrid{
   position:relative;display:grid;grid-template-columns:1fr 1fr;
-  gap:84px 190px;z-index:1;
+  grid-auto-rows:1fr;gap:84px 190px;z-index:1;
 }
 @media(max-width:1000px){
-  #jboard{padding:46px 38px}
+  #jboard{padding:76px 74px}
   .jgrid{gap:72px 130px}
 }
 .jcard{
@@ -124,14 +130,23 @@ header.site .hbyline a:hover{text-decoration:underline}
   padding:20px;position:relative;z-index:1;
 }
 .jcard .jicon{
-  width:38px;height:38px;border-radius:11px;background:#0a0a0a;color:#fff;
+  width:54px;height:54px;border-radius:14px;background:#0a0a0a;color:#fff;
   display:flex;align-items:center;justify-content:center;margin-bottom:12px;
 }
-.jcard .jicon svg{width:19px;height:19px}
+.jcard .jicon svg{width:27px;height:27px}
 .jcard .jstage{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:10px;font-weight:600;letter-spacing:.12em;color:var(--muted)}
 .jcard h3{font-size:19px;font-weight:800;letter-spacing:-.01em;margin:2px 0 4px}
 .jcard .jdesc{font-size:13px;color:var(--muted2);line-height:1.5}
-.jchips{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.jexp{
+  display:inline-flex;align-items:center;gap:6px;margin-top:12px;
+  font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:9.5px;font-weight:600;letter-spacing:.1em;
+  color:var(--muted2);background:#f1f1ee;border-radius:6px;padding:5px 10px;
+}
+.jexp:hover{color:var(--ink);background:#e9e9e5}
+.jexp .caret{transition:transform .15s}
+.jexp.open .caret{transform:rotate(90deg)}
+.jchips{display:none;flex-wrap:wrap;gap:6px;margin-top:10px}
+.jcard.chips-open .jchips{display:flex}
 .jchip{
   display:inline-flex;align-items:center;gap:7px;
   font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:10.5px;font-weight:500;letter-spacing:.03em;
@@ -149,12 +164,14 @@ header.site .hbyline a:hover{text-decoration:underline}
   cursor:pointer;text-align:center;transition:border-color .15s, box-shadow .15s;
 }
 #jhub:hover{border-color:var(--accent);box-shadow:0 8px 26px rgba(14,116,144,.18)}
-#jhub svg{width:20px;height:20px;color:var(--accent)}
-#jhub.running svg{animation:spin 1.1s linear infinite}
-@media(prefers-reduced-motion:reduce){#jhub svg{animation:none}}
-@keyframes spin{to{transform:rotate(360deg)}}
-#jhub span{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:9px;font-weight:600;letter-spacing:.14em;color:var(--muted2)}
-#jhub.running span{color:var(--accent)}
+#jhub .hi{width:20px;height:20px;color:var(--accent)}
+#jhub .hi-pause,#jhub .hi-resume{display:none}
+#jhub.running:not(.paused) .hi-run{display:none}
+#jhub.running:not(.paused) .hi-pause{display:block}
+#jhub.paused .hi-run{display:none}
+#jhub.paused .hi-resume{display:block}
+#jhub .hlabel{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:9px;font-weight:600;letter-spacing:.14em;color:var(--muted2)}
+#jhub.running .hlabel{color:var(--accent)}
 #jcaption{
   position:absolute;z-index:3;width:min(252px,38vw);pointer-events:none;
   background:#fff;border:1px solid var(--border);border-radius:10px;
@@ -248,23 +265,56 @@ header.site .hbyline a:hover{text-decoration:underline}
 }
 .pmore:hover{background:#e9e9e5;color:var(--ink)}
 
-/* ============ detail card ============ */
-#backdrop{position:fixed;inset:0;background:rgba(10,10,10,.42);z-index:55;display:none}
+/* ============ detail card → centered constellation dialog ============ */
+#backdrop{position:fixed;inset:0;background:rgba(10,10,10,.46);z-index:55;display:none}
+body.dlg-open #backdrop{display:block}
 #card{
-  position:fixed;top:78px;right:14px;bottom:14px;width:min(400px,calc(100vw - 28px));
+  position:fixed;inset:0;margin:auto;z-index:60;
+  width:min(1080px,calc(100vw - 40px));height:min(88vh,800px);
   background:#fff;border:1px solid var(--border);border-radius:var(--r-box);
-  box-shadow:0 18px 48px rgba(10,10,10,.16);
-  z-index:60;display:none;flex-direction:column;overflow:hidden;
+  box-shadow:0 26px 72px rgba(10,10,10,.30);
+  display:none;flex-direction:column;overflow:hidden;
 }
 #card.open{display:flex}
-#cardScroll{overflow-y:auto;padding:18px 18px 22px;overscroll-behavior:contain}
+#cardScroll{display:flex;flex-direction:column;flex:1;min-height:0;padding:18px 18px 16px;overflow:hidden;overscroll-behavior:contain}
+.cbody{display:flex;gap:16px;flex:1;min-height:0;margin-top:14px}
+#constel{flex:1.45;position:relative;background:var(--cardbg);border:1px solid var(--border);border-radius:12px;min-width:0}
+#constelSvg{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.cnode{
+  position:absolute;transform:translate(-50%,-50%);width:128px;
+  background:#fff;border:1px solid var(--border);border-radius:10px;padding:7px 9px;
+  box-shadow:0 3px 10px rgba(10,10,10,.05);text-align:left;
+}
+.cnode.partner{cursor:pointer}
+.cnode.partner:hover{border-color:var(--accent)}
+.cnode.center{width:200px;border:2px solid var(--accent);z-index:2;box-shadow:0 10px 28px rgba(14,116,144,.16);display:flex;gap:9px;align-items:center;cursor:default}
+.cnode .nhead{display:flex;align-items:center;gap:6px;min-width:0}
+.cnode .nname{font-weight:700;font-size:11.5px;line-height:1.25;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0}
+.cnode.center .nname{font-size:13.5px;white-space:normal}
+.cnode .nkind{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:8px;font-weight:600;letter-spacing:.08em;color:var(--accent);margin-top:3px}
+.cnode .ndesc{font-size:10px;color:var(--muted);line-height:1.4;margin-top:3px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.cnode.center .ndesc{-webkit-line-clamp:3;font-size:10.5px;color:var(--muted2)}
+#constelMore{
+  position:absolute;left:50%;bottom:10px;transform:translateX(-50%);z-index:2;
+  font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:9.5px;color:var(--muted2);
+  background:rgba(251,251,250,.92);border:1px solid var(--border);padding:4px 9px;border-radius:6px;white-space:nowrap;
+}
+.crail{flex:1;min-width:300px;max-width:380px;overflow-y:auto;min-height:0;padding-right:4px}
 .chead{display:flex;align-items:center;gap:12px}
 .chead .cname2{font-size:20px;font-weight:800;letter-spacing:-.02em;line-height:1.2}
+#viewMap{
+  margin-left:auto;flex:none;
+  font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:9.5px;font-weight:600;letter-spacing:.09em;
+  color:var(--muted2);border:1px solid var(--border);border-radius:var(--r-pill);padding:7px 12px;
+}
+#viewMap:hover{border-color:var(--accent);color:var(--accent)}
 #cardClose{
-  margin-left:auto;flex:none;width:30px;height:30px;border-radius:8px;background:#f1f1ee;
+  flex:none;width:30px;height:30px;border-radius:8px;background:#f1f1ee;
   display:flex;align-items:center;justify-content:center;font-size:14px;color:var(--muted2);
 }
 #cardClose:hover{background:#e7e7e3;color:var(--ink)}
+.pgroup{border:1.5px dashed #d9d9d4;border-radius:10px;padding:8px 8px 3px;margin-bottom:8px}
+.pghead{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:9px;font-weight:600;letter-spacing:.1em;color:var(--muted2);margin:0 2px 7px}
 .ccat{display:flex;align-items:center;gap:7px;margin-top:10px;flex-wrap:wrap}
 .ccat .pdot{margin:0}
 .ccat .ccatname{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted2)}
@@ -293,10 +343,18 @@ header.site .hbyline a:hover{text-decoration:underline}
 .pathbox p{font-size:12px;color:var(--muted2);line-height:1.55}
 .pathbox a{font-weight:600;font-size:12px}
 #expBtn{
-  display:block;width:100%;text-align:center;background:var(--accent);color:#fff;
-  font-weight:700;font-size:13px;letter-spacing:.02em;border-radius:var(--r-chip);padding:11px 12px;
+  display:flex;align-items:center;justify-content:center;gap:8px;width:100%;text-align:center;
+  background:var(--accent);color:#fff;
+  font-weight:700;font-size:12.5px;letter-spacing:.02em;border-radius:var(--r-chip);padding:11px 12px;
+  animation:glowPulse 2.4s ease-in-out infinite;
 }
+#expBtn svg{width:15px;height:15px;flex:none}
 #expBtn:hover{background:#0b6076}
+@keyframes glowPulse{
+  0%,100%{box-shadow:0 0 0 0 rgba(14,116,144,.45)}
+  50%{box-shadow:0 0 18px 5px rgba(14,116,144,.32)}
+}
+@media(prefers-reduced-motion:reduce){#expBtn{animation:none}}
 .expnote{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:9.5px;color:var(--muted);letter-spacing:.05em;text-align:center;margin-top:6px}
 .cknown{font-size:13.5px;line-height:1.55;font-weight:500}
 .cabout{font-size:13px;line-height:1.6;color:var(--muted2);display:-webkit-box;-webkit-line-clamp:7;-webkit-box-orient:vertical;overflow:hidden}
@@ -312,9 +370,41 @@ header.site .hbyline a:hover{text-decoration:underline}
 .prow .prkind{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:9px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--accent);margin-left:6px}
 .prow .prnote{font-size:11px;color:var(--muted);line-height:1.45;margin-top:2px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 @media(max-width:860px){
-  body.has-sel #backdrop{display:block}
-  #card{top:auto;left:0;right:0;bottom:0;width:auto;max-height:74vh;border-radius:var(--r-box) var(--r-box) 0 0;border-bottom:none}
+  #card{inset:auto 0 0 0;margin:0;width:auto;height:auto;max-height:74vh;border-radius:var(--r-box) var(--r-box) 0 0;border-bottom:none}
+  #cardScroll{display:block;overflow-y:auto;padding:18px 18px 22px}
+  .cbody{display:block;margin-top:0}
+  #constel,#viewMap{display:none}
+  .crail{max-width:none;min-width:0;overflow:visible;padding-right:0}
 }
+
+/* ============ welcome modal ============ */
+#welcome{
+  display:none;position:fixed;inset:0;z-index:76;background:rgba(10,10,10,.58);
+  align-items:center;justify-content:center;padding:18px;
+}
+#welcome.open{display:flex}
+.wpanel{
+  background:#fff;border-radius:var(--r-box);max-width:620px;width:100%;max-height:90vh;overflow-y:auto;
+  padding:28px 28px 24px;box-shadow:0 30px 80px rgba(10,10,10,.4);
+}
+.wpanel h2{font-size:clamp(21px,3vw,27px);font-weight:800;letter-spacing:-.02em;margin:6px 0 16px}
+.wrow{display:flex;gap:13px;align-items:flex-start;margin-bottom:13px}
+.wrow .wicon{
+  flex:none;width:38px;height:38px;border-radius:11px;background:#eef7f9;color:var(--accent);
+  display:flex;align-items:center;justify-content:center;
+}
+.wrow .wicon svg{width:19px;height:19px}
+.wrow p{font-size:13.5px;line-height:1.55;color:#3f3f46}
+.wby{border-top:1px solid #efefec;margin-top:16px;padding-top:14px}
+.wby p{font-size:12.5px;line-height:1.6;color:var(--muted2)}
+.wby p+p{margin-top:6px}
+.wby a{font-weight:600}
+#welcomeBtn{
+  display:block;width:100%;margin-top:18px;text-align:center;
+  background:var(--ink);color:#fff;font-weight:700;font-size:13px;letter-spacing:.03em;
+  border-radius:var(--r-chip);padding:12px;
+}
+#welcomeBtn:hover{background:#26262a}
 
 /* ============ landscape nudge ============ */
 #landscapeNudge{
@@ -349,6 +439,7 @@ footer.site .fver{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:1
     <div class="htitle">Autonomous Vehicle Ecosystem Map</div>
     <div class="hbyline">Compiled &amp; maintained by <a href="https://www.linkedin.com/in/kofiagyare/" target="_blank" rel="noopener">Kofi Agyare-Kwabi</a> — ex-Uber Country Manager · GTM &amp; Partnerships · Wharton MBA</div>
   </div>
+  <button id="aboutLink">ABOUT THIS MAP</button>
   <div id="searchWrap">
     <input id="searchBox" type="text" placeholder="SEARCH 556 COMPANIES…" autocomplete="off" spellcheck="false" aria-label="Search companies">
     <div id="searchDrop" role="listbox"></div>
@@ -356,14 +447,13 @@ footer.site .fver{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:1
 </header>
 
 <section id="intro">
-  <p class="lede">Every driverless ride you can hail today rests on hundreds of companies you never see. This map wires <b>556</b> of them together — the autonomy developers, the sensor and silicon makers, the mapmakers and simulators, the vehicle builders, the depot crews, the insurers, the regulators — through <b>143</b> partnerships traced from filings, permits, launch announcements and conversations with the people doing the work. Select any company to see who it works with, and the route its work travels to reach a rider.</p>
   <div id="stats"></div>
   <div id="controls">
     <button id="clearSel">✕&nbsp; CLEAR SELECTION</button>
     <button class="toggle" id="tFreight"><span class="knob"></span><span class="tlabel"></span></button>
     <button class="toggle" id="tOrphans"><span class="knob"></span><span class="tlabel"></span></button>
     <button class="toggle" id="tExited"><span class="knob"></span><span class="tlabel"></span></button>
-    <span id="legend"><span class="ldot">●</span> companies Kofi has spoken with directly · select any company to export its constellation</span>
+    <span id="legend"><span class="ldot">●</span> companies Kofi has spoken with directly · select any company to see &amp; share its partnership map</span>
   </div>
 </section>
 
@@ -374,9 +464,11 @@ footer.site .fver{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:1
   <div id="jboard">
     <svg id="trackSvg" aria-hidden="true"></svg>
     <div class="jgrid" id="jgrid"></div>
-    <button id="jhub" aria-label="Run the loop animation — drive one ride around the circuit">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-2.64-6.36"/><polyline points="21 3 21 9 15 9"/></svg>
-      <span>RUN LOOP</span>
+    <button id="jhub" aria-label="Run or pause the loop animation">
+      <svg class="hi hi-run" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-2.64-6.36"/><polyline points="21 3 21 9 15 9"/></svg>
+      <svg class="hi hi-pause" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="7" y="5" width="3.4" height="14" rx="1.2"/><rect x="13.6" y="5" width="3.4" height="14" rx="1.2"/></svg>
+      <svg class="hi hi-resume" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8.2 5.5v13l10.6-6.5z"/></svg>
+      <span class="hlabel">RUN LOOP</span>
     </button>
     <div id="jcaption" aria-hidden="true"><span class="jck"></span><span class="jct"></span></div>
   </div>
@@ -409,6 +501,30 @@ footer.site .fver{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:1
   <h2>This map is wide</h2>
   <p>556 companies and their connection lines read best sideways. Turn your phone to landscape — or continue anyway.</p>
   <button id="nudgeBtn">CONTINUE IN PORTRAIT</button>
+</div>
+
+<div id="welcome" role="dialog" aria-modal="true" aria-label="About this map">
+  <div class="wpanel">
+    <p class="kicker">AV Ecosystem Map</p>
+    <h2>The industry behind every driverless ride</h2>
+    <div class="wrow">
+      <span class="wicon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9.2"/><path d="M2.8 12h18.4M12 2.8c2.6 2.5 4 5.7 4 9.2s-1.4 6.7-4 9.2c-2.6-2.5-4-5.7-4-9.2s1.4-6.7 4-9.2z"/></svg></span>
+      <p><b>556 companies · 11 layers · 143 mapped partnerships.</b> The autonomy developers, sensor and silicon makers, mapmakers, vehicle builders, depot crews, insurers and regulators behind every driverless ride on the road today.</p>
+    </div>
+    <div class="wrow">
+      <span class="wicon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l7.5 16.5 2.2-6.8 6.8-2.2z"/></svg></span>
+      <p><b>Select any company</b> to reveal who it works with — and trace the route its work travels to reach a rider.</p>
+    </div>
+    <div class="wrow">
+      <span class="wicon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 15V3"/><path d="m7 8 5-5 5 5"/><path d="M5 14v5a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-5"/></svg></span>
+      <p><b>Share what you find.</b> Export any company's partnership map as an image, ready to circulate.</p>
+    </div>
+    <div class="wby">
+      <p>Compiled &amp; maintained by <b>Kofi Agyare-Kwabi</b> — ex-Uber Country Manager · GTM &amp; Partnerships · Wharton MBA.</p>
+      <p>A company I've missed? A partnership I should know about? <a href="https://www.linkedin.com/in/kofiagyare/" target="_blank" rel="noopener">Message me on LinkedIn →</a></p>
+    </div>
+    <button id="welcomeBtn">EXPLORE THE MAP →</button>
+  </div>
 </div>
 
 <div id="backdrop"></div>
@@ -446,7 +562,7 @@ const expColor = cat => `hsl(${CATS[cat].hue}, 42%, 56%)`;
 const STAGES = [
   { n:"The Request", icon:"phone",  d:"A rider taps a button; a marketplace matches them to an autonomous vehicle.",
     cats:["Demand & Commercial Platforms"] },
-  { n:"The Driver",  icon:"eye",    d:"Software perceives, predicts and drives — built on sensors, silicon, data, maps, simulation and connectivity.",
+  { n:"The Driver",  icon:"brain",  d:"Software perceives, predicts and drives — built on sensors, silicon, data, maps, simulation and connectivity.",
     cats:["AV Driver / Autonomy Software","Sensing & Compute Hardware","Data, Maps & Simulation","AV Middleware & Tooling","Connectivity & Infrastructure"] },
   { n:"The Vehicle", icon:"car",    d:"A production-grade platform engineered around a driver that never gets tired.",
     cats:["Vehicle Platform & Manufacturing"] },
@@ -456,10 +572,10 @@ const STAGES = [
 const ENABLER_CATS = ["Capital, Insurance & Risk","Governance: Regulators & Government","Governance: Standards, Safety & Advocacy"];
 
 const ICONS = {
-  phone:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2" width="10" height="20" rx="2.5"/><line x1="11" y1="18.5" x2="13" y2="18.5"/></svg>',
-  eye:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-6.5 10-6.5S22 12 22 12s-3.5 6.5-10 6.5S2 12 2 12z"/><circle cx="12" cy="12" r="2.8"/></svg>',
-  car:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15l1.5-5.2A2 2 0 0 1 7.4 8.4h9.2a2 2 0 0 1 1.9 1.4L20 15"/><path d="M3.5 15h17a1 1 0 0 1 1 1v2.4a1 1 0 0 1-1 1h-17a1 1 0 0 1-1-1V16a1 1 0 0 1 1-1z"/><circle cx="7.2" cy="19.4" r="1.6"/><circle cx="16.8" cy="19.4" r="1.6"/></svg>',
-  wrench:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>'
+  phone:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2" width="10" height="20" rx="2.5"/><line x1="11" y1="18.5" x2="13" y2="18.5"/></svg>',
+  brain:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"/><path d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z"/><path d="M12 5v13"/><circle cx="8.3" cy="9.3" r="1" fill="currentColor" stroke="none"/><circle cx="15.7" cy="9.3" r="1" fill="currentColor" stroke="none"/><path d="M8.3 10.3v2.3l-1.7 1.5M15.7 10.3v2.3l1.7 1.5"/></svg>',
+  car:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2.6 16v-2.1c0-1 .7-1.9 1.7-2.1l2.6-.6 2.3-2.8c.4-.5 1-.8 1.6-.8h4.2c.6 0 1.2.3 1.6.9l1.9 2.7 2.3.5c1 .2 1.7 1.1 1.7 2.1V16"/><path d="M6.9 11.1h10.7"/><path d="M12.3 7.6v3.5"/><circle cx="7" cy="16.6" r="1.9"/><circle cx="17" cy="16.6" r="1.9"/><path d="M8.9 16.6h6.2"/><path d="M2.6 16.6h2.5M18.9 16.6h2.5"/></svg>',
+  wrench:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>'
 };
 
 /* ------------------ state ------------------ */
@@ -467,6 +583,7 @@ let comps = [], enrich = { operators:[], edges:[], domains:{}, known:{} };
 let byName = {};
 let adj = new Map();          // name -> Map(partnerName -> edge)
 let selectedName = null;
+let dialogOpen = false;        // desktop: constellation dialog; closing it keeps the selection on the map
 let showFreight = false, showOrphans = false, showExited = false;
 let panelLevel = {};          // cat -> 0 collapsed | 1 preview | 2 full
 CAT_ORDER.forEach(c => panelLevel[c] = 1);
@@ -520,7 +637,16 @@ function logoHTML(name, size){
 /* =====================================================================
    Part 7 — connection lines. No cache key. Redraw from scratch, always.
    Coordinates are computed RELATIVE TO #board so page scroll can't shift them.
+   Lines anchor to EDGE MIDPOINTS (the edge facing the other tile), never
+   tile centers, so they don't run across a tile's own text.
    ===================================================================== */
+function edgeMid(re, tx, ty){
+  // re: {l,t,r,b} — returns the midpoint of the edge of re facing point (tx,ty)
+  const cx = (re.l + re.r) / 2, cy = (re.t + re.b) / 2;
+  const dx = tx - cx, dy = ty - cy;
+  if (Math.abs(dx) >= Math.abs(dy)) return { x: dx > 0 ? re.r : re.l, y: cy };
+  return { x: cx, y: dy > 0 ? re.b : re.t };
+}
 function drawLines(){
   const svg = document.getElementById('linesSvg');
   const board = document.getElementById('board');
@@ -530,25 +656,27 @@ function drawLines(){
   if (!selEl){ svg.innerHTML = ''; return; }
 
   const br = board.getBoundingClientRect();
-  const c1 = selEl.getBoundingClientRect();
-  const x1 = c1.left + c1.width / 2 - br.left;
-  const y1 = c1.top  + c1.height / 2 - br.top;
+  const rel = el => { const r = el.getBoundingClientRect(); return { l: r.left - br.left, t: r.top - br.top, r: r.right - br.left, b: r.bottom - br.top }; };
+  const r1 = rel(selEl);
+  const c1x = (r1.l + r1.r) / 2, c1y = (r1.t + r1.b) / 2;
   const accent = getComputedStyle(document.documentElement).getPropertyValue('--accent').trim() || '#0e7490';
 
   let html = '';
   for (const p of partnersOf(selectedName)){
     const el = board.querySelector(`[data-cname="${CSS.escape(p.name)}"]`);
     if (!el) continue;
-    const c2 = el.getBoundingClientRect();
-    const x2 = c2.left + c2.width / 2 - br.left;
-    const y2 = c2.top  + c2.height / 2 - br.top;
-    const mx = (x1 + x2) / 2;
-    const d = `M${x1} ${y1} C${mx} ${y1}, ${mx} ${y2}, ${x2} ${y2}`;
+    const r2 = rel(el);
+    const c2x = (r2.l + r2.r) / 2, c2y = (r2.t + r2.b) / 2;
+    const a = edgeMid(r1, c2x, c2y);
+    const b = edgeMid(r2, c1x, c1y);
+    const d = Math.abs(b.x - a.x) >= Math.abs(b.y - a.y)
+      ? `M${a.x} ${a.y} C${(a.x + b.x) / 2} ${a.y}, ${(a.x + b.x) / 2} ${b.y}, ${b.x} ${b.y}`
+      : `M${a.x} ${a.y} C${a.x} ${(a.y + b.y) / 2}, ${b.x} ${(a.y + b.y) / 2}, ${b.x} ${b.y}`;
     html +=
       `<path d="${d}" fill="none" stroke="#f4f4f2" stroke-width="6" opacity=".75" stroke-linecap="round"/>` +
       `<path d="${d}" fill="none" stroke="${accent}" stroke-width="2.1" stroke-linecap="round"/>` +
-      `<circle cx="${x1}" cy="${y1}" r="4" fill="${accent}"/>` +
-      `<circle cx="${x2}" cy="${y2}" r="3.5" fill="${accent}"/>`;
+      `<circle cx="${a.x}" cy="${a.y}" r="4" fill="${accent}"/>` +
+      `<circle cx="${b.x}" cy="${b.y}" r="3.5" fill="${accent}"/>`;
   }
   svg.innerHTML = html;
 }
@@ -556,8 +684,10 @@ function drawLines(){
 function ensureCategoryExpanded(cat){
   if (panelLevel[cat] === 0) panelLevel[cat] = 1;
 }
+const isMobileView = () => matchMedia('(max-width:860px)').matches;
 function select(name){
   selectedName = (selectedName === name) ? null : name;
+  dialogOpen = !!selectedName;
   if (selectedName){
     const c = byName[selectedName];
     if (c?.exited)  showExited  = true;
@@ -571,8 +701,23 @@ function select(name){
 function clearSelection(){
   if (!selectedName) return;
   selectedName = null;
+  dialogOpen = false;
   renderEverything();
   drawLines();
+}
+function closeDialog(){
+  if (!dialogOpen) return;
+  dialogOpen = false;
+  renderEverything();
+  drawLines();
+  requestAnimationFrame(drawLines);
+}
+function reopenDialog(){
+  if (!selectedName || dialogOpen) return;
+  dialogOpen = true;
+  renderEverything();
+  drawLines();
+  requestAnimationFrame(drawLines);
 }
 
 /* ------------------ rendering ------------------ */
@@ -673,16 +818,21 @@ function jchipHTML(cat){
     <span class="dot" style="background:${dotColor(cat)}"></span>${esc(CATS[cat].t)}<span class="jcount">${n}</span>
   </button>`;
 }
+const jExpanded = new Set();     // stage indices with their layer chips revealed
 function renderJourneyChips(){
   const grid = document.getElementById('jgrid');
   const order = [0,1,3,2];   // 2×2 row-major: Request TL, Driver TR, Pitlane BL, Vehicle BR
   grid.innerHTML = order.map(i => {
     const s = STAGES[i];
-    return `<div class="jcard" data-stage="${i}">
+    const open = jExpanded.has(i);
+    return `<div class="jcard ${open ? 'chips-open' : ''}" data-stage="${i}">
       <div class="jicon">${ICONS[s.icon]}</div>
       <div class="jstage">STAGE 0${i+1}</div>
       <h3>${esc(s.n)}</h3>
       <p class="jdesc">${esc(s.d)}</p>
+      <button class="jexp ${open ? 'open' : ''}" data-stage="${i}" aria-expanded="${open}">
+        <span class="caret">▸</span>${s.cats.length} ${s.cats.length > 1 ? 'LAYERS' : 'LAYER'}
+      </button>
       <div class="jchips">${s.cats.map(jchipHTML).join('')}</div>
     </div>`;
   }).join('');
@@ -695,7 +845,8 @@ function renderJourneyChips(){
    that drives the loop once, stopping at each stage with a caption.
    ===================================================================== */
 let trackGeo = null;                            // {key, path, L, stops[4], center}
-const trackAnim = { running:false, abort:false };
+const trackAnim = { running:false, abort:false, paused:false };
+const STOP_DWELL = 3400;                        // ms the car holds at each station
 
 const STAGE_STOPS = [
   { k:"STAGE 01 · THE REQUEST", t:"A rider taps a button. The marketplace prices the trip, matches this exact vehicle, and dispatches it — seconds, end to end." },
@@ -718,7 +869,7 @@ function drawTrack(){
     minL = Math.min(minL, r.left); maxR = Math.max(maxR, r.right);
     minT = Math.min(minT, r.top);  maxB = Math.max(maxB, r.bottom);
   }
-  const OFF = 34;                                // card edge → road centerline
+  const OFF = 42;                                // card edge → road centerline
   const left = minL - br.left - OFF, right = maxR - br.left + OFF;
   const top  = minT - br.top  - OFF, bottom = maxB - br.top  + OFF;
   if (right - left < 160 || bottom - top < 160){ svg.innerHTML = ''; trackGeo = null; return; }
@@ -732,23 +883,29 @@ function drawTrack(){
   trackAnim.abort = true;                        // geometry changed: stop any run, rebuild, re-park
   hideJCaption();
 
-  const r = Math.min(64, (right-left)/2, (bottom-top)/2);
+  const r = Math.min(78, (right-left)/2, (bottom-top)/2);
   const d = `M ${left+r} ${top} H ${right-r} A ${r} ${r} 0 0 1 ${right} ${top+r} V ${bottom-r} A ${r} ${r} 0 0 1 ${right-r} ${bottom} H ${left+r} A ${r} ${r} 0 0 1 ${left} ${bottom-r} V ${top+r} A ${r} ${r} 0 0 1 ${left+r} ${top} Z`;
   const arrow = (x,y,rot) =>
-    `<path d="M -7 -5 L 4 0 L -7 5" transform="translate(${x} ${y}) rotate(${rot})" fill="none" stroke="#fafafa" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" opacity=".92"/>`;
+    `<path d="M -9 -6.5 L 5 0 L -9 6.5" transform="translate(${x} ${y}) rotate(${rot})" fill="none" stroke="#fafafa" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" opacity=".92"/>`;
   svg.innerHTML =
-    `<path d="${d}" fill="none" stroke="rgba(10,10,10,.10)" stroke-width="40"/>` +          // soft shoulder
-    `<path id="roadPath" d="${d}" fill="none" stroke="#232327" stroke-width="32"/>` +       // asphalt
-    `<path d="${d}" fill="none" stroke="#fafafa" stroke-width="2.4" stroke-dasharray="15 13" opacity=".95"/>` + // center line
+    `<path d="${d}" fill="none" stroke="rgba(10,10,10,.10)" stroke-width="58"/>` +          // soft shoulder
+    `<path id="roadPath" d="${d}" fill="none" stroke="#232327" stroke-width="48"/>` +       // asphalt
+    `<path d="${d}" fill="none" stroke="#fafafa" stroke-width="3" stroke-dasharray="18 15" opacity=".95"/>` + // center line
     arrow(mx, top, 0) + arrow(right, my, 90) + arrow(mx, bottom, 180) + arrow(left, my, 270) +
     `<g id="carG">
-       <rect x="-17" y="-9" width="34" height="18" rx="7" fill="#0e7490" stroke="#06303f" stroke-width="1.2"/>
-       <rect x="-6.5" y="-6.5" width="12" height="13" rx="3.5" fill="#a5dbe8"/>
-       <rect x="8" y="-6.5" width="5.5" height="13" rx="2.5" fill="#0b5e77"/>
-       <circle cx="15.5" cy="-4.6" r="1.7" fill="#fde68a"/>
-       <circle cx="15.5" cy="4.6" r="1.7" fill="#fde68a"/>
-       <circle cx="-0.5" cy="0" r="3.4" fill="#06303f"/>
-       <circle cx="-0.5" cy="0" r="1.5" fill="#22d3ee"/>
+       <rect class="wheel" x="-14" y="-16.5" width="10" height="5" rx="2" fill="#101013"/>
+       <rect class="wheel" x="5"   y="-16.5" width="10" height="5" rx="2" fill="#101013"/>
+       <rect class="wheel" x="-14" y="11.5"  width="10" height="5" rx="2" fill="#101013"/>
+       <rect class="wheel" x="5"   y="11.5"  width="10" height="5" rx="2" fill="#101013"/>
+       <rect x="-26" y="-13" width="52" height="26" rx="10" fill="#0e7490" stroke="#06303f" stroke-width="1.6"/>
+       <rect x="-20" y="-9.5" width="8" height="19" rx="3" fill="#0b5e77"/>
+       <rect x="13" y="-9.5" width="8" height="19" rx="3" fill="#0b5e77"/>
+       <rect x="-9" y="-10" width="17" height="20" rx="5" fill="#a5dbe8"/>
+       <circle cx="23.5" cy="-6.8" r="2.4" fill="#fde68a"/>
+       <circle cx="23.5" cy="6.8" r="2.4" fill="#fde68a"/>
+       <rect x="-27" y="-7.5" width="2.6" height="15" rx="1.3" fill="#e25c5c"/>
+       <circle cx="1" cy="0" r="5" fill="#06303f"/>
+       <circle cx="1" cy="0" r="2.2" fill="#22d3ee"/>
      </g>`;
   const path = document.getElementById('roadPath');
   // arc-length positions of the four corner midpoints; path starts at (left+r, top) heading right
@@ -795,27 +952,51 @@ function hideJCaption(){
   document.getElementById('jcaption')?.classList.remove('show');
   document.querySelectorAll('.jcard.live').forEach(c => c.classList.remove('live'));
 }
-const jsleep = ms => new Promise(res => setTimeout(res, ms));
-function drive(from, to){
+function setHub(){
+  const h = document.getElementById('jhub');
+  h.classList.toggle('running', trackAnim.running);
+  h.classList.toggle('paused', trackAnim.paused);
+  h.querySelector('.hlabel').textContent = trackAnim.running ? (trackAnim.paused ? 'RESUME' : 'PAUSE') : 'RUN LOOP';
+}
+function togglePause(){
+  if (!trackAnim.running) return;
+  trackAnim.paused = !trackAnim.paused;
+  setHub();
+}
+/* rAF driver whose clock stops while paused — cb(dt) returns true when done */
+function pausableTick(cb){
   return new Promise(res => {
-    const dur = (to - from) / 470 * 1000;        // ~470 px/s
-    const t0 = performance.now();
+    let last = performance.now();
     const step = now => {
       if (trackAnim.abort || !trackGeo) return res();
-      const k = Math.min(1, (now - t0) / dur);
-      const e = k < .5 ? 4*k*k*k : 1 - Math.pow(-2*k + 2, 3) / 2;   // easeInOutCubic
-      placeCar(from + (to - from) * e);
-      k < 1 ? requestAnimationFrame(step) : res();
+      const dt = trackAnim.paused ? 0 : (now - last);
+      last = now;
+      if (cb(dt)) return res();
+      requestAnimationFrame(step);
     };
     requestAnimationFrame(step);
   });
 }
+function drive(from, to){
+  const total = (to - from) / 470 * 1000;        // ~470 px/s
+  let elapsed = 0;
+  return pausableTick(dt => {
+    elapsed += dt;
+    const k = Math.min(1, elapsed / total);
+    const e = k < .5 ? 4*k*k*k : 1 - Math.pow(-2*k + 2, 3) / 2;   // easeInOutCubic
+    placeCar(from + (to - from) * e);
+    return k >= 1;
+  });
+}
+function dwell(ms){
+  let elapsed = 0;
+  return pausableTick(dt => { elapsed += dt; return elapsed >= ms; });
+}
 async function runLoop(){
   const g = trackGeo;
   if (!g || trackAnim.running) return;
-  trackAnim.running = true; trackAnim.abort = false;
-  const hub = document.getElementById('jhub');
-  hub.classList.add('running');
+  trackAnim.running = true; trackAnim.abort = false; trackAnim.paused = false;
+  setHub();
   // monotonic stop sequence: Request → Driver → Vehicle → Pitlane → back to Request
   const seq = [g.stops[0]];
   for (const i of [1, 2, 3]){ let s = g.stops[i]; while (s <= seq[seq.length-1]) s += g.L; seq.push(s); }
@@ -826,22 +1007,49 @@ async function runLoop(){
       if (trackAnim.abort) break;
       if (i > 0) await drive(seq[i-1], seq[i]);
       if (trackAnim.abort) break;
-      if (i < 4){ jCaptionShow(i % 4); await jsleep(2400); hideJCaption(); await jsleep(150); }
+      if (i < 4){ jCaptionShow(i % 4); await dwell(STOP_DWELL); hideJCaption(); await dwell(150); }
     }
   } finally {
     hideJCaption();
-    hub.classList.remove('running');
-    trackAnim.running = false;
+    trackAnim.running = false; trackAnim.paused = false;
+    setHub();
     if (trackGeo && !trackAnim.abort) placeCar(trackGeo.stops[0]);   // park back at The Request
     trackAnim.abort = false;
   }
 }
 
-/* ------------------ detail card ------------------ */
+/* ------------------ detail card → centered constellation dialog ------------------ */
+const RING_MAX = 10;   // partners shown around the center; the rest live in the grouped list
+function groupedPartnersHTML(partners){
+  const prow = p => {
+    const pc = byName[p.name];
+    return `<button class="prow" data-cname="${esc(p.name)}" title="${esc(p.n || '')}">
+      <span class="pdot" style="background:${pc ? dotColor(pc.cat) : '#ccc'}"></span>
+      <span style="min-width:0">
+        <span class="prname">${esc(p.name)}</span>
+        ${p.n ? `<span class="prnote">${esc(p.n)}</span>` : ''}
+      </span>
+    </button>`;
+  };
+  const groups = new Map();
+  for (const p of partners){
+    const k = p.k || 'Partnership';
+    if (!groups.has(k)) groups.set(k, []);
+    groups.get(k).push(p);
+  }
+  return [...groups.entries()]
+    .sort((a, b) => b[1].length - a[1].length || a[0].localeCompare(b[0]))
+    .map(([k, list]) => `<div class="pgroup"><p class="pghead">${esc(k.toUpperCase())} (${list.length})</p>${list.map(prow).join('')}</div>`)
+    .join('');
+}
 function renderCard(){
   const card = document.getElementById('card');
   const scroll = document.getElementById('cardScroll');
-  if (!selectedName){ card.classList.remove('open'); scroll.innerHTML = ''; return; }
+  const open = !!selectedName && dialogOpen;
+  card.classList.toggle('open', open);
+  document.body.classList.toggle('dlg-open', open);
+  if (!open){ scroll.innerHTML = ''; return; }
+
   const c = byName[selectedName];
   const cat = CATS[c.cat];
   const partners = partnersOf(c.name);
@@ -861,7 +1069,7 @@ function renderCard(){
       <div class="pathbox"><p>An endpoint of the map — a company with a credible path to Level-4 passenger service in the near term.</p></div></div>`;
   } else if (route.kind === 'path'){
     const hops = route.path.map((n, i) =>
-      `<button class="hop ${i === route.path.length-1 ? 'last' : ''}" data-cname="${esc(n)}" data-jump="1">${esc(n)}</button>`
+      `<button class="hop ${i === route.path.length-1 ? 'last' : ''}" data-cname="${esc(n)}">${esc(n)}</button>`
     ).join('<span class="patharrow">→</span>');
     pathHTML = `<div class="csec"><p class="kicker">Route to passenger-accessible autonomy</p>
       <div class="pathbox">
@@ -876,46 +1084,102 @@ function renderCard(){
       </div></div>`;
   }
 
-  const partnerRows = partners.map(p => {
-    const pc = byName[p.name];
-    return `<button class="prow" data-cname="${esc(p.name)}" data-jump="1" title="${esc(p.n || '')}">
-      <span class="pdot" style="background:${pc ? dotColor(pc.cat) : '#ccc'}"></span>
-      <span style="min-width:0">
-        <span class="prname">${esc(p.name)}</span><span class="prkind">${esc(p.k)}</span>
-        ${p.n ? `<span class="prnote">${esc(p.n)}</span>` : ''}
-      </span>
-    </button>`;
-  }).join('');
+  const ring = partners.slice(0, RING_MAX);
+  const extra = partners.length - ring.length;
+  const constelHTML = `
+    <div id="constel">
+      <svg id="constelSvg" aria-hidden="true"></svg>
+      <div class="cnode center">
+        ${logoHTML(c.name,28)}
+        <span style="min-width:0">
+          <span class="nname">${esc(c.name)}</span>
+          <span class="ndesc">${esc(known || c.sub || cat.t)}</span>
+        </span>
+      </div>
+      ${ring.map(p => {
+        const pc = byName[p.name];
+        return `<div class="cnode partner" data-cname="${esc(p.name)}" role="button">
+          <span class="nhead">${logoHTML(p.name,20)}<span class="nname">${esc(p.name)}</span></span>
+          <span class="nkind">${esc((p.k || '').toUpperCase())}</span>
+          <span class="ndesc">${esc(p.n || pc?.sub || (pc ? CATS[pc.cat].t : ''))}</span>
+        </div>`;
+      }).join('')}
+      ${extra > 0 ? `<div id="constelMore">+${extra} MORE IN THE PARTNER LIST →</div>` : ''}
+      ${!partners.length ? `<div id="constelMore">NO PARTNERSHIPS MAPPED YET — TELL ME WHAT I'M MISSING</div>` : ''}
+    </div>`;
 
   scroll.innerHTML = `
     <div class="chead">
       ${logoHTML(c.name,40)}
-      <h2 class="cname2">${esc(c.name)}</h2>
+      <span style="min-width:0">
+        <h2 class="cname2">${esc(c.name)}</h2>
+        <div class="ccat" style="margin-top:4px">
+          <span class="pdot" style="background:${dotColor(c.cat)}"></span>
+          <span class="ccatname">${esc(cat.t)}</span>
+          ${c.l4credible ? '<span class="ctagbig accent">CREDIBLE L4 OPERATOR</span>' : ''}
+          ${c.exited ? '<span class="ctagbig">EXITED / ACQUIRED</span>' : ''}
+          ${c.segment ? `<span class="ctagbig">${esc(c.segment.toUpperCase())}</span>` : ''}
+        </div>
+      </span>
+      <button id="viewMap">VIEW ON MAP</button>
       <button id="cardClose" aria-label="Close">✕</button>
     </div>
-    <div class="ccat">
-      <span class="pdot" style="background:${dotColor(c.cat)}"></span>
-      <span class="ccatname">${esc(cat.t)}</span>
-      ${c.l4credible ? '<span class="ctagbig accent">CREDIBLE L4 OPERATOR</span>' : ''}
-      ${c.exited ? '<span class="ctagbig">EXITED / ACQUIRED</span>' : ''}
-      ${c.segment ? `<span class="ctagbig">${esc(c.segment.toUpperCase())}</span>` : ''}
-    </div>
-    ${c.spokenTo ? '<div class="cspoken"><span class="spdot"></span>Kofi has spoken with this company directly</div>' : ''}
-    ${meta ? `<p class="cmeta">${esc(meta)}</p>` : ''}
-    ${pathHTML}
-    <div class="csec">
-      <button id="expBtn">EXPORT CONSTELLATION PNG</button>
-      <p class="expnote">1200 × 900 · SHAREABLE · CARRIES ATTRIBUTION</p>
-    </div>
-    ${known ? `<div class="csec"><p class="kicker">Known for</p><p class="cknown">${esc(known)}</p></div>` : ''}
-    ${c.about ? `<div class="csec"><p class="kicker">About</p><p class="cabout">${esc(c.about)}</p></div>` : ''}
-    ${dom ? `<div class="csec"><a class="cwww" href="https://${esc(dom)}" target="_blank" rel="noopener">${esc(dom)} ↗</a></div>` : ''}
-    <div class="csec"><p class="kicker">Mapped partners (${partners.length})</p>
-      ${partners.length ? partnerRows :
-        `<p style="font-size:12.5px;color:var(--muted2);line-height:1.55">No partnerships mapped yet — which usually means the interesting ones haven't been announced, or I haven't found them. <a href="https://www.linkedin.com/in/kofiagyare/" target="_blank" rel="noopener">Tell me what I'm missing →</a></p>`}
+    ${c.spokenTo ? '<div class="cspoken" style="margin-top:10px"><span class="spdot"></span>Kofi has spoken with this company directly</div>' : ''}
+    ${meta ? `<p class="cmeta" style="margin-top:8px">${esc(meta)}</p>` : ''}
+    <div class="cbody">
+      ${constelHTML}
+      <div class="crail">
+        ${pathHTML}
+        <div class="csec">
+          <button id="expBtn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 15V3"/><path d="m7 8 5-5 5 5"/><path d="M5 14v5a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-5"/></svg>EXPORT ${esc(c.name.toUpperCase())}'S PARTNERSHIP MAP</button>
+          <p class="expnote">1200 × 900 PNG · SHAREABLE · CARRIES ATTRIBUTION</p>
+        </div>
+        ${known ? `<div class="csec"><p class="kicker">Known for</p><p class="cknown">${esc(known)}</p></div>` : ''}
+        ${c.about ? `<div class="csec"><p class="kicker">About</p><p class="cabout">${esc(c.about)}</p></div>` : ''}
+        ${dom ? `<div class="csec"><a class="cwww" href="https://${esc(dom)}" target="_blank" rel="noopener">${esc(dom)} ↗</a></div>` : ''}
+        <div class="csec"><p class="kicker">Mapped partners (${partners.length})</p>
+          ${partners.length ? groupedPartnersHTML(partners) :
+            `<p style="font-size:12.5px;color:var(--muted2);line-height:1.55">No partnerships mapped yet — which usually means the interesting ones haven't been announced, or I haven't found them. <a href="https://www.linkedin.com/in/kofiagyare/" target="_blank" rel="noopener">Tell me what I'm missing →</a></p>`}
+        </div>
+      </div>
     </div>`;
-  card.classList.add('open');
+  const rail = scroll.querySelector('.crail');
+  if (rail) rail.scrollTop = 0;
   scroll.scrollTop = 0;
+  requestAnimationFrame(layoutConstel);
+}
+
+/* place the ring of partner mini-cards on an ellipse and draw edge-anchored connectors */
+function layoutConstel(){
+  if (isMobileView()) return;
+  const box = document.getElementById('constel');
+  if (!box || !document.getElementById('card').classList.contains('open')) return;
+  const svg = document.getElementById('constelSvg');
+  const center = box.querySelector('.cnode.center');
+  const nodes = [...box.querySelectorAll('.cnode.partner')];
+  const W = box.clientWidth, H = box.clientHeight;
+  if (W < 120 || H < 120 || !center) return;
+  const cx = W / 2, cy = H / 2;
+  center.style.left = cx + 'px';
+  center.style.top  = cy + 'px';
+  const cw = center.offsetWidth, ch = center.offsetHeight;
+  let html = '';
+  nodes.forEach((el, i) => {
+    const ang = -Math.PI / 2 + i * 2 * Math.PI / nodes.length;
+    const ew = el.offsetWidth, eh = el.offsetHeight;
+    const rx = Math.max(110, W / 2 - ew / 2 - 12);
+    const ry = Math.max(85,  H / 2 - eh / 2 - 36);
+    const x = cx + Math.cos(ang) * rx, y = cy + Math.sin(ang) * ry;
+    el.style.left = x + 'px';
+    el.style.top  = y + 'px';
+    const a = edgeMid({ l: cx - cw/2, r: cx + cw/2, t: cy - ch/2, b: cy + ch/2 }, x, y);
+    const b = edgeMid({ l: x - ew/2,  r: x + ew/2,  t: y - eh/2,  b: y + eh/2 }, cx, cy);
+    const d = Math.abs(b.x - a.x) >= Math.abs(b.y - a.y)
+      ? `M${a.x} ${a.y} C${(a.x + b.x) / 2} ${a.y}, ${(a.x + b.x) / 2} ${b.y}, ${b.x} ${b.y}`
+      : `M${a.x} ${a.y} C${a.x} ${(a.y + b.y) / 2}, ${b.x} ${(a.y + b.y) / 2}, ${b.x} ${b.y}`;
+    html += `<path d="${d}" fill="none" stroke="rgba(14,116,144,.42)" stroke-width="1.6"/>`;
+  });
+  svg.innerHTML = html;
 }
 
 /* ------------------ export constellation PNG (Part 9) ------------------ */
@@ -934,7 +1198,7 @@ function exportPNG(){
   // header
   x.textBaseline = 'alphabetic'; x.textAlign = 'left';
   x.fillStyle = '#77776f'; x.font = '600 13px "IBM Plex Mono", monospace';
-  x.fillText('PARTNERSHIP CONSTELLATION · AV ECOSYSTEM MAP', 48, 62);
+  x.fillText('PARTNERSHIP MAP · AV ECOSYSTEM', 48, 62);
   x.fillStyle = '#0a0a0a'; x.font = '900 46px Archivo, sans-serif';
   x.fillText(c.name, 46, 112);
   x.fillStyle = '#52525b'; x.font = '500 13px "IBM Plex Mono", monospace';
@@ -1019,7 +1283,8 @@ function exportPNG(){
     if (!blob) return;
     const a = document.createElement('a');
     a.href = URL.createObjectURL(blob);
-    a.download = `${slug(c.name)}-av-constellation.png`;
+    a.download = `${slug(c.name)}-partnership-map.png`;
+    a.addEventListener('click', ev => ev.stopPropagation());   // keep the synthetic click out of the page's click handling
     document.body.appendChild(a); a.click(); a.remove();
     setTimeout(() => URL.revokeObjectURL(a.href), 5000);
   }, 'image/png');
@@ -1053,7 +1318,7 @@ function pickSearch(i){
   const c = searchResults[i]; if (!c) return;
   const box = document.getElementById('searchBox');
   box.value = ''; runSearch('');
-  if (selectedName === c.name) clearSelection();
+  if (selectedName === c.name) reopenDialog();
   else { select(c.name); scrollToCompany(c.name); }
   box.blur();
 }
@@ -1064,6 +1329,21 @@ function scrollToCompany(name){
   });
 }
 
+/* ------------------ welcome modal ------------------ */
+let pendingAutoRun = false;    // loop auto-run deferred while the welcome modal is up
+function openWelcome(){ document.getElementById('welcome').classList.add('open'); }
+function closeWelcome(){
+  document.getElementById('welcome').classList.remove('open');
+  try { localStorage.setItem('avWelcomeSeen', '1'); } catch(_){}
+  if (pendingAutoRun){ pendingAutoRun = false; setTimeout(runLoop, 450); }
+}
+function maybeShowWelcome(){
+  try { if (localStorage.getItem('avWelcomeSeen')) return; } catch(_){}
+  const nudge = document.getElementById('landscapeNudge');
+  if (nudge && getComputedStyle(nudge).display !== 'none') return;   // let the landscape nudge go first
+  openWelcome();
+}
+
 /* ------------------ events ------------------ */
 function wireEvents(){
   // one delegated click handler: tiles/hops/partner rows, allowlist, click-outside
@@ -1071,15 +1351,41 @@ function wireEvents(){
     const tile = e.target.closest('[data-cname]');
     if (tile){
       const name = tile.dataset.cname;
-      const jump = tile.dataset.jump === '1';
-      if (jump && name === selectedName){ scrollToCompany(name); return; }  // re-affirm, don't toggle off
+      if (name === selectedName){
+        if (!dialogOpen) reopenDialog();     // clicking the selected tile re-opens the dialog
+        return;
+      }
       const was = selectedName;
+      const fromMap = !!tile.closest('#board');
       select(name);
-      if (jump && selectedName && selectedName !== was) scrollToCompany(name);
+      if (fromMap === false && selectedName && selectedName !== was) scrollToCompany(name);
       return;
     }
-    if (e.target.closest('#jhub')){ runLoop(); return; }
-    if (e.target.closest('#cardClose')){ clearSelection(); return; }
+    if (e.target.closest('#jhub')){ trackAnim.running ? togglePause() : runLoop(); return; }
+    if (e.target.closest('.jexp')){
+      const st = +e.target.closest('.jexp').dataset.stage;
+      jExpanded.has(st) ? jExpanded.delete(st) : jExpanded.add(st);
+      renderEverything(); drawLines(); requestAnimationFrame(drawLines);
+      return;
+    }
+    if (e.target.closest('#welcomeBtn')){ closeWelcome(); return; }
+    if (e.target.id === 'welcome'){ closeWelcome(); return; }
+    if (e.target.closest('#welcome')) return;
+    if (e.target.closest('#aboutLink')){ openWelcome(); return; }
+    if (e.target.closest('#viewMap')){
+      const n = selectedName;
+      closeDialog();
+      if (n) scrollToCompany(n);
+      return;
+    }
+    if (e.target.id === 'backdrop'){
+      isMobileView() ? clearSelection() : closeDialog();
+      return;
+    }
+    if (e.target.closest('#cardClose')){
+      isMobileView() ? clearSelection() : closeDialog();
+      return;
+    }
     if (e.target.closest('.pmore')){
       const cat = e.target.closest('.pmore').dataset.cat;
       panelLevel[cat] = panelLevel[cat] === 2 ? 1 : 2;
@@ -1124,8 +1430,10 @@ function wireEvents(){
   document.addEventListener('keydown', e => {
     const box = document.getElementById('searchBox');
     if (e.key === 'Escape'){
-      if (document.getElementById('searchDrop').classList.contains('open')){ box.value=''; runSearch(''); }
-      else clearSelection();
+      if (document.getElementById('welcome').classList.contains('open')){ closeWelcome(); return; }
+      if (document.getElementById('searchDrop').classList.contains('open')){ box.value=''; runSearch(''); return; }
+      if (dialogOpen && !isMobileView()){ closeDialog(); return; }   // first ESC: back to the map, selection kept
+      clearSelection();                                              // second ESC: fully deselect
       return;
     }
     if (document.activeElement === box && searchResults.length){
@@ -1152,18 +1460,19 @@ function wireEvents(){
     }
   });
 
-  // landscape nudge
+  // landscape nudge (welcome waits its turn)
   document.getElementById('nudgeBtn').addEventListener('click', () => {
     document.getElementById('landscapeNudge').classList.add('off');
     try { sessionStorage.setItem('avNudgeOff','1'); } catch(_){}
+    maybeShowWelcome();
   });
   try { if (sessionStorage.getItem('avNudgeOff')) document.getElementById('landscapeNudge').classList.add('off'); } catch(_){}
 
   // redraw on everything that can move tiles (Part 7)
-  window.addEventListener('resize', () => { drawLines(); drawTrack(); });
+  window.addEventListener('resize', () => { drawLines(); drawTrack(); layoutConstel(); });
   window.addEventListener('scroll', () => drawLines(), { passive:true });
   document.addEventListener('load', e => { if (e.target.tagName === 'IMG') drawLines(); }, true);
-  if (document.fonts?.ready) document.fonts.ready.then(() => { drawLines(); drawTrack(); });
+  if (document.fonts?.ready) document.fonts.ready.then(() => { drawLines(); drawTrack(); layoutConstel(); });
 }
 
 /* ------------------ boot ------------------ */
@@ -1190,12 +1499,17 @@ async function init(){
   drawLines();
   requestAnimationFrame(() => { drawLines(); drawTrack(); });
   window.addEventListener('load', () => { drawLines(); drawTrack(); });
+  maybeShowWelcome();
 
-  // drive the loop once when the journey first comes into view
+  // drive the loop once when the journey first comes into view (after the welcome modal)
   if (!matchMedia('(prefers-reduced-motion: reduce)').matches){
     const jb = document.getElementById('jboard');
     const io = new IntersectionObserver(entries => {
-      if (entries.some(en => en.isIntersecting)){ io.disconnect(); setTimeout(runLoop, 500); }
+      if (entries.some(en => en.isIntersecting)){
+        io.disconnect();
+        if (document.getElementById('welcome').classList.contains('open')) pendingAutoRun = true;
+        else setTimeout(runLoop, 500);
+      }
     }, { threshold: .45 });
     io.observe(jb);
   }

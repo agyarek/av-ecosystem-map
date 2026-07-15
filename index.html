@@ -1,0 +1,1061 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Autonomous Vehicle Ecosystem Map — by Kofi Agyare-Kwabi</title>
+<meta name="description" content="556 companies, 143 mapped partnerships, 11 layers — an interactive map of the autonomous-vehicle industry, compiled and maintained by Kofi Agyare-Kwabi.">
+<meta property="og:title" content="Autonomous Vehicle Ecosystem Map">
+<meta property="og:description" content="Select any of 556 companies to reveal its partners and trace its route to a passenger-facing robotaxi operator. Compiled by Kofi Agyare-Kwabi — ex-Uber Country Manager · GTM &amp; Partnerships · Wharton MBA.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='42' fill='%230e7490'/><circle cx='50' cy='50' r='14' fill='%23f4f4f2'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --accent:#0e7490;
+  --bg:#f4f4f2;
+  --ink:#0a0a0a;
+  --muted:#77776f;
+  --muted2:#52525b;
+  --cardbg:#fbfbfa;
+  --border:#e4e4e7;
+  --r-panel:14px;
+  --r-box:18px;
+  --r-chip:8px;
+  --r-pill:20px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);color:var(--ink);
+  font-family:'Archivo',system-ui,sans-serif;
+  font-size:15px;line-height:1.5;
+  -webkit-font-smoothing:antialiased;
+}
+.mono{font-family:'IBM Plex Mono',ui-monospace,monospace}
+.kicker{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+a{color:var(--accent)}
+button{font-family:inherit;color:inherit;background:none;border:none;cursor:pointer;text-align:left}
+img{max-width:100%}
+
+/* ============ header ============ */
+header.site{
+  position:sticky;top:0;z-index:50;
+  background:#0a0a0a;color:#fff;
+  padding:14px 20px;
+  display:flex;align-items:center;gap:18px;flex-wrap:wrap;
+}
+header.site .htitle{font-size:17px;font-weight:800;letter-spacing:-.01em;white-space:nowrap}
+header.site .hbyline{font-size:11.5px;color:#a1a1aa;line-height:1.45}
+header.site .hbyline a{color:#22d3ee;text-decoration:none;font-weight:600}
+header.site .hbyline a:hover{text-decoration:underline}
+#searchWrap{margin-left:auto;position:relative}
+#searchBox{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12.5px;
+  background:#18181b;color:#fff;border:1px solid #3f3f46;border-radius:var(--r-chip);
+  padding:8px 12px;width:min(300px,44vw);outline:none;
+}
+#searchBox::placeholder{color:#71717a}
+#searchBox:focus{border-color:var(--accent)}
+#searchDrop{
+  position:absolute;top:calc(100% + 6px);right:0;width:min(340px,calc(100vw - 24px));
+  background:#fff;color:var(--ink);border:1px solid var(--border);border-radius:10px;
+  box-shadow:0 12px 32px rgba(10,10,10,.18);
+  max-height:380px;overflow:auto;display:none;z-index:70;
+}
+#searchDrop.open{display:block}
+.srow{display:flex;align-items:center;gap:10px;width:100%;padding:9px 12px;border-bottom:1px solid #f1f1ef}
+.srow:last-child{border-bottom:none}
+.srow:hover,.srow.active{background:#eef7f9}
+.srow .sname{font-weight:600;font-size:13.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.srow .scat{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-left:auto;white-space:nowrap}
+
+/* ============ intro ============ */
+#intro{max-width:1240px;margin:0 auto;padding:34px 20px 6px}
+#intro .lede{max-width:860px;font-size:16.5px;line-height:1.65;color:#27272a}
+#stats{margin-top:14px;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted2)}
+#stats b{color:var(--ink);font-weight:600}
+#controls{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:16px}
+.toggle{
+  display:inline-flex;align-items:center;gap:8px;
+  font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:10.5px;font-weight:600;letter-spacing:.08em;
+  color:var(--muted2);background:#fff;border:1px solid var(--border);border-radius:var(--r-pill);
+  padding:7px 12px 7px 7px;transition:border-color .15s;
+}
+.toggle:hover{border-color:#c9c9cd}
+.toggle .knob{
+  width:26px;height:15px;border-radius:9px;background:#d9d9d6;position:relative;flex:none;transition:background .15s;
+}
+.toggle .knob::after{
+  content:"";position:absolute;top:2px;left:2px;width:11px;height:11px;border-radius:50%;
+  background:#fff;transition:left .15s;box-shadow:0 1px 2px rgba(0,0,0,.25);
+}
+.toggle.on{color:var(--ink);border-color:var(--accent)}
+.toggle.on .knob{background:var(--accent)}
+.toggle.on .knob::after{left:13px}
+#clearSel{
+  display:none;align-items:center;gap:6px;
+  font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:10.5px;font-weight:600;letter-spacing:.08em;
+  color:#fff;background:var(--ink);border-radius:var(--r-pill);padding:8px 14px;
+}
+#clearSel.show{display:inline-flex}
+#legend{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:10.5px;letter-spacing:.05em;color:var(--muted);margin-left:auto}
+#legend .ldot{color:var(--accent);font-size:12px}
+@media(max-width:900px){#legend{margin-left:0;width:100%}}
+
+/* ============ journey loop ============ */
+#journey{max-width:1240px;margin:0 auto;padding:38px 20px 8px}
+#journey h2{font-size:clamp(22px,3.4vw,30px);font-weight:800;letter-spacing:-.02em;margin-top:6px}
+#journey .jintro{max-width:760px;color:var(--muted2);margin-top:8px;font-size:14.5px}
+#jboard{position:relative;margin-top:26px}
+#trackSvg{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;overflow:visible}
+.jgrid{
+  position:relative;display:grid;grid-template-columns:1fr 1fr;
+  gap:64px 190px;z-index:1;
+}
+.jcard{
+  background:var(--cardbg);border:1px solid var(--border);border-radius:var(--r-box);
+  padding:20px;position:relative;z-index:1;
+}
+.jcard .jicon{
+  width:38px;height:38px;border-radius:11px;background:#0a0a0a;color:#fff;
+  display:flex;align-items:center;justify-content:center;margin-bottom:12px;
+}
+.jcard .jicon svg{width:19px;height:19px}
+.jcard .jstage{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:10px;font-weight:600;letter-spacing:.12em;color:var(--muted)}
+.jcard h3{font-size:19px;font-weight:800;letter-spacing:-.01em;margin:2px 0 4px}
+.jcard .jdesc{font-size:13px;color:var(--muted2);line-height:1.5}
+.jchips{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.jchip{
+  display:inline-flex;align-items:center;gap:7px;
+  font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:10.5px;font-weight:500;letter-spacing:.03em;
+  background:#fff;border:1px solid var(--border);border-radius:var(--r-chip);padding:5px 9px;
+  transition:border-color .15s;
+}
+.jchip:hover{border-color:var(--accent)}
+.jchip .dot{width:8px;height:8px;border-radius:50%;flex:none}
+.jchip .jcount{color:var(--muted);font-size:10px}
+#jhub{
+  position:absolute;z-index:2;width:96px;height:96px;border-radius:50%;
+  background:#fff;border:1px solid var(--border);box-shadow:0 6px 22px rgba(10,10,10,.08);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;
+  left:50%;top:50%;transform:translate(-50%,-50%);
+}
+#jhub svg{width:22px;height:22px;color:var(--accent);animation:spin 12s linear infinite}
+@media(prefers-reduced-motion:reduce){#jhub svg{animation:none}}
+@keyframes spin{to{transform:rotate(360deg)}}
+#jhub span{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:9px;font-weight:600;letter-spacing:.14em;color:var(--muted2)}
+.jreturn{max-width:760px;color:var(--muted2);font-size:13.5px;margin-top:26px}
+.jenablers{
+  margin-top:16px;background:var(--cardbg);border:1px solid var(--border);border-radius:var(--r-box);
+  padding:14px 18px;display:flex;align-items:center;gap:10px;flex-wrap:wrap;
+}
+.jenablers .kicker{margin-right:4px}
+@media(max-width:699px){
+  .jgrid{grid-template-columns:1fr;gap:14px}
+  #trackSvg,#jhub{display:none}
+}
+
+/* ============ board / operators / panels ============ */
+#board{position:relative;max-width:1240px;margin:0 auto;padding:30px 20px 60px}
+#linesSvg{
+  position:absolute;inset:0;width:100%;height:100%;
+  pointer-events:none;z-index:30;overflow:visible;
+}
+.ops{margin-bottom:34px}
+.opshead h2{font-size:clamp(20px,3vw,26px);font-weight:800;letter-spacing:-.02em;margin-top:6px}
+.opshead p.opsub{color:var(--muted2);font-size:13.5px;margin-top:4px;max-width:720px}
+.opsgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,205px),1fr));gap:10px;margin-top:16px}
+.optile{
+  position:relative;display:flex;align-items:flex-start;gap:11px;
+  background:var(--cardbg);border:1px solid var(--border);border-radius:var(--r-panel);
+  padding:13px 13px;transition:border-color .12s, box-shadow .12s;
+}
+.optile:hover{border-color:#c9c9cd;box-shadow:0 3px 14px rgba(10,10,10,.06)}
+.optile .oname{font-weight:700;font-size:14.5px;letter-spacing:-.01em;display:flex;align-items:center;gap:6px}
+.optile .osub{font-size:11px;color:var(--muted);line-height:1.45;margin-top:3px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.logo{
+  position:relative;flex:none;border-radius:8px;overflow:hidden;
+  background:#e9e9e6;display:flex;align-items:center;justify-content:center;
+}
+.logo .mg{font-family:'IBM Plex Mono',ui-monospace,monospace;font-weight:600;color:#6b6b64}
+.logo img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#fff}
+.logo.l28{width:28px;height:28px}.logo.l28 .mg{font-size:10px}
+.logo.l20{width:20px;height:20px;border-radius:6px}.logo.l20 .mg{font-size:8px}
+.logo.l40{width:40px;height:40px;border-radius:10px}.logo.l40 .mg{font-size:13px}
+
+.stackhead{margin:8px 0 16px}
+.stackhead h2{font-size:clamp(20px,3vw,26px);font-weight:800;letter-spacing:-.02em;margin-top:6px}
+#panels{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,330px),1fr));gap:12px}
+.panel{
+  background:var(--cardbg);border:1px solid var(--border);border-radius:var(--r-panel);
+  padding:0 0 6px;scroll-margin-top:96px;align-self:start;
+}
+.phead{display:flex;align-items:flex-start;gap:10px;width:100%;padding:14px 14px 10px;cursor:pointer}
+.pdot{width:10px;height:10px;border-radius:50%;flex:none;margin-top:5px}
+.phead h3{font-size:15px;font-weight:800;letter-spacing:-.01em;line-height:1.3}
+.phead .pdesc{font-size:11.5px;color:var(--muted);line-height:1.45;margin-top:2px}
+.phead .pcount{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:10.5px;font-weight:600;color:var(--muted2);
+  margin-left:auto;flex:none;background:#efefec;border-radius:20px;padding:2px 8px;
+}
+.phead .caret{flex:none;color:var(--muted);margin-top:2px;transition:transform .15s}
+.panel.open .caret{transform:rotate(90deg)}
+.plist{display:flex;flex-direction:column;gap:5px;padding:2px 8px 6px}
+.chip{
+  position:relative;display:flex;align-items:center;gap:9px;width:100%;
+  background:#fff;border:1px solid #ececea;border-radius:var(--r-chip);
+  padding:7px 9px;transition:border-color .12s;scroll-margin-top:96px;
+}
+.chip:hover{border-color:#c9c9cd}
+.chip .cmain{min-width:0;flex:1}
+.chip .cname{font-weight:600;font-size:12.5px;letter-spacing:-.005em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:flex;align-items:center;gap:5px}
+.chip .csub{display:block;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:9.5px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-top:1px}
+.chip .ctag{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:8.5px;font-weight:600;letter-spacing:.06em;
+  color:var(--muted);border:1px solid var(--border);border-radius:4px;padding:1px 5px;flex:none;
+}
+.chip.exited{opacity:.62}
+.spdot{width:6px;height:6px;border-radius:50%;background:var(--accent);flex:none;display:inline-block}
+.optile.spoken,.chip.spoken{box-shadow:inset 3px 0 0 var(--accent)}
+[data-cname].sel{outline:2px solid var(--accent);outline-offset:1px;border-color:var(--accent)}
+[data-cname].prt{border-color:var(--accent);background:#f0f9fb}
+.pmore{
+  display:block;width:calc(100% - 16px);margin:2px 8px 6px;text-align:center;
+  font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:10px;font-weight:600;letter-spacing:.08em;
+  color:var(--muted2);background:#f1f1ee;border-radius:var(--r-chip);padding:7px 8px;
+}
+.pmore:hover{background:#e9e9e5;color:var(--ink)}
+
+/* ============ detail card ============ */
+#backdrop{position:fixed;inset:0;background:rgba(10,10,10,.42);z-index:55;display:none}
+#card{
+  position:fixed;top:78px;right:14px;bottom:14px;width:min(400px,calc(100vw - 28px));
+  background:#fff;border:1px solid var(--border);border-radius:var(--r-box);
+  box-shadow:0 18px 48px rgba(10,10,10,.16);
+  z-index:60;display:none;flex-direction:column;overflow:hidden;
+}
+#card.open{display:flex}
+#cardScroll{overflow-y:auto;padding:18px 18px 22px;overscroll-behavior:contain}
+.chead{display:flex;align-items:center;gap:12px}
+.chead .cname2{font-size:20px;font-weight:800;letter-spacing:-.02em;line-height:1.2}
+#cardClose{
+  margin-left:auto;flex:none;width:30px;height:30px;border-radius:8px;background:#f1f1ee;
+  display:flex;align-items:center;justify-content:center;font-size:14px;color:var(--muted2);
+}
+#cardClose:hover{background:#e7e7e3;color:var(--ink)}
+.ccat{display:flex;align-items:center;gap:7px;margin-top:10px;flex-wrap:wrap}
+.ccat .pdot{margin:0}
+.ccat .ccatname{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted2)}
+.ctagbig{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:9px;font-weight:600;letter-spacing:.08em;
+  border:1px solid var(--border);color:var(--muted2);border-radius:4px;padding:2px 6px;
+}
+.ctagbig.accent{border-color:var(--accent);color:var(--accent)}
+.cspoken{
+  display:flex;align-items:center;gap:8px;margin-top:12px;
+  background:#eef7f9;border:1px solid #cfe8ee;border-radius:var(--r-chip);padding:8px 10px;
+  font-size:12px;font-weight:600;color:#0c5d74;
+}
+.cmeta{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:10.5px;color:var(--muted);letter-spacing:.03em;margin-top:12px;line-height:1.6}
+.csec{margin-top:16px;border-top:1px solid #efefec;padding-top:14px}
+.csec .kicker{margin-bottom:7px}
+.pathbox{background:var(--cardbg);border:1px solid var(--border);border-radius:var(--r-chip);padding:11px 12px}
+.pathhops{display:flex;flex-wrap:wrap;align-items:center;gap:5px;margin-bottom:8px}
+.hop{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:10.5px;font-weight:600;
+  background:#fff;border:1px solid var(--border);border-radius:5px;padding:3px 7px;cursor:pointer;
+}
+.hop:hover{border-color:var(--accent)}
+.hop.last{background:var(--accent);border-color:var(--accent);color:#fff}
+.patharrow{color:var(--muted);font-size:10px}
+.pathbox p{font-size:12px;color:var(--muted2);line-height:1.55}
+.pathbox a{font-weight:600;font-size:12px}
+#expBtn{
+  display:block;width:100%;text-align:center;background:var(--accent);color:#fff;
+  font-weight:700;font-size:13px;letter-spacing:.02em;border-radius:var(--r-chip);padding:11px 12px;
+}
+#expBtn:hover{background:#0b6076}
+.expnote{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:9.5px;color:var(--muted);letter-spacing:.05em;text-align:center;margin-top:6px}
+.cknown{font-size:13.5px;line-height:1.55;font-weight:500}
+.cabout{font-size:13px;line-height:1.6;color:var(--muted2);display:-webkit-box;-webkit-line-clamp:7;-webkit-box-orient:vertical;overflow:hidden}
+.cwww{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11.5px;font-weight:600;text-decoration:none}
+.cwww:hover{text-decoration:underline}
+.prow{
+  display:flex;align-items:flex-start;gap:9px;width:100%;
+  border:1px solid #ececea;border-radius:var(--r-chip);padding:8px 10px;margin-bottom:6px;background:#fff;
+}
+.prow:hover{border-color:var(--accent)}
+.prow .pdot{margin-top:4px;width:8px;height:8px}
+.prow .prname{font-weight:600;font-size:12.5px}
+.prow .prkind{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:9px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--accent);margin-left:6px}
+.prow .prnote{font-size:11px;color:var(--muted);line-height:1.45;margin-top:2px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+@media(max-width:860px){
+  body.has-sel #backdrop{display:block}
+  #card{top:auto;left:0;right:0;bottom:0;width:auto;max-height:74vh;border-radius:var(--r-box) var(--r-box) 0 0;border-bottom:none}
+}
+
+/* ============ landscape nudge ============ */
+#landscapeNudge{
+  display:none;position:fixed;inset:0;z-index:80;background:#0a0a0a;color:#fff;
+  flex-direction:column;align-items:center;justify-content:center;gap:16px;text-align:center;padding:32px;
+}
+@media(max-width:599px) and (orientation:portrait){
+  #landscapeNudge:not(.off){display:flex}
+}
+#landscapeNudge svg{width:52px;height:52px;color:#22d3ee}
+#landscapeNudge h2{font-size:20px;font-weight:800;letter-spacing:-.01em}
+#landscapeNudge p{font-size:13px;color:#a1a1aa;max-width:300px}
+#nudgeBtn{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;font-weight:600;letter-spacing:.1em;
+  color:#fff;border:1px solid #3f3f46;border-radius:var(--r-pill);padding:10px 20px;margin-top:8px;
+}
+#nudgeBtn:hover{border-color:#22d3ee}
+
+/* ============ footer ============ */
+footer.site{background:#0a0a0a;color:#fff;padding:40px 20px 34px;margin-top:20px}
+footer.site .finner{max-width:1240px;margin:0 auto}
+footer.site .fcta{font-size:16px;font-weight:600;line-height:1.6;max-width:720px}
+footer.site .fcta a{color:#22d3ee;text-decoration:none}
+footer.site .fcta a:hover{text-decoration:underline}
+footer.site .fver{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:10px;letter-spacing:.1em;color:#71717a;margin-top:18px;text-transform:uppercase}
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div>
+    <div class="htitle">Autonomous Vehicle Ecosystem Map</div>
+    <div class="hbyline">Compiled &amp; maintained by <a href="https://www.linkedin.com/in/kofiagyare/" target="_blank" rel="noopener">Kofi Agyare-Kwabi</a> — ex-Uber Country Manager · GTM &amp; Partnerships · Wharton MBA</div>
+  </div>
+  <div id="searchWrap">
+    <input id="searchBox" type="text" placeholder="SEARCH 556 COMPANIES…" autocomplete="off" spellcheck="false" aria-label="Search companies">
+    <div id="searchDrop" role="listbox"></div>
+  </div>
+</header>
+
+<section id="intro">
+  <p class="lede">Every driverless ride you can hail today rests on hundreds of companies you never see. This map wires <b>556</b> of them together — the autonomy developers, the sensor and silicon makers, the mapmakers and simulators, the vehicle builders, the depot crews, the insurers, the regulators — through <b>143</b> partnerships traced from filings, permits, launch announcements and conversations with the people doing the work. Select any company to see who it works with, and the route its work travels to reach a rider.</p>
+  <div id="stats"></div>
+  <div id="controls">
+    <button id="clearSel">✕&nbsp; CLEAR SELECTION</button>
+    <button class="toggle" id="tFreight"><span class="knob"></span><span class="tlabel"></span></button>
+    <button class="toggle" id="tOrphans"><span class="knob"></span><span class="tlabel"></span></button>
+    <button class="toggle" id="tExited"><span class="knob"></span><span class="tlabel"></span></button>
+    <span id="legend"><span class="ldot">●</span> companies Kofi has spoken with directly · select any company to export its constellation</span>
+  </div>
+</section>
+
+<section id="journey">
+  <p class="kicker">How to read this map</p>
+  <h2>Every autonomous ride is a loop</h2>
+  <p class="jintro">Four stages repeat, thousands of times a day: a request comes in, a driver-that-is-software takes it, a purpose-built vehicle carries it, and a pit crew turns the vehicle around for the next one. Eleven industry layers slot into these four stages — tap any layer to jump to its companies.</p>
+  <div id="jboard">
+    <svg id="trackSvg" aria-hidden="true"></svg>
+    <div class="jgrid" id="jgrid"></div>
+    <div id="jhub" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-2.64-6.36"/><polyline points="21 3 21 9 15 9"/></svg>
+      <span>THE LOOP</span>
+    </div>
+  </div>
+  <p class="jreturn"><b>The Pitlane feeds straight back to The Request</b> — a charged, cleaned, inspected vehicle re-enters the network within minutes, and the loop starts again.</p>
+  <div class="jenablers">
+    <span class="kicker">Around the whole loop</span>
+    <span id="jenchips"></span>
+  </div>
+</section>
+
+<div id="board">
+  <svg id="linesSvg" aria-hidden="true"></svg>
+  <div class="ops">
+    <div class="opshead">
+      <p class="kicker">The ride you see</p>
+      <h2>Robotaxi &amp; Passenger Operators</h2>
+      <p class="opsub">The consumer-facing layer: the ten services where a member of the public can meet an autonomous vehicle today. Everything below exists to put one of these on the road.</p>
+    </div>
+    <div class="opsgrid" id="opsgrid"></div>
+  </div>
+  <div class="stackhead">
+    <p class="kicker">The stack beneath</p>
+    <h2>Eleven layers make the ride possible</h2>
+  </div>
+  <div id="panels"></div>
+</div>
+
+<div id="landscapeNudge">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="3" width="10" height="18" rx="2"/><path d="M3 8.5 L3 6 A 3 3 0 0 1 5 3.2"/><polyline points="1.4 6.8 3 6 3.8 7.6"/><path d="M21 15.5 L21 18 A 3 3 0 0 1 19 20.8"/><polyline points="22.6 17.2 21 18 20.2 16.4"/></svg>
+  <h2>This map is wide</h2>
+  <p>556 companies and their connection lines read best sideways. Turn your phone to landscape — or continue anyway.</p>
+  <button id="nudgeBtn">CONTINUE IN PORTRAIT</button>
+</div>
+
+<div id="backdrop"></div>
+<aside id="card" role="dialog" aria-label="Company details"><div id="cardScroll"></div></aside>
+
+<footer class="site">
+  <div class="finner">
+    <p class="fcta">A company that should be listed? A partnership I haven't mapped? A detail that's wrong? <a href="https://www.linkedin.com/in/kofiagyare/" target="_blank" rel="noopener">Send me a message</a> — this map gets better through exactly those conversations.</p>
+    <p class="fver">AV Ecosystem Map · v2.0 · July 2026 · compiled from public filings, permits &amp; announcements · corrections welcome</p>
+  </div>
+</footer>
+
+<script>
+/* =====================================================================
+   AV Ecosystem Map — single-file vanilla JS
+   ===================================================================== */
+
+const CATS = {
+  "AV Driver / Autonomy Software":            { t:"AV Driver / Autonomy Software", hue:265, d:"The software brains — full-stack developers training, validating and shipping the driver itself." },
+  "Sensing & Compute Hardware":               { t:"Sensing & Compute Hardware",    hue:200, d:"LiDAR, radar, cameras and the silicon that turns raw photons into a drivable world model." },
+  "Data, Maps & Simulation":                  { t:"Data, Maps & Simulation",       hue:150, d:"Training data, HD maps, labeling and the simulated miles that outnumber the real ones." },
+  "AV Middleware & Tooling":                  { t:"AV Middleware & Tooling",       hue:105, d:"The operating layer between vehicle hardware and autonomy software." },
+  "Vehicle Platform & Manufacturing":         { t:"Vehicle Platform & Mfg.",       hue:40,  d:"OEMs, platforms and contract manufacturers building the vehicles autonomy rides in." },
+  "Demand & Commercial Platforms":            { t:"Demand & Commercial",           hue:20,  d:"The apps and marketplaces that put paying riders and shippers into autonomous vehicles." },
+  "Fleet Operations & Depot":                 { t:"Fleet Operations & Depot",      hue:320, d:"Depots, charging, cleaning, inspection and remote assistance — the work that keeps fleets earning." },
+  "Connectivity & Infrastructure":            { t:"Connectivity & Infrastructure", hue:230, d:"V2X, networks, roadside intelligence and the security layer connecting vehicles to everything else." },
+  "Capital, Insurance & Risk":                { t:"Capital, Insurance & Risk",     hue:60,  d:"The investors, underwriters and risk platforms pricing a world without human drivers." },
+  "Governance: Regulators & Government":      { t:"Regulators & Government",       hue:290, d:"The permitting agencies and regulators who decide where driverless vehicles may operate." },
+  "Governance: Standards, Safety & Advocacy": { t:"Standards, Safety & Advocacy",  hue:340, d:"Standards bodies, safety researchers and advocates writing autonomy's shared rulebook." }
+};
+const CAT_ORDER = Object.keys(CATS);
+const dotColor = cat => `oklch(0.62 0.09 ${CATS[cat].hue})`;
+const expColor = cat => `hsl(${CATS[cat].hue}, 42%, 56%)`;
+
+const STAGES = [
+  { n:"The Request", icon:"phone",  d:"A rider taps a button; a marketplace matches them to an autonomous vehicle.",
+    cats:["Demand & Commercial Platforms"] },
+  { n:"The Driver",  icon:"eye",    d:"Software perceives, predicts and drives — built on sensors, silicon, data, maps, simulation and connectivity.",
+    cats:["AV Driver / Autonomy Software","Sensing & Compute Hardware","Data, Maps & Simulation","AV Middleware & Tooling","Connectivity & Infrastructure"] },
+  { n:"The Vehicle", icon:"car",    d:"A production-grade platform engineered around a driver that never gets tired.",
+    cats:["Vehicle Platform & Manufacturing"] },
+  { n:"The Pitlane", icon:"wrench", d:"Depots charge, clean, inspect and service the fleet — then send it straight back out.",
+    cats:["Fleet Operations & Depot"] }
+];
+const ENABLER_CATS = ["Capital, Insurance & Risk","Governance: Regulators & Government","Governance: Standards, Safety & Advocacy"];
+
+const ICONS = {
+  phone:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2" width="10" height="20" rx="2.5"/><line x1="11" y1="18.5" x2="13" y2="18.5"/></svg>',
+  eye:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-6.5 10-6.5S22 12 22 12s-3.5 6.5-10 6.5S2 12 2 12z"/><circle cx="12" cy="12" r="2.8"/></svg>',
+  car:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15l1.5-5.2A2 2 0 0 1 7.4 8.4h9.2a2 2 0 0 1 1.9 1.4L20 15"/><path d="M3.5 15h17a1 1 0 0 1 1 1v2.4a1 1 0 0 1-1 1h-17a1 1 0 0 1-1-1V16a1 1 0 0 1 1-1z"/><circle cx="7.2" cy="19.4" r="1.6"/><circle cx="16.8" cy="19.4" r="1.6"/></svg>',
+  wrench:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>'
+};
+
+/* ------------------ state ------------------ */
+let comps = [], enrich = { operators:[], edges:[], domains:{}, known:{} };
+let byName = {};
+let adj = new Map();          // name -> Map(partnerName -> edge)
+let selectedName = null;
+let showFreight = false, showOrphans = false, showExited = false;
+let panelLevel = {};          // cat -> 0 collapsed | 1 preview | 2 full
+CAT_ORDER.forEach(c => panelLevel[c] = 1);
+const PREVIEW_N = 10;
+let counts = { freight:0, orphans:0, exited:0 };
+
+/* ------------------ helpers ------------------ */
+const esc = s => String(s ?? '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+const slug = s => String(s).toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
+const hasEdges = c => adj.has(c.name);
+const visibleBase = c => (showExited || !c.exited) && (showFreight || !c.segment) && (showOrphans || hasEdges(c) || c.spokenTo);
+
+function partnersOf(name){
+  const m = adj.get(name); if (!m) return [];
+  return [...m.entries()]
+    .map(([pname, e]) => ({ name:pname, k:e.k, n:e.n, score:(byName[pname]?.score)||0 }))
+    .sort((a,b) => b.score - a.score || a.name.localeCompare(b.name));
+}
+function pinnedSet(){
+  const s = new Set();
+  if (selectedName){ s.add(selectedName); for (const p of partnersOf(selectedName)) s.add(p.name); }
+  return s;
+}
+function neighbors(name){
+  return partnersOf(name).map(p => p.name);   // score-desc order → BFS prefers salient hubs
+}
+function routeToOperator(startName){
+  const start = byName[startName];
+  if (!start) return { kind:'none' };
+  if (start.l4credible) return { kind:'self' };
+  const prev = { [startName]: null }, q = [startName];
+  let found = null;
+  while (q.length){
+    const cur = q.shift();
+    if (cur !== startName && byName[cur]?.l4credible){ found = cur; break; }
+    for (const nb of neighbors(cur)) if (!(nb in prev)){ prev[nb] = cur; q.push(nb); }
+  }
+  if (!found) return { kind:'nopath' };
+  const path = []; for (let n = found; n; n = prev[n]) path.unshift(n);
+  return { kind:'path', path };
+}
+
+function logoHTML(name, size){
+  const c = byName[name];
+  const mono = esc(c?.mono || name.slice(0,2).toUpperCase());
+  const dom = enrich.domains[name];
+  const img = dom ? `<img src="https://www.google.com/s2/favicons?domain=${encodeURIComponent(dom)}&amp;sz=128" alt="" loading="lazy" onerror="this.style.display='none'">` : '';
+  return `<span class="logo l${size}"><span class="mg">${mono}</span>${img}</span>`;
+}
+
+/* =====================================================================
+   Part 7 — connection lines. No cache key. Redraw from scratch, always.
+   Coordinates are computed RELATIVE TO #board so page scroll can't shift them.
+   ===================================================================== */
+function drawLines(){
+  const svg = document.getElementById('linesSvg');
+  const board = document.getElementById('board');
+  if (!selectedName){ svg.innerHTML = ''; return; }
+
+  const selEl = board.querySelector(`[data-cname="${CSS.escape(selectedName)}"]`);
+  if (!selEl){ svg.innerHTML = ''; return; }
+
+  const br = board.getBoundingClientRect();
+  const c1 = selEl.getBoundingClientRect();
+  const x1 = c1.left + c1.width / 2 - br.left;
+  const y1 = c1.top  + c1.height / 2 - br.top;
+  const accent = getComputedStyle(document.documentElement).getPropertyValue('--accent').trim() || '#0e7490';
+
+  let html = '';
+  for (const p of partnersOf(selectedName)){
+    const el = board.querySelector(`[data-cname="${CSS.escape(p.name)}"]`);
+    if (!el) continue;
+    const c2 = el.getBoundingClientRect();
+    const x2 = c2.left + c2.width / 2 - br.left;
+    const y2 = c2.top  + c2.height / 2 - br.top;
+    const mx = (x1 + x2) / 2;
+    const d = `M${x1} ${y1} C${mx} ${y1}, ${mx} ${y2}, ${x2} ${y2}`;
+    html +=
+      `<path d="${d}" fill="none" stroke="#f4f4f2" stroke-width="6" opacity=".75" stroke-linecap="round"/>` +
+      `<path d="${d}" fill="none" stroke="${accent}" stroke-width="2.1" stroke-linecap="round"/>` +
+      `<circle cx="${x1}" cy="${y1}" r="4" fill="${accent}"/>` +
+      `<circle cx="${x2}" cy="${y2}" r="3.5" fill="${accent}"/>`;
+  }
+  svg.innerHTML = html;
+}
+
+function ensureCategoryExpanded(cat){
+  if (panelLevel[cat] === 0) panelLevel[cat] = 1;
+}
+function select(name){
+  selectedName = (selectedName === name) ? null : name;
+  if (selectedName){
+    const c = byName[selectedName];
+    if (c?.exited)  showExited  = true;
+    if (c?.segment) showFreight = true;
+    ensureCategoryExpanded(c.cat);
+  }
+  renderEverything();
+  drawLines();
+  requestAnimationFrame(drawLines);
+}
+function clearSelection(){
+  if (!selectedName) return;
+  selectedName = null;
+  renderEverything();
+  drawLines();
+}
+
+/* ------------------ rendering ------------------ */
+function renderEverything(){
+  const pins = pinnedSet();
+  renderOps(pins);
+  renderPanels(pins);
+  renderControls(pins);
+  renderJourneyChips();
+  renderCard();
+  document.body.classList.toggle('has-sel', !!selectedName);
+  requestAnimationFrame(drawTrack);
+}
+
+function tileClasses(c, base){
+  const cls = [base];
+  if (c.spokenTo) cls.push('spoken');
+  if (c.exited) cls.push('exited');
+  if (selectedName === c.name) cls.push('sel');
+  else if (selectedName && adj.get(selectedName)?.has(c.name)) cls.push('prt');
+  return cls.join(' ');
+}
+
+function renderOps(){
+  const grid = document.getElementById('opsgrid');
+  grid.innerHTML = enrich.operators.map(name => {
+    const c = byName[name]; if (!c) return '';
+    const sub = enrich.known[name] || c.sub || '';
+    return `<button class="${tileClasses(c,'optile')}" data-cname="${esc(name)}" aria-label="${esc(name)}">
+      ${logoHTML(name,28)}
+      <span style="min-width:0">
+        <span class="oname">${c.spokenTo ? '<span class="spdot"></span>' : ''}${esc(name)}</span>
+        <span class="osub">${esc(sub)}</span>
+      </span>
+    </button>`;
+  }).join('');
+}
+
+function renderPanels(pins){
+  const wrap = document.getElementById('panels');
+  wrap.innerHTML = CAT_ORDER.map(cat => {
+    const meta = CATS[cat];
+    const all = comps.filter(c => c.cat === cat).sort((a,b) => b.score - a.score || a.name.localeCompare(b.name));
+    const vis = all.filter(c => visibleBase(c) || pins.has(c.name));
+    const lvl = panelLevel[cat];
+    let list;
+    if (lvl === 0){
+      list = vis.filter(c => pins.has(c.name));               // collapsed: pinned tiles must still exist
+    } else if (lvl === 1){
+      list = vis.slice(0, PREVIEW_N);
+      for (const c of vis) if (pins.has(c.name) && !list.includes(c)) list.push(c);
+    } else {
+      list = vis;
+    }
+    const chips = list.map(c => `
+      <button class="${tileClasses(c,'chip')}" data-cname="${esc(c.name)}">
+        ${logoHTML(c.name,20)}
+        <span class="cmain">
+          <span class="cname">${c.spokenTo ? '<span class="spdot"></span>' : ''}${esc(c.name)}</span>
+          ${c.sub ? `<span class="csub">${esc(c.sub)}</span>` : ''}
+        </span>
+        ${c.exited ? '<span class="ctag">EXITED</span>' : (c.segment ? `<span class="ctag">${esc(c.segment.toUpperCase())}</span>` : '')}
+      </button>`).join('');
+    const more = (lvl > 0 && vis.length > PREVIEW_N)
+      ? `<button class="pmore" data-cat="${esc(cat)}">${lvl === 1 ? `SHOW ALL (${vis.length})` : 'SHOW TOP 10'}</button>` : '';
+    return `<section class="panel ${lvl > 0 ? 'open' : ''}" id="panel-${slug(cat)}" data-cat="${esc(cat)}">
+      <div class="phead" role="button" tabindex="0" aria-expanded="${lvl > 0}">
+        <span class="pdot" style="background:${dotColor(cat)}"></span>
+        <span style="min-width:0"><h3>${esc(meta.t)}</h3><p class="pdesc">${esc(meta.d)}</p></span>
+        <span class="pcount">${vis.length}</span>
+        <span class="caret">▸</span>
+      </div>
+      ${list.length ? `<div class="plist">${chips}</div>` : ''}
+      ${more}
+    </section>`;
+  }).join('');
+}
+
+function renderControls(pins){
+  const shown = comps.filter(c => visibleBase(c) || pins.has(c.name)).length;
+  document.getElementById('stats').innerHTML =
+    `<b>${shown}</b> companies shown · <b>${enrich.edges.length}</b> partnerships mapped · <b>11</b> layers`;
+  const set = (id, on, label) => {
+    const el = document.getElementById(id);
+    el.classList.toggle('on', on);
+    el.querySelector('.tlabel').textContent = label;
+    el.setAttribute('aria-pressed', on);
+  };
+  set('tFreight', showFreight, `${showFreight ? 'HIDE' : 'SHOW'} FREIGHT & DELIVERY (${counts.freight})`);
+  set('tOrphans', showOrphans, `${showOrphans ? 'HIDE' : 'SHOW'} UNLINKED (${counts.orphans})`);
+  set('tExited',  showExited,  `${showExited ? 'HIDE' : 'SHOW'} EXITED / ACQUIRED (${counts.exited})`);
+  document.getElementById('clearSel').classList.toggle('show', !!selectedName);
+}
+
+function jchipHTML(cat){
+  const n = comps.filter(c => c.cat === cat).length;   // full layer size — the map's coverage, not the current filter
+  return `<button class="jchip" data-jcat="${esc(cat)}">
+    <span class="dot" style="background:${dotColor(cat)}"></span>${esc(CATS[cat].t)}<span class="jcount">${n}</span>
+  </button>`;
+}
+function renderJourneyChips(){
+  const grid = document.getElementById('jgrid');
+  const order = [0,1,3,2];   // 2×2 row-major: Request TL, Driver TR, Pitlane BL, Vehicle BR
+  grid.innerHTML = order.map(i => {
+    const s = STAGES[i];
+    return `<div class="jcard" data-stage="${i}">
+      <div class="jicon">${ICONS[s.icon]}</div>
+      <div class="jstage">STAGE 0${i+1}</div>
+      <h3>${esc(s.n)}</h3>
+      <p class="jdesc">${esc(s.d)}</p>
+      <div class="jchips">${s.cats.map(jchipHTML).join('')}</div>
+    </div>`;
+  }).join('');
+  document.getElementById('jenchips').innerHTML = ENABLER_CATS.map(jchipHTML).join(' ');
+}
+
+/* journey track — same measurement discipline as the connection lines */
+function drawTrack(){
+  const svg = document.getElementById('trackSvg');
+  const boardEl = document.getElementById('jboard');
+  if (!svg || !boardEl) return;
+  if (window.innerWidth < 700){ svg.innerHTML = ''; return; }
+  const cards = [...document.querySelectorAll('.jcard')];
+  if (cards.length !== 4){ svg.innerHTML = ''; return; }
+  const br = boardEl.getBoundingClientRect();
+  const centers = cards.map(el => {
+    const r = el.getBoundingClientRect();
+    return { x: r.left + r.width/2 - br.left, y: r.top + r.height/2 - br.top };
+  });
+  const left   = Math.min(...centers.map(c => c.x));
+  const right  = Math.max(...centers.map(c => c.x));
+  const top    = Math.min(...centers.map(c => c.y));
+  const bottom = Math.max(...centers.map(c => c.y));
+  if (right - left < 40 || bottom - top < 40){ svg.innerHTML = ''; return; }
+  const r = 28;
+  const path = `M ${left+r} ${top} H ${right-r} A ${r} ${r} 0 0 1 ${right} ${top+r} V ${bottom-r} A ${r} ${r} 0 0 1 ${right-r} ${bottom} H ${left+r} A ${r} ${r} 0 0 1 ${left} ${bottom-r} V ${top+r} A ${r} ${r} 0 0 1 ${left+r} ${top} Z`;
+  const mx = (left+right)/2, my = (top+bottom)/2;
+  const tri = pts => `<path d="M${pts.map(p => p.join(' ')).join(' L')} Z" fill="#a1a1aa"/>`;
+  svg.innerHTML =
+    `<path d="${path}" fill="none" stroke="#d4d4d8" stroke-width="2"/>` +
+    tri([[mx-7, top-6],   [mx+7, top],      [mx-7, top+6]])   +   // top mid → right
+    tri([[right-6, my-7], [right, my+7],    [right+6, my-7]]) +   // right mid → down
+    tri([[mx+7, bottom-6],[mx-7, bottom],   [mx+7, bottom+6]])+   // bottom mid → left
+    tri([[left-6, my+7],  [left, my-7],     [left+6, my+7]]);     // left mid → up
+  const hub = document.getElementById('jhub');
+  hub.style.left = mx + 'px';
+  hub.style.top  = my + 'px';
+}
+
+/* ------------------ detail card ------------------ */
+function renderCard(){
+  const card = document.getElementById('card');
+  const scroll = document.getElementById('cardScroll');
+  if (!selectedName){ card.classList.remove('open'); scroll.innerHTML = ''; return; }
+  const c = byName[selectedName];
+  const cat = CATS[c.cat];
+  const partners = partnersOf(c.name);
+  const dom = enrich.domains[c.name];
+  const known = enrich.known[c.name];
+  const route = routeToOperator(c.name);
+
+  const meta = [
+    c.hq,
+    c.founded ? `est. ${c.founded}` : '',
+    c.opMaturity
+  ].filter(Boolean).join(' · ');
+
+  let pathHTML = '';
+  if (route.kind === 'self'){
+    pathHTML = `<div class="csec"><p class="kicker">Passenger-facing operator</p>
+      <div class="pathbox"><p>An endpoint of the map — a company with a credible path to Level-4 passenger service in the near term.</p></div></div>`;
+  } else if (route.kind === 'path'){
+    const hops = route.path.map((n, i) =>
+      `<button class="hop ${i === route.path.length-1 ? 'last' : ''}" data-cname="${esc(n)}" data-jump="1">${esc(n)}</button>`
+    ).join('<span class="patharrow">→</span>');
+    pathHTML = `<div class="csec"><p class="kicker">Route to passenger-accessible autonomy</p>
+      <div class="pathbox">
+        <div class="pathhops">${hops}</div>
+        <p>Through these mapped partnerships, ${esc(c.name)}'s work has a path to a company deploying L4 passenger service. This is one route I've traced — there may well be others I haven't.</p>
+      </div></div>`;
+  } else {
+    pathHTML = `<div class="csec"><p class="kicker">Route to riders — not yet mapped</p>
+      <div class="pathbox">
+        <p>I haven't mapped a route from ${esc(c.name)} to a passenger-facing operator. That might be genuine whitespace… or a relationship I haven't uncovered. I don't claim to know everything each company is doing here.</p>
+        <p style="margin-top:7px"><a href="https://www.linkedin.com/in/kofiagyare/" target="_blank" rel="noopener">If you know how they connect, I'd like to learn it →</a></p>
+      </div></div>`;
+  }
+
+  const partnerRows = partners.map(p => {
+    const pc = byName[p.name];
+    return `<button class="prow" data-cname="${esc(p.name)}" data-jump="1" title="${esc(p.n || '')}">
+      <span class="pdot" style="background:${pc ? dotColor(pc.cat) : '#ccc'}"></span>
+      <span style="min-width:0">
+        <span class="prname">${esc(p.name)}</span><span class="prkind">${esc(p.k)}</span>
+        ${p.n ? `<span class="prnote">${esc(p.n)}</span>` : ''}
+      </span>
+    </button>`;
+  }).join('');
+
+  scroll.innerHTML = `
+    <div class="chead">
+      ${logoHTML(c.name,40)}
+      <h2 class="cname2">${esc(c.name)}</h2>
+      <button id="cardClose" aria-label="Close">✕</button>
+    </div>
+    <div class="ccat">
+      <span class="pdot" style="background:${dotColor(c.cat)}"></span>
+      <span class="ccatname">${esc(cat.t)}</span>
+      ${c.l4credible ? '<span class="ctagbig accent">CREDIBLE L4 OPERATOR</span>' : ''}
+      ${c.exited ? '<span class="ctagbig">EXITED / ACQUIRED</span>' : ''}
+      ${c.segment ? `<span class="ctagbig">${esc(c.segment.toUpperCase())}</span>` : ''}
+    </div>
+    ${c.spokenTo ? '<div class="cspoken"><span class="spdot"></span>Kofi has spoken with this company directly</div>' : ''}
+    ${meta ? `<p class="cmeta">${esc(meta)}</p>` : ''}
+    ${pathHTML}
+    <div class="csec">
+      <button id="expBtn">EXPORT CONSTELLATION PNG</button>
+      <p class="expnote">1200 × 900 · SHAREABLE · CARRIES ATTRIBUTION</p>
+    </div>
+    ${known ? `<div class="csec"><p class="kicker">Known for</p><p class="cknown">${esc(known)}</p></div>` : ''}
+    ${c.about ? `<div class="csec"><p class="kicker">About</p><p class="cabout">${esc(c.about)}</p></div>` : ''}
+    ${dom ? `<div class="csec"><a class="cwww" href="https://${esc(dom)}" target="_blank" rel="noopener">${esc(dom)} ↗</a></div>` : ''}
+    <div class="csec"><p class="kicker">Mapped partners (${partners.length})</p>
+      ${partners.length ? partnerRows :
+        `<p style="font-size:12.5px;color:var(--muted2);line-height:1.55">No partnerships mapped yet — which usually means the interesting ones haven't been announced, or I haven't found them. <a href="https://www.linkedin.com/in/kofiagyare/" target="_blank" rel="noopener">Tell me what I'm missing →</a></p>`}
+    </div>`;
+  card.classList.add('open');
+  scroll.scrollTop = 0;
+}
+
+/* ------------------ export constellation PNG (Part 9) ------------------ */
+function exportPNG(){
+  const c = byName[selectedName]; if (!c) return;
+  const partners = partnersOf(c.name);
+  const W = 1200, H = 900, S = 2;
+  const cv = document.createElement('canvas');
+  cv.width = W*S; cv.height = H*S;
+  const x = cv.getContext('2d');
+  x.scale(S,S);
+
+  // background
+  x.fillStyle = '#f4f4f2'; x.fillRect(0,0,W,H);
+
+  // header
+  x.textBaseline = 'alphabetic'; x.textAlign = 'left';
+  x.fillStyle = '#77776f'; x.font = '600 13px "IBM Plex Mono", monospace';
+  x.fillText('PARTNERSHIP CONSTELLATION · AV ECOSYSTEM MAP', 48, 62);
+  x.fillStyle = '#0a0a0a'; x.font = '900 46px Archivo, sans-serif';
+  x.fillText(c.name, 46, 112);
+  x.fillStyle = '#52525b'; x.font = '500 13px "IBM Plex Mono", monospace';
+  x.fillText(`${partners.length} MAPPED PARTNERS · ${CATS[c.cat].t.toUpperCase()}`, 48, 142);
+
+  const FOOT = 92;
+  const cx = W/2, cy = (170 + (H - FOOT)) / 2 - 8;
+  const shown = partners.slice(0,16), extra = partners.length - shown.length;
+  const R = 230;
+
+  // connectors first (under nodes)
+  shown.forEach((p, i) => {
+    const ang = -Math.PI/2 + i * 2*Math.PI / shown.length;
+    const px = cx + Math.cos(ang)*R, py = cy + Math.sin(ang)*R;
+    const mx = (cx+px)/2 + Math.cos(ang + Math.PI/2)*22;
+    const my = (cy+py)/2 + Math.sin(ang + Math.PI/2)*22;
+    x.strokeStyle = 'rgba(14,116,144,.45)'; x.lineWidth = 1.6;
+    x.beginPath(); x.moveTo(cx,cy); x.quadraticCurveTo(mx,my,px,py); x.stroke();
+  });
+
+  // partner nodes + labels
+  shown.forEach((p, i) => {
+    const ang = -Math.PI/2 + i * 2*Math.PI / shown.length;
+    const px = cx + Math.cos(ang)*R, py = cy + Math.sin(ang)*R;
+    const pc = byName[p.name];
+    x.beginPath(); x.arc(px,py,30,0,7);
+    x.fillStyle = pc ? expColor(pc.cat) : '#9ca3af'; x.fill();
+    if (pc?.spokenTo){ x.beginPath(); x.arc(px,py,35,0,7); x.strokeStyle = '#0e7490'; x.lineWidth = 3; x.stroke(); }
+    x.fillStyle = '#fff'; x.font = '700 15px Archivo, sans-serif';
+    x.textAlign = 'center'; x.textBaseline = 'middle';
+    x.fillText(pc?.mono || p.name.slice(0,2).toUpperCase(), px, py+1);
+
+    // label anchored outward, always clear of the node circle
+    const cos = Math.cos(ang), sin = Math.sin(ang);
+    const centered = Math.abs(cos) < .35;
+    let lx, ly;
+    if (centered){
+      lx = px; ly = py + (sin > 0 ? 58 : -58);
+      x.textAlign = 'center';
+    } else {
+      lx = px + Math.sign(cos) * Math.max(44, Math.abs(cos) * 52);
+      ly = py + sin * 46;
+      x.textAlign = cos > 0 ? 'left' : 'right';
+    }
+    const nm = p.name.length > 30 ? p.name.slice(0,29)+'…' : p.name;
+    x.fillStyle = '#0a0a0a'; x.font = '600 14px Archivo, sans-serif'; x.textBaseline = 'middle';
+    x.fillText(nm, lx, ly - 7);
+    x.fillStyle = '#77776f'; x.font = '500 10px "IBM Plex Mono", monospace';
+    x.fillText(String(p.k || '').toUpperCase(), lx, ly + 10);
+  });
+
+  // center node
+  x.beginPath(); x.arc(cx,cy,52,0,7); x.fillStyle = '#fff'; x.fill();
+  x.lineWidth = 4; x.strokeStyle = '#0e7490'; x.stroke();
+  x.fillStyle = '#0e7490'; x.font = '900 26px Archivo, sans-serif';
+  x.textAlign = 'center'; x.textBaseline = 'middle';
+  x.fillText(c.mono || c.name.slice(0,2).toUpperCase(), cx, cy+1);
+
+  if (extra > 0){
+    x.fillStyle = '#77776f'; x.font = '600 12px "IBM Plex Mono", monospace';
+    x.textAlign = 'right'; x.textBaseline = 'alphabetic';
+    x.fillText(`+${extra} MORE MAPPED PARTNERS`, W - 48, 142);
+  }
+  if (!partners.length){
+    x.fillStyle = '#52525b'; x.font = '500 15px Archivo, sans-serif';
+    x.textAlign = 'center'; x.textBaseline = 'alphabetic';
+    x.fillText('No partnerships mapped yet — tell me what I\'m missing.', cx, cy + 110);
+  }
+
+  // footer attribution band
+  x.fillStyle = '#0a0a0a'; x.fillRect(0, H-FOOT, W, FOOT);
+  x.textAlign = 'left'; x.textBaseline = 'alphabetic';
+  x.fillStyle = '#ffffff'; x.font = '700 17px Archivo, sans-serif';
+  x.fillText('Mapped by Kofi Agyare-Kwabi', 48, H-52);
+  x.fillStyle = '#a1a1aa'; x.font = '500 11px "IBM Plex Mono", monospace';
+  x.fillText('EX-UBER COUNTRY MANAGER · GTM & PARTNERSHIPS · WHARTON MBA', 48, H-30);
+  x.textAlign = 'right'; x.fillStyle = '#22d3ee'; x.font = '600 12px "IBM Plex Mono", monospace';
+  x.fillText('linkedin.com/in/kofiagyare', W-48, H-52);
+  x.fillText('kofiagyare.com', W-48, H-30);
+
+  cv.toBlob(blob => {
+    if (!blob) return;
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = `${slug(c.name)}-av-constellation.png`;
+    document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(() => URL.revokeObjectURL(a.href), 5000);
+  }, 'image/png');
+}
+
+/* ------------------ search ------------------ */
+let searchResults = [], searchActive = -1;
+function runSearch(q){
+  const drop = document.getElementById('searchDrop');
+  q = q.trim().toLowerCase();
+  if (!q){ drop.classList.remove('open'); drop.innerHTML=''; searchResults=[]; searchActive=-1; return; }
+  const starts = [], incl = [];
+  for (const c of comps){
+    const n = c.name.toLowerCase();
+    if (n.startsWith(q)) starts.push(c);
+    else if (n.includes(q)) incl.push(c);
+  }
+  const rank = (a,b) => b.score - a.score || a.name.localeCompare(b.name);
+  searchResults = [...starts.sort(rank), ...incl.sort(rank)].slice(0,8);
+  searchActive = searchResults.length ? 0 : -1;
+  drop.innerHTML = searchResults.map((c,i) => `
+    <button class="srow ${i === searchActive ? 'active' : ''}" data-si="${i}" role="option">
+      <span class="pdot" style="background:${dotColor(c.cat)};width:8px;height:8px;flex:none"></span>
+      <span class="sname">${c.spokenTo ? '<span class="spdot"></span> ' : ''}${esc(c.name)}</span>
+      <span class="scat">${esc(CATS[c.cat].t)}</span>
+    </button>`).join('') ||
+    `<div style="padding:12px;font-size:12px;color:var(--muted2)">No matches — <a href="https://www.linkedin.com/in/kofiagyare/" target="_blank" rel="noopener">tell me who I'm missing</a>.</div>`;
+  drop.classList.toggle('open', true);
+}
+function pickSearch(i){
+  const c = searchResults[i]; if (!c) return;
+  const box = document.getElementById('searchBox');
+  box.value = ''; runSearch('');
+  if (selectedName === c.name) clearSelection();
+  else { select(c.name); scrollToCompany(c.name); }
+  box.blur();
+}
+function scrollToCompany(name){
+  requestAnimationFrame(() => {
+    const el = document.querySelector(`#board [data-cname="${CSS.escape(name)}"]`);
+    if (el) el.scrollIntoView({ behavior:'smooth', block:'center' });
+  });
+}
+
+/* ------------------ events ------------------ */
+function wireEvents(){
+  // one delegated click handler: tiles/hops/partner rows, allowlist, click-outside
+  document.addEventListener('click', e => {
+    const tile = e.target.closest('[data-cname]');
+    if (tile){
+      const name = tile.dataset.cname;
+      const jump = tile.dataset.jump === '1';
+      if (jump && name === selectedName){ scrollToCompany(name); return; }  // re-affirm, don't toggle off
+      const was = selectedName;
+      select(name);
+      if (jump && selectedName && selectedName !== was) scrollToCompany(name);
+      return;
+    }
+    if (e.target.closest('#cardClose')){ clearSelection(); return; }
+    if (e.target.closest('.pmore')){
+      const cat = e.target.closest('.pmore').dataset.cat;
+      panelLevel[cat] = panelLevel[cat] === 2 ? 1 : 2;
+      renderEverything(); drawLines(); requestAnimationFrame(drawLines);
+      return;
+    }
+    if (e.target.closest('.phead')){
+      const cat = e.target.closest('.panel').dataset.cat;
+      panelLevel[cat] = panelLevel[cat] === 0 ? 1 : 0;
+      renderEverything(); drawLines(); requestAnimationFrame(drawLines);
+      return;
+    }
+    if (e.target.closest('.jchip')){
+      const cat = e.target.closest('.jchip').dataset.jcat;
+      ensureCategoryExpanded(cat);
+      renderEverything(); drawLines(); requestAnimationFrame(drawLines);
+      const panel = document.getElementById(`panel-${slug(cat)}`);
+      if (panel) panel.scrollIntoView({ behavior:'smooth', block:'start' });
+      return;
+    }
+    const t = e.target;
+    if (t.closest('#card') || t.closest('#searchWrap') || t.closest('.toggle') ||
+        t.closest('#landscapeNudge') || t.closest('#clearSel')) {
+      if (t.closest('#clearSel')) clearSelection();
+      return;
+    }
+    clearSelection();   // genuine click-outside (incl. mobile backdrop)
+  });
+
+  const toggle = (id, fn) => document.getElementById(id).addEventListener('click', () => {
+    fn();
+    renderEverything(); drawLines(); requestAnimationFrame(drawLines);
+  });
+  toggle('tFreight', () => showFreight = !showFreight);
+  toggle('tOrphans', () => showOrphans = !showOrphans);
+  toggle('tExited',  () => showExited  = !showExited);
+
+  // export (delegated — the button is re-rendered with the card)
+  document.addEventListener('click', e => { if (e.target.closest('#expBtn')) exportPNG(); });
+
+  // keyboard
+  document.addEventListener('keydown', e => {
+    const box = document.getElementById('searchBox');
+    if (e.key === 'Escape'){
+      if (document.getElementById('searchDrop').classList.contains('open')){ box.value=''; runSearch(''); }
+      else clearSelection();
+      return;
+    }
+    if (document.activeElement === box && searchResults.length){
+      if (e.key === 'ArrowDown' || e.key === 'ArrowUp'){
+        e.preventDefault();
+        searchActive = (searchActive + (e.key === 'ArrowDown' ? 1 : -1) + searchResults.length) % searchResults.length;
+        document.querySelectorAll('.srow').forEach((el,i) => el.classList.toggle('active', i === searchActive));
+      } else if (e.key === 'Enter'){
+        e.preventDefault();
+        pickSearch(searchActive < 0 ? 0 : searchActive);
+      }
+    }
+  });
+  document.getElementById('searchBox').addEventListener('input', e => runSearch(e.target.value));
+  document.getElementById('searchDrop').addEventListener('mousedown', e => {
+    const row = e.target.closest('.srow');
+    if (row){ e.preventDefault(); pickSearch(+row.dataset.si); }
+  });
+
+  // panel header keyboard access
+  document.addEventListener('keydown', e => {
+    if ((e.key === 'Enter' || e.key === ' ') && e.target.classList?.contains('phead')){
+      e.preventDefault(); e.target.click();
+    }
+  });
+
+  // landscape nudge
+  document.getElementById('nudgeBtn').addEventListener('click', () => {
+    document.getElementById('landscapeNudge').classList.add('off');
+    try { sessionStorage.setItem('avNudgeOff','1'); } catch(_){}
+  });
+  try { if (sessionStorage.getItem('avNudgeOff')) document.getElementById('landscapeNudge').classList.add('off'); } catch(_){}
+
+  // redraw on everything that can move tiles (Part 7)
+  window.addEventListener('resize', () => { drawLines(); drawTrack(); });
+  window.addEventListener('scroll', () => drawLines(), { passive:true });
+  document.addEventListener('load', e => { if (e.target.tagName === 'IMG') drawLines(); }, true);
+  if (document.fonts?.ready) document.fonts.ready.then(() => { drawLines(); drawTrack(); });
+}
+
+/* ------------------ boot ------------------ */
+async function init(){
+  const [c, e] = await Promise.all([
+    fetch('data/av-companies.json').then(r => r.json()),
+    fetch('data/av-enrichment.json').then(r => r.json())
+  ]);
+  comps = c; enrich = e;
+  byName = Object.fromEntries(comps.map(x => [x.name, x]));
+  for (const ed of enrich.edges){
+    if (!byName[ed.a] || !byName[ed.b]) continue;
+    if (!adj.has(ed.a)) adj.set(ed.a, new Map());
+    if (!adj.has(ed.b)) adj.set(ed.b, new Map());
+    adj.get(ed.a).set(ed.b, ed);
+    adj.get(ed.b).set(ed.a, ed);
+  }
+  counts.freight = comps.filter(x => x.segment).length;
+  counts.orphans = comps.filter(x => !adj.has(x.name)).length;
+  counts.exited  = comps.filter(x => x.exited).length;
+
+  wireEvents();
+  renderEverything();
+  drawLines();
+  requestAnimationFrame(() => { drawLines(); drawTrack(); });
+  window.addEventListener('load', () => { drawLines(); drawTrack(); });
+}
+init();
+</script>
+</body>
+</html>

@@ -12,6 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<script>try{if(localStorage.getItem('avTheme')==='dark')document.documentElement.dataset.theme='dark';}catch(e){}</script>
 <style>
 :root{
   --accent:#0e7490;
@@ -26,6 +27,15 @@
   --r-box:18px;
   --r-chip:8px;
   --r-pill:20px;
+}
+:root[data-theme="dark"]{
+  --bg:#101014;
+  --ink:#f0f0ee;
+  --muted:#8f8f97;
+  --muted2:#b0b0b8;
+  --cardbg:#17171c;
+  --border:#2b2b32;
+  --gold:#d4b23c;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
@@ -114,8 +124,9 @@ header.site .hbyline a:hover{text-decoration:underline}
 
 /* ============ journey loop ============ */
 #journey{max-width:1240px;margin:0 auto;padding:38px 20px 8px}
+#journey > .kicker,#journey > h2,#journey > .jintro{text-align:center}
 #journey h2{font-size:clamp(22px,3.4vw,30px);font-weight:800;letter-spacing:-.02em;margin-top:6px}
-#journey .jintro{max-width:760px;color:var(--muted2);margin-top:8px;font-size:14.5px}
+#journey .jintro{max-width:760px;color:var(--muted2);margin:8px auto 0;font-size:14.5px}
 #jboard{position:relative;margin-top:26px;padding:112px 108px}
 #trackSvg{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;overflow:visible}
 .roadArrow{animation:arrowGlow 1.9s ease-in-out infinite}
@@ -134,20 +145,20 @@ header.site .hbyline a:hover{text-decoration:underline}
 }
 .jcard{
   background:var(--cardbg);border:1px solid var(--border);border-radius:var(--r-box);
-  padding:20px;position:relative;z-index:1;text-align:center;
+  padding:28px 17% 24px;position:relative;z-index:1;text-align:center;
 }
 .jcard .jicon{
   width:96px;height:96px;border-radius:22px;background:#0a0a0a;color:#fff;
   display:flex;align-items:center;justify-content:center;margin:0 auto 14px;
 }
 .jcard .jicon svg{width:54px;height:54px}
-.jcard .jstage{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:10px;font-weight:600;letter-spacing:.12em;color:var(--muted)}
-.jcard h3{font-size:19px;font-weight:800;letter-spacing:-.01em;margin:2px 0 4px}
-.jcard .jdesc{font-size:13px;color:var(--muted2);line-height:1.5}
+.jcard .jstage{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;font-weight:600;letter-spacing:.12em;color:var(--muted)}
+.jcard h3{font-size:21.5px;font-weight:800;letter-spacing:-.01em;margin:3px 0 6px}
+.jcard .jdesc{font-size:14.5px;color:var(--muted2);line-height:1.55}
 .jexp{
-  display:inline-flex;align-items:center;gap:6px;margin-top:12px;
-  font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:9.5px;font-weight:600;letter-spacing:.1em;
-  color:var(--muted2);background:#f1f1ee;border-radius:6px;padding:5px 10px;
+  display:inline-flex;align-items:center;gap:6px;margin-top:13px;
+  font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:10.5px;font-weight:600;letter-spacing:.1em;
+  color:var(--muted2);background:#f1f1ee;border-radius:6px;padding:6px 11px;
 }
 .jexp:hover{color:var(--ink);background:#e9e9e5}
 .jexp .caret{transition:transform .15s}
@@ -329,6 +340,7 @@ body.dlg-open #backdrop{display:block}
   background:rgba(251,251,250,.92);border:1px solid var(--border);padding:4px 9px;border-radius:6px;white-space:nowrap;
 }
 .crail{flex:1;min-width:300px;max-width:380px;overflow-y:auto;min-height:0;padding-right:4px}
+.dlgkick{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:8.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
 .chead{display:flex;align-items:center;gap:12px}
 .chead .cname2{font-size:20px;font-weight:800;letter-spacing:-.02em;line-height:1.2}
 #viewMap{
@@ -459,6 +471,153 @@ footer.site .fcta{font-size:16px;font-weight:600;line-height:1.6;max-width:720px
 footer.site .fcta a{color:#22d3ee;text-decoration:none}
 footer.site .fcta a:hover{text-decoration:underline}
 footer.site .fver{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:10px;letter-spacing:.1em;color:#71717a;margin-top:18px;text-transform:uppercase}
+
+/* ============ floating control panel (left) ============ */
+#ctrlPanel{
+  position:fixed;left:14px;top:82px;z-index:46;width:270px;
+  background:#fff;border:1px solid var(--border);border-radius:14px;
+  box-shadow:0 12px 34px rgba(10,10,10,.14);overflow:visible;
+}
+#ctrlToggle{
+  display:flex;align-items:center;gap:8px;width:100%;padding:11px 13px;
+  font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:10px;font-weight:600;letter-spacing:.12em;color:var(--muted2);
+}
+#ctrlToggle svg{width:14px;height:14px;flex:none;color:var(--accent)}
+#ctrlToggle .caret{margin-left:auto;transition:transform .15s}
+#ctrlPanel.open #ctrlToggle .caret{transform:rotate(90deg)}
+.ctrlBody{display:none;flex-direction:column;gap:8px;padding:2px 12px 13px}
+#ctrlPanel.open .ctrlBody{display:flex}
+#ctrlPanel:not(.open){width:auto}
+#ctrlPanel:not(.open) #ctrlToggle span.lbl{display:none}
+.ctrlBody .toggle{width:100%;justify-content:flex-start}
+.ctrlBody #clearSel{width:100%;justify-content:center}
+.ctrlBody #legend{margin:2px 0 0;line-height:1.6}
+#ctrlPanel #searchWrap{width:100%}
+#ctrlPanel #searchBox{width:100%;background:#f4f4f2;color:var(--ink);border:1px solid var(--border)}
+#ctrlPanel #searchBox::placeholder{color:var(--muted)}
+#ctrlPanel #searchDrop{left:0;right:0;width:auto;top:calc(100% + 6px)}
+@media(max-width:860px){
+  #ctrlPanel{top:auto;bottom:14px;left:12px;width:min(270px,calc(100vw - 90px))}
+}
+
+/* ============ theme toggle (bottom right) ============ */
+#themeBtn{
+  position:fixed;right:14px;bottom:14px;z-index:46;width:44px;height:44px;border-radius:50%;
+  background:#fff;border:1px solid var(--border);box-shadow:0 8px 22px rgba(10,10,10,.16);
+  display:flex;align-items:center;justify-content:center;cursor:pointer;
+}
+#themeBtn svg{width:19px;height:19px;color:var(--muted2)}
+#themeBtn:hover svg{color:var(--accent)}
+#themeBtn .tmoon{display:block}
+#themeBtn .tsun{display:none}
+[data-theme="dark"] #themeBtn .tmoon{display:none}
+[data-theme="dark"] #themeBtn .tsun{display:block}
+
+/* ============ stage stepper buttons ============ */
+.jstep{
+  position:absolute;z-index:2;width:38px;height:38px;border-radius:50%;
+  transform:translate(-50%,-50%);
+  background:#fff;border:1px solid var(--border);box-shadow:0 5px 16px rgba(10,10,10,.10);
+  display:flex;align-items:center;justify-content:center;cursor:pointer;
+}
+.jstep svg{width:15px;height:15px;color:var(--muted2)}
+.jstep:hover{border-color:var(--accent)}
+.jstep:hover svg{color:var(--accent)}
+.jstep[disabled]{opacity:.35;pointer-events:none}
+@media(max-width:699px){.jstep{display:none}}
+
+/* ============ collapse all ============ */
+#collapseAll{
+  display:none;flex:none;
+  font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:9.5px;font-weight:600;letter-spacing:.1em;
+  color:var(--muted2);border:1px solid var(--border);border-radius:var(--r-pill);padding:7px 12px;
+}
+#collapseAll.show{display:inline-flex}
+#collapseAll:hover{border-color:var(--accent);color:var(--accent)}
+.stackrow{display:flex;align-items:center;gap:14px;margin-top:6px}
+.stackrow h2{margin-top:0 !important}
+
+/* ============ mobile refinements ============ */
+@media(max-width:860px){
+  header.site{position:static}
+}
+@media(max-width:699px){
+  .jcard[data-stage="0"]{order:1}
+  .jcard[data-stage="1"]{order:2}
+  .jcard[data-stage="2"]{order:3}
+  .jcard[data-stage="3"]{order:4}
+}
+@media(max-width:900px){
+  /* harmonized type scale for the company sheet on small screens */
+  #card .cname2{font-size:17px}
+  #card .ccatname{font-size:9.5px}
+  #card .ctagbig{font-size:8.5px}
+  #card .cmeta{font-size:10px;line-height:1.55}
+  #card .kicker{font-size:10px}
+  #card .cspoken{font-size:11.5px}
+  #card .pathbox p{font-size:11.5px;line-height:1.5}
+  #card .hop{font-size:10px}
+  #card #expBtn{font-size:11.5px}
+  #card .expnote{font-size:9px}
+  #card .cknown{font-size:12.5px;line-height:1.5}
+  #card .cabout{font-size:12px;line-height:1.55}
+  #card .cwww{font-size:11px}
+  #card .prname{font-size:12px}
+  #card .prkind{font-size:8.5px}
+  #card .prnote{font-size:10.5px;line-height:1.45}
+  #card .pghead{font-size:8.5px}
+}
+
+/* ============ dark theme overrides ============ */
+[data-theme="dark"] .optile:hover{border-color:#3d3d46;box-shadow:0 3px 14px rgba(0,0,0,.4)}
+[data-theme="dark"] .logo{background:#26262c}
+[data-theme="dark"] .logo .mg{color:#9d9da6}
+[data-theme="dark"] .chip{background:#1b1b20;border-color:#2b2b32}
+[data-theme="dark"] .chip:hover{border-color:#45454e}
+[data-theme="dark"] .phead .pcount{background:#26262c;color:var(--muted2)}
+[data-theme="dark"] .pmore{background:#222228;color:var(--muted2)}
+[data-theme="dark"] .pmore:hover{background:#2a2a31;color:var(--ink)}
+[data-theme="dark"] .toggle{background:#1b1b20;border-color:#2b2b32}
+[data-theme="dark"] .toggle .knob{background:#3a3a42}
+[data-theme="dark"] .toggle.on{border-color:var(--accent)}
+[data-theme="dark"] #clearSel{background:#e8e8e4;color:#111}
+[data-theme="dark"] #ctrlPanel,[data-theme="dark"] #themeBtn,[data-theme="dark"] .jstep{background:#1b1b20;border-color:#2b2b32}
+[data-theme="dark"] #ctrlPanel #searchBox{background:#101014}
+[data-theme="dark"] #searchDrop{background:#1b1b20;border-color:#2b2b32;color:var(--ink)}
+[data-theme="dark"] .srow{border-color:#232329}
+[data-theme="dark"] .srow:hover,[data-theme="dark"] .srow.active{background:#20262b}
+[data-theme="dark"] .jcard .jicon{background:#26262c}
+[data-theme="dark"] .jchip{background:#1b1b20;border-color:#2b2b32}
+[data-theme="dark"] .jexp{background:#222228;color:var(--muted2)}
+[data-theme="dark"] .jexp:hover{background:#2a2a31;color:var(--ink)}
+[data-theme="dark"] #jhub{background:#1b1b20;border-color:#2b2b32;box-shadow:0 6px 22px rgba(0,0,0,.5)}
+[data-theme="dark"] #jcaption{background:#1b1b20;border-color:#2b2b32}
+[data-theme="dark"] #jcaption .jct{color:#d6d6dc}
+[data-theme="dark"] .jenablers{background:var(--cardbg)}
+[data-theme="dark"] #card{background:#141419;border-color:#2b2b32}
+[data-theme="dark"] #cardClose{background:#26262c;color:var(--muted2)}
+[data-theme="dark"] #cardClose:hover{background:#31313a;color:var(--ink)}
+[data-theme="dark"] .cnode{background:#1b1b20;border-color:#2b2b32;box-shadow:0 3px 10px rgba(0,0,0,.3)}
+[data-theme="dark"] .cnode.center{background:#17222a}
+[data-theme="dark"] .cnode.catnode.empty{background:#17171b;border-color:#33333b}
+[data-theme="dark"] .crow{background:#222228;border-color:#2b2b32;color:var(--ink)}
+[data-theme="dark"] .cnode.catnode .ccount{background:#2b2b32;color:var(--ink)}
+[data-theme="dark"] .prow{background:#1b1b20;border-color:#2b2b32}
+[data-theme="dark"] .pathbox{background:#17171b}
+[data-theme="dark"] .hop{background:#222228;border-color:#33333b;color:var(--ink)}
+[data-theme="dark"] .hop.last{background:var(--accent);color:#fff}
+[data-theme="dark"] .cspoken{background:#241f0e;border-color:#4d4020;color:#d9bd58}
+[data-theme="dark"] .csec{border-color:#232329}
+[data-theme="dark"] .wpanel{background:#17171c;color:var(--ink)}
+[data-theme="dark"] .wrow p{color:#c9c9cf}
+[data-theme="dark"] .wrow .wicon{background:#182730}
+[data-theme="dark"] .wby{border-color:#26262c}
+[data-theme="dark"] #welcomeBtn{background:#e8e8e4;color:#111}
+[data-theme="dark"] #welcomeBtn:hover{background:#fff}
+[data-theme="dark"] .cabout{color:#c2c2c9}
+[data-theme="dark"] .lede,[data-theme="dark"] #intro .lede{color:#c9c9cf}
+[data-theme="dark"] .jintro,[data-theme="dark"] .jdesc,[data-theme="dark"] .jreturn,[data-theme="dark"] .opshead p.opsub{color:var(--muted2)}
+[data-theme="dark"] .pgroup{border-color:#3a3a42}
 </style>
 </head>
 <body>
@@ -469,21 +628,34 @@ footer.site .fver{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:1
     <div class="hbyline">Compiled &amp; maintained by <a href="https://www.linkedin.com/in/kofiagyare/" target="_blank" rel="noopener">Kofi Agyare-Kwabi</a> — ex-Uber Country Manager · GTM &amp; Partnerships · Wharton MBA</div>
   </div>
   <button id="aboutLink">ABOUT THIS MAP</button>
-  <div id="searchWrap">
-    <input id="searchBox" type="text" placeholder="SEARCH 556 COMPANIES…" autocomplete="off" spellcheck="false" aria-label="Search companies">
-    <div id="searchDrop" role="listbox"></div>
-  </div>
 </header>
 
-<section id="intro">
-  <div id="stats"></div>
-  <div id="controls">
+<div id="ctrlPanel" class="open">
+  <button id="ctrlToggle" aria-expanded="true">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="7" x2="20" y2="7"/><circle cx="9" cy="7" r="2.4" fill="var(--bg)"/><line x1="4" y1="17" x2="20" y2="17"/><circle cx="15" cy="17" r="2.4" fill="var(--bg)"/></svg>
+    <span class="lbl">MAP CONTROLS</span>
+    <span class="caret">▸</span>
+  </button>
+  <div class="ctrlBody">
+    <div id="searchWrap">
+      <input id="searchBox" type="text" placeholder="SEARCH 556 COMPANIES…" autocomplete="off" spellcheck="false" aria-label="Search companies">
+      <div id="searchDrop" role="listbox"></div>
+    </div>
     <button id="clearSel">✕&nbsp; CLEAR SELECTION</button>
     <button class="toggle" id="tFreight"><span class="knob"></span><span class="tlabel"></span></button>
     <button class="toggle" id="tOrphans"><span class="knob"></span><span class="tlabel"></span></button>
     <button class="toggle" id="tExited"><span class="knob"></span><span class="tlabel"></span></button>
     <span id="legend"><span class="ldot">●</span> companies Kofi has spoken with directly · select any company to see &amp; share its partnership map</span>
   </div>
+</div>
+
+<button id="themeBtn" aria-label="Toggle light and dark mode">
+  <svg class="tmoon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"/></svg>
+  <svg class="tsun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4.4"/><path d="M12 2.5v2.4M12 19.1v2.4M4.2 4.2l1.7 1.7M18.1 18.1l1.7 1.7M2.5 12h2.4M19.1 12h2.4M4.2 19.8l1.7-1.7M18.1 5.9l1.7-1.7"/></svg>
+</button>
+
+<section id="intro">
+  <div id="stats"></div>
 </section>
 
 <section id="journey">
@@ -493,6 +665,12 @@ footer.site .fver{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:1
   <div id="jboard">
     <svg id="trackSvg" aria-hidden="true"></svg>
     <div class="jgrid" id="jgrid"></div>
+    <button id="jprev" class="jstep" aria-label="Drive back one stage">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="14.5 5.5 8 12 14.5 18.5"/></svg>
+    </button>
+    <button id="jnext" class="jstep" aria-label="Drive forward one stage">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="9.5 5.5 16 12 9.5 18.5"/></svg>
+    </button>
     <button id="jhub" aria-label="Run or pause the loop animation">
       <svg class="hi hi-run" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-2.64-6.36"/><polyline points="21 3 21 9 15 9"/></svg>
       <svg class="hi hi-pause" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="7" y="5" width="3.4" height="14" rx="1.2"/><rect x="13.6" y="5" width="3.4" height="14" rx="1.2"/></svg>
@@ -520,7 +698,10 @@ footer.site .fver{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:1
   </div>
   <div class="stackhead">
     <p class="kicker">The stack beneath</p>
-    <h2>Eleven layers make the ride possible</h2>
+    <div class="stackrow">
+      <h2>Eleven layers make the ride possible</h2>
+      <button id="collapseAll">COLLAPSE ALL</button>
+    </div>
   </div>
   <div id="panels"></div>
 </div>
@@ -534,7 +715,7 @@ footer.site .fver{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:1
 
 <div id="welcome" role="dialog" aria-modal="true" aria-label="About this map">
   <div class="wpanel">
-    <p class="kicker">AV Ecosystem Map</p>
+    <p class="kicker">Autonomous Vehicle Ecosystem Map</p>
     <h2>The industry behind every driverless ride</h2>
     <div class="wrow">
       <span class="wicon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9.2"/><path d="M2.8 12h18.4M12 2.8c2.6 2.5 4 5.7 4 9.2s-1.4 6.7-4 9.2c-2.6-2.5-4-5.7-4-9.2s1.4-6.7 4-9.2z"/></svg></span>
@@ -549,7 +730,7 @@ footer.site .fver{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:1
       <p><b>Share what you find.</b> Export any company's partnership map as an image, ready to circulate.</p>
     </div>
     <div class="wby">
-      <p>Compiled &amp; maintained by <b>Kofi Agyare-Kwabi</b> — ex-Uber Country Manager · GTM &amp; Partnerships · Wharton MBA.</p>
+      <p>Compiled &amp; maintained by <a href="https://www.linkedin.com/in/kofiagyare/" target="_blank" rel="noopener"><b>Kofi Agyare-Kwabi</b></a> — ex-Uber Country Manager · GTM &amp; Partnerships · Wharton MBA.</p>
       <p>A company I've missed? A partnership I should know about? <a href="https://www.linkedin.com/in/kofiagyare/" target="_blank" rel="noopener">Message me on LinkedIn →</a></p>
     </div>
     <button id="welcomeBtn">EXPLORE THE MAP →</button>
@@ -561,8 +742,8 @@ footer.site .fver{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:1
 
 <footer class="site">
   <div class="finner">
-    <p class="fcta">A company that should be listed? A partnership I haven't mapped? A detail that's wrong? <a href="https://www.linkedin.com/in/kofiagyare/" target="_blank" rel="noopener">Send me a message</a> — this map gets better through exactly those conversations.</p>
-    <p class="fver">AV Ecosystem Map · v2.0 · July 2026 · compiled from public filings, permits &amp; announcements · corrections welcome</p>
+    <p class="fcta">A company that should be listed? A partnership I haven't mapped? A detail that's wrong? <a href="mailto:agyarek+avecosystemmap@gmail.com">Send me a message</a> — this map gets better through exactly those conversations.</p>
+    <p class="fver">Autonomous Vehicle Ecosystem Map · July 2026 · compiled from public filings, permits &amp; announcements · corrections welcome</p>
   </div>
 </footer>
 
@@ -689,6 +870,7 @@ function drawLines(){
   const r1 = rel(selEl);
   const c1x = (r1.l + r1.r) / 2, c1y = (r1.t + r1.b) / 2;
   const accent = getComputedStyle(document.documentElement).getPropertyValue('--accent').trim() || '#0e7490';
+  const halo = getComputedStyle(document.body).backgroundColor || '#f4f4f2';
 
   let html = '';
   for (const p of partnersOf(selectedName)){
@@ -702,7 +884,7 @@ function drawLines(){
       ? `M${a.x} ${a.y} C${(a.x + b.x) / 2} ${a.y}, ${(a.x + b.x) / 2} ${b.y}, ${b.x} ${b.y}`
       : `M${a.x} ${a.y} C${a.x} ${(a.y + b.y) / 2}, ${b.x} ${(a.y + b.y) / 2}, ${b.x} ${b.y}`;
     html +=
-      `<path d="${d}" fill="none" stroke="#f4f4f2" stroke-width="6" opacity=".75" stroke-linecap="round"/>` +
+      `<path d="${d}" fill="none" stroke="${halo}" stroke-width="6" opacity=".75" stroke-linecap="round"/>` +
       `<path d="${d}" fill="none" stroke="${accent}" stroke-width="2.1" stroke-linecap="round"/>` +
       `<circle cx="${a.x}" cy="${a.y}" r="4" fill="${accent}"/>` +
       `<circle cx="${b.x}" cy="${b.y}" r="3.5" fill="${accent}"/>`;
@@ -839,6 +1021,7 @@ function renderControls(pins){
   set('tOrphans', showOrphans, `${showOrphans ? 'HIDE' : 'SHOW'} UNLINKED (${counts.orphans})`);
   set('tExited',  showExited,  `${showExited ? 'HIDE' : 'SHOW'} EXITED / ACQUIRED (${counts.exited})`);
   document.getElementById('clearSel').classList.toggle('show', !!selectedName);
+  document.getElementById('collapseAll').classList.toggle('show', CAT_ORDER.some(cat => panelLevel[cat] === 2));
 }
 
 function jchipHTML(cat){
@@ -876,6 +1059,8 @@ function renderJourneyChips(){
 let trackGeo = null;                            // {key, path, L, stops[4], center}
 const trackAnim = { running:false, abort:false, paused:false };
 const STOP_DWELL = 3400;                        // ms the car holds at each station
+let carStage = 0;                               // which station the car is parked at
+let carFacing = 1;                              // 1 = clockwise, -1 = reversed (after a 3-point turn)
 
 const STAGE_STOPS = [
   { k:"STAGE 01 · THE REQUEST", t:"A rider taps a button. The marketplace prices the trip, matches this exact vehicle, and dispatches it — seconds, end to end." },
@@ -906,8 +1091,12 @@ function drawTrack(){
   const hub = document.getElementById('jhub');
   hub.style.left = mx + 'px';
   hub.style.top  = my + 'px';
+  const prevB = document.getElementById('jprev'), nextB = document.getElementById('jnext');
+  if (prevB){ prevB.style.left = (mx - 82) + 'px'; prevB.style.top = my + 'px'; }
+  if (nextB){ nextB.style.left = (mx + 82) + 'px'; nextB.style.top = my + 'px'; }
 
-  const key = [left, right, top, bottom].map(v => Math.round(v)).join(',');
+  const dark = document.documentElement.dataset.theme === 'dark';
+  const key = [left, right, top, bottom].map(v => Math.round(v)).join(',') + (dark ? '|d' : '|l');
   if (trackGeo && trackGeo.key === key) return;  // geometry unchanged — don't disturb a running car
   trackAnim.abort = true;                        // geometry changed: stop any run, rebuild, re-park
   hideJCaption();
@@ -917,7 +1106,7 @@ function drawTrack(){
   const arrow = (x,y,rot) =>   // directional arrow: tail + head, filled, thin bezel
     `<path class="roadArrow" d="M -20 -3.6 H 1 V -11 L 20 0 L 1 11 V 3.6 H -20 Z" transform="translate(${x} ${y}) rotate(${rot})" fill="#0e7490" stroke="#fafafa" stroke-width="1.6" stroke-linejoin="round"/>`;
   svg.innerHTML =
-    `<path d="${d}" fill="none" stroke="rgba(10,10,10,.10)" stroke-width="86"/>` +          // soft shoulder
+    `<path d="${d}" fill="none" stroke="${dark ? 'rgba(255,255,255,.09)' : 'rgba(10,10,10,.10)'}" stroke-width="86"/>` + // soft shoulder
     `<path id="roadPath" d="${d}" fill="none" stroke="#3f3f46" stroke-width="72"/>` +       // asphalt (light enough to read the tires)
     `<path d="${d}" fill="none" stroke="#fafafa" stroke-width="3.6" stroke-dasharray="24 20" opacity=".95"/>` + // center line
     arrow(mx, top, 0) + arrow(right, my, 90) + arrow(mx, bottom, 180) + arrow(left, my, 270) +
@@ -950,7 +1139,8 @@ function drawTrack(){
     2*Wt + 2*A + Ht + .5*A    // The Pitlane  (bottom-left corner)
   ];
   trackGeo = { key, path, L: path.getTotalLength(), stops, center: { x: mx, y: my } };
-  placeCar(stops[0]);                            // park at The Request
+  carFacing = 1;
+  placeCar(stops[carStage]);                     // re-park wherever the car was stationed
 }
 
 function carPoint(s){
@@ -965,7 +1155,77 @@ function placeCar(s){
   const car = document.getElementById('carG');
   if (!car) return;
   const p = carPoint(s);
-  car.setAttribute('transform', `translate(${p.x} ${p.y}) rotate(${p.a})`);
+  car.setAttribute('transform', `translate(${p.x} ${p.y}) rotate(${p.a + (carFacing < 0 ? 180 : 0)})`);
+}
+/* a three-point turn in place: swing forward-left, reverse-right, settle — 180° total */
+function threePointTurn(s){
+  const g = trackGeo;
+  if (!g) return Promise.resolve();
+  const car = document.getElementById('carG');
+  const p = carPoint(s);
+  const baseA = p.a + (carFacing < 0 ? 180 : 0);
+  const tang = p.a * Math.PI / 180, perp = tang + Math.PI / 2;
+  const DUR = 1250;
+  let elapsed = 0;
+  const smooth = t => t * t * (3 - 2 * t);
+  return pausableTick(dt => {
+    elapsed += dt;
+    const k = Math.min(1, elapsed / DUR);
+    let rot, fwd, side;
+    if (k < .42){            // swing forward-left
+      const t = smooth(k / .42);
+      rot = t * 108; fwd = t * 9; side = t * 10;
+    } else if (k < .8){      // reverse while straightening
+      const t = smooth((k - .42) / .38);
+      rot = 108 + t * 62; fwd = 9 - t * 12; side = 10 - t * 6;
+    } else {                 // pull forward, settle on the line
+      const t = smooth((k - .8) / .2);
+      rot = 170 + t * 10; fwd = -3 + t * 3; side = 4 - t * 4;
+    }
+    const ox = Math.cos(tang) * fwd + Math.cos(perp) * side;
+    const oy = Math.sin(tang) * fwd + Math.sin(perp) * side;
+    car.setAttribute('transform', `translate(${p.x + ox} ${p.y + oy}) rotate(${baseA + rot})`);
+    return k >= 1;
+  });
+}
+/* drive one stage forward, or make a 3-point turn, drive back, and turn around again */
+async function goStage(dir){
+  const g = trackGeo;
+  if (!g || trackAnim.running) return;
+  trackAnim.running = true; trackAnim.abort = false; trackAnim.paused = false;
+  setHub();
+  try {
+    const next = (carStage + dir + 4) % 4;
+    hideJCaption();
+    if (dir > 0){
+      let from = g.stops[carStage], to = g.stops[next];
+      while (to <= from) to += g.L;
+      await drive(from, to);
+    } else {
+      await threePointTurn(g.stops[carStage]);
+      if (trackAnim.abort) return;
+      carFacing = -1;
+      let from = g.stops[carStage], to = g.stops[next];
+      while (to >= from) to -= g.L;
+      await drive(from, to);
+      if (trackAnim.abort) return;
+      await threePointTurn(g.stops[next]);
+      carFacing = 1;
+      placeCar(g.stops[next]);
+    }
+    if (trackAnim.abort) return;
+    carStage = next;
+    jCaptionShow(next);
+    await dwell(2600);
+    hideJCaption();
+  } finally {
+    hideJCaption();
+    trackAnim.running = false; trackAnim.paused = false;
+    setHub();
+    carFacing = 1;
+    if (trackGeo && !trackAnim.abort) placeCar(trackGeo.stops[carStage]);
+    trackAnim.abort = false;
+  }
 }
 function jCaptionShow(stage){
   const g = trackGeo; if (!g) return;
@@ -990,6 +1250,10 @@ function setHub(){
   h.classList.toggle('running', trackAnim.running);
   h.classList.toggle('paused', trackAnim.paused);
   h.querySelector('.hlabel').textContent = trackAnim.running ? (trackAnim.paused ? 'RESUME' : 'PAUSE') : 'RUN LOOP';
+  for (const id of ['jprev', 'jnext']){
+    const b = document.getElementById(id);
+    if (b) b.toggleAttribute('disabled', trackAnim.running);
+  }
 }
 function togglePause(){
   if (!trackAnim.running) return;
@@ -1011,7 +1275,7 @@ function pausableTick(cb){
   });
 }
 function drive(from, to){
-  const total = (to - from) / 470 * 1000 * 1.18;   // a touch slower overall for the longer settle
+  const total = Math.abs(to - from) / 470 * 1000 * 1.18;   // abs: the stepper also drives backward
   let elapsed = 0;
   return pausableTick(dt => {
     elapsed += dt;
@@ -1037,18 +1301,20 @@ async function runLoop(){
   for (const i of [1, 2, 3]){ let s = g.stops[i]; while (s <= seq[seq.length-1]) s += g.L; seq.push(s); }
   { let s = g.stops[0]; while (s <= seq[3]) s += g.L; seq.push(s); }
   try {
+    carStage = 0; carFacing = 1;
     placeCar(seq[0]);
     for (let i = 0; i < seq.length; i++){
       if (trackAnim.abort) break;
       if (i > 0) await drive(seq[i-1], seq[i]);
       if (trackAnim.abort) break;
-      if (i < 4){ jCaptionShow(i % 4); await dwell(STOP_DWELL); hideJCaption(); await dwell(150); }
+      if (i < 4){ carStage = i % 4; jCaptionShow(i % 4); await dwell(STOP_DWELL); hideJCaption(); await dwell(150); }
     }
+    if (!trackAnim.abort) carStage = 0;
   } finally {
     hideJCaption();
     trackAnim.running = false; trackAnim.paused = false;
     setHub();
-    if (trackGeo && !trackAnim.abort) placeCar(trackGeo.stops[0]);   // park back at The Request
+    if (trackGeo && !trackAnim.abort) placeCar(trackGeo.stops[carStage]);
     trackAnim.abort = false;
   }
 }
@@ -1179,6 +1445,7 @@ function renderCard(){
     </div>`;
 
   scroll.innerHTML = `
+    <p class="dlgkick">Autonomous Vehicle Ecosystem Map</p>
     <div class="chead">
       ${logoHTML(c.name,40)}
       <span style="min-width:0">
@@ -1309,7 +1576,7 @@ function exportPNG(){
   const { populated, empty } = layerGroups(partners);
   x.textBaseline = 'alphabetic'; x.textAlign = 'left';
   x.fillStyle = '#77776f'; x.font = '600 13px "IBM Plex Mono", monospace';
-  x.fillText('PARTNERSHIP MAP · AV ECOSYSTEM', 48, 62);
+  x.fillText('AUTONOMOUS VEHICLE ECOSYSTEM MAP · PARTNERSHIP MAP', 48, 62);
   x.fillStyle = '#0a0a0a'; x.font = '900 46px Archivo, sans-serif';
   x.fillText(c.name, 46, 112);
   x.fillStyle = '#52525b'; x.font = '500 13px "IBM Plex Mono", monospace';
@@ -1569,6 +1836,28 @@ function wireEvents(){
       return;
     }
     if (e.target.closest('#jhub')){ trackAnim.running ? togglePause() : runLoop(); return; }
+    if (e.target.closest('#jprev')){ goStage(-1); return; }
+    if (e.target.closest('#jnext')){ goStage(1); return; }
+    if (e.target.closest('#themeBtn')){
+      const dark = document.documentElement.dataset.theme === 'dark';
+      if (dark) delete document.documentElement.dataset.theme;
+      else document.documentElement.dataset.theme = 'dark';
+      try { localStorage.setItem('avTheme', dark ? 'light' : 'dark'); } catch(_){}
+      renderEverything(); drawLines(); requestAnimationFrame(() => { drawLines(); drawTrack(); layoutConstel(); });
+      return;
+    }
+    if (e.target.closest('#ctrlToggle')){
+      const p = document.getElementById('ctrlPanel');
+      const open = p.classList.toggle('open');
+      document.getElementById('ctrlToggle').setAttribute('aria-expanded', open);
+      try { localStorage.setItem('avCtrl', open ? 'open' : 'closed'); } catch(_){}
+      return;
+    }
+    if (e.target.closest('#collapseAll')){
+      CAT_ORDER.forEach(cat => panelLevel[cat] = 1);
+      renderEverything(); drawLines(); requestAnimationFrame(drawLines);
+      return;
+    }
     if (e.target.closest('.jexp')){
       const st = +e.target.closest('.jexp').dataset.stage;
       jExpanded.has(st) ? jExpanded.delete(st) : jExpanded.add(st);
@@ -1614,7 +1903,7 @@ function wireEvents(){
       return;
     }
     const t = e.target;
-    if (t.closest('#card') || t.closest('#searchWrap') || t.closest('.toggle') ||
+    if (t.closest('#card') || t.closest('#ctrlPanel') || t.closest('#themeBtn') ||
         t.closest('#landscapeNudge') || t.closest('#clearSel')) {
       if (t.closest('#clearSel')) clearSelection();
       return;
@@ -1700,6 +1989,14 @@ async function init(){
   counts.freight = comps.filter(x => x.segment).length;
   counts.orphans = comps.filter(x => !adj.has(x.name)).length;
   counts.exited  = comps.filter(x => x.exited).length;
+
+  // floating control panel: remember state; default open on desktop, tucked away on mobile
+  try {
+    const stored = localStorage.getItem('avCtrl');
+    const open = stored ? stored === 'open' : !isMobileView();
+    document.getElementById('ctrlPanel').classList.toggle('open', open);
+    document.getElementById('ctrlToggle').setAttribute('aria-expanded', open);
+  } catch(_){}
 
   wireEvents();
   renderEverything();

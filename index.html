@@ -15,6 +15,7 @@
 <style>
 :root{
   --accent:#0e7490;
+  --gold:#c9a227;
   --bg:#f4f4f2;
   --ink:#0a0a0a;
   --muted:#77776f;
@@ -108,7 +109,7 @@ header.site .hbyline a:hover{text-decoration:underline}
 }
 #clearSel.show{display:inline-flex}
 #legend{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:10.5px;letter-spacing:.05em;color:var(--muted);margin-left:auto}
-#legend .ldot{color:var(--accent);font-size:12px}
+#legend .ldot{color:var(--gold);font-size:12px}
 @media(max-width:900px){#legend{margin-left:0;width:100%}}
 
 /* ============ journey loop ============ */
@@ -125,19 +126,19 @@ header.site .hbyline a:hover{text-decoration:underline}
 @media(prefers-reduced-motion:reduce){.roadArrow{animation:none}}
 .jgrid{
   position:relative;display:grid;grid-template-columns:1fr 1fr;
-  grid-auto-rows:1fr;gap:84px 118px;z-index:1;
+  grid-auto-rows:1fr;gap:56px 64px;z-index:1;
 }
 @media(max-width:1000px){
   #jboard{padding:106px 102px}
-  .jgrid{gap:70px 104px}
+  .jgrid{gap:48px 56px}
 }
 .jcard{
   background:var(--cardbg);border:1px solid var(--border);border-radius:var(--r-box);
-  padding:20px;position:relative;z-index:1;
+  padding:20px;position:relative;z-index:1;text-align:center;
 }
 .jcard .jicon{
   width:96px;height:96px;border-radius:22px;background:#0a0a0a;color:#fff;
-  display:flex;align-items:center;justify-content:center;margin-bottom:14px;
+  display:flex;align-items:center;justify-content:center;margin:0 auto 14px;
 }
 .jcard .jicon svg{width:54px;height:54px}
 .jcard .jstage{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:10px;font-weight:600;letter-spacing:.12em;color:var(--muted)}
@@ -151,7 +152,7 @@ header.site .hbyline a:hover{text-decoration:underline}
 .jexp:hover{color:var(--ink);background:#e9e9e5}
 .jexp .caret{transition:transform .15s}
 .jexp.open .caret{transform:rotate(90deg)}
-.jchips{display:none;flex-wrap:wrap;gap:6px;margin-top:10px}
+.jchips{display:none;flex-wrap:wrap;gap:6px;margin-top:10px;justify-content:center}
 .jcard.chips-open .jchips{display:flex}
 .jchip{
   display:inline-flex;align-items:center;gap:7px;
@@ -260,8 +261,8 @@ header.site .hbyline a:hover{text-decoration:underline}
   color:var(--muted);border:1px solid var(--border);border-radius:4px;padding:1px 5px;flex:none;
 }
 .chip.exited{opacity:.62}
-.spdot{width:6px;height:6px;border-radius:50%;background:var(--accent);flex:none;display:inline-block}
-.optile.spoken,.chip.spoken{box-shadow:inset 3px 0 0 var(--accent)}
+.spdot{width:6px;height:6px;border-radius:50%;background:var(--gold);flex:none;display:inline-block}
+.optile.spoken,.chip.spoken{box-shadow:inset 0 0 0 2px var(--gold)}
 [data-cname].sel{outline:2px solid var(--accent);outline-offset:1px;border-color:var(--accent)}
 [data-cname].prt{border-color:var(--accent);background:#f0f9fb}
 .pmore{
@@ -317,17 +318,11 @@ body.dlg-open #backdrop{display:block}
   font-size:8px;font-weight:600;letter-spacing:.08em;color:var(--accent);cursor:pointer;padding:1px 2px;
 }
 .catx:hover{text-decoration:underline}
-#gapstrip{
-  position:absolute;left:12px;right:12px;bottom:10px;z-index:1;
-  display:flex;align-items:center;flex-wrap:wrap;gap:5px;
+.cnode.catnode.empty{
+  width:118px;background:#f7f7f4;border:1.5px dashed #d9d9d4;box-shadow:none;padding:6px 8px;z-index:0;
 }
-#gapstrip .gaphead{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:8px;font-weight:600;letter-spacing:.1em;color:var(--muted);margin-right:3px}
-.gapchip{
-  display:inline-flex;align-items:center;gap:5px;
-  font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:8px;font-weight:500;letter-spacing:.04em;text-transform:uppercase;
-  color:var(--muted);background:#f7f7f4;border:1.5px dashed #d9d9d4;border-radius:6px;padding:3px 7px;
-}
-.gapchip .cdot{width:7px;height:7px;border-radius:50%;flex:none}
+.cnode.catnode.empty .ctitle{color:var(--muted)}
+.cnode.catnode.empty .nempty{display:block;font-size:8.5px;color:var(--muted);font-style:italic;margin-top:2px}
 #constelMore{
   position:absolute;left:50%;bottom:10px;transform:translateX(-50%);z-index:2;
   font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:9.5px;color:var(--muted2);
@@ -359,8 +354,8 @@ body.dlg-open #backdrop{display:block}
 .ctagbig.accent{border-color:var(--accent);color:var(--accent)}
 .cspoken{
   display:flex;align-items:center;gap:8px;margin-top:12px;
-  background:#eef7f9;border:1px solid #cfe8ee;border-radius:var(--r-chip);padding:8px 10px;
-  font-size:12px;font-weight:600;color:#0c5d74;
+  background:#faf6e6;border:1px solid #e8d9a4;border-radius:var(--r-chip);padding:8px 10px;
+  font-size:12px;font-weight:600;color:#7d641c;
 }
 .cmeta{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:10.5px;color:var(--muted);letter-spacing:.03em;margin-top:12px;line-height:1.6}
 .csec{margin-top:16px;border-top:1px solid #efefec;padding-top:14px}
@@ -919,14 +914,18 @@ function drawTrack(){
 
   const r = Math.min(96, (right-left)/2, (bottom-top)/2);
   const d = `M ${left+r} ${top} H ${right-r} A ${r} ${r} 0 0 1 ${right} ${top+r} V ${bottom-r} A ${r} ${r} 0 0 1 ${right-r} ${bottom} H ${left+r} A ${r} ${r} 0 0 1 ${left} ${bottom-r} V ${top+r} A ${r} ${r} 0 0 1 ${left+r} ${top} Z`;
-  const arrow = (x,y,rot) =>
-    `<path class="roadArrow" d="M -13 -11 L 11 0 L -13 11 Z" transform="translate(${x} ${y}) rotate(${rot})" fill="#0e7490" stroke="#fafafa" stroke-width="2.4" stroke-linejoin="round"/>`;
+  const arrow = (x,y,rot) =>   // directional arrow: tail + head, filled, thin bezel
+    `<path class="roadArrow" d="M -20 -3.6 H 1 V -11 L 20 0 L 1 11 V 3.6 H -20 Z" transform="translate(${x} ${y}) rotate(${rot})" fill="#0e7490" stroke="#fafafa" stroke-width="1.6" stroke-linejoin="round"/>`;
   svg.innerHTML =
     `<path d="${d}" fill="none" stroke="rgba(10,10,10,.10)" stroke-width="86"/>` +          // soft shoulder
-    `<path id="roadPath" d="${d}" fill="none" stroke="#232327" stroke-width="72"/>` +       // asphalt
+    `<path id="roadPath" d="${d}" fill="none" stroke="#3f3f46" stroke-width="72"/>` +       // asphalt (light enough to read the tires)
     `<path d="${d}" fill="none" stroke="#fafafa" stroke-width="3.6" stroke-dasharray="24 20" opacity=".95"/>` + // center line
     arrow(mx, top, 0) + arrow(right, my, 90) + arrow(mx, bottom, 180) + arrow(left, my, 270) +
     `<g id="carG">
+       <path d="M 33 -12 L 84 -27 L 84 3 Z" fill="rgba(253,224,130,.20)"/>
+       <path d="M 33 12 L 84 27 L 84 -3 Z" fill="rgba(253,224,130,.20)"/>
+       <circle cx="32" cy="-9" r="6" fill="rgba(253,224,130,.4)"/>
+       <circle cx="32" cy="9" r="6" fill="rgba(253,224,130,.4)"/>
        <rect class="wheel" x="-19" y="-22.5" width="13.5" height="7" rx="2.6" fill="#101013"/>
        <rect class="wheel" x="7"   y="-22.5" width="13.5" height="7" rx="2.6" fill="#101013"/>
        <rect class="wheel" x="-19" y="15.5"  width="13.5" height="7" rx="2.6" fill="#101013"/>
@@ -1012,12 +1011,14 @@ function pausableTick(cb){
   });
 }
 function drive(from, to){
-  const total = (to - from) / 470 * 1000;        // ~470 px/s
+  const total = (to - from) / 470 * 1000 * 1.18;   // a touch slower overall for the longer settle
   let elapsed = 0;
   return pausableTick(dt => {
     elapsed += dt;
     const k = Math.min(1, elapsed / total);
-    const e = k < .5 ? 4*k*k*k : 1 - Math.pow(-2*k + 2, 3) / 2;   // easeInOutCubic
+    // brisk acceleration, long gentle arrival: smoothstep with an extra ease-out tail
+    const s = k * k * (3 - 2 * k);
+    const e = 1 - Math.pow(1 - s, 1.8);
     placeCar(from + (to - from) * e);
     return k >= 1;
   });
@@ -1145,14 +1146,25 @@ function renderCard(){
         <span class="ccount">${list.length}</span>
       </span>
       <span class="clist">
-        ${list.map(p => `<button class="crow" data-cname="${esc(p.name)}" title="${esc(p.n || '')}">${logoHTML(p.name,20)}<span class="crname">${esc(p.name)}</span></button>`).join('')}
+        ${list.map(p => `<button class="crow" data-cname="${esc(p.name)}" title="${esc(p.n || '')}">${logoHTML(p.name,20)}${byName[p.name]?.spokenTo ? '<span class="spdot"></span>' : ''}<span class="crname">${esc(p.name)}</span></button>`).join('')}
       </span>
       ${list.length > 3 ? `<button class="catx">▸ ${list.length - 3} MORE</button>` : ''}
     </div>`;
-  const gapChip = catKey => `
-    <span class="gapchip" title="No mapped partners yet in ${esc(CATS[catKey].t)} — tell me what I'm missing">
-      <span class="cdot" style="background:${dotColor(catKey)};opacity:.45"></span>${esc(CATS[catKey].t)}
-    </span>`;
+  const emptyCard = catKey => `
+    <div class="cnode catnode empty" data-lcat="${esc(catKey)}" title="No mapped partners yet in ${esc(CATS[catKey].t)} — tell me what I'm missing">
+      <span class="chead2">
+        <span class="cdot" style="background:${dotColor(catKey)};opacity:.45"></span>
+        <span class="ctitle">${esc(CATS[catKey].t)}</span>
+      </span>
+      <span class="nempty">no partnerships mapped — yet</span>
+    </div>`;
+  // interleave populated and empty so card sizes alternate around the ring
+  const ringCards = [];
+  {
+    const a = populated.map(catCard), b = empty.map(emptyCard);
+    const m = Math.max(a.length, b.length);
+    for (let i = 0; i < m; i++){ if (a[i]) ringCards.push(a[i]); if (b[i]) ringCards.push(b[i]); }
+  }
   const constelHTML = `
     <div id="constel">
       <svg id="constelSvg" aria-hidden="true"></svg>
@@ -1163,8 +1175,7 @@ function renderCard(){
           <span class="ndesc">${esc(known || c.sub || cat.t)}</span>
         </span>
       </div>
-      ${populated.map(catCard).join('')}
-      ${empty.length ? `<div id="gapstrip"><span class="gaphead">NOT YET MAPPED</span>${empty.map(gapChip).join('')}</div>` : ''}
+      ${ringCards.join('')}
     </div>`;
 
   scroll.innerHTML = `
@@ -1208,40 +1219,75 @@ function renderCard(){
   requestAnimationFrame(layoutConstel);
 }
 
-/* two rings around the center card: populated layer-cards outer, unmapped layers inner.
-   Connectors leave the center card's edge midpoints ("nodes") to each layer card. */
+/* Shared ring layout: places variable-size cards around a box perimeter in angular
+   order (connectors can never cross), angular budget proportional to card width,
+   then a few relaxation passes to resolve any remaining adjacent overlaps. Used by both the
+   dialog constellation and the exported PNG so the two stay identical. */
+function ringPlace(items, W, H, pad){
+  const n = items.length;
+  if (!n) return [];
+  const cx = W / 2, cy = H / 2;
+  const weights = items.map(it => it.w + 34);
+  const total = weights.reduce((a, b) => a + b, 0);
+  let acc = 0;
+  const ang = items.map((it, i) => {
+    const a = -Math.PI / 2 + 2 * Math.PI * (acc + weights[i] / 2) / total;
+    acc += weights[i];
+    return a;
+  });
+  const posAt = i => {
+    const c = Math.cos(ang[i]), s = Math.sin(ang[i]);
+    const hw = Math.max(40, W / 2 - items[i].w / 2 - pad);
+    const hh = Math.max(40, H / 2 - items[i].h / 2 - pad);
+    const t = Math.min(Math.abs(c) > 1e-6 ? hw / Math.abs(c) : 1e9,
+                       Math.abs(s) > 1e-6 ? hh / Math.abs(s) : 1e9);
+    return { x: cx + c * t, y: cy + s * t };
+  };
+  for (let pass = 0; pass < 18; pass++){
+    let moved = false;
+    for (let i = 0; i < n; i++){
+      const j = (i + 1) % n;
+      if (j === i) break;
+      const a = posAt(i), b = posAt(j);
+      const needX = (items[i].w + items[j].w) / 2 + 10 - Math.abs(a.x - b.x);
+      const needY = (items[i].h + items[j].h) / 2 + 10 - Math.abs(a.y - b.y);
+      if (needX > 0 && needY > 0){ ang[i] -= .022; ang[j] += .022; moved = true; }
+    }
+    if (!moved) break;
+  }
+  return items.map((_, i) => posAt(i));
+}
+
 function layoutConstel(){
   if (isMobileView()) return;
   const box = document.getElementById('constel');
   if (!box || !document.getElementById('card').classList.contains('open')) return;
   const svg = document.getElementById('constelSvg');
   const center = box.querySelector('.cnode.center');
-  const outer = [...box.querySelectorAll('.cnode.catnode')];
-  const strip = document.getElementById('gapstrip');
-  const W = box.clientWidth;
-  const H = box.clientHeight - (strip ? strip.offsetHeight + 14 : 0);   // reserve the gap strip
+  const nodes = [...box.querySelectorAll('.cnode.catnode')];
+  const W = box.clientWidth, H = box.clientHeight;
   if (W < 120 || H < 120 || !center) return;
   const cx = W / 2, cy = H / 2;
   center.style.left = cx + 'px';
   center.style.top  = cy + 'px';
   const cw = center.offsetWidth, ch = center.offsetHeight;
+  const items = nodes.map(el => ({ w: el.offsetWidth, h: el.offsetHeight }));
+  const pos = ringPlace(items, W, H, 10);
   let html = '';
-  outer.forEach((el, i) => {
-    const ang = -Math.PI / 2 + i * 2 * Math.PI / Math.max(outer.length, 1);
-    const ew = el.offsetWidth, eh = el.offsetHeight;
-    const rx = Math.max(cw/2 + ew/2 + 26, W / 2 - ew / 2 - 12);
-    const ry = Math.max(ch/2 + eh/2 + 22, H / 2 - eh / 2 - 12);
-    const x = cx + Math.cos(ang) * rx, y = cy + Math.sin(ang) * ry;
+  nodes.forEach((el, i) => {
+    const { x, y } = pos[i];
     el.style.left = x + 'px';
     el.style.top  = y + 'px';
     const a = edgeMid({ l: cx - cw/2, r: cx + cw/2, t: cy - ch/2, b: cy + ch/2 }, x, y);
-    const b = edgeMid({ l: x - ew/2,  r: x + ew/2,  t: y - eh/2,  b: y + eh/2 }, cx, cy);
+    const b = edgeMid({ l: x - items[i].w/2, r: x + items[i].w/2, t: y - items[i].h/2, b: y + items[i].h/2 }, cx, cy);
     const d = Math.abs(b.x - a.x) >= Math.abs(b.y - a.y)
       ? `M${a.x} ${a.y} C${(a.x + b.x) / 2} ${a.y}, ${(a.x + b.x) / 2} ${b.y}, ${b.x} ${b.y}`
       : `M${a.x} ${a.y} C${a.x} ${(a.y + b.y) / 2}, ${b.x} ${(a.y + b.y) / 2}, ${b.x} ${b.y}`;
-    html += `<path d="${d}" fill="none" stroke="rgba(14,116,144,.45)" stroke-width="1.7"/>` +
-      `<circle cx="${a.x}" cy="${a.y}" r="2.6" fill="#0e7490"/>` +
-      `<circle cx="${b.x}" cy="${b.y}" r="2.2" fill="#0e7490"/>`;
+    html += el.classList.contains('empty')
+      ? `<path d="${d}" fill="none" stroke="#cfcfc9" stroke-width="1.4" stroke-dasharray="4 4"/>`
+      : `<path d="${d}" fill="none" stroke="rgba(14,116,144,.45)" stroke-width="1.7"/>` +
+        `<circle cx="${a.x}" cy="${a.y}" r="2.6" fill="#0e7490"/>` +
+        `<circle cx="${b.x}" cy="${b.y}" r="2.2" fill="#0e7490"/>`;
   });
   svg.innerHTML = html;
 }
@@ -1268,6 +1314,15 @@ function exportPNG(){
   x.fillText(c.name, 46, 112);
   x.fillStyle = '#52525b'; x.font = '500 13px "IBM Plex Mono", monospace';
   x.fillText(`${partners.length} MAPPED PARTNERS · ${populated.length} OF 11 LAYERS · ${CATS[c.cat].t.toUpperCase()}`, 48, 142);
+  if (partners.some(p => byName[p.name]?.spokenTo) || c.spokenTo){
+    x.font = '600 11px "IBM Plex Mono", monospace';
+    const legend = 'SPOKEN WITH DIRECTLY';
+    const tw = x.measureText(legend).width;
+    x.fillStyle = '#c9a227';
+    x.beginPath(); x.arc(W - 48 - tw - 12, 138, 4, 0, 7); x.fill();
+    x.fillStyle = '#77776f';
+    x.textAlign = 'right'; x.fillText(legend, W - 48, 142); x.textAlign = 'left';
+  }
 
   const FOOT = 92;
   const cx = W/2, cy = (176 + (H - FOOT)) / 2;
@@ -1301,24 +1356,23 @@ function exportPNG(){
   const centerRect = { l: cx - CW/2, r: cx + CW/2, t: cy - CH/2, b: cy + CH/2 };
   const MAXROWS = 5;
 
-  // measure populated cards
-  const cards = populated.map(([catKey, list], i) => {
+  // one interleaved ring, laid out by the same ringPlace used on screen — no crossings
+  const popItems = populated.map(([catKey, list]) => {
     const rows = Math.min(list.length, MAXROWS);
     const more = list.length - rows;
-    const w = 190, h = 27 + rows * 16 + (more > 0 ? 15 : 0) + 8;
-    const ang = -Math.PI/2 + i * 2 * Math.PI / Math.max(populated.length, 1);
-    const rx = Math.max(CW/2 + w/2 + 34, W/2 - w/2 - 52);
-    const ry = Math.max(CH/2 + h/2 + 26, (H - FOOT - 176) / 2 - h/2 - 10);
-    return { catKey, list, rows, more, w, h, px: cx + Math.cos(ang) * rx, py: cy + Math.sin(ang) * ry };
+    return { catKey, list, rows, more, w: 190, h: 27 + rows * 16 + (more > 0 ? 15 : 0) + 8, empty: false };
   });
-  const empties = empty.map((catKey, i) => {
-    const w = 132, h = 36;
-    const n = Math.max(empty.length, 1);
-    const ang = -Math.PI/2 + (i + .5) * 2 * Math.PI / n;
-    const rx = Math.max(CW/2 + w/2 + 22, W * 0.185);
-    const ry = Math.max(CH/2 + h/2 + 20, (H - FOOT - 176) * 0.21);
-    return { catKey, w, h, px: cx + Math.cos(ang) * rx, py: cy + Math.sin(ang) * ry };
-  });
+  const empItems = empty.map(catKey => ({ catKey, w: 152, h: 40, empty: true }));
+  const ringItems = [];
+  {
+    const m = Math.max(popItems.length, empItems.length);
+    for (let i = 0; i < m; i++){ if (popItems[i]) ringItems.push(popItems[i]); if (empItems[i]) ringItems.push(empItems[i]); }
+  }
+  const FIELD_Y = 176, FIELD_H = H - FOOT - FIELD_Y;
+  const rp = ringPlace(ringItems.map(it => ({ w: it.w, h: it.h })), W - 84, FIELD_H, 8);
+  ringItems.forEach((it, i) => { it.px = rp[i].x + 42; it.py = rp[i].y + FIELD_Y; });
+  const cards = ringItems.filter(it => !it.empty);
+  const empties = ringItems.filter(it => it.empty);
 
   // connectors first
   x.setLineDash([5, 5]); x.strokeStyle = '#c9c9c4'; x.lineWidth = 1.4;
@@ -1342,12 +1396,12 @@ function exportPNG(){
     x.fillStyle = '#f4f4f1'; x.fill();
     x.setLineDash([4, 4]); x.strokeStyle = '#d4d4cf'; x.lineWidth = 1.4; x.stroke(); x.setLineDash([]);
     x.fillStyle = expColor(e.catKey);
-    x.globalAlpha = .5; x.beginPath(); x.arc(e.px - e.w/2 + 12, e.py - 6, 3.5, 0, 7); x.fill(); x.globalAlpha = 1;
+    x.globalAlpha = .5; x.beginPath(); x.arc(e.px - e.w/2 + 12, e.py - 7, 3.5, 0, 7); x.fill(); x.globalAlpha = 1;
     x.textAlign = 'left'; x.textBaseline = 'middle';
     x.fillStyle = '#77776f'; x.font = '600 8.5px "IBM Plex Mono", monospace';
-    x.fillText(trunc(CATS[e.catKey].t.toUpperCase(), e.w - 32), e.px - e.w/2 + 21, e.py - 6);
+    x.fillText(trunc(CATS[e.catKey].t.toUpperCase(), e.w - 32), e.px - e.w/2 + 21, e.py - 7);
     x.fillStyle = '#a1a19a'; x.font = 'italic 500 9px Archivo, sans-serif';
-    x.fillText('none mapped yet', e.px - e.w/2 + 21, e.py + 8);
+    x.fillText('no partnerships mapped — yet', e.px - e.w/2 + 12, e.py + 9);
   }
 
   // populated layer cards
@@ -1366,8 +1420,14 @@ function exportPNG(){
     x.textAlign = 'left';
     cd.list.slice(0, cd.rows).forEach((p, ri) => {
       const py2 = ly0 + 27 + ri * 16 + 7;
+      let tx0 = lx0 + 12;
+      if (byName[p.name]?.spokenTo){
+        x.fillStyle = '#c9a227';
+        x.beginPath(); x.arc(lx0 + 15, py2, 2.6, 0, 7); x.fill();
+        tx0 = lx0 + 22;
+      }
       x.fillStyle = '#0a0a0a'; x.font = '600 11px Archivo, sans-serif';
-      x.fillText(trunc(p.name, cd.w - 24), lx0 + 12, py2);
+      x.fillText(trunc(p.name, cd.w - (tx0 - lx0) - 12), tx0, py2);
     });
     if (cd.more > 0){
       x.fillStyle = '#0e7490'; x.font = '600 8.5px "IBM Plex Mono", monospace';

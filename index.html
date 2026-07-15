@@ -115,25 +115,31 @@ header.site .hbyline a:hover{text-decoration:underline}
 #journey{max-width:1240px;margin:0 auto;padding:38px 20px 8px}
 #journey h2{font-size:clamp(22px,3.4vw,30px);font-weight:800;letter-spacing:-.02em;margin-top:6px}
 #journey .jintro{max-width:760px;color:var(--muted2);margin-top:8px;font-size:14.5px}
-#jboard{position:relative;margin-top:26px;padding:82px 80px}
+#jboard{position:relative;margin-top:26px;padding:112px 108px}
 #trackSvg{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;overflow:visible}
+.roadArrow{animation:arrowGlow 1.9s ease-in-out infinite}
+@keyframes arrowGlow{
+  0%,100%{filter:drop-shadow(0 0 3px rgba(34,211,238,.7))}
+  50%{filter:drop-shadow(0 0 10px rgba(34,211,238,1))}
+}
+@media(prefers-reduced-motion:reduce){.roadArrow{animation:none}}
 .jgrid{
   position:relative;display:grid;grid-template-columns:1fr 1fr;
-  grid-auto-rows:1fr;gap:84px 190px;z-index:1;
+  grid-auto-rows:1fr;gap:84px 118px;z-index:1;
 }
 @media(max-width:1000px){
-  #jboard{padding:76px 74px}
-  .jgrid{gap:72px 130px}
+  #jboard{padding:106px 102px}
+  .jgrid{gap:70px 104px}
 }
 .jcard{
   background:var(--cardbg);border:1px solid var(--border);border-radius:var(--r-box);
   padding:20px;position:relative;z-index:1;
 }
 .jcard .jicon{
-  width:54px;height:54px;border-radius:14px;background:#0a0a0a;color:#fff;
-  display:flex;align-items:center;justify-content:center;margin-bottom:12px;
+  width:96px;height:96px;border-radius:22px;background:#0a0a0a;color:#fff;
+  display:flex;align-items:center;justify-content:center;margin-bottom:14px;
 }
-.jcard .jicon svg{width:27px;height:27px}
+.jcard .jicon svg{width:54px;height:54px}
 .jcard .jstage{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:10px;font-weight:600;letter-spacing:.12em;color:var(--muted)}
 .jcard h3{font-size:19px;font-weight:800;letter-spacing:-.01em;margin:2px 0 4px}
 .jcard .jdesc{font-size:13px;color:var(--muted2);line-height:1.5}
@@ -281,19 +287,47 @@ body.dlg-open #backdrop{display:block}
 #constel{flex:1.45;position:relative;background:var(--cardbg);border:1px solid var(--border);border-radius:12px;min-width:0}
 #constelSvg{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
 .cnode{
-  position:absolute;transform:translate(-50%,-50%);width:128px;
-  background:#fff;border:1px solid var(--border);border-radius:10px;padding:7px 9px;
+  position:absolute;transform:translate(-50%,-50%);width:164px;
+  background:#fff;border:1px solid var(--border);border-radius:10px;padding:8px 9px;
   box-shadow:0 3px 10px rgba(10,10,10,.05);text-align:left;
 }
-.cnode.partner{cursor:pointer}
-.cnode.partner:hover{border-color:var(--accent)}
 .cnode.center{width:200px;border:2px solid var(--accent);z-index:2;box-shadow:0 10px 28px rgba(14,116,144,.16);display:flex;gap:9px;align-items:center;cursor:default}
-.cnode .nhead{display:flex;align-items:center;gap:6px;min-width:0}
 .cnode .nname{font-weight:700;font-size:11.5px;line-height:1.25;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0}
 .cnode.center .nname{font-size:13.5px;white-space:normal}
-.cnode .nkind{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:8px;font-weight:600;letter-spacing:.08em;color:var(--accent);margin-top:3px}
 .cnode .ndesc{font-size:10px;color:var(--muted);line-height:1.4;margin-top:3px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 .cnode.center .ndesc{-webkit-line-clamp:3;font-size:10.5px;color:var(--muted2)}
+.cnode.catnode{z-index:1}
+.cnode.catnode .chead2{display:flex;align-items:center;gap:6px;min-width:0}
+.cnode.catnode .ctitle{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:8.5px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--muted2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+.cnode.catnode .ccount{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:8.5px;font-weight:600;color:var(--ink);background:#efefec;border-radius:8px;padding:0 5px;flex:none}
+.cnode.catnode .cdot{width:8px;height:8px;border-radius:50%;flex:none}
+.clist{margin-top:5px;display:flex;flex-direction:column;gap:3px}
+.crow{
+  display:flex;align-items:center;gap:5px;width:100%;
+  font-weight:600;font-size:10.5px;line-height:1.3;color:var(--ink);
+  background:#fbfbfa;border:1px solid #efefec;border-radius:6px;padding:3px 6px;cursor:pointer;
+}
+.crow:hover{border-color:var(--accent)}
+.crow .crname{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+.cnode.catnode:not(.expanded) .crow:nth-child(n+4){display:none}
+.cnode.catnode.expanded{z-index:4}
+.cnode.catnode.expanded .clist{max-height:150px;overflow:auto}
+.catx{
+  display:block;margin-top:4px;font-family:'IBM Plex Mono',ui-monospace,monospace;
+  font-size:8px;font-weight:600;letter-spacing:.08em;color:var(--accent);cursor:pointer;padding:1px 2px;
+}
+.catx:hover{text-decoration:underline}
+#gapstrip{
+  position:absolute;left:12px;right:12px;bottom:10px;z-index:1;
+  display:flex;align-items:center;flex-wrap:wrap;gap:5px;
+}
+#gapstrip .gaphead{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:8px;font-weight:600;letter-spacing:.1em;color:var(--muted);margin-right:3px}
+.gapchip{
+  display:inline-flex;align-items:center;gap:5px;
+  font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:8px;font-weight:500;letter-spacing:.04em;text-transform:uppercase;
+  color:var(--muted);background:#f7f7f4;border:1.5px dashed #d9d9d4;border-radius:6px;padding:3px 7px;
+}
+.gapchip .cdot{width:7px;height:7px;border-radius:50%;flex:none}
 #constelMore{
   position:absolute;left:50%;bottom:10px;transform:translateX(-50%);z-index:2;
   font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:9.5px;color:var(--muted2);
@@ -869,7 +903,7 @@ function drawTrack(){
     minL = Math.min(minL, r.left); maxR = Math.max(maxR, r.right);
     minT = Math.min(minT, r.top);  maxB = Math.max(maxB, r.bottom);
   }
-  const OFF = 42;                                // card edge → road centerline
+  const OFF = 58;                                // card edge → road centerline
   const left = minL - br.left - OFF, right = maxR - br.left + OFF;
   const top  = minT - br.top  - OFF, bottom = maxB - br.top  + OFF;
   if (right - left < 160 || bottom - top < 160){ svg.innerHTML = ''; trackGeo = null; return; }
@@ -883,29 +917,29 @@ function drawTrack(){
   trackAnim.abort = true;                        // geometry changed: stop any run, rebuild, re-park
   hideJCaption();
 
-  const r = Math.min(78, (right-left)/2, (bottom-top)/2);
+  const r = Math.min(96, (right-left)/2, (bottom-top)/2);
   const d = `M ${left+r} ${top} H ${right-r} A ${r} ${r} 0 0 1 ${right} ${top+r} V ${bottom-r} A ${r} ${r} 0 0 1 ${right-r} ${bottom} H ${left+r} A ${r} ${r} 0 0 1 ${left} ${bottom-r} V ${top+r} A ${r} ${r} 0 0 1 ${left+r} ${top} Z`;
   const arrow = (x,y,rot) =>
-    `<path d="M -9 -6.5 L 5 0 L -9 6.5" transform="translate(${x} ${y}) rotate(${rot})" fill="none" stroke="#fafafa" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" opacity=".92"/>`;
+    `<path class="roadArrow" d="M -13 -11 L 11 0 L -13 11 Z" transform="translate(${x} ${y}) rotate(${rot})" fill="#0e7490" stroke="#fafafa" stroke-width="2.4" stroke-linejoin="round"/>`;
   svg.innerHTML =
-    `<path d="${d}" fill="none" stroke="rgba(10,10,10,.10)" stroke-width="58"/>` +          // soft shoulder
-    `<path id="roadPath" d="${d}" fill="none" stroke="#232327" stroke-width="48"/>` +       // asphalt
-    `<path d="${d}" fill="none" stroke="#fafafa" stroke-width="3" stroke-dasharray="18 15" opacity=".95"/>` + // center line
+    `<path d="${d}" fill="none" stroke="rgba(10,10,10,.10)" stroke-width="86"/>` +          // soft shoulder
+    `<path id="roadPath" d="${d}" fill="none" stroke="#232327" stroke-width="72"/>` +       // asphalt
+    `<path d="${d}" fill="none" stroke="#fafafa" stroke-width="3.6" stroke-dasharray="24 20" opacity=".95"/>` + // center line
     arrow(mx, top, 0) + arrow(right, my, 90) + arrow(mx, bottom, 180) + arrow(left, my, 270) +
     `<g id="carG">
-       <rect class="wheel" x="-14" y="-16.5" width="10" height="5" rx="2" fill="#101013"/>
-       <rect class="wheel" x="5"   y="-16.5" width="10" height="5" rx="2" fill="#101013"/>
-       <rect class="wheel" x="-14" y="11.5"  width="10" height="5" rx="2" fill="#101013"/>
-       <rect class="wheel" x="5"   y="11.5"  width="10" height="5" rx="2" fill="#101013"/>
-       <rect x="-26" y="-13" width="52" height="26" rx="10" fill="#0e7490" stroke="#06303f" stroke-width="1.6"/>
-       <rect x="-20" y="-9.5" width="8" height="19" rx="3" fill="#0b5e77"/>
-       <rect x="13" y="-9.5" width="8" height="19" rx="3" fill="#0b5e77"/>
-       <rect x="-9" y="-10" width="17" height="20" rx="5" fill="#a5dbe8"/>
-       <circle cx="23.5" cy="-6.8" r="2.4" fill="#fde68a"/>
-       <circle cx="23.5" cy="6.8" r="2.4" fill="#fde68a"/>
-       <rect x="-27" y="-7.5" width="2.6" height="15" rx="1.3" fill="#e25c5c"/>
-       <circle cx="1" cy="0" r="5" fill="#06303f"/>
-       <circle cx="1" cy="0" r="2.2" fill="#22d3ee"/>
+       <rect class="wheel" x="-19" y="-22.5" width="13.5" height="7" rx="2.6" fill="#101013"/>
+       <rect class="wheel" x="7"   y="-22.5" width="13.5" height="7" rx="2.6" fill="#101013"/>
+       <rect class="wheel" x="-19" y="15.5"  width="13.5" height="7" rx="2.6" fill="#101013"/>
+       <rect class="wheel" x="7"   y="15.5"  width="13.5" height="7" rx="2.6" fill="#101013"/>
+       <rect x="-35" y="-17.5" width="70" height="35" rx="13.5" fill="#0e7490" stroke="#06303f" stroke-width="2"/>
+       <rect x="-27" y="-13" width="11" height="26" rx="4" fill="#0b5e77"/>
+       <rect x="17.5" y="-13" width="11" height="26" rx="4" fill="#0b5e77"/>
+       <rect x="-12" y="-13.5" width="23" height="27" rx="6.5" fill="#a5dbe8"/>
+       <circle cx="31.5" cy="-9" r="3.2" fill="#fde68a"/>
+       <circle cx="31.5" cy="9" r="3.2" fill="#fde68a"/>
+       <rect x="-36.5" y="-10" width="3.4" height="20" rx="1.7" fill="#e25c5c"/>
+       <circle cx="1.5" cy="0" r="6.6" fill="#06303f"/>
+       <circle cx="1.5" cy="0" r="3" fill="#22d3ee"/>
      </g>`;
   const path = document.getElementById('roadPath');
   // arc-length positions of the four corner midpoints; path starts at (left+r, top) heading right
@@ -1019,28 +1053,46 @@ async function runLoop(){
 }
 
 /* ------------------ detail card → centered constellation dialog ------------------ */
-const RING_MAX = 10;   // partners shown around the center; the rest live in the grouped list
+/* partners grouped by the partner's ecosystem LAYER — the same taxonomy everywhere:
+   constellation nodes, the rail list, and the exported PNG. Layers with no mapped
+   partners stay visible as explicit, quietly-styled gaps. */
+function layerGroups(partners){
+  const groups = new Map(CAT_ORDER.map(k => [k, []]));
+  for (const p of partners){
+    const pc = byName[p.name];
+    if (pc) groups.get(pc.cat).push(p);
+  }
+  const populated = [...groups].filter(([, v]) => v.length).sort((a, b) => b[1].length - a[1].length);
+  const empty = [...groups].filter(([, v]) => !v.length).map(([k]) => k);
+  return { populated, empty };
+}
 function groupedPartnersHTML(partners){
   const prow = p => {
     const pc = byName[p.name];
     return `<button class="prow" data-cname="${esc(p.name)}" title="${esc(p.n || '')}">
       <span class="pdot" style="background:${pc ? dotColor(pc.cat) : '#ccc'}"></span>
       <span style="min-width:0">
-        <span class="prname">${esc(p.name)}</span>
+        <span class="prname">${esc(p.name)}</span><span class="prkind">${esc(p.k)}</span>
         ${p.n ? `<span class="prnote">${esc(p.n)}</span>` : ''}
       </span>
     </button>`;
   };
-  const groups = new Map();
-  for (const p of partners){
-    const k = p.k || 'Partnership';
-    if (!groups.has(k)) groups.set(k, []);
-    groups.get(k).push(p);
+  const { populated, empty } = layerGroups(partners);
+  let html = populated.map(([cat, list]) =>
+    `<div class="pgroup">
+       <p class="pghead"><span class="pdot" style="display:inline-block;width:8px;height:8px;vertical-align:-1px;margin-right:5px;background:${dotColor(cat)}"></span>${esc(CATS[cat].t.toUpperCase())} (${list.length})</p>
+       ${list.map(prow).join('')}
+     </div>`).join('');
+  if (empty.length){
+    html += `<div class="pgroup pgempty">
+      <p class="pghead">NOT YET MAPPED</p>
+      <p style="font-size:11.5px;color:var(--muted);line-height:1.55;margin:0 2px 6px">
+        No partnerships mapped in ${empty.map(k => `<b style="color:var(--muted2)">${esc(CATS[k].t)}</b>`).join(' · ')}.
+        Know of one? <a href="https://www.linkedin.com/in/kofiagyare/" target="_blank" rel="noopener">I'd like to learn it →</a>
+      </p>
+    </div>`;
   }
-  return [...groups.entries()]
-    .sort((a, b) => b[1].length - a[1].length || a[0].localeCompare(b[0]))
-    .map(([k, list]) => `<div class="pgroup"><p class="pghead">${esc(k.toUpperCase())} (${list.length})</p>${list.map(prow).join('')}</div>`)
-    .join('');
+  return html;
 }
 function renderCard(){
   const card = document.getElementById('card');
@@ -1084,8 +1136,23 @@ function renderCard(){
       </div></div>`;
   }
 
-  const ring = partners.slice(0, RING_MAX);
-  const extra = partners.length - ring.length;
+  const { populated, empty } = layerGroups(partners);
+  const catCard = ([catKey, list]) => `
+    <div class="cnode catnode" data-lcat="${esc(catKey)}">
+      <span class="chead2">
+        <span class="cdot" style="background:${dotColor(catKey)}"></span>
+        <span class="ctitle">${esc(CATS[catKey].t)}</span>
+        <span class="ccount">${list.length}</span>
+      </span>
+      <span class="clist">
+        ${list.map(p => `<button class="crow" data-cname="${esc(p.name)}" title="${esc(p.n || '')}">${logoHTML(p.name,20)}<span class="crname">${esc(p.name)}</span></button>`).join('')}
+      </span>
+      ${list.length > 3 ? `<button class="catx">▸ ${list.length - 3} MORE</button>` : ''}
+    </div>`;
+  const gapChip = catKey => `
+    <span class="gapchip" title="No mapped partners yet in ${esc(CATS[catKey].t)} — tell me what I'm missing">
+      <span class="cdot" style="background:${dotColor(catKey)};opacity:.45"></span>${esc(CATS[catKey].t)}
+    </span>`;
   const constelHTML = `
     <div id="constel">
       <svg id="constelSvg" aria-hidden="true"></svg>
@@ -1096,16 +1163,8 @@ function renderCard(){
           <span class="ndesc">${esc(known || c.sub || cat.t)}</span>
         </span>
       </div>
-      ${ring.map(p => {
-        const pc = byName[p.name];
-        return `<div class="cnode partner" data-cname="${esc(p.name)}" role="button">
-          <span class="nhead">${logoHTML(p.name,20)}<span class="nname">${esc(p.name)}</span></span>
-          <span class="nkind">${esc((p.k || '').toUpperCase())}</span>
-          <span class="ndesc">${esc(p.n || pc?.sub || (pc ? CATS[pc.cat].t : ''))}</span>
-        </div>`;
-      }).join('')}
-      ${extra > 0 ? `<div id="constelMore">+${extra} MORE IN THE PARTNER LIST →</div>` : ''}
-      ${!partners.length ? `<div id="constelMore">NO PARTNERSHIPS MAPPED YET — TELL ME WHAT I'M MISSING</div>` : ''}
+      ${populated.map(catCard).join('')}
+      ${empty.length ? `<div id="gapstrip"><span class="gaphead">NOT YET MAPPED</span>${empty.map(gapChip).join('')}</div>` : ''}
     </div>`;
 
   scroll.innerHTML = `
@@ -1149,26 +1208,29 @@ function renderCard(){
   requestAnimationFrame(layoutConstel);
 }
 
-/* place the ring of partner mini-cards on an ellipse and draw edge-anchored connectors */
+/* two rings around the center card: populated layer-cards outer, unmapped layers inner.
+   Connectors leave the center card's edge midpoints ("nodes") to each layer card. */
 function layoutConstel(){
   if (isMobileView()) return;
   const box = document.getElementById('constel');
   if (!box || !document.getElementById('card').classList.contains('open')) return;
   const svg = document.getElementById('constelSvg');
   const center = box.querySelector('.cnode.center');
-  const nodes = [...box.querySelectorAll('.cnode.partner')];
-  const W = box.clientWidth, H = box.clientHeight;
+  const outer = [...box.querySelectorAll('.cnode.catnode')];
+  const strip = document.getElementById('gapstrip');
+  const W = box.clientWidth;
+  const H = box.clientHeight - (strip ? strip.offsetHeight + 14 : 0);   // reserve the gap strip
   if (W < 120 || H < 120 || !center) return;
   const cx = W / 2, cy = H / 2;
   center.style.left = cx + 'px';
   center.style.top  = cy + 'px';
   const cw = center.offsetWidth, ch = center.offsetHeight;
   let html = '';
-  nodes.forEach((el, i) => {
-    const ang = -Math.PI / 2 + i * 2 * Math.PI / nodes.length;
+  outer.forEach((el, i) => {
+    const ang = -Math.PI / 2 + i * 2 * Math.PI / Math.max(outer.length, 1);
     const ew = el.offsetWidth, eh = el.offsetHeight;
-    const rx = Math.max(110, W / 2 - ew / 2 - 12);
-    const ry = Math.max(85,  H / 2 - eh / 2 - 36);
+    const rx = Math.max(cw/2 + ew/2 + 26, W / 2 - ew / 2 - 12);
+    const ry = Math.max(ch/2 + eh/2 + 22, H / 2 - eh / 2 - 12);
     const x = cx + Math.cos(ang) * rx, y = cy + Math.sin(ang) * ry;
     el.style.left = x + 'px';
     el.style.top  = y + 'px';
@@ -1177,7 +1239,9 @@ function layoutConstel(){
     const d = Math.abs(b.x - a.x) >= Math.abs(b.y - a.y)
       ? `M${a.x} ${a.y} C${(a.x + b.x) / 2} ${a.y}, ${(a.x + b.x) / 2} ${b.y}, ${b.x} ${b.y}`
       : `M${a.x} ${a.y} C${a.x} ${(a.y + b.y) / 2}, ${b.x} ${(a.y + b.y) / 2}, ${b.x} ${b.y}`;
-    html += `<path d="${d}" fill="none" stroke="rgba(14,116,144,.42)" stroke-width="1.6"/>`;
+    html += `<path d="${d}" fill="none" stroke="rgba(14,116,144,.45)" stroke-width="1.7"/>` +
+      `<circle cx="${a.x}" cy="${a.y}" r="2.6" fill="#0e7490"/>` +
+      `<circle cx="${b.x}" cy="${b.y}" r="2.2" fill="#0e7490"/>`;
   });
   svg.innerHTML = html;
 }
@@ -1196,76 +1260,151 @@ function exportPNG(){
   x.fillStyle = '#f4f4f2'; x.fillRect(0,0,W,H);
 
   // header
+  const { populated, empty } = layerGroups(partners);
   x.textBaseline = 'alphabetic'; x.textAlign = 'left';
   x.fillStyle = '#77776f'; x.font = '600 13px "IBM Plex Mono", monospace';
   x.fillText('PARTNERSHIP MAP · AV ECOSYSTEM', 48, 62);
   x.fillStyle = '#0a0a0a'; x.font = '900 46px Archivo, sans-serif';
   x.fillText(c.name, 46, 112);
   x.fillStyle = '#52525b'; x.font = '500 13px "IBM Plex Mono", monospace';
-  x.fillText(`${partners.length} MAPPED PARTNERS · ${CATS[c.cat].t.toUpperCase()}`, 48, 142);
+  x.fillText(`${partners.length} MAPPED PARTNERS · ${populated.length} OF 11 LAYERS · ${CATS[c.cat].t.toUpperCase()}`, 48, 142);
 
   const FOOT = 92;
-  const cx = W/2, cy = (170 + (H - FOOT)) / 2 - 8;
-  const shown = partners.slice(0,16), extra = partners.length - shown.length;
-  const R = 230;
+  const cx = W/2, cy = (176 + (H - FOOT)) / 2;
 
-  // connectors first (under nodes)
-  shown.forEach((p, i) => {
-    const ang = -Math.PI/2 + i * 2*Math.PI / shown.length;
-    const px = cx + Math.cos(ang)*R, py = cy + Math.sin(ang)*R;
-    const mx = (cx+px)/2 + Math.cos(ang + Math.PI/2)*22;
-    const my = (cy+py)/2 + Math.sin(ang + Math.PI/2)*22;
-    x.strokeStyle = 'rgba(14,116,144,.45)'; x.lineWidth = 1.6;
-    x.beginPath(); x.moveTo(cx,cy); x.quadraticCurveTo(mx,my,px,py); x.stroke();
-  });
-
-  // partner nodes + labels
-  shown.forEach((p, i) => {
-    const ang = -Math.PI/2 + i * 2*Math.PI / shown.length;
-    const px = cx + Math.cos(ang)*R, py = cy + Math.sin(ang)*R;
-    const pc = byName[p.name];
-    x.beginPath(); x.arc(px,py,30,0,7);
-    x.fillStyle = pc ? expColor(pc.cat) : '#9ca3af'; x.fill();
-    if (pc?.spokenTo){ x.beginPath(); x.arc(px,py,35,0,7); x.strokeStyle = '#0e7490'; x.lineWidth = 3; x.stroke(); }
-    x.fillStyle = '#fff'; x.font = '700 15px Archivo, sans-serif';
-    x.textAlign = 'center'; x.textBaseline = 'middle';
-    x.fillText(pc?.mono || p.name.slice(0,2).toUpperCase(), px, py+1);
-
-    // label anchored outward, always clear of the node circle
-    const cos = Math.cos(ang), sin = Math.sin(ang);
-    const centered = Math.abs(cos) < .35;
-    let lx, ly;
-    if (centered){
-      lx = px; ly = py + (sin > 0 ? 58 : -58);
-      x.textAlign = 'center';
+  // helpers — same visual language as the on-screen dialog
+  const rr = (rx0, ry0, rw, rh, rad) => {
+    x.beginPath();
+    x.moveTo(rx0 + rad, ry0);
+    x.arcTo(rx0 + rw, ry0, rx0 + rw, ry0 + rh, rad);
+    x.arcTo(rx0 + rw, ry0 + rh, rx0, ry0 + rh, rad);
+    x.arcTo(rx0, ry0 + rh, rx0, ry0, rad);
+    x.arcTo(rx0, ry0, rx0 + rw, ry0, rad);
+    x.closePath();
+  };
+  const trunc = (s, maxW) => {
+    if (x.measureText(s).width <= maxW) return s;
+    while (s.length > 1 && x.measureText(s + '…').width > maxW) s = s.slice(0, -1);
+    return s + '…';
+  };
+  const curveTo = (a, b) => {
+    x.beginPath();
+    if (Math.abs(b.x - a.x) >= Math.abs(b.y - a.y)){
+      x.moveTo(a.x, a.y); x.bezierCurveTo((a.x + b.x) / 2, a.y, (a.x + b.x) / 2, b.y, b.x, b.y);
     } else {
-      lx = px + Math.sign(cos) * Math.max(44, Math.abs(cos) * 52);
-      ly = py + sin * 46;
-      x.textAlign = cos > 0 ? 'left' : 'right';
+      x.moveTo(a.x, a.y); x.bezierCurveTo(a.x, (a.y + b.y) / 2, b.x, (a.y + b.y) / 2, b.x, b.y);
     }
-    const nm = p.name.length > 30 ? p.name.slice(0,29)+'…' : p.name;
-    x.fillStyle = '#0a0a0a'; x.font = '600 14px Archivo, sans-serif'; x.textBaseline = 'middle';
-    x.fillText(nm, lx, ly - 7);
-    x.fillStyle = '#77776f'; x.font = '500 10px "IBM Plex Mono", monospace';
-    x.fillText(String(p.k || '').toUpperCase(), lx, ly + 10);
+    x.stroke();
+  };
+
+  const CW = 230, CH = 90;                                   // center card
+  const centerRect = { l: cx - CW/2, r: cx + CW/2, t: cy - CH/2, b: cy + CH/2 };
+  const MAXROWS = 5;
+
+  // measure populated cards
+  const cards = populated.map(([catKey, list], i) => {
+    const rows = Math.min(list.length, MAXROWS);
+    const more = list.length - rows;
+    const w = 190, h = 27 + rows * 16 + (more > 0 ? 15 : 0) + 8;
+    const ang = -Math.PI/2 + i * 2 * Math.PI / Math.max(populated.length, 1);
+    const rx = Math.max(CW/2 + w/2 + 34, W/2 - w/2 - 52);
+    const ry = Math.max(CH/2 + h/2 + 26, (H - FOOT - 176) / 2 - h/2 - 10);
+    return { catKey, list, rows, more, w, h, px: cx + Math.cos(ang) * rx, py: cy + Math.sin(ang) * ry };
+  });
+  const empties = empty.map((catKey, i) => {
+    const w = 132, h = 36;
+    const n = Math.max(empty.length, 1);
+    const ang = -Math.PI/2 + (i + .5) * 2 * Math.PI / n;
+    const rx = Math.max(CW/2 + w/2 + 22, W * 0.185);
+    const ry = Math.max(CH/2 + h/2 + 20, (H - FOOT - 176) * 0.21);
+    return { catKey, w, h, px: cx + Math.cos(ang) * rx, py: cy + Math.sin(ang) * ry };
   });
 
-  // center node
-  x.beginPath(); x.arc(cx,cy,52,0,7); x.fillStyle = '#fff'; x.fill();
-  x.lineWidth = 4; x.strokeStyle = '#0e7490'; x.stroke();
-  x.fillStyle = '#0e7490'; x.font = '900 26px Archivo, sans-serif';
-  x.textAlign = 'center'; x.textBaseline = 'middle';
-  x.fillText(c.mono || c.name.slice(0,2).toUpperCase(), cx, cy+1);
-
-  if (extra > 0){
-    x.fillStyle = '#77776f'; x.font = '600 12px "IBM Plex Mono", monospace';
-    x.textAlign = 'right'; x.textBaseline = 'alphabetic';
-    x.fillText(`+${extra} MORE MAPPED PARTNERS`, W - 48, 142);
+  // connectors first
+  x.setLineDash([5, 5]); x.strokeStyle = '#c9c9c4'; x.lineWidth = 1.4;
+  for (const e of empties){
+    const re = { l: e.px - e.w/2, r: e.px + e.w/2, t: e.py - e.h/2, b: e.py + e.h/2 };
+    curveTo(edgeMid(centerRect, e.px, e.py), edgeMid(re, cx, cy));
   }
+  x.setLineDash([]); x.strokeStyle = 'rgba(14,116,144,.5)'; x.lineWidth = 1.8;
+  for (const cd of cards){
+    const re = { l: cd.px - cd.w/2, r: cd.px + cd.w/2, t: cd.py - cd.h/2, b: cd.py + cd.h/2 };
+    const a = edgeMid(centerRect, cd.px, cd.py), b = edgeMid(re, cx, cy);
+    curveTo(a, b);
+    x.fillStyle = '#0e7490';
+    x.beginPath(); x.arc(a.x, a.y, 3, 0, 7); x.fill();
+    x.beginPath(); x.arc(b.x, b.y, 2.5, 0, 7); x.fill();
+  }
+
+  // empty layer cards (quiet gaps)
+  for (const e of empties){
+    rr(e.px - e.w/2, e.py - e.h/2, e.w, e.h, 8);
+    x.fillStyle = '#f4f4f1'; x.fill();
+    x.setLineDash([4, 4]); x.strokeStyle = '#d4d4cf'; x.lineWidth = 1.4; x.stroke(); x.setLineDash([]);
+    x.fillStyle = expColor(e.catKey);
+    x.globalAlpha = .5; x.beginPath(); x.arc(e.px - e.w/2 + 12, e.py - 6, 3.5, 0, 7); x.fill(); x.globalAlpha = 1;
+    x.textAlign = 'left'; x.textBaseline = 'middle';
+    x.fillStyle = '#77776f'; x.font = '600 8.5px "IBM Plex Mono", monospace';
+    x.fillText(trunc(CATS[e.catKey].t.toUpperCase(), e.w - 32), e.px - e.w/2 + 21, e.py - 6);
+    x.fillStyle = '#a1a19a'; x.font = 'italic 500 9px Archivo, sans-serif';
+    x.fillText('none mapped yet', e.px - e.w/2 + 21, e.py + 8);
+  }
+
+  // populated layer cards
+  for (const cd of cards){
+    const lx0 = cd.px - cd.w/2, ly0 = cd.py - cd.h/2;
+    rr(lx0, ly0, cd.w, cd.h, 10);
+    x.fillStyle = '#ffffff'; x.fill();
+    x.strokeStyle = '#e4e4e7'; x.lineWidth = 1.4; x.stroke();
+    x.fillStyle = expColor(cd.catKey);
+    x.beginPath(); x.arc(lx0 + 13, ly0 + 14, 4, 0, 7); x.fill();
+    x.textAlign = 'left'; x.textBaseline = 'middle';
+    x.fillStyle = '#52525b'; x.font = '600 9px "IBM Plex Mono", monospace';
+    x.fillText(trunc(CATS[cd.catKey].t.toUpperCase(), cd.w - 56), lx0 + 23, ly0 + 14);
+    x.textAlign = 'right'; x.fillStyle = '#0a0a0a';
+    x.fillText(String(cd.list.length), lx0 + cd.w - 10, ly0 + 14);
+    x.textAlign = 'left';
+    cd.list.slice(0, cd.rows).forEach((p, ri) => {
+      const py2 = ly0 + 27 + ri * 16 + 7;
+      x.fillStyle = '#0a0a0a'; x.font = '600 11px Archivo, sans-serif';
+      x.fillText(trunc(p.name, cd.w - 24), lx0 + 12, py2);
+    });
+    if (cd.more > 0){
+      x.fillStyle = '#0e7490'; x.font = '600 8.5px "IBM Plex Mono", monospace';
+      x.fillText(`+${cd.more} MORE`, lx0 + 12, ly0 + 27 + cd.rows * 16 + 8);
+    }
+  }
+
+  // center card
+  rr(centerRect.l, centerRect.t, CW, CH, 14);
+  x.fillStyle = '#ffffff'; x.fill();
+  x.strokeStyle = '#0e7490'; x.lineWidth = 3; x.stroke();
+  x.beginPath(); x.arc(centerRect.l + 32, cy, 17, 0, 7);
+  x.fillStyle = '#eef7f9'; x.fill();
+  x.strokeStyle = '#0e7490'; x.lineWidth = 2; x.stroke();
+  x.fillStyle = '#0e7490'; x.font = '800 12px Archivo, sans-serif';
+  x.textAlign = 'center'; x.textBaseline = 'middle';
+  x.fillText(c.mono || c.name.slice(0,2).toUpperCase(), centerRect.l + 32, cy + 1);
+  x.textAlign = 'left';
+  x.fillStyle = '#0a0a0a'; x.font = '800 16px Archivo, sans-serif';
+  x.fillText(trunc(c.name, CW - 72), centerRect.l + 58, cy - 18);
+  const desc = enrich.known[c.name] || c.sub || CATS[c.cat].t;
+  x.fillStyle = '#52525b'; x.font = '500 10.5px Archivo, sans-serif';
+  const words = String(desc).split(/\s+/);
+  let line = '', lines = [];
+  for (const w2 of words){
+    const t = line ? line + ' ' + w2 : w2;
+    if (x.measureText(t).width > CW - 74 && line){ lines.push(line); line = w2; if (lines.length === 2) break; }
+    else line = t;
+  }
+  if (lines.length < 2 && line) lines.push(line);
+  if (lines.length === 2 && line && lines[1] !== line) lines[1] = trunc(lines[1] + ' ' + line, CW - 74);
+  lines.slice(0, 2).forEach((ln, li) => x.fillText(trunc(ln, CW - 74), centerRect.l + 58, cy + 2 + li * 14));
+
   if (!partners.length){
-    x.fillStyle = '#52525b'; x.font = '500 15px Archivo, sans-serif';
+    x.fillStyle = '#52525b'; x.font = '500 13px Archivo, sans-serif';
     x.textAlign = 'center'; x.textBaseline = 'alphabetic';
-    x.fillText('No partnerships mapped yet — tell me what I\'m missing.', cx, cy + 110);
+    x.fillText('No partnerships mapped yet — tell me what I\'m missing.', cx, centerRect.b + 30);
   }
 
   // footer attribution band
@@ -1359,6 +1498,14 @@ function wireEvents(){
       const fromMap = !!tile.closest('#board');
       select(name);
       if (fromMap === false && selectedName && selectedName !== was) scrollToCompany(name);
+      return;
+    }
+    if (e.target.closest('.catx')){
+      const node = e.target.closest('.cnode.catnode');
+      const on = node.classList.toggle('expanded');
+      const hidden = node.querySelectorAll('.crow').length - 3;
+      e.target.closest('.catx').textContent = on ? '▴ SHOW FEWER' : `▸ ${hidden} MORE`;
+      layoutConstel();
       return;
     }
     if (e.target.closest('#jhub')){ trackAnim.running ? togglePause() : runLoop(); return; }

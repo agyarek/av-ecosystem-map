@@ -19,7 +19,7 @@
   --gold:#c9a227;
   --bg:#f4f4f2;
   --ink:#0a0a0a;
-  --muted:#77776f;
+  --muted:#6c6c64;
   --muted2:#52525b;
   --cardbg:#fbfbfa;
   --border:#e4e4e7;
@@ -46,7 +46,7 @@ body{
   -webkit-font-smoothing:antialiased;
 }
 .mono{font-family:'IBM Plex Mono',ui-monospace,monospace}
-.kicker{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.kicker{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted2)}
 a{color:var(--accent)}
 button{font-family:inherit;color:inherit;background:none;border:none;cursor:pointer;text-align:left}
 img{max-width:100%}
@@ -59,12 +59,12 @@ header.site{
   display:flex;align-items:center;gap:18px;flex-wrap:wrap;
 }
 header.site .htitle{font-size:17px;font-weight:800;letter-spacing:-.01em;white-space:nowrap}
-header.site .hbyline{font-size:11.5px;color:#a1a1aa;line-height:1.45}
+header.site .hbyline{font-size:12px;color:#a1a1aa;line-height:1.45}
 header.site .hbyline a{color:#22d3ee;text-decoration:none;font-weight:600}
 header.site .hbyline a:hover{text-decoration:underline}
 #aboutLink{
   margin-left:auto;flex:none;
-  font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:9.5px;font-weight:600;letter-spacing:.1em;
+  font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:10.5px;font-weight:600;letter-spacing:.1em;
   color:#a1a1aa;border:1px solid #3f3f46;border-radius:var(--r-pill);padding:7px 12px;
 }
 #aboutLink:hover{color:#22d3ee;border-color:#22d3ee}
@@ -87,17 +87,17 @@ header.site .hbyline a:hover{text-decoration:underline}
 .srow:last-child{border-bottom:none}
 .srow:hover,.srow.active{background:#eef7f9}
 .srow .sname{font-weight:600;font-size:13.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.srow .scat{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-left:auto;white-space:nowrap}
+.srow .scat{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted2);margin-left:auto;white-space:nowrap}
 
 /* ============ intro ============ */
 #intro{max-width:1240px;margin:0 auto;padding:34px 20px 6px}
 #intro .lede{max-width:860px;font-size:16.5px;line-height:1.65;color:#27272a}
-#stats{margin-top:14px;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted2)}
+#stats{margin-top:14px;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted2)}
 #stats b{color:var(--ink);font-weight:600}
 #controls{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:16px}
 .toggle{
   display:inline-flex;align-items:center;gap:8px;
-  font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:10.5px;font-weight:600;letter-spacing:.08em;
+  font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;font-weight:600;letter-spacing:.08em;
   color:var(--muted2);background:#fff;border:1px solid var(--border);border-radius:var(--r-pill);
   padding:7px 12px 7px 7px;transition:border-color .15s;
 }
@@ -114,13 +114,12 @@ header.site .hbyline a:hover{text-decoration:underline}
 .toggle.on .knob::after{left:13px}
 #clearSel{
   display:none;align-items:center;gap:6px;
-  font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:10.5px;font-weight:600;letter-spacing:.08em;
+  font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;font-weight:600;letter-spacing:.08em;
   color:#fff;background:var(--ink);border-radius:var(--r-pill);padding:8px 14px;
 }
 #clearSel.show{display:inline-flex}
-#legend{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:10.5px;letter-spacing:.05em;color:var(--muted);margin-left:auto}
-#legend .ldot{color:var(--gold);font-size:12px}
-@media(max-width:900px){#legend{margin-left:0;width:100%}}
+#legend{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12px;letter-spacing:.04em;color:var(--muted2);margin-top:9px;line-height:1.6}
+#legend .ldot{color:var(--gold);font-size:13px}
 
 /* ============ journey loop ============ */
 #journey{max-width:1240px;margin:0 auto;padding:38px 20px 8px}
@@ -152,12 +151,14 @@ header.site .hbyline a:hover{text-decoration:underline}
   display:flex;align-items:center;justify-content:center;margin:0 auto 14px;
 }
 .jcard .jicon svg{width:54px;height:54px}
-.jcard .jstage{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;font-weight:600;letter-spacing:.12em;color:var(--muted)}
+.jcard .jstage{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12px;font-weight:600;letter-spacing:.12em;color:var(--muted)}
 .jcard h3{font-size:21.5px;font-weight:800;letter-spacing:-.01em;margin:3px 0 6px}
+.jcard .jstat{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12px;letter-spacing:.06em;color:var(--muted2);margin:2px 0 7px}
+.jcard .jstat b{color:var(--ink);font-size:14.5px;letter-spacing:0}
 .jcard .jdesc{font-size:14.5px;color:var(--muted2);line-height:1.55}
 .jexp{
   display:inline-flex;align-items:center;gap:6px;margin-top:13px;
-  font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:10.5px;font-weight:600;letter-spacing:.1em;
+  font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11.5px;font-weight:600;letter-spacing:.1em;
   color:var(--muted2);background:#f1f1ee;border-radius:6px;padding:6px 11px;
 }
 .jexp:hover{color:var(--ink);background:#e9e9e5}
@@ -167,13 +168,13 @@ header.site .hbyline a:hover{text-decoration:underline}
 .jcard.chips-open .jchips{display:flex}
 .jchip{
   display:inline-flex;align-items:center;gap:7px;
-  font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:10.5px;font-weight:500;letter-spacing:.03em;
+  font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11.5px;font-weight:500;letter-spacing:.03em;
   background:#fff;border:1px solid var(--border);border-radius:var(--r-chip);padding:5px 9px;
   transition:border-color .15s;
 }
 .jchip:hover{border-color:var(--accent)}
 .jchip .dot{width:8px;height:8px;border-radius:50%;flex:none}
-.jchip .jcount{color:var(--muted);font-size:10px}
+.jchip .jcount{color:var(--muted2);font-size:11px}
 #jhub{
   position:absolute;z-index:2;width:96px;height:96px;border-radius:50%;
   background:#fff;border:1px solid var(--border);box-shadow:0 6px 22px rgba(10,10,10,.08);
@@ -188,7 +189,7 @@ header.site .hbyline a:hover{text-decoration:underline}
 #jhub.running:not(.paused) .hi-pause{display:block}
 #jhub.paused .hi-run{display:none}
 #jhub.paused .hi-resume{display:block}
-#jhub .hlabel{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:9px;font-weight:600;letter-spacing:.14em;color:var(--muted2)}
+#jhub .hlabel{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:10px;font-weight:600;letter-spacing:.14em;color:var(--muted2)}
 #jhub.running .hlabel{color:var(--accent)}
 #jcaption{
   position:absolute;z-index:3;width:min(252px,38vw);pointer-events:none;
@@ -197,10 +198,9 @@ header.site .hbyline a:hover{text-decoration:underline}
   opacity:0;transition:opacity .22s;
 }
 #jcaption.show{opacity:1}
-#jcaption .jck{display:block;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:9px;font-weight:600;letter-spacing:.1em;color:var(--accent);margin-bottom:4px}
-#jcaption .jct{font-size:11.5px;line-height:1.5;color:#27272a}
+#jcaption .jck{display:block;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:10px;font-weight:600;letter-spacing:.1em;color:var(--accent);margin-bottom:4px}
+#jcaption .jct{font-size:12.5px;line-height:1.5;color:#27272a}
 .jcard.live{border-color:var(--accent);box-shadow:0 10px 28px rgba(14,116,144,.15)}
-.jreturn{max-width:760px;color:var(--muted2);font-size:13.5px;margin-top:26px}
 .jenablers{
   margin-top:16px;background:var(--cardbg);border:1px solid var(--border);border-radius:var(--r-box);
   padding:14px 18px;display:flex;align-items:center;gap:10px;flex-wrap:wrap;
@@ -220,7 +220,7 @@ header.site .hbyline a:hover{text-decoration:underline}
 }
 .ops{margin-bottom:34px}
 .opshead h2{font-size:clamp(20px,3vw,26px);font-weight:800;letter-spacing:-.02em;margin-top:6px}
-.opshead p.opsub{color:var(--muted2);font-size:13.5px;margin-top:4px;max-width:720px}
+.opshead p.opsub{color:var(--muted2);font-size:14px;margin-top:4px;max-width:720px}
 .opsgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,205px),1fr));gap:10px;margin-top:16px}
 .optile{
   position:relative;display:flex;align-items:flex-start;gap:11px;
@@ -229,7 +229,7 @@ header.site .hbyline a:hover{text-decoration:underline}
 }
 .optile:hover{border-color:#c9c9cd;box-shadow:0 3px 14px rgba(10,10,10,.06)}
 .optile .oname{font-weight:700;font-size:14.5px;letter-spacing:-.01em;display:flex;align-items:center;gap:6px}
-.optile .osub{font-size:11px;color:var(--muted);line-height:1.45;margin-top:3px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.optile .osub{font-size:12px;color:var(--muted2);line-height:1.45;margin-top:3px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 .logo{
   position:relative;flex:none;border-radius:8px;overflow:hidden;
   background:#e9e9e6;display:flex;align-items:center;justify-content:center;
@@ -250,9 +250,9 @@ header.site .hbyline a:hover{text-decoration:underline}
 .phead{display:flex;align-items:flex-start;gap:10px;width:100%;padding:14px 14px 10px;cursor:pointer}
 .pdot{width:10px;height:10px;border-radius:50%;flex:none;margin-top:5px}
 .phead h3{font-size:15px;font-weight:800;letter-spacing:-.01em;line-height:1.3}
-.phead .pdesc{font-size:11.5px;color:var(--muted);line-height:1.45;margin-top:2px}
+.phead .pdesc{font-size:12.5px;color:var(--muted);line-height:1.45;margin-top:2px}
 .phead .pcount{
-  font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:10.5px;font-weight:600;color:var(--muted2);
+  font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;font-weight:600;color:var(--muted2);
   margin-left:auto;flex:none;background:#efefec;border-radius:20px;padding:2px 8px;
 }
 .phead .caret{flex:none;color:var(--muted);margin-top:2px;transition:transform .15s}
@@ -265,10 +265,10 @@ header.site .hbyline a:hover{text-decoration:underline}
 }
 .chip:hover{border-color:#c9c9cd}
 .chip .cmain{min-width:0;flex:1}
-.chip .cname{font-weight:600;font-size:12.5px;letter-spacing:-.005em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:flex;align-items:center;gap:5px}
-.chip .csub{display:block;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:9.5px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-top:1px}
+.chip .cname{font-weight:600;font-size:13.5px;letter-spacing:-.005em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:flex;align-items:center;gap:5px}
+.chip .csub{display:block;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;color:var(--muted2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-top:1px}
 .chip .ctag{
-  font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:8.5px;font-weight:600;letter-spacing:.06em;
+  font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:9.5px;font-weight:600;letter-spacing:.06em;
   color:var(--muted);border:1px solid var(--border);border-radius:4px;padding:1px 5px;flex:none;
 }
 .chip.exited{opacity:.62}
@@ -278,7 +278,7 @@ header.site .hbyline a:hover{text-decoration:underline}
 [data-cname].prt{border-color:var(--accent);background:#f0f9fb}
 .pmore{
   display:block;width:calc(100% - 16px);margin:2px 8px 6px;text-align:center;
-  font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:10px;font-weight:600;letter-spacing:.08em;
+  font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;font-weight:600;letter-spacing:.08em;
   color:var(--muted2);background:#f1f1ee;border-radius:var(--r-chip);padding:7px 8px;
 }
 .pmore:hover{background:#e9e9e5;color:var(--ink)}
@@ -304,19 +304,19 @@ body.dlg-open #backdrop{display:block}
   box-shadow:0 3px 10px rgba(10,10,10,.05);text-align:left;
 }
 .cnode.center{width:200px;border:2px solid var(--accent);z-index:2;box-shadow:0 10px 28px rgba(14,116,144,.16);display:flex;gap:9px;align-items:center;cursor:default}
-.cnode .nname{font-weight:700;font-size:11.5px;line-height:1.25;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0}
+.cnode .nname{font-weight:700;font-size:12px;line-height:1.25;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0}
 .cnode.center .nname{font-size:13.5px;white-space:normal}
-.cnode .ndesc{font-size:10px;color:var(--muted);line-height:1.4;margin-top:3px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.cnode .ndesc{font-size:10.5px;color:var(--muted2);line-height:1.4;margin-top:3px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 .cnode.center .ndesc{-webkit-line-clamp:3;font-size:10.5px;color:var(--muted2)}
 .cnode.catnode{z-index:1}
 .cnode.catnode .chead2{display:flex;align-items:center;gap:6px;min-width:0}
-.cnode.catnode .ctitle{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:8.5px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--muted2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
-.cnode.catnode .ccount{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:8.5px;font-weight:600;color:var(--ink);background:#efefec;border-radius:8px;padding:0 5px;flex:none}
+.cnode.catnode .ctitle{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:9.5px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--muted2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+.cnode.catnode .ccount{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:9.5px;font-weight:600;color:var(--ink);background:#efefec;border-radius:8px;padding:0 5px;flex:none}
 .cnode.catnode .cdot{width:8px;height:8px;border-radius:50%;flex:none}
 .clist{margin-top:5px;display:flex;flex-direction:column;gap:3px}
 .crow{
   display:flex;align-items:center;gap:5px;width:100%;
-  font-weight:600;font-size:10.5px;line-height:1.3;color:var(--ink);
+  font-weight:600;font-size:11.5px;line-height:1.3;color:var(--ink);
   background:#fbfbfa;border:1px solid #efefec;border-radius:6px;padding:3px 6px;cursor:pointer;
 }
 .crow:hover{border-color:var(--accent)}
@@ -326,26 +326,21 @@ body.dlg-open #backdrop{display:block}
 .cnode.catnode.expanded .clist{max-height:150px;overflow:auto}
 .catx{
   display:block;margin-top:4px;font-family:'IBM Plex Mono',ui-monospace,monospace;
-  font-size:8px;font-weight:600;letter-spacing:.08em;color:var(--accent);cursor:pointer;padding:1px 2px;
+  font-size:9px;font-weight:600;letter-spacing:.08em;color:var(--accent);cursor:pointer;padding:1px 2px;
 }
 .catx:hover{text-decoration:underline}
 .cnode.catnode.empty{
   width:118px;background:#f7f7f4;border:1.5px dashed #d9d9d4;box-shadow:none;padding:6px 8px;z-index:0;
 }
 .cnode.catnode.empty .ctitle{color:var(--muted)}
-.cnode.catnode.empty .nempty{display:block;font-size:8.5px;color:var(--muted);font-style:italic;margin-top:2px}
-#constelMore{
-  position:absolute;left:50%;bottom:10px;transform:translateX(-50%);z-index:2;
-  font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:9.5px;color:var(--muted2);
-  background:rgba(251,251,250,.92);border:1px solid var(--border);padding:4px 9px;border-radius:6px;white-space:nowrap;
-}
+.cnode.catnode.empty .nempty{display:block;font-size:9.5px;color:var(--muted);font-style:italic;margin-top:2px}
 .crail{flex:1;min-width:300px;max-width:380px;overflow-y:auto;min-height:0;padding-right:4px}
-.dlgkick{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:8.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.dlgkick{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:9.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
 .chead{display:flex;align-items:center;gap:12px}
 .chead .cname2{font-size:20px;font-weight:800;letter-spacing:-.02em;line-height:1.2}
 #viewMap{
   margin-left:auto;flex:none;
-  font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:9.5px;font-weight:600;letter-spacing:.09em;
+  font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:10.5px;font-weight:600;letter-spacing:.09em;
   color:var(--muted2);border:1px solid var(--border);border-radius:var(--r-pill);padding:7px 12px;
 }
 #viewMap:hover{border-color:var(--accent);color:var(--accent)}
@@ -355,38 +350,38 @@ body.dlg-open #backdrop{display:block}
 }
 #cardClose:hover{background:#e7e7e3;color:var(--ink)}
 .pgroup{border:1.5px dashed #d9d9d4;border-radius:10px;padding:8px 8px 3px;margin-bottom:8px}
-.pghead{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:9px;font-weight:600;letter-spacing:.1em;color:var(--muted2);margin:0 2px 7px}
+.pghead{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:10px;font-weight:600;letter-spacing:.1em;color:var(--muted2);margin:0 2px 7px}
 .ccat{display:flex;align-items:center;gap:7px;margin-top:10px;flex-wrap:wrap}
 .ccat .pdot{margin:0}
-.ccat .ccatname{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted2)}
+.ccat .ccatname{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted2)}
 .ctagbig{
-  font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:9px;font-weight:600;letter-spacing:.08em;
+  font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:10px;font-weight:600;letter-spacing:.08em;
   border:1px solid var(--border);color:var(--muted2);border-radius:4px;padding:2px 6px;
 }
 .ctagbig.accent{border-color:var(--accent);color:var(--accent)}
 .cspoken{
   display:flex;align-items:center;gap:8px;margin-top:12px;
   background:#faf6e6;border:1px solid #e8d9a4;border-radius:var(--r-chip);padding:8px 10px;
-  font-size:12px;font-weight:600;color:#7d641c;
+  font-size:12.5px;font-weight:600;color:#7d641c;
 }
-.cmeta{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:10.5px;color:var(--muted);letter-spacing:.03em;margin-top:12px;line-height:1.6}
+.cmeta{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11.5px;color:var(--muted);letter-spacing:.03em;margin-top:12px;line-height:1.6}
 .csec{margin-top:16px;border-top:1px solid #efefec;padding-top:14px}
 .csec .kicker{margin-bottom:7px}
 .pathbox{background:var(--cardbg);border:1px solid var(--border);border-radius:var(--r-chip);padding:11px 12px}
 .pathhops{display:flex;flex-wrap:wrap;align-items:center;gap:5px;margin-bottom:8px}
 .hop{
-  font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:10.5px;font-weight:600;
+  font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11.5px;font-weight:600;
   background:#fff;border:1px solid var(--border);border-radius:5px;padding:3px 7px;cursor:pointer;
 }
 .hop:hover{border-color:var(--accent)}
 .hop.last{background:var(--accent);border-color:var(--accent);color:#fff}
-.patharrow{color:var(--muted);font-size:10px}
-.pathbox p{font-size:12px;color:var(--muted2);line-height:1.55}
-.pathbox a{font-weight:600;font-size:12px}
+.patharrow{color:var(--muted);font-size:11px;opacity:.85}
+.pathbox p{font-size:13px;color:var(--muted2);line-height:1.55}
+.pathbox a{font-weight:600;font-size:13px}
 #expBtn{
   display:flex;align-items:center;justify-content:center;gap:8px;width:100%;text-align:center;
   background:var(--accent);color:#fff;
-  font-weight:700;font-size:12.5px;letter-spacing:.02em;border-radius:var(--r-chip);padding:11px 12px;
+  font-weight:700;font-size:13px;letter-spacing:.02em;border-radius:var(--r-chip);padding:11px 12px;
   animation:glowPulse 2.4s ease-in-out infinite;
 }
 #expBtn svg{width:15px;height:15px;flex:none}
@@ -396,10 +391,10 @@ body.dlg-open #backdrop{display:block}
   50%{box-shadow:0 0 18px 5px rgba(14,116,144,.32)}
 }
 @media(prefers-reduced-motion:reduce){#expBtn{animation:none}}
-.expnote{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:9.5px;color:var(--muted);letter-spacing:.05em;text-align:center;margin-top:6px}
-.cknown{font-size:13.5px;line-height:1.55;font-weight:500}
-.cabout{font-size:13px;line-height:1.6;color:var(--muted2);display:-webkit-box;-webkit-line-clamp:7;-webkit-box-orient:vertical;overflow:hidden}
-.cwww{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11.5px;font-weight:600;text-decoration:none}
+.expnote{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:10.5px;color:var(--muted);letter-spacing:.05em;text-align:center;margin-top:6px}
+.cknown{font-size:14px;line-height:1.55;font-weight:500}
+.cabout{font-size:14px;line-height:1.65;color:var(--muted2)}
+.cwww{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12px;font-weight:600;text-decoration:none}
 .cwww:hover{text-decoration:underline}
 .prow{
   display:flex;align-items:flex-start;gap:9px;width:100%;
@@ -407,9 +402,9 @@ body.dlg-open #backdrop{display:block}
 }
 .prow:hover{border-color:var(--accent)}
 .prow .pdot{margin-top:4px;width:8px;height:8px}
-.prow .prname{font-weight:600;font-size:12.5px}
-.prow .prkind{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:9px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--accent);margin-left:6px}
-.prow .prnote{font-size:11px;color:var(--muted);line-height:1.45;margin-top:2px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.prow .prname{font-weight:600;font-size:13px}
+.prow .prkind{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:9.5px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--accent);margin-left:6px}
+.prow .prnote{font-size:12px;color:var(--muted2);line-height:1.5;margin-top:2px}
 @media(max-width:860px){
   #card{inset:auto 0 0 0;margin:0;width:auto;height:auto;max-height:74vh;border-radius:var(--r-box) var(--r-box) 0 0;border-bottom:none}
   #cardScroll{display:block;overflow-y:auto;padding:18px 18px 22px}
@@ -435,9 +430,9 @@ body.dlg-open #backdrop{display:block}
   display:flex;align-items:center;justify-content:center;
 }
 .wrow .wicon svg{width:19px;height:19px}
-.wrow p{font-size:13.5px;line-height:1.55;color:#3f3f46}
+.wrow p{font-size:14px;line-height:1.55;color:#3f3f46}
 .wby{border-top:1px solid #efefec;margin-top:16px;padding-top:14px}
-.wby p{font-size:12.5px;line-height:1.6;color:var(--muted2)}
+.wby p{font-size:13px;line-height:1.6;color:var(--muted2)}
 .wby p+p{margin-top:6px}
 .wby a{font-weight:600}
 #welcomeBtn{
@@ -457,7 +452,7 @@ body.dlg-open #backdrop{display:block}
 }
 #landscapeNudge svg{width:52px;height:52px;color:#22d3ee}
 #landscapeNudge h2{font-size:20px;font-weight:800;letter-spacing:-.01em}
-#landscapeNudge p{font-size:13px;color:#a1a1aa;max-width:300px}
+#landscapeNudge p{font-size:14px;color:#a1a1aa;max-width:300px}
 #nudgeBtn{
   font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;font-weight:600;letter-spacing:.1em;
   color:#fff;border:1px solid #3f3f46;border-radius:var(--r-pill);padding:10px 20px;margin-top:8px;
@@ -470,7 +465,7 @@ footer.site .finner{max-width:1240px;margin:0 auto}
 footer.site .fcta{font-size:16px;font-weight:600;line-height:1.6;max-width:720px}
 footer.site .fcta a{color:#22d3ee;text-decoration:none}
 footer.site .fcta a:hover{text-decoration:underline}
-footer.site .fver{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:10px;letter-spacing:.1em;color:#71717a;margin-top:18px;text-transform:uppercase}
+footer.site .fver{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.1em;color:#71717a;margin-top:18px;text-transform:uppercase}
 
 /* ============ floating control panel (left) ============ */
 #ctrlPanel{
@@ -480,7 +475,7 @@ footer.site .fver{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:1
 }
 #ctrlToggle{
   display:flex;align-items:center;gap:8px;width:100%;padding:11px 13px;
-  font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:10px;font-weight:600;letter-spacing:.12em;color:var(--muted2);
+  font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;font-weight:600;letter-spacing:.12em;color:var(--muted2);
 }
 #ctrlToggle svg{width:14px;height:14px;flex:none;color:var(--accent)}
 #ctrlToggle .caret{margin-left:auto;transition:transform .15s}
@@ -491,7 +486,6 @@ footer.site .fver{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:1
 #ctrlPanel:not(.open) #ctrlToggle span.lbl{display:none}
 .ctrlBody .toggle{width:100%;justify-content:flex-start}
 .ctrlBody #clearSel{width:100%;justify-content:center}
-.ctrlBody #legend{margin:2px 0 0;line-height:1.6}
 #ctrlPanel #searchWrap{width:100%}
 #ctrlPanel #searchBox{width:100%;background:#f4f4f2;color:var(--ink);border:1px solid var(--border)}
 #ctrlPanel #searchBox::placeholder{color:var(--muted)}
@@ -529,7 +523,7 @@ footer.site .fver{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:1
 /* ============ collapse all ============ */
 #collapseAll{
   display:none;flex:none;
-  font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:9.5px;font-weight:600;letter-spacing:.1em;
+  font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:10.5px;font-weight:600;letter-spacing:.1em;
   color:var(--muted2);border:1px solid var(--border);border-radius:var(--r-pill);padding:7px 12px;
 }
 #collapseAll.show{display:inline-flex}
@@ -550,23 +544,41 @@ footer.site .fver{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:1
 @media(max-width:900px){
   /* harmonized type scale for the company sheet on small screens */
   #card .cname2{font-size:17px}
-  #card .ccatname{font-size:9.5px}
-  #card .ctagbig{font-size:8.5px}
-  #card .cmeta{font-size:10px;line-height:1.55}
-  #card .kicker{font-size:10px}
-  #card .cspoken{font-size:11.5px}
-  #card .pathbox p{font-size:11.5px;line-height:1.5}
-  #card .hop{font-size:10px}
-  #card #expBtn{font-size:11.5px}
-  #card .expnote{font-size:9px}
-  #card .cknown{font-size:12.5px;line-height:1.5}
-  #card .cabout{font-size:12px;line-height:1.55}
-  #card .cwww{font-size:11px}
-  #card .prname{font-size:12px}
-  #card .prkind{font-size:8.5px}
-  #card .prnote{font-size:10.5px;line-height:1.45}
-  #card .pghead{font-size:8.5px}
+  #card .ccatname{font-size:10.5px}
+  #card .ctagbig{font-size:9.5px}
+  #card .cmeta{font-size:11px;line-height:1.55}
+  #card .kicker{font-size:11px}
+  #card .cspoken{font-size:12px}
+  #card .pathbox p{font-size:12.5px;line-height:1.55}
+  #card .hop{font-size:11px}
+  #card #expBtn{font-size:12.5px}
+  #card .expnote{font-size:10px}
+  #card .cknown{font-size:13.5px;line-height:1.55}
+  #card .cabout{font-size:13.5px;line-height:1.6}
+  #card .cwww{font-size:11.5px}
+  #card .prname{font-size:12.5px}
+  #card .prkind{font-size:9px}
+  #card .prnote{font-size:11.5px;line-height:1.5}
+  #card .pghead{font-size:9.5px}
 }
+
+/* ============ phase-1 additions: spoken-with tag, path honesty, help CTAs ============ */
+.sptag{
+  display:inline-flex;align-items:center;flex:none;white-space:nowrap;
+  font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:9.5px;font-weight:600;letter-spacing:.07em;
+  color:#7d641c;background:#faf6e6;border:1px solid #e8d9a4;border-radius:4px;padding:1.5px 6px;
+}
+.optile .sptag{margin-top:6px}
+[data-theme="dark"] .sptag{color:#d9bd58;background:#241f0e;border-color:#4d4020}
+.pathlede{
+  display:inline-block;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:9.5px;font-weight:600;letter-spacing:.08em;
+  color:var(--accent);background:#eef7f9;border-radius:4px;padding:2.5px 7px;margin-bottom:9px;
+}
+[data-theme="dark"] .pathlede{background:#182730}
+.pathalt{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:10.5px;letter-spacing:.03em;color:var(--muted);margin-top:8px}
+.helpcta{font-weight:600}
+.nhelp{display:block;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:9px;font-weight:600;letter-spacing:.05em;color:var(--accent);margin-top:3px;text-decoration:none}
+.nhelp:hover{text-decoration:underline}
 
 /* ============ dark theme overrides ============ */
 [data-theme="dark"] .optile:hover{border-color:#3d3d46;box-shadow:0 3px 14px rgba(0,0,0,.4)}
@@ -616,7 +628,7 @@ footer.site .fver{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:1
 [data-theme="dark"] #welcomeBtn:hover{background:#fff}
 [data-theme="dark"] .cabout{color:#c2c2c9}
 [data-theme="dark"] .lede,[data-theme="dark"] #intro .lede{color:#c9c9cf}
-[data-theme="dark"] .jintro,[data-theme="dark"] .jdesc,[data-theme="dark"] .jreturn,[data-theme="dark"] .opshead p.opsub{color:var(--muted2)}
+[data-theme="dark"] .jintro,[data-theme="dark"] .jdesc,[data-theme="dark"] .opshead p.opsub{color:var(--muted2)}
 [data-theme="dark"] .pgroup{border-color:#3a3a42}
 </style>
 </head>
@@ -645,7 +657,6 @@ footer.site .fver{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:1
     <button class="toggle" id="tFreight"><span class="knob"></span><span class="tlabel"></span></button>
     <button class="toggle" id="tOrphans"><span class="knob"></span><span class="tlabel"></span></button>
     <button class="toggle" id="tExited"><span class="knob"></span><span class="tlabel"></span></button>
-    <span id="legend"><span class="ldot">●</span> companies Kofi has spoken with directly · select any company to see &amp; share its partnership map</span>
   </div>
 </div>
 
@@ -656,6 +667,7 @@ footer.site .fver{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:1
 
 <section id="intro">
   <div id="stats"></div>
+  <p id="legend"><span class="ldot">●</span> companies Kofi has spoken with directly · select any company to see &amp; share its partnership map</p>
 </section>
 
 <section id="journey">
@@ -679,7 +691,6 @@ footer.site .fver{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:1
     </button>
     <div id="jcaption" aria-hidden="true"><span class="jck"></span><span class="jct"></span></div>
   </div>
-  <p class="jreturn"><b>The Pitlane feeds straight back to The Request</b> — a charged, cleaned, inspected vehicle re-enters the network within minutes, and the loop starts again.</p>
   <div class="jenablers">
     <span class="kicker">Around the whole loop</span>
     <span id="jenchips"></span>
@@ -844,6 +855,14 @@ function logoHTML(name, size){
   return `<span class="logo l${size}"><span class="mg">${mono}</span>${img}</span>`;
 }
 
+/* "Help improve this card" — every gap on the map is an invitation, not a verdict */
+const HELP_EMAIL = 'agyarek+avecosystemmap@gmail.com';
+function helpMail(company, topic){
+  const subject = encodeURIComponent(`[Map] ${company} — ${topic}`);
+  const body = encodeURIComponent(`Hi Kofi,\n\nAbout ${company} on the Autonomous Vehicle Ecosystem Map (${topic}):\n\nWhat I know:\n\nSource, if public:\n\n`);
+  return `mailto:${HELP_EMAIL}?subject=${subject}&body=${body}`;
+}
+
 /* =====================================================================
    Part 7 — connection lines. No cache key. Redraw from scratch, always.
    Coordinates are computed RELATIVE TO #board so page scroll can't shift them.
@@ -962,6 +981,7 @@ function renderOps(){
       <span style="min-width:0">
         <span class="oname">${c.spokenTo ? '<span class="spdot"></span>' : ''}${esc(name)}</span>
         <span class="osub">${esc(sub)}</span>
+        ${c.spokenTo ? '<span class="sptag">◆ SPOKEN WITH DIRECTLY</span>' : ''}
       </span>
     </button>`;
   }).join('');
@@ -990,6 +1010,7 @@ function renderPanels(pins){
           <span class="cname">${c.spokenTo ? '<span class="spdot"></span>' : ''}${esc(c.name)}</span>
           ${c.sub ? `<span class="csub">${esc(c.sub)}</span>` : ''}
         </span>
+        ${c.spokenTo ? '<span class="sptag">◆ SPOKEN WITH</span>' : ''}
         ${c.exited ? '<span class="ctag">EXITED</span>' : (c.segment ? `<span class="ctag">${esc(c.segment.toUpperCase())}</span>` : '')}
       </button>`).join('');
     const more = (lvl > 0 && vis.length > PREVIEW_N)
@@ -1037,13 +1058,15 @@ function renderJourneyChips(){
   grid.innerHTML = order.map(i => {
     const s = STAGES[i];
     const open = jExpanded.has(i);
+    const nco = s.cats.reduce((a, k) => a + comps.filter(c => c.cat === k).length, 0);
     return `<div class="jcard ${open ? 'chips-open' : ''}" data-stage="${i}">
       <div class="jicon">${ICONS[s.icon]}</div>
       <div class="jstage">STAGE 0${i+1}</div>
       <h3>${esc(s.n)}</h3>
+      <p class="jstat"><b>${nco}</b> COMPANIES · <b>${s.cats.length}</b> ${s.cats.length > 1 ? 'LAYERS' : 'LAYER'}</p>
       <p class="jdesc">${esc(s.d)}</p>
       <button class="jexp ${open ? 'open' : ''}" data-stage="${i}" aria-expanded="${open}">
-        <span class="caret">▸</span>${s.cats.length} ${s.cats.length > 1 ? 'LAYERS' : 'LAYER'}
+        <span class="caret">▸</span>VIEW ${s.cats.length > 1 ? 'THE LAYERS' : 'THE LAYER'}
       </button>
       <div class="jchips">${s.cats.map(jchipHTML).join('')}</div>
     </div>`;
@@ -1066,7 +1089,7 @@ const STAGE_STOPS = [
   { k:"STAGE 01 · THE REQUEST", t:"A rider taps a button. The marketplace prices the trip, matches this exact vehicle, and dispatches it — seconds, end to end." },
   { k:"STAGE 02 · THE DRIVER",  t:"The software driver takes over: sensors sweep the street in 360°, the model predicts every road user's next move, and the path re-plans many times a second." },
   { k:"STAGE 03 · THE VEHICLE", t:"The ride itself — a production vehicle engineered around autonomy: redundant steering, braking and power, sensors integrated on the assembly line." },
-  { k:"STAGE 04 · THE PITLANE", t:"Ride complete. At the depot: charge, clean, inspect, recalibrate — then straight back into the network for the next request." }
+  { k:"STAGE 04 · THE PITLANE", t:"Ride complete. At the depot: charge, clean, inspect, recalibrate — then straight back out for a brand-new request. The loop restarts." }
 ];
 
 function drawTrack(){
@@ -1333,7 +1356,7 @@ function layerGroups(partners){
   const empty = [...groups].filter(([, v]) => !v.length).map(([k]) => k);
   return { populated, empty };
 }
-function groupedPartnersHTML(partners){
+function groupedPartnersHTML(partners, forName){
   const prow = p => {
     const pc = byName[p.name];
     return `<button class="prow" data-cname="${esc(p.name)}" title="${esc(p.n || '')}">
@@ -1353,9 +1376,9 @@ function groupedPartnersHTML(partners){
   if (empty.length){
     html += `<div class="pgroup pgempty">
       <p class="pghead">NOT YET MAPPED</p>
-      <p style="font-size:11.5px;color:var(--muted);line-height:1.55;margin:0 2px 6px">
-        No partnerships mapped in ${empty.map(k => `<b style="color:var(--muted2)">${esc(CATS[k].t)}</b>`).join(' · ')}.
-        Know of one? <a href="https://www.linkedin.com/in/kofiagyare/" target="_blank" rel="noopener">I'd like to learn it →</a>
+      <p style="font-size:12px;color:var(--muted2);line-height:1.55;margin:0 2px 6px">
+        No partnerships mapped in ${empty.map(k => `<b>${esc(CATS[k].t)}</b>`).join(' · ')}.
+        Know of one? <a class="helpcta" href="${esc(helpMail(forName, 'a partnership I should add'))}">Help improve this card →</a>
       </p>
     </div>`;
   }
@@ -1385,21 +1408,24 @@ function renderCard(){
   let pathHTML = '';
   if (route.kind === 'self'){
     pathHTML = `<div class="csec"><p class="kicker">Passenger-facing operator</p>
-      <div class="pathbox"><p>An endpoint of the map — a company with a credible path to Level-4 passenger service in the near term.</p></div></div>`;
+      <div class="pathbox"><p>An endpoint of the map — ${esc(c.name)} is deploying, or preparing to deploy, Level-4 passenger service. Every layer below exists to put rides like theirs on the road.</p></div></div>`;
   } else if (route.kind === 'path'){
     const hops = route.path.map((n, i) =>
       `<button class="hop ${i === route.path.length-1 ? 'last' : ''}" data-cname="${esc(n)}">${esc(n)}</button>`
     ).join('<span class="patharrow">→</span>');
-    pathHTML = `<div class="csec"><p class="kicker">Route to passenger-accessible autonomy</p>
+    const alts = partners.length - 1;
+    pathHTML = `<div class="csec"><p class="kicker">How ${esc(c.name)}&rsquo;s work reaches you on the road</p>
       <div class="pathbox">
+        <span class="pathlede">ONE TRACED PATH — OTHERS EXIST</span>
         <div class="pathhops">${hops}</div>
-        <p>Through these mapped partnerships, ${esc(c.name)}'s work has a path to a company deploying L4 passenger service. This is one route I've traced — there may well be others I haven't.</p>
+        <p>Through these mapped partnerships, ${esc(c.name)}'s work has a route to a company carrying passengers in L4 service. It's one path I've traced, not the only one — real influence flows through many partnerships at once.</p>
+        ${alts > 0 ? `<p class="pathalt">+${alts} OTHER FIRST HOP${alts > 1 ? 'S' : ''} FROM ${esc(c.name.toUpperCase())} NOT TRACED HERE</p>` : ''}
       </div></div>`;
   } else {
-    pathHTML = `<div class="csec"><p class="kicker">Route to riders — not yet mapped</p>
+    pathHTML = `<div class="csec"><p class="kicker">How ${esc(c.name)}&rsquo;s work could reach you on the road</p>
       <div class="pathbox">
-        <p>I haven't mapped a route from ${esc(c.name)} to a passenger-facing operator. That might be genuine whitespace… or a relationship I haven't uncovered. I don't claim to know everything each company is doing here.</p>
-        <p style="margin-top:7px"><a href="https://www.linkedin.com/in/kofiagyare/" target="_blank" rel="noopener">If you know how they connect, I'd like to learn it →</a></p>
+        <p>I haven't yet traced a route from ${esc(c.name)} to a passenger-facing operator. That might be genuine whitespace… or a relationship I haven't uncovered. I don't claim to know everything each company is doing here.</p>
+        <p style="margin-top:7px"><a class="helpcta" href="${esc(helpMail(c.name, 'route to riders'))}">Help improve this card →</a></p>
       </div></div>`;
   }
 
@@ -1423,6 +1449,7 @@ function renderCard(){
         <span class="ctitle">${esc(CATS[catKey].t)}</span>
       </span>
       <span class="nempty">no partnerships mapped — yet</span>
+      <a class="nhelp" href="${esc(helpMail(c.name, `partnership in ${CATS[catKey].t}`))}">know one? tell me →</a>
     </div>`;
   // interleave populated and empty so card sizes alternate around the ring
   const ringCards = [];
@@ -1453,7 +1480,7 @@ function renderCard(){
         <div class="ccat" style="margin-top:4px">
           <span class="pdot" style="background:${dotColor(c.cat)}"></span>
           <span class="ccatname">${esc(cat.t)}</span>
-          ${c.l4credible ? '<span class="ctagbig accent">CREDIBLE L4 OPERATOR</span>' : ''}
+          ${c.l4credible ? '<span class="ctagbig accent">L4 PASSENGER OPERATOR</span>' : ''}
           ${c.exited ? '<span class="ctagbig">EXITED / ACQUIRED</span>' : ''}
           ${c.segment ? `<span class="ctagbig">${esc(c.segment.toUpperCase())}</span>` : ''}
         </div>
@@ -1475,8 +1502,8 @@ function renderCard(){
         ${c.about ? `<div class="csec"><p class="kicker">About</p><p class="cabout">${esc(c.about)}</p></div>` : ''}
         ${dom ? `<div class="csec"><a class="cwww" href="https://${esc(dom)}" target="_blank" rel="noopener">${esc(dom)} ↗</a></div>` : ''}
         <div class="csec"><p class="kicker">Mapped partners (${partners.length})</p>
-          ${partners.length ? groupedPartnersHTML(partners) :
-            `<p style="font-size:12.5px;color:var(--muted2);line-height:1.55">No partnerships mapped yet — which usually means the interesting ones haven't been announced, or I haven't found them. <a href="https://www.linkedin.com/in/kofiagyare/" target="_blank" rel="noopener">Tell me what I'm missing →</a></p>`}
+          ${partners.length ? groupedPartnersHTML(partners, c.name) :
+            `<p style="font-size:13px;color:var(--muted2);line-height:1.55">No partnerships mapped yet — which usually means the interesting ones haven't been announced, or I haven't found them. <a class="helpcta" href="${esc(helpMail(c.name, 'partnerships'))}">Help improve this card →</a></p>`}
         </div>
       </div>
     </div>`;
@@ -1777,7 +1804,7 @@ function runSearch(q){
       <span class="sname">${c.spokenTo ? '<span class="spdot"></span> ' : ''}${esc(c.name)}</span>
       <span class="scat">${esc(CATS[c.cat].t)}</span>
     </button>`).join('') ||
-    `<div style="padding:12px;font-size:12px;color:var(--muted2)">No matches — <a href="https://www.linkedin.com/in/kofiagyare/" target="_blank" rel="noopener">tell me who I'm missing</a>.</div>`;
+    `<div style="padding:12px;font-size:12.5px;color:var(--muted2)">No matches — <a class="helpcta" href="${esc(helpMail(q || 'a company', 'a company to add'))}">tell me who I'm missing →</a>.</div>`;
   drop.classList.toggle('open', true);
 }
 function pickSearch(i){
@@ -1795,19 +1822,12 @@ function scrollToCompany(name){
   });
 }
 
-/* ------------------ welcome modal ------------------ */
-let pendingAutoRun = false;    // loop auto-run deferred while the welcome modal is up
+/* ------------------ about modal — opens only from ABOUT THIS MAP, never on its own ------------------ */
+let pendingAutoRun = false;    // loop auto-run deferred while the about modal is up
 function openWelcome(){ document.getElementById('welcome').classList.add('open'); }
 function closeWelcome(){
   document.getElementById('welcome').classList.remove('open');
-  try { localStorage.setItem('avWelcomeSeen', '1'); } catch(_){}
   if (pendingAutoRun){ pendingAutoRun = false; setTimeout(runLoop, 450); }
-}
-function maybeShowWelcome(){
-  try { if (localStorage.getItem('avWelcomeSeen')) return; } catch(_){}
-  const nudge = document.getElementById('landscapeNudge');
-  if (nudge && getComputedStyle(nudge).display !== 'none') return;   // let the landscape nudge go first
-  openWelcome();
 }
 
 /* ------------------ events ------------------ */
@@ -1956,11 +1976,10 @@ function wireEvents(){
     }
   });
 
-  // landscape nudge (welcome waits its turn)
+  // landscape nudge
   document.getElementById('nudgeBtn').addEventListener('click', () => {
     document.getElementById('landscapeNudge').classList.add('off');
     try { sessionStorage.setItem('avNudgeOff','1'); } catch(_){}
-    maybeShowWelcome();
   });
   try { if (sessionStorage.getItem('avNudgeOff')) document.getElementById('landscapeNudge').classList.add('off'); } catch(_){}
 
@@ -2003,9 +2022,8 @@ async function init(){
   drawLines();
   requestAnimationFrame(() => { drawLines(); drawTrack(); });
   window.addEventListener('load', () => { drawLines(); drawTrack(); });
-  maybeShowWelcome();
 
-  // drive the loop once when the journey first comes into view (after the welcome modal)
+  // drive the loop once when the journey first comes into view (deferred if the About modal is open)
   if (!matchMedia('(prefers-reduced-motion: reduce)').matches){
     const jb = document.getElementById('jboard');
     const io = new IntersectionObserver(entries => {

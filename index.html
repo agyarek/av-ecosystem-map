@@ -126,7 +126,7 @@ header.site .hbyline a:hover{text-decoration:underline}
 #journey > .kicker,#journey > h2,#journey > .jintro{text-align:center}
 #journey h2{font-size:clamp(22px,3.4vw,30px);font-weight:800;letter-spacing:-.02em;margin-top:6px}
 #journey .jintro{max-width:760px;color:var(--muted2);margin:8px auto 0;font-size:14.5px}
-#jboard{position:relative;margin-top:26px;padding:112px 108px}
+#jboard{position:relative;margin-top:26px;padding:140px 118px 158px}
 #trackSvg{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;overflow:visible}
 .roadArrow{animation:arrowGlow 1.9s ease-in-out infinite}
 @keyframes arrowGlow{
@@ -138,8 +138,8 @@ header.site .hbyline a:hover{text-decoration:underline}
   position:relative;display:grid;grid-template-columns:1fr 1fr;
   grid-auto-rows:1fr;gap:56px 64px;z-index:1;
 }
-@media(max-width:1000px){
-  #jboard{padding:106px 102px}
+@media(max-width:999px){
+  #jboard{padding:132px 102px}
   .jgrid{gap:48px 56px}
 }
 .jcard{
@@ -151,6 +151,11 @@ header.site .hbyline a:hover{text-decoration:underline}
   display:flex;align-items:center;justify-content:center;margin:0 auto 14px;
 }
 .jcard .jicon svg{width:54px;height:54px}
+.jiconwrap{position:relative;width:96px;margin:0 auto 14px}
+.jiconwrap .jicon{margin:0}
+.jring{position:absolute;left:-10px;top:-10px;width:116px;height:116px;pointer-events:none;opacity:0;transition:opacity .25s}
+.jcard.live .jring{opacity:1}
+.jring rect{fill:none;stroke:var(--accent);stroke-width:3.5;stroke-linecap:round;stroke-dasharray:100;stroke-dashoffset:0}
 .jcard .jstage{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12px;font-weight:600;letter-spacing:.12em;color:var(--muted)}
 .jcard h3{font-size:21.5px;font-weight:800;letter-spacing:-.01em;margin:3px 0 6px}
 .jcard .jstat{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12px;letter-spacing:.06em;color:var(--muted2);margin:2px 0 7px}
@@ -206,6 +211,18 @@ header.site .hbyline a:hover{text-decoration:underline}
   padding:14px 18px;display:flex;align-items:center;gap:10px;flex-wrap:wrap;
 }
 .jenablers .kicker{margin-right:4px}
+/* C2 — enabler orbit: chips dock onto the ring itself on wide screens */
+#enDock{position:absolute;z-index:2;transform:translate(-50%,-50%);display:none;align-items:center;gap:8px;white-space:nowrap}
+#enLabel{
+  position:absolute;z-index:2;transform:translate(-50%,-50%);display:none;
+  font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:10px;font-weight:600;letter-spacing:.2em;color:var(--muted2);
+  background:var(--bg);border:1px solid var(--border);border-radius:20px;padding:4px 12px;white-space:nowrap;
+}
+@media(min-width:1000px){
+  #enDock{display:flex}
+  #enLabel{display:block}
+  .jenablers{display:none}
+}
 @media(max-width:699px){
   #jboard{padding:0}
   .jgrid{grid-template-columns:1fr;gap:14px}
@@ -690,6 +707,8 @@ footer.site .fver{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:1
       <span class="hlabel">RUN LOOP</span>
     </button>
     <div id="jcaption" aria-hidden="true"><span class="jck"></span><span class="jct"></span></div>
+    <div id="enLabel" aria-hidden="true">ENABLES EVERY STAGE</div>
+    <div id="enDock" role="group" aria-label="Layers that enable every stage"></div>
   </div>
   <div class="jenablers">
     <span class="kicker">Around the whole loop</span>
@@ -1060,7 +1079,10 @@ function renderJourneyChips(){
     const open = jExpanded.has(i);
     const nco = s.cats.reduce((a, k) => a + comps.filter(c => c.cat === k).length, 0);
     return `<div class="jcard ${open ? 'chips-open' : ''}" data-stage="${i}">
-      <div class="jicon">${ICONS[s.icon]}</div>
+      <div class="jiconwrap">
+        <svg class="jring" viewBox="0 0 116 116" aria-hidden="true"><rect x="2" y="2" width="112" height="112" rx="31" pathLength="100"/></svg>
+        <div class="jicon">${ICONS[s.icon]}</div>
+      </div>
       <div class="jstage">STAGE 0${i+1}</div>
       <h3>${esc(s.n)}</h3>
       <p class="jstat"><b>${nco}</b> COMPANIES · <b>${s.cats.length}</b> ${s.cats.length > 1 ? 'LAYERS' : 'LAYER'}</p>
@@ -1072,6 +1094,8 @@ function renderJourneyChips(){
     </div>`;
   }).join('');
   document.getElementById('jenchips').innerHTML = ENABLER_CATS.map(jchipHTML).join(' ');
+  const dock = document.getElementById('enDock');
+  if (dock) dock.innerHTML = ENABLER_CATS.map(jchipHTML).join('');
 }
 
 /* =====================================================================
@@ -1081,7 +1105,7 @@ function renderJourneyChips(){
    ===================================================================== */
 let trackGeo = null;                            // {key, path, L, stops[4], center}
 const trackAnim = { running:false, abort:false, paused:false };
-const STOP_DWELL = 3400;                        // ms the car holds at each station
+const STOP_DWELL = 4800;                        // ms at each station — the countdown ring makes the hold read as intentional
 let carStage = 0;                               // which station the car is parked at
 let carFacing = 1;                              // 1 = clockwise, -1 = reversed (after a 3-point turn)
 
@@ -1118,6 +1142,13 @@ function drawTrack(){
   if (prevB){ prevB.style.left = (mx - 82) + 'px'; prevB.style.top = my + 'px'; }
   if (nextB){ nextB.style.left = (mx + 82) + 'px'; nextB.style.top = my + 'px'; }
 
+  // C2 — the enabler orbit encircles the whole loop; label on the top line, chips docked on the bottom
+  const ENR = 60;                                // road centerline → orbit
+  const eL = left - ENR, eR = right + ENR, eT = top - ENR, eB = bottom + ENR;
+  const dock = document.getElementById('enDock'), enlab = document.getElementById('enLabel');
+  if (dock){ dock.style.left = mx + 'px'; dock.style.top = eB + 'px'; }
+  if (enlab){ enlab.style.left = mx + 'px'; enlab.style.top = eT + 'px'; }
+
   const dark = document.documentElement.dataset.theme === 'dark';
   const key = [left, right, top, bottom].map(v => Math.round(v)).join(',') + (dark ? '|d' : '|l');
   if (trackGeo && trackGeo.key === key) return;  // geometry unchanged — don't disturb a running car
@@ -1128,7 +1159,10 @@ function drawTrack(){
   const d = `M ${left+r} ${top} H ${right-r} A ${r} ${r} 0 0 1 ${right} ${top+r} V ${bottom-r} A ${r} ${r} 0 0 1 ${right-r} ${bottom} H ${left+r} A ${r} ${r} 0 0 1 ${left} ${bottom-r} V ${top+r} A ${r} ${r} 0 0 1 ${left+r} ${top} Z`;
   const arrow = (x,y,rot) =>   // directional arrow: tail + head, filled, thin bezel
     `<path class="roadArrow" d="M -20 -3.6 H 1 V -11 L 20 0 L 1 11 V 3.6 H -20 Z" transform="translate(${x} ${y}) rotate(${rot})" fill="#0e7490" stroke="#fafafa" stroke-width="1.6" stroke-linejoin="round"/>`;
+  const er = r + ENR;
+  const de = `M ${eL+er} ${eT} H ${eR-er} A ${er} ${er} 0 0 1 ${eR} ${eT+er} V ${eB-er} A ${er} ${er} 0 0 1 ${eR-er} ${eB} H ${eL+er} A ${er} ${er} 0 0 1 ${eL} ${eB-er} V ${eT+er} A ${er} ${er} 0 0 1 ${eL+er} ${eT} Z`;
   svg.innerHTML =
+    `<path d="${de}" fill="none" stroke="${dark ? 'rgba(240,240,238,.22)' : 'rgba(10,10,10,.22)'}" stroke-width="2" stroke-dasharray="2.5 7" stroke-linecap="round"/>` + // enabler orbit
     `<path d="${d}" fill="none" stroke="${dark ? 'rgba(255,255,255,.09)' : 'rgba(10,10,10,.10)'}" stroke-width="86"/>` + // soft shoulder
     `<path id="roadPath" d="${d}" fill="none" stroke="#3f3f46" stroke-width="72"/>` +       // asphalt (light enough to read the tires)
     `<path d="${d}" fill="none" stroke="#fafafa" stroke-width="3.6" stroke-dasharray="24 20" opacity=".95"/>` + // center line
@@ -1239,7 +1273,7 @@ async function goStage(dir){
     if (trackAnim.abort) return;
     carStage = next;
     jCaptionShow(next);
-    await dwell(2600);
+    await dwellRing(next, 3200);
     hideJCaption();
   } finally {
     hideJCaption();
@@ -1257,9 +1291,10 @@ function jCaptionShow(stage){
   const dx = g.center.x - p.x, dy = g.center.y - p.y, dl = Math.hypot(dx, dy) || 1;
   el.querySelector('.jck').textContent = STAGE_STOPS[stage].k;
   el.querySelector('.jct').textContent = STAGE_STOPS[stage].t;
-  // anchor just inside the corner and grow the bubble inward, so the car stays visible
+  // anchor just inside the corner and grow the bubble inward, so the car stays visible;
+  // on top-row stops, drop it below the icon row so the countdown ring stays visible too
   el.style.left = (p.x + dx/dl * 34) + 'px';
-  el.style.top  = (p.y + dy/dl * 34) + 'px';
+  el.style.top  = (p.y + dy/dl * 34 + (dy > 0 ? 148 : 0)) + 'px';
   el.style.transform = `translate(${dx > 0 ? '0%' : '-100%'}, ${dy > 0 ? '0%' : '-100%'})`;
   el.classList.add('show');
   document.querySelectorAll('.jcard').forEach(c => c.classList.toggle('live', +c.dataset.stage === stage));
@@ -1267,6 +1302,7 @@ function jCaptionShow(stage){
 function hideJCaption(){
   document.getElementById('jcaption')?.classList.remove('show');
   document.querySelectorAll('.jcard.live').forEach(c => c.classList.remove('live'));
+  document.querySelectorAll('.jring rect').forEach(r => r.style.strokeDashoffset = 0);
 }
 function setHub(){
   const h = document.getElementById('jhub');
@@ -1314,6 +1350,23 @@ function dwell(ms){
   let elapsed = 0;
   return pausableTick(dt => { elapsed += dt; return elapsed >= ms; });
 }
+/* D1 — station dwell with a draining countdown ring around the live stage icon.
+   Driven by the same pausable clock as the car, so PAUSE freezes it too.
+   Reduced motion: the ring stays full — a state cue without the animation. */
+function dwellRing(stage, ms){
+  const still = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let elapsed = 0;
+  return pausableTick(dt => {
+    elapsed += dt;
+    const card = document.querySelector(`.jcard[data-stage="${stage}"]`);
+    if (card){
+      card.classList.add('live');                 // self-heals if a re-render dropped it
+      const ring = card.querySelector('.jring rect');
+      if (ring) ring.style.strokeDashoffset = still ? 0 : -(100 * Math.min(1, elapsed / ms));
+    }
+    return elapsed >= ms;
+  });
+}
 async function runLoop(){
   const g = trackGeo;
   if (!g || trackAnim.running) return;
@@ -1330,7 +1383,7 @@ async function runLoop(){
       if (trackAnim.abort) break;
       if (i > 0) await drive(seq[i-1], seq[i]);
       if (trackAnim.abort) break;
-      if (i < 4){ carStage = i % 4; jCaptionShow(i % 4); await dwell(STOP_DWELL); hideJCaption(); await dwell(150); }
+      if (i < 4){ carStage = i % 4; jCaptionShow(i % 4); await dwellRing(i % 4, STOP_DWELL); hideJCaption(); await dwell(150); }
     }
     if (!trackAnim.abort) carStage = 0;
   } finally {

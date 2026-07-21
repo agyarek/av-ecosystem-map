@@ -1137,7 +1137,8 @@
   "mono": "PA",
   "exited": false,
   "score": 12,
-  "l4credible": true
+  "l4credible": true,
+  "spokenTo": true
  },
  {
   "id": "c38",
@@ -8872,7 +8873,8 @@
   "confidence": "Reported",
   "mono": "PP",
   "exited": false,
-  "score": 9
+  "score": 9,
+  "spokenTo": true
  },
  {
   "id": "c298",

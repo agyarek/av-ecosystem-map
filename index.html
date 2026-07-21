@@ -63,12 +63,12 @@ header.site .hbyline{font-size:12px;color:#a1a1aa;line-height:1.45}
 header.site .hbyline a{color:#22d3ee;text-decoration:none;font-weight:600}
 header.site .hbyline a:hover{text-decoration:underline}
 #aboutLink{
-  margin-left:auto;flex:none;
+  flex:none;
   font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:10.5px;font-weight:600;letter-spacing:.1em;
   color:#a1a1aa;border:1px solid #3f3f46;border-radius:var(--r-pill);padding:7px 12px;
 }
 #aboutLink:hover{color:#22d3ee;border-color:#22d3ee}
-#searchWrap{position:relative}
+#searchWrap{position:relative;margin-left:auto}
 #searchBox{
   font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12.5px;
   background:#18181b;color:#fff;border:1px solid #3f3f46;border-radius:var(--r-chip);
@@ -94,30 +94,6 @@ header.site .hbyline a:hover{text-decoration:underline}
 #intro .lede{max-width:860px;font-size:16.5px;line-height:1.65;color:#27272a}
 #stats{margin-top:14px;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted2)}
 #stats b{color:var(--ink);font-weight:600}
-#controls{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:16px}
-.toggle{
-  display:inline-flex;align-items:center;gap:8px;
-  font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;font-weight:600;letter-spacing:.08em;
-  color:var(--muted2);background:#fff;border:1px solid var(--border);border-radius:var(--r-pill);
-  padding:7px 12px 7px 7px;transition:border-color .15s;
-}
-.toggle:hover{border-color:#c9c9cd}
-.toggle .knob{
-  width:26px;height:15px;border-radius:9px;background:#d9d9d6;position:relative;flex:none;transition:background .15s;
-}
-.toggle .knob::after{
-  content:"";position:absolute;top:2px;left:2px;width:11px;height:11px;border-radius:50%;
-  background:#fff;transition:left .15s;box-shadow:0 1px 2px rgba(0,0,0,.25);
-}
-.toggle.on{color:var(--ink);border-color:var(--accent)}
-.toggle.on .knob{background:var(--accent)}
-.toggle.on .knob::after{left:13px}
-#clearSel{
-  display:none;align-items:center;gap:6px;
-  font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;font-weight:600;letter-spacing:.08em;
-  color:#fff;background:var(--ink);border-radius:var(--r-pill);padding:8px 14px;
-}
-#clearSel.show{display:inline-flex}
 #legend{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12px;letter-spacing:.04em;color:var(--muted2);margin-top:9px;line-height:1.6}
 #legend .ldot{color:var(--gold);font-size:13px}
 
@@ -126,7 +102,7 @@ header.site .hbyline a:hover{text-decoration:underline}
 #journey > .kicker,#journey > h2,#journey > .jintro{text-align:center}
 #journey h2{font-size:clamp(22px,3.4vw,30px);font-weight:800;letter-spacing:-.02em;margin-top:6px}
 #journey .jintro{max-width:760px;color:var(--muted2);margin:8px auto 0;font-size:14.5px}
-#jboard{position:relative;margin-top:26px;padding:140px 118px 158px}
+#jboard{position:relative;margin-top:26px;padding:112px 108px}
 #trackSvg{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;overflow:visible}
 .roadArrow{animation:arrowGlow 1.9s ease-in-out infinite}
 @keyframes arrowGlow{
@@ -139,7 +115,7 @@ header.site .hbyline a:hover{text-decoration:underline}
   grid-auto-rows:1fr;gap:56px 64px;z-index:1;
 }
 @media(max-width:999px){
-  #jboard{padding:132px 102px}
+  #jboard{padding:106px 102px}
   .jgrid{gap:48px 56px}
 }
 .jcard{
@@ -206,23 +182,6 @@ header.site .hbyline a:hover{text-decoration:underline}
 #jcaption .jck{display:block;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:10px;font-weight:600;letter-spacing:.1em;color:var(--accent);margin-bottom:4px}
 #jcaption .jct{font-size:12.5px;line-height:1.5;color:#27272a}
 .jcard.live{border-color:var(--accent);box-shadow:0 10px 28px rgba(14,116,144,.15)}
-.jenablers{
-  margin-top:16px;background:var(--cardbg);border:1px solid var(--border);border-radius:var(--r-box);
-  padding:14px 18px;display:flex;align-items:center;gap:10px;flex-wrap:wrap;
-}
-.jenablers .kicker{margin-right:4px}
-/* C2 — enabler orbit: chips dock onto the ring itself on wide screens */
-#enDock{position:absolute;z-index:2;transform:translate(-50%,-50%);display:none;align-items:center;gap:8px;white-space:nowrap}
-#enLabel{
-  position:absolute;z-index:2;transform:translate(-50%,-50%);display:none;
-  font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:10px;font-weight:600;letter-spacing:.2em;color:var(--muted2);
-  background:var(--bg);border:1px solid var(--border);border-radius:20px;padding:4px 12px;white-space:nowrap;
-}
-@media(min-width:1000px){
-  #enDock{display:flex}
-  #enLabel{display:block}
-  .jenablers{display:none}
-}
 @media(max-width:699px){
   #jboard{padding:0}
   .jgrid{grid-template-columns:1fr;gap:14px}
@@ -324,7 +283,7 @@ body.dlg-open #backdrop{display:block}
 .cnode .nname{font-weight:700;font-size:12px;line-height:1.25;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0}
 .cnode.center .nname{font-size:13.5px;white-space:normal}
 .cnode .ndesc{font-size:10.5px;color:var(--muted2);line-height:1.4;margin-top:3px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-.cnode.center .ndesc{-webkit-line-clamp:3;font-size:10.5px;color:var(--muted2)}
+.cnode.center .ndesc{display:block;-webkit-line-clamp:unset;overflow:visible;font-size:10.5px;color:var(--muted2)}
 .cnode.catnode{z-index:1}
 .cnode.catnode .chead2{display:flex;align-items:center;gap:6px;min-width:0}
 .cnode.catnode .ctitle{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:9.5px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--muted2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
@@ -352,7 +311,6 @@ body.dlg-open #backdrop{display:block}
 .cnode.catnode.empty .ctitle{color:var(--muted)}
 .cnode.catnode.empty .nempty{display:block;font-size:9.5px;color:var(--muted);font-style:italic;margin-top:2px}
 .crail{flex:1;min-width:300px;max-width:380px;overflow-y:auto;min-height:0;padding-right:4px}
-.dlgkick{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:9.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
 .chead{display:flex;align-items:center;gap:12px}
 .chead .cname2{font-size:20px;font-weight:800;letter-spacing:-.02em;line-height:1.2}
 #viewMap{
@@ -424,6 +382,7 @@ body.dlg-open #backdrop{display:block}
 .prow .prnote{font-size:12px;color:var(--muted2);line-height:1.5;margin-top:2px}
 @media(max-width:860px){
   #card{inset:auto 0 0 0;margin:0;width:auto;height:auto;max-height:74vh;border-radius:var(--r-box) var(--r-box) 0 0;border-bottom:none}
+  #cardClose{margin-left:auto}
   #cardScroll{display:block;overflow-y:auto;padding:18px 18px 22px}
   .cbody{display:block;margin-top:0}
   #constel,#viewMap{display:none}
@@ -483,33 +442,6 @@ footer.site .fcta{font-size:16px;font-weight:600;line-height:1.6;max-width:720px
 footer.site .fcta a{color:#22d3ee;text-decoration:none}
 footer.site .fcta a:hover{text-decoration:underline}
 footer.site .fver{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.1em;color:#71717a;margin-top:18px;text-transform:uppercase}
-
-/* ============ floating control panel (left) ============ */
-#ctrlPanel{
-  position:fixed;left:14px;top:82px;z-index:46;width:270px;
-  background:#fff;border:1px solid var(--border);border-radius:14px;
-  box-shadow:0 12px 34px rgba(10,10,10,.14);overflow:visible;
-}
-#ctrlToggle{
-  display:flex;align-items:center;gap:8px;width:100%;padding:11px 13px;
-  font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;font-weight:600;letter-spacing:.12em;color:var(--muted2);
-}
-#ctrlToggle svg{width:14px;height:14px;flex:none;color:var(--accent)}
-#ctrlToggle .caret{margin-left:auto;transition:transform .15s}
-#ctrlPanel.open #ctrlToggle .caret{transform:rotate(90deg)}
-.ctrlBody{display:none;flex-direction:column;gap:8px;padding:2px 12px 13px}
-#ctrlPanel.open .ctrlBody{display:flex}
-#ctrlPanel:not(.open){width:auto}
-#ctrlPanel:not(.open) #ctrlToggle span.lbl{display:none}
-.ctrlBody .toggle{width:100%;justify-content:flex-start}
-.ctrlBody #clearSel{width:100%;justify-content:center}
-#ctrlPanel #searchWrap{width:100%}
-#ctrlPanel #searchBox{width:100%;background:#f4f4f2;color:var(--ink);border:1px solid var(--border)}
-#ctrlPanel #searchBox::placeholder{color:var(--muted)}
-#ctrlPanel #searchDrop{left:0;right:0;width:auto;top:calc(100% + 6px)}
-@media(max-width:860px){
-  #ctrlPanel{top:auto;bottom:14px;left:12px;width:min(270px,calc(100vw - 90px))}
-}
 
 /* ============ theme toggle (bottom right) ============ */
 #themeBtn{
@@ -606,12 +538,7 @@ footer.site .fver{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:1
 [data-theme="dark"] .phead .pcount{background:#26262c;color:var(--muted2)}
 [data-theme="dark"] .pmore{background:#222228;color:var(--muted2)}
 [data-theme="dark"] .pmore:hover{background:#2a2a31;color:var(--ink)}
-[data-theme="dark"] .toggle{background:#1b1b20;border-color:#2b2b32}
-[data-theme="dark"] .toggle .knob{background:#3a3a42}
-[data-theme="dark"] .toggle.on{border-color:var(--accent)}
-[data-theme="dark"] #clearSel{background:#e8e8e4;color:#111}
-[data-theme="dark"] #ctrlPanel,[data-theme="dark"] #themeBtn,[data-theme="dark"] .jstep{background:#1b1b20;border-color:#2b2b32}
-[data-theme="dark"] #ctrlPanel #searchBox{background:#101014}
+[data-theme="dark"] #themeBtn,[data-theme="dark"] .jstep{background:#1b1b20;border-color:#2b2b32}
 [data-theme="dark"] #searchDrop{background:#1b1b20;border-color:#2b2b32;color:var(--ink)}
 [data-theme="dark"] .srow{border-color:#232329}
 [data-theme="dark"] .srow:hover,[data-theme="dark"] .srow.active{background:#20262b}
@@ -622,7 +549,6 @@ footer.site .fver{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:1
 [data-theme="dark"] #jhub{background:#1b1b20;border-color:#2b2b32;box-shadow:0 6px 22px rgba(0,0,0,.5)}
 [data-theme="dark"] #jcaption{background:#1b1b20;border-color:#2b2b32}
 [data-theme="dark"] #jcaption .jct{color:#d6d6dc}
-[data-theme="dark"] .jenablers{background:var(--cardbg)}
 [data-theme="dark"] #card{background:#141419;border-color:#2b2b32}
 [data-theme="dark"] #cardClose{background:#26262c;color:var(--muted2)}
 [data-theme="dark"] #cardClose:hover{background:#31313a;color:var(--ink)}
@@ -656,26 +582,12 @@ footer.site .fver{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:1
     <div class="htitle">Autonomous Vehicle Ecosystem Map</div>
     <div class="hbyline">Compiled &amp; maintained by <a href="https://www.linkedin.com/in/kofiagyare/" target="_blank" rel="noopener">Kofi Agyare-Kwabi</a> — ex-Uber Country Manager · GTM &amp; Partnerships · Wharton MBA</div>
   </div>
+  <div id="searchWrap">
+    <input id="searchBox" type="text" placeholder="SEARCH 556 COMPANIES…" autocomplete="off" spellcheck="false" aria-label="Search companies">
+    <div id="searchDrop" role="listbox"></div>
+  </div>
   <button id="aboutLink">ABOUT THIS MAP</button>
 </header>
-
-<div id="ctrlPanel" class="open">
-  <button id="ctrlToggle" aria-expanded="true">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="7" x2="20" y2="7"/><circle cx="9" cy="7" r="2.4" fill="var(--bg)"/><line x1="4" y1="17" x2="20" y2="17"/><circle cx="15" cy="17" r="2.4" fill="var(--bg)"/></svg>
-    <span class="lbl">MAP CONTROLS</span>
-    <span class="caret">▸</span>
-  </button>
-  <div class="ctrlBody">
-    <div id="searchWrap">
-      <input id="searchBox" type="text" placeholder="SEARCH 556 COMPANIES…" autocomplete="off" spellcheck="false" aria-label="Search companies">
-      <div id="searchDrop" role="listbox"></div>
-    </div>
-    <button id="clearSel">✕&nbsp; CLEAR SELECTION</button>
-    <button class="toggle" id="tFreight"><span class="knob"></span><span class="tlabel"></span></button>
-    <button class="toggle" id="tOrphans"><span class="knob"></span><span class="tlabel"></span></button>
-    <button class="toggle" id="tExited"><span class="knob"></span><span class="tlabel"></span></button>
-  </div>
-</div>
 
 <button id="themeBtn" aria-label="Toggle light and dark mode">
   <svg class="tmoon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"/></svg>
@@ -707,12 +619,6 @@ footer.site .fver{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:1
       <span class="hlabel">RUN LOOP</span>
     </button>
     <div id="jcaption" aria-hidden="true"><span class="jck"></span><span class="jct"></span></div>
-    <div id="enLabel" aria-hidden="true">ENABLES EVERY STAGE</div>
-    <div id="enDock" role="group" aria-label="Layers that enable every stage"></div>
-  </div>
-  <div class="jenablers">
-    <span class="kicker">Around the whole loop</span>
-    <span id="jenchips"></span>
   </div>
 </section>
 
@@ -809,7 +715,6 @@ const STAGES = [
   { n:"The Pitlane", icon:"wrench", d:"Depots charge, clean, inspect and service the fleet — then send it straight back out.",
     cats:["Fleet Operations & Depot"] }
 ];
-const ENABLER_CATS = ["Capital, Insurance & Risk","Governance: Regulators & Government","Governance: Standards, Safety & Advocacy"];
 
 const ICONS = {
   phone:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2" width="10" height="20" rx="2.5"/><line x1="11" y1="18.5" x2="13" y2="18.5"/></svg>',
@@ -824,17 +729,14 @@ let byName = {};
 let adj = new Map();          // name -> Map(partnerName -> edge)
 let selectedName = null;
 let dialogOpen = false;        // desktop: constellation dialog; closing it keeps the selection on the map
-let showFreight = false, showOrphans = false, showExited = false;
 let panelLevel = {};          // cat -> 0 collapsed | 1 preview | 2 full
 CAT_ORDER.forEach(c => panelLevel[c] = 1);
 const PREVIEW_N = 10;
-let counts = { freight:0, orphans:0, exited:0 };
 
 /* ------------------ helpers ------------------ */
 const esc = s => String(s ?? '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
 const slug = s => String(s).toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
 const hasEdges = c => adj.has(c.name);
-const visibleBase = c => (showExited || !c.exited) && (showFreight || !c.segment) && (showOrphans || hasEdges(c) || c.spokenTo);
 
 function partnersOf(name){
   const m = adj.get(name); if (!m) return [];
@@ -938,10 +840,7 @@ function select(name){
   selectedName = (selectedName === name) ? null : name;
   dialogOpen = !!selectedName;
   if (selectedName){
-    const c = byName[selectedName];
-    if (c?.exited)  showExited  = true;
-    if (c?.segment) showFreight = true;
-    ensureCategoryExpanded(c.cat);
+    ensureCategoryExpanded(byName[selectedName].cat);
   }
   renderEverything();
   drawLines();
@@ -974,7 +873,7 @@ function renderEverything(){
   const pins = pinnedSet();
   renderOps(pins);
   renderPanels(pins);
-  renderControls(pins);
+  renderControls();
   renderJourneyChips();
   renderCard();
   document.body.classList.toggle('has-sel', !!selectedName);
@@ -1011,7 +910,7 @@ function renderPanels(pins){
   wrap.innerHTML = CAT_ORDER.map(cat => {
     const meta = CATS[cat];
     const all = comps.filter(c => c.cat === cat).sort((a,b) => b.score - a.score || a.name.localeCompare(b.name));
-    const vis = all.filter(c => visibleBase(c) || pins.has(c.name));
+    const vis = all;                                        // every company shows — no filters
     const lvl = panelLevel[cat];
     let list;
     if (lvl === 0){
@@ -1047,20 +946,9 @@ function renderPanels(pins){
   }).join('');
 }
 
-function renderControls(pins){
-  const shown = comps.filter(c => visibleBase(c) || pins.has(c.name)).length;
+function renderControls(){
   document.getElementById('stats').innerHTML =
-    `<b>${shown}</b> companies shown · <b>${enrich.edges.length}</b> partnerships mapped · <b>11</b> layers`;
-  const set = (id, on, label) => {
-    const el = document.getElementById(id);
-    el.classList.toggle('on', on);
-    el.querySelector('.tlabel').textContent = label;
-    el.setAttribute('aria-pressed', on);
-  };
-  set('tFreight', showFreight, `${showFreight ? 'HIDE' : 'SHOW'} FREIGHT & DELIVERY (${counts.freight})`);
-  set('tOrphans', showOrphans, `${showOrphans ? 'HIDE' : 'SHOW'} UNLINKED (${counts.orphans})`);
-  set('tExited',  showExited,  `${showExited ? 'HIDE' : 'SHOW'} EXITED / ACQUIRED (${counts.exited})`);
-  document.getElementById('clearSel').classList.toggle('show', !!selectedName);
+    `<b>${comps.length}</b> companies · <b>${enrich.edges.length}</b> partnerships mapped · <b>11</b> layers`;
   document.getElementById('collapseAll').classList.toggle('show', CAT_ORDER.some(cat => panelLevel[cat] === 2));
 }
 
@@ -1085,7 +973,7 @@ function renderJourneyChips(){
       </div>
       <div class="jstage">STAGE 0${i+1}</div>
       <h3>${esc(s.n)}</h3>
-      <p class="jstat"><b>${nco}</b> COMPANIES · <b>${s.cats.length}</b> ${s.cats.length > 1 ? 'LAYERS' : 'LAYER'}</p>
+      <p class="jstat"><b>${nco}</b> COMPANIES</p>
       <p class="jdesc">${esc(s.d)}</p>
       <button class="jexp ${open ? 'open' : ''}" data-stage="${i}" aria-expanded="${open}">
         <span class="caret">▸</span>VIEW ${s.cats.length > 1 ? 'THE LAYERS' : 'THE LAYER'}
@@ -1093,9 +981,6 @@ function renderJourneyChips(){
       <div class="jchips">${s.cats.map(jchipHTML).join('')}</div>
     </div>`;
   }).join('');
-  document.getElementById('jenchips').innerHTML = ENABLER_CATS.map(jchipHTML).join(' ');
-  const dock = document.getElementById('enDock');
-  if (dock) dock.innerHTML = ENABLER_CATS.map(jchipHTML).join('');
 }
 
 /* =====================================================================
@@ -1105,7 +990,7 @@ function renderJourneyChips(){
    ===================================================================== */
 let trackGeo = null;                            // {key, path, L, stops[4], center}
 const trackAnim = { running:false, abort:false, paused:false };
-const STOP_DWELL = 4800;                        // ms at each station — the countdown ring makes the hold read as intentional
+const STOP_DWELL = 6300;                        // ms at each station — the countdown ring makes the hold read as intentional
 let carStage = 0;                               // which station the car is parked at
 let carFacing = 1;                              // 1 = clockwise, -1 = reversed (after a 3-point turn)
 
@@ -1142,13 +1027,6 @@ function drawTrack(){
   if (prevB){ prevB.style.left = (mx - 82) + 'px'; prevB.style.top = my + 'px'; }
   if (nextB){ nextB.style.left = (mx + 82) + 'px'; nextB.style.top = my + 'px'; }
 
-  // C2 — the enabler orbit encircles the whole loop; label on the top line, chips docked on the bottom
-  const ENR = 60;                                // road centerline → orbit
-  const eL = left - ENR, eR = right + ENR, eT = top - ENR, eB = bottom + ENR;
-  const dock = document.getElementById('enDock'), enlab = document.getElementById('enLabel');
-  if (dock){ dock.style.left = mx + 'px'; dock.style.top = eB + 'px'; }
-  if (enlab){ enlab.style.left = mx + 'px'; enlab.style.top = eT + 'px'; }
-
   const dark = document.documentElement.dataset.theme === 'dark';
   const key = [left, right, top, bottom].map(v => Math.round(v)).join(',') + (dark ? '|d' : '|l');
   if (trackGeo && trackGeo.key === key) return;  // geometry unchanged — don't disturb a running car
@@ -1159,10 +1037,7 @@ function drawTrack(){
   const d = `M ${left+r} ${top} H ${right-r} A ${r} ${r} 0 0 1 ${right} ${top+r} V ${bottom-r} A ${r} ${r} 0 0 1 ${right-r} ${bottom} H ${left+r} A ${r} ${r} 0 0 1 ${left} ${bottom-r} V ${top+r} A ${r} ${r} 0 0 1 ${left+r} ${top} Z`;
   const arrow = (x,y,rot) =>   // directional arrow: tail + head, filled, thin bezel
     `<path class="roadArrow" d="M -20 -3.6 H 1 V -11 L 20 0 L 1 11 V 3.6 H -20 Z" transform="translate(${x} ${y}) rotate(${rot})" fill="#0e7490" stroke="#fafafa" stroke-width="1.6" stroke-linejoin="round"/>`;
-  const er = r + ENR;
-  const de = `M ${eL+er} ${eT} H ${eR-er} A ${er} ${er} 0 0 1 ${eR} ${eT+er} V ${eB-er} A ${er} ${er} 0 0 1 ${eR-er} ${eB} H ${eL+er} A ${er} ${er} 0 0 1 ${eL} ${eB-er} V ${eT+er} A ${er} ${er} 0 0 1 ${eL+er} ${eT} Z`;
   svg.innerHTML =
-    `<path d="${de}" fill="none" stroke="${dark ? 'rgba(240,240,238,.22)' : 'rgba(10,10,10,.22)'}" stroke-width="2" stroke-dasharray="2.5 7" stroke-linecap="round"/>` + // enabler orbit
     `<path d="${d}" fill="none" stroke="${dark ? 'rgba(255,255,255,.09)' : 'rgba(10,10,10,.10)'}" stroke-width="86"/>` + // soft shoulder
     `<path id="roadPath" d="${d}" fill="none" stroke="#3f3f46" stroke-width="72"/>` +       // asphalt (light enough to read the tires)
     `<path d="${d}" fill="none" stroke="#fafafa" stroke-width="3.6" stroke-dasharray="24 20" opacity=".95"/>` + // center line
@@ -1273,7 +1148,7 @@ async function goStage(dir){
     if (trackAnim.abort) return;
     carStage = next;
     jCaptionShow(next);
-    await dwellRing(next, 3200);
+    await dwellRing(next, 4700);
     hideJCaption();
   } finally {
     hideJCaption();
@@ -1525,7 +1400,6 @@ function renderCard(){
     </div>`;
 
   scroll.innerHTML = `
-    <p class="dlgkick">Autonomous Vehicle Ecosystem Map</p>
     <div class="chead">
       ${logoHTML(c.name,40)}
       <span style="min-width:0">
@@ -1919,13 +1793,6 @@ function wireEvents(){
       renderEverything(); drawLines(); requestAnimationFrame(() => { drawLines(); drawTrack(); layoutConstel(); });
       return;
     }
-    if (e.target.closest('#ctrlToggle')){
-      const p = document.getElementById('ctrlPanel');
-      const open = p.classList.toggle('open');
-      document.getElementById('ctrlToggle').setAttribute('aria-expanded', open);
-      try { localStorage.setItem('avCtrl', open ? 'open' : 'closed'); } catch(_){}
-      return;
-    }
     if (e.target.closest('#collapseAll')){
       CAT_ORDER.forEach(cat => panelLevel[cat] = 1);
       renderEverything(); drawLines(); requestAnimationFrame(drawLines);
@@ -1976,21 +1843,12 @@ function wireEvents(){
       return;
     }
     const t = e.target;
-    if (t.closest('#card') || t.closest('#ctrlPanel') || t.closest('#themeBtn') ||
-        t.closest('#landscapeNudge') || t.closest('#clearSel')) {
-      if (t.closest('#clearSel')) clearSelection();
+    if (t.closest('#card') || t.closest('header.site') || t.closest('#themeBtn') ||
+        t.closest('#landscapeNudge')) {
       return;
     }
     clearSelection();   // genuine click-outside (incl. mobile backdrop)
   });
-
-  const toggle = (id, fn) => document.getElementById(id).addEventListener('click', () => {
-    fn();
-    renderEverything(); drawLines(); requestAnimationFrame(drawLines);
-  });
-  toggle('tFreight', () => showFreight = !showFreight);
-  toggle('tOrphans', () => showOrphans = !showOrphans);
-  toggle('tExited',  () => showExited  = !showExited);
 
   // export (delegated — the button is re-rendered with the card)
   document.addEventListener('click', e => { if (e.target.closest('#expBtn')) exportPNG(); });
@@ -2058,18 +1916,6 @@ async function init(){
     adj.get(ed.a).set(ed.b, ed);
     adj.get(ed.b).set(ed.a, ed);
   }
-  counts.freight = comps.filter(x => x.segment).length;
-  counts.orphans = comps.filter(x => !adj.has(x.name)).length;
-  counts.exited  = comps.filter(x => x.exited).length;
-
-  // floating control panel: remember state; default open on desktop, tucked away on mobile
-  try {
-    const stored = localStorage.getItem('avCtrl');
-    const open = stored ? stored === 'open' : !isMobileView();
-    document.getElementById('ctrlPanel').classList.toggle('open', open);
-    document.getElementById('ctrlToggle').setAttribute('aria-expanded', open);
-  } catch(_){}
-
   wireEvents();
   renderEverything();
   drawLines();

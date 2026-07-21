@@ -279,7 +279,15 @@ body.dlg-open #backdrop{display:block}
   background:#fff;border:1px solid var(--border);border-radius:10px;padding:8px 9px;
   box-shadow:0 3px 10px rgba(10,10,10,.05);text-align:left;
 }
-.cnode.center{width:200px;border:2px solid var(--accent);z-index:2;box-shadow:0 10px 28px rgba(14,116,144,.16);display:flex;gap:9px;align-items:center;cursor:default}
+.cnode.center{width:200px;border:2px solid var(--accent);z-index:2;box-shadow:0 10px 28px rgba(14,116,144,.16);display:flex;flex-direction:column;align-items:stretch;gap:8px;cursor:default}
+.cnode.center .crowc{display:flex;gap:9px;align-items:center;min-width:0}
+.nexp{
+  display:flex;align-items:center;justify-content:center;gap:6px;width:100%;
+  background:var(--accent);color:#fff;font-weight:700;font-size:10.5px;letter-spacing:.05em;
+  border-radius:6px;padding:7px 8px;cursor:pointer;
+}
+.nexp svg{width:12px;height:12px;flex:none}
+.nexp:hover{background:#0b6076}
 .cnode .nname{font-weight:700;font-size:12px;line-height:1.25;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0}
 .cnode.center .nname{font-size:13.5px;white-space:normal}
 .cnode .ndesc{font-size:10.5px;color:var(--muted2);line-height:1.4;margin-top:3px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
@@ -367,9 +375,9 @@ body.dlg-open #backdrop{display:block}
 }
 @media(prefers-reduced-motion:reduce){#expBtn{animation:none}}
 .expnote{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:10.5px;color:var(--muted);letter-spacing:.05em;text-align:center;margin-top:6px}
-.cknown{font-size:14px;line-height:1.55;font-weight:500}
 .cabout{font-size:14px;line-height:1.65;color:var(--muted2)}
-.cwww{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12px;font-weight:600;text-decoration:none}
+.cwww{display:inline-flex;align-items:center;gap:6px;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12px;font-weight:600;text-decoration:none}
+.cwww .globe{width:13px;height:13px;color:var(--accent);flex:none}
 .cwww:hover{text-decoration:underline}
 .prow{
   display:flex;align-items:flex-start;gap:9px;width:100%;
@@ -502,7 +510,6 @@ footer.site .fver{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:1
   #card .hop{font-size:11px}
   #card #expBtn{font-size:12.5px}
   #card .expnote{font-size:10px}
-  #card .cknown{font-size:13.5px;line-height:1.55}
   #card .cabout{font-size:13.5px;line-height:1.6}
   #card .cwww{font-size:11.5px}
   #card .prname{font-size:12.5px}
@@ -525,6 +532,14 @@ footer.site .fver{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:1
 }
 [data-theme="dark"] .pathlede{background:#182730}
 .pathalt{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:10.5px;letter-spacing:.03em;color:var(--muted);margin-top:8px}
+.cmeta .pin{width:13px;height:13px;vertical-align:-2px;margin-right:5px;color:var(--accent);display:inline-block}
+.helpgaps{font-size:12.5px;color:var(--muted2);line-height:1.55;margin-bottom:6px}
+.helpbtn{
+  display:flex;align-items:center;justify-content:center;gap:8px;width:100%;margin-top:9px;
+  background:none;border:1.5px solid var(--accent);color:var(--accent);
+  font-weight:700;font-size:12.5px;letter-spacing:.02em;border-radius:var(--r-chip);padding:10px 12px;text-decoration:none;
+}
+.helpbtn:hover{background:var(--accent);color:#fff}
 .helpcta{font-weight:600}
 .nhelp{display:block;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:9px;font-weight:600;letter-spacing:.05em;color:var(--accent);margin-top:3px;text-decoration:none}
 .nhelp:hover{text-decoration:underline}
@@ -1284,7 +1299,7 @@ function layerGroups(partners){
   const empty = [...groups].filter(([, v]) => !v.length).map(([k]) => k);
   return { populated, empty };
 }
-function groupedPartnersHTML(partners, forName){
+function groupedPartnersHTML(partners){
   const prow = p => {
     const pc = byName[p.name];
     return `<button class="prow" data-cname="${esc(p.name)}" title="${esc(p.n || '')}">
@@ -1295,22 +1310,12 @@ function groupedPartnersHTML(partners, forName){
       </span>
     </button>`;
   };
-  const { populated, empty } = layerGroups(partners);
-  let html = populated.map(([cat, list]) =>
+  const { populated } = layerGroups(partners);
+  return populated.map(([cat, list]) =>
     `<div class="pgroup">
        <p class="pghead"><span class="pdot" style="display:inline-block;width:8px;height:8px;vertical-align:-1px;margin-right:5px;background:${dotColor(cat)}"></span>${esc(CATS[cat].t.toUpperCase())} (${list.length})</p>
        ${list.map(prow).join('')}
      </div>`).join('');
-  if (empty.length){
-    html += `<div class="pgroup pgempty">
-      <p class="pghead">NOT YET MAPPED</p>
-      <p style="font-size:12px;color:var(--muted2);line-height:1.55;margin:0 2px 6px">
-        No partnerships mapped in ${empty.map(k => `<b>${esc(CATS[k].t)}</b>`).join(' · ')}.
-        Know of one? <a class="helpcta" href="${esc(helpMail(forName, 'a partnership I should add'))}">Help improve this card →</a>
-      </p>
-    </div>`;
-  }
-  return html;
 }
 function renderCard(){
   const card = document.getElementById('card');
@@ -1349,15 +1354,14 @@ function renderCard(){
         <p>Through these mapped partnerships, ${esc(c.name)}'s work has a route to a company carrying passengers in L4 service. It's one path I've traced, not the only one — real influence flows through many partnerships at once.</p>
         ${alts > 0 ? `<p class="pathalt">+${alts} OTHER FIRST HOP${alts > 1 ? 'S' : ''} FROM ${esc(c.name.toUpperCase())} NOT TRACED HERE</p>` : ''}
       </div></div>`;
-  } else {
-    pathHTML = `<div class="csec"><p class="kicker">How ${esc(c.name)}&rsquo;s work could reach you on the road</p>
-      <div class="pathbox">
-        <p>I haven't yet traced a route from ${esc(c.name)} to a passenger-facing operator. That might be genuine whitespace… or a relationship I haven't uncovered. I don't claim to know everything each company is doing here.</p>
-        <p style="margin-top:7px"><a class="helpcta" href="${esc(helpMail(c.name, 'route to riders'))}">Help improve this card →</a></p>
-      </div></div>`;
   }
 
   const { populated, empty } = layerGroups(partners);
+  const helpHTML = `<div class="csec"><p class="kicker">Help me develop this map</p>
+    ${empty.length ? `<p class="helpgaps">No partnerships mapped yet for ${esc(c.name)} in ${empty.map(k => `<b>${esc(CATS[k].t)}</b>`).join(' · ')}.</p>` : ''}
+    <p class="helpgaps">Know a partnership, a correction, or a company I should add?</p>
+    <a class="helpbtn" href="${esc(helpMail(c.name, 'help develop the map'))}">HELP DEVELOP THE MAP &rarr;</a>
+  </div>`;
   const catCard = ([catKey, list]) => `
     <div class="cnode catnode" data-lcat="${esc(catKey)}">
       <span class="chead2">
@@ -1390,11 +1394,14 @@ function renderCard(){
     <div id="constel">
       <svg id="constelSvg" aria-hidden="true"></svg>
       <div class="cnode center">
-        ${logoHTML(c.name,28)}
-        <span style="min-width:0">
-          <span class="nname">${esc(c.name)}</span>
-          <span class="ndesc">${esc(known || c.sub || cat.t)}</span>
+        <span class="crowc">
+          ${logoHTML(c.name,28)}
+          <span style="min-width:0">
+            <span class="nname">${esc(c.name)}</span>
+            <span class="ndesc">${esc(known || c.sub || cat.t)}</span>
+          </span>
         </span>
+        <button class="nexp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 15V3"/><path d="m7 8 5-5 5 5"/><path d="M5 14v5a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-5"/></svg>EXPORT MAP</button>
       </div>
       ${ringCards.join('')}
     </div>`;
@@ -1416,22 +1423,22 @@ function renderCard(){
       <button id="cardClose" aria-label="Close">✕</button>
     </div>
     ${c.spokenTo ? '<div class="cspoken" style="margin-top:10px"><span class="spdot"></span>Kofi has spoken with this company directly</div>' : ''}
-    ${meta ? `<p class="cmeta" style="margin-top:8px">${esc(meta)}</p>` : ''}
+    ${meta ? `<p class="cmeta" style="margin-top:8px"><svg class="pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>${esc(meta)}</p>` : ''}
     <div class="cbody">
       ${constelHTML}
       <div class="crail">
-        ${pathHTML}
+        ${c.about ? `<div class="csec" style="margin-top:0;border-top:none;padding-top:2px"><p class="kicker">About</p><p class="cabout">${esc(c.about)}</p></div>` : ''}
+        ${dom ? `<div class="csec"><p class="kicker">Website</p><a class="cwww" href="https://${esc(dom)}" target="_blank" rel="noopener"><svg class="globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9.2"/><path d="M2.8 12h18.4M12 2.8c2.6 2.5 4 5.7 4 9.2s-1.4 6.7-4 9.2c-2.6-2.5-4-5.7-4-9.2s1.4-6.7 4-9.2z"/></svg>${esc(dom)} ↗</a></div>` : ''}
         <div class="csec">
           <button id="expBtn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 15V3"/><path d="m7 8 5-5 5 5"/><path d="M5 14v5a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-5"/></svg>EXPORT ${esc(c.name.toUpperCase())}'S PARTNERSHIP MAP</button>
           <p class="expnote">1200 × 900 PNG · SHAREABLE · CARRIES ATTRIBUTION</p>
         </div>
-        ${known ? `<div class="csec"><p class="kicker">Known for</p><p class="cknown">${esc(known)}</p></div>` : ''}
-        ${c.about ? `<div class="csec"><p class="kicker">About</p><p class="cabout">${esc(c.about)}</p></div>` : ''}
-        ${dom ? `<div class="csec"><a class="cwww" href="https://${esc(dom)}" target="_blank" rel="noopener">${esc(dom)} ↗</a></div>` : ''}
         <div class="csec"><p class="kicker">Mapped partners (${partners.length})</p>
-          ${partners.length ? groupedPartnersHTML(partners, c.name) :
-            `<p style="font-size:13px;color:var(--muted2);line-height:1.55">No partnerships mapped yet — which usually means the interesting ones haven't been announced, or I haven't found them. <a class="helpcta" href="${esc(helpMail(c.name, 'partnerships'))}">Help improve this card →</a></p>`}
+          ${partners.length ? groupedPartnersHTML(partners) :
+            `<p style="font-size:13px;color:var(--muted2);line-height:1.55">No partnerships mapped yet — which usually means the interesting ones haven't been announced, or I haven't found them.</p>`}
         </div>
+        ${pathHTML}
+        ${helpHTML}
       </div>
     </div>`;
   const rail = scroll.querySelector('.crail');
@@ -1851,7 +1858,7 @@ function wireEvents(){
   });
 
   // export (delegated — the button is re-rendered with the card)
-  document.addEventListener('click', e => { if (e.target.closest('#expBtn')) exportPNG(); });
+  document.addEventListener('click', e => { if (e.target.closest('#expBtn') || e.target.closest('.nexp')) exportPNG(); });
 
   // keyboard
   document.addEventListener('keydown', e => {

@@ -71,7 +71,8 @@
   "hqState": "CA",
   "hqCountry": "US",
   "region": "North America",
-  "foundedYear": 2017
+  "foundedYear": 2017,
+  "valuationUSD": 15000
  },
  {
   "id": "c2",
@@ -104,7 +105,8 @@
   "hqState": "PA",
   "hqCountry": "US",
   "region": "North America",
-  "foundedYear": 2016
+  "foundedYear": 2016,
+  "acquiredBy": "Wound down 2022; talent to Ford (Latitude AI) and VW"
  },
  {
   "id": "c3",
@@ -130,7 +132,7 @@
   "investors": "T. Rowe Price, Uber, Sequoia",
   "opMaturity": "Commercial-limited",
   "deployment": "Driverless Dallas to Houston route; Texas and Sun Belt expansion plans",
-  "metrics": "Driverless freight launched between Dallas and Houston in 2025 with Uber Freight and Hirschbach; Nvidia / Continental pathway announced",
+  "metrics": "250,000 driverless miles with zero Aurora Driver-attributed collisions (early 2026) across 10 driverless routes; targeting 200+ driverless trucks by end of 2026; ~$3.7B raised to date.",
   "signal": "Driverless Dallas-Houston/El Paso; McLane/FedEx/Werner hauls; 200+ trucks by end-2026",
   "confidence": "Confirmed",
   "mono": "AI",
@@ -142,7 +144,10 @@
   "hqState": "PA",
   "hqCountry": "US",
   "region": "North America",
-  "foundedYear": 2017
+  "foundedYear": 2017,
+  "fundingUSD": 3660,
+  "fleetSize": 20,
+  "milesReal": 0.25
  },
  {
   "id": "c4",
@@ -243,7 +248,8 @@
   "hqState": "TX",
   "hqCountry": "US",
   "region": "North America",
-  "foundedYear": 2020
+  "foundedYear": 2020,
+  "fundingUSD": 375
  },
  {
   "id": "c7",
@@ -303,7 +309,7 @@
   "investors": "",
   "opMaturity": "Commercial-scaled",
   "deployment": "Beijing, Wuhan, Chongqing, Shenzhen and other Chinese cities; Abu Dhabi / overseas expansion reported",
-  "metrics": "Over 1,000 robotaxi vehicles reported in China by 2025; Wuhan outage in April 2026 highlighted operational risk",
+  "metrics": "1,000+ fully driverless vehicles across 27 cities (last official count, May 2025); 22M+ cumulative public rides and weekly rides peaking above 350,000 (early 2026); 220M+ fully driverless km cumulative.",
   "signal": "Gulf expansion and Europe platform relationships reported; Wuhan outage drew scrutiny",
   "confidence": "Confirmed",
   "mono": "BA",
@@ -314,7 +320,9 @@
   "hqState": "",
   "hqCountry": "China",
   "region": "Greater China",
-  "foundedYear": 2013
+  "foundedYear": 2013,
+  "fleetSize": 1000,
+  "milesReal": 137
  },
  {
   "id": "c9",
@@ -383,7 +391,8 @@
   "hqState": "TX",
   "hqCountry": "US",
   "region": "North America",
-  "foundedYear": 2024
+  "foundedYear": 2024,
+  "fundingUSD": 20
  },
  {
   "id": "c11",
@@ -488,7 +497,8 @@
   "hqState": "CA",
   "hqCountry": "US",
   "region": "North America",
-  "foundedYear": 2013
+  "foundedYear": 2013,
+  "acquiredBy": "General Motors (absorbed, 2024)"
  },
  {
   "id": "c14",
@@ -521,7 +531,8 @@
   "hqState": "CA",
   "hqCountry": "US",
   "region": "North America",
-  "foundedYear": 2013
+  "foundedYear": 2013,
+  "fundingUSD": 110
  },
  {
   "id": "c15",
@@ -541,21 +552,22 @@
   "leadership": "Zhou Guang, founder and CEO",
   "about": "Chinese full-stack autonomous driving company increasingly positioned as a map-free ADAS supplier for mass-market Chinese vehicles, with L4 robotaxi roots.",
   "model": "ADAS software licensing; robotaxi R&D; OEM partnerships",
-  "financing": "Private; over $500M cumulative raised reported",
+  "financing": "Private; more than $700M raised (Alibaba, Great Wall among backers); weighing a Hong Kong IPO after a confidential filing (2026)",
   "investors": "Alibaba, Dongfeng, Great Wall, Fosun",
   "opMaturity": "Commercial-limited for ADAS; public pilot / historical robotaxi",
   "deployment": "Shenzhen and OEM deployments; GWM, Geely and other reported integrations",
   "metrics": "$100M Series C from Great Wall Motor reported in 2024; Nvidia Thor cooperation reported",
-  "signal": "Crossed 300,000 deployed vehicles; targeting 1.3M by year-end (Apr 2026)",
+  "signal": "Active and independent — earlier exit rumors never materialized; HK IPO under consideration",
   "confidence": "Confirmed",
   "mono": "DA",
-  "exited": true,
+  "exited": false,
   "score": 12,
   "hqCity": "Shenzhen",
   "hqState": "",
   "hqCountry": "China",
   "region": "Greater China",
-  "foundedYear": 2019
+  "foundedYear": 2019,
+  "fundingUSD": 700
  },
  {
   "id": "c16",
@@ -658,7 +670,8 @@
   "hqState": "CA",
   "hqCountry": "US",
   "region": "North America",
-  "foundedYear": 2016
+  "foundedYear": 2016,
+  "acquiredBy": "Applied Intuition (assets, 2023)"
  },
  {
   "id": "c19",
@@ -693,7 +706,8 @@
   "hqState": "",
   "hqCountry": "Israel",
   "region": "Middle East & Africa",
-  "foundedYear": 2018
+  "foundedYear": 2018,
+  "fundingUSD": 135
  },
  {
   "id": "c20",
@@ -719,7 +733,7 @@
   "investors": "Koch Disruptive, Nippon Express, Walmart",
   "opMaturity": "Commercial-limited",
   "deployment": "Walmart, Kroger, Tyson and other retail / logistics routes historically; US and Canada",
-  "metrics": "Third-party safety case and customer pilots distinguish model",
+  "metrics": "First US company operating fully driverless box trucks at commercial scale — 10 revenue trucks (Jan 2026) scaling toward hundreds, with $600M in customer contracts over five years.",
   "signal": "First in N. America to scale fully driverless box trucks; $600M contracted (Jan 2026)",
   "confidence": "Confirmed",
   "mono": "GA",
@@ -730,7 +744,9 @@
   "hqState": "CA",
   "hqCountry": "US",
   "region": "North America",
-  "foundedYear": 2017
+  "foundedYear": 2017,
+  "fundingUSD": 329,
+  "fleetSize": 10
  },
  {
   "id": "c21",
@@ -763,7 +779,8 @@
   "hqState": "CA",
   "hqCountry": "US",
   "region": "North America",
-  "foundedYear": 2017
+  "foundedYear": 2017,
+  "acquiredBy": "Shut down 2024"
  },
  {
   "id": "c22",
@@ -798,7 +815,8 @@
   "hqState": "",
   "hqCountry": "China",
   "region": "Greater China",
-  "foundedYear": 2015
+  "foundedYear": 2015,
+  "fundingUSD": 2600
  },
  {
   "id": "c23",
@@ -937,7 +955,8 @@
   "hqState": "",
   "hqCountry": "China",
   "region": "Greater China",
-  "foundedYear": 2018
+  "foundedYear": 2018,
+  "fundingUSD": 678
  },
  {
   "id": "c27",
@@ -973,7 +992,8 @@
   "hqState": "FL",
   "hqCountry": "US",
   "region": "North America",
-  "foundedYear": 2017
+  "foundedYear": 2017,
+  "fundingUSD": 25
  },
  {
   "id": "c28",
@@ -998,7 +1018,7 @@
   "investors": "Ares Acquisition Corp II (SPAC)",
   "opMaturity": "Commercial-limited",
   "deployment": "US freight lanes and customer deployments; Permian Basin specialized operations reported",
-  "metrics": "Driverless operations in commercial / industrial settings reported; public-company transition in 2025",
+  "metrics": "28 driverless trucks as of Q1 2026, concentrated in Permian Basin operations; public (Nasdaq: KDK) via the 2025 Ares SPAC at a $2.5B valuation.",
   "signal": "28 driverless trucks Q1 2026; revenue +74% YoY; Roehl/Atlas ops",
   "confidence": "Confirmed",
   "mono": "KA",
@@ -1009,7 +1029,10 @@
   "hqState": "CA",
   "hqCountry": "US",
   "region": "North America",
-  "foundedYear": 2018
+  "foundedYear": 2018,
+  "fundingUSD": 618,
+  "fleetSize": 28,
+  "valuationUSD": 2500
  },
  {
   "id": "c29",
@@ -1044,7 +1067,8 @@
   "hqState": "MI",
   "hqCountry": "US",
   "region": "North America",
-  "foundedYear": 2017
+  "foundedYear": 2017,
+  "fundingUSD": 383
  },
  {
   "id": "c30",
@@ -1104,7 +1128,7 @@
   "investors": "GM, Mercedes, Toyota, SAIC, Tencent, Uber, Grab",
   "opMaturity": "Commercial-scaled in ADAS; robotaxi pre-commercial / pilot",
   "deployment": "China OEM ADAS programs and autonomous-driving development; verify latest robotaxi footprint",
-  "metrics": "Reported 680,000+ vehicles equipped with Momenta systems by end-2025; robotaxi expansion funded by IPO proceeds",
+  "metrics": "680,000+ vehicles equipped with Momenta systems by end-2025; ~$751M raised in the July 2026 Hong Kong IPO at a ~$9B valuation, with about 20% of proceeds earmarked for robotaxi commercialization.",
   "signal": "Bridges Chinese ADAS scale, autonomy software and map/localization data flywheels",
   "confidence": "Confirmed",
   "mono": "MO",
@@ -1114,7 +1138,9 @@
   "hqState": "",
   "hqCountry": "China",
   "region": "Greater China",
-  "foundedYear": 2016
+  "foundedYear": 2016,
+  "fundingUSD": 2151,
+  "valuationUSD": 9000
  },
  {
   "id": "c32",
@@ -1139,7 +1165,7 @@
   "investors": "Hyundai Motor Group (majority); Aptiv (~15%)",
   "opMaturity": "Preparing Las Vegas robotaxi relaunch",
   "deployment": "Las Vegas with Uber; other deployments slowed or paused",
-  "metrics": "Reported workforce cuts and strategy reset; target for driverless capability moved later",
+  "metrics": "IONIQ 5 robotaxis live on Uber in Las Vegas since March 2026 (safety operators aboard, fully driverless targeted late 2026); 130,000+ autonomous rides across prior pilots.",
   "signal": "Marked as historical/restructured rather than a leading active Layer G platform.",
   "confidence": "Historical",
   "mono": "MO",
@@ -1151,7 +1177,8 @@
   "hqState": "MA",
   "hqCountry": "US",
   "region": "North America",
-  "foundedYear": 2020
+  "foundedYear": 2020,
+  "fundingUSD": 4923
  },
  {
   "id": "c33",
@@ -1255,7 +1282,8 @@
   "hqState": "",
   "hqCountry": "UK",
   "region": "Europe",
-  "foundedYear": 2014
+  "foundedYear": 2014,
+  "fundingUSD": 328
  },
  {
   "id": "c36",
@@ -1290,7 +1318,9 @@
   "hqState": "CA",
   "hqCountry": "US",
   "region": "North America",
-  "foundedYear": 2016
+  "foundedYear": 2016,
+  "fundingUSD": 300,
+  "valuationUSD": 1200
  },
  {
   "id": "c37",
@@ -1312,12 +1342,12 @@
   "leadership": "James Peng, co-founder and CEO; Tiancheng Lou, CTO",
   "about": "Chinese AV company spanning robotaxi and trucking. Pony.ai is one of the few public pure-play AV operators with meaningful Chinese deployment and Toyota / GAC ties. Runs a multi-sensor (lidar + camera) stack with a hybrid HD-map / light-map approach that can bootstrap a new city from navigation maps alone, and is shifting from rule-based planning toward a hybrid rule-based + end-to-end architecture.",
   "model": "Robotaxi fares; autonomous trucking; technology licensing",
-  "financing": "Public; raised $260M in 2024 US IPO at about $4.55B valuation",
+  "financing": "Public (Nasdaq: PONY); $413M raised in the 2024 US IPO and placements, plus ~$860M gross in the November 2025 Hong Kong dual-primary listing",
   "investors": "Toyota; public",
   "opMaturity": "Commercial-limited",
   "deployment": "Beijing, Guangzhou, Shenzhen and Shanghai operations across northern, central and southern China's full weather range; truck testing on China freight lanes; overseas robotaxi entries across the Middle East, Singapore, South Korea and Europe; US presence refocused on R&D.",
-  "metrics": "2026 target revised to 3,500 vehicles; Q1 robotaxi revenue reported $8.6M; seventh-generation vehicle cost reported around $45k including sensors.",
-  "signal": "Reached single-city (Shenzhen) UE breakeven; fleet ~1,446, 3,000 target (Feb 2026)",
+  "metrics": "Fleet passed 1,700 robotaxis (May 2026); year-end 2026 target raised to 3,500+; Q1 2026 robotaxi revenue up 395% YoY; Gen-7 kit cut autonomy BOM about 70%, with an all-in vehicle cost target at or below ~RMB 230,000 as it scales.",
+  "signal": "Unit-economics breakeven reached in Shenzhen and Guangzhou; fleet 1,700+ against a raised 3,500-vehicle 2026 target",
   "confidence": "Confirmed",
   "mono": "PA",
   "exited": false,
@@ -1328,7 +1358,11 @@
   "hqState": "",
   "hqCountry": "China",
   "region": "Greater China",
-  "foundedYear": 2016
+  "foundedYear": 2016,
+  "fundingUSD": 1713,
+  "fleetSize": 1700,
+  "milesReal": 2.4,
+  "valuationUSD": 4530
  },
  {
   "id": "c38",
@@ -1395,7 +1429,8 @@
   "hqState": "",
   "hqCountry": "China",
   "region": "Greater China",
-  "foundedYear": 2019
+  "foundedYear": 2019,
+  "fundingUSD": 249
  },
  {
   "id": "c40",
@@ -1466,7 +1501,8 @@
   "hqState": "CA",
   "hqCountry": "US",
   "region": "North America",
-  "foundedYear": 2017
+  "foundedYear": 2017,
+  "fundingUSD": 247
  },
  {
   "id": "c42",
@@ -1501,7 +1537,8 @@
   "hqState": "PA",
   "hqCountry": "US",
   "region": "North America",
-  "foundedYear": 2023
+  "foundedYear": 2023,
+  "fundingUSD": 1000
  },
  {
   "id": "c43",
@@ -1537,7 +1574,9 @@
   "hqState": "CA",
   "hqCountry": "US",
   "region": "North America",
-  "foundedYear": 2014
+  "foundedYear": 2014,
+  "fundingUSD": 280,
+  "fleetSize": 2700
  },
  {
   "id": "c44",
@@ -1679,7 +1718,8 @@
   "hqState": "",
   "hqCountry": "US",
   "region": "North America",
-  "foundedYear": 2015
+  "foundedYear": 2015,
+  "acquiredBy": "Delisted 2024; rebranded CreateAI, exited US trucking"
  },
  {
   "id": "c48",
@@ -1701,12 +1741,12 @@
   "leadership": "Raquel Urtasun, founder and CEO; Lior Ron, COO",
   "about": "AI-first autonomous trucking company built around simulation-heavy development. In 2026 it became strategically important for Uber's robotaxi ambitions as well as Volvo truck autonomy.",
   "model": "Autonomous trucking technology licensing; robotaxi partnership with Uber; simulation platform advantage",
-  "financing": "Late-stage private; reported $3B valuation in 2026 financing",
+  "financing": "$1.28B raised, including a $750M Series C (Jan 2026, Khosla and G2-led) and up to $250M in milestone-based investment from Uber",
   "investors": "Uber, Khosla, G2VP, Volvo Group, Nvidia",
   "opMaturity": "Public pilot with safety driver / pre-driverless commercial",
   "deployment": "Dallas-Houston freight with safety drivers; Volvo autonomous truck integration; robotaxi deployment announced with Uber",
   "metrics": "Volvo partnership to integrate Waabi Driver into VNL Autonomous trucks",
-  "signal": "Raised $1B (Series C + Uber); Driver ported to Volvo VNL without retraining (Jul 2026)",
+  "signal": "Expanding beyond trucking: January 2026 agreement with Uber to deploy at least 25,000 Waabi-powered robotaxis",
   "confidence": "Confirmed",
   "mono": "WA",
   "exited": false,
@@ -1716,7 +1756,8 @@
   "hqState": "ON",
   "hqCountry": "Canada",
   "region": "North America",
-  "foundedYear": 2021
+  "foundedYear": 2021,
+  "fundingUSD": 1280
  },
  {
   "id": "c49",
@@ -1740,11 +1781,11 @@
   "leadership": "Tekedra Mawakana and Dmitri Dolgov, co-CEOs",
   "about": "Alphabet's robotaxi unit and the current scaled US commercial leader. It operates paid rider-only service and is expanding through both its own app and Uber in select markets.",
   "model": "Per-ride revenue via Waymo One and Uber integrations; potential licensing and logistics extensions",
-  "financing": "Subsidiary plus external financing; reported 2026 financing valued Waymo at $126B",
+  "financing": "Alphabet subsidiary; $16B investment round closed February 2026 at a $126B valuation (Sequoia, DST, Dragoneer joined), following the $5.6B 2024 Series C",
   "investors": "Alphabet; a16z, Fidelity, T. Rowe, Silver Lake, Mubadala",
   "opMaturity": "Commercial-scaled",
   "deployment": "Phoenix, SF Bay Area, Los Angeles, Austin and Atlanta commercial service; London and Tokyo testing or planned",
-  "metrics": "Reported over 1,500 AVs and 250,000+ paid rides weekly in 2025; broader expansion in 2026",
+  "metrics": "About 500,000 paid rides per week (July 2026) toward a stated 1M/week goal; 220M+ rider-only miles through March 2026; roughly 2,500 US robotaxis and growing monthly; 15B+ simulated miles.",
   "signal": "London 2026 launch announced; Uber channel active in Austin and Atlanta",
   "confidence": "Confirmed",
   "mono": "WA",
@@ -1756,7 +1797,12 @@
   "hqState": "CA",
   "hqCountry": "US",
   "region": "North America",
-  "foundedYear": 2009
+  "foundedYear": 2009,
+  "fundingUSD": 27000,
+  "fleetSize": 2500,
+  "milesReal": 220.6,
+  "milesVirtual": 15000,
+  "valuationUSD": 126000
  },
  {
   "id": "c50",
@@ -1793,7 +1839,9 @@
   "hqState": "",
   "hqCountry": "UK",
   "region": "Europe",
-  "foundedYear": 2017
+  "foundedYear": 2017,
+  "fundingUSD": 2610,
+  "valuationUSD": 8600
  },
  {
   "id": "c51",
@@ -1815,11 +1863,11 @@
   "leadership": "Tony Han, founder and CEO",
   "about": "Chinese L4 autonomy company spanning robotaxis, robobuses, robovans and sanitation vehicles, with unusually broad international permits and Gulf deployment.",
   "model": "Robotaxi fares; B2B autonomous shuttle / vehicle deployments; platform partnerships",
-  "financing": "Public company after US listing process; financing details vary by filing",
+  "financing": "Public (Nasdaq: WRD / HKEX: 0800); $440.5M US IPO and placements (Oct 2024) plus ~$308M Hong Kong dual-primary listing (Nov 2025)",
   "investors": "Renault-Nissan-Mitsubishi, Bosch, Grab, Uber",
   "opMaturity": "Commercial-limited",
   "deployment": "China city services; Abu Dhabi and Dubai driverless / commercial operations reported; Riyadh and Singapore pilots",
-  "metrics": "Reported first fully driverless robotaxi commercial operations in Abu Dhabi; Dubai operations affected by regional conflict",
+  "metrics": "1,023 robotaxis globally (January 2026), expected to surpass 2,600 in 2026 as 2,000 purpose-built Geely Farizon GXRs enter production; first fully driverless commercial operations in Abu Dhabi.",
   "signal": "Suspended Dubai fleet during March 2026 regional tensions while continuing Abu Dhabi / Riyadh activity",
   "confidence": "Confirmed",
   "mono": "WE",
@@ -1830,7 +1878,10 @@
   "hqState": "",
   "hqCountry": "China",
   "region": "Greater China",
-  "foundedYear": 2017
+  "foundedYear": 2017,
+  "fundingUSD": 1857,
+  "fleetSize": 1023,
+  "valuationUSD": 5300
  },
  {
   "id": "c52",
@@ -1936,7 +1987,8 @@
   "hqState": "CA",
   "hqCountry": "US",
   "region": "North America",
-  "foundedYear": 2017
+  "foundedYear": 2017,
+  "fundingUSD": 760
  },
  {
   "id": "c55",
@@ -2073,7 +2125,8 @@
   "hqState": "",
   "hqCountry": "China",
   "region": "Greater China",
-  "foundedYear": 2016
+  "foundedYear": 2016,
+  "fundingUSD": 684
  },
  {
   "id": "c59",
@@ -2132,7 +2185,7 @@
   "investors": "Public",
   "opMaturity": "Commercial-scaled",
   "deployment": "High-volume China ADAS supply plus robotaxi and AV customers globally",
-  "metrics": "Reuters reported EXT color-detecting LiDAR for 2026 mass production and 2027 flagship vehicle debut",
+  "metrics": "Reuters reported EXT color-detecting LiDAR for 2026 mass production; ~$535M raised in the September 2025 Hong Kong dual-primary listing — the lidar industry's largest raise; ADAS-class units now priced from ~$200 while robotaxi-grade units run near $3,000.",
   "signal": "One of the two densest LiDAR nodes in China and a global benchmark supplier",
   "confidence": "Confirmed",
   "mono": "HE",
@@ -2142,7 +2195,8 @@
   "hqState": "",
   "hqCountry": "China",
   "region": "Greater China",
-  "foundedYear": 2014
+  "foundedYear": 2014,
+  "fundingUSD": 717
  },
  {
   "id": "c61",
@@ -2245,7 +2299,8 @@
   "hqState": "",
   "hqCountry": "Israel",
   "region": "Middle East & Africa",
-  "foundedYear": 2016
+  "foundedYear": 2016,
+  "fundingUSD": 252
  },
  {
   "id": "c64",
@@ -2334,7 +2389,7 @@
   "leadership": "Paul Ricci became CEO in 2025; Austin Russell founded company",
   "about": "Former leading long-range automotive LiDAR pure play; current status is distressed/historical after Volvo termination, bankruptcy and asset sales.",
   "model": "Historically sold LiDAR hardware and software to OEMs; current standalone operating model impaired.",
-  "financing": "Historical / distressed",
+  "financing": "Public; ~$748M raised across private and SPAC eras; entered an asset-sale process in January 2026 with MicroVision as prospective buyer of assets",
   "investors": "Was NASDAQ: LAZR",
   "opMaturity": "Commercial-limited",
   "deployment": "Volvo EX90 was the flagship production path, but Volvo ended the relationship",
@@ -2348,7 +2403,8 @@
   "hqState": "FL",
   "hqCountry": "US",
   "region": "North America",
-  "foundedYear": 2012
+  "foundedYear": 2012,
+  "fundingUSD": 748
  },
  {
   "id": "c67",
@@ -2521,7 +2577,8 @@
   "hqState": "CA",
   "hqCountry": "US",
   "region": "North America",
-  "foundedYear": 2015
+  "foundedYear": 2015,
+  "fundingUSD": 442
  },
  {
   "id": "c72",
@@ -2693,7 +2750,8 @@
   "hqState": "",
   "hqCountry": "China",
   "region": "Greater China",
-  "foundedYear": 2014
+  "foundedYear": 2014,
+  "fundingUSD": 626
  },
  {
   "id": "c77",
@@ -3140,7 +3198,8 @@
   "hqState": "CA",
   "hqCountry": "US",
   "region": "North America",
-  "foundedYear": 2012
+  "foundedYear": 2012,
+  "acquiredBy": "Chapter 11 2022; assets relaunched as Quanergy Solutions"
  },
  {
   "id": "c90",
@@ -3173,7 +3232,8 @@
   "hqState": "CA",
   "hqCountry": "US",
   "region": "North America",
-  "foundedYear": 1983
+  "foundedYear": 1983,
+  "acquiredBy": "Ouster (merger, 2023)"
  },
  {
   "id": "c91",
@@ -3518,7 +3578,8 @@
   "hqState": "",
   "hqCountry": "Israel",
   "region": "Middle East & Africa",
-  "foundedYear": 2016
+  "foundedYear": 2016,
+  "fundingUSD": 28
  },
  {
   "id": "c101",
@@ -3621,7 +3682,8 @@
   "hqState": "CA",
   "hqCountry": "US",
   "region": "North America",
-  "foundedYear": 2016
+  "foundedYear": 2016,
+  "acquiredBy": "NVIDIA (2021)"
  },
  {
   "id": "c104",
@@ -4273,7 +4335,8 @@
   "hqState": "CA",
   "hqCountry": "US",
   "region": "North America",
-  "foundedYear": 2016
+  "foundedYear": 2016,
+  "acquiredBy": "NVIDIA (2021)"
  },
  {
   "id": "c123",
@@ -4342,7 +4405,8 @@
   "hqState": "",
   "hqCountry": "US",
   "region": "North America",
-  "foundedYear": 2017
+  "foundedYear": 2017,
+  "fundingUSD": 44
  },
  {
   "id": "c125",
@@ -4481,7 +4545,8 @@
   "hqState": "CA",
   "hqCountry": "US",
   "region": "North America",
-  "foundedYear": 2016
+  "foundedYear": 2016,
+  "fundingUSD": 1600
  },
  {
   "id": "c129",
@@ -5453,7 +5518,8 @@
   "hqState": "",
   "hqCountry": "Israel",
   "region": "Middle East & Africa",
-  "foundedYear": 2019
+  "foundedYear": 2019,
+  "fundingUSD": 21
  },
  {
   "id": "c157",
@@ -5595,7 +5661,8 @@
   "hqState": "",
   "hqCountry": "Germany",
   "region": "Europe",
-  "foundedYear": 2019
+  "foundedYear": 2019,
+  "fundingUSD": 87
  },
  {
   "id": "c161",
@@ -6084,7 +6151,8 @@
   "hqState": "",
   "hqCountry": "Israel",
   "region": "Middle East & Africa",
-  "foundedYear": 2018
+  "foundedYear": 2018,
+  "fundingUSD": 49
  },
  {
   "id": "c175",
@@ -6153,7 +6221,8 @@
   "hqState": "CA",
   "hqCountry": "US",
   "region": "North America",
-  "foundedYear": 2017
+  "foundedYear": 2017,
+  "acquiredBy": "Shut down 2024"
  },
  {
   "id": "c177",
@@ -6186,7 +6255,8 @@
   "hqState": "",
   "hqCountry": "Israel",
   "region": "Middle East & Africa",
-  "foundedYear": 2013
+  "foundedYear": 2013,
+  "acquiredBy": "Continental / Elektrobit (2017)"
  },
  {
   "id": "c178",
@@ -6639,7 +6709,8 @@
   "hqState": "",
   "hqCountry": "Germany",
   "region": "Europe",
-  "foundedYear": 2018
+  "foundedYear": 2018,
+  "fundingUSD": 222
  },
  {
   "id": "c191",
@@ -7274,7 +7345,8 @@
   "hqState": "",
   "hqCountry": "Sweden",
   "region": "Europe",
-  "foundedYear": 2016
+  "foundedYear": 2016,
+  "fundingUSD": 713
  },
  {
   "id": "c209",
@@ -7859,7 +7931,8 @@
   "hqState": "AZ",
   "hqCountry": "US",
   "region": "North America",
-  "foundedYear": 2007
+  "foundedYear": 2007,
+  "acquiredBy": "Ceased operations 2022"
  },
  {
   "id": "c226",
@@ -8102,7 +8175,8 @@
   "hqState": "",
   "hqCountry": "France",
   "region": "Europe",
-  "foundedYear": 2014
+  "foundedYear": 2014,
+  "acquiredBy": "Gaussin–Macnica JV (assets, 2023)"
  },
  {
   "id": "c233",
@@ -8139,7 +8213,8 @@
   "hqState": "",
   "hqCountry": "China",
   "region": "Greater China",
-  "foundedYear": 2018
+  "foundedYear": 2018,
+  "fundingUSD": 726
  },
  {
   "id": "c234",
@@ -8209,7 +8284,9 @@
   "hqState": "CA",
   "hqCountry": "US",
   "region": "North America",
-  "foundedYear": 2016
+  "foundedYear": 2016,
+  "fundingUSD": 2340,
+  "valuationUSD": 6000
  },
  {
   "id": "c236",
@@ -9105,7 +9182,7 @@
   "investors": "Amazon (acquired 2020, ~$1.3B)",
   "opMaturity": "Commercial-limited",
   "deployment": "Las Vegas free public service and San Francisco waitlist/selected-user service; Hayward manufacturing facility.",
-  "metrics": "Hayward factory designed for up to 10,000 robotaxis annually; public rides began in Las Vegas and San Francisco phases.",
+  "metrics": "Roughly 50 purpose-built robotaxis across Las Vegas and San Francisco heading toward ~100 in 2026, with Austin and Miami next; Hayward plant designed for up to 10,000 units annually.",
   "signal": "Zoox is the strongest US proof point for purpose-built robotaxi manufacturing outside Waymo's retrofit pathway.",
   "confidence": "Confirmed",
   "mono": "ZO",
@@ -9117,7 +9194,9 @@
   "hqState": "CA",
   "hqCountry": "US",
   "region": "North America",
-  "foundedYear": 2014
+  "foundedYear": 2014,
+  "fundingUSD": 990,
+  "fleetSize": 50
  },
  {
   "id": "c262",
@@ -9427,7 +9506,8 @@
   "hqState": "CA",
   "hqCountry": "US",
   "region": "North America",
-  "foundedYear": 2019
+  "foundedYear": 2019,
+  "fundingUSD": 25
  },
  {
   "id": "c271",
@@ -9463,7 +9543,8 @@
   "hqState": "CA",
   "hqCountry": "US",
   "region": "North America",
-  "foundedYear": 2020
+  "foundedYear": 2020,
+  "fundingUSD": 123
  },
  {
   "id": "c272",
@@ -9567,7 +9648,8 @@
   "hqState": "",
   "hqCountry": "China",
   "region": "Greater China",
-  "foundedYear": 2012
+  "foundedYear": 2012,
+  "fundingUSD": 1530
  },
  {
   "id": "c275",
@@ -10191,7 +10273,8 @@
   "hqState": "NY",
   "hqCountry": "US",
   "region": "North America",
-  "foundedYear": 2015
+  "foundedYear": 2015,
+  "fundingUSD": 153
  },
  {
   "id": "c293",
@@ -10561,7 +10644,7 @@
   "investors": "",
   "opMaturity": "Commercial-limited",
   "deployment": "Austin and Miami reported active; Dallas/Houston planned.",
-  "metrics": "Reuters reported Miami rollout after Austin launch.",
+  "metrics": "About 42 robotaxis in the Austin program (June 2026) across a ~245-square-mile service area, with ~1.7M cumulative paid robotaxi miles through Q1 2026; Bay Area service operates with safety drivers.",
   "signal": "Miami launch made Tesla Robotaxi active in another US metro.",
   "confidence": "Confirmed",
   "mono": "TR",
@@ -10571,7 +10654,9 @@
   "hqState": "TX",
   "hqCountry": "US",
   "region": "North America",
-  "foundedYear": 2025
+  "foundedYear": 2025,
+  "fleetSize": 42,
+  "milesReal": 1.7
  },
  {
   "id": "c304",
@@ -11901,7 +11986,8 @@
   "hqState": "CA",
   "hqCountry": "US",
   "region": "North America",
-  "foundedYear": 2018
+  "foundedYear": 2018,
+  "acquiredBy": "Shut down 2023"
  },
  {
   "id": "c343",
@@ -12038,7 +12124,8 @@
   "hqState": "",
   "hqCountry": "UAE",
   "region": "Middle East & Africa",
-  "foundedYear": 2020
+  "foundedYear": 2020,
+  "fundingUSD": 460
  },
  {
   "id": "c347",

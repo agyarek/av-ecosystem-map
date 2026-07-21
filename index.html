@@ -259,6 +259,14 @@ header.site .hbyline a:hover{text-decoration:underline}
 }
 .pmore:hover{background:#e9e9e5;color:var(--ink)}
 
+/* ============ adjacent worlds of autonomy ============ */
+.adjhead{margin:46px 0 12px;border-top:1px solid var(--border);padding-top:32px}
+.adjhead h2{font-size:clamp(20px,3vw,26px);font-weight:800;letter-spacing:-.02em;margin-top:6px}
+.adjintro{max-width:880px;color:var(--muted2);font-size:14px;line-height:1.65;margin-top:8px}
+.adjgroup{margin-top:20px}
+.adjgroup .adjdesc{font-size:12.5px;color:var(--muted);margin:3px 0 10px}
+.adjgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,250px),1fr));gap:6px}
+
 /* ============ detail card → centered constellation dialog ============ */
 #backdrop{position:fixed;inset:0;background:rgba(10,10,10,.46);z-index:55;display:none}
 body.dlg-open #backdrop{display:block}
@@ -655,6 +663,12 @@ footer.site .fver{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:1
     </div>
   </div>
   <div id="panels"></div>
+  <div class="adjhead">
+    <p class="kicker">Beyond this map</p>
+    <h2>Adjacent worlds of autonomy</h2>
+    <p class="adjintro">The passenger loop above is one world of autonomy among several. Freight trucking and delivery robotics share some of its suppliers, but they run on different vehicles, different software constraints, different regulators, different capital and different timelines — so they live here, as the first of the adjacent worlds, rather than inside the passenger stack. Autonomous mining and autonomous seafaring (submarines included) are next on my research list, and the delivery-bot world below merits a deep exploration of its own.</p>
+  </div>
+  <div id="adjacent"></div>
 </div>
 
 <div id="landscapeNudge">
@@ -888,6 +902,7 @@ function renderEverything(){
   const pins = pinnedSet();
   renderOps(pins);
   renderPanels(pins);
+  renderAdjacent();
   renderControls();
   renderJourneyChips();
   renderCard();
@@ -924,7 +939,7 @@ function renderPanels(pins){
   const wrap = document.getElementById('panels');
   wrap.innerHTML = CAT_ORDER.map(cat => {
     const meta = CATS[cat];
-    const all = comps.filter(c => c.cat === cat).sort((a,b) => b.score - a.score || a.name.localeCompare(b.name));
+    const all = comps.filter(c => c.cat === cat && !c.segment).sort((a,b) => b.score - a.score || a.name.localeCompare(b.name));
     const vis = all;                                        // every company shows — no filters
     const lvl = panelLevel[cat];
     let list;
@@ -961,14 +976,43 @@ function renderPanels(pins){
   }).join('');
 }
 
+/* Adjacent worlds — freight & delivery mapped as their own ecosystems-in-waiting.
+   Tiles reuse .chip so selection, lines, dialogs and exports all work unchanged. */
+function renderAdjacent(){
+  const wrap = document.getElementById('adjacent');
+  if (!wrap) return;
+  const groups = [
+    { k:'freight',  t:'AUTONOMOUS FREIGHT & TRUCKING', d:'Long-haul and middle-mile trucking autonomy — different vehicles, lanes, depots and regulators than the passenger loop.' },
+    { k:'delivery', t:'AUTONOMOUS DELIVERY',           d:'Sidewalk bots, delivery pods and the demand apps routing goods instead of riders.' }
+  ];
+  wrap.innerHTML = groups.map(g => {
+    const list = comps.filter(c => c.segment === g.k).sort((a, b) => b.score - a.score || a.name.localeCompare(b.name));
+    return `<div class="adjgroup">
+      <p class="pghead">${g.t} (${list.length})</p>
+      <p class="adjdesc">${g.d}</p>
+      <div class="adjgrid">${list.map(c => `
+        <button class="${tileClasses(c,'chip')}" data-cname="${esc(c.name)}">
+          ${logoHTML(c.name,20)}
+          <span class="cmain">
+            <span class="cname">${c.spokenTo ? '<span class="spdot"></span>' : ''}${esc(c.name)}</span>
+            ${c.sub ? `<span class="csub">${esc(c.sub)}</span>` : ''}
+          </span>
+          ${c.spokenTo ? '<span class="sptag">◆ SPOKEN WITH</span>' : ''}
+          ${c.exited ? '<span class="ctag">EXITED</span>' : ''}
+        </button>`).join('')}
+      </div>
+    </div>`;
+  }).join('');
+}
+
 function renderControls(){
   document.getElementById('stats').innerHTML =
-    `<b>${comps.length}</b> companies · <b>${enrich.edges.length}</b> partnerships mapped · <b>11</b> layers`;
+    `<b>${comps.filter(c => !c.segment).length}</b> companies in the passenger loop · <b>${enrich.edges.length}</b> partnerships mapped · <b>11</b> layers · <b>${comps.filter(c => c.segment).length}</b> in adjacent worlds`;
   document.getElementById('collapseAll').classList.toggle('show', CAT_ORDER.some(cat => panelLevel[cat] === 2));
 }
 
 function jchipHTML(cat){
-  const n = comps.filter(c => c.cat === cat).length;   // full layer size — the map's coverage, not the current filter
+  const n = comps.filter(c => c.cat === cat && !c.segment).length;   // full passenger-layer size
   return `<button class="jchip" data-jcat="${esc(cat)}">
     <span class="dot" style="background:${dotColor(cat)}"></span>${esc(CATS[cat].t)}<span class="jcount">${n}</span>
   </button>`;
@@ -980,7 +1024,7 @@ function renderJourneyChips(){
   grid.innerHTML = order.map(i => {
     const s = STAGES[i];
     const open = jExpanded.has(i);
-    const nco = s.cats.reduce((a, k) => a + comps.filter(c => c.cat === k).length, 0);
+    const nco = s.cats.reduce((a, k) => a + comps.filter(c => c.cat === k && !c.segment).length, 0);
     return `<div class="jcard ${open ? 'chips-open' : ''}" data-stage="${i}">
       <div class="jiconwrap">
         <svg class="jring" viewBox="0 0 116 116" aria-hidden="true"><rect x="2" y="2" width="112" height="112" rx="31" pathLength="100"/></svg>

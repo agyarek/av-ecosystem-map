@@ -28,7 +28,12 @@
   "confidence": "Confirmed",
   "mono": "AA",
   "exited": false,
-  "score": 12
+  "score": 12,
+  "hqCity": "Palo Alto",
+  "hqState": "CA",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 2017
  },
  {
   "id": "c1",
@@ -61,7 +66,12 @@
   "confidence": "Confirmed",
   "mono": "AI",
   "exited": false,
-  "score": 14
+  "score": 14,
+  "hqCity": "Mountain View",
+  "hqState": "CA",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 2017
  },
  {
   "id": "c2",
@@ -89,7 +99,12 @@
   "confidence": "Historical",
   "mono": "AA",
   "exited": true,
-  "score": 1
+  "score": 1,
+  "hqCity": "Pittsburgh",
+  "hqState": "PA",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 2016
  },
  {
   "id": "c3",
@@ -122,7 +137,12 @@
   "exited": false,
   "score": 12,
   "spokenTo": true,
-  "segment": "freight"
+  "segment": "freight",
+  "hqCity": "Pittsburgh",
+  "hqState": "PA",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 2017
  },
  {
   "id": "c4",
@@ -151,7 +171,12 @@
   "confidence": "Reported",
   "mono": "AU",
   "exited": false,
-  "score": 6
+  "score": 6,
+  "hqCity": "Shenzhen",
+  "hqState": "",
+  "hqCountry": "China",
+  "region": "Greater China",
+  "foundedYear": 2016
  },
  {
   "id": "c5",
@@ -180,7 +205,12 @@
   "confidence": "Reported",
   "mono": "AT",
   "exited": true,
-  "score": 4
+  "score": 4,
+  "hqCity": "San Jose",
+  "hqState": "CA",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 2016
  },
  {
   "id": "c6",
@@ -208,7 +238,12 @@
   "confidence": "Confirmed",
   "mono": "AV",
   "exited": false,
-  "score": 7
+  "score": 7,
+  "hqCity": "Austin",
+  "hqState": "TX",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 2020
  },
  {
   "id": "c7",
@@ -238,7 +273,12 @@
   "confidence": "Confirmed",
   "mono": "BA",
   "exited": false,
-  "score": 11
+  "score": 11,
+  "hqCity": "Beijing",
+  "hqState": "",
+  "hqCountry": "China",
+  "region": "Greater China",
+  "foundedYear": 2013
  },
  {
   "id": "c8",
@@ -269,7 +309,12 @@
   "mono": "BA",
   "exited": false,
   "score": 14,
-  "l4credible": true
+  "l4credible": true,
+  "hqCity": "Beijing",
+  "hqState": "",
+  "hqCountry": "China",
+  "region": "Greater China",
+  "foundedYear": 2013
  },
  {
   "id": "c9",
@@ -298,7 +343,12 @@
   "confidence": "Reported",
   "mono": "BP",
   "exited": false,
-  "score": 11
+  "score": 11,
+  "hqCity": "Munich",
+  "hqState": "",
+  "hqCountry": "Germany",
+  "region": "Europe",
+  "foundedYear": 1916
  },
  {
   "id": "c10",
@@ -328,7 +378,12 @@
   "mono": "BA",
   "exited": false,
   "score": 7,
-  "segment": "freight"
+  "segment": "freight",
+  "hqCity": "Houston",
+  "hqState": "TX",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 2024
  },
  {
   "id": "c11",
@@ -358,7 +413,12 @@
   "mono": "CO",
   "exited": false,
   "score": 7,
-  "segment": "delivery"
+  "segment": "delivery",
+  "hqCity": "Los Angeles",
+  "hqState": "CA",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 2020
  },
  {
   "id": "c12",
@@ -387,7 +447,12 @@
   "confidence": "Confirmed",
   "mono": "CA",
   "exited": false,
-  "score": 10
+  "score": 10,
+  "hqCity": "San Diego",
+  "hqState": "CA",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 2015
  },
  {
   "id": "c13",
@@ -418,7 +483,12 @@
   "mono": "CR",
   "exited": true,
   "score": 4,
-  "spokenTo": true
+  "spokenTo": true,
+  "hqCity": "San Francisco",
+  "hqState": "CA",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 2013
  },
  {
   "id": "c14",
@@ -446,7 +516,12 @@
   "confidence": "Confirmed",
   "mono": "CY",
   "exited": false,
-  "score": 6
+  "score": 6,
+  "hqCity": "Menlo Park",
+  "hqState": "CA",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 2013
  },
  {
   "id": "c15",
@@ -475,7 +550,12 @@
   "confidence": "Confirmed",
   "mono": "DA",
   "exited": true,
-  "score": 12
+  "score": 12,
+  "hqCity": "Shenzhen",
+  "hqState": "",
+  "hqCountry": "China",
+  "region": "Greater China",
+  "foundedYear": 2019
  },
  {
   "id": "c16",
@@ -504,7 +584,12 @@
   "confidence": "Reported",
   "mono": "DA",
   "exited": false,
-  "score": 5
+  "score": 5,
+  "hqCity": "Shanghai",
+  "hqState": "",
+  "hqCountry": "China",
+  "region": "Greater China",
+  "foundedYear": 2016
  },
  {
   "id": "c17",
@@ -535,7 +620,12 @@
   "confidence": "Confirmed",
   "mono": "DS",
   "exited": false,
-  "score": 12
+  "score": 12,
+  "hqCity": "Paderborn",
+  "hqState": "",
+  "hqCountry": "Germany",
+  "region": "Europe",
+  "foundedYear": 1988
  },
  {
   "id": "c18",
@@ -563,7 +653,12 @@
   "confidence": "Historical",
   "mono": "ET",
   "exited": true,
-  "score": 1
+  "score": 1,
+  "hqCity": "San Francisco",
+  "hqState": "CA",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 2016
  },
  {
   "id": "c19",
@@ -593,7 +688,12 @@
   "confidence": "Confirmed",
   "mono": "FO",
   "exited": false,
-  "score": 12
+  "score": 12,
+  "hqCity": "Tel Aviv area",
+  "hqState": "",
+  "hqCountry": "Israel",
+  "region": "Middle East & Africa",
+  "foundedYear": 2018
  },
  {
   "id": "c20",
@@ -625,7 +725,12 @@
   "mono": "GA",
   "exited": false,
   "score": 10,
-  "segment": "freight"
+  "segment": "freight",
+  "hqCity": "Mountain View",
+  "hqState": "CA",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 2017
  },
  {
   "id": "c21",
@@ -653,7 +758,12 @@
   "confidence": "Historical",
   "mono": "GA",
   "exited": true,
-  "score": 1
+  "score": 1,
+  "hqCity": "Mountain View",
+  "hqState": "CA",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 2017
  },
  {
   "id": "c22",
@@ -683,7 +793,12 @@
   "confidence": "Confirmed",
   "mono": "HR",
   "exited": false,
-  "score": 14
+  "score": 14,
+  "hqCity": "Beijing",
+  "hqState": "",
+  "hqCountry": "China",
+  "region": "Greater China",
+  "foundedYear": 2015
  },
  {
   "id": "c23",
@@ -711,7 +826,12 @@
   "confidence": "Confirmed",
   "mono": "HI",
   "exited": false,
-  "score": 9
+  "score": 9,
+  "hqCity": "Shenzhen",
+  "hqState": "",
+  "hqCountry": "China",
+  "region": "Greater China",
+  "foundedYear": 2019
  },
  {
   "id": "c24",
@@ -741,7 +861,12 @@
   "confidence": "Confirmed",
   "mono": "HI",
   "exited": false,
-  "score": 12
+  "score": 12,
+  "hqCity": "Shenzhen",
+  "hqState": "",
+  "hqCountry": "China",
+  "region": "Greater China",
+  "foundedYear": 2019
  },
  {
   "id": "c25",
@@ -771,7 +896,12 @@
   "confidence": "Confirmed",
   "mono": "HI",
   "exited": false,
-  "score": 12
+  "score": 12,
+  "hqCity": "Shenzhen",
+  "hqState": "",
+  "hqCountry": "China",
+  "region": "Greater China",
+  "foundedYear": 2019
  },
  {
   "id": "c26",
@@ -802,7 +932,12 @@
   "mono": "IN",
   "exited": false,
   "score": 8,
-  "segment": "freight"
+  "segment": "freight",
+  "hqCity": "Shanghai",
+  "hqState": "",
+  "hqCountry": "China",
+  "region": "Greater China",
+  "foundedYear": 2018
  },
  {
   "id": "c27",
@@ -833,7 +968,12 @@
   "mono": "KI",
   "exited": false,
   "score": 10,
-  "segment": "delivery"
+  "segment": "delivery",
+  "hqCity": "Miami",
+  "hqState": "FL",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 2017
  },
  {
   "id": "c28",
@@ -864,7 +1004,12 @@
   "mono": "KA",
   "exited": false,
   "score": 12,
-  "segment": "freight"
+  "segment": "freight",
+  "hqCity": "Mountain View",
+  "hqState": "CA",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 2018
  },
  {
   "id": "c29",
@@ -894,7 +1039,12 @@
   "confidence": "Confirmed",
   "mono": "MM",
   "exited": false,
-  "score": 10
+  "score": 10,
+  "hqCity": "Ann Arbor",
+  "hqState": "MI",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 2017
  },
  {
   "id": "c30",
@@ -923,7 +1073,12 @@
   "confidence": "Confirmed",
   "mono": "MB",
   "exited": false,
-  "score": 14
+  "score": 14,
+  "hqCity": "Stuttgart",
+  "hqState": "",
+  "hqCountry": "Germany",
+  "region": "Europe",
+  "foundedYear": 1886
  },
  {
   "id": "c31",
@@ -954,7 +1109,12 @@
   "confidence": "Confirmed",
   "mono": "MO",
   "exited": false,
-  "score": 14
+  "score": 14,
+  "hqCity": "Suzhou",
+  "hqState": "",
+  "hqCountry": "China",
+  "region": "Greater China",
+  "foundedYear": 2016
  },
  {
   "id": "c32",
@@ -986,7 +1146,12 @@
   "exited": false,
   "score": 5,
   "spokenTo": true,
-  "l4credible": true
+  "l4credible": true,
+  "hqCity": "Boston",
+  "hqState": "MA",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 2020
  },
  {
   "id": "c33",
@@ -1017,7 +1182,12 @@
   "confidence": "Confirmed",
   "mono": "NI",
   "exited": false,
-  "score": 14
+  "score": 14,
+  "hqCity": "Shanghai",
+  "hqState": "",
+  "hqCountry": "China",
+  "region": "Greater China",
+  "foundedYear": 2014
  },
  {
   "id": "c34",
@@ -1042,12 +1212,17 @@
   "investors": "",
   "opMaturity": "Commercial-scaled",
   "deployment": "Used by robotaxi, trucking and OEM programs including Chinese EV makers and global AV developers",
-  "metrics": "Aurora / Continental production pathway uses NVIDIA DRIVE Thor and DriveOS; Nuro and others use Nvidia stack elements",
+  "metrics": "Aurora / Continental production pathway uses NVIDIA DRIVE Thor and DriveOS; Nuro and others use Nvidia stack elements; Pony.ai's next-generation compute is slated for DRIVE Thor.",
   "signal": "Continues to be the common compute / software substrate for AV developers",
   "confidence": "Confirmed",
   "mono": "ND",
   "exited": false,
-  "score": 14
+  "score": 14,
+  "hqCity": "Santa Clara",
+  "hqState": "CA",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 1993
  },
  {
   "id": "c35",
@@ -1075,7 +1250,12 @@
   "confidence": "Confirmed",
   "mono": "OX",
   "exited": false,
-  "score": 7
+  "score": 7,
+  "hqCity": "Oxford",
+  "hqState": "",
+  "hqCountry": "UK",
+  "region": "Europe",
+  "foundedYear": 2014
  },
  {
   "id": "c36",
@@ -1105,7 +1285,12 @@
   "mono": "PL",
   "exited": false,
   "score": 12,
-  "segment": "freight"
+  "segment": "freight",
+  "hqCity": "Cupertino",
+  "hqState": "CA",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 2016
  },
  {
   "id": "c37",
@@ -1125,20 +1310,25 @@
   "regions": "China; US testing history; international exploration",
   "founded": "2016",
   "leadership": "James Peng, co-founder and CEO; Tiancheng Lou, CTO",
-  "about": "Chinese AV company spanning robotaxi and trucking. Pony.ai is one of the few public pure-play AV operators with meaningful Chinese deployment and Toyota / GAC ties.",
+  "about": "Chinese AV company spanning robotaxi and trucking. Pony.ai is one of the few public pure-play AV operators with meaningful Chinese deployment and Toyota / GAC ties. Runs a multi-sensor (lidar + camera) stack with a hybrid HD-map / light-map approach that can bootstrap a new city from navigation maps alone, and is shifting from rule-based planning toward a hybrid rule-based + end-to-end architecture.",
   "model": "Robotaxi fares; autonomous trucking; technology licensing",
   "financing": "Public; raised $260M in 2024 US IPO at about $4.55B valuation",
   "investors": "Toyota; public",
   "opMaturity": "Commercial-limited",
-  "deployment": "Beijing, Guangzhou, Shenzhen and Shanghai pilots / operations; truck testing on China freight lanes",
-  "metrics": "2026 target revised to 3,500 vehicles; Q1 robotaxi revenue reported $8.6M",
+  "deployment": "Beijing, Guangzhou, Shenzhen and Shanghai operations across northern, central and southern China's full weather range; truck testing on China freight lanes; overseas robotaxi entries across the Middle East, Singapore, South Korea and Europe; US presence refocused on R&D.",
+  "metrics": "2026 target revised to 3,500 vehicles; Q1 robotaxi revenue reported $8.6M; seventh-generation vehicle cost reported around $45k including sensors.",
   "signal": "Reached single-city (Shenzhen) UE breakeven; fleet ~1,446, 3,000 target (Feb 2026)",
   "confidence": "Confirmed",
   "mono": "PA",
   "exited": false,
   "score": 12,
   "l4credible": true,
-  "spokenTo": true
+  "spokenTo": true,
+  "hqCity": "Guangzhou",
+  "hqState": "",
+  "hqCountry": "China",
+  "region": "Greater China",
+  "foundedYear": 2016
  },
  {
   "id": "c38",
@@ -1167,7 +1357,12 @@
   "mono": "PA",
   "exited": false,
   "score": 7,
-  "segment": "freight"
+  "segment": "freight",
+  "hqCity": "San Francisco",
+  "hqState": "CA",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 2017
  },
  {
   "id": "c39",
@@ -1195,7 +1390,12 @@
   "confidence": "Confirmed",
   "mono": "QC",
   "exited": false,
-  "score": 4
+  "score": 4,
+  "hqCity": "Beijing",
+  "hqState": "",
+  "hqCountry": "China",
+  "region": "Greater China",
+  "foundedYear": 2019
  },
  {
   "id": "c40",
@@ -1225,7 +1425,12 @@
   "confidence": "Confirmed",
   "mono": "RA",
   "exited": false,
-  "score": 10
+  "score": 10,
+  "hqCity": "Austin",
+  "hqState": "TX",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 2017
  },
  {
   "id": "c41",
@@ -1256,7 +1461,12 @@
   "mono": "SR",
   "exited": false,
   "score": 12,
-  "segment": "delivery"
+  "segment": "delivery",
+  "hqCity": "Redwood City",
+  "hqState": "CA",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 2017
  },
  {
   "id": "c42",
@@ -1286,7 +1496,12 @@
   "mono": "SA",
   "exited": false,
   "score": 4,
-  "segment": "freight"
+  "segment": "freight",
+  "hqCity": "Pittsburgh",
+  "hqState": "PA",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 2023
  },
  {
   "id": "c43",
@@ -1317,7 +1532,12 @@
   "mono": "ST",
   "exited": false,
   "score": 12,
-  "segment": "delivery"
+  "segment": "delivery",
+  "hqCity": "San Francisco",
+  "hqState": "CA",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 2014
  },
  {
   "id": "c44",
@@ -1347,7 +1567,12 @@
   "confidence": "Confirmed",
   "mono": "TR",
   "exited": false,
-  "score": 12
+  "score": 12,
+  "hqCity": "Austin",
+  "hqState": "TX",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 2003
  },
  {
   "id": "c45",
@@ -1377,7 +1602,12 @@
   "confidence": "Confirmed",
   "mono": "TI",
   "exited": false,
-  "score": 10
+  "score": 10,
+  "hqCity": "Tokyo",
+  "hqState": "",
+  "hqCountry": "Japan",
+  "region": "Asia-Pacific",
+  "foundedYear": 2015
  },
  {
   "id": "c46",
@@ -1409,7 +1639,12 @@
   "mono": "TR",
   "exited": false,
   "score": 8,
-  "segment": "freight"
+  "segment": "freight",
+  "hqCity": "Blacksburg",
+  "hqState": "",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 2005
  },
  {
   "id": "c47",
@@ -1439,7 +1674,12 @@
   "mono": "TU",
   "exited": true,
   "score": 6,
-  "segment": "freight"
+  "segment": "freight",
+  "hqCity": "",
+  "hqState": "",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 2015
  },
  {
   "id": "c48",
@@ -1471,7 +1711,12 @@
   "mono": "WA",
   "exited": false,
   "score": 12,
-  "segment": "freight"
+  "segment": "freight",
+  "hqCity": "Toronto",
+  "hqState": "ON",
+  "hqCountry": "Canada",
+  "region": "North America",
+  "foundedYear": 2021
  },
  {
   "id": "c49",
@@ -1506,7 +1751,12 @@
   "exited": false,
   "score": 14,
   "spokenTo": true,
-  "l4credible": true
+  "l4credible": true,
+  "hqCity": "Mountain View",
+  "hqState": "CA",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 2009
  },
  {
   "id": "c50",
@@ -1538,7 +1788,12 @@
   "exited": false,
   "score": 10,
   "spokenTo": true,
-  "l4credible": true
+  "l4credible": true,
+  "hqCity": "London",
+  "hqState": "",
+  "hqCountry": "UK",
+  "region": "Europe",
+  "foundedYear": 2017
  },
  {
   "id": "c51",
@@ -1570,7 +1825,12 @@
   "mono": "WE",
   "exited": false,
   "score": 12,
-  "l4credible": true
+  "l4credible": true,
+  "hqCity": "Guangzhou",
+  "hqState": "",
+  "hqCountry": "China",
+  "region": "Greater China",
+  "foundedYear": 2017
  },
  {
   "id": "c52",
@@ -1601,7 +1861,12 @@
   "confidence": "Confirmed",
   "mono": "XP",
   "exited": false,
-  "score": 14
+  "score": 14,
+  "hqCity": "Guangzhou",
+  "hqState": "",
+  "hqCountry": "China",
+  "region": "Greater China",
+  "foundedYear": 2014
  },
  {
   "id": "c53",
@@ -1630,7 +1895,12 @@
   "confidence": "Reported",
   "mono": "XX",
   "exited": false,
-  "score": 11
+  "score": 11,
+  "hqCity": "Guangzhou",
+  "hqState": "",
+  "hqCountry": "China",
+  "region": "Greater China",
+  "foundedYear": 2014
  },
  {
   "id": "c54",
@@ -1661,7 +1931,12 @@
   "confidence": "Confirmed",
   "mono": "AE",
   "exited": false,
-  "score": 11
+  "score": 11,
+  "hqCity": "Mountain View",
+  "hqState": "CA",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 2017
  },
  {
   "id": "c55",
@@ -1691,7 +1966,12 @@
   "confidence": "Confirmed",
   "mono": "AM",
   "exited": false,
-  "score": 11
+  "score": 11,
+  "hqCity": "Santa Clara",
+  "hqState": "CA",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 2004
  },
  {
   "id": "c56",
@@ -1720,7 +2000,12 @@
   "confidence": "Confirmed",
   "mono": "AR",
   "exited": false,
-  "score": 11
+  "score": 11,
+  "hqCity": "Tel Aviv",
+  "hqState": "",
+  "hqCountry": "Israel",
+  "region": "Middle East & Africa",
+  "foundedYear": 2015
  },
  {
   "id": "c57",
@@ -1749,7 +2034,12 @@
   "confidence": "Reported",
   "mono": "BA",
   "exited": false,
-  "score": 6
+  "score": 6,
+  "hqCity": "Sydney",
+  "hqState": "",
+  "hqCountry": "Australia",
+  "region": "Asia-Pacific",
+  "foundedYear": 2015
  },
  {
   "id": "c58",
@@ -1778,7 +2068,12 @@
   "confidence": "Confirmed",
   "mono": "BS",
   "exited": false,
-  "score": 11
+  "score": 11,
+  "hqCity": "Wuhan",
+  "hqState": "",
+  "hqCountry": "China",
+  "region": "Greater China",
+  "foundedYear": 2016
  },
  {
   "id": "c59",
@@ -1807,7 +2102,12 @@
   "confidence": "Confirmed",
   "mono": "CE",
   "exited": false,
-  "score": 10
+  "score": 10,
+  "hqCity": "San Jose",
+  "hqState": "CA",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 2016
  },
  {
   "id": "c60",
@@ -1837,7 +2137,12 @@
   "confidence": "Confirmed",
   "mono": "HE",
   "exited": false,
-  "score": 13
+  "score": 13,
+  "hqCity": "Shanghai",
+  "hqState": "",
+  "hqCountry": "China",
+  "region": "Greater China",
+  "foundedYear": 2014
  },
  {
   "id": "c61",
@@ -1867,7 +2172,12 @@
   "confidence": "Confirmed",
   "mono": "HN",
   "exited": false,
-  "score": 12
+  "score": 12,
+  "hqCity": "Calgary",
+  "hqState": "",
+  "hqCountry": "Canada",
+  "region": "North America",
+  "foundedYear": 1992
  },
  {
   "id": "c62",
@@ -1896,7 +2206,12 @@
   "confidence": "Confirmed",
   "mono": "IN",
   "exited": false,
-  "score": 14
+  "score": 14,
+  "hqCity": "Neubiberg",
+  "hqState": "",
+  "hqCountry": "Germany",
+  "region": "Europe",
+  "foundedYear": 1999
  },
  {
   "id": "c63",
@@ -1925,7 +2240,12 @@
   "confidence": "Confirmed",
   "mono": "IN",
   "exited": false,
-  "score": 11
+  "score": 11,
+  "hqCity": "Rosh HaAyin",
+  "hqState": "",
+  "hqCountry": "Israel",
+  "region": "Middle East & Africa",
+  "foundedYear": 2016
  },
  {
   "id": "c64",
@@ -1954,7 +2274,12 @@
   "confidence": "Reported",
   "mono": "LE",
   "exited": false,
-  "score": 9
+  "score": 9,
+  "hqCity": "Québec City",
+  "hqState": "",
+  "hqCountry": "Canada",
+  "region": "North America",
+  "foundedYear": 2007
  },
  {
   "id": "c65",
@@ -1983,7 +2308,12 @@
   "confidence": "Reported",
   "mono": "LI",
   "exited": false,
-  "score": 9
+  "score": 9,
+  "hqCity": "Shenzhen",
+  "hqState": "",
+  "hqCountry": "China",
+  "region": "Greater China",
+  "foundedYear": 2016
  },
  {
   "id": "c66",
@@ -2013,7 +2343,12 @@
   "confidence": "Confirmed",
   "mono": "LU",
   "exited": false,
-  "score": 10
+  "score": 10,
+  "hqCity": "Orlando",
+  "hqState": "FL",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 2012
  },
  {
   "id": "c67",
@@ -2042,7 +2377,12 @@
   "confidence": "Confirmed",
   "mono": "MI",
   "exited": false,
-  "score": 12
+  "score": 12,
+  "hqCity": "Redmond",
+  "hqState": "WA",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 1993
  },
  {
   "id": "c68",
@@ -2073,7 +2413,12 @@
   "confidence": "Confirmed",
   "mono": "NS",
   "exited": false,
-  "score": 14
+  "score": 14,
+  "hqCity": "Eindhoven",
+  "hqState": "",
+  "hqCountry": "Netherlands",
+  "region": "Europe",
+  "foundedYear": 2006
  },
  {
   "id": "c69",
@@ -2102,7 +2447,12 @@
   "confidence": "Confirmed",
   "mono": "OM",
   "exited": false,
-  "score": 11
+  "score": 11,
+  "hqCity": "Santa Clara",
+  "hqState": "CA",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 1995
  },
  {
   "id": "c70",
@@ -2131,7 +2481,12 @@
   "confidence": "Confirmed",
   "mono": "ON",
   "exited": false,
-  "score": 13
+  "score": 13,
+  "hqCity": "Scottsdale",
+  "hqState": "AZ",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 1999
  },
  {
   "id": "c71",
@@ -2161,7 +2516,12 @@
   "confidence": "Confirmed",
   "mono": "OU",
   "exited": false,
-  "score": 14
+  "score": 14,
+  "hqCity": "San Francisco",
+  "hqState": "CA",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 2015
  },
  {
   "id": "c72",
@@ -2190,7 +2550,12 @@
   "confidence": "Confirmed",
   "mono": "PO",
   "exited": false,
-  "score": 10
+  "score": 10,
+  "hqCity": "San Francisco",
+  "hqState": "CA",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 2016
  },
  {
   "id": "c73",
@@ -2220,7 +2585,12 @@
   "confidence": "Confirmed",
   "mono": "QA",
   "exited": false,
-  "score": 14
+  "score": 14,
+  "hqCity": "San Diego",
+  "hqState": "CA",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 1985
  },
  {
   "id": "c74",
@@ -2249,7 +2619,12 @@
   "confidence": "Confirmed",
   "mono": "RE",
   "exited": false,
-  "score": 13
+  "score": 13,
+  "hqCity": "Tokyo",
+  "hqState": "",
+  "hqCountry": "Japan",
+  "region": "Asia-Pacific",
+  "foundedYear": 2002
  },
  {
   "id": "c75",
@@ -2279,7 +2654,12 @@
   "confidence": "Confirmed",
   "mono": "RA",
   "exited": false,
-  "score": 11
+  "score": 11,
+  "hqCity": "Irvine",
+  "hqState": "CA",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 2009
  },
  {
   "id": "c76",
@@ -2308,7 +2688,12 @@
   "confidence": "Confirmed",
   "mono": "RO",
   "exited": false,
-  "score": 14
+  "score": 14,
+  "hqCity": "Shenzhen",
+  "hqState": "",
+  "hqCountry": "China",
+  "region": "Greater China",
+  "foundedYear": 2014
  },
  {
   "id": "c77",
@@ -2337,7 +2722,12 @@
   "confidence": "Confirmed",
   "mono": "SS",
   "exited": false,
-  "score": 12
+  "score": 12,
+  "hqCity": "Carrières-sur-Seine",
+  "hqState": "",
+  "hqCountry": "France",
+  "region": "Europe",
+  "foundedYear": 2007
  },
  {
   "id": "c78",
@@ -2366,7 +2756,12 @@
   "confidence": "Reported",
   "mono": "SE",
   "exited": false,
-  "score": 8
+  "score": 8,
+  "hqCity": "Leuven",
+  "hqState": "",
+  "hqCountry": "Belgium",
+  "region": "Europe",
+  "foundedYear": 2000
  },
  {
   "id": "c79",
@@ -2395,7 +2790,12 @@
   "confidence": "Confirmed",
   "mono": "SE",
   "exited": false,
-  "score": 9
+  "score": 9,
+  "hqCity": "",
+  "hqState": "",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 2016
  },
  {
   "id": "c80",
@@ -2425,7 +2825,12 @@
   "confidence": "Confirmed",
   "mono": "SS",
   "exited": false,
-  "score": 12
+  "score": 12,
+  "hqCity": "Atsugi",
+  "hqState": "",
+  "hqCountry": "Japan",
+  "region": "Asia-Pacific",
+  "foundedYear": 2015
  },
  {
   "id": "c81",
@@ -2455,7 +2860,12 @@
   "confidence": "Confirmed",
   "mono": "SN",
   "exited": false,
-  "score": 9
+  "score": 9,
+  "hqCity": "San Francisco",
+  "hqState": "CA",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 2012
  },
  {
   "id": "c82",
@@ -2485,7 +2895,12 @@
   "confidence": "Confirmed",
   "mono": "TA",
   "exited": false,
-  "score": 14
+  "score": 14,
+  "hqCity": "Austin",
+  "hqState": "TX",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 2003
  },
  {
   "id": "c83",
@@ -2515,7 +2930,12 @@
   "confidence": "Confirmed",
   "mono": "TI",
   "exited": false,
-  "score": 13
+  "score": 13,
+  "hqCity": "Dallas",
+  "hqState": "TX",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 1930
  },
  {
   "id": "c84",
@@ -2544,7 +2964,12 @@
   "confidence": "Confirmed",
   "mono": "TA",
   "exited": false,
-  "score": 12
+  "score": 12,
+  "hqCity": "Richmond Hill",
+  "hqState": "",
+  "hqCountry": "Canada",
+  "region": "North America",
+  "foundedYear": 1991
  },
  {
   "id": "c85",
@@ -2573,7 +2998,12 @@
   "confidence": "Confirmed",
   "mono": "UB",
   "exited": false,
-  "score": 11
+  "score": 11,
+  "hqCity": "Thalwil",
+  "hqState": "",
+  "hqCountry": "Switzerland",
+  "region": "Europe",
+  "foundedYear": 1997
  },
  {
   "id": "c86",
@@ -2602,7 +3032,12 @@
   "confidence": "Confirmed",
   "mono": "UH",
   "exited": false,
-  "score": 9
+  "score": 9,
+  "hqCity": "Austin",
+  "hqState": "TX",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 2015
  },
  {
   "id": "c87",
@@ -2633,7 +3068,12 @@
   "mono": "NV",
   "exited": false,
   "score": 6,
-  "spokenTo": true
+  "spokenTo": true,
+  "hqCity": "Santa Clara",
+  "hqState": "CA",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 1993
  },
  {
   "id": "c88",
@@ -2662,7 +3102,12 @@
   "confidence": "Confirmed",
   "mono": "QS",
   "exited": false,
-  "score": 13
+  "score": 13,
+  "hqCity": "San Diego",
+  "hqState": "CA",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 1985
  },
  {
   "id": "c89",
@@ -2690,7 +3135,12 @@
   "confidence": "Historical",
   "mono": "QS",
   "exited": true,
-  "score": 1
+  "score": 1,
+  "hqCity": "Sunnyvale",
+  "hqState": "CA",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 2012
  },
  {
   "id": "c90",
@@ -2718,7 +3168,12 @@
   "confidence": "Historical",
   "mono": "VL",
   "exited": true,
-  "score": 1
+  "score": 1,
+  "hqCity": "San Jose",
+  "hqState": "CA",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 1983
  },
  {
   "id": "c91",
@@ -2747,7 +3202,12 @@
   "confidence": "Confirmed",
   "mono": "ZF",
   "exited": false,
-  "score": 4
+  "score": 4,
+  "hqCity": "Friedrichshafen",
+  "hqState": "",
+  "hqCountry": "Germany",
+  "region": "Europe",
+  "foundedYear": 1915
  },
  {
   "id": "c92",
@@ -2776,7 +3236,12 @@
   "confidence": "Confirmed",
   "mono": "AI",
   "exited": false,
-  "score": 4
+  "score": 4,
+  "hqCity": "Budapest",
+  "hqState": "",
+  "hqCountry": "Hungary",
+  "region": "Europe",
+  "foundedYear": 2015
  },
  {
   "id": "c93",
@@ -2806,7 +3271,12 @@
   "confidence": "Confirmed",
   "mono": "AA",
   "exited": false,
-  "score": 10
+  "score": 10,
+  "hqCity": "Budapest",
+  "hqState": "",
+  "hqCountry": "Hungary",
+  "region": "Europe",
+  "foundedYear": 2015
  },
  {
   "id": "c94",
@@ -2835,7 +3305,12 @@
   "confidence": "Confirmed",
   "mono": "AA",
   "exited": false,
-  "score": 14
+  "score": 14,
+  "hqCity": "Canonsburg",
+  "hqState": "",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 1970
  },
  {
   "id": "c95",
@@ -2864,7 +3339,12 @@
   "confidence": "Confirmed",
   "mono": "AP",
   "exited": false,
-  "score": 14
+  "score": 14,
+  "hqCity": "Sydney",
+  "hqState": "",
+  "hqCountry": "Australia",
+  "region": "Asia-Pacific",
+  "foundedYear": 1996
  },
  {
   "id": "c96",
@@ -2893,7 +3373,12 @@
   "confidence": "Confirmed",
   "mono": "AI",
   "exited": false,
-  "score": 11
+  "score": 11,
+  "hqCity": "Tarragona",
+  "hqState": "",
+  "hqCountry": "Spain",
+  "region": "Europe",
+  "foundedYear": 1990
  },
  {
   "id": "c97",
@@ -2923,7 +3408,12 @@
   "confidence": "Confirmed",
   "mono": "BA",
   "exited": false,
-  "score": 14
+  "score": 14,
+  "hqCity": "Beijing",
+  "hqState": "",
+  "hqCountry": "China",
+  "region": "Greater China",
+  "foundedYear": 2000
  },
  {
   "id": "c98",
@@ -2953,7 +3443,12 @@
   "confidence": "Confirmed",
   "mono": "CA",
   "exited": false,
-  "score": 6
+  "score": 6,
+  "hqCity": "",
+  "hqState": "",
+  "hqCountry": "Spain",
+  "region": "Europe",
+  "foundedYear": 2017
  },
  {
   "id": "c99",
@@ -2983,7 +3478,12 @@
   "confidence": "Confirmed",
   "mono": "CL",
   "exited": false,
-  "score": 11
+  "score": 11,
+  "hqCity": "",
+  "hqState": "",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 2010
  },
  {
   "id": "c100",
@@ -3013,7 +3513,12 @@
   "confidence": "Confirmed",
   "mono": "CO",
   "exited": false,
-  "score": 10
+  "score": 10,
+  "hqCity": "Rehovot",
+  "hqState": "",
+  "hqCountry": "Israel",
+  "region": "Middle East & Africa",
+  "foundedYear": 2016
  },
  {
   "id": "c101",
@@ -3043,7 +3548,12 @@
   "confidence": "Confirmed",
   "mono": "CA",
   "exited": false,
-  "score": 9
+  "score": 9,
+  "hqCity": "",
+  "hqState": "",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 2018
  },
  {
   "id": "c102",
@@ -3073,7 +3583,12 @@
   "confidence": "Confirmed",
   "mono": "DA",
   "exited": false,
-  "score": 10
+  "score": 10,
+  "hqCity": "Los Altos",
+  "hqState": "CA",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 2016
  },
  {
   "id": "c103",
@@ -3101,7 +3616,12 @@
   "confidence": "Historical",
   "mono": "DE",
   "exited": true,
-  "score": 1
+  "score": 1,
+  "hqCity": "Palo Alto",
+  "hqState": "CA",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 2016
  },
  {
   "id": "c104",
@@ -3130,7 +3650,12 @@
   "confidence": "Confirmed",
   "mono": "DE",
   "exited": false,
-  "score": 12
+  "score": 12,
+  "hqCity": "Stuttgart",
+  "hqState": "",
+  "hqCountry": "Germany",
+  "region": "Europe",
+  "foundedYear": 1925
  },
  {
   "id": "c105",
@@ -3160,7 +3685,12 @@
   "confidence": "Confirmed",
   "mono": "DA",
   "exited": false,
-  "score": 12
+  "score": 12,
+  "hqCity": "Paderborn",
+  "hqState": "",
+  "hqCountry": "Germany",
+  "region": "Europe",
+  "foundedYear": 1988
  },
  {
   "id": "c106",
@@ -3190,7 +3720,12 @@
   "confidence": "Confirmed",
   "mono": "DM",
   "exited": false,
-  "score": 10
+  "score": 10,
+  "hqCity": "Tokyo",
+  "hqState": "",
+  "hqCountry": "Japan",
+  "region": "Asia-Pacific",
+  "foundedYear": 2016
  },
  {
   "id": "c107",
@@ -3219,7 +3754,12 @@
   "confidence": "Confirmed",
   "mono": "EX",
   "exited": false,
-  "score": 11
+  "score": 11,
+  "hqCity": "Sellersville",
+  "hqState": "PA",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 1999
  },
  {
   "id": "c108",
@@ -3249,7 +3789,12 @@
   "confidence": "Confirmed",
   "mono": "HE",
   "exited": false,
-  "score": 12
+  "score": 12,
+  "hqCity": "Amsterdam",
+  "hqState": "",
+  "hqCountry": "Netherlands",
+  "region": "Europe",
+  "foundedYear": 1985
  },
  {
   "id": "c109",
@@ -3278,7 +3823,12 @@
   "confidence": "Confirmed",
   "mono": "HV",
   "exited": false,
-  "score": 12
+  "score": 12,
+  "hqCity": "",
+  "hqState": "",
+  "hqCountry": "Germany",
+  "region": "Europe",
+  "foundedYear": 1998
  },
  {
   "id": "c110",
@@ -3307,7 +3857,12 @@
   "confidence": "Confirmed",
   "mono": "HM",
   "exited": false,
-  "score": 11
+  "score": 11,
+  "hqCity": "Nuneaton",
+  "hqState": "",
+  "hqCountry": "UK",
+  "region": "Europe",
+  "foundedYear": 1946
  },
  {
   "id": "c111",
@@ -3337,7 +3892,12 @@
   "confidence": "Confirmed",
   "mono": "HL",
   "exited": false,
-  "score": 10
+  "score": 10,
+  "hqCity": "San Francisco",
+  "hqState": "CA",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 2019
  },
  {
   "id": "c112",
@@ -3366,7 +3926,12 @@
   "confidence": "Confirmed",
   "mono": "IM",
   "exited": false,
-  "score": 12
+  "score": 12,
+  "hqCity": "San Jose",
+  "hqState": "CA",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 2012
  },
  {
   "id": "c113",
@@ -3395,7 +3960,12 @@
   "confidence": "Confirmed",
   "mono": "IN",
   "exited": false,
-  "score": 14
+  "score": 14,
+  "hqCity": "London",
+  "hqState": "",
+  "hqCountry": "UK",
+  "region": "Europe",
+  "foundedYear": 1888
  },
  {
   "id": "c114",
@@ -3424,7 +3994,12 @@
   "confidence": "Confirmed",
   "mono": "IA",
   "exited": false,
-  "score": 12
+  "score": 12,
+  "hqCity": "Karlsruhe",
+  "hqState": "",
+  "hqCountry": "Germany",
+  "region": "Europe",
+  "foundedYear": 1984
  },
  {
   "id": "c115",
@@ -3452,7 +4027,12 @@
   "confidence": "Confirmed",
   "mono": "KO",
   "exited": false,
-  "score": 4
+  "score": 4,
+  "hqCity": "Gothenburg",
+  "hqState": "",
+  "hqCountry": "Sweden",
+  "region": "Europe",
+  "foundedYear": 2018
  },
  {
   "id": "c116",
@@ -3481,7 +4061,12 @@
   "confidence": "Confirmed",
   "mono": "LA",
   "exited": false,
-  "score": 11
+  "score": 11,
+  "hqCity": "San Francisco",
+  "hqState": "CA",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 2018
  },
  {
   "id": "c117",
@@ -3511,7 +4096,12 @@
   "confidence": "Confirmed",
   "mono": "MA",
   "exited": false,
-  "score": 12
+  "score": 12,
+  "hqCity": "Washington DC",
+  "hqState": "",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 2010
  },
  {
   "id": "c118",
@@ -3540,7 +4130,12 @@
   "confidence": "Confirmed",
   "mono": "MA",
   "exited": false,
-  "score": 12
+  "score": 12,
+  "hqCity": "Natick",
+  "hqState": "",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 1984
  },
  {
   "id": "c119",
@@ -3570,7 +4165,12 @@
   "confidence": "Confirmed",
   "mono": "MR",
   "exited": false,
-  "score": 14
+  "score": 14,
+  "hqCity": "Jerusalem",
+  "hqState": "",
+  "hqCountry": "Israel",
+  "region": "Middle East & Africa",
+  "foundedYear": 1999
  },
  {
   "id": "c120",
@@ -3598,7 +4198,12 @@
   "confidence": "Reported",
   "mono": "MO",
   "exited": false,
-  "score": 1
+  "score": 1,
+  "hqCity": "Seoul",
+  "hqState": "",
+  "hqCountry": "South Korea",
+  "region": "Asia-Pacific",
+  "foundedYear": 2018
  },
  {
   "id": "c121",
@@ -3628,7 +4233,12 @@
   "confidence": "Confirmed",
   "mono": "NA",
   "exited": false,
-  "score": 14
+  "score": 14,
+  "hqCity": "Beijing",
+  "hqState": "",
+  "hqCountry": "China",
+  "region": "Greater China",
+  "foundedYear": 2002
  },
  {
   "id": "c122",
@@ -3658,7 +4268,12 @@
   "confidence": "Confirmed",
   "mono": "ND",
   "exited": true,
-  "score": 6
+  "score": 6,
+  "hqCity": "Santa Clara",
+  "hqState": "CA",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 2016
  },
  {
   "id": "c123",
@@ -3688,7 +4303,12 @@
   "confidence": "Confirmed",
   "mono": "ND",
   "exited": false,
-  "score": 14
+  "score": 14,
+  "hqCity": "Santa Clara",
+  "hqState": "CA",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 1993
  },
  {
   "id": "c124",
@@ -3717,7 +4337,12 @@
   "confidence": "Reported",
   "mono": "PD",
   "exited": false,
-  "score": 7
+  "score": 7,
+  "hqCity": "San Francisco Bay Area",
+  "hqState": "",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 2017
  },
  {
   "id": "c125",
@@ -3746,7 +4371,12 @@
   "confidence": "Confirmed",
   "mono": "RF",
   "exited": false,
-  "score": 10
+  "score": 10,
+  "hqCity": "Wiltshire",
+  "hqState": "",
+  "hqCountry": "UK",
+  "region": "Europe",
+  "foundedYear": 2007
  },
  {
   "id": "c126",
@@ -3776,7 +4406,12 @@
   "confidence": "Confirmed",
   "mono": "SA",
   "exited": false,
-  "score": 12
+  "score": 12,
+  "hqCity": "San Francisco",
+  "hqState": "CA",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 2008
  },
  {
   "id": "c127",
@@ -3805,7 +4440,12 @@
   "confidence": "Confirmed",
   "mono": "SM",
   "exited": false,
-  "score": 12
+  "score": 12,
+  "hqCity": "Colorado Springs",
+  "hqState": "",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 1866
  },
  {
   "id": "c128",
@@ -3836,7 +4476,12 @@
   "confidence": "Confirmed",
   "mono": "SA",
   "exited": false,
-  "score": 14
+  "score": 14,
+  "hqCity": "San Francisco",
+  "hqState": "CA",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 2016
  },
  {
   "id": "c129",
@@ -3865,7 +4510,12 @@
   "confidence": "Confirmed",
   "mono": "SU",
   "exited": false,
-  "score": 9
+  "score": 9,
+  "hqCity": "San Francisco",
+  "hqState": "CA",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 2018
  },
  {
   "id": "c130",
@@ -3895,7 +4545,12 @@
   "confidence": "Confirmed",
   "mono": "TE",
   "exited": false,
-  "score": 11
+  "score": 11,
+  "hqCity": "Santa Clara",
+  "hqState": "CA",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 1999
  },
  {
   "id": "c131",
@@ -3924,7 +4579,12 @@
   "confidence": "Confirmed",
   "mono": "TD",
   "exited": false,
-  "score": 12
+  "score": 12,
+  "hqCity": "",
+  "hqState": "",
+  "hqCountry": "Canada",
+  "region": "North America",
+  "foundedYear": 2015
  },
  {
   "id": "c132",
@@ -3954,7 +4614,12 @@
   "confidence": "Confirmed",
   "mono": "TO",
   "exited": false,
-  "score": 13
+  "score": 13,
+  "hqCity": "Amsterdam",
+  "hqState": "",
+  "hqCountry": "Netherlands",
+  "region": "Europe",
+  "foundedYear": 1991
  },
  {
   "id": "c133",
@@ -3983,7 +4648,12 @@
   "confidence": "Confirmed",
   "mono": "T2",
   "exited": false,
-  "score": 11
+  "score": 11,
+  "hqCity": "Hanover",
+  "hqState": "",
+  "hqCountry": "Germany",
+  "region": "Europe",
+  "foundedYear": 1869
  },
  {
   "id": "c134",
@@ -4012,7 +4682,12 @@
   "confidence": "Confirmed",
   "mono": "T2",
   "exited": false,
-  "score": 12
+  "score": 12,
+  "hqCity": "Cologne",
+  "hqState": "",
+  "hqCountry": "Germany",
+  "region": "Europe",
+  "foundedYear": 1872
  },
  {
   "id": "c135",
@@ -4041,7 +4716,12 @@
   "confidence": "Confirmed",
   "mono": "VL",
   "exited": false,
-  "score": 9
+  "score": 9,
+  "hqCity": "London",
+  "hqState": "",
+  "hqCountry": "UK",
+  "region": "Europe",
+  "foundedYear": 2018
  },
  {
   "id": "c136",
@@ -4070,7 +4750,12 @@
   "confidence": "Confirmed",
   "mono": "VL",
   "exited": false,
-  "score": 10
+  "score": 10,
+  "hqCity": "USA",
+  "hqState": "MN",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 2014
  },
  {
   "id": "c137",
@@ -4100,7 +4785,12 @@
   "confidence": "Confirmed",
   "mono": "WW",
   "exited": false,
-  "score": 8
+  "score": 8,
+  "hqCity": "Toronto",
+  "hqState": "ON",
+  "hqCountry": "Canada",
+  "region": "North America",
+  "foundedYear": 2021
  },
  {
   "id": "c138",
@@ -4133,7 +4823,12 @@
   "confidence": "Confirmed",
   "mono": "WB",
   "exited": false,
-  "score": 10
+  "score": 10,
+  "hqCity": "Tokyo",
+  "hqState": "",
+  "hqCountry": "Japan",
+  "region": "Asia-Pacific",
+  "foundedYear": 2021
  },
  {
   "id": "c139",
@@ -4162,7 +4857,12 @@
   "confidence": "Confirmed",
   "mono": "5A",
   "exited": false,
-  "score": 12
+  "score": 12,
+  "hqCity": "Munich",
+  "hqState": "",
+  "hqCountry": "Germany",
+  "region": "Europe",
+  "foundedYear": 2016
  },
  {
   "id": "c140",
@@ -4191,7 +4891,12 @@
   "confidence": "Reported",
   "mono": "AC",
   "exited": false,
-  "score": 9
+  "score": 9,
+  "hqCity": "Hangzhou",
+  "hqState": "",
+  "hqCountry": "China",
+  "region": "Greater China",
+  "foundedYear": 2009
  },
  {
   "id": "c141",
@@ -4220,7 +4925,12 @@
   "confidence": "Reported",
   "mono": "AU",
   "exited": false,
-  "score": 9
+  "score": 9,
+  "hqCity": "Seoul",
+  "hqState": "",
+  "hqCountry": "South Korea",
+  "region": "Asia-Pacific",
+  "foundedYear": 2019
  },
  {
   "id": "c142",
@@ -4249,7 +4959,12 @@
   "confidence": "Confirmed",
   "mono": "AU",
   "exited": false,
-  "score": 12
+  "score": 12,
+  "hqCity": "Kfar Netter",
+  "hqState": "",
+  "hqCountry": "Israel",
+  "region": "Middle East & Africa",
+  "foundedYear": 2008
  },
  {
   "id": "c143",
@@ -4279,7 +4994,12 @@
   "confidence": "Confirmed",
   "mono": "AV",
   "exited": false,
-  "score": 11
+  "score": 11,
+  "hqCity": "Graz",
+  "hqState": "",
+  "hqCountry": "Austria",
+  "region": "Europe",
+  "foundedYear": 1948
  },
  {
   "id": "c144",
@@ -4309,7 +5029,12 @@
   "confidence": "Confirmed",
   "mono": "BA",
   "exited": false,
-  "score": 12
+  "score": 12,
+  "hqCity": "Beijing",
+  "hqState": "",
+  "hqCountry": "China",
+  "region": "Greater China",
+  "foundedYear": 2013
  },
  {
   "id": "c145",
@@ -4338,7 +5063,12 @@
   "confidence": "Reported",
   "mono": "BH",
   "exited": false,
-  "score": 7
+  "score": 7,
+  "hqCity": "Detroit",
+  "hqState": "MI",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 2014
  },
  {
   "id": "c146",
@@ -4367,7 +5097,12 @@
   "confidence": "Confirmed",
   "mono": "CS",
   "exited": false,
-  "score": 12
+  "score": 12,
+  "hqCity": "Jerusalem",
+  "hqState": "",
+  "hqCountry": "Israel",
+  "region": "Middle East & Africa",
+  "foundedYear": 2016
  },
  {
   "id": "c147",
@@ -4399,7 +5134,12 @@
   "confidence": "Confirmed",
   "mono": "CA",
   "exited": false,
-  "score": 8
+  "score": 8,
+  "hqCity": "USA",
+  "hqState": "DC",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 2020
  },
  {
   "id": "c148",
@@ -4429,7 +5169,12 @@
   "confidence": "Reported",
   "mono": "CM",
   "exited": false,
-  "score": 11
+  "score": 11,
+  "hqCity": "Beijing",
+  "hqState": "",
+  "hqCountry": "China",
+  "region": "Greater China",
+  "foundedYear": 1997
  },
  {
   "id": "c149",
@@ -4458,7 +5203,12 @@
   "confidence": "Reported",
   "mono": "CT",
   "exited": false,
-  "score": 11
+  "score": 11,
+  "hqCity": "Beijing",
+  "hqState": "",
+  "hqCountry": "China",
+  "region": "Greater China",
+  "foundedYear": 2000
  },
  {
   "id": "c150",
@@ -4488,7 +5238,12 @@
   "confidence": "Reported",
   "mono": "CU",
   "exited": false,
-  "score": 11
+  "score": 11,
+  "hqCity": "Beijing",
+  "hqState": "",
+  "hqCountry": "China",
+  "region": "Greater China",
+  "foundedYear": 2000
  },
  {
   "id": "c151",
@@ -4517,7 +5272,12 @@
   "confidence": "Confirmed",
   "mono": "CW",
   "exited": false,
-  "score": 11
+  "score": 11,
+  "hqCity": "Adelaide",
+  "hqState": "",
+  "hqCountry": "Australia",
+  "region": "Asia-Pacific",
+  "foundedYear": 2004
  },
  {
   "id": "c152",
@@ -4548,7 +5308,12 @@
   "confidence": "Confirmed",
   "mono": "CO",
   "exited": false,
-  "score": 11
+  "score": 11,
+  "hqCity": "Santa Clara",
+  "hqState": "CA",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 2012
  },
  {
   "id": "c153",
@@ -4578,7 +5343,12 @@
   "confidence": "Confirmed",
   "mono": "CY",
   "exited": false,
-  "score": 12
+  "score": 12,
+  "hqCity": "Tel Aviv",
+  "hqState": "",
+  "hqCountry": "Israel",
+  "region": "Middle East & Africa",
+  "foundedYear": 2016
  },
  {
   "id": "c154",
@@ -4608,7 +5378,12 @@
   "confidence": "Confirmed",
   "mono": "DE",
   "exited": false,
-  "score": 10
+  "score": 10,
+  "hqCity": "Dubai",
+  "hqState": "",
+  "hqCountry": "UAE",
+  "region": "Middle East & Africa",
+  "foundedYear": 2016
  },
  {
   "id": "c155",
@@ -4637,7 +5412,12 @@
   "confidence": "Reported",
   "mono": "DD",
   "exited": false,
-  "score": 7
+  "score": 7,
+  "hqCity": "Portland",
+  "hqState": "OR",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 2018
  },
  {
   "id": "c156",
@@ -4668,7 +5448,12 @@
   "confidence": "Reported",
   "mono": "DA",
   "exited": false,
-  "score": 7
+  "score": 7,
+  "hqCity": "Kfar Saba",
+  "hqState": "",
+  "hqCountry": "Israel",
+  "region": "Middle East & Africa",
+  "foundedYear": 2019
  },
  {
   "id": "c157",
@@ -4698,7 +5483,12 @@
   "confidence": "Confirmed",
   "mono": "EC",
   "exited": false,
-  "score": 11
+  "score": 11,
+  "hqCity": "Anaheim",
+  "hqState": "CA",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 1933
  },
  {
   "id": "c158",
@@ -4728,7 +5518,12 @@
   "confidence": "Confirmed",
   "mono": "ER",
   "exited": false,
-  "score": 14
+  "score": 14,
+  "hqCity": "Stockholm",
+  "hqState": "",
+  "hqCountry": "Sweden",
+  "region": "Europe",
+  "foundedYear": 1876
  },
  {
   "id": "c159",
@@ -4758,7 +5553,12 @@
   "confidence": "Confirmed",
   "mono": "EE",
   "exited": false,
-  "score": 12
+  "score": 12,
+  "hqCity": "Stuttgart",
+  "hqState": "",
+  "hqCountry": "Germany",
+  "region": "Europe",
+  "foundedYear": 1994
  },
  {
   "id": "c160",
@@ -4790,7 +5590,12 @@
   "confidence": "Confirmed",
   "mono": "FE",
   "exited": false,
-  "score": 10
+  "score": 10,
+  "hqCity": "Munich",
+  "hqState": "",
+  "hqCountry": "Germany",
+  "region": "Europe",
+  "foundedYear": 2019
  },
  {
   "id": "c161",
@@ -4820,7 +5625,12 @@
   "confidence": "Reported",
   "mono": "FI",
   "exited": false,
-  "score": 11
+  "score": 11,
+  "hqCity": "Shenzhen",
+  "hqState": "",
+  "hqCountry": "China",
+  "region": "Greater China",
+  "foundedYear": 1999
  },
  {
   "id": "c162",
@@ -4850,7 +5660,12 @@
   "confidence": "Reported",
   "mono": "GR",
   "exited": false,
-  "score": 7
+  "score": 7,
+  "hqCity": "Cupertino",
+  "hqState": "CA",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 2021
  },
  {
   "id": "c163",
@@ -4880,7 +5695,12 @@
   "confidence": "Reported",
   "mono": "GU",
   "exited": false,
-  "score": 7
+  "score": 7,
+  "hqCity": "Ramla",
+  "hqState": "",
+  "hqCountry": "Israel",
+  "region": "Middle East & Africa",
+  "foundedYear": 2016
  },
  {
   "id": "c164",
@@ -4910,7 +5730,12 @@
   "confidence": "Confirmed",
   "mono": "HA",
   "exited": false,
-  "score": 12
+  "score": 12,
+  "hqCity": "Stamford",
+  "hqState": "CT",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 1980
  },
  {
   "id": "c165",
@@ -4940,7 +5765,12 @@
   "confidence": "Reported",
   "mono": "HA",
   "exited": false,
-  "score": 9
+  "score": 9,
+  "hqCity": "San Francisco",
+  "hqState": "CA",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 2019
  },
  {
   "id": "c166",
@@ -4970,7 +5800,12 @@
   "confidence": "Confirmed",
   "mono": "HU",
   "exited": false,
-  "score": 12
+  "score": 12,
+  "hqCity": "Shenzhen",
+  "hqState": "",
+  "hqCountry": "China",
+  "region": "Greater China",
+  "foundedYear": 1987
  },
  {
   "id": "c167",
@@ -4999,7 +5834,12 @@
   "confidence": "Reported",
   "mono": "ID",
   "exited": false,
-  "score": 7
+  "score": 7,
+  "hqCity": "Milton Keynes",
+  "hqState": "",
+  "hqCountry": "UK",
+  "region": "Europe",
+  "foundedYear": 2019
  },
  {
   "id": "c168",
@@ -5029,7 +5869,12 @@
   "confidence": "Confirmed",
   "mono": "IT",
   "exited": false,
-  "score": 14
+  "score": 14,
+  "hqCity": "Austin",
+  "hqState": "TX",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 2004
  },
  {
   "id": "c169",
@@ -5059,7 +5904,12 @@
   "confidence": "Confirmed",
   "mono": "KT",
   "exited": false,
-  "score": 13
+  "score": 13,
+  "hqCity": "Vienna",
+  "hqState": "",
+  "hqCountry": "Austria",
+  "region": "Europe",
+  "foundedYear": 1892
  },
  {
   "id": "c170",
@@ -5088,7 +5938,12 @@
   "confidence": "Confirmed",
   "mono": "KS",
   "exited": false,
-  "score": 10
+  "score": 10,
+  "hqCity": "Hod Hasharon",
+  "hqState": "",
+  "hqCountry": "Israel",
+  "region": "Middle East & Africa",
+  "foundedYear": 2015
  },
  {
   "id": "c171",
@@ -5118,7 +5973,12 @@
   "confidence": "Confirmed",
   "mono": "MI",
   "exited": false,
-  "score": 12
+  "score": 12,
+  "hqCity": "Kitchener-Waterloo",
+  "hqState": "",
+  "hqCountry": "Canada",
+  "region": "North America",
+  "foundedYear": 2005
  },
  {
   "id": "c172",
@@ -5148,7 +6008,12 @@
   "confidence": "Confirmed",
   "mono": "NO",
   "exited": false,
-  "score": 14
+  "score": 14,
+  "hqCity": "Espoo",
+  "hqState": "",
+  "hqCountry": "Finland",
+  "region": "Europe",
+  "foundedYear": 1865
  },
  {
   "id": "c173",
@@ -5177,7 +6042,12 @@
   "confidence": "Reported",
   "mono": "NO",
   "exited": false,
-  "score": 9
+  "score": 9,
+  "hqCity": "Tel Aviv",
+  "hqState": "",
+  "hqCountry": "Israel",
+  "region": "Middle East & Africa",
+  "foundedYear": 2017
  },
  {
   "id": "c174",
@@ -5209,7 +6079,12 @@
   "confidence": "Confirmed",
   "mono": "OT",
   "exited": false,
-  "score": 10
+  "score": 10,
+  "hqCity": "Tel Aviv",
+  "hqState": "",
+  "hqCountry": "Israel",
+  "region": "Middle East & Africa",
+  "foundedYear": 2018
  },
  {
   "id": "c175",
@@ -5239,7 +6114,12 @@
   "confidence": "Confirmed",
   "mono": "OB",
   "exited": false,
-  "score": 12
+  "score": 12,
+  "hqCity": "San Francisco",
+  "hqState": "CA",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 2015
  },
  {
   "id": "c176",
@@ -5268,7 +6148,12 @@
   "confidence": "Historical",
   "mono": "PA",
   "exited": true,
-  "score": 4
+  "score": 4,
+  "hqCity": "South San Francisco",
+  "hqState": "CA",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 2017
  },
  {
   "id": "c177",
@@ -5296,7 +6181,12 @@
   "confidence": "Confirmed",
   "mono": "PE",
   "exited": true,
-  "score": 4
+  "score": 4,
+  "hqCity": "Tel Aviv",
+  "hqState": "",
+  "hqCountry": "Israel",
+  "region": "Middle East & Africa",
+  "foundedYear": 2013
  },
  {
   "id": "c178",
@@ -5326,7 +6216,12 @@
   "confidence": "Confirmed",
   "mono": "PA",
   "exited": false,
-  "score": 12
+  "score": 12,
+  "hqCity": "Tel Aviv",
+  "hqState": "",
+  "hqCountry": "Israel",
+  "region": "Middle East & Africa",
+  "foundedYear": 2013
  },
  {
   "id": "c179",
@@ -5356,7 +6251,12 @@
   "confidence": "Reported",
   "mono": "QF",
   "exited": false,
-  "score": 10
+  "score": 10,
+  "hqCity": "Trondheim",
+  "hqState": "",
+  "hqCountry": "Norway",
+  "region": "Europe",
+  "foundedYear": 1984
  },
  {
   "id": "c180",
@@ -5386,7 +6286,12 @@
   "confidence": "Confirmed",
   "mono": "QU",
   "exited": false,
-  "score": 14
+  "score": 14,
+  "hqCity": "San Diego",
+  "hqState": "CA",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 1985
  },
  {
   "id": "c181",
@@ -5416,7 +6321,12 @@
   "confidence": "Reported",
   "mono": "QW",
   "exited": false,
-  "score": 11
+  "score": 11,
+  "hqCity": "Shanghai",
+  "hqState": "",
+  "hqCountry": "China",
+  "region": "Greater China",
+  "foundedYear": 2010
  },
  {
   "id": "c182",
@@ -5445,7 +6355,12 @@
   "confidence": "Reported",
   "mono": "RS",
   "exited": false,
-  "score": 9
+  "score": 9,
+  "hqCity": "Columbia",
+  "hqState": "MD",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 2017
  },
  {
   "id": "c183",
@@ -5474,7 +6389,12 @@
   "confidence": "Reported",
   "mono": "SA",
   "exited": false,
-  "score": 7
+  "score": 7,
+  "hqCity": "Tel Aviv",
+  "hqState": "",
+  "hqCountry": "Israel",
+  "region": "Middle East & Africa",
+  "foundedYear": 2016
  },
  {
   "id": "c184",
@@ -5504,7 +6424,12 @@
   "confidence": "Confirmed",
   "mono": "SW",
   "exited": false,
-  "score": 11
+  "score": 11,
+  "hqCity": "Wattens",
+  "hqState": "",
+  "hqCountry": "Austria",
+  "region": "Europe",
+  "foundedYear": 1969
  },
  {
   "id": "c185",
@@ -5533,7 +6458,12 @@
   "confidence": "Reported",
   "mono": "TC",
   "exited": false,
-  "score": 8
+  "score": 8,
+  "hqCity": "Shenzhen",
+  "hqState": "",
+  "hqCountry": "China",
+  "region": "Greater China",
+  "foundedYear": 2010
  },
  {
   "id": "c186",
@@ -5561,7 +6491,12 @@
   "confidence": "Confirmed",
   "mono": "TS",
   "exited": false,
-  "score": 4
+  "score": 4,
+  "hqCity": "Munich",
+  "hqState": "",
+  "hqCountry": "Germany",
+  "region": "Europe",
+  "foundedYear": 1866
  },
  {
   "id": "c187",
@@ -5593,7 +6528,12 @@
   "confidence": "Confirmed",
   "mono": "US",
   "exited": false,
-  "score": 14
+  "score": 14,
+  "hqCity": "Northbrook",
+  "hqState": "IL",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 1894
  },
  {
   "id": "c188",
@@ -5623,7 +6563,12 @@
   "confidence": "Confirmed",
   "mono": "US",
   "exited": false,
-  "score": 12
+  "score": 12,
+  "hqCity": "Herzliya",
+  "hqState": "",
+  "hqCountry": "Israel",
+  "region": "Middle East & Africa",
+  "foundedYear": 2017
  },
  {
   "id": "c189",
@@ -5652,7 +6597,12 @@
   "confidence": "Reported",
   "mono": "VA",
   "exited": false,
-  "score": 6
+  "score": 6,
+  "hqCity": "London",
+  "hqState": "",
+  "hqCountry": "UK",
+  "region": "Europe",
+  "foundedYear": 2016
  },
  {
   "id": "c190",
@@ -5684,7 +6634,12 @@
   "confidence": "Confirmed",
   "mono": "VA",
   "exited": false,
-  "score": 12
+  "score": 12,
+  "hqCity": "Berlin",
+  "hqState": "",
+  "hqCountry": "Germany",
+  "region": "Europe",
+  "foundedYear": 2018
  },
  {
   "id": "c191",
@@ -5714,7 +6669,12 @@
   "confidence": "Confirmed",
   "mono": "VI",
   "exited": false,
-  "score": 12
+  "score": 12,
+  "hqCity": "Stuttgart",
+  "hqState": "",
+  "hqCountry": "Germany",
+  "region": "Europe",
+  "foundedYear": 1988
  },
  {
   "id": "c192",
@@ -5743,7 +6703,12 @@
   "confidence": "Confirmed",
   "mono": "VI",
   "exited": false,
-  "score": 10
+  "score": 10,
+  "hqCity": "",
+  "hqState": "",
+  "hqCountry": "Taiwan",
+  "region": "Greater China",
+  "foundedYear": 2022
  },
  {
   "id": "c193",
@@ -5772,7 +6737,12 @@
   "confidence": "Reported",
   "mono": "YT",
   "exited": false,
-  "score": 9
+  "score": 9,
+  "hqCity": "Munich",
+  "hqState": "",
+  "hqCountry": "Germany",
+  "region": "Europe",
+  "foundedYear": 2021
  },
  {
   "id": "c194",
@@ -5802,7 +6772,12 @@
   "confidence": "Reported",
   "mono": "AI",
   "exited": false,
-  "score": 10
+  "score": 10,
+  "hqCity": "Kariya",
+  "hqState": "",
+  "hqCountry": "Japan",
+  "region": "Asia-Pacific",
+  "foundedYear": 1949
  },
  {
   "id": "c195",
@@ -5834,7 +6809,12 @@
   "confidence": "Confirmed",
   "mono": "AP",
   "exited": false,
-  "score": 14
+  "score": 14,
+  "hqCity": "Dublin",
+  "hqState": "",
+  "hqCountry": "Ireland",
+  "region": "Europe",
+  "foundedYear": 1994
  },
  {
   "id": "c196",
@@ -5863,7 +6843,12 @@
   "confidence": "Reported",
   "mono": "BA",
   "exited": false,
-  "score": 8
+  "score": 8,
+  "hqCity": "Beijing",
+  "hqState": "",
+  "hqCountry": "China",
+  "region": "Greater China",
+  "foundedYear": 1958
  },
  {
   "id": "c197",
@@ -5893,7 +6878,12 @@
   "confidence": "Confirmed",
   "mono": "BA",
   "exited": false,
-  "score": 11
+  "score": 11,
+  "hqCity": "Beijing",
+  "hqState": "",
+  "hqCountry": "China",
+  "region": "Greater China",
+  "foundedYear": 2022
  },
  {
   "id": "c198",
@@ -5923,7 +6913,12 @@
   "confidence": "Confirmed",
   "mono": "BE",
   "exited": false,
-  "score": 9
+  "score": 9,
+  "hqCity": "Salzburg",
+  "hqState": "",
+  "hqCountry": "Germany",
+  "region": "Europe",
+  "foundedYear": 1876
  },
  {
   "id": "c199",
@@ -5955,7 +6950,12 @@
   "confidence": "Confirmed",
   "mono": "BO",
   "exited": false,
-  "score": 12
+  "score": 12,
+  "hqCity": "Gerlingen",
+  "hqState": "",
+  "hqCountry": "Germany",
+  "region": "Europe",
+  "foundedYear": 1886
  },
  {
   "id": "c200",
@@ -5985,7 +6985,12 @@
   "confidence": "Confirmed",
   "mono": "BY",
   "exited": false,
-  "score": 14
+  "score": 14,
+  "hqCity": "Shenzhen",
+  "hqState": "",
+  "hqCountry": "China",
+  "region": "Greater China",
+  "foundedYear": 1995
  },
  {
   "id": "c201",
@@ -6016,7 +7021,12 @@
   "confidence": "Confirmed",
   "mono": "CO",
   "exited": false,
-  "score": 13
+  "score": 13,
+  "hqCity": "Hanover",
+  "hqState": "",
+  "hqCountry": "Germany",
+  "region": "Europe",
+  "foundedYear": 1871
  },
  {
   "id": "c202",
@@ -6046,7 +7056,12 @@
   "mono": "DT",
   "exited": false,
   "score": 11,
-  "segment": "freight"
+  "segment": "freight",
+  "hqCity": "Leinfelden-Echterdingen",
+  "hqState": "",
+  "hqCountry": "Germany",
+  "region": "Europe",
+  "foundedYear": 2021
  },
  {
   "id": "c203",
@@ -6076,7 +7091,12 @@
   "mono": "DT",
   "exited": false,
   "score": 11,
-  "segment": "freight"
+  "segment": "freight",
+  "hqCity": "Leinfelden-Echterdingen",
+  "hqState": "",
+  "hqCountry": "Germany",
+  "region": "Europe",
+  "foundedYear": 2021
  },
  {
   "id": "c204",
@@ -6106,7 +7126,12 @@
   "confidence": "Confirmed",
   "mono": "DE",
   "exited": false,
-  "score": 13
+  "score": 13,
+  "hqCity": "Kariya",
+  "hqState": "",
+  "hqCountry": "Japan",
+  "region": "Asia-Pacific",
+  "foundedYear": 1949
  },
  {
   "id": "c205",
@@ -6136,7 +7161,12 @@
   "confidence": "Reported",
   "mono": "DS",
   "exited": false,
-  "score": 11
+  "score": 11,
+  "hqCity": "Huizhou",
+  "hqState": "",
+  "hqCountry": "China",
+  "region": "Greater China",
+  "foundedYear": 1986
  },
  {
   "id": "c206",
@@ -6166,7 +7196,12 @@
   "confidence": "Reported",
   "mono": "EA",
   "exited": false,
-  "score": 7
+  "score": 7,
+  "hqCity": "Toulouse",
+  "hqState": "",
+  "hqCountry": "France",
+  "region": "Europe",
+  "foundedYear": 2014
  },
  {
   "id": "c207",
@@ -6196,7 +7231,12 @@
   "confidence": "Reported",
   "mono": "ED",
   "exited": false,
-  "score": 9
+  "score": 9,
+  "hqCity": "",
+  "hqState": "",
+  "hqCountry": "Switzerland",
+  "region": "Europe",
+  "foundedYear": 1969
  },
  {
   "id": "c208",
@@ -6229,7 +7269,12 @@
   "mono": "EI",
   "exited": false,
   "score": 10,
-  "segment": "freight"
+  "segment": "freight",
+  "hqCity": "Stockholm",
+  "hqState": "",
+  "hqCountry": "Sweden",
+  "region": "Europe",
+  "foundedYear": 2016
  },
  {
   "id": "c209",
@@ -6257,7 +7302,12 @@
   "confidence": "Confirmed",
   "mono": "FO",
   "exited": false,
-  "score": 9
+  "score": 9,
+  "hqCity": "Dearborn",
+  "hqState": "MI",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 1903
  },
  {
   "id": "c210",
@@ -6285,7 +7335,12 @@
   "confidence": "Confirmed",
   "mono": "FO",
   "exited": false,
-  "score": 6
+  "score": 6,
+  "hqCity": "Nanterre",
+  "hqState": "",
+  "hqCountry": "France",
+  "region": "Europe",
+  "foundedYear": 2022
  },
  {
   "id": "c211",
@@ -6315,7 +7370,12 @@
   "confidence": "Reported",
   "mono": "FH",
   "exited": false,
-  "score": 11
+  "score": 11,
+  "hqCity": "",
+  "hqState": "",
+  "hqCountry": "France",
+  "region": "Europe",
+  "foundedYear": 2022
  },
  {
   "id": "c212",
@@ -6343,7 +7403,12 @@
   "confidence": "Confirmed",
   "mono": "FF",
   "exited": false,
-  "score": 4
+  "score": 4,
+  "hqCity": "New Taipei City",
+  "hqState": "",
+  "hqCountry": "Taiwan",
+  "region": "Greater China",
+  "foundedYear": 2020
  },
  {
   "id": "c213",
@@ -6373,7 +7438,12 @@
   "confidence": "Reported",
   "mono": "FF",
   "exited": false,
-  "score": 9
+  "score": 9,
+  "hqCity": "New Taipei",
+  "hqState": "",
+  "hqCountry": "Taiwan",
+  "region": "Greater China",
+  "foundedYear": 1974
  },
  {
   "id": "c214",
@@ -6403,7 +7473,12 @@
   "confidence": "Confirmed",
   "mono": "GG",
   "exited": false,
-  "score": 12
+  "score": 12,
+  "hqCity": "Guangzhou",
+  "hqState": "",
+  "hqCountry": "China",
+  "region": "Greater China",
+  "foundedYear": 1997
  },
  {
   "id": "c215",
@@ -6433,7 +7508,12 @@
   "confidence": "Confirmed",
   "mono": "GE",
   "exited": false,
-  "score": 14
+  "score": 14,
+  "hqCity": "Hangzhou",
+  "hqState": "",
+  "hqCountry": "China",
+  "region": "Greater China",
+  "foundedYear": 1986
  },
  {
   "id": "c216",
@@ -6462,7 +7542,12 @@
   "confidence": "Confirmed",
   "mono": "GE",
   "exited": true,
-  "score": 12
+  "score": 12,
+  "hqCity": "Detroit",
+  "hqState": "MI",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 1908
  },
  {
   "id": "c217",
@@ -6491,7 +7576,12 @@
   "confidence": "Confirmed",
   "mono": "HO",
   "exited": false,
-  "score": 7
+  "score": 7,
+  "hqCity": "",
+  "hqState": "",
+  "hqCountry": "Germany",
+  "region": "Europe",
+  "foundedYear": 2022
  },
  {
   "id": "c218",
@@ -6520,7 +7610,12 @@
   "confidence": "Reported",
   "mono": "HM",
   "exited": false,
-  "score": 11
+  "score": 11,
+  "hqCity": "Seoul",
+  "hqState": "",
+  "hqCountry": "South Korea",
+  "region": "Asia-Pacific",
+  "foundedYear": 1977
  },
  {
   "id": "c219",
@@ -6550,7 +7645,12 @@
   "confidence": "Confirmed",
   "mono": "HY",
   "exited": false,
-  "score": 12
+  "score": 12,
+  "hqCity": "Seoul",
+  "hqState": "",
+  "hqCountry": "South Korea",
+  "region": "Asia-Pacific",
+  "foundedYear": 1967
  },
  {
   "id": "c220",
@@ -6580,7 +7680,12 @@
   "confidence": "Confirmed",
   "mono": "IS",
   "exited": false,
-  "score": 11
+  "score": 11,
+  "hqCity": "Yokohama",
+  "hqState": "",
+  "hqCountry": "Japan",
+  "region": "Asia-Pacific",
+  "foundedYear": 1916
  },
  {
   "id": "c221",
@@ -6611,7 +7716,12 @@
   "mono": "IV",
   "exited": false,
   "score": 8,
-  "segment": "freight"
+  "segment": "freight",
+  "hqCity": "Turin",
+  "hqState": "",
+  "hqCountry": "Italy",
+  "region": "Europe",
+  "foundedYear": 2022
  },
  {
   "id": "c222",
@@ -6641,7 +7751,12 @@
   "confidence": "Confirmed",
   "mono": "JL",
   "exited": false,
-  "score": 11
+  "score": 11,
+  "hqCity": "Coventry",
+  "hqState": "",
+  "hqCountry": "UK",
+  "region": "Europe",
+  "foundedYear": 1922
  },
  {
   "id": "c223",
@@ -6671,7 +7786,12 @@
   "confidence": "Reported",
   "mono": "JE",
   "exited": false,
-  "score": 11
+  "score": 11,
+  "hqCity": "Ningbo",
+  "hqState": "",
+  "hqCountry": "China",
+  "region": "Greater China",
+  "foundedYear": 2004
  },
  {
   "id": "c224",
@@ -6700,7 +7820,12 @@
   "mono": "KI",
   "exited": false,
   "score": 9,
-  "spokenTo": true
+  "spokenTo": true,
+  "hqCity": "Seoul",
+  "hqState": "",
+  "hqCountry": "South Korea",
+  "region": "Asia-Pacific",
+  "foundedYear": 1944
  },
  {
   "id": "c225",
@@ -6729,7 +7854,12 @@
   "confidence": "Historical",
   "mono": "LO",
   "exited": true,
-  "score": 3
+  "score": 3,
+  "hqCity": "USA",
+  "hqState": "AZ",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 2007
  },
  {
   "id": "c226",
@@ -6758,7 +7888,12 @@
   "confidence": "Confirmed",
   "mono": "LU",
   "exited": false,
-  "score": 11
+  "score": 11,
+  "hqCity": "USA",
+  "hqState": "CA",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 2007
  },
  {
   "id": "c227",
@@ -6787,7 +7922,12 @@
   "confidence": "Confirmed",
   "mono": "LU",
   "exited": false,
-  "score": 8
+  "score": 8,
+  "hqCity": "USA",
+  "hqState": "CA",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 2007
  },
  {
   "id": "c228",
@@ -6817,7 +7957,12 @@
   "confidence": "Confirmed",
   "mono": "MA",
   "exited": false,
-  "score": 14
+  "score": 14,
+  "hqCity": "Aurora",
+  "hqState": "ON",
+  "hqCountry": "Canada",
+  "region": "North America",
+  "foundedYear": 1957
  },
  {
   "id": "c229",
@@ -6845,7 +7990,12 @@
   "confidence": "Confirmed",
   "mono": "MS",
   "exited": false,
-  "score": 4
+  "score": 4,
+  "hqCity": "Graz",
+  "hqState": "",
+  "hqCountry": "Austria",
+  "region": "Europe",
+  "foundedYear": 2001
  },
  {
   "id": "c230",
@@ -6875,7 +8025,12 @@
   "confidence": "Confirmed",
   "mono": "MB",
   "exited": false,
-  "score": 11
+  "score": 11,
+  "hqCity": "Stuttgart",
+  "hqState": "",
+  "hqCountry": "Germany",
+  "region": "Europe",
+  "foundedYear": 1926
  },
  {
   "id": "c231",
@@ -6908,7 +8063,12 @@
   "confidence": "Confirmed",
   "mono": "MO",
   "exited": false,
-  "score": 14
+  "score": 14,
+  "hqCity": "Jerusalem",
+  "hqState": "",
+  "hqCountry": "Israel",
+  "region": "Middle East & Africa",
+  "foundedYear": 1999
  },
  {
   "id": "c232",
@@ -6937,7 +8097,12 @@
   "confidence": "Historical",
   "mono": "NG",
   "exited": true,
-  "score": 4
+  "score": 4,
+  "hqCity": "Villeurbanne",
+  "hqState": "",
+  "hqCountry": "France",
+  "region": "Europe",
+  "foundedYear": 2014
  },
  {
   "id": "c233",
@@ -6969,7 +8134,12 @@
   "confidence": "Confirmed",
   "mono": "NE",
   "exited": false,
-  "score": 10
+  "score": 10,
+  "hqCity": "Beijing",
+  "hqState": "",
+  "hqCountry": "China",
+  "region": "Greater China",
+  "foundedYear": 2018
  },
  {
   "id": "c234",
@@ -6997,7 +8167,12 @@
   "confidence": "Confirmed",
   "mono": "NI",
   "exited": false,
-  "score": 6
+  "score": 6,
+  "hqCity": "Yokohama",
+  "hqState": "",
+  "hqCountry": "Japan",
+  "region": "Asia-Pacific",
+  "foundedYear": 1933
  },
  {
   "id": "c235",
@@ -7029,7 +8204,12 @@
   "confidence": "Confirmed",
   "mono": "NU",
   "exited": false,
-  "score": 12
+  "score": 12,
+  "hqCity": "USA",
+  "hqState": "CA",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 2016
  },
  {
   "id": "c236",
@@ -7059,7 +8239,12 @@
   "mono": "PA",
   "exited": false,
   "score": 9,
-  "segment": "freight"
+  "segment": "freight",
+  "hqCity": "Bellevue",
+  "hqState": "WA",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 1905
  },
  {
   "id": "c237",
@@ -7089,7 +8274,12 @@
   "confidence": "Confirmed",
   "mono": "PM",
   "exited": false,
-  "score": 8
+  "score": 8,
+  "hqCity": "Guiyang",
+  "hqState": "",
+  "hqCountry": "China",
+  "region": "Greater China",
+  "foundedYear": 2014
  },
  {
   "id": "c238",
@@ -7118,7 +8308,12 @@
   "confidence": "Reported",
   "mono": "RA",
   "exited": false,
-  "score": 9
+  "score": 9,
+  "hqCity": "",
+  "hqState": "",
+  "hqCountry": "Israel",
+  "region": "Middle East & Africa",
+  "foundedYear": 2011
  },
  {
   "id": "c239",
@@ -7147,7 +8342,12 @@
   "confidence": "Reported",
   "mono": "RO",
   "exited": false,
-  "score": 5
+  "score": 5,
+  "hqCity": "",
+  "hqState": "",
+  "hqCountry": "UK",
+  "region": "Europe",
+  "foundedYear": null
  },
  {
   "id": "c240",
@@ -7176,7 +8376,12 @@
   "confidence": "Reported",
   "mono": "RE",
   "exited": false,
-  "score": 6
+  "score": 6,
+  "hqCity": "Boulogne-Billancourt",
+  "hqState": "",
+  "hqCountry": "France",
+  "region": "Europe",
+  "foundedYear": 1899
  },
  {
   "id": "c241",
@@ -7206,7 +8411,12 @@
   "mono": "RI",
   "exited": false,
   "score": 5,
-  "spokenTo": true
+  "spokenTo": true,
+  "hqCity": "USA",
+  "hqState": "CA",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 2009
  },
  {
   "id": "c242",
@@ -7236,7 +8446,12 @@
   "confidence": "Reported",
   "mono": "RI",
   "exited": false,
-  "score": 7
+  "score": 7,
+  "hqCity": "USA",
+  "hqState": "MI",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 1976
  },
  {
   "id": "c243",
@@ -7266,7 +8481,12 @@
   "confidence": "Confirmed",
   "mono": "SA",
   "exited": false,
-  "score": 12
+  "score": 12,
+  "hqCity": "Shanghai",
+  "hqState": "",
+  "hqCountry": "China",
+  "region": "Greater China",
+  "foundedYear": 1955
  },
  {
   "id": "c244",
@@ -7296,7 +8516,12 @@
   "confidence": "Reported",
   "mono": "SH",
   "exited": false,
-  "score": 8
+  "score": 8,
+  "hqCity": "Changsha",
+  "hqState": "",
+  "hqCountry": "China",
+  "region": "Greater China",
+  "foundedYear": 1989
  },
  {
   "id": "c245",
@@ -7324,7 +8549,12 @@
   "confidence": "Confirmed",
   "mono": "ST",
   "exited": false,
-  "score": 6
+  "score": 6,
+  "hqCity": "Amsterdam",
+  "hqState": "",
+  "hqCountry": "Netherlands",
+  "region": "Europe",
+  "foundedYear": 2021
  },
  {
   "id": "c246",
@@ -7357,7 +8587,12 @@
   "mono": "TE",
   "exited": false,
   "score": 13,
-  "l4credible": true
+  "l4credible": true,
+  "hqCity": "USA",
+  "hqState": "TX",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 2003
  },
  {
   "id": "c247",
@@ -7390,7 +8625,12 @@
   "confidence": "Confirmed",
   "mono": "TO",
   "exited": false,
-  "score": 12
+  "score": 12,
+  "hqCity": "Toyota City",
+  "hqState": "",
+  "hqCountry": "Japan",
+  "region": "Asia-Pacific",
+  "foundedYear": 1937
  },
  {
   "id": "c248",
@@ -7420,7 +8660,12 @@
   "confidence": "Reported",
   "mono": "UD",
   "exited": true,
-  "score": 4
+  "score": 4,
+  "hqCity": "USA",
+  "hqState": "CA",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 2017
  },
  {
   "id": "c249",
@@ -7452,7 +8697,12 @@
   "confidence": "Confirmed",
   "mono": "VA",
   "exited": false,
-  "score": 14
+  "score": 14,
+  "hqCity": "Paris",
+  "hqState": "",
+  "hqCountry": "France",
+  "region": "Europe",
+  "foundedYear": 1923
  },
  {
   "id": "c250",
@@ -7480,7 +8730,12 @@
   "confidence": "Confirmed",
   "mono": "EL",
   "exited": false,
-  "score": 4
+  "score": 4,
+  "hqCity": "Erlangen",
+  "hqState": "",
+  "hqCountry": "Germany",
+  "region": "Europe",
+  "foundedYear": 1988
  },
  {
   "id": "c251",
@@ -7508,7 +8763,12 @@
   "confidence": "Confirmed",
   "mono": "SO",
   "exited": false,
-  "score": 5
+  "score": 5,
+  "hqCity": "Sunnyvale",
+  "hqState": "CA",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 2018
  },
  {
   "id": "c252",
@@ -7536,7 +8796,12 @@
   "confidence": "Confirmed",
   "mono": "TI",
   "exited": false,
-  "score": 5
+  "score": 5,
+  "hqCity": "Tokyo",
+  "hqState": "",
+  "hqCountry": "Japan",
+  "region": "Asia-Pacific",
+  "foundedYear": 2015
  },
  {
   "id": "c253",
@@ -7566,7 +8831,12 @@
   "confidence": "Confirmed",
   "mono": "VO",
   "exited": false,
-  "score": 10
+  "score": 10,
+  "hqCity": "Wolfsburg",
+  "hqState": "",
+  "hqCountry": "Germany",
+  "region": "Europe",
+  "foundedYear": 1937
  },
  {
   "id": "c254",
@@ -7595,7 +8865,12 @@
   "confidence": "Confirmed",
   "mono": "VA",
   "exited": false,
-  "score": 9
+  "score": 9,
+  "hqCity": "Gothenburg",
+  "hqState": "",
+  "hqCountry": "Sweden",
+  "region": "Europe",
+  "foundedYear": 2020
  },
  {
   "id": "c255",
@@ -7623,7 +8898,12 @@
   "confidence": "Confirmed",
   "mono": "VC",
   "exited": false,
-  "score": 5
+  "score": 5,
+  "hqCity": "Gothenburg",
+  "hqState": "",
+  "hqCountry": "Sweden",
+  "region": "Europe",
+  "foundedYear": 1927
  },
  {
   "id": "c256",
@@ -7651,7 +8931,12 @@
   "confidence": "Confirmed",
   "mono": "VO",
   "exited": false,
-  "score": 7
+  "score": 7,
+  "hqCity": "Gothenburg",
+  "hqState": "",
+  "hqCountry": "Sweden",
+  "region": "Europe",
+  "foundedYear": 1927
  },
  {
   "id": "c257",
@@ -7682,7 +8967,12 @@
   "mono": "VT",
   "exited": false,
   "score": 10,
-  "segment": "freight"
+  "segment": "freight",
+  "hqCity": "Gothenburg",
+  "hqState": "",
+  "hqCountry": "Sweden",
+  "region": "Europe",
+  "foundedYear": 1928
  },
  {
   "id": "c258",
@@ -7711,7 +9001,12 @@
   "confidence": "Reported",
   "mono": "YB",
   "exited": false,
-  "score": 8
+  "score": 8,
+  "hqCity": "Zhengzhou",
+  "hqState": "",
+  "hqCountry": "China",
+  "region": "Greater China",
+  "foundedYear": 1963
  },
  {
   "id": "c259",
@@ -7742,7 +9037,12 @@
   "confidence": "Confirmed",
   "mono": "ZE",
   "exited": false,
-  "score": 11
+  "score": 11,
+  "hqCity": "Ningbo",
+  "hqState": "",
+  "hqCountry": "China",
+  "region": "Greater China",
+  "foundedYear": 2021
  },
  {
   "id": "c260",
@@ -7772,7 +9072,12 @@
   "confidence": "Confirmed",
   "mono": "ZF",
   "exited": false,
-  "score": 13
+  "score": 13,
+  "hqCity": "Friedrichshafen",
+  "hqState": "",
+  "hqCountry": "Germany",
+  "region": "Europe",
+  "foundedYear": 1915
  },
  {
   "id": "c261",
@@ -7807,7 +9112,12 @@
   "exited": false,
   "score": 11,
   "spokenTo": true,
-  "l4credible": true
+  "l4credible": true,
+  "hqCity": "USA",
+  "hqState": "CA",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 2014
  },
  {
   "id": "c262",
@@ -7836,7 +9146,12 @@
   "confidence": "Confirmed",
   "mono": "AG",
   "exited": false,
-  "score": 12
+  "score": 12,
+  "hqCity": "Beijing",
+  "hqState": "",
+  "hqCountry": "China",
+  "region": "Greater China",
+  "foundedYear": null
  },
  {
   "id": "c263",
@@ -7866,7 +9181,12 @@
   "mono": "AH",
   "exited": false,
   "score": 10,
-  "segment": "freight"
+  "segment": "freight",
+  "hqCity": "Pittsburgh",
+  "hqState": "PA",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": null
  },
  {
   "id": "c264",
@@ -7895,7 +9215,12 @@
   "confidence": "Reported",
   "mono": "AR",
   "exited": false,
-  "score": 7
+  "score": 7,
+  "hqCity": "Shenzhen",
+  "hqState": "",
+  "hqCountry": "China",
+  "region": "Greater China",
+  "foundedYear": null
  },
  {
   "id": "c265",
@@ -7924,7 +9249,12 @@
   "confidence": "Reported",
   "mono": "AR",
   "exited": false,
-  "score": 7
+  "score": 7,
+  "hqCity": "Austin",
+  "hqState": "TX",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": null
  },
  {
   "id": "c266",
@@ -7955,7 +9285,12 @@
   "confidence": "Confirmed",
   "mono": "BE",
   "exited": false,
-  "score": 11
+  "score": 11,
+  "hqCity": "Orlando",
+  "hqState": "FL",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 2018
  },
  {
   "id": "c267",
@@ -7983,7 +9318,12 @@
   "confidence": "Confirmed",
   "mono": "BO",
   "exited": false,
-  "score": 12
+  "score": 12,
+  "hqCity": "Tallinn",
+  "hqState": "",
+  "hqCountry": "Estonia",
+  "region": "Europe",
+  "foundedYear": null
  },
  {
   "id": "c268",
@@ -8012,7 +9352,12 @@
   "confidence": "Confirmed",
   "mono": "CM",
   "exited": false,
-  "score": 11
+  "score": 11,
+  "hqCity": "Hangzhou",
+  "hqState": "",
+  "hqCountry": "China",
+  "region": "Greater China",
+  "foundedYear": null
  },
  {
   "id": "c269",
@@ -8041,7 +9386,12 @@
   "confidence": "Confirmed",
   "mono": "CA",
   "exited": false,
-  "score": 12
+  "score": 12,
+  "hqCity": "Dubai",
+  "hqState": "",
+  "hqCountry": "UAE",
+  "region": "Middle East & Africa",
+  "foundedYear": null
  },
  {
   "id": "c270",
@@ -8072,7 +9422,12 @@
   "mono": "CA",
   "exited": false,
   "score": 11,
-  "segment": "delivery"
+  "segment": "delivery",
+  "hqCity": "Oakland",
+  "hqState": "CA",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 2019
  },
  {
   "id": "c271",
@@ -8103,7 +9458,12 @@
   "mono": "CR",
   "exited": false,
   "score": 11,
-  "segment": "delivery"
+  "segment": "delivery",
+  "hqCity": "Los Angeles",
+  "hqState": "CA",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 2020
  },
  {
   "id": "c272",
@@ -8132,7 +9492,12 @@
   "confidence": "Confirmed",
   "mono": "CZ",
   "exited": false,
-  "score": 12
+  "score": 12,
+  "hqCity": "Singapore",
+  "hqState": "",
+  "hqCountry": "Singapore",
+  "region": "Asia-Pacific",
+  "foundedYear": null
  },
  {
   "id": "c273",
@@ -8161,7 +9526,12 @@
   "confidence": "Confirmed",
   "mono": "CU",
   "exited": false,
-  "score": 11
+  "score": 11,
+  "hqCity": "New York",
+  "hqState": "NY",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": null
  },
  {
   "id": "c274",
@@ -8192,7 +9562,12 @@
   "mono": "DI",
   "exited": false,
   "score": 13,
-  "l4credible": true
+  "l4credible": true,
+  "hqCity": "Beijing",
+  "hqState": "",
+  "hqCountry": "China",
+  "region": "Greater China",
+  "foundedYear": 2012
  },
  {
   "id": "c275",
@@ -8222,7 +9597,12 @@
   "mono": "DO",
   "exited": false,
   "score": 12,
-  "segment": "delivery"
+  "segment": "delivery",
+  "hqCity": "San Francisco",
+  "hqState": "CA",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": null
  },
  {
   "id": "c276",
@@ -8252,7 +9632,12 @@
   "mono": "DD",
   "exited": false,
   "score": 8,
-  "segment": "delivery"
+  "segment": "delivery",
+  "hqCity": "San Francisco",
+  "hqState": "CA",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": null
  },
  {
   "id": "c277",
@@ -8280,7 +9665,12 @@
   "confidence": "Confirmed",
   "mono": "FL",
   "exited": false,
-  "score": 12
+  "score": 12,
+  "hqCity": "San Francisco",
+  "hqState": "CA",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": null
  },
  {
   "id": "c278",
@@ -8309,7 +9699,12 @@
   "confidence": "Confirmed",
   "mono": "FN",
   "exited": false,
-  "score": 12
+  "score": 12,
+  "hqCity": "Hamburg",
+  "hqState": "",
+  "hqCountry": "Germany",
+  "region": "Europe",
+  "foundedYear": null
  },
  {
   "id": "c279",
@@ -8339,7 +9734,12 @@
   "mono": "GC",
   "exited": false,
   "score": 10,
-  "segment": "freight"
+  "segment": "freight",
+  "hqCity": "Mountain View",
+  "hqState": "CA",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": null
  },
  {
   "id": "c280",
@@ -8372,7 +9772,12 @@
   "confidence": "Confirmed",
   "mono": "GE",
   "exited": false,
-  "score": 13
+  "score": 13,
+  "hqCity": "Oakville",
+  "hqState": "",
+  "hqCountry": "Canada",
+  "region": "North America",
+  "foundedYear": 2000
  },
  {
   "id": "c281",
@@ -8401,7 +9806,12 @@
   "confidence": "Reported",
   "mono": "GI",
   "exited": false,
-  "score": 9
+  "score": 9,
+  "hqCity": "Tokyo",
+  "hqState": "",
+  "hqCountry": "Japan",
+  "region": "Asia-Pacific",
+  "foundedYear": null
  },
  {
   "id": "c282",
@@ -8431,7 +9841,12 @@
   "confidence": "Confirmed",
   "mono": "GR",
   "exited": false,
-  "score": 13
+  "score": 13,
+  "hqCity": "Singapore",
+  "hqState": "",
+  "hqCountry": "Singapore",
+  "region": "Asia-Pacific",
+  "foundedYear": 2012
  },
  {
   "id": "c283",
@@ -8460,7 +9875,12 @@
   "confidence": "Confirmed",
   "mono": "HM",
   "exited": false,
-  "score": 12
+  "score": 12,
+  "hqCity": "Amsterdam",
+  "hqState": "",
+  "hqCountry": "Netherlands",
+  "region": "Europe",
+  "foundedYear": null
  },
  {
   "id": "c284",
@@ -8490,7 +9910,12 @@
   "mono": "IN",
   "exited": false,
   "score": 12,
-  "segment": "delivery"
+  "segment": "delivery",
+  "hqCity": "San Francisco",
+  "hqState": "CA",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": null
  },
  {
   "id": "c285",
@@ -8519,7 +9944,12 @@
   "confidence": "Confirmed",
   "mono": "KT",
   "exited": false,
-  "score": 11
+  "score": 11,
+  "hqCity": "Seongnam",
+  "hqState": "",
+  "hqCountry": "South Korea",
+  "region": "Asia-Pacific",
+  "foundedYear": null
  },
  {
   "id": "c286",
@@ -8548,7 +9978,12 @@
   "confidence": "Confirmed",
   "mono": "KC",
   "exited": false,
-  "score": 10
+  "score": 10,
+  "hqCity": "Mountain View",
+  "hqState": "CA",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": null
  },
  {
   "id": "c287",
@@ -8578,7 +10013,12 @@
   "mono": "LY",
   "exited": false,
   "score": 13,
-  "spokenTo": true
+  "spokenTo": true,
+  "hqCity": "San Francisco",
+  "hqState": "CA",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 2012
  },
  {
   "id": "c288",
@@ -8607,7 +10047,12 @@
   "confidence": "Confirmed",
   "mono": "MM",
   "exited": false,
-  "score": 10
+  "score": 10,
+  "hqCity": "Ann Arbor",
+  "hqState": "MI",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": null
  },
  {
   "id": "c289",
@@ -8636,7 +10081,12 @@
   "mono": "MC",
   "exited": false,
   "score": 7,
-  "segment": "freight"
+  "segment": "freight",
+  "hqCity": "Temple",
+  "hqState": "TX",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 1894
  },
  {
   "id": "c290",
@@ -8666,7 +10116,12 @@
   "confidence": "Confirmed",
   "mono": "MD",
   "exited": false,
-  "score": 8
+  "score": 8,
+  "hqCity": "Jerusalem",
+  "hqState": "",
+  "hqCountry": "Israel",
+  "region": "Middle East & Africa",
+  "foundedYear": null
  },
  {
   "id": "c291",
@@ -8696,7 +10151,12 @@
   "confidence": "Confirmed",
   "mono": "MO",
   "exited": false,
-  "score": 11
+  "score": 11,
+  "hqCity": "Ness Ziona",
+  "hqState": "",
+  "hqCountry": "Israel",
+  "region": "Middle East & Africa",
+  "foundedYear": null
  },
  {
   "id": "c292",
@@ -8726,7 +10186,12 @@
   "confidence": "Confirmed",
   "mono": "NE",
   "exited": false,
-  "score": 12
+  "score": 12,
+  "hqCity": "New York",
+  "hqState": "NY",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": null
  },
  {
   "id": "c293",
@@ -8756,7 +10221,12 @@
   "mono": "ND",
   "exited": true,
   "score": 7,
-  "segment": "delivery"
+  "segment": "delivery",
+  "hqCity": "Mountain View",
+  "hqState": "CA",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": null
  },
  {
   "id": "c294",
@@ -8786,7 +10256,12 @@
   "confidence": "Confirmed",
   "mono": "ND",
   "exited": false,
-  "score": 10
+  "score": 10,
+  "hqCity": "Mountain View",
+  "hqState": "CA",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": null
  },
  {
   "id": "c295",
@@ -8816,7 +10291,12 @@
   "confidence": "Confirmed",
   "mono": "ND",
   "exited": false,
-  "score": 12
+  "score": 12,
+  "hqCity": "Santa Clara",
+  "hqState": "CA",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": null
  },
  {
   "id": "c296",
@@ -8844,7 +10324,12 @@
   "confidence": "Confirmed",
   "mono": "OB",
   "exited": false,
-  "score": 10
+  "score": 10,
+  "hqCity": "Los Angeles",
+  "hqState": "CA",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 2014
  },
  {
   "id": "c297",
@@ -8874,7 +10359,12 @@
   "mono": "PP",
   "exited": false,
   "score": 9,
-  "spokenTo": true
+  "spokenTo": true,
+  "hqCity": "Guangzhou",
+  "hqState": "",
+  "hqCountry": "China",
+  "region": "Greater China",
+  "foundedYear": null
  },
  {
   "id": "c298",
@@ -8904,7 +10394,12 @@
   "confidence": "Confirmed",
   "mono": "RI",
   "exited": false,
-  "score": 10
+  "score": 10,
+  "hqCity": "San Francisco",
+  "hqState": "CA",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 2009
  },
  {
   "id": "c299",
@@ -8932,7 +10427,12 @@
   "confidence": "Reported",
   "mono": "RM",
   "exited": false,
-  "score": 6
+  "score": 6,
+  "hqCity": "Guangzhou",
+  "hqState": "",
+  "hqCountry": "China",
+  "region": "Greater China",
+  "foundedYear": null
  },
  {
   "id": "c300",
@@ -8964,7 +10464,12 @@
   "confidence": "Confirmed",
   "mono": "SA",
   "exited": false,
-  "score": 13
+  "score": 13,
+  "hqCity": "San Francisco",
+  "hqState": "CA",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 2015
  },
  {
   "id": "c301",
@@ -8992,7 +10497,12 @@
   "confidence": "Confirmed",
   "mono": "TG",
   "exited": false,
-  "score": 10
+  "score": 10,
+  "hqCity": "Nanjing",
+  "hqState": "",
+  "hqCountry": "China",
+  "region": "Greater China",
+  "foundedYear": null
  },
  {
   "id": "c302",
@@ -9021,7 +10531,12 @@
   "confidence": "Confirmed",
   "mono": "TM",
   "exited": false,
-  "score": 9
+  "score": 9,
+  "hqCity": "Haifa",
+  "hqState": "",
+  "hqCountry": "Israel",
+  "region": "Middle East & Africa",
+  "foundedYear": null
  },
  {
   "id": "c303",
@@ -9051,7 +10566,12 @@
   "confidence": "Confirmed",
   "mono": "TR",
   "exited": false,
-  "score": 10
+  "score": 10,
+  "hqCity": "Austin",
+  "hqState": "TX",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": null
  },
  {
   "id": "c304",
@@ -9080,7 +10600,12 @@
   "confidence": "Confirmed",
   "mono": "TO",
   "exited": false,
-  "score": 12
+  "score": 12,
+  "hqCity": "Amsterdam",
+  "hqState": "",
+  "hqCountry": "Netherlands",
+  "region": "Europe",
+  "foundedYear": null
  },
  {
   "id": "c305",
@@ -9112,7 +10637,12 @@
   "exited": false,
   "score": 13,
   "spokenTo": true,
-  "l4credible": true
+  "l4credible": true,
+  "hqCity": "San Francisco",
+  "hqState": "CA",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 2009
  },
  {
   "id": "c306",
@@ -9142,7 +10672,12 @@
   "mono": "UE",
   "exited": false,
   "score": 12,
-  "segment": "delivery"
+  "segment": "delivery",
+  "hqCity": "San Francisco",
+  "hqState": "CA",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": null
  },
  {
   "id": "c307",
@@ -9170,7 +10705,13 @@
   "confidence": "Confirmed",
   "mono": "UF",
   "exited": false,
-  "score": 11
+  "score": 11,
+  "segment": "freight",
+  "hqCity": "Chicago",
+  "hqState": "IL",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 2017
  },
  {
   "id": "c308",
@@ -9200,7 +10741,12 @@
   "confidence": "Confirmed",
   "mono": "WD",
   "exited": false,
-  "score": 8
+  "score": 8,
+  "hqCity": "Toronto",
+  "hqState": "ON",
+  "hqCountry": "Canada",
+  "region": "North America",
+  "foundedYear": null
  },
  {
   "id": "c309",
@@ -9229,7 +10775,12 @@
   "confidence": "Confirmed",
   "mono": "WO",
   "exited": false,
-  "score": 12
+  "score": 12,
+  "hqCity": "Mountain View",
+  "hqState": "CA",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": null
  },
  {
   "id": "c310",
@@ -9258,7 +10809,12 @@
   "confidence": "Confirmed",
   "mono": "WA",
   "exited": false,
-  "score": 8
+  "score": 8,
+  "hqCity": "London",
+  "hqState": "",
+  "hqCountry": "UK",
+  "region": "Europe",
+  "foundedYear": null
  },
  {
   "id": "c311",
@@ -9287,7 +10843,12 @@
   "confidence": "Confirmed",
   "mono": "WG",
   "exited": false,
-  "score": 10
+  "score": 10,
+  "hqCity": "Guangzhou",
+  "hqState": "",
+  "hqCountry": "China",
+  "region": "Greater China",
+  "foundedYear": null
  },
  {
   "id": "c312",
@@ -9316,7 +10877,12 @@
   "mono": "WE",
   "exited": false,
   "score": 6,
-  "segment": "freight"
+  "segment": "freight",
+  "hqCity": "Omaha",
+  "hqState": "NE",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 1956
  },
  {
   "id": "c313",
@@ -9345,7 +10911,12 @@
   "confidence": "Confirmed",
   "mono": "AM",
   "exited": false,
-  "score": 13
+  "score": 13,
+  "hqCity": "USA",
+  "hqState": "NY",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 2019
  },
  {
   "id": "c314",
@@ -9374,7 +10945,12 @@
   "confidence": "Confirmed",
   "mono": "AN",
   "exited": false,
-  "score": 13
+  "score": 13,
+  "hqCity": "Vienna",
+  "hqState": "",
+  "hqCountry": "Austria",
+  "region": "Europe",
+  "foundedYear": 2013
  },
  {
   "id": "c315",
@@ -9403,7 +10979,12 @@
   "confidence": "Confirmed",
   "mono": "AU",
   "exited": false,
-  "score": 13
+  "score": 13,
+  "hqCity": "Tel Aviv",
+  "hqState": "",
+  "hqCountry": "Israel",
+  "region": "Middle East & Africa",
+  "foundedYear": 2018
  },
  {
   "id": "c316",
@@ -9431,7 +11012,12 @@
   "confidence": "Reported",
   "mono": "AU",
   "exited": false,
-  "score": 2
+  "score": 2,
+  "hqCity": "Palo Alto",
+  "hqState": "CA",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 2023
  },
  {
   "id": "c317",
@@ -9461,7 +11047,12 @@
   "confidence": "Confirmed",
   "mono": "AU",
   "exited": false,
-  "score": 10
+  "score": 10,
+  "hqCity": "Los Angeles",
+  "hqState": "CA",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 2017
  },
  {
   "id": "c318",
@@ -9490,7 +11081,12 @@
   "confidence": "Historical",
   "mono": "AB",
   "exited": true,
-  "score": 6
+  "score": 6,
+  "hqCity": "USA",
+  "hqState": "NJ",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 1946
  },
  {
   "id": "c319",
@@ -9518,7 +11114,12 @@
   "confidence": "Confirmed",
   "mono": "AV",
   "exited": false,
-  "score": 5
+  "score": 5,
+  "hqCity": "Madrid",
+  "hqState": "",
+  "hqCountry": "Spain",
+  "region": "Europe",
+  "foundedYear": 2025
  },
  {
   "id": "c320",
@@ -9547,7 +11148,12 @@
   "confidence": "Confirmed",
   "mono": "BP",
   "exited": false,
-  "score": 13
+  "score": 13,
+  "hqCity": "London",
+  "hqState": "",
+  "hqCountry": "UK",
+  "region": "Europe",
+  "foundedYear": 2008
  },
  {
   "id": "c321",
@@ -9576,7 +11182,12 @@
   "confidence": "Confirmed",
   "mono": "CH",
   "exited": false,
-  "score": 13
+  "score": 13,
+  "hqCity": "USA",
+  "hqState": "CA",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 2007
  },
  {
   "id": "c322",
@@ -9605,7 +11216,12 @@
   "confidence": "Historical",
   "mono": "CO",
   "exited": true,
-  "score": 5
+  "score": 5,
+  "hqCity": "USA",
+  "hqState": "NY",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 2016
  },
  {
   "id": "c323",
@@ -9634,7 +11250,12 @@
   "confidence": "Confirmed",
   "mono": "CA",
   "exited": false,
-  "score": 13
+  "score": 13,
+  "hqCity": "Atlanta",
+  "hqState": "GA",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 2014
  },
  {
   "id": "c324",
@@ -9663,7 +11284,12 @@
   "confidence": "Confirmed",
   "mono": "EL",
   "exited": false,
-  "score": 12
+  "score": 12,
+  "hqCity": "Paris",
+  "hqState": "",
+  "hqCountry": "France",
+  "region": "Europe",
+  "foundedYear": 2021
  },
  {
   "id": "c325",
@@ -9692,7 +11318,12 @@
   "confidence": "Confirmed",
   "mono": "EA",
   "exited": false,
-  "score": 13
+  "score": 13,
+  "hqCity": "USA",
+  "hqState": "VA",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 2016
  },
  {
   "id": "c326",
@@ -9721,7 +11352,12 @@
   "confidence": "Confirmed",
   "mono": "EF",
   "exited": false,
-  "score": 13
+  "score": 13,
+  "hqCity": "Toronto",
+  "hqState": "ON",
+  "hqCountry": "Canada",
+  "region": "North America",
+  "foundedYear": 1946
  },
  {
   "id": "c327",
@@ -9750,7 +11386,12 @@
   "confidence": "Confirmed",
   "mono": "EF",
   "exited": false,
-  "score": 13
+  "score": 13,
+  "hqCity": "St. Louis",
+  "hqState": "MO",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 1957
  },
  {
   "id": "c328",
@@ -9779,7 +11420,12 @@
   "confidence": "Reported",
   "mono": "EC",
   "exited": true,
-  "score": 5
+  "score": 5,
+  "hqCity": "London",
+  "hqState": "",
+  "hqCountry": "UK",
+  "region": "Europe",
+  "foundedYear": 2014
  },
  {
   "id": "c329",
@@ -9808,7 +11454,12 @@
   "confidence": "Confirmed",
   "mono": "EV",
   "exited": false,
-  "score": 13
+  "score": 13,
+  "hqCity": "Los Angeles",
+  "hqState": "CA",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 2010
  },
  {
   "id": "c330",
@@ -9837,7 +11488,12 @@
   "confidence": "Confirmed",
   "mono": "FL",
   "exited": false,
-  "score": 13
+  "score": 13,
+  "hqCity": "USA",
+  "hqState": "AL",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 2012
  },
  {
   "id": "c331",
@@ -9865,7 +11521,12 @@
   "confidence": "Confirmed",
   "mono": "FL",
   "exited": false,
-  "score": 5
+  "score": 5,
+  "hqCity": "Atlanta",
+  "hqState": "GA",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 2014
  },
  {
   "id": "c332",
@@ -9894,7 +11555,12 @@
   "confidence": "Confirmed",
   "mono": "FL",
   "exited": false,
-  "score": 11
+  "score": 11,
+  "hqCity": "",
+  "hqState": "",
+  "hqCountry": "France",
+  "region": "Europe",
+  "foundedYear": 2003
  },
  {
   "id": "c333",
@@ -9924,7 +11590,12 @@
   "mono": "FM",
   "exited": false,
   "score": 10,
-  "segment": "freight"
+  "segment": "freight",
+  "hqCity": "USA",
+  "hqState": "CA",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 2021
  },
  {
   "id": "c334",
@@ -9953,7 +11624,12 @@
   "confidence": "Confirmed",
   "mono": "GR",
   "exited": false,
-  "score": 8
+  "score": 8,
+  "hqCity": "",
+  "hqState": "",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 2023
  },
  {
   "id": "c335",
@@ -9982,7 +11658,12 @@
   "confidence": "Confirmed",
   "mono": "HE",
   "exited": false,
-  "score": 11
+  "score": 11,
+  "hqCity": "",
+  "hqState": "",
+  "hqCountry": "Netherlands",
+  "region": "Europe",
+  "foundedYear": 2009
  },
  {
   "id": "c336",
@@ -10011,7 +11692,12 @@
   "confidence": "Confirmed",
   "mono": "HE",
   "exited": false,
-  "score": 13
+  "score": 13,
+  "hqCity": "USA",
+  "hqState": "FL",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 1918
  },
  {
   "id": "c337",
@@ -10040,7 +11726,12 @@
   "confidence": "Reported",
   "mono": "HU",
   "exited": false,
-  "score": 6
+  "score": 6,
+  "hqCity": "",
+  "hqState": "",
+  "hqCountry": "UK",
+  "region": "Europe",
+  "foundedYear": null
  },
  {
   "id": "c338",
@@ -10069,7 +11760,12 @@
   "confidence": "Confirmed",
   "mono": "IN",
   "exited": false,
-  "score": 10
+  "score": 10,
+  "hqCity": "USA",
+  "hqState": "PA",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 2009
  },
  {
   "id": "c339",
@@ -10098,7 +11794,12 @@
   "confidence": "Confirmed",
   "mono": "IO",
   "exited": false,
-  "score": 13
+  "score": 13,
+  "hqCity": "Munich",
+  "hqState": "",
+  "hqCountry": "Germany",
+  "region": "Europe",
+  "foundedYear": 2017
  },
  {
   "id": "c340",
@@ -10127,7 +11828,12 @@
   "confidence": "Confirmed",
   "mono": "KE",
   "exited": false,
-  "score": 13
+  "score": 13,
+  "hqCity": "Lahti",
+  "hqState": "",
+  "hqCountry": "Finland",
+  "region": "Europe",
+  "foundedYear": 2017
  },
  {
   "id": "c341",
@@ -10156,7 +11862,12 @@
   "confidence": "Confirmed",
   "mono": "KE",
   "exited": false,
-  "score": 13
+  "score": 13,
+  "hqCity": "Paris",
+  "hqState": "",
+  "hqCountry": "France",
+  "region": "Europe",
+  "foundedYear": 2001
  },
  {
   "id": "c342",
@@ -10185,7 +11896,12 @@
   "confidence": "Historical",
   "mono": "LA",
   "exited": true,
-  "score": 5
+  "score": 5,
+  "hqCity": "Palo Alto",
+  "hqState": "CA",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 2018
  },
  {
   "id": "c343",
@@ -10214,7 +11930,12 @@
   "confidence": "Confirmed",
   "mono": "LF",
   "exited": false,
-  "score": 11
+  "score": 11,
+  "hqCity": "Atlanta",
+  "hqState": "GA",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 2009
  },
  {
   "id": "c344",
@@ -10244,7 +11965,12 @@
   "confidence": "Confirmed",
   "mono": "MM",
   "exited": false,
-  "score": 10
+  "score": 10,
+  "hqCity": "Ann Arbor",
+  "hqState": "MI",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 2017
  },
  {
   "id": "c345",
@@ -10273,7 +11999,12 @@
   "confidence": "Confirmed",
   "mono": "MA",
   "exited": false,
-  "score": 9
+  "score": 9,
+  "hqCity": "Paris",
+  "hqState": "",
+  "hqCountry": "France",
+  "region": "Europe",
+  "foundedYear": 2019
  },
  {
   "id": "c346",
@@ -10302,7 +12033,12 @@
   "confidence": "Confirmed",
   "mono": "MO",
   "exited": false,
-  "score": 13
+  "score": 13,
+  "hqCity": "",
+  "hqState": "",
+  "hqCountry": "UAE",
+  "region": "Middle East & Africa",
+  "foundedYear": 2020
  },
  {
   "id": "c347",
@@ -10333,7 +12069,12 @@
   "mono": "MA",
   "exited": false,
   "score": 13,
-  "spokenTo": true
+  "spokenTo": true,
+  "hqCity": "",
+  "hqState": "",
+  "hqCountry": "Nigeria",
+  "region": "Middle East & Africa",
+  "foundedYear": 2020
  },
  {
   "id": "c348",
@@ -10362,7 +12103,12 @@
   "confidence": "Confirmed",
   "mono": "MO",
   "exited": false,
-  "score": 13
+  "score": 13,
+  "hqCity": "San Francisco",
+  "hqState": "CA",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 2013
  },
  {
   "id": "c349",
@@ -10391,7 +12137,12 @@
   "confidence": "Reported",
   "mono": "NA",
   "exited": false,
-  "score": 9
+  "score": 9,
+  "hqCity": "Beijing",
+  "hqState": "",
+  "hqCountry": "China",
+  "region": "Greater China",
+  "foundedYear": 2019
  },
  {
   "id": "c350",
@@ -10421,7 +12172,12 @@
   "confidence": "Confirmed",
   "mono": "OP",
   "exited": false,
-  "score": 13
+  "score": 13,
+  "hqCity": "Tel Aviv",
+  "hqState": "",
+  "hqCountry": "Israel",
+  "region": "Middle East & Africa",
+  "foundedYear": 2014
  },
  {
   "id": "c351",
@@ -10450,7 +12206,12 @@
   "confidence": "Confirmed",
   "mono": "PA",
   "exited": false,
-  "score": 11
+  "score": 11,
+  "hqCity": "Atlanta",
+  "hqState": "GA",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 2008
  },
  {
   "id": "c352",
@@ -10479,7 +12240,12 @@
   "confidence": "Confirmed",
   "mono": "PA",
   "exited": false,
-  "score": 13
+  "score": 13,
+  "hqCity": "London",
+  "hqState": "",
+  "hqCountry": "UK",
+  "region": "Europe",
+  "foundedYear": 2007
  },
  {
   "id": "c353",
@@ -10508,7 +12274,12 @@
   "confidence": "Confirmed",
   "mono": "PA",
   "exited": false,
-  "score": 12
+  "score": 12,
+  "hqCity": "USA",
+  "hqState": "NC",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 2010
  },
  {
   "id": "c354",
@@ -10537,7 +12308,12 @@
   "confidence": "Confirmed",
   "mono": "PA",
   "exited": false,
-  "score": 11
+  "score": 11,
+  "hqCity": "Vancouver",
+  "hqState": "BC",
+  "hqCountry": "Canada",
+  "region": "North America",
+  "foundedYear": 2001
  },
  {
   "id": "c355",
@@ -10566,7 +12342,12 @@
   "confidence": "Confirmed",
   "mono": "PI",
   "exited": false,
-  "score": 10
+  "score": 10,
+  "hqCity": "Toronto",
+  "hqState": "ON",
+  "hqCountry": "Canada",
+  "region": "North America",
+  "foundedYear": 2015
  },
  {
   "id": "c356",
@@ -10596,7 +12377,12 @@
   "confidence": "Confirmed",
   "mono": "PO",
   "exited": false,
-  "score": 13
+  "score": 13,
+  "hqCity": "San Francisco",
+  "hqState": "CA",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 2017
  },
  {
   "id": "c357",
@@ -10625,7 +12411,12 @@
   "confidence": "Confirmed",
   "mono": "PO",
   "exited": false,
-  "score": 13
+  "score": 13,
+  "hqCity": "USA",
+  "hqState": "CA",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 2018
  },
  {
   "id": "c358",
@@ -10654,7 +12445,12 @@
   "confidence": "Confirmed",
   "mono": "PR",
   "exited": false,
-  "score": 10
+  "score": 10,
+  "hqCity": "Memphis",
+  "hqState": "",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 2015
  },
  {
   "id": "c359",
@@ -10683,7 +12479,12 @@
   "confidence": "Confirmed",
   "mono": "RI",
   "exited": false,
-  "score": 13
+  "score": 13,
+  "hqCity": "Waterloo",
+  "hqState": "ON",
+  "hqCountry": "Canada",
+  "region": "North America",
+  "foundedYear": 2015
  },
  {
   "id": "c360",
@@ -10713,7 +12514,12 @@
   "mono": "RO",
   "exited": false,
   "score": 9,
-  "spokenTo": true
+  "spokenTo": true,
+  "hqCity": "San Francisco",
+  "hqState": "CA",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 2025
  },
  {
   "id": "c361",
@@ -10742,7 +12548,12 @@
   "confidence": "Reported",
   "mono": "RO",
   "exited": false,
-  "score": 7
+  "score": 7,
+  "hqCity": "USA",
+  "hqState": "MI",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 2018
  },
  {
   "id": "c362",
@@ -10771,7 +12582,12 @@
   "confidence": "Confirmed",
   "mono": "RO",
   "exited": false,
-  "score": 9
+  "score": 9,
+  "hqCity": "Rijswijk",
+  "hqState": "",
+  "hqCountry": "Netherlands",
+  "region": "Europe",
+  "foundedYear": 2019
  },
  {
   "id": "c363",
@@ -10800,7 +12616,12 @@
   "confidence": "Confirmed",
   "mono": "SP",
   "exited": false,
-  "score": 13
+  "score": 13,
+  "hqCity": "Vancouver",
+  "hqState": "BC",
+  "hqCountry": "Canada",
+  "region": "North America",
+  "foundedYear": 2015
  },
  {
   "id": "c364",
@@ -10829,7 +12650,12 @@
   "confidence": "Confirmed",
   "mono": "SP",
   "exited": false,
-  "score": 13
+  "score": 13,
+  "hqCity": "Chicago",
+  "hqState": "IL",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 2011
  },
  {
   "id": "c365",
@@ -10858,7 +12684,12 @@
   "confidence": "Confirmed",
   "mono": "TI",
   "exited": false,
-  "score": 10
+  "score": 10,
+  "hqCity": "San Francisco",
+  "hqState": "CA",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 2021
  },
  {
   "id": "c366",
@@ -10886,7 +12717,12 @@
   "confidence": "Confirmed",
   "mono": "TS",
   "exited": false,
-  "score": 6
+  "score": 6,
+  "hqCity": "Austin",
+  "hqState": "TX",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 2012
  },
  {
   "id": "c367",
@@ -10915,7 +12751,12 @@
   "confidence": "Confirmed",
   "mono": "TP",
   "exited": false,
-  "score": 11
+  "score": 11,
+  "hqCity": "USA",
+  "hqState": "NC",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 1998
  },
  {
   "id": "c368",
@@ -10945,7 +12786,12 @@
   "confidence": "Confirmed",
   "mono": "TR",
   "exited": false,
-  "score": 13
+  "score": 13,
+  "hqCity": "London",
+  "hqState": "",
+  "hqCountry": "UK",
+  "region": "Europe",
+  "foundedYear": 2014
  },
  {
   "id": "c369",
@@ -10974,7 +12820,12 @@
   "confidence": "Confirmed",
   "mono": "TR",
   "exited": false,
-  "score": 13
+  "score": 13,
+  "hqCity": "Issy-les-Moulineaux",
+  "hqState": "",
+  "hqCountry": "France",
+  "region": "Europe",
+  "foundedYear": 1955
  },
  {
   "id": "c370",
@@ -11004,7 +12855,12 @@
   "mono": "UA",
   "exited": false,
   "score": 13,
-  "spokenTo": true
+  "spokenTo": true,
+  "hqCity": "San Francisco",
+  "hqState": "CA",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 2009
  },
  {
   "id": "c371",
@@ -11033,7 +12889,12 @@
   "confidence": "Confirmed",
   "mono": "UV",
   "exited": false,
-  "score": 13
+  "score": 13,
+  "hqCity": "Tel Aviv",
+  "hqState": "",
+  "hqCountry": "Israel",
+  "region": "Middle East & Africa",
+  "foundedYear": 2016
  },
  {
   "id": "c372",
@@ -11064,7 +12925,12 @@
   "mono": "VI",
   "exited": false,
   "score": 13,
-  "spokenTo": true
+  "spokenTo": true,
+  "hqCity": "USA",
+  "hqState": "NY",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 2012
  },
  {
   "id": "c373",
@@ -11093,7 +12959,12 @@
   "confidence": "Confirmed",
   "mono": "VI",
   "exited": false,
-  "score": 12
+  "score": 12,
+  "hqCity": "Paris",
+  "hqState": "",
+  "hqCountry": "France",
+  "region": "Europe",
+  "foundedYear": 2019
  },
  {
   "id": "c374",
@@ -11122,7 +12993,12 @@
   "confidence": "Confirmed",
   "mono": "VO",
   "exited": false,
-  "score": 10
+  "score": 10,
+  "hqCity": "USA",
+  "hqState": "VA",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 2022
  },
  {
   "id": "c375",
@@ -11152,7 +13028,12 @@
   "mono": "WA",
   "exited": false,
   "score": 10,
-  "segment": "freight"
+  "segment": "freight",
+  "hqCity": "USA",
+  "hqState": "CA",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 2021
  },
  {
   "id": "c376",
@@ -11181,7 +13062,12 @@
   "confidence": "Confirmed",
   "mono": "WI",
   "exited": false,
-  "score": 10
+  "score": 10,
+  "hqCity": "USA",
+  "hqState": "MA",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 2007
  },
  {
   "id": "c377",
@@ -11210,7 +13096,12 @@
   "confidence": "Confirmed",
   "mono": "XC",
   "exited": false,
-  "score": 12
+  "score": 12,
+  "hqCity": "",
+  "hqState": "",
+  "hqCountry": "Germany",
+  "region": "Europe",
+  "foundedYear": 2015
  },
  {
   "id": "c378",
@@ -11240,7 +13131,12 @@
   "mono": "XO",
   "exited": false,
   "score": 4,
-  "spokenTo": true
+  "spokenTo": true,
+  "hqCity": "",
+  "hqState": "",
+  "hqCountry": "",
+  "region": "",
+  "foundedYear": null
  },
  {
   "id": "c379",
@@ -11269,7 +13165,12 @@
   "confidence": "Confirmed",
   "mono": "ZS",
   "exited": false,
-  "score": 10
+  "score": 10,
+  "hqCity": "Los Angeles",
+  "hqState": "CA",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 2018
  },
  {
   "id": "c380",
@@ -11298,7 +13199,12 @@
   "confidence": "Reported",
   "mono": "ZO",
   "exited": false,
-  "score": 7
+  "score": 7,
+  "hqCity": "Boston",
+  "hqState": "MA",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 2016
  },
  {
   "id": "c381",
@@ -11327,7 +13233,12 @@
   "confidence": "Confirmed",
   "mono": "AD",
   "exited": false,
-  "score": 13
+  "score": 13,
+  "hqCity": "Cardiff",
+  "hqState": "",
+  "hqCountry": "UK",
+  "region": "Europe",
+  "foundedYear": 1993
  },
  {
   "id": "c382",
@@ -11356,7 +13267,12 @@
   "confidence": "Confirmed",
   "mono": "AI",
   "exited": false,
-  "score": 13
+  "score": 13,
+  "hqCity": "USA",
+  "hqState": "NY",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 1919
  },
  {
   "id": "c383",
@@ -11385,7 +13301,12 @@
   "confidence": "Confirmed",
   "mono": "AC",
   "exited": false,
-  "score": 13
+  "score": 13,
+  "hqCity": "Munich",
+  "hqState": "",
+  "hqCountry": "Germany",
+  "region": "Europe",
+  "foundedYear": 1890
  },
  {
   "id": "c384",
@@ -11414,7 +13335,12 @@
   "confidence": "Confirmed",
   "mono": "AO",
   "exited": false,
-  "score": 13
+  "score": 13,
+  "hqCity": "London",
+  "hqState": "",
+  "hqCountry": "UK",
+  "region": "Europe",
+  "foundedYear": 1982
  },
  {
   "id": "c385",
@@ -11444,7 +13370,12 @@
   "confidence": "Reported",
   "mono": "AI",
   "exited": false,
-  "score": 7
+  "score": 7,
+  "hqCity": "London",
+  "hqState": "",
+  "hqCountry": "UK",
+  "region": "Europe",
+  "foundedYear": 2019
  },
  {
   "id": "c386",
@@ -11473,7 +13404,12 @@
   "confidence": "Reported",
   "mono": "AA",
   "exited": false,
-  "score": 7
+  "score": 7,
+  "hqCity": "Toronto",
+  "hqState": "ON",
+  "hqCountry": "Canada",
+  "region": "North America",
+  "foundedYear": 2020
  },
  {
   "id": "c387",
@@ -11502,7 +13438,12 @@
   "confidence": "Historical",
   "mono": "AV",
   "exited": true,
-  "score": 6
+  "score": 6,
+  "hqCity": "Westlake Village",
+  "hqState": "CA",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 2016
  },
  {
   "id": "c388",
@@ -11531,7 +13472,12 @@
   "confidence": "Confirmed",
   "mono": "AV",
   "exited": false,
-  "score": 13
+  "score": 13,
+  "hqCity": "London",
+  "hqState": "",
+  "hqCountry": "UK",
+  "region": "Europe",
+  "foundedYear": null
  },
  {
   "id": "c389",
@@ -11560,7 +13506,12 @@
   "confidence": "Confirmed",
   "mono": "AX",
   "exited": false,
-  "score": 12
+  "score": 12,
+  "hqCity": "Stamford",
+  "hqState": "CT",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 1986
  },
  {
   "id": "c390",
@@ -11589,7 +13540,12 @@
   "confidence": "Confirmed",
   "mono": "BE",
   "exited": false,
-  "score": 13
+  "score": 13,
+  "hqCity": "London",
+  "hqState": "",
+  "hqCountry": "UK",
+  "region": "Europe",
+  "foundedYear": 1986
  },
  {
   "id": "c391",
@@ -11618,7 +13574,12 @@
   "confidence": "Confirmed",
   "mono": "CM",
   "exited": false,
-  "score": 13
+  "score": 13,
+  "hqCity": "Cambridge",
+  "hqState": "MA",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 2010
  },
  {
   "id": "c392",
@@ -11647,7 +13608,12 @@
   "confidence": "Confirmed",
   "mono": "CI",
   "exited": false,
-  "score": 13
+  "score": 13,
+  "hqCity": "Chicago",
+  "hqState": "IL",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 1980
  },
  {
   "id": "c393",
@@ -11676,7 +13642,12 @@
   "confidence": "Reported",
   "mono": "CF",
   "exited": false,
-  "score": 9
+  "score": 9,
+  "hqCity": "London",
+  "hqState": "",
+  "hqCountry": "UK",
+  "region": "Europe",
+  "foundedYear": 1999
  },
  {
   "id": "c394",
@@ -11705,7 +13676,12 @@
   "confidence": "Reported",
   "mono": "CP",
   "exited": false,
-  "score": 9
+  "score": 9,
+  "hqCity": "Shanghai",
+  "hqState": "",
+  "hqCountry": "China",
+  "region": "Greater China",
+  "foundedYear": 1991
  },
  {
   "id": "c395",
@@ -11734,7 +13710,12 @@
   "confidence": "Confirmed",
   "mono": "CH",
   "exited": false,
-  "score": 13
+  "score": 13,
+  "hqCity": "Zurich",
+  "hqState": "",
+  "hqCountry": "Switzerland",
+  "region": "Europe",
+  "foundedYear": 1882
  },
  {
   "id": "c396",
@@ -11763,7 +13744,12 @@
   "confidence": "Reported",
   "mono": "CO",
   "exited": false,
-  "score": 9
+  "score": 9,
+  "hqCity": "San Francisco",
+  "hqState": "CA",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 2017
  },
  {
   "id": "c397",
@@ -11792,7 +13778,12 @@
   "confidence": "Reported",
   "mono": "CW",
   "exited": false,
-  "score": 8
+  "score": 8,
+  "hqCity": "USA",
+  "hqState": "NY",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 2019
  },
  {
   "id": "c398",
@@ -11821,7 +13812,12 @@
   "confidence": "Reported",
   "mono": "FA",
   "exited": false,
-  "score": 8
+  "score": 8,
+  "hqCity": "USA",
+  "hqState": "NY",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 2019
  },
  {
   "id": "c399",
@@ -11851,7 +13847,12 @@
   "confidence": "Confirmed",
   "mono": "GA",
   "exited": false,
-  "score": 13
+  "score": 13,
+  "hqCity": "Rolling Meadows",
+  "hqState": "IL",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 1927
  },
  {
   "id": "c400",
@@ -11880,7 +13881,12 @@
   "confidence": "Confirmed",
   "mono": "HG",
   "exited": false,
-  "score": 13
+  "score": 13,
+  "hqCity": "Hannover",
+  "hqState": "",
+  "hqCountry": "Germany",
+  "region": "Europe",
+  "foundedYear": 1903
  },
  {
   "id": "c401",
@@ -11911,7 +13917,12 @@
   "confidence": "Confirmed",
   "mono": "KO",
   "exited": false,
-  "score": 8
+  "score": 8,
+  "hqCity": "Jersey City",
+  "hqState": "NJ",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 2020
  },
  {
   "id": "c402",
@@ -11940,7 +13951,12 @@
   "confidence": "Confirmed",
   "mono": "LR",
   "exited": false,
-  "score": 13
+  "score": 13,
+  "hqCity": "Alpharetta",
+  "hqState": "GA",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": null
  },
  {
   "id": "c403",
@@ -11969,7 +13985,12 @@
   "confidence": "Confirmed",
   "mono": "LS",
   "exited": false,
-  "score": 13
+  "score": 13,
+  "hqCity": "London",
+  "hqState": "",
+  "hqCountry": "UK",
+  "region": "Europe",
+  "foundedYear": null
  },
  {
   "id": "c404",
@@ -11998,7 +14019,12 @@
   "confidence": "Confirmed",
   "mono": "LO",
   "exited": false,
-  "score": 13
+  "score": 13,
+  "hqCity": "Kansas City",
+  "hqState": "MO",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 1966
  },
  {
   "id": "c405",
@@ -12027,7 +14053,12 @@
   "confidence": "Confirmed",
   "mono": "MA",
   "exited": false,
-  "score": 13
+  "score": 13,
+  "hqCity": "USA",
+  "hqState": "NY",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 1871
  },
  {
   "id": "c406",
@@ -12056,7 +14087,12 @@
   "confidence": "Confirmed",
   "mono": "ME",
   "exited": false,
-  "score": 13
+  "score": 13,
+  "hqCity": "San Diego",
+  "hqState": "CA",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 1946
  },
  {
   "id": "c407",
@@ -12085,7 +14121,12 @@
   "confidence": "Reported",
   "mono": "MA",
   "exited": false,
-  "score": 9
+  "score": 9,
+  "hqCity": "Tokyo",
+  "hqState": "",
+  "hqCountry": "Japan",
+  "region": "Asia-Pacific",
+  "foundedYear": 2008
  },
  {
   "id": "c408",
@@ -12114,7 +14155,12 @@
   "confidence": "Confirmed",
   "mono": "MR",
   "exited": false,
-  "score": 13
+  "score": 13,
+  "hqCity": "Munich",
+  "hqState": "",
+  "hqCountry": "Germany",
+  "region": "Europe",
+  "foundedYear": 1880
  },
  {
   "id": "c409",
@@ -12143,7 +14189,12 @@
   "confidence": "Reported",
   "mono": "NE",
   "exited": false,
-  "score": 10
+  "score": 10,
+  "hqCity": "San Diego",
+  "hqState": "CA",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 2015
  },
  {
   "id": "c410",
@@ -12172,7 +14223,12 @@
   "confidence": "Reported",
   "mono": "NI",
   "exited": false,
-  "score": 7
+  "score": 7,
+  "hqCity": "San Francisco",
+  "hqState": "CA",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 2020
  },
  {
   "id": "c411",
@@ -12201,7 +14257,12 @@
   "confidence": "Confirmed",
   "mono": "PR",
   "exited": false,
-  "score": 13
+  "score": 13,
+  "hqCity": "Mayfield Village",
+  "hqState": "OH",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 1937
  },
  {
   "id": "c412",
@@ -12230,7 +14291,12 @@
   "confidence": "Reported",
   "mono": "SF",
   "exited": false,
-  "score": 8
+  "score": 8,
+  "hqCity": "Bloomington",
+  "hqState": "IL",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 2018
  },
  {
   "id": "c413",
@@ -12260,7 +14326,12 @@
   "confidence": "Confirmed",
   "mono": "SR",
   "exited": false,
-  "score": 13
+  "score": 13,
+  "hqCity": "Zurich",
+  "hqState": "",
+  "hqCountry": "Switzerland",
+  "region": "Europe",
+  "foundedYear": 1863
  },
  {
   "id": "c414",
@@ -12289,7 +14360,12 @@
   "confidence": "Reported",
   "mono": "TM",
   "exited": false,
-  "score": 10
+  "score": 10,
+  "hqCity": "London",
+  "hqState": "",
+  "hqCountry": "UK",
+  "region": "Europe",
+  "foundedYear": 1962
  },
  {
   "id": "c415",
@@ -12320,7 +14396,12 @@
   "confidence": "Confirmed",
   "mono": "TV",
   "exited": false,
-  "score": 13
+  "score": 13,
+  "hqCity": "Munich",
+  "hqState": "",
+  "hqCountry": "Germany",
+  "region": "Europe",
+  "foundedYear": 1866
  },
  {
   "id": "c416",
@@ -12349,7 +14430,12 @@
   "confidence": "Confirmed",
   "mono": "VA",
   "exited": false,
-  "score": 13
+  "score": 13,
+  "hqCity": "Jersey City",
+  "hqState": "",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 1971
  },
  {
   "id": "c417",
@@ -12379,7 +14465,12 @@
   "confidence": "Confirmed",
   "mono": "WT",
   "exited": false,
-  "score": 13
+  "score": 13,
+  "hqCity": "London",
+  "hqState": "",
+  "hqCountry": "UK",
+  "region": "Europe",
+  "foundedYear": 2016
  },
  {
   "id": "c418",
@@ -12408,7 +14499,12 @@
   "confidence": "Confirmed",
   "mono": "ZI",
   "exited": false,
-  "score": 13
+  "score": 13,
+  "hqCity": "Zurich",
+  "hqState": "",
+  "hqCountry": "Switzerland",
+  "region": "Europe",
+  "foundedYear": 1872
  },
  {
   "id": "c419",
@@ -12442,7 +14538,12 @@
   "confidence": "Confirmed",
   "mono": "AD",
   "exited": false,
-  "score": 13
+  "score": 13,
+  "hqCity": "Abu Dhabi",
+  "hqState": "",
+  "hqCountry": "UAE",
+  "region": "Middle East & Africa",
+  "foundedYear": 2016
  },
  {
   "id": "c420",
@@ -12471,7 +14572,12 @@
   "confidence": "Confirmed",
   "mono": "AD",
   "exited": false,
-  "score": 9
+  "score": 9,
+  "hqCity": "Phoenix",
+  "hqState": "AZ",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 1974
  },
  {
   "id": "c421",
@@ -12499,7 +14605,12 @@
   "confidence": "Confirmed",
   "mono": "AD",
   "exited": false,
-  "score": 4
+  "score": 4,
+  "hqCity": "Phoenix",
+  "hqState": "AZ",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 1927
  },
  {
   "id": "c422",
@@ -12528,7 +14639,12 @@
   "confidence": "Confirmed",
   "mono": "BH",
   "exited": false,
-  "score": 8
+  "score": 8,
+  "hqCity": "Beijing",
+  "hqState": "",
+  "hqCountry": "China",
+  "region": "Greater China",
+  "foundedYear": 2020
  },
  {
   "id": "c423",
@@ -12557,7 +14673,12 @@
   "confidence": "Confirmed",
   "mono": "CC",
   "exited": false,
-  "score": 9
+  "score": 9,
+  "hqCity": "San Francisco",
+  "hqState": "CA",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 1911
  },
  {
   "id": "c424",
@@ -12586,7 +14707,12 @@
   "confidence": "Confirmed",
   "mono": "CD",
   "exited": false,
-  "score": 9
+  "score": 9,
+  "hqCity": "Sacramento",
+  "hqState": "CA",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 1915
  },
  {
   "id": "c425",
@@ -12616,7 +14742,12 @@
   "confidence": "Confirmed",
   "mono": "CD",
   "exited": false,
-  "score": 9
+  "score": 9,
+  "hqCity": "Sacramento",
+  "hqState": "CA",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 1915
  },
  {
   "id": "c426",
@@ -12646,7 +14777,12 @@
   "confidence": "Confirmed",
   "mono": "CP",
   "exited": false,
-  "score": 9
+  "score": 9,
+  "hqCity": "San Francisco",
+  "hqState": "CA",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 1911
  },
  {
   "id": "c427",
@@ -12675,7 +14811,12 @@
   "confidence": "Confirmed",
   "mono": "CH",
   "exited": false,
-  "score": 7
+  "score": 7,
+  "hqCity": "Changsha",
+  "hqState": "",
+  "hqCountry": "China",
+  "region": "Greater China",
+  "foundedYear": null
  },
  {
   "id": "c428",
@@ -12704,7 +14845,12 @@
   "confidence": "Confirmed",
   "mono": "CM",
   "exited": false,
-  "score": 9
+  "score": 9,
+  "hqCity": "Beijing",
+  "hqState": "",
+  "hqCountry": "China",
+  "region": "Greater China",
+  "foundedYear": 1949
  },
  {
   "id": "c429",
@@ -12732,7 +14878,12 @@
   "confidence": "Confirmed",
   "mono": "CM",
   "exited": false,
-  "score": 4
+  "score": 4,
+  "hqCity": "Beijing",
+  "hqState": "",
+  "hqCountry": "China",
+  "region": "Greater China",
+  "foundedYear": 2017
  },
  {
   "id": "c430",
@@ -12761,7 +14912,12 @@
   "confidence": "Confirmed",
   "mono": "CO",
   "exited": false,
-  "score": 7
+  "score": 7,
+  "hqCity": "Dallas",
+  "hqState": "TX",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": null
  },
  {
   "id": "c431",
@@ -12790,7 +14946,12 @@
   "confidence": "Confirmed",
   "mono": "DD",
   "exited": false,
-  "score": 8
+  "score": 8,
+  "hqCity": "USA",
+  "hqState": "DC",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 2002
  },
  {
   "id": "c432",
@@ -12824,7 +14985,12 @@
   "confidence": "Confirmed",
   "mono": "DR",
   "exited": false,
-  "score": 13
+  "score": 13,
+  "hqCity": "Dubai",
+  "hqState": "",
+  "hqCountry": "UAE",
+  "region": "Middle East & Africa",
+  "foundedYear": 2005
  },
  {
   "id": "c433",
@@ -12852,7 +15018,12 @@
   "confidence": "Confirmed",
   "mono": "ET",
   "exited": false,
-  "score": 4
+  "score": 4,
+  "hqCity": "Brussels",
+  "hqState": "",
+  "hqCountry": "Belgium",
+  "region": "Europe",
+  "foundedYear": 1958
  },
  {
   "id": "c434",
@@ -12881,7 +15052,12 @@
   "confidence": "Confirmed",
   "mono": "EC",
   "exited": false,
-  "score": 8
+  "score": 8,
+  "hqCity": "Brussels",
+  "hqState": "",
+  "hqCountry": "Belgium",
+  "region": "Europe",
+  "foundedYear": null
  },
  {
   "id": "c435",
@@ -12910,7 +15086,12 @@
   "confidence": "Confirmed",
   "mono": "FH",
   "exited": false,
-  "score": 9
+  "score": 9,
+  "hqCity": "USA",
+  "hqState": "DC",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 1966
  },
  {
   "id": "c436",
@@ -12940,7 +15121,12 @@
   "confidence": "Confirmed",
   "mono": "FE",
   "exited": false,
-  "score": 9
+  "score": 9,
+  "hqCity": "USA",
+  "hqState": "DC",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 2000
  },
  {
   "id": "c437",
@@ -12970,7 +15156,12 @@
   "confidence": "Confirmed",
   "mono": "FT",
   "exited": false,
-  "score": 9
+  "score": 9,
+  "hqCity": "USA",
+  "hqState": "DC",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 1914
  },
  {
   "id": "c438",
@@ -12999,7 +15190,12 @@
   "confidence": "Confirmed",
   "mono": "FD",
   "exited": false,
-  "score": 9
+  "score": 9,
+  "hqCity": "Tallahassee",
+  "hqState": "",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 1969
  },
  {
   "id": "c439",
@@ -13028,7 +15224,12 @@
   "confidence": "Confirmed",
   "mono": "FM",
   "exited": false,
-  "score": 7
+  "score": 7,
+  "hqCity": "Paris",
+  "hqState": "",
+  "hqCountry": "France",
+  "region": "Europe",
+  "foundedYear": null
  },
  {
   "id": "c440",
@@ -13057,7 +15258,12 @@
   "confidence": "Confirmed",
   "mono": "GD",
   "exited": false,
-  "score": 7
+  "score": 7,
+  "hqCity": "Conyers",
+  "hqState": "",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": null
  },
  {
   "id": "c441",
@@ -13086,7 +15292,12 @@
   "confidence": "Confirmed",
   "mono": "GF",
   "exited": false,
-  "score": 9
+  "score": 9,
+  "hqCity": "Berlin",
+  "hqState": "",
+  "hqCountry": "Germany",
+  "region": "Europe",
+  "foundedYear": 1949
  },
  {
   "id": "c442",
@@ -13114,7 +15325,12 @@
   "confidence": "Confirmed",
   "mono": "GK",
   "exited": false,
-  "score": 4
+  "score": 4,
+  "hqCity": "Flensburg",
+  "hqState": "",
+  "hqCountry": "Germany",
+  "region": "Europe",
+  "foundedYear": 1951
  },
  {
   "id": "c443",
@@ -13143,7 +15359,12 @@
   "confidence": "Confirmed",
   "mono": "GI",
   "exited": false,
-  "score": 7
+  "score": 7,
+  "hqCity": "Guangzhou",
+  "hqState": "",
+  "hqCountry": "China",
+  "region": "Greater China",
+  "foundedYear": null
  },
  {
   "id": "c444",
@@ -13172,7 +15393,12 @@
   "confidence": "Confirmed",
   "mono": "HK",
   "exited": false,
-  "score": 9
+  "score": 9,
+  "hqCity": "Hong Kong",
+  "hqState": "",
+  "hqCountry": "Hong Kong",
+  "region": "Greater China",
+  "foundedYear": 1968
  },
  {
   "id": "c445",
@@ -13201,7 +15427,12 @@
   "confidence": "Confirmed",
   "mono": "JM",
   "exited": false,
-  "score": 9
+  "score": 9,
+  "hqCity": "Tokyo",
+  "hqState": "",
+  "hqCountry": "Japan",
+  "region": "Asia-Pacific",
+  "foundedYear": 1949
  },
  {
   "id": "c446",
@@ -13230,7 +15461,12 @@
   "confidence": "Confirmed",
   "mono": "JM",
   "exited": false,
-  "score": 9
+  "score": 9,
+  "hqCity": "Tokyo",
+  "hqState": "",
+  "hqCountry": "Japan",
+  "region": "Asia-Pacific",
+  "foundedYear": 2001
  },
  {
   "id": "c447",
@@ -13258,7 +15494,12 @@
   "confidence": "Confirmed",
   "mono": "JM",
   "exited": false,
-  "score": 4
+  "score": 4,
+  "hqCity": "Tokyo",
+  "hqState": "",
+  "hqCountry": "Japan",
+  "region": "Asia-Pacific",
+  "foundedYear": 2001
  },
  {
   "id": "c448",
@@ -13287,7 +15528,12 @@
   "confidence": "Confirmed",
   "mono": "JN",
   "exited": false,
-  "score": 9
+  "score": 9,
+  "hqCity": "Tokyo",
+  "hqState": "",
+  "hqCountry": "Japan",
+  "region": "Asia-Pacific",
+  "foundedYear": 1954
  },
  {
   "id": "c449",
@@ -13316,7 +15562,12 @@
   "confidence": "Confirmed",
   "mono": "KB",
   "exited": false,
-  "score": 9
+  "score": 9,
+  "hqCity": "Flensburg",
+  "hqState": "",
+  "hqCountry": "Germany",
+  "region": "Europe",
+  "foundedYear": 1951
  },
  {
   "id": "c450",
@@ -13345,7 +15596,12 @@
   "confidence": "Confirmed",
   "mono": "LA",
   "exited": false,
-  "score": 8
+  "score": 8,
+  "hqCity": "Los Angeles",
+  "hqState": "CA",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 1979
  },
  {
   "id": "c451",
@@ -13374,7 +15630,12 @@
   "confidence": "Confirmed",
   "mono": "MD",
   "exited": false,
-  "score": 7
+  "score": 7,
+  "hqCity": "Miami",
+  "hqState": "FL",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": null
  },
  {
   "id": "c452",
@@ -13402,7 +15663,12 @@
   "confidence": "Confirmed",
   "mono": "MC",
   "exited": false,
-  "score": 4
+  "score": 4,
+  "hqCity": "Beijing",
+  "hqState": "",
+  "hqCountry": "China",
+  "region": "Greater China",
+  "foundedYear": 2008
  },
  {
   "id": "c453",
@@ -13431,7 +15697,12 @@
   "confidence": "Confirmed",
   "mono": "MO",
   "exited": false,
-  "score": 9
+  "score": 9,
+  "hqCity": "Beijing",
+  "hqState": "",
+  "hqCountry": "China",
+  "region": "Greater China",
+  "foundedYear": 2008
  },
  {
   "id": "c454",
@@ -13460,7 +15731,12 @@
   "confidence": "Confirmed",
   "mono": "MO",
   "exited": false,
-  "score": 8
+  "score": 8,
+  "hqCity": "Beijing",
+  "hqState": "",
+  "hqCountry": "China",
+  "region": "Greater China",
+  "foundedYear": 1949
  },
  {
   "id": "c455",
@@ -13477,7 +15753,7 @@
   "regions": "",
   "founded": "2008",
   "leadership": "",
-  "about": "Oversees road transport rules, robotaxi/commercial AV policy",
+  "about": "Oversees road transport rules, robotaxi/commercial AV policy. Permits progress through staged gates — safety-driver testing, then driverless testing, then free public service, then paid commercial operation — with operators judged on total mileage, driverless mileage, miles per critical intervention and miles per accident.",
   "model": "",
   "financing": "Government",
   "investors": "N/A",
@@ -13488,7 +15764,12 @@
   "confidence": "Confirmed",
   "mono": "MO",
   "exited": false,
-  "score": 4
+  "score": 4,
+  "hqCity": "Beijing",
+  "hqState": "",
+  "hqCountry": "China",
+  "region": "Greater China",
+  "foundedYear": 2008
  },
  {
   "id": "c456",
@@ -13506,7 +15787,7 @@
   "regions": "China",
   "founded": "",
   "leadership": "Verify current public leadership before outreach",
-  "about": "Central transport ministry relevant to autonomous road transport, taxi services, road operations and freight deployment.",
+  "about": "Central transport ministry relevant to autonomous road transport, taxi services, road operations and freight deployment. Permits progress through staged gates — safety-driver testing, then driverless testing, then free public service, then paid commercial operation — with operators judged on total mileage, driverless mileage, miles per critical intervention and miles per accident.",
   "model": "Transport policy, road transport rules, passenger/freight oversight and safety coordination.",
   "financing": "Government / public authority",
   "investors": "",
@@ -13517,7 +15798,12 @@
   "confidence": "Confirmed",
   "mono": "MO",
   "exited": false,
-  "score": 8
+  "score": 8,
+  "hqCity": "Beijing",
+  "hqState": "",
+  "hqCountry": "China",
+  "region": "Greater China",
+  "foundedYear": null
  },
  {
   "id": "c457",
@@ -13546,7 +15832,12 @@
   "confidence": "Confirmed",
   "mono": "NT",
   "exited": false,
-  "score": 9
+  "score": 9,
+  "hqCity": "USA",
+  "hqState": "DC",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 1967
  },
  {
   "id": "c458",
@@ -13575,7 +15866,12 @@
   "confidence": "Confirmed",
   "mono": "NR",
   "exited": false,
-  "score": 9
+  "score": 9,
+  "hqCity": "Zoetermeer",
+  "hqState": "",
+  "hqCountry": "Netherlands",
+  "region": "Europe",
+  "foundedYear": 1949
  },
  {
   "id": "c459",
@@ -13604,7 +15900,12 @@
   "confidence": "Confirmed",
   "mono": "ND",
   "exited": false,
-  "score": 8
+  "score": 8,
+  "hqCity": "Carson City",
+  "hqState": "NV",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": null
  },
  {
   "id": "c460",
@@ -13632,7 +15933,12 @@
   "confidence": "Confirmed",
   "mono": "ND",
   "exited": false,
-  "score": 4
+  "score": 4,
+  "hqCity": "Carson City",
+  "hqState": "NV",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 1957
  },
  {
   "id": "c461",
@@ -13661,7 +15967,12 @@
   "confidence": "Confirmed",
   "mono": "NY",
   "exited": false,
-  "score": 9
+  "score": 9,
+  "hqCity": "Albany",
+  "hqState": "",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 1961
  },
  {
   "id": "c462",
@@ -13691,7 +16002,12 @@
   "confidence": "Confirmed",
   "mono": "NH",
   "exited": false,
-  "score": 9
+  "score": 9,
+  "hqCity": "USA",
+  "hqState": "DC",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 1970
  },
  {
   "id": "c463",
@@ -13720,7 +16036,12 @@
   "confidence": "Confirmed",
   "mono": "NO",
   "exited": false,
-  "score": 8
+  "score": 8,
+  "hqCity": "USA",
+  "hqState": "DC",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": null
  },
  {
   "id": "c464",
@@ -13749,7 +16070,12 @@
   "confidence": "Confirmed",
   "mono": "OO",
   "exited": false,
-  "score": 7
+  "score": 7,
+  "hqCity": "USA",
+  "hqState": "DC",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": null
  },
  {
   "id": "c465",
@@ -13778,7 +16104,12 @@
   "confidence": "Confirmed",
   "mono": "OD",
   "exited": false,
-  "score": 8
+  "score": 8,
+  "hqCity": "Salem",
+  "hqState": "",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 1913
  },
  {
   "id": "c466",
@@ -13807,7 +16138,12 @@
   "confidence": "Confirmed",
   "mono": "PS",
   "exited": false,
-  "score": 8
+  "score": 8,
+  "hqCity": "Phoenix",
+  "hqState": "AZ",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": null
  },
  {
   "id": "c467",
@@ -13836,7 +16172,12 @@
   "confidence": "Confirmed",
   "mono": "QM",
   "exited": false,
-  "score": 7
+  "score": 7,
+  "hqCity": "Doha",
+  "hqState": "",
+  "hqCountry": "Qatar",
+  "region": "Middle East & Africa",
+  "foundedYear": null
  },
  {
   "id": "c468",
@@ -13865,7 +16206,12 @@
   "confidence": "Confirmed",
   "mono": "SF",
   "exited": false,
-  "score": 8
+  "score": 8,
+  "hqCity": "San Francisco",
+  "hqState": "CA",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": null
  },
  {
   "id": "c469",
@@ -13894,7 +16240,12 @@
   "confidence": "Confirmed",
   "mono": "SF",
   "exited": false,
-  "score": 9
+  "score": 9,
+  "hqCity": "San Francisco",
+  "hqState": "CA",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 1999
  },
  {
   "id": "c470",
@@ -13923,7 +16274,12 @@
   "confidence": "Confirmed",
   "mono": "ST",
   "exited": false,
-  "score": 9
+  "score": 9,
+  "hqCity": "Riyadh",
+  "hqState": "",
+  "hqCountry": "Saudi Arabia",
+  "region": "Middle East & Africa",
+  "foundedYear": 2012
  },
  {
   "id": "c471",
@@ -13951,7 +16307,12 @@
   "confidence": "Confirmed",
   "mono": "SF",
   "exited": false,
-  "score": 4
+  "score": 4,
+  "hqCity": "San Francisco",
+  "hqState": "CA",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 1999
  },
  {
   "id": "c472",
@@ -13980,7 +16341,12 @@
   "confidence": "Confirmed",
   "mono": "SP",
   "exited": false,
-  "score": 7
+  "score": 7,
+  "hqCity": "Shanghai",
+  "hqState": "",
+  "hqCountry": "China",
+  "region": "Greater China",
+  "foundedYear": null
  },
  {
   "id": "c473",
@@ -14009,7 +16375,12 @@
   "confidence": "Confirmed",
   "mono": "ST",
   "exited": false,
-  "score": 7
+  "score": 7,
+  "hqCity": "Shenzhen",
+  "hqState": "",
+  "hqCountry": "China",
+  "region": "Greater China",
+  "foundedYear": null
  },
  {
   "id": "c474",
@@ -14038,7 +16409,12 @@
   "confidence": "Confirmed",
   "mono": "SL",
   "exited": false,
-  "score": 9
+  "score": 9,
+  "hqCity": "Singapore",
+  "hqState": "",
+  "hqCountry": "Singapore",
+  "region": "Asia-Pacific",
+  "foundedYear": 1995
  },
  {
   "id": "c475",
@@ -14066,7 +16442,12 @@
   "confidence": "Confirmed",
   "mono": "SL",
   "exited": false,
-  "score": 4
+  "score": 4,
+  "hqCity": "Singapore",
+  "hqState": "",
+  "hqCountry": "Singapore",
+  "region": "Asia-Pacific",
+  "foundedYear": 1995
  },
  {
   "id": "c476",
@@ -14095,7 +16476,12 @@
   "confidence": "Confirmed",
   "mono": "SK",
   "exited": false,
-  "score": 9
+  "score": 9,
+  "hqCity": "Sejong",
+  "hqState": "",
+  "hqCountry": "South Korea",
+  "region": "Asia-Pacific",
+  "foundedYear": 1948
  },
  {
   "id": "c477",
@@ -14124,7 +16510,12 @@
   "confidence": "Confirmed",
   "mono": "ST",
   "exited": false,
-  "score": 9
+  "score": 9,
+  "hqCity": "Norrkoping",
+  "hqState": "",
+  "hqCountry": "Sweden",
+  "region": "Europe",
+  "foundedYear": 2009
  },
  {
   "id": "c478",
@@ -14153,7 +16544,12 @@
   "confidence": "Confirmed",
   "mono": "SF",
   "exited": false,
-  "score": 9
+  "score": 9,
+  "hqCity": "Bern",
+  "hqState": "",
+  "hqCountry": "Switzerland",
+  "region": "Europe",
+  "foundedYear": 1998
  },
  {
   "id": "c479",
@@ -14182,7 +16578,12 @@
   "confidence": "Confirmed",
   "mono": "TD",
   "exited": false,
-  "score": 8
+  "score": 8,
+  "hqCity": "Nashville",
+  "hqState": "TN",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 1915
  },
  {
   "id": "c480",
@@ -14211,7 +16612,12 @@
   "confidence": "Confirmed",
   "mono": "TD",
   "exited": false,
-  "score": 9
+  "score": 9,
+  "hqCity": "Austin",
+  "hqState": "TX",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 2009
  },
  {
   "id": "c481",
@@ -14240,7 +16646,12 @@
   "confidence": "Confirmed",
   "mono": "TD",
   "exited": false,
-  "score": 9
+  "score": 9,
+  "hqCity": "Austin",
+  "hqState": "TX",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 1917
  },
  {
   "id": "c482",
@@ -14268,7 +16679,12 @@
   "confidence": "Confirmed",
   "mono": "TD",
   "exited": false,
-  "score": 4
+  "score": 4,
+  "hqCity": "Austin",
+  "hqState": "TX",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 2009
  },
  {
   "id": "c483",
@@ -14297,7 +16713,12 @@
   "confidence": "Confirmed",
   "mono": "TM",
   "exited": false,
-  "score": 9
+  "score": 9,
+  "hqCity": "Tokyo",
+  "hqState": "",
+  "hqCountry": "Japan",
+  "region": "Asia-Pacific",
+  "foundedYear": 1943
  },
  {
   "id": "c484",
@@ -14326,7 +16747,12 @@
   "confidence": "Confirmed",
   "mono": "US",
   "exited": false,
-  "score": 9
+  "score": 9,
+  "hqCity": "USA",
+  "hqState": "DC",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 1966
  },
  {
   "id": "c485",
@@ -14355,7 +16781,12 @@
   "confidence": "Confirmed",
   "mono": "UM",
   "exited": false,
-  "score": 7
+  "score": 7,
+  "hqCity": "Abu Dhabi",
+  "hqState": "",
+  "hqCountry": "UAE",
+  "region": "Middle East & Africa",
+  "foundedYear": null
  },
  {
   "id": "c486",
@@ -14383,7 +16814,12 @@
   "confidence": "Confirmed",
   "mono": "UC",
   "exited": false,
-  "score": 4
+  "score": 4,
+  "hqCity": "London",
+  "hqState": "",
+  "hqCountry": "UK",
+  "region": "Europe",
+  "foundedYear": 2015
  },
  {
   "id": "c487",
@@ -14412,7 +16848,12 @@
   "confidence": "Confirmed",
   "mono": "UC",
   "exited": false,
-  "score": 9
+  "score": 9,
+  "hqCity": "London",
+  "hqState": "",
+  "hqCountry": "UK",
+  "region": "Europe",
+  "foundedYear": 2015
  },
  {
   "id": "c488",
@@ -14441,7 +16882,12 @@
   "confidence": "Confirmed",
   "mono": "UC",
   "exited": false,
-  "score": 9
+  "score": 9,
+  "hqCity": "London",
+  "hqState": "",
+  "hqCountry": "UK",
+  "region": "Europe",
+  "foundedYear": 2015
  },
  {
   "id": "c489",
@@ -14470,7 +16916,12 @@
   "confidence": "Confirmed",
   "mono": "UD",
   "exited": false,
-  "score": 9
+  "score": 9,
+  "hqCity": "London",
+  "hqState": "",
+  "hqCountry": "UK",
+  "region": "Europe",
+  "foundedYear": 1919
  },
  {
   "id": "c490",
@@ -14499,7 +16950,12 @@
   "confidence": "Confirmed",
   "mono": "UV",
   "exited": false,
-  "score": 9
+  "score": 9,
+  "hqCity": "Bristol",
+  "hqState": "",
+  "hqCountry": "UK",
+  "region": "Europe",
+  "foundedYear": 1988
  },
  {
   "id": "c491",
@@ -14527,7 +16983,12 @@
   "confidence": "Confirmed",
   "mono": "UW",
   "exited": false,
-  "score": 4
+  "score": 4,
+  "hqCity": "Geneva",
+  "hqState": "",
+  "hqCountry": "Switzerland",
+  "region": "Europe",
+  "foundedYear": 1952
  },
  {
   "id": "c492",
@@ -14556,7 +17017,12 @@
   "confidence": "Confirmed",
   "mono": "UW",
   "exited": false,
-  "score": 9
+  "score": 9,
+  "hqCity": "Geneva",
+  "hqState": "",
+  "hqCountry": "Switzerland",
+  "region": "Europe",
+  "foundedYear": 1952
  },
  {
   "id": "c493",
@@ -14584,7 +17050,12 @@
   "confidence": "Confirmed",
   "mono": "US",
   "exited": false,
-  "score": 5
+  "score": 5,
+  "hqCity": "Washington",
+  "hqState": "DC",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 1966
  },
  {
   "id": "c494",
@@ -14613,7 +17084,12 @@
   "confidence": "Confirmed",
   "mono": "WI",
   "exited": false,
-  "score": 7
+  "score": 7,
+  "hqCity": "Wuhan",
+  "hqState": "",
+  "hqCountry": "China",
+  "region": "Greater China",
+  "foundedYear": null
  },
  {
   "id": "c495",
@@ -14641,7 +17117,12 @@
   "confidence": "Confirmed",
   "mono": "3G",
   "exited": false,
-  "score": 9
+  "score": 9,
+  "hqCity": "Sophia Antipolis",
+  "hqState": "",
+  "hqCountry": "France",
+  "region": "Europe",
+  "foundedYear": 1998
  },
  {
   "id": "c496",
@@ -14669,7 +17150,12 @@
   "confidence": "Confirmed",
   "mono": "AF",
   "exited": false,
-  "score": 9
+  "score": 9,
+  "hqCity": "USA",
+  "hqState": "DC",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 1947
  },
  {
   "id": "c497",
@@ -14697,7 +17183,12 @@
   "confidence": "Confirmed",
   "mono": "AF",
   "exited": false,
-  "score": 9
+  "score": 9,
+  "hqCity": "USA",
+  "hqState": "DC",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 1989
  },
  {
   "id": "c498",
@@ -14725,7 +17216,12 @@
   "confidence": "Confirmed",
   "mono": "AF",
   "exited": false,
-  "score": 9
+  "score": 9,
+  "hqCity": "USA",
+  "hqState": "DC",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 2020
  },
  {
   "id": "c499",
@@ -14753,7 +17249,12 @@
   "confidence": "Confirmed",
   "mono": "AE",
   "exited": false,
-  "score": 9
+  "score": 9,
+  "hqCity": "Höhenkirchen",
+  "hqState": "",
+  "hqCountry": "Germany",
+  "region": "Europe",
+  "foundedYear": 1998
  },
  {
   "id": "c500",
@@ -14781,7 +17282,12 @@
   "confidence": "Confirmed",
   "mono": "AO",
   "exited": false,
-  "score": 9
+  "score": 9,
+  "hqCity": "",
+  "hqState": "",
+  "hqCountry": "Germany",
+  "region": "Europe",
+  "foundedYear": 2005
  },
  {
   "id": "c501",
@@ -14809,7 +17315,12 @@
   "confidence": "Confirmed",
   "mono": "AO",
   "exited": false,
-  "score": 8
+  "score": 8,
+  "hqCity": "",
+  "hqState": "",
+  "hqCountry": "Germany",
+  "region": "Europe",
+  "foundedYear": null
  },
  {
   "id": "c502",
@@ -14837,7 +17348,12 @@
   "confidence": "Confirmed",
   "mono": "AO",
   "exited": false,
-  "score": 8
+  "score": 8,
+  "hqCity": "",
+  "hqState": "",
+  "hqCountry": "Germany",
+  "region": "Europe",
+  "foundedYear": null
  },
  {
   "id": "c503",
@@ -14865,7 +17381,12 @@
   "confidence": "Confirmed",
   "mono": "AO",
   "exited": false,
-  "score": 8
+  "score": 8,
+  "hqCity": "",
+  "hqState": "",
+  "hqCountry": "Germany",
+  "region": "Europe",
+  "foundedYear": null
  },
  {
   "id": "c504",
@@ -14893,7 +17414,12 @@
   "confidence": "Confirmed",
   "mono": "AO",
   "exited": false,
-  "score": 8
+  "score": 8,
+  "hqCity": "",
+  "hqState": "",
+  "hqCountry": "Germany",
+  "region": "Europe",
+  "foundedYear": null
  },
  {
   "id": "c505",
@@ -14921,7 +17447,12 @@
   "confidence": "Confirmed",
   "mono": "AO",
   "exited": false,
-  "score": 8
+  "score": 8,
+  "hqCity": "",
+  "hqState": "",
+  "hqCountry": "Germany",
+  "region": "Europe",
+  "foundedYear": null
  },
  {
   "id": "c506",
@@ -14949,7 +17480,12 @@
   "confidence": "Confirmed",
   "mono": "AV",
   "exited": false,
-  "score": 8
+  "score": 8,
+  "hqCity": "SAE ITC",
+  "hqState": "",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 2019
  },
  {
   "id": "c507",
@@ -14977,7 +17513,12 @@
   "confidence": "Confirmed",
   "mono": "AV",
   "exited": false,
-  "score": 9
+  "score": 9,
+  "hqCity": "USA",
+  "hqState": "DC",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 2016
  },
  {
   "id": "c508",
@@ -15005,7 +17546,12 @@
   "confidence": "Confirmed",
   "mono": "AU",
   "exited": false,
-  "score": 9
+  "score": 9,
+  "hqCity": "USA",
+  "hqState": "VA",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 1972
  },
  {
   "id": "c509",
@@ -15035,7 +17581,12 @@
   "confidence": "Confirmed",
   "mono": "AV",
   "exited": false,
-  "score": 9
+  "score": 9,
+  "hqCity": "USA",
+  "hqState": "DC",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 2016
  },
  {
   "id": "c510",
@@ -15065,7 +17616,12 @@
   "confidence": "Confirmed",
   "mono": "AV",
   "exited": false,
-  "score": 8
+  "score": 8,
+  "hqCity": "SAE ITC program",
+  "hqState": "",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 2019
  },
  {
   "id": "c511",
@@ -15093,7 +17649,12 @@
   "confidence": "Confirmed",
   "mono": "CT",
   "exited": false,
-  "score": 8
+  "score": 8,
+  "hqCity": "Brussels",
+  "hqState": "",
+  "hqCountry": "Belgium",
+  "region": "Europe",
+  "foundedYear": null
  },
  {
   "id": "c512",
@@ -15122,7 +17683,12 @@
   "confidence": "Confirmed",
   "mono": "CR",
   "exited": false,
-  "score": 9
+  "score": 9,
+  "hqCity": "USA",
+  "hqState": "NY",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 1936
  },
  {
   "id": "c513",
@@ -15150,7 +17716,12 @@
   "confidence": "Confirmed",
   "mono": "ET",
   "exited": false,
-  "score": 8
+  "score": 8,
+  "hqCity": "Sophia Antipolis",
+  "hqState": "",
+  "hqCountry": "France",
+  "region": "Europe",
+  "foundedYear": null
  },
  {
   "id": "c514",
@@ -15178,7 +17749,12 @@
   "confidence": "Confirmed",
   "mono": "EN",
   "exited": false,
-  "score": 9
+  "score": 9,
+  "hqCity": "Leuven",
+  "hqState": "",
+  "hqCountry": "Belgium",
+  "region": "Europe",
+  "foundedYear": 1997
  },
  {
   "id": "c515",
@@ -15206,7 +17782,12 @@
   "confidence": "Confirmed",
   "mono": "HL",
   "exited": false,
-  "score": 9
+  "score": 9,
+  "hqCity": "USA",
+  "hqState": "VA",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 1972
  },
  {
   "id": "c516",
@@ -15234,7 +17815,12 @@
   "confidence": "Confirmed",
   "mono": "IE",
   "exited": false,
-  "score": 4
+  "score": 4,
+  "hqCity": "Piscataway",
+  "hqState": "NJ",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 1963
  },
  {
   "id": "c517",
@@ -15262,7 +17848,12 @@
   "confidence": "Confirmed",
   "mono": "I2",
   "exited": false,
-  "score": 9
+  "score": 9,
+  "hqCity": "IEEE",
+  "hqState": "",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 2022
  },
  {
   "id": "c518",
@@ -15290,7 +17881,12 @@
   "confidence": "Reported",
   "mono": "IP",
   "exited": false,
-  "score": 6
+  "score": 6,
+  "hqCity": "IEEE",
+  "hqState": "",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": null
  },
  {
   "id": "c519",
@@ -15318,7 +17914,12 @@
   "confidence": "Confirmed",
   "mono": "IS",
   "exited": false,
-  "score": 9
+  "score": 9,
+  "hqCity": "USA",
+  "hqState": "NJ",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 1963
  },
  {
   "id": "c520",
@@ -15346,7 +17947,12 @@
   "confidence": "Confirmed",
   "mono": "II",
   "exited": false,
-  "score": 9
+  "score": 9,
+  "hqCity": "USA",
+  "hqState": "VA",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 1959
  },
  {
   "id": "c521",
@@ -15374,7 +17980,12 @@
   "confidence": "Confirmed",
   "mono": "IB",
   "exited": false,
-  "score": 9
+  "score": 9,
+  "hqCity": "USA",
+  "hqState": "DC",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 1903
  },
  {
   "id": "c522",
@@ -15402,7 +18013,12 @@
   "confidence": "Confirmed",
   "mono": "IO",
   "exited": false,
-  "score": 9
+  "score": 9,
+  "hqCity": "Geneva",
+  "hqState": "",
+  "hqCountry": "Switzerland",
+  "region": "Europe",
+  "foundedYear": 1947
  },
  {
   "id": "c523",
@@ -15430,7 +18046,12 @@
   "confidence": "Confirmed",
   "mono": "IS",
   "exited": false,
-  "score": 4
+  "score": 4,
+  "hqCity": "Geneva",
+  "hqState": "",
+  "hqCountry": "Switzerland",
+  "region": "Europe",
+  "foundedYear": 1947
  },
  {
   "id": "c524",
@@ -15459,7 +18080,12 @@
   "confidence": "Confirmed",
   "mono": "IT",
   "exited": false,
-  "score": 9
+  "score": 9,
+  "hqCity": "Geneva",
+  "hqState": "",
+  "hqCountry": "Switzerland",
+  "region": "Europe",
+  "foundedYear": 1947
  },
  {
   "id": "c525",
@@ -15487,7 +18113,12 @@
   "confidence": "Confirmed",
   "mono": "I2",
   "exited": false,
-  "score": 9
+  "score": 9,
+  "hqCity": "Geneva",
+  "hqState": "",
+  "hqCountry": "Switzerland",
+  "region": "Europe",
+  "foundedYear": 2022
  },
  {
   "id": "c526",
@@ -15515,7 +18146,12 @@
   "confidence": "Confirmed",
   "mono": "I2",
   "exited": false,
-  "score": 9
+  "score": 9,
+  "hqCity": "Geneva",
+  "hqState": "",
+  "hqCountry": "Switzerland",
+  "region": "Europe",
+  "foundedYear": 2011
  },
  {
   "id": "c527",
@@ -15543,7 +18179,12 @@
   "confidence": "Confirmed",
   "mono": "I3",
   "exited": false,
-  "score": 9
+  "score": 9,
+  "hqCity": "Geneva",
+  "hqState": "",
+  "hqCountry": "Switzerland",
+  "region": "Europe",
+  "foundedYear": 2022
  },
  {
   "id": "c528",
@@ -15571,7 +18212,12 @@
   "confidence": "Confirmed",
   "mono": "I3",
   "exited": false,
-  "score": 9
+  "score": 9,
+  "hqCity": "Geneva",
+  "hqState": "",
+  "hqCountry": "Switzerland",
+  "region": "Europe",
+  "foundedYear": 2022
  },
  {
   "id": "c529",
@@ -15599,7 +18245,12 @@
   "confidence": "Confirmed",
   "mono": "I3",
   "exited": false,
-  "score": 9
+  "score": 9,
+  "hqCity": "Geneva",
+  "hqState": "",
+  "hqCountry": "Switzerland",
+  "region": "Europe",
+  "foundedYear": 2023
  },
  {
   "id": "c530",
@@ -15627,7 +18278,12 @@
   "confidence": "Confirmed",
   "mono": "I3",
   "exited": false,
-  "score": 9
+  "score": 9,
+  "hqCity": "Geneva",
+  "hqState": "",
+  "hqCountry": "Switzerland",
+  "region": "Europe",
+  "foundedYear": 2024
  },
  {
   "id": "c531",
@@ -15655,7 +18311,12 @@
   "confidence": "Confirmed",
   "mono": "IT",
   "exited": false,
-  "score": 9
+  "score": 9,
+  "hqCity": "Geneva",
+  "hqState": "",
+  "hqCountry": "Switzerland",
+  "region": "Europe",
+  "foundedYear": 1992
  },
  {
   "id": "c532",
@@ -15683,7 +18344,12 @@
   "confidence": "Confirmed",
   "mono": "IT",
   "exited": false,
-  "score": 9
+  "score": 9,
+  "hqCity": "Geneva",
+  "hqState": "",
+  "hqCountry": "Switzerland",
+  "region": "Europe",
+  "foundedYear": 1947
  },
  {
   "id": "c533",
@@ -15711,7 +18377,12 @@
   "confidence": "Reported",
   "mono": "IT",
   "exited": false,
-  "score": 6
+  "score": 6,
+  "hqCity": "Geneva",
+  "hqState": "",
+  "hqCountry": "Switzerland",
+  "region": "Europe",
+  "foundedYear": 2020
  },
  {
   "id": "c534",
@@ -15740,7 +18411,12 @@
   "confidence": "Confirmed",
   "mono": "IA",
   "exited": false,
-  "score": 9
+  "score": 9,
+  "hqCity": "USA",
+  "hqState": "DC",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 1991
  },
  {
   "id": "c535",
@@ -15768,7 +18444,12 @@
   "confidence": "Confirmed",
   "mono": "MC",
   "exited": false,
-  "score": 9
+  "score": 9,
+  "hqCity": "USA",
+  "hqState": "MI",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 2015
  },
  {
   "id": "c536",
@@ -15796,7 +18477,12 @@
   "confidence": "Confirmed",
   "mono": "MR",
   "exited": false,
-  "score": 9
+  "score": 9,
+  "hqCity": "",
+  "hqState": "",
+  "hqCountry": "Israel",
+  "region": "Middle East & Africa",
+  "foundedYear": 2017
  },
  {
   "id": "c537",
@@ -15824,7 +18510,12 @@
   "confidence": "Confirmed",
   "mono": "NS",
   "exited": false,
-  "score": 9
+  "score": 9,
+  "hqCity": "USA",
+  "hqState": "IL",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 1913
  },
  {
   "id": "c538",
@@ -15852,7 +18543,12 @@
   "confidence": "Reported",
   "mono": "OA",
   "exited": false,
-  "score": 6
+  "score": 6,
+  "hqCity": "",
+  "hqState": "",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 2024
  },
  {
   "id": "c539",
@@ -15880,7 +18576,12 @@
   "confidence": "Confirmed",
   "mono": "OM",
   "exited": false,
-  "score": 9
+  "score": 9,
+  "hqCity": "USA",
+  "hqState": "CA",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 2019
  },
  {
   "id": "c540",
@@ -15908,7 +18609,12 @@
   "confidence": "Confirmed",
   "mono": "PF",
   "exited": false,
-  "score": 9
+  "score": 9,
+  "hqCity": "USA",
+  "hqState": "DC",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 2019
  },
  {
   "id": "c541",
@@ -15938,7 +18644,12 @@
   "confidence": "Confirmed",
   "mono": "PA",
   "exited": false,
-  "score": 11
+  "score": 11,
+  "hqCity": "Washington",
+  "hqState": "DC",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 2018
  },
  {
   "id": "c542",
@@ -15966,7 +18677,12 @@
   "confidence": "Confirmed",
   "mono": "SI",
   "exited": false,
-  "score": 9
+  "score": 9,
+  "hqCity": "USA",
+  "hqState": "PA",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 2004
  },
  {
   "id": "c543",
@@ -15996,7 +18712,12 @@
   "confidence": "Confirmed",
   "mono": "SI",
   "exited": false,
-  "score": 9
+  "score": 9,
+  "hqCity": "USA",
+  "hqState": "PA",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 1905
  },
  {
   "id": "c544",
@@ -16024,7 +18745,12 @@
   "confidence": "Confirmed",
   "mono": "SJ",
   "exited": false,
-  "score": 9
+  "score": 9,
+  "hqCity": "SAE International",
+  "hqState": "",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 2014
  },
  {
   "id": "c545",
@@ -16052,7 +18778,12 @@
   "confidence": "Reported",
   "mono": "SJ",
   "exited": false,
-  "score": 5
+  "score": 5,
+  "hqCity": "SAE International",
+  "hqState": "",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": null
  },
  {
   "id": "c546",
@@ -16080,7 +18811,12 @@
   "confidence": "Confirmed",
   "mono": "SF",
   "exited": false,
-  "score": 8
+  "score": 8,
+  "hqCity": "",
+  "hqState": "",
+  "hqCountry": "",
+  "region": "",
+  "foundedYear": 2019
  },
  {
   "id": "c547",
@@ -16108,7 +18844,12 @@
   "confidence": "Confirmed",
   "mono": "TE",
   "exited": false,
-  "score": 5
+  "score": 5,
+  "hqCity": "Washington",
+  "hqState": "DC",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 1903
  },
  {
   "id": "c548",
@@ -16137,7 +18878,12 @@
   "confidence": "Confirmed",
   "mono": "U4",
   "exited": false,
-  "score": 8
+  "score": 8,
+  "hqCity": "UL Standards & Engagement",
+  "hqState": "",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 2020
  },
  {
   "id": "c549",
@@ -16165,7 +18911,12 @@
   "confidence": "Confirmed",
   "mono": "US",
   "exited": false,
-  "score": 9
+  "score": 9,
+  "hqCity": "Evanston",
+  "hqState": "",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 1894
  },
  {
   "id": "c550",
@@ -16193,7 +18944,12 @@
   "confidence": "Confirmed",
   "mono": "US",
   "exited": false,
-  "score": 4
+  "score": 4,
+  "hqCity": "Northbrook",
+  "hqState": "IL",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": 1894
  },
  {
   "id": "c551",
@@ -16221,7 +18977,12 @@
   "confidence": "Confirmed",
   "mono": "WA",
   "exited": false,
-  "score": 8
+  "score": 8,
+  "hqCity": "Cambridge",
+  "hqState": "MA",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": null
  },
  {
   "id": "c552",
@@ -16249,7 +19010,12 @@
   "confidence": "Confirmed",
   "mono": "WS",
   "exited": false,
-  "score": 8
+  "score": 8,
+  "hqCity": "USA",
+  "hqState": "CA",
+  "hqCountry": "US",
+  "region": "North America",
+  "foundedYear": null
  },
  {
   "id": "n_bytedance",
@@ -16277,7 +19043,12 @@
   "confidence": "Reported",
   "mono": "BY",
   "exited": false,
-  "score": 6
+  "score": 6,
+  "hqCity": "Beijing",
+  "hqState": "",
+  "hqCountry": "China",
+  "region": "Greater China",
+  "foundedYear": null
  },
  {
   "id": "n_li_auto",
@@ -16305,7 +19076,12 @@
   "confidence": "Reported",
   "mono": "LA",
   "exited": false,
-  "score": 6
+  "score": 6,
+  "hqCity": "Beijing",
+  "hqState": "",
+  "hqCountry": "China",
+  "region": "Greater China",
+  "foundedYear": null
  },
  {
   "id": "n_leapmotor",
@@ -16333,6 +19109,11 @@
   "confidence": "Reported",
   "mono": "LE",
   "exited": false,
-  "score": 6
+  "score": 6,
+  "hqCity": "Hangzhou",
+  "hqState": "",
+  "hqCountry": "China",
+  "region": "Greater China",
+  "foundedYear": null
  }
 ]

@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Autonomous Vehicle Ecosystem Map — by Kofi Agyare-Kwabi</title>
-<meta name="description" content="556 companies, 143 mapped partnerships, 11 layers — an interactive map of the autonomous-vehicle industry, compiled and maintained by Kofi Agyare-Kwabi.">
+<meta name="description" content="560 companies, 148 mapped partnerships, 11 layers — an interactive map of the autonomous-vehicle industry, compiled and maintained by Kofi Agyare-Kwabi.">
 <meta property="og:title" content="Autonomous Vehicle Ecosystem Map">
-<meta property="og:description" content="Select any of 556 companies to reveal its partners and trace its route to a passenger-facing robotaxi operator. Compiled by Kofi Agyare-Kwabi — ex-Uber Country Manager · GTM &amp; Partnerships · Wharton MBA.">
+<meta property="og:description" content="Select any of 560 companies to reveal its partners and trace its route to a passenger-facing robotaxi operator. Compiled by Kofi Agyare-Kwabi — ex-Uber Country Manager · GTM &amp; Partnerships · Wharton MBA.">
 <meta property="og:type" content="website">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='42' fill='%230e7490'/><circle cx='50' cy='50' r='14' fill='%23f4f4f2'/></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -606,7 +606,7 @@ footer.site .fver{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:1
     <div class="hbyline">Compiled &amp; maintained by <a href="https://www.linkedin.com/in/kofiagyare/" target="_blank" rel="noopener">Kofi Agyare-Kwabi</a> — ex-Uber Country Manager · GTM &amp; Partnerships · Wharton MBA</div>
   </div>
   <div id="searchWrap">
-    <input id="searchBox" type="text" placeholder="SEARCH 556 COMPANIES…" autocomplete="off" spellcheck="false" aria-label="Search companies">
+    <input id="searchBox" type="text" placeholder="SEARCH THE MAP…" autocomplete="off" spellcheck="false" aria-label="Search companies">
     <div id="searchDrop" role="listbox"></div>
   </div>
   <button id="aboutLink">ABOUT THIS MAP</button>
@@ -674,7 +674,7 @@ footer.site .fver{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:1
 <div id="landscapeNudge">
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="3" width="10" height="18" rx="2"/><path d="M3 8.5 L3 6 A 3 3 0 0 1 5 3.2"/><polyline points="1.4 6.8 3 6 3.8 7.6"/><path d="M21 15.5 L21 18 A 3 3 0 0 1 19 20.8"/><polyline points="22.6 17.2 21 18 20.2 16.4"/></svg>
   <h2>This map is wide</h2>
-  <p>556 companies and their connection lines read best sideways. Turn your phone to landscape — or continue anyway.</p>
+  <p>560 companies and their connection lines read best sideways. Turn your phone to landscape — or continue anyway.</p>
   <button id="nudgeBtn">CONTINUE IN PORTRAIT</button>
 </div>
 
@@ -684,7 +684,7 @@ footer.site .fver{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:1
     <h2>The industry behind every driverless ride</h2>
     <div class="wrow">
       <span class="wicon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9.2"/><path d="M2.8 12h18.4M12 2.8c2.6 2.5 4 5.7 4 9.2s-1.4 6.7-4 9.2c-2.6-2.5-4-5.7-4-9.2s1.4-6.7 4-9.2z"/></svg></span>
-      <p><b>556 companies · 11 layers · 143 mapped partnerships.</b> The autonomy developers, sensor and silicon makers, mapmakers, vehicle builders, depot crews, insurers and regulators behind every driverless ride on the road today.</p>
+      <p><b>560 companies · 11 layers · 148 mapped partnerships.</b> The autonomy developers, sensor and silicon makers, mapmakers, vehicle builders, depot crews, insurers and regulators behind every driverless ride on the road today.</p>
     </div>
     <div class="wrow">
       <span class="wicon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l7.5 16.5 2.2-6.8 6.8-2.2z"/></svg></span>
@@ -1967,6 +1967,7 @@ async function init(){
     adj.get(ed.a).set(ed.b, ed);
     adj.get(ed.b).set(ed.a, ed);
   }
+  document.getElementById('searchBox').placeholder = `SEARCH ${comps.length} COMPANIES…`;
   wireEvents();
   renderEverything();
   drawLines();

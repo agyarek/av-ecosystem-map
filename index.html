@@ -417,6 +417,30 @@ body.dlg-open #backdrop{display:block}
   #constel,#viewMap{display:none}
   .crail{max-width:none;min-width:0;overflow:visible;padding-right:0}
 }
+/* landscape phones (iPhone 12 Pro and up): the diagram IS the card, details flow beneath */
+#jumpDetails{
+  display:none;position:absolute;right:10px;bottom:10px;z-index:5;align-items:center;gap:6px;
+  font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:9.5px;font-weight:600;letter-spacing:.08em;
+  color:#fff;background:var(--accent);border-radius:var(--r-pill);padding:7px 12px;box-shadow:0 6px 18px rgba(10,10,10,.25);
+}
+@media(orientation:landscape) and (max-height:540px) and (min-width:640px){
+  #card{inset:0;margin:0;width:auto;height:100%;max-height:none;border-radius:0;border:none}
+  #cardScroll{display:block;overflow-y:auto;padding:12px 14px 20px}
+  .cbody{display:block;margin-top:10px}
+  #constel{display:block;position:relative;height:520px}
+  #viewMap{display:none}
+  .crail{max-width:none;min-width:0;overflow:visible;padding-right:0;margin-top:14px}
+  .cnode{width:116px;padding:5px 6px}
+  .cnode.center{width:176px}
+  .cnode .nname{font-size:10.5px}
+  .cnode.catnode .ctitle{font-size:8.5px}
+  .cnode.catnode.empty{width:92px}
+  .cnode .ndesc{font-size:9.5px}
+  .crow{font-size:10.5px}
+  .cnode.center .nexp{display:none}
+  .cnode.center .ndesc{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  #jumpDetails{display:inline-flex}
+}
 
 /* ============ welcome modal ============ */
 #welcome{
@@ -537,6 +561,81 @@ footer.site .fver{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:1
   #card .prkind{font-size:9px}
   #card .prnote{font-size:11.5px;line-height:1.5}
   #card .pghead{font-size:9.5px}
+}
+
+/* ============ rankings & timeline ============ */
+#charts{max-width:1240px;margin:0 auto;padding:8px 20px 46px}
+#charts h2{font-size:clamp(20px,3vw,26px);font-weight:800;letter-spacing:-.02em;margin-top:6px}
+.chintro{max-width:880px;color:var(--muted2);font-size:14px;line-height:1.65;margin-top:8px}
+#aggband{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:18px 0 8px}
+.agg{background:var(--cardbg);border:1px solid var(--border);border-radius:var(--r-panel);padding:13px 14px}
+.agg b{display:block;font-size:24px;font-weight:800;letter-spacing:-.02em}
+.agg span{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:9.5px;font-weight:600;letter-spacing:.1em;color:var(--muted);display:block;margin-top:3px;line-height:1.5}
+.rkblock{background:var(--cardbg);border:1px solid var(--border);border-radius:var(--r-box);padding:18px 18px 14px;margin-top:14px}
+.rkhead{display:flex;align-items:flex-start;gap:12px;flex-wrap:wrap}
+.rkhead h3{font-size:17px;font-weight:800;letter-spacing:-.01em}
+.rkdesc{font-size:12.5px;color:var(--muted);line-height:1.55;margin-top:3px;max-width:640px}
+.rkexp{
+  margin-left:auto;flex:none;display:inline-flex;align-items:center;gap:7px;
+  background:var(--accent);color:#fff;font-weight:700;font-size:11px;letter-spacing:.04em;
+  border-radius:var(--r-chip);padding:8px 12px;
+}
+.rkexp:hover{background:#0b6076}
+.rkexp svg{width:13px;height:13px;flex:none}
+.rklegend{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin:10px 2px 4px;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:9.5px;letter-spacing:.08em;color:var(--muted2)}
+.rklegend i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:5px;vertical-align:-1px}
+.rklegend i.tex{background:repeating-linear-gradient(45deg,#B45309 0 3px,transparent 3px 6px);border:1px solid #B45309}
+.rkrows{margin-top:8px}
+.rkgroup{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:9.5px;font-weight:600;letter-spacing:.12em;color:var(--muted2);margin:12px 2px 6px;display:flex;align-items:center;gap:8px}
+.rkgroup i{flex:1;height:1px;background:var(--border)}
+.rkrow{
+  display:flex;align-items:center;gap:9px;width:100%;padding:5px 6px;border-radius:8px;
+  border:1px solid transparent;
+}
+button.rkrow{cursor:pointer}
+button.rkrow:hover{border-color:var(--accent);background:var(--bg)}
+.rkrow .rkn{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:9.5px;color:var(--muted);width:22px;flex:none;text-align:right}
+.rkrow .rkname{font-weight:600;font-size:13px;letter-spacing:-.005em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;flex:none;width:200px;display:flex;align-items:center;gap:6px;text-align:left}
+.rkrow .rksub{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:9px;color:var(--muted);white-space:nowrap;flex:none;width:96px;overflow:hidden;text-overflow:ellipsis;text-align:left}
+.rkrow .rktrack{flex:1;height:14px;background:var(--bg);border-radius:4px;position:relative;min-width:60px}
+.rkrow .rkfill{position:absolute;left:0;top:2px;bottom:2px;border-radius:0 4px 4px 0;min-width:2px}
+.rkrow .rkfill.tex{background-image:repeating-linear-gradient(45deg,rgba(255,255,255,.55) 0 3px,transparent 3px 6px)}
+.rkrow .rkval{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;font-weight:600;color:var(--ink);flex:none;width:120px;text-align:right;white-space:nowrap}
+.rkrow.hdr{padding:8px 6px 2px}
+.rkrow.hdr .rkname{width:auto;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:10px;font-weight:600;letter-spacing:.1em;color:var(--ink)}
+.rkrow.hdr .rkval{color:var(--muted)}
+.rkrow.sub .rkname{padding-left:18px;font-weight:500}
+.rkfoot{display:flex;align-items:center;gap:10px;margin-top:10px;flex-wrap:wrap}
+.rkmore{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:10px;font-weight:600;letter-spacing:.08em;
+  color:var(--muted2);background:var(--bg);border:1px solid var(--border);border-radius:var(--r-chip);padding:7px 12px;
+}
+.rkmore:hover{border-color:var(--accent);color:var(--accent)}
+.rknote{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:9px;letter-spacing:.05em;color:var(--muted)}
+#fundFilter{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:10px;font-weight:600;letter-spacing:.05em;
+  color:var(--ink);background:var(--bg);border:1px solid var(--border);border-radius:var(--r-chip);padding:6px 8px;max-width:240px;
+}
+/* timeline rail */
+#fintl{display:flex;gap:10px;overflow-x:auto;padding:12px 2px 8px;scroll-snap-type:x proximity;-webkit-overflow-scrolling:touch}
+.tlcard{
+  flex:none;width:250px;scroll-snap-align:start;background:var(--bg);border:1px solid var(--border);
+  border-radius:12px;padding:12px 13px;display:flex;flex-direction:column;gap:5px;
+}
+.tlcard .tld{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:9.5px;font-weight:600;letter-spacing:.1em;color:var(--accent)}
+.tlcard .tlc{font-weight:700;font-size:14px;letter-spacing:-.01em;display:flex;align-items:center;gap:7px}
+.tlcard .tla{font-size:20px;font-weight:800;letter-spacing:-.02em}
+.tlcard .tlf{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:8.5px;font-weight:600;letter-spacing:.07em;color:var(--muted2);border:1px solid var(--border);border-radius:4px;padding:1.5px 6px;align-self:flex-start}
+.tlcard .tli{font-size:11px;color:var(--muted2);line-height:1.45}
+.tlcard .tln{font-size:10.5px;color:var(--muted);line-height:1.45;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.tlcard .tll{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:9.5px;font-weight:600;letter-spacing:.08em;color:var(--accent);text-decoration:none;margin-top:auto}
+.tlcard .tll:hover{text-decoration:underline}
+[data-theme="dark"] .rkrow .rktrack{background:#101014}
+[data-theme="dark"] .tlcard,[data-theme="dark"] .rkmore{background:#101014}
+@media(max-width:700px){
+  .rkrow .rkname{width:132px}
+  .rkrow .rksub{display:none}
+  .rkrow .rkval{width:86px;font-size:10px}
 }
 
 /* ============ phase-1 additions: spoken-with tag, path honesty, help CTAs ============ */
@@ -684,6 +783,20 @@ footer.site .fver{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:1
   <div id="adjacent"></div>
 </div>
 
+<section id="charts">
+  <p class="kicker">The ecosystem in numbers</p>
+  <div class="stackrow"><h2>Rankings &amp; the money behind them</h2></div>
+  <p class="chintro">Four ways to rank the map — where companies sit, how many vehicles they run, what they've raised, and how far they've driven — plus every funding announcement of $200M or more from the last three years. Figures cover companies with disclosed numbers; absence here means undisclosed, not unimportant.</p>
+  <div id="aggband"></div>
+  <div class="rkblock" id="tlblock">
+    <div class="rkhead">
+      <span style="min-width:0"><h3>Funding timeline — $200M and up</h3><p class="rkdesc">Who invested, in whom, when, and in what form. Scroll sideways; every card links to the announcement.</p></span>
+    </div>
+    <div id="fintl"></div>
+  </div>
+  <div id="rankblocks"></div>
+</section>
+
 <div id="landscapeNudge">
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="3" width="10" height="18" rx="2"/><path d="M3 8.5 L3 6 A 3 3 0 0 1 5 3.2"/><polyline points="1.4 6.8 3 6 3.8 7.6"/><path d="M21 15.5 L21 18 A 3 3 0 0 1 19 20.8"/><polyline points="22.6 17.2 21 18 20.2 16.4"/></svg>
   <h2>This map is wide</h2>
@@ -767,6 +880,7 @@ const ICONS = {
 
 /* ------------------ state ------------------ */
 let comps = [], enrich = { operators:[], edges:[], domains:{}, known:{} };
+let timeline = null;           // data/av-funding-timeline.json — null if unavailable
 let byName = {};
 let adj = new Map();          // name -> Map(partnerName -> edge)
 let selectedName = null;
@@ -1484,6 +1598,7 @@ function renderCard(){
         <button class="nexp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 15V3"/><path d="m7 8 5-5 5 5"/><path d="M5 14v5a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-5"/></svg>EXPORT MAP</button>
       </div>
       ${ringCards.join('')}
+      <button id="jumpDetails">DETAILS ↓</button>
     </div>`;
 
   scroll.innerHTML = `
@@ -1531,7 +1646,7 @@ function renderCard(){
    order (connectors can never cross), angular budget proportional to card width,
    then a few relaxation passes to resolve any remaining adjacent overlaps. Used by both the
    dialog constellation and the exported PNG so the two stay identical. */
-function ringPlace(items, W, H, pad){
+function ringPlace(items, W, H, pad, kw = 0, kh = 0){
   const n = items.length;
   if (!n) return [];
   const cx = W / 2, cy = H / 2;
@@ -1551,15 +1666,38 @@ function ringPlace(items, W, H, pad){
                        Math.abs(s) > 1e-6 ? hh / Math.abs(s) : 1e9);
     return { x: cx + c * t, y: cy + s * t };
   };
-  for (let pass = 0; pass < 18; pass++){
+  for (let pass = 0; pass < 48; pass++){
     let moved = false;
     for (let i = 0; i < n; i++){
+      // cramped fields only: steer nodes off the center card toward the horizontal flanks
+      if (kw){
+        const a0 = posAt(i);
+        if (Math.abs(a0.x - cx) < (kw + items[i].w) / 2 + 8 && Math.abs(a0.y - cy) < (kh + items[i].h) / 2 + 8){
+          const c2 = Math.cos(ang[i]), s2 = Math.sin(ang[i]);
+          const th = Math.atan2(s2, c2);
+          const target = c2 >= 0 ? 0 : (s2 >= 0 ? Math.PI : -Math.PI);
+          ang[i] += (target - th) * .16;
+          moved = true;
+        }
+      }
       const j = (i + 1) % n;
       if (j === i) break;
       const a = posAt(i), b = posAt(j);
       const needX = (items[i].w + items[j].w) / 2 + 10 - Math.abs(a.x - b.x);
       const needY = (items[i].h + items[j].h) / 2 + 10 - Math.abs(a.y - b.y);
-      if (needX > 0 && needY > 0){ ang[i] -= .022; ang[j] += .022; moved = true; }
+      if (needX > 0 && needY > 0){ const k = pass < 18 ? .022 : .034; ang[i] -= k; ang[j] += k; moved = true; }
+    }
+    if (kw){
+      // cramped fields: steering can land non-neighbors on the same flank — resolve every pair
+      for (let i = 0; i < n; i++) for (let j = i + 1; j < n; j++){
+        const a = posAt(i), b = posAt(j);
+        if ((items[i].w + items[j].w) / 2 + 8 > Math.abs(a.x - b.x) && (items[i].h + items[j].h) / 2 + 8 > Math.abs(a.y - b.y)){
+          const ti = Math.atan2(Math.sin(ang[i]), Math.cos(ang[i])), tj = Math.atan2(Math.sin(ang[j]), Math.cos(ang[j]));
+          const k2 = .03;
+          if (ti <= tj){ ang[i] -= k2; ang[j] += k2; } else { ang[i] += k2; ang[j] -= k2; }
+          moved = true;
+        }
+      }
     }
     if (!moved) break;
   }
@@ -1567,9 +1705,9 @@ function ringPlace(items, W, H, pad){
 }
 
 function layoutConstel(){
-  if (isMobileView()) return;
   const box = document.getElementById('constel');
-  if (!box || !document.getElementById('card').classList.contains('open')) return;
+  if (!box || box.offsetParent === null) return;                 // hidden (portrait phones) or absent
+  if (!document.getElementById('card').classList.contains('open')) return;
   const svg = document.getElementById('constelSvg');
   const center = box.querySelector('.cnode.center');
   const nodes = [...box.querySelectorAll('.cnode.catnode')];
@@ -1580,7 +1718,7 @@ function layoutConstel(){
   center.style.top  = cy + 'px';
   const cw = center.offsetWidth, ch = center.offsetHeight;
   const items = nodes.map(el => ({ w: el.offsetWidth, h: el.offsetHeight }));
-  const pos = ringPlace(items, W, H, 10);
+  const pos = ringPlace(items, W, H, 10, cw + 8, ch + 8);
   let html = '';
   nodes.forEach((el, i) => {
     const { x, y } = pos[i];
@@ -1797,6 +1935,238 @@ function exportPNG(){
   }, 'image/png');
 }
 
+/* =====================================================================
+   Rankings & timeline — four ways to rank the map, plus the money.
+   Row data comes from pure builders shared by the DOM and the PNG
+   exporters, so what you see is exactly what exports. Palettes below
+   were validated (light+dark, CVD) with the dataviz six-check script.
+   ===================================================================== */
+const WCOLOR = { 'Passenger loop':'#0891B2', 'Freight & trucking':'#B45309', 'Delivery':'#7C3AED' };
+const RCOLOR = { 'North America':'#0891B2', 'Europe':'#6366F1', 'Greater China':'#DC2626', 'Asia-Pacific':'#059669', 'Middle East & Africa':'#B45309' };
+const MCOLOR = { real:'#0891B2', sim:'#B45309' };
+const worldOf = c => c.segment === 'freight' ? 'Freight & trucking' : c.segment === 'delivery' ? 'Delivery' : 'Passenger loop';
+const rk = { loc:10, fleet:10, fund:10, miles:10, fundFilter:'ALL' };
+const fmtMiles = m => m >= 1000 ? (m/1000).toFixed(m >= 10000 ? 0 : 1).replace(/\.0$/, '') + 'B mi' : (m >= 10 ? Math.round(m) : m) + 'M mi';
+
+function buildLoc(){
+  const withHQ = comps.filter(c => c.hqCountry);
+  const byRegion = new Map();
+  for (const c of withHQ){
+    if (!byRegion.has(c.region)) byRegion.set(c.region, new Map());
+    const m = byRegion.get(c.region);
+    m.set(c.hqCountry, (m.get(c.hqCountry) || []).concat(c));
+  }
+  const maxCountry = Math.max(...[...byRegion.values()].flatMap(m => [...m.values()].map(v => v.length)));
+  const rows = [];
+  for (const [region, m] of [...byRegion.entries()].sort((a, b) =>
+      [...b[1].values()].reduce((s, v) => s + v.length, 0) - [...a[1].values()].reduce((s, v) => s + v.length, 0))){
+    const total = [...m.values()].reduce((s, v) => s + v.length, 0);
+    rows.push({ header: region.toUpperCase(), value: `${total}`, color: RCOLOR[region] || '#0891B2' });
+    for (const [country, list] of [...m.entries()].sort((a, b) => b[1].length - a[1].length)){
+      const top = list.sort((a, b) => b.score - a.score).slice(0, 3).map(c => c.name).join(' · ');
+      rows.push({ label: country, sub: top, value: `${list.length}`, frac: list.length / maxCountry, color: RCOLOR[region] || '#0891B2' });
+      if (country === 'US'){
+        const st = new Map();
+        for (const c of list) if (c.hqState) st.set(c.hqState, (st.get(c.hqState) || 0) + 1);
+        for (const [s, n] of [...st.entries()].sort((a, b) => b[1] - a[1]).slice(0, 8))
+          rows.push({ label: s, indent: true, value: `${n}`, frac: n / maxCountry, color: RCOLOR[region] || '#0891B2' });
+      }
+    }
+  }
+  return { key:'loc', title:'Where the ecosystem lives', desc:`Headquarters by region, country, and US state — ${withHQ.length} companies with a fixed seat.`,
+           legend: Object.entries(RCOLOR).map(([t, c]) => ({ t, c })), rows };
+}
+function buildFleet(){
+  const has = comps.filter(c => c.fleetSize);
+  const groups = ['Passenger loop','Freight & trucking','Delivery'];
+  const rows = [];
+  for (const g of groups){
+    const list = has.filter(c => worldOf(c) === g).sort((a, b) => b.fleetSize - a.fleetSize);
+    if (!list.length) continue;
+    const max = list[0].fleetSize;
+    rows.push({ header: `${g.toUpperCase()} — OWN SCALE`, value: '', color: WCOLOR[g] });
+    for (const c of list)
+      rows.push({ label: c.name, cname: c.name, sub: c.hqCountry || '', value: c.fleetSize.toLocaleString('en-US'),
+                  frac: c.fleetSize / max, color: WCOLOR[g] });
+  }
+  return { key:'fleet', title:'Active autonomous vehicles on the road', desc:`Latest publicly stated fleet counts — ${has.length} companies disclose one. Each world ranks on its own scale.`,
+           legend: Object.entries(WCOLOR).map(([t, c]) => ({ t, c })), rows };
+}
+function buildFund(){
+  let has = comps.filter(c => c.fundingUSD);
+  if (rk.fundFilter === 'ADJACENT') has = has.filter(c => c.segment);
+  else if (rk.fundFilter !== 'ALL') has = has.filter(c => c.cat === rk.fundFilter && !c.segment);
+  has = has.sort((a, b) => b.fundingUSD - a.fundingUSD);
+  const max = has.length ? has[0].fundingUSD : 1;
+  return { key:'fund', title:'Cumulative funding, largest first', desc:`Disclosed capital raised — ${has.length} companies${rk.fundFilter !== 'ALL' ? ' in this slice' : ''}. Public-company figures count pre-IPO capital plus listing proceeds.`,
+           legend: [], filter: true,
+           rows: has.map(c => ({ label: c.name, cname: c.name, sub: CATS[c.cat] ? CATS[c.cat].t : '', value: fmtMoney(c.fundingUSD),
+                                 frac: c.fundingUSD / max, color: '#0891B2' })) };
+}
+function buildMiles(){
+  const has = comps.filter(c => c.milesReal || c.milesVirtual).sort((a, b) => (b.milesReal || 0) - (a.milesReal || 0));
+  const maxR = Math.max(...has.map(c => c.milesReal || 0), 1);
+  const maxV = Math.max(...has.map(c => c.milesVirtual || 0), 1);
+  const rows = [];
+  for (const c of has){
+    if (c.milesReal) rows.push({ label: c.name, cname: c.name, sub: 'REAL · DRIVERLESS', value: fmtMiles(c.milesReal), frac: c.milesReal / maxR, color: MCOLOR.real });
+    if (c.milesVirtual) rows.push({ label: c.name, cname: c.name, sub: 'SIMULATED · OWN SCALE', value: fmtMiles(c.milesVirtual), frac: c.milesVirtual / maxV, color: MCOLOR.sim, tex: true });
+  }
+  return { key:'miles', title:'Miles driven — real vs. simulated', desc:`Cumulative driverless miles (solid) and published simulation miles (striped, on their own scale) — ${has.length} companies disclose either.`,
+           legend: [{ t:'REAL DRIVERLESS', c: MCOLOR.real }, { t:'SIMULATED (OWN SCALE)', c: MCOLOR.sim, tex: true }], rows };
+}
+const RKBUILD = { loc: buildLoc, fleet: buildFleet, fund: buildFund, miles: buildMiles };
+
+function renderCharts(){
+  const mount = document.getElementById('rankblocks');
+  if (!mount || !comps.length) return;
+  // aggregate band
+  const fundSum = comps.reduce((s, c) => s + (c.fundingUSD || 0), 0);
+  const fundN = comps.filter(c => c.fundingUSD).length;
+  const countries = new Set(comps.map(c => c.hqCountry).filter(Boolean)).size;
+  const exits = comps.filter(c => c.exited).length;
+  const evN = timeline ? timeline.events.length : 0;
+  const evSum = timeline ? timeline.events.reduce((s, e) => s + e.amountUSDm, 0) : 0;
+  document.getElementById('aggband').innerHTML = [
+    [fmtMoney(fundSum), `DISCLOSED FUNDING · ${fundN} COMPANIES`],
+    [fmtMoney(evSum), `RAISED IN ${evN} EVENTS ≥ $200M · 3 YRS`],
+    [String(countries), 'HQ COUNTRIES REPRESENTED'],
+    [String(exits), 'EXITS, WIND-DOWNS & ABSORPTIONS'],
+    ['18', 'COMPANIES SPOKEN WITH DIRECTLY']
+  ].map(([b, s]) => `<div class="agg"><b>${b}</b><span>${s}</span></div>`).join('');
+  // timeline rail
+  const tl = document.getElementById('fintl');
+  if (tl && timeline){
+    tl.innerHTML = timeline.events.map(ev => `
+      <div class="tlcard">
+        <span class="tld">${esc(ev.date)}</span>
+        <span class="tlc">${byName[ev.company] ? logoHTML(ev.company, 20) : ''}${esc(ev.company)}</span>
+        <span class="tla">${fmtMoney(ev.amountUSDm)}</span>
+        <span class="tlf">${esc(ev.form.toUpperCase())}</span>
+        <span class="tli">${esc(ev.investors.slice(0, 3).join(', '))}${ev.investors.length > 3 ? ` +${ev.investors.length - 3}` : ''}</span>
+        <span class="tln">${esc(ev.note)}</span>
+        <a class="tll" href="${esc(ev.url)}" target="_blank" rel="noopener">READ THE ANNOUNCEMENT ↗</a>
+      </div>`).join('');
+  } else if (tl){ document.getElementById('tlblock').style.display = 'none'; }
+  // ranking blocks
+  mount.innerHTML = ['loc','fleet','fund','miles'].map(k => {
+    const d = RKBUILD[k]();
+    const shown = d.rows.slice(0, rk[k]);
+    const rowHTML = r => r.header != null
+      ? `<div class="rkgroup"><span style="color:${r.color}">●</span> ${esc(r.header)}${r.value ? ` (${esc(r.value)})` : ''}<i></i></div>`
+      : `<${r.cname ? 'button' : 'div'} class="rkrow${r.indent ? ' sub' : ''}"${r.cname ? ` data-cname="${esc(r.cname)}"` : ''}>
+           <span class="rkn">${r.n}</span>
+           <span class="rkname">${r.cname ? logoHTML(r.cname, 20) : ''}${esc(r.label)}</span>
+           <span class="rksub">${esc(r.sub || '')}</span>
+           <span class="rktrack"><span class="rkfill${r.tex ? ' tex' : ''}" style="width:${Math.max(1, r.frac * 100)}%;background:${r.color}"></span></span>
+           <span class="rkval">${esc(r.value)}</span>
+         </${r.cname ? 'button' : 'div'}>`;
+    let n = 0;
+    shown.forEach(r => { if (r.header == null && !r.indent) r.n = ++n; else if (r.indent) r.n = ''; });
+    return `<div class="rkblock" data-rk="${k}">
+      <div class="rkhead">
+        <span style="min-width:0"><h3>${esc(d.title)}</h3><p class="rkdesc">${esc(d.desc)}</p></span>
+        ${d.filter ? `<select id="fundFilter">${['ALL','ADJACENT', ...CAT_ORDER].map(v =>
+            `<option value="${esc(v)}" ${rk.fundFilter === v ? 'selected' : ''}>${v === 'ALL' ? 'ALL LAYERS' : v === 'ADJACENT' ? 'ADJACENT WORLDS' : esc(CATS[v].t.toUpperCase())}</option>`).join('')}</select>` : ''}
+        <button class="rkexp" data-rkx="${k}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 15V3"/><path d="m7 8 5-5 5 5"/><path d="M5 14v5a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-5"/></svg>EXPORT GRAPH</button>
+      </div>
+      ${d.legend.length ? `<div class="rklegend">${d.legend.map(l => `<span><i class="${l.tex ? 'tex' : ''}" style="${l.tex ? '' : `background:${l.c}`}"></i>${esc(l.t)}</span>`).join('')}</div>` : ''}
+      <div class="rkrows">${shown.map(rowHTML).join('')}</div>
+      <div class="rkfoot">
+        ${d.rows.length > rk[k] ? `<button class="rkmore" data-rk="${k}">SHOW 10 MORE (${d.rows.length - rk[k]} LEFT)</button>` : ''}
+        <span class="rknote">SHOWING ${Math.min(rk[k], d.rows.length)} OF ${d.rows.length} · EXPORT MIRRORS WHAT'S REVEALED</span>
+      </div>
+    </div>`;
+  }).join('');
+  const ff = document.getElementById('fundFilter');
+  if (ff) ff.addEventListener('change', () => { rk.fundFilter = ff.value; rk.fund = 10; renderCharts(); });
+}
+
+/* PNG exporter — mirrors exactly the revealed rows of one block */
+function exportRank(kind){
+  const d = RKBUILD[kind]();
+  const rows = d.rows.slice(0, rk[kind]);
+  const W = 1400, ROWH = 44, HEAD = 168, FOOT = 92, LEG = d.legend.length ? 30 : 0;
+  const H = HEAD + LEG + rows.length * ROWH + 28 + FOOT;
+  const cv = document.createElement('canvas');
+  const S = 2; cv.width = W * S; cv.height = H * S;
+  const x = cv.getContext('2d'); x.scale(S, S);
+  x.fillStyle = '#f4f4f2'; x.fillRect(0, 0, W, H);
+  x.fillStyle = '#77776f'; x.font = '600 13px "IBM Plex Mono", monospace';
+  x.fillText('AUTONOMOUS VEHICLE ECOSYSTEM MAP · RANKINGS', 48, 56);
+  x.fillStyle = '#0a0a0a'; x.font = '900 40px Archivo, sans-serif';
+  x.fillText(d.title, 46, 102);
+  x.fillStyle = '#52525b'; x.font = '500 13px "IBM Plex Mono", monospace';
+  x.fillText(`SHOWING ${rows.length} OF ${d.rows.length} · DISCLOSED FIGURES ONLY · COMPILED JULY 2026`, 48, 130);
+  let y = HEAD - 14;
+  if (d.legend.length){
+    let lx = 48;
+    for (const l of d.legend){
+      x.fillStyle = l.c; x.fillRect(lx, y - 9, 12, 12);
+      if (l.tex){ x.strokeStyle = '#fff'; x.lineWidth = 1.5; for (let s = -12; s < 12; s += 4){ x.beginPath(); x.moveTo(lx + s, y + 3); x.lineTo(lx + s + 12, y - 9); x.stroke(); } }
+      x.fillStyle = '#52525b'; x.font = '600 10px "IBM Plex Mono", monospace';
+      x.fillText(l.t, lx + 17, y + 1);
+      lx += 17 + x.measureText(l.t).width + 22;
+    }
+    y += LEG;
+  }
+  const BARX = 420, BARW = W - BARX - 210;
+  let n = 0;
+  for (const r of rows){
+    if (r.header != null){
+      x.fillStyle = r.color; x.beginPath(); x.arc(54, y + 20, 4, 0, 7); x.fill();
+      x.fillStyle = '#52525b'; x.font = '600 11px "IBM Plex Mono", monospace';
+      x.fillText(`${r.header}${r.value ? ` (${r.value})` : ''}`, 66, y + 24);
+      x.strokeStyle = '#e4e4e7'; x.beginPath(); x.moveTo(78 + x.measureText(r.header).width + 60, y + 20); x.lineTo(W - 48, y + 20); x.stroke();
+      y += ROWH; continue;
+    }
+    if (!r.indent) n++;
+    const ind = r.indent ? 22 : 0;
+    x.fillStyle = '#a1a19a'; x.font = '600 10px "IBM Plex Mono", monospace'; x.textAlign = 'right';
+    x.fillText(r.indent ? '' : String(n), 66, y + 25); x.textAlign = 'left';
+    if (r.cname){
+      const cc = byName[r.cname];
+      x.fillStyle = r.color; x.beginPath(); x.roundRect(76 + ind, y + 8, 24, 24, 6); x.fill();
+      x.fillStyle = '#ffffff'; x.font = '700 9px "IBM Plex Mono", monospace'; x.textAlign = 'center';
+      x.fillText((cc && cc.mono || r.label.slice(0, 2)).toUpperCase().slice(0, 2), 88 + ind, y + 24); x.textAlign = 'left';
+    }
+    x.fillStyle = '#0a0a0a'; x.font = '600 14px Archivo, sans-serif';
+    const lab = r.label.length > 30 ? r.label.slice(0, 29) + '…' : r.label;
+    x.fillText(lab, (r.cname ? 108 : 78) + ind, y + 25);
+    if (r.sub){ x.fillStyle = '#77776f'; x.font = '500 9px "IBM Plex Mono", monospace'; x.fillText(String(r.sub).slice(0, 34), (r.cname ? 108 : 78) + ind + x.measureText('').width, y + 37); }
+    x.fillStyle = '#e9e9e5'; x.beginPath(); x.roundRect(BARX, y + 10, BARW, 18, 4); x.fill();
+    const bw = Math.max(3, r.frac * BARW);
+    x.fillStyle = r.color; x.beginPath(); x.roundRect(BARX, y + 10, bw, 18, [0, 4, 4, 0]); x.fill();
+    if (r.tex){
+      x.save(); x.beginPath(); x.roundRect(BARX, y + 10, bw, 18, [0, 4, 4, 0]); x.clip();
+      x.strokeStyle = 'rgba(255,255,255,.55)'; x.lineWidth = 2;
+      for (let s = BARX - 20; s < BARX + bw + 20; s += 7){ x.beginPath(); x.moveTo(s, y + 30); x.lineTo(s + 18, y + 8); x.stroke(); }
+      x.restore();
+    }
+    x.fillStyle = '#0a0a0a'; x.font = '600 13px "IBM Plex Mono", monospace'; x.textAlign = 'right';
+    x.fillText(r.value, W - 48, y + 25); x.textAlign = 'left';
+    y += ROWH;
+  }
+  x.fillStyle = '#0a0a0a'; x.fillRect(0, H - FOOT, W, FOOT);
+  x.fillStyle = '#ffffff'; x.font = '700 17px Archivo, sans-serif';
+  x.fillText('Mapped by Kofi Agyare-Kwabi', 48, H - 52);
+  x.fillStyle = '#a1a1aa'; x.font = '500 11px "IBM Plex Mono", monospace';
+  x.fillText('EX-UBER COUNTRY MANAGER · GTM & PARTNERSHIPS · WHARTON MBA', 48, H - 30);
+  x.textAlign = 'right'; x.fillStyle = '#22d3ee'; x.font = '600 12px "IBM Plex Mono", monospace';
+  x.fillText('linkedin.com/in/kofiagyare', W - 48, H - 52);
+  x.fillText('kofiagyare.com', W - 48, H - 30); x.textAlign = 'left';
+  return new Promise(res => cv.toBlob(blob => {
+    if (!blob) return res(false);
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = `av-${kind}-ranking.png`;
+    a.addEventListener('click', ev => ev.stopPropagation());
+    document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(() => URL.revokeObjectURL(a.href), 5000);
+    res(true);
+  }, 'image/png'));
+}
+
 /* ------------------ search ------------------ */
 let searchResults = [], searchActive = -1;
 function runSearch(q){
@@ -1927,6 +2297,19 @@ function wireEvents(){
       renderEverything(); drawLines(); requestAnimationFrame(drawLines);
       return;
     }
+    if (e.target.closest('#jumpDetails')){
+      document.querySelector('#card .crail')?.scrollIntoView({ behavior:'smooth', block:'start' });
+      return;
+    }
+    if (e.target.closest('.rkmore')){
+      const k = e.target.closest('.rkmore').dataset.rk;
+      rk[k] += 10; renderCharts();
+      return;
+    }
+    if (e.target.closest('.rkexp')){
+      exportRank(e.target.closest('.rkexp').dataset.rkx);
+      return;
+    }
     if (e.target.closest('.jchip')){
       const cat = e.target.closest('.jchip').dataset.jcat;
       ensureCategoryExpanded(cat);
@@ -1996,11 +2379,12 @@ function wireEvents(){
 
 /* ------------------ boot ------------------ */
 async function init(){
-  const [c, e] = await Promise.all([
+  const [c, e, tl] = await Promise.all([
     fetch('data/av-companies.json').then(r => r.json()),
-    fetch('data/av-enrichment.json').then(r => r.json())
+    fetch('data/av-enrichment.json').then(r => r.json()),
+    fetch('data/av-funding-timeline.json').then(r => r.json()).catch(() => null)
   ]);
-  comps = c; enrich = e;
+  comps = c; enrich = e; timeline = tl;
   byName = Object.fromEntries(comps.map(x => [x.name, x]));
   for (const ed of enrich.edges){
     if (!byName[ed.a] || !byName[ed.b]) continue;
@@ -2012,6 +2396,7 @@ async function init(){
   document.getElementById('searchBox').placeholder = `SEARCH ${comps.length} COMPANIES…`;
   wireEvents();
   renderEverything();
+  renderCharts();
   drawLines();
   requestAnimationFrame(() => { drawLines(); drawTrack(); });
   window.addEventListener('load', () => { drawLines(); drawTrack(); });

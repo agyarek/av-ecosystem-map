@@ -258,6 +258,19 @@ header.site .hbyline a:hover{text-decoration:underline}
   color:var(--muted2);background:#f1f1ee;border-radius:var(--r-chip);padding:7px 8px;
 }
 .pmore:hover{background:#e9e9e5;color:var(--ink)}
+.psort{display:flex;align-items:center;gap:4px;flex-wrap:wrap;padding:0 14px 8px}
+.pslab{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:9px;font-weight:600;letter-spacing:.12em;color:var(--muted);margin-right:2px}
+.psbtn{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:9px;font-weight:600;letter-spacing:.07em;
+  color:var(--muted2);border:1px solid var(--border);border-radius:10px;padding:3px 8px;
+}
+.psbtn:hover{border-color:var(--accent);color:var(--accent)}
+.psbtn.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.spdiv{display:flex;align-items:center;gap:8px;margin:6px 2px 4px}
+.spdiv i{flex:1;height:1px;background:var(--border)}
+.spdiv b{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:8.5px;font-weight:600;letter-spacing:.1em;color:var(--muted)}
+.ctag.mtag{color:var(--accent);border-color:var(--accent);white-space:nowrap}
+[data-theme="dark"] .psbtn.on{color:#fff}
 
 /* ============ adjacent worlds of autonomy ============ */
 .adjhead{margin:46px 0 12px;border-top:1px solid var(--border);padding-top:32px}
@@ -761,6 +774,15 @@ let dialogOpen = false;        // desktop: constellation dialog; closing it keep
 let panelLevel = {};          // cat -> 0 collapsed | 1 preview | 2 full
 CAT_ORDER.forEach(c => panelLevel[c] = 1);
 const PREVIEW_N = 10;
+const fmtMoney = m => m >= 1000 ? `$${(m/1000).toFixed(m >= 10000 ? 0 : 1).replace(/\.0$/, '')}B` : `$${Math.round(m)}M`;
+let panelSort = {};           // cat -> 'score' | 'founded' | 'funding' | 'fleet'
+CAT_ORDER.forEach(c => panelSort[c] = 'score');
+const SORTS = {
+  score:   { t:'RELEVANCE', cmp: (a, b) => b.score - a.score || a.name.localeCompare(b.name), chip: null },
+  founded: { t:'FOUNDED',   cmp: (a, b) => (a.foundedYear ?? 9999) - (b.foundedYear ?? 9999) || a.name.localeCompare(b.name), chip: c => c.foundedYear ?? null },
+  funding: { t:'FUNDING',   cmp: (a, b) => (b.fundingUSD ?? -1) - (a.fundingUSD ?? -1) || a.name.localeCompare(b.name), chip: c => c.fundingUSD != null ? fmtMoney(c.fundingUSD) : null },
+  fleet:   { t:'FLEET',     cmp: (a, b) => (b.fleetSize ?? -1) - (a.fleetSize ?? -1) || a.name.localeCompare(b.name), chip: c => c.fleetSize != null ? c.fleetSize.toLocaleString('en-US') + ' AVs' : null }
+};
 
 /* ------------------ helpers ------------------ */
 const esc = s => String(s ?? '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
@@ -939,8 +961,11 @@ function renderPanels(pins){
   const wrap = document.getElementById('panels');
   wrap.innerHTML = CAT_ORDER.map(cat => {
     const meta = CATS[cat];
-    const all = comps.filter(c => c.cat === cat && !c.segment).sort((a,b) => b.score - a.score || a.name.localeCompare(b.name));
-    const vis = all;                                        // every company shows — no filters
+    const all = comps.filter(c => c.cat === cat && !c.segment);
+    const srt = SORTS[panelSort[cat]] || SORTS.score;
+    const spoken = all.filter(c => c.spokenTo).sort((a, b) => a.name.localeCompare(b.name));   // spoken-with lead, A-Z
+    const rest = all.filter(c => !c.spokenTo).sort(srt.cmp);
+    const vis = [...spoken, ...rest];
     const lvl = panelLevel[cat];
     let list;
     if (lvl === 0){
@@ -951,7 +976,9 @@ function renderPanels(pins){
     } else {
       list = vis;
     }
-    const chips = list.map(c => `
+    const chipHTML = c => {
+      const mv = (panelSort[cat] !== 'score' && srt.chip) ? srt.chip(c) : null;
+      return `
       <button class="${tileClasses(c,'chip')}" data-cname="${esc(c.name)}">
         ${logoHTML(c.name,20)}
         <span class="cmain">
@@ -959,10 +986,18 @@ function renderPanels(pins){
           ${c.sub ? `<span class="csub">${esc(c.sub)}</span>` : ''}
         </span>
         ${c.spokenTo ? '<span class="sptag">◆ SPOKEN WITH</span>' : ''}
-        ${c.exited ? '<span class="ctag">EXITED</span>' : (c.segment ? `<span class="ctag">${esc(c.segment.toUpperCase())}</span>` : '')}
-      </button>`).join('');
+        ${c.exited ? '<span class="ctag">EXITED</span>' : ''}
+        ${mv != null ? `<span class="ctag mtag">${esc(mv)}</span>` : ''}
+      </button>`;
+    };
+    const spokenIn = list.filter(c => c.spokenTo), restIn = list.filter(c => !c.spokenTo);
+    const chips = spokenIn.map(chipHTML).join('')
+      + (spokenIn.length && restIn.length ? `<div class="spdiv"><i></i><b>THE REST · BY ${srt.t}</b><i></i></div>` : '')
+      + restIn.map(chipHTML).join('');
+    const sortRow = lvl > 0 ? `<div class="psort"><span class="pslab">SORT</span>${Object.entries(SORTS).map(([k, s]) =>
+        `<button class="psbtn ${panelSort[cat] === k ? 'on' : ''}" data-cat="${esc(cat)}" data-sort="${k}">${s.t}</button>`).join('')}</div>` : '';
     const more = (lvl > 0 && vis.length > PREVIEW_N)
-      ? `<button class="pmore" data-cat="${esc(cat)}">${lvl === 1 ? `SHOW ALL (${vis.length})` : 'SHOW TOP 10'}</button>` : '';
+      ? `<button class="pmore" data-cat="${esc(cat)}">${lvl === 1 ? `SHOW ALL (${vis.length})` : 'COLLAPSE TO 10'}</button>` : '';
     return `<section class="panel ${lvl > 0 ? 'open' : ''}" id="panel-${slug(cat)}" data-cat="${esc(cat)}">
       <div class="phead" role="button" tabindex="0" aria-expanded="${lvl > 0}">
         <span class="pdot" style="background:${dotColor(cat)}"></span>
@@ -970,6 +1005,7 @@ function renderPanels(pins){
         <span class="pcount">${vis.length}</span>
         <span class="caret">▸</span>
       </div>
+      ${sortRow}
       ${list.length ? `<div class="plist">${chips}</div>` : ''}
       ${more}
     </section>`;
@@ -1871,6 +1907,12 @@ function wireEvents(){
     }
     if (e.target.closest('#cardClose')){
       isMobileView() ? clearSelection() : closeDialog();
+      return;
+    }
+    if (e.target.closest('.psbtn')){
+      const b = e.target.closest('.psbtn');
+      panelSort[b.dataset.cat] = b.dataset.sort;
+      renderEverything(); drawLines(); requestAnimationFrame(drawLines);
       return;
     }
     if (e.target.closest('.pmore')){

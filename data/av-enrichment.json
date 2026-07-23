@@ -1,0 +1,1421 @@
+{
+ "operators": [
+  "Waymo",
+  "Zoox",
+  "Pony.ai",
+  "Motional",
+  "Uber",
+  "Lyft",
+  "Wayve",
+  "Via",
+  "Tesla",
+  "May Mobility"
+ ],
+ "edges": [
+  {
+   "a": "Waymo",
+   "b": "Uber",
+   "k": "Demand",
+   "n": "Waymo robotaxis are hailed exclusively through the Uber app in Austin and Atlanta."
+  },
+  {
+   "a": "Waymo",
+   "b": "Waymo One",
+   "k": "Same family",
+   "n": "Waymo One is Waymo's own consumer ride-hailing app and service brand."
+  },
+  {
+   "a": "Waymo",
+   "b": "Jaguar Land Rover",
+   "k": "Vehicle platform",
+   "n": "The Jaguar I-PACE is the workhorse of Waymo's current driverless fleet."
+  },
+  {
+   "a": "Waymo",
+   "b": "Zeekr",
+   "k": "Vehicle platform",
+   "n": "The purpose-built Zeekr RT is Waymo's next-generation robotaxi."
+  },
+  {
+   "a": "Waymo",
+   "b": "Hyundai Motor Group",
+   "k": "Vehicle platform",
+   "n": "US-built Ioniq 5s join the Waymo fleet under a multi-year supply deal."
+  },
+  {
+   "a": "Waymo",
+   "b": "Magna",
+   "k": "Manufacturing",
+   "n": "Co-operates the Mesa, AZ plant that integrates the Waymo Driver into new robotaxis."
+  },
+  {
+   "a": "Waymo",
+   "b": "Toyota",
+   "k": "Vehicle platform",
+   "n": "Preliminary alliance to bring Waymo autonomy to personally owned vehicles."
+  },
+  {
+   "a": "Waymo",
+   "b": "Moove AV / Moove",
+   "k": "Fleet ops",
+   "n": "Moove finances and runs Waymo fleet operations and depots in Phoenix and Miami."
+  },
+  {
+   "a": "Waymo",
+   "b": "Transdev",
+   "k": "Fleet ops",
+   "n": "Runs Waymo depot operations across Phoenix, SF, LA, Austin and Nashville."
+  },
+  {
+   "a": "Waymo",
+   "b": "Element Fleet Management",
+   "k": "Fleet ops",
+   "n": "Multi-year fleet-management partnership for San Diego (announced Jun 2026)."
+  },
+  {
+   "a": "Waymo",
+   "b": "Lyft Flexdrive",
+   "k": "Fleet ops",
+   "n": "Lyft's Flexdrive services and manages Waymo's Nashville fleet."
+  },
+  {
+   "a": "Waymo",
+   "b": "Lyft",
+   "k": "Fleet ops",
+   "n": "Nashville: rides hail in the Waymo app; Lyft handles fleet servicing via Flexdrive."
+  },
+  {
+   "a": "Waymo",
+   "b": "Avis Budget Group",
+   "k": "Fleet ops",
+   "n": "Avis manages Waymo fleet operations in Dallas."
+  },
+  {
+   "a": "Waymo",
+   "b": "Uber Eats",
+   "k": "Delivery",
+   "n": "Waymo vehicles deliver Uber Eats orders in Metro Phoenix."
+  },
+  {
+   "a": "Waymo",
+   "b": "Swiss Re",
+   "k": "Safety research",
+   "n": "Joint liability-claims research benchmarking Waymo safety against human drivers."
+  },
+  {
+   "a": "Waymo",
+   "b": "GO Inc.",
+   "k": "Fleet ops",
+   "n": "Tokyo taxi app GO manages Waymo's first international testing fleet."
+  },
+  {
+   "a": "Waymo",
+   "b": "California Public Utilities Commission (CPUC)",
+   "k": "Regulatory",
+   "n": "CPUC authorizes Waymo's fared driverless passenger service in California."
+  },
+  {
+   "a": "Waymo",
+   "b": "California Department of Motor Vehicles (California DMV)",
+   "k": "Regulatory",
+   "n": "Holds California driverless testing and deployment permits."
+  },
+  {
+   "a": "Waymo",
+   "b": "NHTSA",
+   "k": "Regulatory",
+   "n": "Subject of NHTSA defect evaluations and AV incident-reporting requirements."
+  },
+  {
+   "a": "Zoox",
+   "b": "NHTSA",
+   "k": "Regulatory",
+   "n": "Self-certified its purpose-built robotaxi under FMVSS; recall and inquiry dialogue ongoing."
+  },
+  {
+   "a": "Zoox",
+   "b": "California Department of Motor Vehicles (California DMV)",
+   "k": "Regulatory",
+   "n": "Tests driverless in Foster City and San Francisco under DMV permits."
+  },
+  {
+   "a": "Zoox",
+   "b": "Nevada Department of Motor Vehicles (Nevada DMV)",
+   "k": "Regulatory",
+   "n": "Nevada permits underpin Zoox's Las Vegas public robotaxi service."
+  },
+  {
+   "a": "Zoox",
+   "b": "California Public Utilities Commission (CPUC)",
+   "k": "Regulatory",
+   "n": "CPUC pilot permits govern Zoox passenger operations in California."
+  },
+  {
+   "a": "Pony.ai",
+   "b": "Toyota",
+   "k": "Vehicle platform",
+   "n": "Toyota JV puts the Pony Driver into bZ4X-based robotaxis for China fleets."
+  },
+  {
+   "a": "Pony.ai",
+   "b": "GAC Group / GAC Toyota",
+   "k": "Manufacturing",
+   "n": "GAC-Toyota lines build Pony.ai's Gen-7 robotaxi vehicles."
+  },
+  {
+   "a": "Pony.ai",
+   "b": "BAIC Group",
+   "k": "Vehicle platform",
+   "n": "Co-developing Gen-7 robotaxis on BAIC's EV platform."
+  },
+  {
+   "a": "Pony.ai",
+   "b": "Uber",
+   "k": "Demand",
+   "n": "Pony robotaxis ride on the Uber platform in the Middle East."
+  },
+  {
+   "a": "Pony.ai",
+   "b": "ComfortDelGro Zig",
+   "k": "Demand",
+   "n": "Singapore robotaxi trial with CDG's Zig app and fleet operations."
+  },
+  {
+   "a": "Pony.ai",
+   "b": "Dubai RTA",
+   "k": "Regulatory",
+   "n": "RTA pilot program brings Pony robotaxis to Dubai roads."
+  },
+  {
+   "a": "Pony.ai",
+   "b": "Tencent Cloud",
+   "k": "Compute",
+   "n": "Cloud infrastructure plus WeChat distribution for robotaxi services."
+  },
+  {
+   "a": "Pony.ai",
+   "b": "PonyPilot / Pony.ai Robotaxi",
+   "k": "Same family",
+   "n": "PonyPilot is Pony.ai's own robotaxi-hailing service."
+  },
+  {
+   "a": "Pony.ai",
+   "b": "Hesai",
+   "k": "Sensing supply",
+   "n": "Hesai LiDAR anchors the sensor suite across Pony robotaxi generations."
+  },
+  {
+   "a": "Pony.ai",
+   "b": "Stellantis",
+   "k": "Vehicle platform",
+   "n": "European robotaxi collaboration on Stellantis light-commercial vans (announced 2025)."
+  },
+  {
+   "a": "Pony.ai",
+   "b": "Ruqi Mobility",
+   "k": "Demand",
+   "n": "GAC's Ruqi app dispatches Pony robotaxis in Guangzhou."
+  },
+  {
+   "a": "Motional",
+   "b": "Hyundai Motor Group",
+   "k": "Same family",
+   "n": "Hyundai JV; the Ioniq 5 robotaxi was its purpose-built platform."
+  },
+  {
+   "a": "Motional",
+   "b": "Uber Eats",
+   "k": "Delivery",
+   "n": "Piloted autonomous Uber Eats deliveries in Santa Monica."
+  },
+  {
+   "a": "Motional",
+   "b": "Lyft",
+   "k": "Demand",
+   "n": "Ran driverless rides on the Lyft network in Las Vegas before refocusing."
+  },
+  {
+   "a": "Uber",
+   "b": "WeRide",
+   "k": "Demand",
+   "n": "WeRide driverless robotaxis run on Uber in Abu Dhabi, with a 15-city expansion plan."
+  },
+  {
+   "a": "Uber",
+   "b": "Baidu Apollo Go",
+   "k": "Demand",
+   "n": "Apollo Go robotaxis join the Uber platform across Asia and the Middle East."
+  },
+  {
+   "a": "Uber",
+   "b": "Momenta",
+   "k": "Demand",
+   "n": "Momenta L4 vehicles planned on Uber in Europe, starting with Munich (2026)."
+  },
+  {
+   "a": "Uber",
+   "b": "Wayve",
+   "k": "Investment",
+   "n": "Strategic investor; partnering toward L4 deployments on the Uber network."
+  },
+  {
+   "a": "Uber",
+   "b": "May Mobility",
+   "k": "Demand",
+   "n": "May Mobility AVs serve Uber riders, starting in Arlington, TX."
+  },
+  {
+   "a": "Uber",
+   "b": "Volkswagen Group / CARIAD",
+   "k": "Demand",
+   "n": "Autonomous VW ID. Buzz fleet launching on Uber in Los Angeles."
+  },
+  {
+   "a": "Uber",
+   "b": "Nuro",
+   "k": "Software",
+   "n": "The Nuro Driver powers Uber's premium robotaxi program on Lucid vehicles."
+  },
+  {
+   "a": "Uber",
+   "b": "Lucid",
+   "k": "Investment",
+   "n": "$300M Uber investment; 20k+ Gravity SUVs planned as robotaxis over six years."
+  },
+  {
+   "a": "Uber",
+   "b": "Avride",
+   "k": "Demand",
+   "n": "Avride robotaxis and sidewalk robots deploy through Uber in Dallas."
+  },
+  {
+   "a": "Uber",
+   "b": "NVIDIA",
+   "k": "Compute",
+   "n": "Scaling a 100k-vehicle Level-4-ready fleet on NVIDIA DRIVE Hyperion."
+  },
+  {
+   "a": "Uber",
+   "b": "Stellantis",
+   "k": "Vehicle platform",
+   "n": "Stellantis to supply thousands of AV-ready vans for Uber's robotaxi network."
+  },
+  {
+   "a": "Uber",
+   "b": "EVgo",
+   "k": "Charging",
+   "n": "Dedicated fast-charging depots for Uber EV and AV fleets in NY, LA, SF and Boston."
+  },
+  {
+   "a": "Uber",
+   "b": "Uber AV Infrastructure",
+   "k": "Same family",
+   "n": "Uber's in-house depot, charging and operations arm for partner AVs."
+  },
+  {
+   "a": "Uber",
+   "b": "Uber Eats",
+   "k": "Same family",
+   "n": "Shared network: Eats routes sidewalk robots and robotaxi deliveries."
+  },
+  {
+   "a": "Uber",
+   "b": "Uber Freight",
+   "k": "Same family",
+   "n": "Uber's logistics arm brokering autonomous truck capacity."
+  },
+  {
+   "a": "Uber",
+   "b": "Serve Robotics",
+   "k": "Delivery",
+   "n": "Uber spinout and investor; Serve robots deliver Uber Eats orders."
+  },
+  {
+   "a": "Uber",
+   "b": "BYD",
+   "k": "Vehicle platform",
+   "n": "Multi-market EV supply deal with future autonomy collaboration."
+  },
+  {
+   "a": "Uber",
+   "b": "Waabi",
+   "k": "Investment",
+   "n": "Backed Waabi's $1B raise; Waabi trucks haul on Uber Freight."
+  },
+  {
+   "a": "Uber",
+   "b": "Abu Dhabi ITC",
+   "k": "Regulatory",
+   "n": "ITC authorization enables fully driverless Uber/WeRide operations in Abu Dhabi."
+  },
+  {
+   "a": "Lyft",
+   "b": "May Mobility",
+   "k": "Demand",
+   "n": "May Mobility autonomous rides are live on Lyft in Atlanta."
+  },
+  {
+   "a": "Lyft",
+   "b": "Baidu Apollo Go",
+   "k": "Demand",
+   "n": "Apollo Go robotaxis planned on Lyft/FREE NOW in Germany and the UK."
+  },
+  {
+   "a": "Lyft",
+   "b": "Mobileye",
+   "k": "Software",
+   "n": "Mobileye Drive-equipped AVs to join the Lyft network, Dallas first."
+  },
+  {
+   "a": "Lyft",
+   "b": "FREE NOW",
+   "k": "Acquisition",
+   "n": "Lyft acquired FREE NOW (2025) as its European demand arm."
+  },
+  {
+   "a": "Lyft",
+   "b": "Lyft Flexdrive",
+   "k": "Same family",
+   "n": "Flexdrive is Lyft's fleet-management subsidiary."
+  },
+  {
+   "a": "Wayve",
+   "b": "Nissan",
+   "k": "Software",
+   "n": "Wayve AI Driver powers Nissan's next-generation ProPILOT from 2027."
+  },
+  {
+   "a": "Wayve",
+   "b": "NVIDIA",
+   "k": "Investment",
+   "n": "Investor and compute partner behind Wayve's embodied-AI driving stack."
+  },
+  {
+   "a": "Wayve",
+   "b": "Wayve AI Driver",
+   "k": "Same family",
+   "n": "Wayve's productized driver software for OEM and fleet partners."
+  },
+  {
+   "a": "Via",
+   "b": "May Mobility",
+   "k": "Software",
+   "n": "Via's booking and dispatch software powers May Mobility transit deployments."
+  },
+  {
+   "a": "NVIDIA DRIVE",
+   "b": "Mercedes-Benz",
+   "k": "Compute",
+   "n": "MB.OS automated driving runs on NVIDIA DRIVE compute."
+  },
+  {
+   "a": "NVIDIA DRIVE",
+   "b": "Toyota",
+   "k": "Compute",
+   "n": "Toyota builds next-gen automated driving on DRIVE AGX."
+  },
+  {
+   "a": "NVIDIA DRIVE",
+   "b": "Aurora Innovation",
+   "k": "Compute",
+   "n": "DRIVE Thor plus Continental hardware underpin Aurora's driverless trucks."
+  },
+  {
+   "a": "NVIDIA DRIVE",
+   "b": "Nuro",
+   "k": "Compute",
+   "n": "The Nuro Driver runs on NVIDIA DRIVE Thor compute."
+  },
+  {
+   "a": "NVIDIA DRIVE",
+   "b": "Volvo Cars",
+   "k": "Compute",
+   "n": "The Volvo EX90's core computer is NVIDIA DRIVE Orin."
+  },
+  {
+   "a": "NVIDIA DRIVE",
+   "b": "Zeekr",
+   "k": "Compute",
+   "n": "Zeekr ADAS ships on NVIDIA Orin/Thor compute."
+  },
+  {
+   "a": "NVIDIA DRIVE",
+   "b": "NVIDIA",
+   "k": "Same family",
+   "n": "The automotive platform arm of NVIDIA."
+  },
+  {
+   "a": "NVIDIA",
+   "b": "NVIDIA DRIVE Sim / Omniverse / Cosmos",
+   "k": "Same family",
+   "n": "NVIDIA's simulation and world-model stack for AV development."
+  },
+  {
+   "a": "Mobileye",
+   "b": "Volkswagen Group / CARIAD",
+   "k": "Software",
+   "n": "SuperVision and Chauffeur programs across Volkswagen Group brands."
+  },
+  {
+   "a": "Mobileye",
+   "b": "Holon",
+   "k": "Software",
+   "n": "Mobileye Drive automates the HOLON urban shuttle."
+  },
+  {
+   "a": "Mobileye",
+   "b": "Mobileye Drive",
+   "k": "Same family",
+   "n": "Mobileye's turnkey Level-4 driver for fleets."
+  },
+  {
+   "a": "Mobileye",
+   "b": "Mobileye REM / RoadBook",
+   "k": "Same family",
+   "n": "Crowdsourced mapping layer feeding Mobileye autonomy."
+  },
+  {
+   "a": "XPeng",
+   "b": "Volkswagen Group / CARIAD",
+   "k": "Software",
+   "n": "VW licenses XPeng's autonomous-driving stack for China-market EVs from 2026."
+  },
+  {
+   "a": "Horizon Robotics",
+   "b": "Volkswagen Group / CARIAD",
+   "k": "Compute",
+   "n": "CARIZON JV develops ADAS on Horizon Journey chips for VW in China."
+  },
+  {
+   "a": "Momenta",
+   "b": "Mercedes-Benz",
+   "k": "Software",
+   "n": "Momenta powers urban assisted driving for Mercedes China models."
+  },
+  {
+   "a": "Momenta",
+   "b": "SAIC Motor",
+   "k": "Investment",
+   "n": "Long-time SAIC autonomy partner across IM Motors lines."
+  },
+  {
+   "a": "Baidu Apollo Go",
+   "b": "Dubai RTA",
+   "k": "Regulatory",
+   "n": "RTA pilot fleet brings Apollo Go robotaxis to Dubai."
+  },
+  {
+   "a": "Baidu Apollo Go",
+   "b": "Baidu Apollo RT6",
+   "k": "Same family",
+   "n": "The purpose-built RT6 is Apollo Go's sixth-generation robotaxi."
+  },
+  {
+   "a": "Baidu Apollo Go",
+   "b": "Baidu Apollo HD Map / Baidu Maps",
+   "k": "Mapping",
+   "n": "Baidu's map stack underpins Apollo Go operations."
+  },
+  {
+   "a": "DiDi",
+   "b": "DiDi Autonomous Driving",
+   "k": "Same family",
+   "n": "DiDi's robotaxi R&D arm feeding its ride-hail network."
+  },
+  {
+   "a": "DiDi Autonomous Driving",
+   "b": "GAC Group / GAC Toyota",
+   "k": "Manufacturing",
+   "n": "JV to mass-produce robotaxis on GAC Aion EV platforms."
+  },
+  {
+   "a": "CaoCao Mobility",
+   "b": "Geely",
+   "k": "Same family",
+   "n": "Geely's ride-hailing arm; robotaxi pilots run on Geely platforms."
+  },
+  {
+   "a": "Ruqi Mobility",
+   "b": "GAC Group / GAC Toyota",
+   "k": "Same family",
+   "n": "GAC-backed robotaxi and ride-hailing platform."
+  },
+  {
+   "a": "WeRide",
+   "b": "Grab",
+   "k": "Demand",
+   "n": "Grab operates WeRide autonomous shuttle routes in Singapore."
+  },
+  {
+   "a": "WeRide",
+   "b": "Renault Group",
+   "k": "Vehicle platform",
+   "n": "Renault vans host WeRide shuttles for European deployments."
+  },
+  {
+   "a": "WeRide",
+   "b": "Abu Dhabi ITC",
+   "k": "Regulatory",
+   "n": "ITC authorized fully driverless WeRide robotaxi operations."
+  },
+  {
+   "a": "WeRide",
+   "b": "WeRide Go / WeRide Robotaxi",
+   "k": "Same family",
+   "n": "WeRide's consumer robotaxi service brand."
+  },
+  {
+   "a": "WeRide",
+   "b": "Singapore Land Transport Authority (LTA)",
+   "k": "Regulatory",
+   "n": "LTA sanctions WeRide's public shuttle routes in Singapore."
+  },
+  {
+   "a": "Zeekr",
+   "b": "Geely",
+   "k": "Same family",
+   "n": "Geely's premium EV brand supplying robotaxi platforms."
+  },
+  {
+   "a": "Grab",
+   "b": "Vay",
+   "k": "Investment",
+   "n": "Grab invested in Vay to bring remote driving to Southeast Asian fleets."
+  },
+  {
+   "a": "Aurora Innovation",
+   "b": "Volvo Trucks / Volvo Autonomous Solutions",
+   "k": "Vehicle platform",
+   "n": "The Volvo VNL Autonomous is factory-built for Aurora's driverless lanes."
+  },
+  {
+   "a": "Aurora Innovation",
+   "b": "PACCAR",
+   "k": "Vehicle platform",
+   "n": "Autonomy-ready Peterbilt 579s carry the Aurora Driver."
+  },
+  {
+   "a": "Aurora Innovation",
+   "b": "Continental",
+   "k": "Manufacturing",
+   "n": "Continental industrializes Aurora's driverless hardware kit at scale."
+  },
+  {
+   "a": "Aurora Innovation",
+   "b": "Uber Freight",
+   "k": "Freight",
+   "n": "Aurora hauls commercial freight brokered through Uber Freight."
+  },
+  {
+   "a": "Aurora Innovation",
+   "b": "Werner Enterprises",
+   "k": "Freight",
+   "n": "Driverless Dallas-Houston hauls for Werner."
+  },
+  {
+   "a": "Aurora Innovation",
+   "b": "McLane Company",
+   "k": "Freight",
+   "n": "Autonomous grocery freight for McLane in Texas."
+  },
+  {
+   "a": "Waabi",
+   "b": "Volvo Trucks / Volvo Autonomous Solutions",
+   "k": "Vehicle platform",
+   "n": "The Waabi Driver was ported to the Volvo VNL without retraining."
+  },
+  {
+   "a": "Waabi",
+   "b": "Uber Freight",
+   "k": "Freight",
+   "n": "Autonomous loads dispatched via Uber Freight."
+  },
+  {
+   "a": "Torc Robotics",
+   "b": "Daimler Truck",
+   "k": "Same family",
+   "n": "Majority-owned by Daimler Truck since 2019."
+  },
+  {
+   "a": "Torc Robotics",
+   "b": "Daimler Truck / Freightliner",
+   "k": "Vehicle platform",
+   "n": "The autonomous-ready Freightliner Cascadia is Torc's launch platform."
+  },
+  {
+   "a": "Aeva",
+   "b": "Torc Robotics",
+   "k": "Sensing supply",
+   "n": "Aeva 4D LiDAR is standard on the autonomous Freightliner Cascadia program."
+  },
+  {
+   "a": "Plus",
+   "b": "Iveco Group",
+   "k": "Vehicle platform",
+   "n": "SuperDrive integrates into IVECO S-Way trucks for Europe."
+  },
+  {
+   "a": "Gatik",
+   "b": "Isuzu",
+   "k": "Investment",
+   "n": "Isuzu invested; co-developing autonomous medium-duty trucks."
+  },
+  {
+   "a": "Gatik",
+   "b": "Gatik Commercial Network",
+   "k": "Same family",
+   "n": "Gatik's freight-network-as-a-service brand."
+  },
+  {
+   "a": "Applied Intuition",
+   "b": "Isuzu",
+   "k": "Software",
+   "n": "Partnership to productionize autonomous trucks in Japan."
+  },
+  {
+   "a": "Luminar",
+   "b": "Volvo Cars",
+   "k": "Sensing supply",
+   "n": "Iris LiDAR ships on the Volvo EX90."
+  },
+  {
+   "a": "Innoviz",
+   "b": "BMW Personal Pilot / ADAS",
+   "k": "Sensing supply",
+   "n": "InnovizOne LiDAR enables BMW's Level 3 Personal Pilot."
+  },
+  {
+   "a": "Seyond",
+   "b": "Nio",
+   "k": "Sensing supply",
+   "n": "Falcon LiDAR is standard on Nio's flagship models."
+  },
+  {
+   "a": "Qualcomm Snapdragon Ride",
+   "b": "BMW Personal Pilot / ADAS",
+   "k": "Compute",
+   "n": "Snapdragon Ride powers BMW's automated-driving stack."
+  },
+  {
+   "a": "Qualcomm Automotive",
+   "b": "Qualcomm Snapdragon Ride",
+   "k": "Same family",
+   "n": "Qualcomm's ADAS and autonomy compute platform."
+  },
+  {
+   "a": "Qualcomm",
+   "b": "Autotalks",
+   "k": "Acquisition",
+   "n": "Completed acquisition of the V2X chipmaker in 2025."
+  },
+  {
+   "a": "Ouster",
+   "b": "Serve Robotics",
+   "k": "Sensing supply",
+   "n": "Ouster digital LiDAR guides Serve's sidewalk robots."
+  },
+  {
+   "a": "Ouster",
+   "b": "Ouster BlueCity",
+   "k": "Same family",
+   "n": "Ouster's roadside and intersection perception product line."
+  },
+  {
+   "a": "Tesla AI Hardware",
+   "b": "Tesla",
+   "k": "Same family",
+   "n": "In-house FSD computer and training silicon."
+  },
+  {
+   "a": "Tesla Robotaxi / FSD",
+   "b": "Tesla",
+   "k": "Same family",
+   "n": "Tesla's in-house robotaxi service running FSD."
+  },
+  {
+   "a": "Tesla",
+   "b": "Tesla Supercharger (Robotaxi)",
+   "k": "Same family",
+   "n": "Supercharger network doubles as the robotaxi charging backbone."
+  },
+  {
+   "a": "Tesla Robotaxi / FSD",
+   "b": "NHTSA",
+   "k": "Regulatory",
+   "n": "FSD and robotaxi operations are under active NHTSA investigations."
+  },
+  {
+   "a": "HERE Technologies",
+   "b": "Mercedes-Benz Drive Pilot / MB.Drive",
+   "k": "Mapping",
+   "n": "HERE HD Live Map is a certified input to Drive Pilot Level 3."
+  },
+  {
+   "a": "Valeo",
+   "b": "Mercedes-Benz Drive Pilot / MB.Drive",
+   "k": "Sensing supply",
+   "n": "Valeo SCALA LiDAR enables Drive Pilot's Level 3 certification."
+  },
+  {
+   "a": "Mercedes-Benz Drive Pilot / MB.Drive",
+   "b": "Mercedes-Benz",
+   "k": "Same family",
+   "n": "Mercedes' certified Level 3 system and its successor stack."
+  },
+  {
+   "a": "Foretellix",
+   "b": "NVIDIA DRIVE Sim / Omniverse / Cosmos",
+   "k": "Simulation",
+   "n": "Foretify verification integrates with DRIVE Sim and Omniverse."
+  },
+  {
+   "a": "Elektrobit",
+   "b": "Continental",
+   "k": "Same family",
+   "n": "Continental's automotive software subsidiary."
+  },
+  {
+   "a": "Sonatus",
+   "b": "Hyundai Motor Group",
+   "k": "Software",
+   "n": "Vehicle-data software shipping in Hyundai and Kia production models."
+  },
+  {
+   "a": "Tier IV",
+   "b": "Tier IV / Autoware",
+   "k": "Same family",
+   "n": "Commercial arm of the open-source Autoware stack."
+  },
+  {
+   "a": "Woven by Toyota",
+   "b": "Toyota",
+   "k": "Same family",
+   "n": "Toyota's software and mobility R&D subsidiary."
+  },
+  {
+   "a": "Serve Robotics",
+   "b": "Uber Eats",
+   "k": "Delivery",
+   "n": "Thousands of Serve robots fulfill Uber Eats orders across US metros."
+  },
+  {
+   "a": "Cartken",
+   "b": "Uber Eats",
+   "k": "Delivery",
+   "n": "Cartken robots deliver for Uber Eats in Miami and Japan."
+  },
+  {
+   "a": "Coco Robotics",
+   "b": "Uber Eats",
+   "k": "Delivery",
+   "n": "Coco sidewalk robots are integrated into Uber Eats in LA and Miami."
+  },
+  {
+   "a": "Coco Robotics",
+   "b": "DoorDash",
+   "k": "Delivery",
+   "n": "Multi-market sidewalk delivery on the DoorDash network."
+  },
+  {
+   "a": "DoorDash",
+   "b": "DoorDash Dot",
+   "k": "Same family",
+   "n": "DoorDash Labs' purpose-built autonomous delivery robot."
+  },
+  {
+   "a": "Nuro",
+   "b": "Lucid",
+   "k": "Vehicle platform",
+   "n": "The Nuro Driver is integrated on the Lucid Gravity for the Uber program."
+  },
+  {
+   "a": "Nuro",
+   "b": "Nuro Driver",
+   "k": "Same family",
+   "n": "Licensing brand for Nuro's Level 4 driver."
+  },
+  {
+   "a": "Avride",
+   "b": "Hyundai Motor Group",
+   "k": "Vehicle platform",
+   "n": "Ioniq 5 supply deal for Avride's robotaxi fleet."
+  },
+  {
+   "a": "Beep",
+   "b": "Oxa",
+   "k": "Software",
+   "n": "Oxa's driver software runs Beep's shuttle deployments."
+  },
+  {
+   "a": "Beep",
+   "b": "Holon",
+   "k": "Vehicle platform",
+   "n": "US launch operator for the HOLON urban mover."
+  },
+  {
+   "a": "Holon",
+   "b": "Benteler Group",
+   "k": "Same family",
+   "n": "Benteler-founded purpose-built shuttle maker."
+  },
+  {
+   "a": "May Mobility",
+   "b": "Toyota",
+   "k": "Investment",
+   "n": "Toyota-backed; the autonomous Sienna is May's platform."
+  },
+  {
+   "a": "UVeye",
+   "b": "Hertz",
+   "k": "Fleet ops",
+   "n": "AI vehicle-inspection lanes rolled out across Hertz locations."
+  },
+  {
+   "a": "Verne",
+   "b": "Pony.ai",
+   "k": "Software",
+   "n": "Pony.ai supplies its Gen-7 autonomy stack for Verne's Zagreb robotaxi launch on Arcfox Alpha T5 EVs."
+  },
+  {
+   "a": "Verne",
+   "b": "Uber",
+   "k": "Demand",
+   "n": "Verne's Zagreb robotaxi rides will be hailed through the Uber app."
+  },
+  {
+   "a": "MOIA",
+   "b": "Volkswagen Group / CARIAD",
+   "k": "Same family",
+   "n": "MOIA is Volkswagen Group's mobility company and operator of the autonomous ID.Buzz program."
+  },
+  {
+   "a": "MOIA",
+   "b": "Uber",
+   "k": "Demand",
+   "n": "MOIA's autonomous ID.Buzz vehicles carry riders on the Uber platform in Los Angeles."
+  },
+  {
+   "a": "MOIA",
+   "b": "Mobileye Drive",
+   "k": "Software",
+   "n": "The ID.Buzz AD program runs Mobileye Drive with a 27-sensor suite."
+  }
+ ],
+ "domains": {
+  "Waymo": "waymo.com",
+  "Waymo One": "waymo.com",
+  "Waymo Safety Framework": "waymo.com",
+  "Zoox": "zoox.com",
+  "Pony.ai": "pony.ai",
+  "PonyPilot / Pony.ai Robotaxi": "pony.ai",
+  "Motional": "motional.com",
+  "Uber": "uber.com",
+  "Uber Eats": "uber.com",
+  "Uber Freight": "uberfreight.com",
+  "Uber AV Infrastructure": "uber.com",
+  "Lyft": "lyft.com",
+  "Lyft Flexdrive": "flexdrive.com",
+  "FREE NOW": "free-now.com",
+  "Wayve": "wayve.ai",
+  "Wayve AI Driver": "wayve.ai",
+  "Via": "ridewithvia.com",
+  "Lucid": "lucidmotors.com",
+  "Lucid Motors": "lucidmotors.com",
+  "NVIDIA": "nvidia.com",
+  "NVIDIA DRIVE": "nvidia.com",
+  "NVIDIA DRIVE / Halos": "nvidia.com",
+  "NVIDIA DRIVE Sim / Omniverse / Cosmos": "nvidia.com",
+  "Nuro": "nuro.ai",
+  "Nuro Driver": "nuro.ai",
+  "Nuro Delivery": "nuro.ai",
+  "Coco Robotics": "cocodelivery.com",
+  "Coco": "cocodelivery.com",
+  "Moove": "moove.io",
+  "Moove AV / Moove": "moove.io",
+  "Toyota": "toyota.com",
+  "Woven by Toyota": "woven.toyota",
+  "Tesla": "tesla.com",
+  "Tesla AI Hardware": "tesla.com",
+  "Tesla Robotaxi / FSD": "tesla.com",
+  "Tesla Robotaxi": "tesla.com",
+  "Tesla Supercharger (Robotaxi)": "tesla.com",
+  "May Mobility": "maymobility.com",
+  "May Mobility Operations": "maymobility.com",
+  "May Mobility Service": "maymobility.com",
+  "Avride": "avride.ai",
+  "Avride Robotaxi": "avride.ai",
+  "WeRide": "weride.ai",
+  "WeRide Go / WeRide Robotaxi": "weride.ai",
+  "Grab": "grab.com",
+  "Baidu Apollo Go": "apollo.auto",
+  "Baidu (Apollo Go)": "apollo.auto",
+  "Apollo Go": "apollo.auto",
+  "Baidu Apollo RT6": "apollo.auto",
+  "Baidu Apollo HD Map / Baidu Maps": "baidu.com",
+  "Baidu Apollo ACE / Vehicle-Road-Cloud": "apollo.auto",
+  "Serve Robotics": "serverobotics.com",
+  "DoorDash": "doordash.com",
+  "DoorDash Dot": "doordash.com",
+  "Instacart": "instacart.com",
+  "Beep": "ridebeep.com",
+  "Oxa": "oxa.tech",
+  "GO Inc.": "goinc.jp",
+  "Zeekr": "zeekrglobal.com",
+  "Geely": "geely.com",
+  "Magna": "magna.com",
+  "Magna Steyr": "magna.com",
+  "Hyundai Motor Group": "hyundai.com",
+  "Kia": "kia.com",
+  "Jaguar Land Rover": "jaguarlandrover.com",
+  "Stellantis": "stellantis.com",
+  "Volkswagen Group / CARIAD": "volkswagen-group.com",
+  "Mercedes-Benz": "mercedes-benz.com",
+  "Mercedes-Benz Drive Pilot / MB.Drive": "mercedes-benz.com",
+  "BMW Personal Pilot / ADAS": "bmw.com",
+  "Mobileye": "mobileye.com",
+  "Mobileye Drive": "mobileye.com",
+  "Mobileye REM / RoadBook": "mobileye.com",
+  "Mobileye Responsibility-Sensitive Safety (RSS)": "mobileye.com",
+  "XPeng": "xpeng.com",
+  "XPeng XNGP": "xpeng.com",
+  "Nio": "nio.com",
+  "Nissan": "nissan-global.com",
+  "Renault Group": "renaultgroup.com",
+  "Volvo Cars": "volvocars.com",
+  "Volvo Trucks / Volvo Autonomous Solutions": "volvotrucks.com",
+  "Volvo Group (Trucks)": "volvogroup.com",
+  "Volvo Autonomous Solutions": "volvoautonomoussolutions.com",
+  "BYD": "byd.com",
+  "SAIC Motor": "saicmotor.com",
+  "Ford": "ford.com",
+  "General Motors": "gm.com",
+  "Rivian": "rivian.com",
+  "Rivian Autonomy Platform": "rivian.com",
+  "PACCAR": "paccar.com",
+  "Daimler Truck": "daimlertruck.com",
+  "Daimler Truck / Freightliner": "daimlertruck.com",
+  "Iveco Group": "ivecogroup.com",
+  "Isuzu": "isuzu.co.jp",
+  "Bosch": "bosch.com",
+  "Continental": "continental.com",
+  "Denso": "denso.com",
+  "Aptiv": "aptiv.com",
+  "Valeo": "valeo.com",
+  "ZF": "zf.com",
+  "ZF Friedrichshafen": "zf.com",
+  "Forvia": "forvia.com",
+  "Forvia / Hella": "forvia.com",
+  "Benteler Group": "benteler.com",
+  "EasyMile": "easymile.com",
+  "Roush Industries": "roush.com",
+  "REE Automotive": "ree.auto",
+  "Yutong Bus": "yutong.com",
+  "Einride": "einride.tech",
+  "Aurora Innovation": "aurora.tech",
+  "Aurora Horizon": "aurora.tech",
+  "Waabi": "waabi.ai",
+  "Waabi Driver Commercial Network": "waabi.ai",
+  "Waabi World": "waabi.ai",
+  "Torc Robotics": "torc.ai",
+  "Kodiak AI": "kodiak.ai",
+  "Kodiak Commercial Network": "kodiak.ai",
+  "Gatik": "gatik.ai",
+  "Gatik Commercial Network": "gatik.ai",
+  "Plus": "plus.ai",
+  "Inceptio Technology": "inceptio.ai",
+  "Bot Auto": "bot.auto",
+  "TuSimple": "tusimple.com",
+  "Stack AV": "stackav.com",
+  "Pronto.ai": "pronto.ai",
+  "comma.ai": "comma.ai",
+  "AutoX": "autox.ai",
+  "AutoX Robotaxi": "autox.ai",
+  "DeepRoute.ai": "deeproute.ai",
+  "Tier IV": "tier4.jp",
+  "Tier IV / Autoware": "tier4.jp",
+  "Sonatus": "sonatus.com",
+  "Elektrobit": "elektrobit.com",
+  "Apex.AI": "apex.ai",
+  "Applied Intuition": "appliedintuition.com",
+  "Foretellix": "foretellix.com",
+  "dSPACE": "dspace.com",
+  "dSPACE ASM / AURELION": "dspace.com",
+  "IPG Automotive": "ipg-automotive.com",
+  "MathWorks": "mathworks.com",
+  "Ansys AVxcelerate / AV Simulation": "ansys.com",
+  "AVL": "avl.com",
+  "Cognata": "cognata.com",
+  "rFpro": "rfpro.com",
+  "aiMotive": "aimotive.com",
+  "aiMotive aiSim": "aimotive.com",
+  "Parallel Domain": "paralleldomain.com",
+  "CARLA": "carla.org",
+  "Scale AI": "scale.com",
+  "Appen": "appen.com",
+  "Sama": "sama.com",
+  "iMerit": "imerit.net",
+  "Labelbox": "labelbox.com",
+  "SuperAnnotate": "superannotate.com",
+  "V7 Labs": "v7labs.com",
+  "CVAT.ai": "cvat.ai",
+  "HumanSignal / Label Studio": "humansignal.com",
+  "Kognic": "kognic.com",
+  "Deepen AI": "deepen.ai",
+  "HERE Technologies": "here.com",
+  "HERE Marketplace / Location Services": "here.com",
+  "TomTom": "tomtom.com",
+  "TomTom Orbis / Maps APIs": "tomtom.com",
+  "Mapbox": "mapbox.com",
+  "NavInfo": "navinfo.com",
+  "TELUS Digital AI / Playment": "telusdigital.com",
+  "Trimble Applanix": "trimble.com",
+  "Hexagon | NovAtel": "novatel.com",
+  "Hexagon VIRES Virtual Test Drive": "hexagon.com",
+  "SBG Systems": "sbg-systems.com",
+  "Septentrio": "septentrio.com",
+  "Swift Navigation": "swiftnav.com",
+  "Point One Navigation": "pointonenav.com",
+  "u-blox": "u-blox.com",
+  "Ouster": "ouster.com",
+  "Ouster BlueCity": "ouster.com",
+  "Hesai": "hesaitech.com",
+  "RoboSense": "robosense.ai",
+  "Seyond": "seyond.com",
+  "Luminar": "luminartech.com",
+  "Innoviz": "innoviz.tech",
+  "Aeva": "aeva.com",
+  "Cepton": "cepton.com",
+  "LeddarTech": "leddartech.com",
+  "Livox": "livoxtech.com",
+  "MicroVision": "microvision.com",
+  "Uhnder": "uhnder.com",
+  "Arbe Robotics": "arberobotics.com",
+  "Ambarella": "ambarella.com",
+  "OmniVision": "ovt.com",
+  "Sony Semiconductor Solutions": "sony-semicon.com",
+  "Onsemi": "onsemi.com",
+  "Infineon Technologies": "infineon.com",
+  "NXP Semiconductors": "nxp.com",
+  "Renesas Electronics": "renesas.com",
+  "Texas Instruments": "ti.com",
+  "Qualcomm": "qualcomm.com",
+  "Qualcomm Automotive": "qualcomm.com",
+  "Qualcomm Snapdragon Ride": "qualcomm.com",
+  "Huawei": "huawei.com",
+  "Huawei Intelligent Automotive Solution / Yinwang": "huawei.com",
+  "Huawei Intelligent Automotive Solutions": "huawei.com",
+  "Huawei IAS/ADS (Qiankun)": "huawei.com",
+  "Tencent Cloud": "tencent.com",
+  "Alibaba Cloud": "alibabacloud.com",
+  "Ericsson": "ericsson.com",
+  "Nokia": "nokia.com",
+  "Autotalks": "autotalks.com",
+  "Cohda Wireless": "cohdawireless.com",
+  "Commsignia": "commsignia.com",
+  "Quectel Wireless": "quectel.com",
+  "Fibocom": "fibocom.com",
+  "Harman": "harman.com",
+  "Kapsch TrafficCom": "kapsch.net",
+  "Iteris": "iteris.com",
+  "SWARCO": "swarco.com",
+  "Econolite": "econolite.com",
+  "Miovision": "miovision.com",
+  "Hayden AI": "hayden.ai",
+  "Rekor Systems": "rekor.ai",
+  "Yunex Traffic": "yunextraffic.com",
+  "Q-Free": "q-free.com",
+  "Derq": "derq.com",
+  "Cavnue": "cavnue.com",
+  "Fernride": "fernride.com",
+  "5G Automotive Association": "5gaa.org",
+  "Upstream Security": "upstream.auto",
+  "Cybellum": "cybellum.com",
+  "C2A Security": "c2a-sec.com",
+  "ETAS / ESCRYPT": "etas.com",
+  "Vector Informatik": "vector.com",
+  "PlaxidityX / Argus Cyber Security": "plaxidityx.com",
+  "PlaxidityX (ex-Argus)": "plaxidityx.com",
+  "Karamba Security": "karambasecurity.com",
+  "GuardKnox": "guardknox.com",
+  "VicOne": "vicone.com",
+  "Autocrypt": "autocrypt.io",
+  "Vay": "vay.io",
+  "Ottopia": "ottopia.tech",
+  "DriveU.auto": "driveu.auto",
+  "ChargePoint": "chargepoint.com",
+  "EVgo": "evgo.com",
+  "Electrify America": "electrifyamerica.com",
+  "bp pulse": "bp.com",
+  "Ionity": "ionity.eu",
+  "Kempower": "kempower.com",
+  "PowerFlex": "powerflex.com",
+  "InductEV": "inductev.com",
+  "WiTricity": "witricity.com",
+  "WattEV": "wattev.com",
+  "TeraWatt Infrastructure": "terawattinfrastructure.com",
+  "Rocsys": "rocsys.com",
+  "Forum Mobility": "forummobility.com",
+  "Hertz": "hertz.com",
+  "Avis Budget Group": "avisbudgetgroup.com",
+  "Enterprise Fleet Management": "efleets.com",
+  "Element Fleet Management": "elementfleet.com",
+  "Cox Automotive": "coxautoinc.com",
+  "Transdev": "transdev.com",
+  "Keolis": "keolis.com",
+  "UVeye": "uveye.com",
+  "Tractable": "tractable.ai",
+  "Anyline": "anyline.com",
+  "Fleetio": "fleetio.com",
+  "Autofleet": "autofleet.io",
+  "Ridecell": "ridecell.com",
+  "Ampcontrol": "ampcontrol.io",
+  "Motive": "gomotive.com",
+  "Samsara": "samsara.com",
+  "Geotab": "geotab.com",
+  "Netradyne": "netradyne.com",
+  "Nexar": "getnexar.com",
+  "Optibus": "optibus.com",
+  "Spare": "sparelabs.com",
+  "RideCo": "rideco.com",
+  "Populus": "populus.ai",
+  "ParkMobile": "parkmobile.io",
+  "PayByPhone": "paybyphone.com",
+  "SpotHero": "spothero.com",
+  "Parkopedia": "parkopedia.com",
+  "Bolt": "bolt.eu",
+  "Careem": "careem.com",
+  "DiDi": "didiglobal.com",
+  "DiDi Autonomous Driving": "didiglobal.com",
+  "ComfortDelGro Zig": "comfortdelgro.com",
+  "Flexport": "flexport.com",
+  "Werner Enterprises": "werner.com",
+  "McLane Company": "mclaneco.com",
+  "Starship Technologies": "starship.xyz",
+  "Kiwibot": "kiwibot.com",
+  "Cartken": "cartken.com",
+  "Swiss Re": "swissre.com",
+  "Munich Re": "munichre.com",
+  "AIG": "aig.com",
+  "Allianz Commercial": "allianz.com",
+  "Aon": "aon.com",
+  "Beazley": "beazley.com",
+  "CCC Intelligent Solutions": "cccis.com",
+  "Chubb": "chubb.com",
+  "Gallagher": "ajg.com",
+  "Marsh": "marsh.com",
+  "Progressive": "progressive.com",
+  "Verisk Analytics": "verisk.com",
+  "WTW": "wtwco.com",
+  "Lloyd's of London": "lloyds.com",
+  "Lockton": "lockton.com",
+  "Admiral Group": "admiralgroup.co.uk",
+  "Aviva": "aviva.com",
+  "Zurich Insurance Group": "zurich.com",
+  "HDI Global": "hdi.global",
+  "Tokio Marine Kiln": "tokiomarinekiln.com",
+  "Cambridge Mobile Telematics": "cmtelematics.com",
+  "LexisNexis Risk Solutions": "lexisnexis.com",
+  "Fairmatic": "fairmatic.com",
+  "Cover Whale": "coverwhale.com",
+  "State Farm Ventures": "statefarm.com",
+  "Mitchell / Enlyte": "enlyte.com",
+  "TÜV SÜD": "tuvsud.com",
+  "TUV SUD": "tuvsud.com",
+  "TÜV Rheinland": "tuv.com",
+  "DEKRA": "dekra.com",
+  "Intertek": "intertek.com",
+  "UL Solutions": "ul.com",
+  "UL Standards & Engagement": "ulse.org",
+  "UL Standards (UL 4600)": "ulse.org",
+  "exida": "exida.com",
+  "HORIBA MIRA": "horiba-mira.com",
+  "NHTSA": "nhtsa.gov",
+  "NHTSA Office of Automation Safety": "nhtsa.gov",
+  "National Transportation Safety Board (NTSB)": "ntsb.gov",
+  "Federal Motor Carrier Safety Administration (FMCSA)": "fmcsa.dot.gov",
+  "Federal Highway Administration (FHWA)": "fhwa.dot.gov",
+  "Federal Trade Commission (FTC)": "ftc.gov",
+  "USDOT": "transportation.gov",
+  "U.S. Department of Transportation (USDOT)": "transportation.gov",
+  "California Public Utilities Commission (CPUC)": "cpuc.ca.gov",
+  "California CPUC": "cpuc.ca.gov",
+  "California Department of Motor Vehicles (California DMV)": "dmv.ca.gov",
+  "California DMV": "dmv.ca.gov",
+  "Nevada Department of Motor Vehicles (Nevada DMV)": "dmv.nv.gov",
+  "Nevada DMV": "dmv.nv.gov",
+  "Texas Department of Motor Vehicles (TxDMV)": "txdmv.gov",
+  "Texas DMV": "txdmv.gov",
+  "Texas Department of Transportation (TxDOT)": "txdot.gov",
+  "Arizona Department of Transportation (ADOT)": "azdot.gov",
+  "Arizona DOT": "azdot.gov",
+  "San Francisco Municipal Transportation Agency (SFMTA)": "sfmta.com",
+  "SFMTA": "sfmta.com",
+  "Florida Department of Highway Safety and Motor Vehicles (FLHSMV)": "flhsmv.gov",
+  "New York State Department of Motor Vehicles": "dmv.ny.gov",
+  "Phoenix Sky Harbor International Airport": "skyharbor.com",
+  "San Francisco International Airport Commission / SFO": "flysfo.com",
+  "Abu Dhabi ITC": "itc.gov.ae",
+  "Dubai RTA": "rta.ae",
+  "Saudi Transport General Authority (TGA)": "tga.gov.sa",
+  "Singapore Land Transport Authority (LTA)": "lta.gov.sg",
+  "Singapore LTA": "lta.gov.sg",
+  "Hong Kong Transport Department": "td.gov.hk",
+  "Japan Ministry of Land, Infrastructure, Transport and Tourism (MLIT)": "mlit.go.jp",
+  "Japan MLIT": "mlit.go.jp",
+  "Japan Ministry of Economy, Trade and Industry (METI)": "meti.go.jp",
+  "Japan National Police Agency (NPA)": "npa.go.jp",
+  "Tokyo Metropolitan Government": "metro.tokyo.lg.jp",
+  "South Korea Ministry of Land, Infrastructure and Transport (MOLIT)": "molit.go.kr",
+  "Kraftfahrt-Bundesamt (KBA)": "kba.de",
+  "Germany KBA": "kba.de",
+  "Germany Federal Ministry for Digital and Transport (BMDV)": "bmdv.bund.de",
+  "Netherlands RDW": "rdw.nl",
+  "Swedish Transport Agency": "transportstyrelsen.se",
+  "Switzerland Federal Roads Office (FEDRO / ASTRA)": "astra.admin.ch",
+  "European Commission DG GROW / DG MOVE": "ec.europa.eu",
+  "EU (Type Approval / AI Act)": "ec.europa.eu",
+  "UK Department for Transport (DfT)": "gov.uk",
+  "UK Centre for Connected and Autonomous Vehicles (CCAV)": "gov.uk",
+  "UK CCAV / DfT": "gov.uk",
+  "UK CCAV / AV Act": "gov.uk",
+  "UK Vehicle Certification Agency (VCA)": "gov.uk",
+  "UNECE WP.29 / GRVA": "unece.org",
+  "UNECE WP.29": "unece.org",
+  "China MIIT": "miit.gov.cn",
+  "MIIT (China)": "miit.gov.cn",
+  "Ministry of Industry and Information Technology (MIIT)": "miit.gov.cn",
+  "Ministry of Transport (China)": "mot.gov.cn",
+  "Ministry of Transport of the People's Republic of China": "mot.gov.cn",
+  "SAE International": "sae.org",
+  "SAE J3016": "sae.org",
+  "SAE J3134 ADS Marker Lamps": "sae.org",
+  "SAE Industry Technologies Consortia": "sae.org",
+  "ISO": "iso.org",
+  "International Organization for Standardization (ISO)": "iso.org",
+  "ISO 26262": "iso.org",
+  "ISO 21448 SOTIF": "iso.org",
+  "ISO 34501": "iso.org",
+  "ISO 34502": "iso.org",
+  "ISO 34503": "iso.org",
+  "ISO 34504": "iso.org",
+  "ISO / TC 204": "iso.org",
+  "ISO/TC 204 Intelligent Transport Systems": "iso.org",
+  "ISO/TC 22 Road Vehicles": "iso.org",
+  "ISO/TR 4804": "iso.org",
+  "IEEE": "ieee.org",
+  "IEEE Standards Association": "ieee.org",
+  "IEEE 2846": "ieee.org",
+  "IEEE P2851": "ieee.org",
+  "ASAM e.V.": "asam.net",
+  "ASAM OpenDRIVE": "asam.net",
+  "ASAM OpenLABEL": "asam.net",
+  "ASAM OpenODD": "asam.net",
+  "ASAM OpenSCENARIO DSL": "asam.net",
+  "ASAM OpenSCENARIO XML": "asam.net",
+  "ASAM OSI": "asam.net",
+  "ETSI TC ITS": "etsi.org",
+  "CEN/TC 278 Intelligent Transport Systems": "cen.eu",
+  "3GPP": "3gpp.org",
+  "W3C Automotive Working Group": "w3.org",
+  "Euro NCAP": "euroncap.com",
+  "Insurance Institute for Highway Safety (IIHS)": "iihs.org",
+  "Highway Loss Data Institute (HLDI)": "iihs.org",
+  "National Safety Council": "nsc.org",
+  "AAA Foundation for Traffic Safety": "aaafoundation.org",
+  "Advocates for Highway and Auto Safety": "saferoads.org",
+  "Alliance for Automotive Innovation": "autosinnovate.org",
+  "AVIA": "theavindustry.org",
+  "Autonomous Vehicle Industry Association (AVIA)": "theavindustry.org",
+  "AUVSI": "auvsi.org",
+  "ITS America": "itsamerica.org",
+  "PAVE": "pavecampaign.org",
+  "Partners for Automated Vehicle Education (PAVE)": "pavecampaign.org",
+  "Consumer Reports": "consumerreports.org",
+  "Teamsters": "teamster.org",
+  "International Brotherhood of Teamsters": "teamster.org",
+  "Open Mobility Foundation": "openmobilityfoundation.org",
+  "Mcity": "umich.edu",
+  "Horizon Robotics": "horizon.cc",
+  "Momenta": "momenta.cn",
+  "CaoCao Mobility": "caocaokeji.cn",
+  "Ruqi Mobility": "ruqimobility.com",
+  "GAC Group / GAC Toyota": "gac-motor.com",
+  "BAIC Group": "baicgroup.com.cn",
+  "MOIA": "moia.io",
+  "ENSO": "ensotyres.com"
+ },
+ "known": {
+  "Waymo": "First to scale fully driverless ride-hailing: 100M+ rider-only miles across 10+ US metros, with London next.",
+  "Waymo One": "The consumer app for the world's most-used driverless service, 250k+ paid rides a week.",
+  "Zoox": "Built the first purpose-designed robotaxi (no steering wheel) to carry public riders, live in Las Vegas and SF.",
+  "Pony.ai": "First robotaxi operator to reach unit-economics breakeven in a single city (Shenzhen, 2026).",
+  "Motional": "Hyundai-backed robotaxi operator relaunching driverless passenger service in Las Vegas.",
+  "Uber": "The world's largest ride-hail marketplace, now the demand layer for 20+ AV partners.",
+  "Uber Eats": "The most active demand channel for autonomous delivery: Serve, Coco, Cartken, Avride and Waymo.",
+  "Uber Freight": "Logistics marketplace brokering loads onto Aurora and Waabi autonomous trucks.",
+  "Lyft": "North America's #2 rideshare network, becoming a multi-partner AV marketplace.",
+  "Wayve": "Raised the UK's largest AI round for end-to-end learned driving; partnered with Nissan and Uber.",
+  "Via": "Powers microtransit in 650+ cities, the transit software layer for AV shuttles.",
+  "NVIDIA": "The silicon underneath nearly every AV training cluster and many in-car stacks.",
+  "NVIDIA DRIVE": "The de facto compute and software substrate for the AV industry.",
+  "Mobileye": "ADAS technology in 190M+ vehicles, the widest-deployed driving perception fleet on earth.",
+  "Baidu Apollo Go": "The world's largest robotaxi operation by cumulative rides, 11M+ trips across China and beyond.",
+  "Momenta": "China's leading ADAS software exporter, shipping with Mercedes, SAIC and more.",
+  "XPeng": "Vision-based urban assisted driving at scale; VW licenses its stack from 2026.",
+  "Tesla": "Runs the largest vision-only driving fleet: millions of FSD-capable cars feeding one training loop.",
+  "Tesla Robotaxi / FSD": "Launched supervised robotaxi service in Austin (2025), expanding to Miami (2026).",
+  "Tesla AI Hardware": "In-house FSD computer powering the world's largest consumer ADAS fleet.",
+  "Aurora Innovation": "First driverless Class-8 trucks in commercial service on Texas highways.",
+  "Waabi": "Ported its learned driver between truck platforms without retraining; raised $1B.",
+  "Kodiak AI": "First autonomous trucking company to go public; driverless operations in Texas.",
+  "Torc Robotics": "Daimler-owned; targeting series-production driverless Freightliner Cascadias in 2027.",
+  "Gatik": "Pioneered driverless middle-mile box-truck delivery for major retailers.",
+  "Einride": "Operates cab-less electric freight pods in commercial service since 2019.",
+  "Hesai": "The world's highest-volume automotive LiDAR maker.",
+  "Ouster": "Digital LiDAR across automotive, robotics and smart infrastructure; 12,600+ sensors shipped per quarter.",
+  "Luminar": "First to put LiDAR in a global consumer car line (Volvo EX90).",
+  "Innoviz": "LiDAR supplier behind BMW's certified Level 3 Personal Pilot.",
+  "Valeo": "Built the first mass-produced automotive-grade LiDAR (SCALA).",
+  "Aeva": "4D FMCW LiDAR chosen for Daimler's autonomous Freightliner Cascadia.",
+  "Applied Intuition": "The AV industry's default simulation and validation toolchain, valued above $15B.",
+  "Scale AI": "Labeled much of the industry's training data before Meta's landmark investment.",
+  "HERE Technologies": "The automotive industry's largest independent HD map provider.",
+  "Qualcomm Automotive": "Snapdragon Ride and Digital Chassis: a $45B automotive design-win pipeline.",
+  "Horizon Robotics": "China's top automotive AI-chip maker, 10M+ Journey SoCs shipped.",
+  "Magna": "The West's largest contract vehicle manufacturer, now assembling Waymo's robotaxis.",
+  "Hyundai Motor Group": "Supplies Ioniq 5 platforms to Waymo, Avride and its own Motional JV.",
+  "Zeekr": "Purpose-built the Zeekr RT, Waymo's next-generation robotaxi.",
+  "Geely": "China's most acquisitive automaker; targets 100,000 robotaxis by 2030.",
+  "BYD": "The world's largest EV maker, pushing God's Eye ADAS across its entire lineup.",
+  "Toyota": "The world's #1 automaker: capital and platforms behind Pony.ai, May Mobility and Waymo.",
+  "Mercedes-Benz Drive Pilot / MB.Drive": "First internationally certified Level 3 system sold to consumers.",
+  "May Mobility": "3.5M+ autonomous rides in city and transit service across the US and Japan.",
+  "WeRide": "First driverless robotaxis in the Gulf; publicly listed and active in 30+ cities.",
+  "Grab": "Southeast Asia's super-app, now operating AV shuttle routes in Singapore.",
+  "DiDi": "China's dominant ride-hailing platform with its own robotaxi arm.",
+  "Nuro": "Won the first federal driverless-vehicle exemption; now licenses the Nuro Driver industry-wide.",
+  "Serve Robotics": "The largest sidewalk-delivery deployment in the US, 2,000 robots for Uber Eats.",
+  "Swiss Re": "Published the first underwriting-grade study showing Waymo beats human-driver claims rates.",
+  "Transdev": "Operates public transit in 17 countries; runs Waymo's depots in five metros.",
+  "EVgo": "One of the largest US fast-charging networks, now building Uber's AV depots.",
+  "UVeye": "AI inspection arches scanning millions of fleet vehicles for operators like Hertz.",
+  "Vay": "First to commercially teledrive cars on US public roads (Las Vegas).",
+  "NHTSA": "The US federal vehicle-safety regulator: writes the FMVSS and runs every AV investigation.",
+  "California Public Utilities Commission (CPUC)": "Gatekeeper for paid driverless passenger service in California.",
+  "California Department of Motor Vehicles (California DMV)": "Issues California's AV testing and deployment permits.",
+  "Abu Dhabi ITC": "The regulator behind the Gulf's first fully driverless robotaxi service.",
+  "Dubai RTA": "Runs the world's most aggressive city robotaxi procurement: Baidu, Pony and WeRide at once.",
+  "GO Inc.": "Japan's #1 taxi app, managing Waymo's Tokyo fleet.",
+  "FREE NOW": "Europe's leading taxi super-app, acquired by Lyft in 2025.",
+  "ComfortDelGro Zig": "Singapore's biggest taxi operator, now running Pony.ai robotaxi trials.",
+  "Volvo Trucks / Volvo Autonomous Solutions": "Factory-builds redundant autonomous VNL trucks for Aurora and Waabi.",
+  "Continental": "Top-three global supplier, industrializing Aurora's driverless truck hardware.",
+  "Bosch": "The world's largest automotive supplier: foundational ADAS sensing and actuation.",
+  "Holon": "Benteler's purpose-built urban shuttle, automated by Mobileye and operated by Beep.",
+  "Lucid": "Its Gravity SUV is the platform for Uber and Nuro's premium robotaxi program.",
+  "Stellantis": "Fourth-largest automaker, supplying AV-ready van platforms to Uber and Pony.ai.",
+  "Volkswagen Group / CARIAD": "Europe's largest automaker, betting on XPeng, Horizon and Mobileye stacks plus its own ID. Buzz AV.",
+  "Verne": "Rimac-born operator behind Europe's first commercial robotaxi launch, Zagreb H2 2026",
+  "MOIA": "VW's autonomous ID.Buzz service, live on Uber in Los Angeles"
+ }
+}

@@ -1,0 +1,430 @@
+{
+ "meta": {
+  "title": "AV funding announcements of $200M or more",
+  "windowStart": "2023-08-01",
+  "windowEnd": "2026-07-21",
+  "thresholdUSDm": 200,
+  "compiled": "2026-07-21",
+  "method": "Each event verified via web search; every URL appeared in actual search results (primary source or major outlet preferred). Sub-$200M events and pure secondaries/stake sales excluded.",
+  "knownGaps": [
+   "Aurora Innovation reported ~$331M July 2025 follow-on — not yet verified against Aurora IR",
+   "Motional reported ~$550M August 2025 round — only low-quality aggregator sources found",
+   "Possible 2026 H1 lidar/AV-chip HK placements above $200M not yet swept"
+  ]
+ },
+ "events": [
+  {
+   "date": "2026-07-08",
+   "company": "Momenta",
+   "amountUSDm": 751,
+   "investors": [
+    "Public market investors",
+    "GIC",
+    "Fidelity International",
+    "BlackRock",
+    "Mercedes-Benz"
+   ],
+   "form": "IPO (Hong Kong listing)",
+   "note": "Hong Kong IPO at a ~$9B valuation, with ~20% of proceeds earmarked for robotaxi commercialization.",
+   "url": "https://www.cnbc.com/2026/07/08/chinese-autonomous-driving-firm-momenta-rises-3percent-in-hong-kong-debut-.html"
+  },
+  {
+   "date": "2026-06-09",
+   "company": "Einride",
+   "amountUSDm": 333,
+   "investors": [
+    "Legato Merger Corp. III trust",
+    "PIPE investors",
+    "EQT Ventures",
+    "NordicNinja"
+   ],
+   "form": "SPAC",
+   "note": "Completed business combination and began Nasdaq trading as ENRD; ~$333M gross including a $113M oversubscribed PIPE.",
+   "url": "https://www.prnewswire.com/news-releases/einride-a-global-leader-in-autonomous-and-electric-freight-completes-business-combination-and-will-begin-trading-on-nasdaq-stock-market-302795844.html"
+  },
+  {
+   "date": "2026-04",
+   "company": "Lucid (Uber program)",
+   "amountUSDm": 200,
+   "investors": [
+    "Uber"
+   ],
+   "form": "Follow-on strategic investment",
+   "note": "Uber's second $200M into Lucid took its stake to 11.5% and its total to $500M, with the Gravity robotaxi commitment expanded to at least 35,000 vehicles.",
+   "url": "https://rideai.substack.com/p/robotaxi-moneyball"
+  },
+  {
+   "date": "2026-02-24",
+   "company": "Wayve",
+   "amountUSDm": 1200,
+   "investors": [
+    "Financial investors",
+    "Microsoft",
+    "NVIDIA",
+    "Uber",
+    "Mercedes-Benz",
+    "Nissan",
+    "Stellantis"
+   ],
+   "form": "Series D",
+   "note": "$1.2B Series D at $8.6B post-money; ~$1.5B of capital secured including Uber milestone commitments; extended $60M by AMD, Arm and Qualcomm Ventures in April 2026.",
+   "url": "https://wayve.ai/press/series-d/"
+  },
+  {
+   "date": "2026-02-02",
+   "company": "Waymo",
+   "amountUSDm": 16000,
+   "investors": [
+    "Alphabet",
+    "Sequoia Capital",
+    "DST Global",
+    "Dragoneer",
+    "Andreessen Horowitz",
+    "Silver Lake",
+    "Tiger Global",
+    "T. Rowe Price",
+    "Fidelity"
+   ],
+   "form": "Growth round",
+   "note": "$16B at a $126B valuation — up from $45B in October 2024 — funding expansion to 20+ new cities including Tokyo and London.",
+   "url": "https://waymo.com/blog/2026/02/waymo-raises-usd16-billion-investment-round/"
+  },
+  {
+   "date": "2026-01-28",
+   "company": "Waabi",
+   "amountUSDm": 1000,
+   "investors": [
+    "Khosla Ventures",
+    "G2 Venture Partners",
+    "Uber",
+    "NVentures (NVIDIA)",
+    "Volvo Group VC",
+    "Porsche SE",
+    "BlackRock",
+    "Radical Ventures",
+    "ADIA subsidiary",
+    "BDC Capital"
+   ],
+   "form": "Series C + milestone investment",
+   "note": "$750M Series C plus up to $250M milestone-based Uber investment tied to deploying at least 25,000 Waabi-powered robotaxis on Uber.",
+   "url": "https://techcrunch.com/2026/01/28/waabi-raises-1b-and-expands-into-robotaxis-with-uber/"
+  },
+  {
+   "date": "2025-11-06",
+   "company": "Pony.ai",
+   "amountUSDm": 860,
+   "investors": [
+    "Public market investors",
+    "Cornerstone investors"
+   ],
+   "form": "IPO (Hong Kong dual-primary)",
+   "note": "~HK$6.7B gross at HK$139/share — the largest autonomous-driving IPO globally in 2025.",
+   "url": "https://ir.pony.ai/news-releases/news-release-details/pony-ai-inc-announces-pricing-hong-kong-initial-public-offering"
+  },
+  {
+   "date": "2025-11-06",
+   "company": "WeRide",
+   "amountUSDm": 308,
+   "investors": [
+    "Public market investors"
+   ],
+   "form": "IPO (Hong Kong dual-primary)",
+   "note": "~HK$2.39B at HK$27.10/share on the same day as Pony.ai's Hong Kong debut.",
+   "url": "https://ir.weride.ai/news-releases/news-release-details/weride-lists-hong-kong-stock-exchange-becoming-worlds-first"
+  },
+  {
+   "date": "2025-10-22",
+   "company": "Avride",
+   "amountUSDm": 375,
+   "investors": [
+    "Uber",
+    "Nebius Group"
+   ],
+   "form": "Strategic investment + commitments",
+   "note": "Up to $375M to scale the driverless fleet toward ~500 vehicles ahead of the Dallas robotaxi launch on Uber.",
+   "url": "https://nebius.com/newsroom/avride-secures-strategic-investment-and-other-commitments-of-up-to-375-million-backed-by-uber-and-nebius"
+  },
+  {
+   "date": "2025-10-11",
+   "company": "Didi Autonomous Driving",
+   "amountUSDm": 281,
+   "investors": [
+    "Zhongguancun Science City Growth Fund",
+    "Beijing Information Industry Fund",
+    "Beijing AI Industry Fund",
+    "GAC Group",
+    "Guangzhou Guanghua Fund",
+    "Didi"
+   ],
+   "form": "Series D",
+   "note": "RMB 2B from Beijing and Guangzhou state funds plus GAC for L4 robotaxi commercialization.",
+   "url": "https://technode.com/2025/10/11/didi-autonomous-driving-raises-rmb-2-billion-in-series-d-funding/"
+  },
+  {
+   "date": "2025-09-25",
+   "company": "Horizon Robotics",
+   "amountUSDm": 821,
+   "investors": [
+    "Institutional placees"
+   ],
+   "form": "Follow-on placement",
+   "note": "~$821M Hong Kong top-up placement of 639M shares to fund global expansion and robotaxi investments.",
+   "url": "https://wtvbam.com/2025/09/25/chinas-horizon-robotics-raises-about-821-million-via-hong-kong-top-up-share-placement-term-sheet-shows/"
+  },
+  {
+   "date": "2025-09-24",
+   "company": "Kodiak Robotics",
+   "amountUSDm": 275,
+   "investors": [
+    "Ares Acquisition Corp II trust",
+    "PIPE investors"
+   ],
+   "form": "SPAC",
+   "note": "$2.5B business combination; $275M+ gross including a $145M PIPE; Nasdaq: KDK.",
+   "url": "https://investors.kodiak.ai/news-releases/news-release-details/kodiak-completes-business-combination-ares-acquisition"
+  },
+  {
+   "date": "2025-09-16",
+   "company": "Hesai",
+   "amountUSDm": 535,
+   "investors": [
+    "Public market investors"
+   ],
+   "form": "IPO (Hong Kong dual-primary)",
+   "note": "HK$4.16B — the largest capital raise in the lidar industry to date.",
+   "url": "https://www.bloomberg.com/news/articles/2025-09-16/lidar-giant-hesai-rises-in-hk-debut-after-535-million-listing"
+  },
+  {
+   "date": "2025-08-21",
+   "company": "Nuro",
+   "amountUSDm": 203,
+   "investors": [
+    "Uber",
+    "NVIDIA",
+    "Baillie Gifford",
+    "Icehouse Ventures",
+    "Kindred Ventures",
+    "Pledge Ventures"
+   ],
+   "form": "Series E",
+   "note": "$203M at a $6B valuation, funding the licensing-focused strategy and the Lucid–Uber robotaxi program.",
+   "url": "https://www.nuro.ai/blog/nuro-closes-203-million-series-e-financing-to-advance-its-ai-first-self-driving-technology-and-commercial-partnerships"
+  },
+  {
+   "date": "2025-07-17",
+   "company": "Lucid + Nuro (Uber program)",
+   "amountUSDm": 300,
+   "investors": [
+    "Uber"
+   ],
+   "form": "Investment + vehicle order",
+   "note": "Uber invests $300M in Lucid and commits to 20,000+ Lucid Gravity SUVs with Nuro's L4 driver for a 2026 robotaxi fleet.",
+   "url": "https://www.cnbc.com/2025/07/17/uber-lucid-robotaxi-partnership-300-million-20000-nuro.html"
+  },
+  {
+   "date": "2025-06-25",
+   "company": "CaoCao Mobility",
+   "amountUSDm": 236,
+   "investors": [
+    "Public market investors"
+   ],
+   "form": "IPO",
+   "note": "Geely-backed platform's Hong Kong IPO; listing pitch features a robotaxi platform strategy.",
+   "url": "https://asia.nikkei.com/business/markets/ipo/china-ride-hail-app-caocao-raises-236m-in-hong-kong-debut"
+  },
+  {
+   "date": "2025-06-17",
+   "company": "Applied Intuition",
+   "amountUSDm": 600,
+   "investors": [
+    "BlackRock funds",
+    "Kleiner Perkins",
+    "Franklin Templeton",
+    "QIA",
+    "Abu Dhabi Investment Council",
+    "Premji Invest",
+    "Fidelity",
+    "General Catalyst",
+    "Lux Capital",
+    "BOND"
+   ],
+   "form": "Series F + tender",
+   "note": "~$200M primary and ~$400M secondary at a $15B valuation, up from $6B a year earlier.",
+   "url": "https://www.appliedintuition.com/press-releases/series-f"
+  },
+  {
+   "date": "2025-06-15",
+   "company": "Horizon Robotics",
+   "amountUSDm": 600,
+   "investors": [
+    "Institutional placees"
+   ],
+   "form": "Follow-on placement",
+   "note": "~HK$4.7B June 2025 placement — the first of two 2025 top-ups funding ADAS scale and robotaxi projects.",
+   "url": "https://www.thestandard.com.hk/innovation/article/304552/Horizon-Robotics-to-raise-HK47-billion-from-share-placements"
+  },
+  {
+   "date": "2024-11-27",
+   "company": "Pony.ai",
+   "amountUSDm": 413,
+   "investors": [
+    "Public market investors",
+    "Private placement investors"
+   ],
+   "form": "IPO",
+   "note": "$260M Nasdaq IPO plus ~$153M concurrent placements at a ~$5.4B valuation — the largest US AV IPO of 2024.",
+   "url": "https://www.bloomberg.com/news/articles/2024-11-27/driverless-tech-firm-pony-ai-s-shares-climb-19-after-us-ipo"
+  },
+  {
+   "date": "2024-10-25",
+   "company": "Waymo",
+   "amountUSDm": 5600,
+   "investors": [
+    "Alphabet",
+    "Andreessen Horowitz",
+    "Fidelity",
+    "Perry Creek",
+    "Silver Lake",
+    "T. Rowe Price",
+    "Tiger Global"
+   ],
+   "form": "Series C",
+   "note": "Oversubscribed $5.6B round at a $45B valuation to expand to Austin, Atlanta and beyond.",
+   "url": "https://www.cnbc.com/2024/10/25/alphabets-self-driving-unit-waymo-closes-5point6-billion-funding-round.html"
+  },
+  {
+   "date": "2024-10-25",
+   "company": "WeRide",
+   "amountUSDm": 440,
+   "investors": [
+    "Public market investors",
+    "Private placement investors"
+   ],
+   "form": "IPO",
+   "note": "$120.5M Nasdaq IPO plus $320.5M concurrent placements at a $4B+ valuation.",
+   "url": "https://www.bloomberg.com/news/articles/2024-10-25/china-s-weride-said-to-raise-440-5-million-in-us-ipo-placement"
+  },
+  {
+   "date": "2024-10-24",
+   "company": "Horizon Robotics",
+   "amountUSDm": 696,
+   "investors": [
+    "Public market investors",
+    "Alibaba",
+    "Baidu",
+    "Cornerstone investors"
+   ],
+   "form": "IPO",
+   "note": "HK$5.4B — Hong Kong's biggest IPO of 2024, priced at the top of the range.",
+   "url": "https://www.bloomberg.com/news/articles/2024-10-22/horizon-robotics-raises-696-million-in-hong-kong-ipo"
+  },
+  {
+   "date": "2024-08-02",
+   "company": "Aurora Innovation",
+   "amountUSDm": 483,
+   "investors": [
+    "Public market investors"
+   ],
+   "form": "Follow-on",
+   "note": "Upsized offering of 134.2M shares at $3.60 ahead of the commercial driverless trucking launch.",
+   "url": "https://techcrunch.com/2024/08/02/self-driving-truck-startup-aurora-innovation-raises-483m-commercial-launch/"
+  },
+  {
+   "date": "2024-07-23",
+   "company": "Waymo",
+   "amountUSDm": 5000,
+   "investors": [
+    "Alphabet"
+   ],
+   "form": "Parent commitment",
+   "note": "Alphabet announced a multiyear commitment of up to $5B, later reflected in the October 2024 Series C.",
+   "url": "https://www.cnbc.com/2024/07/23/alphabet-to-invest-5-billion-in-self-driving-car-unit-waymo.html"
+  },
+  {
+   "date": "2024-06-18",
+   "company": "Waabi",
+   "amountUSDm": 200,
+   "investors": [
+    "Uber",
+    "Khosla Ventures",
+    "NVIDIA",
+    "Volvo Group VC",
+    "Porsche SE",
+    "Scania Invest",
+    "Ingka Investments",
+    "HarbourVest",
+    "G2 Venture Partners",
+    "BDC Capital",
+    "EDC",
+    "Radical Ventures"
+   ],
+   "form": "Series B",
+   "note": "Oversubscribed round co-led by Uber and Khosla to launch fully driverless trucks in 2025.",
+   "url": "https://www.cnbc.com/2024/06/18/uber-khosla-nvidia-invest-in-autonomous-trucking-startup-waabi.html"
+  },
+  {
+   "date": "2024-06-11",
+   "company": "Cruise",
+   "amountUSDm": 850,
+   "investors": [
+    "General Motors"
+   ],
+   "form": "Parent infusion",
+   "note": "GM's bridge funding as Cruise relaunched testing — preceding GM's December 2024 decision to absorb the unit.",
+   "url": "https://techcrunch.com/2024/06/11/gm-gives-cruise-850m-lifeline-as-it-relaunches-robotaxis-in-houston"
+  },
+  {
+   "date": "2024-05-07",
+   "company": "Wayve",
+   "amountUSDm": 1050,
+   "investors": [
+    "SoftBank Group",
+    "NVIDIA",
+    "Microsoft",
+    "Eclipse Ventures"
+   ],
+   "form": "Series C",
+   "note": "The largest AI fundraise in UK history at the time, led by SoftBank.",
+   "url": "https://wayve.ai/press/series-c/"
+  },
+  {
+   "date": "2024-05-03",
+   "company": "Motional",
+   "amountUSDm": 923,
+   "investors": [
+    "Hyundai Motor Group"
+   ],
+   "form": "Strategic investment",
+   "note": "$475M direct injection plus $448M purchase of Aptiv's stake, taking Hyundai to ~85% ownership.",
+   "url": "https://techcrunch.com/2024/05/05/hyundai/"
+  },
+  {
+   "date": "2024-03-12",
+   "company": "Applied Intuition",
+   "amountUSDm": 250,
+   "investors": [
+    "Lux Capital",
+    "Elad Gil",
+    "Porsche Investments",
+    "Andreessen Horowitz",
+    "General Catalyst",
+    "BOND",
+    "Human Capital"
+   ],
+   "form": "Series E",
+   "note": "$250M at a $6B valuation for the AV simulation and vehicle-software platform.",
+   "url": "https://www.appliedintuition.com/press-releases/series-e"
+  },
+  {
+   "date": "2023-09-07",
+   "company": "Stack AV",
+   "amountUSDm": 1000,
+   "investors": [
+    "SoftBank Group"
+   ],
+   "form": "Launch funding",
+   "note": "SoftBank backed the Argo AI founders' autonomous trucking startup with north of $1B at launch.",
+   "url": "https://www.bloomberg.com/news/articles/2023-09-07/ford-volkswagen-self-driving-founders-start-autonomous-trucking-firm-stack"
+  }
+ ]
+}

@@ -18,9 +18,8 @@ av-ecosystem-map/
 │   ├── av-enrichment.json        # Verified metrics, funding, acquirer outcomes
 │   ├── av-funding-timeline.json  # Funding-timeline events
 │   └── av-companies.csv          # Airtable-ready flat export (generated)
-├── tools/
-│   └── make-csv.py               # Regenerates av-companies.csv from the JSON files
-└── .github/workflows/deploy.yml  # Deploys to GitHub Pages on every push to main
+└── tools/
+    └── make-csv.py               # Regenerates av-companies.csv from the JSON files
 ```
 
 ## Updating the data
@@ -31,7 +30,7 @@ Edit the JSON files in `data/`, then regenerate the CSV export:
 python3 tools/make-csv.py
 ```
 
-Push to `main` and the site redeploys automatically via GitHub Actions.
+Push to `main` and GitHub Pages rebuilds the site automatically (Pages is configured to deploy from the `main` branch, root folder).
 
 ## Contact
 

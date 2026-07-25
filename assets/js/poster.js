@@ -646,17 +646,49 @@
     // capture the deep-link hash before syncURL can rewrite the address bar
     const initial = decodeURIComponent(location.hash.slice(1));
 
+    // stage anchors from the home-page loop: fly to a region, not a company
+    const bandRect = id => {
+      const target = {
+        request: { district: 'demand-commercial-platforms' },
+        driver: { band: 'driver' },
+        vehicle: { district: 'vehicle-platform-manufacturing' },
+        pitlane: { band: 'pitlane' },
+        across: { band: 'across' },
+        ten: { medallion: true },
+      }[id];
+      if (!target) return null;
+      if (target.medallion) return L.meta.medallionBox;
+      const ds = target.district
+        ? L.districts.filter(d => d.id === target.district)
+        : L.districts.filter(d => d.band === target.band);
+      if (!ds.length) return null;
+      const x0 = Math.min(...ds.map(d => d.x)), y0 = Math.min(...ds.map(d => d.y));
+      const x1 = Math.max(...ds.map(d => d.x + d.w)), y1 = Math.max(...ds.map(d => d.y + d.h));
+      return { x: x0, y: y0, w: x1 - x0, h: y1 - y0 };
+    };
+    const flyToBand = id => {
+      const r = bandRect(id);
+      if (!r) return false;
+      flyTo(r.x + r.w / 2, r.y + r.h / 2,
+        Math.max(r.w * 1.12, r.h * 1.12 * vpSize().vw / vpSize().vh));
+      return true;
+    };
+
     buildRail(); readURL(); bindCamera(); bindKeys(); bindExport();
     chooseMode();
     applyFilters();
     matchMedia('(max-width: 859px)').addEventListener('change', chooseMode);
-    if (initial && chipEl(initial)) {
-      // let first paint land, then fly
-      requestAnimationFrame(() => setTimeout(() => select(initial, true), 60));
+    if (initial) {
+      // let first paint land, then fly (company slug or stage anchor)
+      requestAnimationFrame(() => setTimeout(() => {
+        if (chipEl(initial)) select(initial, true);
+        else flyToBand(initial);
+      }, 60));
     }
     addEventListener('hashchange', () => {
       const s = decodeURIComponent(location.hash.slice(1));
-      if (s && s !== state.sel) select(s, true);
+      if (s && chipEl(s) && s !== state.sel) select(s, true);
+      else if (s && !chipEl(s)) flyToBand(s);
       else if (!s) clearSel(true);
     });
 

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Money · Funding · AV Ecosystem Map</title>
+<meta name="description" content="$41.8B of disclosed autonomous vehicle funding events of $200M or more, August 2023 to July 2026: the timeline, who raised most, who writes the cheques, and the gaps this dataset admits to.">
+<meta property="og:title" content="The Money · AV Ecosystem Map">
+<meta property="og:description" content="$41.8B of disclosed autonomous vehicle funding events of $200M or more, August 2023 to July 2026: the timeline, who raised most, who writes the cheques, and the gaps this dataset admits to.">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://agyarek.github.io/av-ecosystem-map/assets/cards/funding.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%2312130F'/><rect x='18' y='44' width='40' height='12' rx='6' fill='%23F2B705'/><circle cx='78' cy='50' r='9' fill='%2300A5B8'/></svg>">
+<script>try{const t=localStorage.getItem('avTheme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');if(t==='dark')document.documentElement.dataset.theme='dark';}catch(e){}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,400..900&family=Source+Serif+4:opsz,wght@8..60,400..700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/base.css">
+<link rel="stylesheet" href="../assets/css/article.css">
+</head>
+<body data-page="funding">
+<a class="skip-link" href="#content">Skip to content</a>
+
+<header class="site">
+  <div class="bar">
+    <a class="wordmark" href="../"><span class="dash" aria-hidden="true"></span>AV&nbsp;ECOSYSTEM&nbsp;MAP</a>
+    <nav class="primary" aria-label="Primary">
+      <a data-nav="map" href="../map/">Map</a>
+      <a data-nav="companies" href="../companies/">Companies</a>
+      <a data-nav="operators" href="../operators/">The Ten</a>
+      <a data-nav="partnerships" href="../partnerships/">Partnerships</a>
+      <a data-nav="funding" href="../funding/">Money</a>
+      <a data-nav="regulation" href="../regulation/">Rules</a>
+      <a data-nav="beyond-roads" href="../beyond-roads/">Beyond Roads</a>
+    </nav>
+    <div class="chrome-tools">
+      <div id="site-search" role="search">
+        <input type="search" placeholder="SEARCH 560" autocomplete="off" spellcheck="false" aria-label="Search companies">
+        <div id="search-results" role="listbox" aria-label="Search results"></div>
+      </div>
+      <button id="theme-toggle" aria-label="Toggle light and dark theme">
+        <svg class="sun" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="8" cy="8" r="3.2"/><path d="M8 .8v2M8 13.2v2M.8 8h2M13.2 8h2M2.9 2.9l1.4 1.4M11.7 11.7l1.4 1.4M13.1 2.9l-1.4 1.4M4.3 11.7l-1.4 1.4"/></svg>
+        <svg class="moon" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M13.5 9.5A5.8 5.8 0 0 1 6.5 2.5a5.8 5.8 0 1 0 7 7z"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="content" class="container article">
+<div class="article-head">
+  <p class="eyebrow"><span class="tick">■</span> THE MONEY</p>
+  <h1 class="page-title">$41.8B, and most of it<br>went to one company</h1>
+  <p class="standfirst">Thirty disclosed events of $200M or more between August 2023 and July 2026.
+    Concentration is the story: Waymo alone accounts for $26.6B of the total across three events, and
+    2026's first seven months were the heaviest window in the dataset.</p>
+</div>
+
+<section aria-labelledby="tl-sec">
+  <h2 class="sec" id="tl-sec"><span class="n">01</span>The timeline</h2>
+  <div class="rail-row" id="fund-filters" style="display:flex;gap:6px;flex-wrap:wrap;margin-top:16px" role="group" aria-label="Filter by form and region"></div>
+  <p class="caption" id="fund-state" aria-live="polite" style="margin-top:8px"></p>
+  <div class="timeline-wrap"><div class="timeline" id="timeline"></div></div>
+  <p class="caption">Scroll sideways. Every event verified against a primary source or major outlet at
+    compilation; sub-$200M events and pure secondaries are excluded by design.</p>
+</section>
+
+<section aria-labelledby="cuts-sec">
+  <h2 class="sec" id="cuts-sec"><span class="n">02</span>Three cuts through the same money</h2>
+  <div class="prose"><p>The same thirty events, asked three different questions.</p></div>
+  <div class="fact-grid" style="grid-template-columns:repeat(auto-fit,minmax(280px,1fr))">
+    <div class="fact"><span class="lbl" style="font-weight:700;color:var(--ink)">Who raised the most</span><div id="cut-raised" style="margin-top:8px"></div></div>
+    <div class="fact"><span class="lbl" style="font-weight:700;color:var(--ink)">Who writes the cheques repeatedly</span><div id="cut-investors" style="margin-top:8px"></div></div>
+    <div class="fact"><span class="lbl" style="font-weight:700;color:var(--ink)">Where the money went</span><div id="cut-split" style="margin-top:8px"></div></div>
+  </div>
+  <div class="prose" style="margin-top:24px">
+    <p>Two patterns worth naming. <strong>Hong Kong became the venue of choice</strong> for the sector's
+      public capital: Momenta's $751M IPO in July 2026, Pony.ai's $860M and WeRide's $308M dual-primary
+      listings in November 2025, Hesai's $535M in September 2025, the largest raise in lidar history,
+      Horizon Robotics' $696M IPO plus $1.4B of placements, and CaoCao's $236M. And <strong>Uber appears
+      as an investor in seven of the thirty events</strong>, which is not a venture portfolio; it is a
+      supply chain being purchased. NVIDIA appears across Waabi, Wayve and Nuro, in addition to selling
+      all three their compute.</p>
+  </div>
+</section>
+
+<section aria-labelledby="gaps-sec">
+  <h2 class="sec" id="gaps-sec"><span class="n">03</span>What this dataset knows it is missing</h2>
+  <p class="prose">A funding tracker that publishes its own gaps is more trustworthy than one that
+    pretends completeness. These are carried in the data file itself, as content rather than metadata.</p>
+  <div id="gaps-slot" style="margin-top:16px"></div>
+  <p class="caption" style="margin-top:12px">Separately: 49 of the 560 company records carry disclosed
+    lifetime funding totalling $66.9B. The other 511 either raised privately without disclosure, are
+    funded by parents, or are public bodies. Blank is honest.</p>
+</section>
+
+<div class="keep-going">
+  <p class="eyebrow">KEEP GOING</p>
+  <div class="kg-row">
+    <a class="btn" href="../economics/">DOES THE MONEY COME BACK</a>
+    <a class="btn" href="../partnerships/">UBER'S SEVEN CHEQUES</a>
+    <a class="btn" href="../companies/?funded=1&sort=funding:desc">FUNDED COMPANIES IN THE LEDGER</a>
+  </div>
+</div>
+</main>
+
+<footer class="site">
+  <div class="container">
+    <p class="cta">A company that should be listed, a partnership not yet mapped, a detail that is wrong?
+      <a href="mailto:agyarek+avecosystemmap@gmail.com?subject=AV%20map%20correction">Send a correction</a>:
+      this map gets better through exactly those conversations.</p>
+    <p class="fine">Autonomous Vehicle Ecosystem Map · compiled by <a href="../method/">Kofi Agyare-Kwabi</a> from public filings, permits and announcements · updated 25 July 2026</p>
+  </div>
+</footer>
+
+<script src="../assets/js/core.js"></script>
+<script src="../assets/js/funding.js"></script>
+</body>
+</html>

@@ -35,6 +35,12 @@ companies = load("av-companies.json")
 enrichment = load("av-enrichment.json")
 funding = load("av-funding-timeline.json")
 
+# site style: no em-dashes anywhere in rendered copy, data included
+for name in ("av-companies.json", "av-enrichment.json", "av-funding-timeline.json"):
+    raw = open(os.path.join(ROOT, "data", name), encoding="utf-8").read()
+    if "—" in raw:
+        err(f"{name}: contains an em-dash; the site's copy rules forbid them")
+
 names = set()
 ids, slugs = set(), set()
 for c in companies:

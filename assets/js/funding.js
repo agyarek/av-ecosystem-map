@@ -1,4 +1,4 @@
-/* funding.js — renders the $200M+ timeline with form and region filters,
+/* funding.js :: renders the $200M+ timeline with form and region filters,
    the three analytical cuts, and the knownGaps array as visible content. */
 (function () {
   'use strict';

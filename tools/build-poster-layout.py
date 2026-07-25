@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-build-poster-layout.py — freeze the wall-chart geometry into data/poster-layout.json
+build-poster-layout.py :: freeze the wall-chart geometry into data/poster-layout.json
 
 Why this exists
 ---------------

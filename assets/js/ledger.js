@@ -1,4 +1,4 @@
-/* ledger.js — 560 rows, every field, sortable, filterable, exportable.
+/* ledger.js :: 560 rows, every field, sortable, filterable, exportable.
    All state serialises into the URL so any view is shareable. */
 (function () {
   'use strict';

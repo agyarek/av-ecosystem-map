@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-render-poster.py — render data/poster-layout.json to a standalone reference SVG.
+render-poster.py :: render data/poster-layout.json to a standalone reference SVG.
 
 This is the *proofing* renderer, not the production one. The site renders the same
 layout.json in the browser so chips stay interactive; this script exists so the

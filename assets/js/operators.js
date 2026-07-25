@@ -1,4 +1,4 @@
-/* operators.js — fills partner sections on operator pages from
+/* operators.js :: fills partner sections on operator pages from
    data/partner-index.json, so partnership edits never require touching prose. */
 (function () {
   'use strict';

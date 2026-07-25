@@ -1,4 +1,4 @@
-/* poster.js — the wall chart.
+/* poster.js :: the wall chart.
    Renders data/poster-layout.json verbatim (geometry is frozen at build time),
    then adds camera, selection, filters, exports and keyboard navigation.
    Filtering dims; it never reflows. One company, one chip, always. */

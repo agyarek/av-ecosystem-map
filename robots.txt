@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://agyarek.github.io/av-ecosystem-map/sitemap.xml

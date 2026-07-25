@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""build-indexes.py — freeze derived data into data/partner-index.json and
+"""build-indexes.py :: freeze derived data into data/partner-index.json and
 data/derived-counts.json so no page computes at runtime what the build can
 compute once.
 

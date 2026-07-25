@@ -1,4 +1,4 @@
-/* economics.js — the unit-economics calculator. Pure arithmetic, no data
+/* economics.js :: the unit-economics calculator. Pure arithmetic, no data
    fetch: the inputs ARE the editorial content and every default is visible. */
 (function () {
   'use strict';

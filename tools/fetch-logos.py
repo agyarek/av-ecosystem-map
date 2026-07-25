@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""fetch-logos.py — build-time logo pipeline (brief section 8).
+"""fetch-logos.py :: build-time logo pipeline (brief section 8).
 
 Reads the domains map from data/av-enrichment.json, walks a fallback chain per
 company, normalises every mark to a square transparent asset, and freezes the

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""validate-data.py — assert the invariants every page depends on.
+"""validate-data.py :: assert the invariants every page depends on.
 
 Run after any data edit, and in CI before deploy:
     python3 tools/validate-data.py

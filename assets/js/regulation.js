@@ -1,4 +1,4 @@
-/* regulation.js — region tabs with URL-hash persistence. */
+/* regulation.js :: region tabs with URL-hash persistence. */
 (function () {
   'use strict';
   const tabs = [...document.querySelectorAll('[role="tab"]')];

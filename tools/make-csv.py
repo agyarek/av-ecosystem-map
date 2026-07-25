@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate data/av-companies.csv — the Airtable-ready flat table.
+"""Generate data/av-companies.csv :: the Airtable-ready flat table.
 
 One row per company, one column per field, partner names joined with ' | '.
 Re-run after any change to data/av-companies.json or data/av-enrichment.json:

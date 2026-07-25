@@ -1,4 +1,4 @@
-/* core.js — shared chrome: theme, nav state, header search, helpers.
+/* core.js :: shared chrome: theme, nav state, header search, helpers.
    Every page loads this; it must stay small and dependency-free. */
 (function () {
   'use strict';

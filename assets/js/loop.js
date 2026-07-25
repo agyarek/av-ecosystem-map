@@ -1,4 +1,4 @@
-/* loop.js — the home circuit, the waterline, and live counts.
+/* loop.js :: the home circuit, the waterline, and live counts.
    Motion earns its place here and nowhere else; reduced-motion renders the
    same information with none of the travel. */
 (function () {

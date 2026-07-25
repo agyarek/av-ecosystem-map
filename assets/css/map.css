@@ -1,4 +1,4 @@
-/* map.css — the wall chart page. Everything that is not the chart stays quiet. */
+/* map.css :: the wall chart page. Everything that is not the chart stays quiet. */
 
 .map-head {
   display: flex; align-items: flex-end; justify-content: space-between;

@@ -1,4 +1,4 @@
-/* partnerships.js — renders the function-grouped edge list and the
+/* partnerships.js :: renders the function-grouped edge list and the
    operators-by-function matrix from data/av-enrichment.json. */
 (function () {
   'use strict';

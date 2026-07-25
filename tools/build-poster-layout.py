@@ -101,6 +101,10 @@ def slug(s):
 def main():
     companies = json.load(open(SRC, encoding="utf-8"))
     by_name = {c["name"]: c for c in companies}
+    enr_path = os.path.join(ROOT, "data", "av-enrichment.json")
+    known = {}
+    if os.path.exists(enr_path):
+        known = json.load(open(enr_path, encoding="utf-8")).get("known", {})
 
     missing = [n for n in MEDALLION if n not in by_name]
     if missing:
@@ -155,6 +159,7 @@ def main():
                         "w": round(cw, 1), "h": round(ch, 1),
                         "cat": c["cat"], "hue": HUE.get(c["cat"], 220),
                         "mono": c.get("mono", nm[:2].upper()),
+                        "claim": known.get(nm, ""),
                     })
                 band_h = max(band_h, h); x += w
                 continue
@@ -180,6 +185,9 @@ def main():
                     "mono": c.get("mono", c["name"][:2].upper()),
                     "hue": HUE.get(name, 220),
                     "layers": len(c.get("all", [])),
+                    # hue pips for additional canonical layers beyond the district
+                    "pips": [HUE[a] for a in c.get("all", [])
+                             if a in HUE and a != MERGE.get(c["cat"], c["cat"])][:4],
                     "exited": bool(c.get("exited")),
                     "spokenTo": bool(c.get("spokenTo")),
                 })

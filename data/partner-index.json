@@ -218,7 +218,7 @@
     }
    ]
   },
-  "baidu-apollo-go-c8": {
+  "baidu-apollo-go": {
    "name": "Baidu Apollo Go",
    "count": 5,
    "partners": [
@@ -267,7 +267,7 @@
      "partner": "Baidu Apollo Go",
      "k": "Mapping",
      "n": "Baidu's map stack underpins Apollo Go operations.",
-     "slug": "baidu-apollo-go-c8",
+     "slug": "baidu-apollo-go",
      "cat": "AV Driver / Autonomy Software"
     }
    ]
@@ -280,7 +280,7 @@
      "partner": "Baidu Apollo Go",
      "k": "Same family",
      "n": "The purpose-built RT6 is Apollo Go's sixth-generation robotaxi.",
-     "slug": "baidu-apollo-go-c8",
+     "slug": "baidu-apollo-go",
      "cat": "AV Driver / Autonomy Software"
     }
    ]
@@ -537,7 +537,7 @@
      "partner": "Baidu Apollo Go",
      "k": "Regulatory",
      "n": "RTA pilot fleet brings Apollo Go robotaxis to Dubai.",
-     "slug": "baidu-apollo-go-c8",
+     "slug": "baidu-apollo-go",
      "cat": "AV Driver / Autonomy Software"
     },
     {
@@ -947,7 +947,7 @@
      "partner": "Baidu Apollo Go",
      "k": "Demand",
      "n": "Apollo Go robotaxis planned on Lyft/FREE NOW in Germany and the UK.",
-     "slug": "baidu-apollo-go-c8",
+     "slug": "baidu-apollo-go",
      "cat": "AV Driver / Autonomy Software"
     },
     {
@@ -2119,7 +2119,7 @@
      "partner": "Baidu Apollo Go",
      "k": "Demand",
      "n": "Apollo Go robotaxis join the Uber platform across Asia and the Middle East.",
-     "slug": "baidu-apollo-go-c8",
+     "slug": "baidu-apollo-go",
      "cat": "AV Driver / Autonomy Software"
     },
     {

@@ -186,6 +186,7 @@ def assemble(manifest):
         pass
     for slug, c in coords.items():
         manifest[slug]["atlas"] = c
+    manifest["__atlas__"] = {"w": atlas.width, "h": atlas.height, "cell": ATLAS_CELL}
     log(f"assembled sprite.svg ({len(symbols)} symbols) and atlas "
         f"({len(rasters)} marks, {cols}x{rows} cells of {ATLAS_CELL}px)")
 

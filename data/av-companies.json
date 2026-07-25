@@ -307,7 +307,7 @@
   "hqCountry": "China",
   "region": "Greater China",
   "foundedYear": 2013,
-  "slug": "baidu-apollo-go",
+  "slug": "baidu",
   "status": "active"
  },
  {
@@ -347,7 +347,7 @@
   "foundedYear": 2013,
   "fleetSize": 1000,
   "milesReal": 137,
-  "slug": "baidu-apollo-go-c8",
+  "slug": "baidu-apollo-go",
   "status": "active",
   "lastVerified": "2026-07-25",
   "sources": [
@@ -8008,7 +8008,7 @@
   "hqCountry": "Taiwan",
   "region": "Greater China",
   "foundedYear": 1974,
-  "slug": "foxconn-foxtron-mih-c213",
+  "slug": "foxconn",
   "status": "active"
  },
  {

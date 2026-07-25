@@ -104,11 +104,27 @@ derived = {
     },
 }
 
-# slim index for the header search on every page: ~1/12 the size of the
-# full dataset, enough to rank matches and route to the ledger or the chart
+# slim index for the header search on every page and the wall-chart filters:
+# ~1/8 the size of the full dataset. 125 raw opMaturity strings collapse into
+# seven buckets here so the filter UI stays legible.
+def maturity_bucket(c):
+    if c["status"] != "active": return "Historical"
+    m = (c.get("opMaturity") or "").lower()
+    if "historical" in m: return "Historical"
+    if any(k in m for k in ("regulat", "standard", "association", "advocacy", "regime", "policy")):
+        return "Governance"
+    if "commercial-scaled" in m or "production" in m or "scaled" in m: return "Scaled"
+    if "commercial" in m: return "Commercial"
+    if any(k in m for k in ("pilot", "trial", "test", "commercializ")): return "Pilot"
+    if any(k in m for k in ("r&d", "research", "develop", "announc", "concept", "pre-")):
+        return "R&D"
+    return "Other"
+
 search = [{"n": c["name"], "s": c["slug"], "c": c["cat"],
            "b": (c.get("sub") or "")[:80],
-           **({"x": 1} if c["status"] != "active" else {})}
+           "r": c.get("region", ""), "m": maturity_bucket(c),
+           **({"x": 1} if c["status"] != "active" else {}),
+           **({"g": 1} if c.get("spokenTo") else {})}
           for c in companies]
 
 dump(partner_index, "partner-index.json")

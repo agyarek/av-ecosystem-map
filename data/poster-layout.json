@@ -230,6 +230,10 @@
    "mono": "AI",
    "hue": 265,
    "layers": 6,
+   "pips": [
+    150,
+    20
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -245,6 +249,9 @@
    "mono": "HR",
    "hue": 265,
    "layers": 3,
+   "pips": [
+    200
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -260,6 +267,9 @@
    "mono": "MB",
    "hue": 265,
    "layers": 2,
+   "pips": [
+    40
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -275,6 +285,9 @@
    "mono": "MO",
    "hue": 265,
    "layers": 4,
+   "pips": [
+    150
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -290,6 +303,10 @@
    "mono": "NI",
    "hue": 265,
    "layers": 4,
+   "pips": [
+    200,
+    40
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -305,6 +322,10 @@
    "mono": "ND",
    "hue": 265,
    "layers": 3,
+   "pips": [
+    150,
+    200
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -320,6 +341,9 @@
    "mono": "XP",
    "hue": 265,
    "layers": 4,
+   "pips": [
+    40
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -335,6 +359,7 @@
    "mono": "AA",
    "hue": 265,
    "layers": 4,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -350,6 +375,10 @@
    "mono": "AI",
    "hue": 265,
    "layers": 4,
+   "pips": [
+    150,
+    200
+   ],
    "exited": false,
    "spokenTo": true
   },
@@ -365,6 +394,9 @@
    "mono": "DA",
    "hue": 265,
    "layers": 2,
+   "pips": [
+    150
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -380,6 +412,9 @@
    "mono": "DS",
    "hue": 265,
    "layers": 4,
+   "pips": [
+    150
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -395,6 +430,9 @@
    "mono": "FO",
    "hue": 265,
    "layers": 3,
+   "pips": [
+    150
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -410,6 +448,10 @@
    "mono": "HI",
    "hue": 265,
    "layers": 3,
+   "pips": [
+    200,
+    40
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -425,6 +467,10 @@
    "mono": "HI",
    "hue": 265,
    "layers": 3,
+   "pips": [
+    200,
+    40
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -440,6 +486,9 @@
    "mono": "KA",
    "hue": 265,
    "layers": 3,
+   "pips": [
+    200
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -455,6 +504,9 @@
    "mono": "PL",
    "hue": 265,
    "layers": 2,
+   "pips": [
+    40
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -470,6 +522,9 @@
    "mono": "SR",
    "hue": 265,
    "layers": 3,
+   "pips": [
+    20
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -485,6 +540,9 @@
    "mono": "ST",
    "hue": 265,
    "layers": 3,
+   "pips": [
+    20
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -500,6 +558,10 @@
    "mono": "TR",
    "hue": 265,
    "layers": 3,
+   "pips": [
+    20,
+    40
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -515,12 +577,16 @@
    "mono": "WA",
    "hue": 265,
    "layers": 4,
+   "pips": [
+    150,
+    20
+   ],
    "exited": false,
    "spokenTo": false
   },
   {
    "name": "Baidu (Apollo Go)",
-   "slug": "baidu-apollo-go",
+   "slug": "baidu",
    "id": "c7",
    "district": "av-driver-autonomy-software",
    "x": 1640,
@@ -530,6 +596,7 @@
    "mono": "BA",
    "hue": 265,
    "layers": 3,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -545,6 +612,9 @@
    "mono": "BP",
    "hue": 265,
    "layers": 2,
+   "pips": [
+    40
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -560,6 +630,9 @@
    "mono": "XX",
    "hue": 265,
    "layers": 2,
+   "pips": [
+    40
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -575,6 +648,9 @@
    "mono": "CA",
    "hue": 265,
    "layers": 2,
+   "pips": [
+    150
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -590,6 +666,9 @@
    "mono": "GA",
    "hue": 265,
    "layers": 4,
+   "pips": [
+    20
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -605,6 +684,9 @@
    "mono": "KI",
    "hue": 265,
    "layers": 3,
+   "pips": [
+    20
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -620,6 +702,9 @@
    "mono": "RA",
    "hue": 265,
    "layers": 3,
+   "pips": [
+    20
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -635,6 +720,10 @@
    "mono": "TI",
    "hue": 265,
    "layers": 3,
+   "pips": [
+    150,
+    40
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -650,6 +739,7 @@
    "mono": "HI",
    "hue": 265,
    "layers": 1,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -665,6 +755,9 @@
    "mono": "IN",
    "hue": 265,
    "layers": 3,
+   "pips": [
+    40
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -680,6 +773,10 @@
    "mono": "TR",
    "hue": 265,
    "layers": 4,
+   "pips": [
+    150,
+    40
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -695,6 +792,7 @@
    "mono": "AV",
    "hue": 265,
    "layers": 1,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -710,6 +808,7 @@
    "mono": "BA",
    "hue": 265,
    "layers": 2,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -725,6 +824,9 @@
    "mono": "CO",
    "hue": 265,
    "layers": 2,
+   "pips": [
+    20
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -740,6 +842,7 @@
    "mono": "OX",
    "hue": 265,
    "layers": 1,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -755,6 +858,7 @@
    "mono": "PA",
    "hue": 265,
    "layers": 1,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -770,6 +874,9 @@
    "mono": "AU",
    "hue": 265,
    "layers": 2,
+   "pips": [
+    150
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -785,6 +892,7 @@
    "mono": "BY",
    "hue": 265,
    "layers": 1,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -800,6 +908,7 @@
    "mono": "CY",
    "hue": 265,
    "layers": 1,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -815,6 +924,7 @@
    "mono": "TU",
    "hue": 265,
    "layers": 2,
+   "pips": [],
    "exited": true,
    "spokenTo": false
   },
@@ -830,6 +940,9 @@
    "mono": "DA",
    "hue": 265,
    "layers": 2,
+   "pips": [
+    20
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -845,6 +958,7 @@
    "mono": "SO",
    "hue": 265,
    "layers": 1,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -860,6 +974,7 @@
    "mono": "TI",
    "hue": 265,
    "layers": 1,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -875,6 +990,9 @@
    "mono": "AT",
    "hue": 265,
    "layers": 2,
+   "pips": [
+    40
+   ],
    "exited": true,
    "spokenTo": false
   },
@@ -890,6 +1008,7 @@
    "mono": "CR",
    "hue": 265,
    "layers": 3,
+   "pips": [],
    "exited": true,
    "spokenTo": true
   },
@@ -905,6 +1024,7 @@
    "mono": "EL",
    "hue": 265,
    "layers": 1,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -920,6 +1040,7 @@
    "mono": "QC",
    "hue": 265,
    "layers": 1,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -935,6 +1056,7 @@
    "mono": "SA",
    "hue": 265,
    "layers": 2,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -950,6 +1072,7 @@
    "mono": "AA",
    "hue": 265,
    "layers": 1,
+   "pips": [],
    "exited": true,
    "spokenTo": false
   },
@@ -965,6 +1088,7 @@
    "mono": "ET",
    "hue": 265,
    "layers": 1,
+   "pips": [],
    "exited": true,
    "spokenTo": false
   },
@@ -980,6 +1104,7 @@
    "mono": "GA",
    "hue": 265,
    "layers": 1,
+   "pips": [],
    "exited": true,
    "spokenTo": false
   },
@@ -995,6 +1120,9 @@
    "mono": "IN",
    "hue": 200,
    "layers": 2,
+   "pips": [
+    40
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -1010,6 +1138,9 @@
    "mono": "NS",
    "hue": 200,
    "layers": 4,
+   "pips": [
+    230
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -1025,6 +1156,10 @@
    "mono": "OU",
    "hue": 200,
    "layers": 3,
+   "pips": [
+    150,
+    40
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -1040,6 +1175,10 @@
    "mono": "QA",
    "hue": 200,
    "layers": 3,
+   "pips": [
+    230,
+    40
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -1055,6 +1194,9 @@
    "mono": "RO",
    "hue": 200,
    "layers": 2,
+   "pips": [
+    40
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -1070,6 +1212,10 @@
    "mono": "TA",
    "hue": 200,
    "layers": 3,
+   "pips": [
+    265,
+    20
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -1085,6 +1231,10 @@
    "mono": "HE",
    "hue": 200,
    "layers": 3,
+   "pips": [
+    265,
+    40
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -1100,6 +1250,9 @@
    "mono": "ON",
    "hue": 200,
    "layers": 2,
+   "pips": [
+    40
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -1115,6 +1268,9 @@
    "mono": "QS",
    "hue": 200,
    "layers": 2,
+   "pips": [
+    230
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -1130,6 +1286,9 @@
    "mono": "RE",
    "hue": 200,
    "layers": 2,
+   "pips": [
+    40
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -1145,6 +1304,9 @@
    "mono": "TI",
    "hue": 200,
    "layers": 3,
+   "pips": [
+    40
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -1160,6 +1322,10 @@
    "mono": "HN",
    "hue": 200,
    "layers": 3,
+   "pips": [
+    150,
+    40
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -1175,6 +1341,9 @@
    "mono": "MI",
    "hue": 200,
    "layers": 2,
+   "pips": [
+    150
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -1190,6 +1359,9 @@
    "mono": "SS",
    "hue": 200,
    "layers": 2,
+   "pips": [
+    150
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -1205,6 +1377,9 @@
    "mono": "SS",
    "hue": 200,
    "layers": 3,
+   "pips": [
+    40
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -1220,6 +1395,9 @@
    "mono": "TA",
    "hue": 200,
    "layers": 2,
+   "pips": [
+    150
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -1235,6 +1413,10 @@
    "mono": "AE",
    "hue": 200,
    "layers": 4,
+   "pips": [
+    265,
+    40
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -1250,6 +1432,7 @@
    "mono": "AM",
    "hue": 200,
    "layers": 3,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -1265,6 +1448,7 @@
    "mono": "AR",
    "hue": 200,
    "layers": 2,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -1280,6 +1464,9 @@
    "mono": "BS",
    "hue": 200,
    "layers": 2,
+   "pips": [
+    265
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -1295,6 +1482,9 @@
    "mono": "IN",
    "hue": 200,
    "layers": 2,
+   "pips": [
+    40
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -1310,6 +1500,9 @@
    "mono": "OM",
    "hue": 200,
    "layers": 2,
+   "pips": [
+    40
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -1325,6 +1518,10 @@
    "mono": "RA",
    "hue": 200,
    "layers": 3,
+   "pips": [
+    265,
+    40
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -1340,6 +1537,9 @@
    "mono": "UB",
    "hue": 200,
    "layers": 2,
+   "pips": [
+    230
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -1355,6 +1555,9 @@
    "mono": "CE",
    "hue": 200,
    "layers": 2,
+   "pips": [
+    40
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -1370,6 +1573,10 @@
    "mono": "LU",
    "hue": 200,
    "layers": 3,
+   "pips": [
+    150,
+    40
+   ],
    "exited": true,
    "spokenTo": false
   },
@@ -1385,6 +1592,9 @@
    "mono": "PO",
    "hue": 200,
    "layers": 2,
+   "pips": [
+    230
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -1400,6 +1610,9 @@
    "mono": "LE",
    "hue": 200,
    "layers": 2,
+   "pips": [
+    265
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -1415,6 +1628,9 @@
    "mono": "LI",
    "hue": 200,
    "layers": 2,
+   "pips": [
+    40
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -1430,6 +1646,9 @@
    "mono": "SE",
    "hue": 200,
    "layers": 2,
+   "pips": [
+    40
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -1445,6 +1664,10 @@
    "mono": "SN",
    "hue": 200,
    "layers": 3,
+   "pips": [
+    230,
+    150
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -1460,6 +1683,9 @@
    "mono": "UH",
    "hue": 200,
    "layers": 2,
+   "pips": [
+    40
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -1475,6 +1701,9 @@
    "mono": "SE",
    "hue": 200,
    "layers": 2,
+   "pips": [
+    40
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -1490,6 +1719,9 @@
    "mono": "BA",
    "hue": 200,
    "layers": 2,
+   "pips": [
+    150
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -1505,6 +1737,7 @@
    "mono": "NV",
    "hue": 200,
    "layers": 3,
+   "pips": [],
    "exited": false,
    "spokenTo": true
   },
@@ -1520,6 +1753,7 @@
    "mono": "ZF",
    "hue": 200,
    "layers": 2,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -1535,6 +1769,7 @@
    "mono": "QS",
    "hue": 200,
    "layers": 1,
+   "pips": [],
    "exited": true,
    "spokenTo": false
   },
@@ -1550,6 +1785,7 @@
    "mono": "VL",
    "hue": 200,
    "layers": 1,
+   "pips": [],
    "exited": true,
    "spokenTo": false
   },
@@ -1565,6 +1801,7 @@
    "mono": "AA",
    "hue": 150,
    "layers": 2,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -1580,6 +1817,7 @@
    "mono": "AP",
    "hue": 150,
    "layers": 2,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -1595,6 +1833,9 @@
    "mono": "BA",
    "hue": 150,
    "layers": 3,
+   "pips": [
+    265
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -1610,6 +1851,9 @@
    "mono": "IN",
    "hue": 150,
    "layers": 2,
+   "pips": [
+    340
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -1625,6 +1869,9 @@
    "mono": "MR",
    "hue": 150,
    "layers": 3,
+   "pips": [
+    200
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -1640,6 +1887,10 @@
    "mono": "NA",
    "hue": 150,
    "layers": 3,
+   "pips": [
+    265,
+    230
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -1655,6 +1906,9 @@
    "mono": "ND",
    "hue": 150,
    "layers": 3,
+   "pips": [
+    200
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -1670,6 +1924,9 @@
    "mono": "SA",
    "hue": 150,
    "layers": 4,
+   "pips": [
+    265
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -1685,6 +1942,10 @@
    "mono": "TO",
    "hue": 150,
    "layers": 3,
+   "pips": [
+    230,
+    20
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -1700,6 +1961,9 @@
    "mono": "DE",
    "hue": 150,
    "layers": 2,
+   "pips": [
+    340
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -1715,6 +1979,7 @@
    "mono": "DA",
    "hue": 150,
    "layers": 3,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -1730,6 +1995,10 @@
    "mono": "HE",
    "hue": 150,
    "layers": 3,
+   "pips": [
+    230,
+    40
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -1745,6 +2014,7 @@
    "mono": "HV",
    "hue": 150,
    "layers": 2,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -1760,6 +2030,7 @@
    "mono": "IM",
    "hue": 150,
    "layers": 2,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -1775,6 +2046,7 @@
    "mono": "IA",
    "hue": 150,
    "layers": 2,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -1790,6 +2062,10 @@
    "mono": "MA",
    "hue": 150,
    "layers": 3,
+   "pips": [
+    230,
+    20
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -1805,6 +2081,7 @@
    "mono": "MA",
    "hue": 150,
    "layers": 2,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -1820,6 +2097,7 @@
    "mono": "SA",
    "hue": 150,
    "layers": 3,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -1835,6 +2113,7 @@
    "mono": "SM",
    "hue": 150,
    "layers": 2,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -1850,6 +2129,7 @@
    "mono": "TD",
    "hue": 150,
    "layers": 2,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -1865,6 +2145,9 @@
    "mono": "T2",
    "hue": 150,
    "layers": 2,
+   "pips": [
+    340
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -1880,6 +2163,7 @@
    "mono": "AI",
    "hue": 150,
    "layers": 2,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -1895,6 +2179,7 @@
    "mono": "CL",
    "hue": 150,
    "layers": 3,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -1910,6 +2195,9 @@
    "mono": "EX",
    "hue": 150,
    "layers": 2,
+   "pips": [
+    340
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -1925,6 +2213,7 @@
    "mono": "HM",
    "hue": 150,
    "layers": 2,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -1940,6 +2229,7 @@
    "mono": "LA",
    "hue": 150,
    "layers": 2,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -1955,6 +2245,10 @@
    "mono": "TE",
    "hue": 150,
    "layers": 3,
+   "pips": [
+    230,
+    40
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -1970,6 +2264,9 @@
    "mono": "T2",
    "hue": 150,
    "layers": 2,
+   "pips": [
+    340
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -1985,6 +2282,9 @@
    "mono": "AA",
    "hue": 150,
    "layers": 3,
+   "pips": [
+    265
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -2000,6 +2300,9 @@
    "mono": "CO",
    "hue": 150,
    "layers": 3,
+   "pips": [
+    265
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -2015,6 +2318,7 @@
    "mono": "DA",
    "hue": 150,
    "layers": 3,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -2030,6 +2334,9 @@
    "mono": "DM",
    "hue": 150,
    "layers": 3,
+   "pips": [
+    40
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -2045,6 +2352,7 @@
    "mono": "HL",
    "hue": 150,
    "layers": 3,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -2060,6 +2368,7 @@
    "mono": "RF",
    "hue": 150,
    "layers": 2,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -2075,6 +2384,7 @@
    "mono": "VL",
    "hue": 150,
    "layers": 2,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -2090,6 +2400,10 @@
    "mono": "WB",
    "hue": 150,
    "layers": 6,
+   "pips": [
+    265,
+    40
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -2105,6 +2419,7 @@
    "mono": "CA",
    "hue": 150,
    "layers": 3,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -2120,6 +2435,7 @@
    "mono": "SU",
    "hue": 150,
    "layers": 2,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -2135,6 +2451,7 @@
    "mono": "VL",
    "hue": 150,
    "layers": 2,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -2150,6 +2467,9 @@
    "mono": "WW",
    "hue": 150,
    "layers": 3,
+   "pips": [
+    265
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -2165,6 +2485,7 @@
    "mono": "PD",
    "hue": 150,
    "layers": 2,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -2180,6 +2501,7 @@
    "mono": "CA",
    "hue": 150,
    "layers": 3,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -2195,6 +2517,9 @@
    "mono": "ND",
    "hue": 150,
    "layers": 3,
+   "pips": [
+    200
+   ],
    "exited": true,
    "spokenTo": false
   },
@@ -2210,6 +2535,7 @@
    "mono": "AI",
    "hue": 150,
    "layers": 2,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -2225,6 +2551,7 @@
    "mono": "KO",
    "hue": 150,
    "layers": 1,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -2240,6 +2567,7 @@
    "mono": "DE",
    "hue": 150,
    "layers": 1,
+   "pips": [],
    "exited": true,
    "spokenTo": false
   },
@@ -2255,6 +2583,7 @@
    "mono": "MO",
    "hue": 150,
    "layers": 1,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -2270,6 +2599,7 @@
    "mono": "ER",
    "hue": 230,
    "layers": 3,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -2285,6 +2615,7 @@
    "mono": "IT",
    "hue": 230,
    "layers": 3,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -2300,6 +2631,7 @@
    "mono": "NO",
    "hue": 230,
    "layers": 3,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -2315,6 +2647,9 @@
    "mono": "QU",
    "hue": 230,
    "layers": 3,
+   "pips": [
+    200
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -2330,6 +2665,11 @@
    "mono": "US",
    "hue": 230,
    "layers": 5,
+   "pips": [
+    60,
+    150,
+    340
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -2345,6 +2685,7 @@
    "mono": "KT",
    "hue": 230,
    "layers": 3,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -2360,6 +2701,7 @@
    "mono": "5A",
    "hue": 230,
    "layers": 2,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -2375,6 +2717,7 @@
    "mono": "AU",
    "hue": 230,
    "layers": 2,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -2390,6 +2733,7 @@
    "mono": "BA",
    "hue": 230,
    "layers": 3,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -2405,6 +2749,7 @@
    "mono": "CS",
    "hue": 230,
    "layers": 2,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -2420,6 +2765,7 @@
    "mono": "CY",
    "hue": 230,
    "layers": 3,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -2435,6 +2781,7 @@
    "mono": "EE",
    "hue": 230,
    "layers": 3,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -2450,6 +2797,7 @@
    "mono": "HA",
    "hue": 230,
    "layers": 3,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -2465,6 +2813,7 @@
    "mono": "HU",
    "hue": 230,
    "layers": 3,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -2480,6 +2829,7 @@
    "mono": "MI",
    "hue": 230,
    "layers": 3,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -2495,6 +2845,7 @@
    "mono": "OB",
    "hue": 230,
    "layers": 3,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -2510,6 +2861,7 @@
    "mono": "PA",
    "hue": 230,
    "layers": 3,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -2525,6 +2877,9 @@
    "mono": "US",
    "hue": 230,
    "layers": 3,
+   "pips": [
+    40
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -2540,6 +2895,10 @@
    "mono": "VA",
    "hue": 230,
    "layers": 5,
+   "pips": [
+    20,
+    320
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -2555,6 +2914,7 @@
    "mono": "VI",
    "hue": 230,
    "layers": 3,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -2570,6 +2930,9 @@
    "mono": "AV",
    "hue": 230,
    "layers": 3,
+   "pips": [
+    150
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -2585,6 +2948,7 @@
    "mono": "CM",
    "hue": 230,
    "layers": 3,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -2600,6 +2964,7 @@
    "mono": "CT",
    "hue": 230,
    "layers": 2,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -2615,6 +2980,7 @@
    "mono": "CU",
    "hue": 230,
    "layers": 3,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -2630,6 +2996,7 @@
    "mono": "CW",
    "hue": 230,
    "layers": 2,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -2645,6 +3012,7 @@
    "mono": "CO",
    "hue": 230,
    "layers": 4,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -2660,6 +3028,7 @@
    "mono": "EC",
    "hue": 230,
    "layers": 3,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -2675,6 +3044,7 @@
    "mono": "FI",
    "hue": 230,
    "layers": 3,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -2690,6 +3060,7 @@
    "mono": "QW",
    "hue": 230,
    "layers": 3,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -2705,6 +3076,7 @@
    "mono": "SW",
    "hue": 230,
    "layers": 3,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -2720,6 +3092,7 @@
    "mono": "DE",
    "hue": 230,
    "layers": 3,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -2735,6 +3108,9 @@
    "mono": "FE",
    "hue": 230,
    "layers": 5,
+   "pips": [
+    320
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -2750,6 +3126,7 @@
    "mono": "KS",
    "hue": 230,
    "layers": 2,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -2765,6 +3142,9 @@
    "mono": "OT",
    "hue": 230,
    "layers": 5,
+   "pips": [
+    265
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -2780,6 +3160,7 @@
    "mono": "QF",
    "hue": 230,
    "layers": 3,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -2795,6 +3176,7 @@
    "mono": "VI",
    "hue": 230,
    "layers": 2,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -2810,6 +3192,7 @@
    "mono": "AC",
    "hue": 230,
    "layers": 2,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -2825,6 +3208,7 @@
    "mono": "AU",
    "hue": 230,
    "layers": 2,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -2840,6 +3224,7 @@
    "mono": "HA",
    "hue": 230,
    "layers": 3,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -2855,6 +3240,7 @@
    "mono": "NO",
    "hue": 230,
    "layers": 2,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -2870,6 +3256,7 @@
    "mono": "RS",
    "hue": 230,
    "layers": 2,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -2885,6 +3272,7 @@
    "mono": "YT",
    "hue": 230,
    "layers": 2,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -2900,6 +3288,9 @@
    "mono": "CA",
    "hue": 230,
    "layers": 5,
+   "pips": [
+    320
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -2915,6 +3306,7 @@
    "mono": "TC",
    "hue": 230,
    "layers": 2,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -2930,6 +3322,7 @@
    "mono": "BH",
    "hue": 230,
    "layers": 2,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -2945,6 +3338,7 @@
    "mono": "DD",
    "hue": 230,
    "layers": 2,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -2960,6 +3354,9 @@
    "mono": "DA",
    "hue": 230,
    "layers": 4,
+   "pips": [
+    265
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -2975,6 +3372,7 @@
    "mono": "GR",
    "hue": 230,
    "layers": 3,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -2990,6 +3388,7 @@
    "mono": "GU",
    "hue": 230,
    "layers": 3,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -3005,6 +3404,7 @@
    "mono": "ID",
    "hue": 230,
    "layers": 2,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -3020,6 +3420,7 @@
    "mono": "SA",
    "hue": 230,
    "layers": 2,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -3035,6 +3436,7 @@
    "mono": "VA",
    "hue": 230,
    "layers": 2,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -3050,6 +3452,7 @@
    "mono": "PA",
    "hue": 230,
    "layers": 2,
+   "pips": [],
    "exited": true,
    "spokenTo": false
   },
@@ -3065,6 +3468,7 @@
    "mono": "PE",
    "hue": 230,
    "layers": 1,
+   "pips": [],
    "exited": true,
    "spokenTo": false
   },
@@ -3080,6 +3484,7 @@
    "mono": "TS",
    "hue": 230,
    "layers": 1,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -3095,6 +3500,9 @@
    "mono": "DI",
    "hue": 20,
    "layers": 3,
+   "pips": [
+    265
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -3110,6 +3518,12 @@
    "mono": "GE",
    "hue": 20,
    "layers": 6,
+   "pips": [
+    60,
+    230,
+    150,
+    320
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -3125,6 +3539,9 @@
    "mono": "GR",
    "hue": 20,
    "layers": 3,
+   "pips": [
+    320
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -3140,6 +3557,9 @@
    "mono": "LY",
    "hue": 20,
    "layers": 2,
+   "pips": [
+    320
+   ],
    "exited": false,
    "spokenTo": true
   },
@@ -3155,6 +3575,11 @@
    "mono": "SA",
    "hue": 20,
    "layers": 5,
+   "pips": [
+    60,
+    230,
+    320
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -3170,6 +3595,9 @@
    "mono": "UB",
    "hue": 20,
    "layers": 3,
+   "pips": [
+    320
+   ],
    "exited": false,
    "spokenTo": true
   },
@@ -3185,6 +3613,9 @@
    "mono": "AG",
    "hue": 20,
    "layers": 2,
+   "pips": [
+    265
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -3200,6 +3631,7 @@
    "mono": "BO",
    "hue": 20,
    "layers": 1,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -3215,6 +3647,9 @@
    "mono": "CA",
    "hue": 20,
    "layers": 2,
+   "pips": [
+    320
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -3230,6 +3665,9 @@
    "mono": "CZ",
    "hue": 20,
    "layers": 2,
+   "pips": [
+    320
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -3245,6 +3683,7 @@
    "mono": "DO",
    "hue": 20,
    "layers": 2,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -3260,6 +3699,7 @@
    "mono": "FL",
    "hue": 20,
    "layers": 1,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -3275,6 +3715,9 @@
    "mono": "FN",
    "hue": 20,
    "layers": 2,
+   "pips": [
+    320
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -3290,6 +3733,7 @@
    "mono": "HM",
    "hue": 20,
    "layers": 2,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -3305,6 +3749,7 @@
    "mono": "IN",
    "hue": 20,
    "layers": 2,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -3320,6 +3765,7 @@
    "mono": "NE",
    "hue": 20,
    "layers": 3,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -3335,6 +3781,9 @@
    "mono": "ND",
    "hue": 20,
    "layers": 3,
+   "pips": [
+    200
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -3350,6 +3799,7 @@
    "mono": "TO",
    "hue": 20,
    "layers": 2,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -3365,6 +3815,7 @@
    "mono": "UE",
    "hue": 20,
    "layers": 2,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -3380,6 +3831,9 @@
    "mono": "WO",
    "hue": 20,
    "layers": 2,
+   "pips": [
+    265
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -3395,6 +3849,10 @@
    "mono": "BE",
    "hue": 20,
    "layers": 4,
+   "pips": [
+    320,
+    40
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -3410,6 +3868,9 @@
    "mono": "CM",
    "hue": 20,
    "layers": 2,
+   "pips": [
+    40
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -3425,6 +3886,9 @@
    "mono": "CA",
    "hue": 20,
    "layers": 3,
+   "pips": [
+    265
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -3440,6 +3904,9 @@
    "mono": "CR",
    "hue": 20,
    "layers": 3,
+   "pips": [
+    265
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -3455,6 +3922,7 @@
    "mono": "CU",
    "hue": 20,
    "layers": 2,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -3470,6 +3938,7 @@
    "mono": "KT",
    "hue": 20,
    "layers": 2,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -3485,6 +3954,9 @@
    "mono": "MO",
    "hue": 20,
    "layers": 3,
+   "pips": [
+    150
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -3500,6 +3972,7 @@
    "mono": "UF",
    "hue": 20,
    "layers": 1,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -3515,6 +3988,7 @@
    "mono": "AH",
    "hue": 20,
    "layers": 2,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -3530,6 +4004,7 @@
    "mono": "GC",
    "hue": 20,
    "layers": 2,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -3545,6 +4020,7 @@
    "mono": "KC",
    "hue": 20,
    "layers": 2,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -3560,6 +4036,7 @@
    "mono": "MM",
    "hue": 20,
    "layers": 2,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -3575,6 +4052,9 @@
    "mono": "ND",
    "hue": 20,
    "layers": 3,
+   "pips": [
+    265
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -3590,6 +4070,7 @@
    "mono": "OB",
    "hue": 20,
    "layers": 1,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -3605,6 +4086,10 @@
    "mono": "RI",
    "hue": 20,
    "layers": 3,
+   "pips": [
+    150,
+    320
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -3620,6 +4105,7 @@
    "mono": "TG",
    "hue": 20,
    "layers": 1,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -3635,6 +4121,9 @@
    "mono": "TR",
    "hue": 20,
    "layers": 3,
+   "pips": [
+    265
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -3650,6 +4139,9 @@
    "mono": "WG",
    "hue": 20,
    "layers": 2,
+   "pips": [
+    265
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -3665,6 +4157,7 @@
    "mono": "GI",
    "hue": 20,
    "layers": 2,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -3680,6 +4173,9 @@
    "mono": "PP",
    "hue": 20,
    "layers": 2,
+   "pips": [
+    265
+   ],
    "exited": false,
    "spokenTo": true
   },
@@ -3695,6 +4191,7 @@
    "mono": "TM",
    "hue": 20,
    "layers": 2,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -3710,6 +4207,7 @@
    "mono": "DD",
    "hue": 20,
    "layers": 2,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -3725,6 +4223,9 @@
    "mono": "MD",
    "hue": 20,
    "layers": 3,
+   "pips": [
+    265
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -3740,6 +4241,7 @@
    "mono": "MO",
    "hue": 20,
    "layers": 2,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -3755,6 +4257,7 @@
    "mono": "VE",
    "hue": 20,
    "layers": 2,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -3770,6 +4273,7 @@
    "mono": "WD",
    "hue": 20,
    "layers": 3,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -3785,6 +4289,9 @@
    "mono": "WA",
    "hue": 20,
    "layers": 2,
+   "pips": [
+    265
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -3800,6 +4307,9 @@
    "mono": "AR",
    "hue": 20,
    "layers": 2,
+   "pips": [
+    265
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -3815,6 +4325,7 @@
    "mono": "AR",
    "hue": 20,
    "layers": 2,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -3830,6 +4341,7 @@
    "mono": "MC",
    "hue": 20,
    "layers": 1,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -3845,6 +4357,7 @@
    "mono": "ND",
    "hue": 20,
    "layers": 2,
+   "pips": [],
    "exited": true,
    "spokenTo": false
   },
@@ -3860,6 +4373,7 @@
    "mono": "RM",
    "hue": 20,
    "layers": 1,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -3875,6 +4389,7 @@
    "mono": "WE",
    "hue": 20,
    "layers": 1,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -3890,6 +4405,10 @@
    "mono": "AP",
    "hue": 40,
    "layers": 5,
+   "pips": [
+    265,
+    200
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -3905,6 +4424,9 @@
    "mono": "BY",
    "hue": 40,
    "layers": 3,
+   "pips": [
+    200
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -3920,6 +4442,10 @@
    "mono": "GE",
    "hue": 40,
    "layers": 3,
+   "pips": [
+    150,
+    200
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -3935,6 +4461,9 @@
    "mono": "MA",
    "hue": 40,
    "layers": 3,
+   "pips": [
+    200
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -3950,6 +4479,12 @@
    "mono": "MO",
    "hue": 40,
    "layers": 6,
+   "pips": [
+    265,
+    150,
+    20,
+    200
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -3965,6 +4500,10 @@
    "mono": "VA",
    "hue": 40,
    "layers": 5,
+   "pips": [
+    265,
+    200
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -3980,6 +4519,9 @@
    "mono": "CO",
    "hue": 40,
    "layers": 4,
+   "pips": [
+    200
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -3995,6 +4537,9 @@
    "mono": "DE",
    "hue": 40,
    "layers": 3,
+   "pips": [
+    200
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -4010,6 +4555,9 @@
    "mono": "ZF",
    "hue": 40,
    "layers": 3,
+   "pips": [
+    200
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -4025,6 +4573,11 @@
    "mono": "BO",
    "hue": 40,
    "layers": 5,
+   "pips": [
+    265,
+    230,
+    200
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -4040,6 +4593,7 @@
    "mono": "GG",
    "hue": 40,
    "layers": 3,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -4055,6 +4609,7 @@
    "mono": "GE",
    "hue": 40,
    "layers": 2,
+   "pips": [],
    "exited": true,
    "spokenTo": false
   },
@@ -4070,6 +4625,9 @@
    "mono": "HY",
    "hue": 40,
    "layers": 3,
+   "pips": [
+    265
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -4085,6 +4643,7 @@
    "mono": "SA",
    "hue": 40,
    "layers": 3,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -4100,6 +4659,10 @@
    "mono": "TO",
    "hue": 40,
    "layers": 6,
+   "pips": [
+    265,
+    150
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -4115,6 +4678,10 @@
    "mono": "BA",
    "hue": 40,
    "layers": 3,
+   "pips": [
+    265,
+    20
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -4130,6 +4697,9 @@
    "mono": "DT",
    "hue": 40,
    "layers": 2,
+   "pips": [
+    265
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -4145,6 +4715,7 @@
    "mono": "DT",
    "hue": 40,
    "layers": 2,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -4160,6 +4731,9 @@
    "mono": "DS",
    "hue": 40,
    "layers": 3,
+   "pips": [
+    200
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -4175,6 +4749,9 @@
    "mono": "FH",
    "hue": 40,
    "layers": 3,
+   "pips": [
+    200
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -4190,6 +4767,9 @@
    "mono": "HM",
    "hue": 40,
    "layers": 2,
+   "pips": [
+    200
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -4205,6 +4785,7 @@
    "mono": "IS",
    "hue": 40,
    "layers": 3,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -4220,6 +4801,10 @@
    "mono": "JL",
    "hue": 40,
    "layers": 3,
+   "pips": [
+    265,
+    320
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -4235,6 +4820,7 @@
    "mono": "JE",
    "hue": 40,
    "layers": 3,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -4250,6 +4836,9 @@
    "mono": "LU",
    "hue": 40,
    "layers": 2,
+   "pips": [
+    20
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -4265,6 +4854,7 @@
    "mono": "MB",
    "hue": 40,
    "layers": 3,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -4280,6 +4870,11 @@
    "mono": "ZE",
    "hue": 40,
    "layers": 4,
+   "pips": [
+    265,
+    20,
+    200
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -4295,6 +4890,9 @@
    "mono": "AI",
    "hue": 40,
    "layers": 3,
+   "pips": [
+    200
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -4310,6 +4908,10 @@
    "mono": "EI",
    "hue": 40,
    "layers": 5,
+   "pips": [
+    265,
+    320
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -4325,6 +4927,10 @@
    "mono": "NE",
    "hue": 40,
    "layers": 5,
+   "pips": [
+    265,
+    320
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -4340,6 +4946,7 @@
    "mono": "VO",
    "hue": 40,
    "layers": 3,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -4355,6 +4962,10 @@
    "mono": "VT",
    "hue": 40,
    "layers": 3,
+   "pips": [
+    265,
+    320
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -4370,6 +4981,7 @@
    "mono": "BE",
    "hue": 40,
    "layers": 3,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -4385,6 +4997,7 @@
    "mono": "ED",
    "hue": 40,
    "layers": 3,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -4400,12 +5013,13 @@
    "mono": "FO",
    "hue": 40,
    "layers": 1,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
   {
    "name": "Foxconn / Foxtron / MIH",
-   "slug": "foxconn-foxtron-mih-c213",
+   "slug": "foxconn",
    "id": "c213",
    "district": "vehicle-platform-manufacturing",
    "x": 5960,
@@ -4415,6 +5029,7 @@
    "mono": "FF",
    "hue": 40,
    "layers": 3,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -4430,6 +5045,7 @@
    "mono": "KI",
    "hue": 40,
    "layers": 1,
+   "pips": [],
    "exited": false,
    "spokenTo": true
   },
@@ -4445,6 +5061,9 @@
    "mono": "PA",
    "hue": 40,
    "layers": 2,
+   "pips": [
+    320
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -4460,6 +5079,7 @@
    "mono": "RA",
    "hue": 40,
    "layers": 2,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -4475,6 +5095,9 @@
    "mono": "VA",
    "hue": 40,
    "layers": 2,
+   "pips": [
+    265
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -4490,6 +5113,7 @@
    "mono": "BA",
    "hue": 40,
    "layers": 2,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -4505,6 +5129,7 @@
    "mono": "IV",
    "hue": 40,
    "layers": 3,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -4520,6 +5145,7 @@
    "mono": "LU",
    "hue": 40,
    "layers": 2,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -4535,6 +5161,7 @@
    "mono": "PM",
    "hue": 40,
    "layers": 3,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -4550,6 +5177,7 @@
    "mono": "SH",
    "hue": 40,
    "layers": 3,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -4565,6 +5193,7 @@
    "mono": "YB",
    "hue": 40,
    "layers": 2,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -4580,6 +5209,9 @@
    "mono": "EA",
    "hue": 40,
    "layers": 3,
+   "pips": [
+    320
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -4595,6 +5227,7 @@
    "mono": "HO",
    "hue": 40,
    "layers": 2,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -4610,6 +5243,9 @@
    "mono": "RI",
    "hue": 40,
    "layers": 3,
+   "pips": [
+    320
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -4625,6 +5261,7 @@
    "mono": "VO",
    "hue": 40,
    "layers": 1,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -4640,6 +5277,7 @@
    "mono": "FO",
    "hue": 40,
    "layers": 1,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -4655,6 +5293,7 @@
    "mono": "LE",
    "hue": 40,
    "layers": 1,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -4670,6 +5309,7 @@
    "mono": "LA",
    "hue": 40,
    "layers": 1,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -4685,6 +5325,7 @@
    "mono": "NI",
    "hue": 40,
    "layers": 1,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -4700,6 +5341,7 @@
    "mono": "RE",
    "hue": 40,
    "layers": 2,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -4715,6 +5357,7 @@
    "mono": "ST",
    "hue": 40,
    "layers": 1,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -4730,6 +5373,7 @@
    "mono": "RO",
    "hue": 40,
    "layers": 2,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -4745,6 +5389,7 @@
    "mono": "RI",
    "hue": 40,
    "layers": 2,
+   "pips": [],
    "exited": false,
    "spokenTo": true
   },
@@ -4760,6 +5405,7 @@
    "mono": "VC",
    "hue": 40,
    "layers": 1,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -4775,6 +5421,7 @@
    "mono": "FF",
    "hue": 40,
    "layers": 1,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -4790,6 +5437,7 @@
    "mono": "MS",
    "hue": 40,
    "layers": 1,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -4805,6 +5453,7 @@
    "mono": "NG",
    "hue": 40,
    "layers": 2,
+   "pips": [],
    "exited": true,
    "spokenTo": false
   },
@@ -4820,6 +5469,9 @@
    "mono": "UD",
    "hue": 40,
    "layers": 3,
+   "pips": [
+    20
+   ],
    "exited": true,
    "spokenTo": false
   },
@@ -4835,6 +5487,7 @@
    "mono": "LO",
    "hue": 40,
    "layers": 2,
+   "pips": [],
    "exited": true,
    "spokenTo": false
   },
@@ -4850,6 +5503,9 @@
    "mono": "AM",
    "hue": 320,
    "layers": 2,
+   "pips": [
+    150
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -4865,6 +5521,9 @@
    "mono": "AN",
    "hue": 320,
    "layers": 2,
+   "pips": [
+    150
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -4880,6 +5539,9 @@
    "mono": "AU",
    "hue": 320,
    "layers": 2,
+   "pips": [
+    150
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -4895,6 +5557,9 @@
    "mono": "BP",
    "hue": 320,
    "layers": 2,
+   "pips": [
+    230
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -4910,6 +5575,9 @@
    "mono": "CH",
    "hue": 320,
    "layers": 2,
+   "pips": [
+    230
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -4925,6 +5593,9 @@
    "mono": "CA",
    "hue": 320,
    "layers": 2,
+   "pips": [
+    40
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -4940,6 +5611,9 @@
    "mono": "EA",
    "hue": 320,
    "layers": 2,
+   "pips": [
+    230
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -4955,6 +5629,9 @@
    "mono": "EF",
    "hue": 320,
    "layers": 2,
+   "pips": [
+    60
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -4970,6 +5647,9 @@
    "mono": "EF",
    "hue": 320,
    "layers": 2,
+   "pips": [
+    20
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -4985,6 +5665,9 @@
    "mono": "EV",
    "hue": 320,
    "layers": 2,
+   "pips": [
+    230
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -5000,6 +5683,9 @@
    "mono": "FL",
    "hue": 320,
    "layers": 2,
+   "pips": [
+    150
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -5015,6 +5701,9 @@
    "mono": "HE",
    "hue": 320,
    "layers": 2,
+   "pips": [
+    20
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -5030,6 +5719,9 @@
    "mono": "IO",
    "hue": 320,
    "layers": 2,
+   "pips": [
+    230
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -5045,6 +5737,9 @@
    "mono": "KE",
    "hue": 320,
    "layers": 2,
+   "pips": [
+    230
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -5060,6 +5755,9 @@
    "mono": "KE",
    "hue": 320,
    "layers": 2,
+   "pips": [
+    20
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -5075,6 +5773,9 @@
    "mono": "MO",
    "hue": 320,
    "layers": 2,
+   "pips": [
+    20
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -5090,6 +5791,10 @@
    "mono": "MA",
    "hue": 320,
    "layers": 3,
+   "pips": [
+    60,
+    20
+   ],
    "exited": false,
    "spokenTo": true
   },
@@ -5105,6 +5810,9 @@
    "mono": "MO",
    "hue": 320,
    "layers": 2,
+   "pips": [
+    230
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -5120,6 +5828,10 @@
    "mono": "OP",
    "hue": 320,
    "layers": 3,
+   "pips": [
+    150,
+    20
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -5135,6 +5847,9 @@
    "mono": "PA",
    "hue": 320,
    "layers": 2,
+   "pips": [
+    150
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -5150,6 +5865,10 @@
    "mono": "PO",
    "hue": 320,
    "layers": 3,
+   "pips": [
+    230,
+    150
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -5165,6 +5884,9 @@
    "mono": "PO",
    "hue": 320,
    "layers": 2,
+   "pips": [
+    230
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -5180,6 +5902,9 @@
    "mono": "RI",
    "hue": 320,
    "layers": 2,
+   "pips": [
+    20
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -5195,6 +5920,9 @@
    "mono": "SP",
    "hue": 320,
    "layers": 2,
+   "pips": [
+    20
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -5210,6 +5938,9 @@
    "mono": "SP",
    "hue": 320,
    "layers": 2,
+   "pips": [
+    20
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -5225,6 +5956,10 @@
    "mono": "TR",
    "hue": 320,
    "layers": 3,
+   "pips": [
+    60,
+    150
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -5240,6 +5975,9 @@
    "mono": "TR",
    "hue": 320,
    "layers": 2,
+   "pips": [
+    20
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -5255,6 +5993,9 @@
    "mono": "UA",
    "hue": 320,
    "layers": 2,
+   "pips": [
+    20
+   ],
    "exited": false,
    "spokenTo": true
   },
@@ -5270,6 +6011,9 @@
    "mono": "UV",
    "hue": 320,
    "layers": 2,
+   "pips": [
+    150
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -5285,6 +6029,10 @@
    "mono": "VI",
    "hue": 320,
    "layers": 3,
+   "pips": [
+    150,
+    20
+   ],
    "exited": false,
    "spokenTo": true
   },
@@ -5300,6 +6048,9 @@
    "mono": "EL",
    "hue": 320,
    "layers": 2,
+   "pips": [
+    230
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -5315,6 +6066,9 @@
    "mono": "PA",
    "hue": 320,
    "layers": 2,
+   "pips": [
+    20
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -5330,6 +6084,9 @@
    "mono": "VI",
    "hue": 320,
    "layers": 2,
+   "pips": [
+    150
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -5345,6 +6102,9 @@
    "mono": "XC",
    "hue": 320,
    "layers": 2,
+   "pips": [
+    230
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -5360,6 +6120,9 @@
    "mono": "FL",
    "hue": 320,
    "layers": 2,
+   "pips": [
+    230
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -5375,6 +6138,9 @@
    "mono": "HE",
    "hue": 320,
    "layers": 2,
+   "pips": [
+    230
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -5390,6 +6156,9 @@
    "mono": "LF",
    "hue": 320,
    "layers": 2,
+   "pips": [
+    20
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -5405,6 +6174,9 @@
    "mono": "PA",
    "hue": 320,
    "layers": 2,
+   "pips": [
+    20
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -5420,6 +6192,9 @@
    "mono": "PA",
    "hue": 320,
    "layers": 2,
+   "pips": [
+    20
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -5435,6 +6210,9 @@
    "mono": "TP",
    "hue": 320,
    "layers": 2,
+   "pips": [
+    150
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -5450,6 +6228,10 @@
    "mono": "AU",
    "hue": 320,
    "layers": 3,
+   "pips": [
+    230,
+    150
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -5465,6 +6247,9 @@
    "mono": "FM",
    "hue": 320,
    "layers": 2,
+   "pips": [
+    230
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -5480,6 +6265,9 @@
    "mono": "IN",
    "hue": 320,
    "layers": 2,
+   "pips": [
+    230
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -5495,6 +6283,10 @@
    "mono": "MM",
    "hue": 320,
    "layers": 3,
+   "pips": [
+    265,
+    20
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -5510,6 +6302,9 @@
    "mono": "PI",
    "hue": 320,
    "layers": 2,
+   "pips": [
+    150
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -5525,6 +6320,9 @@
    "mono": "PR",
    "hue": 320,
    "layers": 2,
+   "pips": [
+    150
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -5540,6 +6338,9 @@
    "mono": "TI",
    "hue": 320,
    "layers": 2,
+   "pips": [
+    230
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -5555,6 +6356,9 @@
    "mono": "VO",
    "hue": 320,
    "layers": 2,
+   "pips": [
+    230
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -5570,6 +6374,9 @@
    "mono": "WA",
    "hue": 320,
    "layers": 2,
+   "pips": [
+    230
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -5585,6 +6392,9 @@
    "mono": "WI",
    "hue": 320,
    "layers": 2,
+   "pips": [
+    230
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -5600,6 +6410,9 @@
    "mono": "ZS",
    "hue": 320,
    "layers": 2,
+   "pips": [
+    230
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -5615,6 +6428,9 @@
    "mono": "MA",
    "hue": 320,
    "layers": 2,
+   "pips": [
+    150
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -5630,6 +6446,9 @@
    "mono": "NA",
    "hue": 320,
    "layers": 2,
+   "pips": [
+    230
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -5645,6 +6464,9 @@
    "mono": "RO",
    "hue": 320,
    "layers": 2,
+   "pips": [
+    230
+   ],
    "exited": false,
    "spokenTo": true
   },
@@ -5660,6 +6482,9 @@
    "mono": "RO",
    "hue": 320,
    "layers": 2,
+   "pips": [
+    230
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -5675,6 +6500,9 @@
    "mono": "GR",
    "hue": 320,
    "layers": 2,
+   "pips": [
+    230
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -5690,6 +6518,9 @@
    "mono": "RO",
    "hue": 320,
    "layers": 2,
+   "pips": [
+    40
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -5705,6 +6536,9 @@
    "mono": "ZO",
    "hue": 320,
    "layers": 2,
+   "pips": [
+    150
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -5720,6 +6554,9 @@
    "mono": "AB",
    "hue": 320,
    "layers": 2,
+   "pips": [
+    20
+   ],
    "exited": true,
    "spokenTo": false
   },
@@ -5735,6 +6572,9 @@
    "mono": "HU",
    "hue": 320,
    "layers": 2,
+   "pips": [
+    230
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -5750,6 +6590,7 @@
    "mono": "TS",
    "hue": 320,
    "layers": 1,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -5765,6 +6606,7 @@
    "mono": "AV",
    "hue": 320,
    "layers": 1,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -5780,6 +6622,9 @@
    "mono": "CO",
    "hue": 320,
    "layers": 2,
+   "pips": [
+    150
+   ],
    "exited": true,
    "spokenTo": false
   },
@@ -5795,6 +6640,9 @@
    "mono": "EC",
    "hue": 320,
    "layers": 2,
+   "pips": [
+    230
+   ],
    "exited": true,
    "spokenTo": false
   },
@@ -5810,6 +6658,7 @@
    "mono": "FL",
    "hue": 320,
    "layers": 1,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -5825,6 +6674,9 @@
    "mono": "LA",
    "hue": 320,
    "layers": 2,
+   "pips": [
+    150
+   ],
    "exited": true,
    "spokenTo": false
   },
@@ -5840,6 +6692,7 @@
    "mono": "AL",
    "hue": 320,
    "layers": 2,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -5855,6 +6708,7 @@
    "mono": "EN",
    "hue": 320,
    "layers": 2,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -5870,6 +6724,9 @@
    "mono": "XO",
    "hue": 320,
    "layers": 2,
+   "pips": [
+    230
+   ],
    "exited": false,
    "spokenTo": true
   },
@@ -5885,6 +6742,7 @@
    "mono": "AU",
    "hue": 320,
    "layers": 1,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -5900,6 +6758,7 @@
    "mono": "AD",
    "hue": 60,
    "layers": 2,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -5915,6 +6774,7 @@
    "mono": "AI",
    "hue": 60,
    "layers": 2,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -5930,6 +6790,7 @@
    "mono": "AC",
    "hue": 60,
    "layers": 2,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -5945,6 +6806,7 @@
    "mono": "AO",
    "hue": 60,
    "layers": 2,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -5960,6 +6822,7 @@
    "mono": "AV",
    "hue": 60,
    "layers": 2,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -5975,6 +6838,7 @@
    "mono": "BE",
    "hue": 60,
    "layers": 2,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -5990,6 +6854,7 @@
    "mono": "CM",
    "hue": 60,
    "layers": 2,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -6005,6 +6870,7 @@
    "mono": "CI",
    "hue": 60,
    "layers": 2,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -6020,6 +6886,7 @@
    "mono": "CH",
    "hue": 60,
    "layers": 2,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -6035,6 +6902,7 @@
    "mono": "GA",
    "hue": 60,
    "layers": 3,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -6050,6 +6918,7 @@
    "mono": "HG",
    "hue": 60,
    "layers": 2,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -6065,6 +6934,7 @@
    "mono": "LR",
    "hue": 60,
    "layers": 2,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -6080,6 +6950,7 @@
    "mono": "LS",
    "hue": 60,
    "layers": 2,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -6095,6 +6966,7 @@
    "mono": "LO",
    "hue": 60,
    "layers": 2,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -6110,6 +6982,7 @@
    "mono": "MA",
    "hue": 60,
    "layers": 2,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -6125,6 +6998,7 @@
    "mono": "ME",
    "hue": 60,
    "layers": 2,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -6140,6 +7014,7 @@
    "mono": "MR",
    "hue": 60,
    "layers": 2,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -6155,6 +7030,7 @@
    "mono": "PR",
    "hue": 60,
    "layers": 2,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -6170,6 +7046,9 @@
    "mono": "SR",
    "hue": 60,
    "layers": 3,
+   "pips": [
+    150
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -6185,6 +7064,10 @@
    "mono": "TV",
    "hue": 60,
    "layers": 4,
+   "pips": [
+    150,
+    340
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -6200,6 +7083,7 @@
    "mono": "VA",
    "hue": 60,
    "layers": 2,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -6215,6 +7099,7 @@
    "mono": "WT",
    "hue": 60,
    "layers": 3,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -6230,6 +7115,7 @@
    "mono": "ZI",
    "hue": 60,
    "layers": 2,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -6245,6 +7131,7 @@
    "mono": "AX",
    "hue": 60,
    "layers": 2,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -6260,6 +7147,9 @@
    "mono": "NE",
    "hue": 60,
    "layers": 2,
+   "pips": [
+    320
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -6275,6 +7165,7 @@
    "mono": "TM",
    "hue": 60,
    "layers": 2,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -6290,6 +7181,7 @@
    "mono": "CF",
    "hue": 60,
    "layers": 2,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -6305,6 +7197,7 @@
    "mono": "CP",
    "hue": 60,
    "layers": 2,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -6320,6 +7213,7 @@
    "mono": "CO",
    "hue": 60,
    "layers": 2,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -6335,6 +7229,7 @@
    "mono": "MA",
    "hue": 60,
    "layers": 2,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -6350,6 +7245,7 @@
    "mono": "CW",
    "hue": 60,
    "layers": 2,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -6365,6 +7261,7 @@
    "mono": "FA",
    "hue": 60,
    "layers": 2,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -6380,6 +7277,10 @@
    "mono": "KO",
    "hue": 60,
    "layers": 4,
+   "pips": [
+    230,
+    320
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -6395,6 +7296,7 @@
    "mono": "SF",
    "hue": 60,
    "layers": 2,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -6410,6 +7312,7 @@
    "mono": "AI",
    "hue": 60,
    "layers": 3,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -6425,6 +7328,7 @@
    "mono": "AA",
    "hue": 60,
    "layers": 2,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -6440,6 +7344,7 @@
    "mono": "NI",
    "hue": 60,
    "layers": 2,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -6455,6 +7360,7 @@
    "mono": "AV",
    "hue": 60,
    "layers": 2,
+   "pips": [],
    "exited": true,
    "spokenTo": false
   },
@@ -6470,6 +7376,11 @@
    "mono": "AD",
    "hue": 290,
    "layers": 7,
+   "pips": [
+    230,
+    20,
+    340
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -6485,6 +7396,11 @@
    "mono": "DR",
    "hue": 290,
    "layers": 7,
+   "pips": [
+    230,
+    20,
+    340
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -6500,6 +7416,9 @@
    "mono": "AD",
    "hue": 290,
    "layers": 2,
+   "pips": [
+    340
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -6515,6 +7434,9 @@
    "mono": "CC",
    "hue": 290,
    "layers": 2,
+   "pips": [
+    20
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -6530,6 +7452,9 @@
    "mono": "CD",
    "hue": 290,
    "layers": 2,
+   "pips": [
+    340
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -6545,6 +7470,9 @@
    "mono": "CD",
    "hue": 290,
    "layers": 3,
+   "pips": [
+    20
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -6560,6 +7488,9 @@
    "mono": "CP",
    "hue": 290,
    "layers": 3,
+   "pips": [
+    340
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -6575,6 +7506,9 @@
    "mono": "CM",
    "hue": 290,
    "layers": 2,
+   "pips": [
+    40
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -6590,6 +7524,9 @@
    "mono": "FH",
    "hue": 290,
    "layers": 2,
+   "pips": [
+    340
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -6605,6 +7542,9 @@
    "mono": "FE",
    "hue": 290,
    "layers": 3,
+   "pips": [
+    340
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -6620,6 +7560,9 @@
    "mono": "FT",
    "hue": 290,
    "layers": 3,
+   "pips": [
+    340
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -6635,6 +7578,9 @@
    "mono": "FD",
    "hue": 290,
    "layers": 2,
+   "pips": [
+    340
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -6650,6 +7596,9 @@
    "mono": "GF",
    "hue": 290,
    "layers": 2,
+   "pips": [
+    340
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -6665,6 +7614,9 @@
    "mono": "HK",
    "hue": 290,
    "layers": 2,
+   "pips": [
+    340
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -6680,6 +7632,9 @@
    "mono": "JM",
    "hue": 290,
    "layers": 2,
+   "pips": [
+    340
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -6695,6 +7650,9 @@
    "mono": "JM",
    "hue": 290,
    "layers": 2,
+   "pips": [
+    340
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -6710,6 +7668,9 @@
    "mono": "JN",
    "hue": 290,
    "layers": 2,
+   "pips": [
+    340
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -6725,6 +7686,9 @@
    "mono": "KB",
    "hue": 290,
    "layers": 2,
+   "pips": [
+    340
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -6740,6 +7704,9 @@
    "mono": "MO",
    "hue": 290,
    "layers": 2,
+   "pips": [
+    340
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -6755,6 +7722,9 @@
    "mono": "NT",
    "hue": 290,
    "layers": 2,
+   "pips": [
+    340
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -6770,6 +7740,9 @@
    "mono": "NR",
    "hue": 290,
    "layers": 2,
+   "pips": [
+    340
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -6785,6 +7758,9 @@
    "mono": "NY",
    "hue": 290,
    "layers": 2,
+   "pips": [
+    340
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -6800,6 +7776,9 @@
    "mono": "NH",
    "hue": 290,
    "layers": 3,
+   "pips": [
+    340
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -6815,6 +7794,9 @@
    "mono": "SF",
    "hue": 290,
    "layers": 2,
+   "pips": [
+    340
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -6830,6 +7812,9 @@
    "mono": "ST",
    "hue": 290,
    "layers": 2,
+   "pips": [
+    340
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -6845,6 +7830,9 @@
    "mono": "SL",
    "hue": 290,
    "layers": 2,
+   "pips": [
+    340
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -6860,6 +7848,9 @@
    "mono": "SK",
    "hue": 290,
    "layers": 2,
+   "pips": [
+    340
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -6875,6 +7866,9 @@
    "mono": "ST",
    "hue": 290,
    "layers": 2,
+   "pips": [
+    340
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -6890,6 +7884,9 @@
    "mono": "SF",
    "hue": 290,
    "layers": 2,
+   "pips": [
+    340
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -6905,6 +7902,9 @@
    "mono": "TD",
    "hue": 290,
    "layers": 2,
+   "pips": [
+    340
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -6920,6 +7920,9 @@
    "mono": "TD",
    "hue": 290,
    "layers": 2,
+   "pips": [
+    340
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -6935,6 +7938,9 @@
    "mono": "TM",
    "hue": 290,
    "layers": 2,
+   "pips": [
+    340
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -6950,6 +7956,9 @@
    "mono": "US",
    "hue": 290,
    "layers": 2,
+   "pips": [
+    340
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -6965,6 +7974,9 @@
    "mono": "UC",
    "hue": 290,
    "layers": 2,
+   "pips": [
+    20
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -6980,6 +7992,9 @@
    "mono": "UC",
    "hue": 290,
    "layers": 2,
+   "pips": [
+    340
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -6995,6 +8010,9 @@
    "mono": "UD",
    "hue": 290,
    "layers": 2,
+   "pips": [
+    340
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -7010,6 +8028,9 @@
    "mono": "UV",
    "hue": 290,
    "layers": 2,
+   "pips": [
+    340
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -7025,6 +8046,9 @@
    "mono": "UW",
    "hue": 290,
    "layers": 2,
+   "pips": [
+    340
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -7040,6 +8064,9 @@
    "mono": "BH",
    "hue": 290,
    "layers": 2,
+   "pips": [
+    340
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -7055,6 +8082,9 @@
    "mono": "DD",
    "hue": 290,
    "layers": 2,
+   "pips": [
+    340
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -7070,6 +8100,9 @@
    "mono": "EC",
    "hue": 290,
    "layers": 2,
+   "pips": [
+    340
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -7085,6 +8118,9 @@
    "mono": "LA",
    "hue": 290,
    "layers": 2,
+   "pips": [
+    340
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -7100,6 +8136,9 @@
    "mono": "MO",
    "hue": 290,
    "layers": 2,
+   "pips": [
+    340
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -7115,6 +8154,9 @@
    "mono": "MO",
    "hue": 290,
    "layers": 2,
+   "pips": [
+    340
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -7130,6 +8172,9 @@
    "mono": "ND",
    "hue": 290,
    "layers": 2,
+   "pips": [
+    340
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -7145,6 +8190,9 @@
    "mono": "NO",
    "hue": 290,
    "layers": 2,
+   "pips": [
+    340
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -7160,6 +8208,9 @@
    "mono": "OD",
    "hue": 290,
    "layers": 2,
+   "pips": [
+    340
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -7175,6 +8226,9 @@
    "mono": "PS",
    "hue": 290,
    "layers": 2,
+   "pips": [
+    340
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -7190,6 +8244,9 @@
    "mono": "SF",
    "hue": 290,
    "layers": 2,
+   "pips": [
+    340
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -7205,6 +8262,9 @@
    "mono": "TD",
    "hue": 290,
    "layers": 2,
+   "pips": [
+    340
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -7220,6 +8280,9 @@
    "mono": "CH",
    "hue": 290,
    "layers": 2,
+   "pips": [
+    340
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -7235,6 +8298,9 @@
    "mono": "CO",
    "hue": 290,
    "layers": 2,
+   "pips": [
+    340
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -7250,6 +8316,9 @@
    "mono": "FM",
    "hue": 290,
    "layers": 2,
+   "pips": [
+    340
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -7265,6 +8334,9 @@
    "mono": "GD",
    "hue": 290,
    "layers": 2,
+   "pips": [
+    340
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -7280,6 +8352,9 @@
    "mono": "GI",
    "hue": 290,
    "layers": 2,
+   "pips": [
+    340
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -7295,6 +8370,9 @@
    "mono": "MD",
    "hue": 290,
    "layers": 2,
+   "pips": [
+    340
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -7310,6 +8388,9 @@
    "mono": "OO",
    "hue": 290,
    "layers": 2,
+   "pips": [
+    340
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -7325,6 +8406,9 @@
    "mono": "QM",
    "hue": 290,
    "layers": 2,
+   "pips": [
+    340
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -7340,6 +8424,9 @@
    "mono": "SP",
    "hue": 290,
    "layers": 2,
+   "pips": [
+    340
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -7355,6 +8442,9 @@
    "mono": "ST",
    "hue": 290,
    "layers": 2,
+   "pips": [
+    340
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -7370,6 +8460,9 @@
    "mono": "UM",
    "hue": 290,
    "layers": 2,
+   "pips": [
+    340
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -7385,6 +8478,9 @@
    "mono": "WI",
    "hue": 290,
    "layers": 2,
+   "pips": [
+    340
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -7400,6 +8496,7 @@
    "mono": "US",
    "hue": 290,
    "layers": 1,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -7415,6 +8512,7 @@
    "mono": "AD",
    "hue": 290,
    "layers": 1,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -7430,6 +8528,7 @@
    "mono": "CM",
    "hue": 290,
    "layers": 1,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -7445,6 +8544,7 @@
    "mono": "ET",
    "hue": 290,
    "layers": 1,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -7460,6 +8560,7 @@
    "mono": "GK",
    "hue": 290,
    "layers": 1,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -7475,6 +8576,7 @@
    "mono": "JM",
    "hue": 290,
    "layers": 1,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -7490,6 +8592,7 @@
    "mono": "MC",
    "hue": 290,
    "layers": 1,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -7505,6 +8608,7 @@
    "mono": "MO",
    "hue": 290,
    "layers": 1,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -7520,6 +8624,7 @@
    "mono": "ND",
    "hue": 290,
    "layers": 1,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -7535,6 +8640,7 @@
    "mono": "SF",
    "hue": 290,
    "layers": 1,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -7550,6 +8656,7 @@
    "mono": "SL",
    "hue": 290,
    "layers": 1,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -7565,6 +8672,7 @@
    "mono": "TD",
    "hue": 290,
    "layers": 1,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -7580,6 +8688,7 @@
    "mono": "UC",
    "hue": 290,
    "layers": 1,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -7595,6 +8704,7 @@
    "mono": "UW",
    "hue": 290,
    "layers": 1,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -7610,6 +8720,10 @@
    "mono": "PA",
    "hue": 340,
    "layers": 3,
+   "pips": [
+    150,
+    320
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -7625,6 +8739,7 @@
    "mono": "3G",
    "hue": 340,
    "layers": 1,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -7640,6 +8755,7 @@
    "mono": "AF",
    "hue": 340,
    "layers": 1,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -7655,6 +8771,7 @@
    "mono": "AF",
    "hue": 340,
    "layers": 1,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -7670,6 +8787,7 @@
    "mono": "AF",
    "hue": 340,
    "layers": 1,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -7685,6 +8803,7 @@
    "mono": "AE",
    "hue": 340,
    "layers": 1,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -7700,6 +8819,7 @@
    "mono": "AO",
    "hue": 340,
    "layers": 1,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -7715,6 +8835,7 @@
    "mono": "AV",
    "hue": 340,
    "layers": 1,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -7730,6 +8851,7 @@
    "mono": "AU",
    "hue": 340,
    "layers": 1,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -7745,6 +8867,9 @@
    "mono": "AV",
    "hue": 340,
    "layers": 3,
+   "pips": [
+    290
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -7760,6 +8885,7 @@
    "mono": "CR",
    "hue": 340,
    "layers": 2,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -7775,6 +8901,7 @@
    "mono": "EN",
    "hue": 340,
    "layers": 1,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -7790,6 +8917,7 @@
    "mono": "HL",
    "hue": 340,
    "layers": 1,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -7805,6 +8933,7 @@
    "mono": "I2",
    "hue": 340,
    "layers": 1,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -7820,6 +8949,7 @@
    "mono": "IS",
    "hue": 340,
    "layers": 1,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -7835,6 +8965,7 @@
    "mono": "II",
    "hue": 340,
    "layers": 1,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -7850,6 +8981,7 @@
    "mono": "IB",
    "hue": 340,
    "layers": 1,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -7865,6 +8997,7 @@
    "mono": "IO",
    "hue": 340,
    "layers": 1,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -7880,6 +9013,7 @@
    "mono": "IT",
    "hue": 340,
    "layers": 2,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -7895,6 +9029,7 @@
    "mono": "I2",
    "hue": 340,
    "layers": 1,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -7910,6 +9045,7 @@
    "mono": "I2",
    "hue": 340,
    "layers": 1,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -7925,6 +9061,7 @@
    "mono": "I3",
    "hue": 340,
    "layers": 1,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -7940,6 +9077,7 @@
    "mono": "I3",
    "hue": 340,
    "layers": 1,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -7955,6 +9093,7 @@
    "mono": "I3",
    "hue": 340,
    "layers": 1,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -7970,6 +9109,7 @@
    "mono": "I3",
    "hue": 340,
    "layers": 1,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -7985,6 +9125,7 @@
    "mono": "IT",
    "hue": 340,
    "layers": 1,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -8000,6 +9141,7 @@
    "mono": "IT",
    "hue": 340,
    "layers": 1,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -8015,6 +9157,7 @@
    "mono": "IA",
    "hue": 340,
    "layers": 2,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -8030,6 +9173,7 @@
    "mono": "MC",
    "hue": 340,
    "layers": 1,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -8045,6 +9189,7 @@
    "mono": "MR",
    "hue": 340,
    "layers": 1,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -8060,6 +9205,7 @@
    "mono": "NS",
    "hue": 340,
    "layers": 1,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -8075,6 +9221,7 @@
    "mono": "OM",
    "hue": 340,
    "layers": 1,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -8090,6 +9237,7 @@
    "mono": "PF",
    "hue": 340,
    "layers": 1,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -8105,6 +9253,7 @@
    "mono": "SI",
    "hue": 340,
    "layers": 1,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -8120,6 +9269,9 @@
    "mono": "SI",
    "hue": 340,
    "layers": 3,
+   "pips": [
+    265
+   ],
    "exited": false,
    "spokenTo": false
   },
@@ -8135,6 +9287,7 @@
    "mono": "SJ",
    "hue": 340,
    "layers": 1,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -8150,6 +9303,7 @@
    "mono": "US",
    "hue": 340,
    "layers": 1,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -8165,6 +9319,7 @@
    "mono": "AO",
    "hue": 340,
    "layers": 1,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -8180,6 +9335,7 @@
    "mono": "AO",
    "hue": 340,
    "layers": 1,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -8195,6 +9351,7 @@
    "mono": "AO",
    "hue": 340,
    "layers": 1,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -8210,6 +9367,7 @@
    "mono": "AO",
    "hue": 340,
    "layers": 1,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -8225,6 +9383,7 @@
    "mono": "AO",
    "hue": 340,
    "layers": 1,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -8240,6 +9399,7 @@
    "mono": "AV",
    "hue": 340,
    "layers": 1,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -8255,6 +9415,7 @@
    "mono": "AV",
    "hue": 340,
    "layers": 3,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -8270,6 +9431,7 @@
    "mono": "CT",
    "hue": 340,
    "layers": 1,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -8285,6 +9447,7 @@
    "mono": "ET",
    "hue": 340,
    "layers": 1,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -8300,6 +9463,7 @@
    "mono": "SF",
    "hue": 340,
    "layers": 1,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -8315,6 +9479,7 @@
    "mono": "U4",
    "hue": 340,
    "layers": 2,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -8330,6 +9495,7 @@
    "mono": "WA",
    "hue": 340,
    "layers": 1,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -8345,6 +9511,7 @@
    "mono": "WS",
    "hue": 340,
    "layers": 1,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -8360,6 +9527,7 @@
    "mono": "IP",
    "hue": 340,
    "layers": 1,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -8375,6 +9543,7 @@
    "mono": "IT",
    "hue": 340,
    "layers": 1,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -8390,6 +9559,7 @@
    "mono": "OA",
    "hue": 340,
    "layers": 1,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -8405,6 +9575,7 @@
    "mono": "SJ",
    "hue": 340,
    "layers": 1,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -8420,6 +9591,7 @@
    "mono": "TE",
    "hue": 340,
    "layers": 1,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -8435,6 +9607,7 @@
    "mono": "IE",
    "hue": 340,
    "layers": 1,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -8450,6 +9623,7 @@
    "mono": "IS",
    "hue": 340,
    "layers": 1,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -8465,6 +9639,7 @@
    "mono": "US",
    "hue": 340,
    "layers": 1,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   }
@@ -8480,11 +9655,12 @@
    "h": 480.0,
    "cat": "AV Driver / Autonomy Software",
    "hue": 265,
-   "mono": "WA"
+   "mono": "WA",
+   "claim": "The only fully driverless paid service at scale: about half a million rides a week across 11 US metros (mid-2026)."
   },
   {
    "name": "Baidu Apollo Go",
-   "slug": "baidu-apollo-go-c8",
+   "slug": "baidu-apollo-go",
    "id": "c8",
    "x": 2728.0,
    "y": 1640.0,
@@ -8492,7 +9668,8 @@
    "h": 480.0,
    "cat": "AV Driver / Autonomy Software",
    "hue": 265,
-   "mono": "BA"
+   "mono": "BA",
+   "claim": "Largest robotaxi operation on earth by cumulative rides: 22M+ across 27 cities, and the most international (Apr 2026)."
   },
   {
    "name": "Tesla",
@@ -8504,7 +9681,8 @@
    "h": 480.0,
    "cat": "Vehicle Platform & Manufacturing",
    "hue": 40,
-   "mono": "TE"
+   "mono": "TE",
+   "claim": "Largest vision-only fleet feeding one training loop; a metro-wide Austin map served by about 20 unsupervised cars (Jul 2026)."
   },
   {
    "name": "Zoox",
@@ -8516,7 +9694,8 @@
    "h": 480.0,
    "cat": "Vehicle Platform & Manufacturing",
    "hue": 40,
-   "mono": "ZO"
+   "mono": "ZO",
+   "claim": "First purpose-built robotaxi with no controls to carry public riders; free everywhere pending a federal exemption."
   },
   {
    "name": "Pony.ai",
@@ -8528,7 +9707,8 @@
    "h": 480.0,
    "cat": "AV Driver / Autonomy Software",
    "hue": 265,
-   "mono": "PA"
+   "mono": "PA",
+   "claim": "First to claim city-level unit-economics breakeven, in Shenzhen and Guangzhou; 1,700+ robotaxis (May 2026)."
   },
   {
    "name": "WeRide",
@@ -8540,7 +9720,8 @@
    "h": 480.0,
    "cat": "AV Driver / Autonomy Software",
    "hue": 265,
-   "mono": "WE"
+   "mono": "WE",
+   "claim": "Licensed in eight countries, the broadest regulatory footprint of any operator, and the Gulf's driverless leader."
   },
   {
    "name": "Wayve",
@@ -8552,7 +9733,8 @@
    "h": 480.0,
    "cat": "AV Driver / Autonomy Software",
    "hue": 265,
-   "mono": "WA"
+   "mono": "WA",
+   "claim": "Map-light end-to-end driving licensed to OEMs and fleets; $1.2B Series D, London trials with Uber during 2026."
   },
   {
    "name": "Nuro",
@@ -8564,7 +9746,8 @@
    "h": 480.0,
    "cat": "Vehicle Platform & Manufacturing",
    "hue": 40,
-   "mono": "NU"
+   "mono": "NU",
+   "claim": "Pivoted from delivery pods to licensing its driver; now powering Uber's 35,000-vehicle Lucid robotaxi programme."
   },
   {
    "name": "May Mobility",
@@ -8576,7 +9759,8 @@
    "h": 480.0,
    "cat": "AV Driver / Autonomy Software",
    "hue": 265,
-   "mono": "MM"
+   "mono": "MM",
+   "claim": "Constrained-ODD transit and campus autonomy: 3.5M+ rides across the US and Japan, live on Lyft in Atlanta."
   },
   {
    "name": "Motional",
@@ -8588,7 +9772,8 @@
    "h": 480.0,
    "cat": "AV Driver / Autonomy Software",
    "hue": 265,
-   "mono": "MO"
+   "mono": "MO",
+   "claim": "Hyundai-backed and factory-integrated; IONIQ 5 robotaxis relaunched on Uber in Las Vegas, March 2026."
   }
  ]
 }

@@ -1,41 +1,69 @@
 # Autonomous Vehicle Ecosystem Map
 
-**Live map: [agyarek.github.io/av-ecosystem-map](https://agyarek.github.io/av-ecosystem-map/)**
+**Live: [agyarek.github.io/av-ecosystem-map](https://agyarek.github.io/av-ecosystem-map/)**
 
-An interactive map of the autonomous-vehicle industry — 560 companies, 148 mapped partnerships, 11 layers. Select any company to reveal its partners and trace its route to a passenger-facing robotaxi operator.
+An interactive field atlas of the autonomous vehicle industry: 560 organisations across eleven layers, the partnerships between them, the money behind them, the regulators who permit them, and the adjacent industries where autonomy shipped first.
 
-Compiled and maintained by Kofi Agyare-Kwabi — ex-Uber Country Manager · GTM & Partnerships · Wharton MBA.
+Compiled and maintained by Kofi Agyare-Kwabi, ex-Uber Country Manager, GTM & Partnerships, Wharton MBA.
 
-## Structure
+## What is here
 
-The site is fully static — a single `index.html` that loads three JSON data files. No build step.
+| Route | What it is |
+|---|---|
+| `/` | The loop: how a driverless ride works, and the waterline beneath it |
+| `/map/` | The wall chart: all 560 on one 6800×4560 poster, zoom/filter/export/print |
+| `/companies/` | The ledger: every field, sortable, filterable, URL-shareable, CSV/JSON export |
+| `/operators/` + 10 pages | The ten operators a passenger can actually meet, in depth |
+| `/partnerships/` | 148 mapped relationships organised by function; the demand-layer story |
+| `/funding/` | $41.8B of $200M+ events with the dataset's own known gaps published |
+| `/economics/` `/regulation/` `/safety/` `/owning-one/` `/beyond-roads/` | The deep dives |
+| `/method/` | Sources, taxonomy, coverage gaps, corrections |
+
+## Architecture
+
+True multi-page static HTML. No framework, no bundler, no npm. Python scripts freeze
+everything derivable into `data/` at build time; the browser renders and never recomputes.
 
 ```
-av-ecosystem-map/
-├── index.html                    # The entire app: markup, styles, logic
-├── data/
-│   ├── av-companies.json         # Company records: layers, partnerships, sublines
-│   ├── av-enrichment.json        # Verified metrics, funding, acquirer outcomes
-│   ├── av-funding-timeline.json  # Funding-timeline events
-│   └── av-companies.csv          # Airtable-ready flat export (generated)
+├── index.html, map/, companies/, operators/…       hand-written pages
+├── assets/css/   base.css + one stylesheet per surface
+├── assets/js/    core.js + one script per surface
+├── assets/cards/ social cards, generated from the poster
+├── data/         source of truth + generated indexes (never edit generated files by hand)
 └── tools/
-    └── make-csv.py               # Regenerates av-companies.csv from the JSON files
+    ├── validate-data.py        invariants; run before every commit, fail on error
+    ├── build-poster-layout.py  freezes wall-chart geometry (560/560 placed, verified)
+    ├── build-indexes.py        partner index, derived counts, search index
+    ├── fetch-logos.py          logo pipeline (run in an unrestricted network; the
+    │                           monogram tiles are the deliberate fallback until then)
+    ├── build-social-cards.py   1200×630 OG cards rendered from the poster
+    ├── render-poster.py        proofing render → poster-reference.svg
+    └── make-csv.py             flat CSV export
 ```
 
 ## Updating the data
 
-Edit the JSON files in `data/`, then regenerate the CSV export:
-
 ```bash
-python3 tools/make-csv.py
+# edit data/av-companies.json, av-enrichment.json or av-funding-timeline.json, then:
+python3 tools/validate-data.py        # must pass
+python3 tools/build-poster-layout.py  # regenerate frozen geometry
+python3 tools/build-indexes.py        # regenerate indexes
+python3 tools/make-csv.py             # regenerate the flat export
+python3 tools/render-poster.py        # optional: refresh the reference SVG
 ```
 
-Push to `main` and GitHub Pages rebuilds the site automatically (Pages is configured to deploy from the `main` branch, root folder).
+Push to `main`; GitHub Pages serves the branch root directly.
 
-## Contact
+## Corrections
 
-Spotted a missing company or partnership? Email [agyarek+avecosystemmap@gmail.com](mailto:agyarek+avecosystemmap@gmail.com).
+A company that should be listed, a partnership not yet mapped, a detail that is wrong?
+Email [agyarek+avecosystemmap@gmail.com](mailto:agyarek+avecosystemmap@gmail.com).
+Coverage gaps are published on [`/method/`](https://agyarek.github.io/av-ecosystem-map/method/) rather than hidden.
+
+Third-party names and logos are reproduced nominatively to identify the organisations
+discussed; all trademarks remain the property of their owners and no endorsement is
+implied. Takedown contact: the address above.
 
 ## License
 
-MIT — see [LICENSE](LICENSE).
+MIT for the code — see [LICENSE](LICENSE). Company data compiled from public sources.

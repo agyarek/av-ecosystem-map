@@ -7,8 +7,8 @@
   "compiled": "2026-07-21",
   "method": "Each event verified via web search; every URL appeared in actual search results (primary source or major outlet preferred). Sub-$200M events and pure secondaries/stake sales excluded.",
   "knownGaps": [
-   "Aurora Innovation reported ~$331M July 2025 follow-on — not yet verified against Aurora IR",
-   "Motional reported ~$550M August 2025 round — only low-quality aggregator sources found",
+   "Aurora Innovation reported ~$331M July 2025 follow-on, not yet verified against Aurora IR",
+   "Motional reported ~$550M August 2025 round, only low-quality aggregator sources found",
    "Possible 2026 H1 lidar/AV-chip HK placements above $200M not yet swept"
   ]
  },
@@ -86,7 +86,7 @@
     "Fidelity"
    ],
    "form": "Growth round",
-   "note": "$16B at a $126B valuation — up from $45B in October 2024 — funding expansion to 20+ new cities including Tokyo and London.",
+   "note": "$16B at a $126B valuation, up from $45B in October 2024, funding expansion to 20+ new cities including Tokyo and London.",
    "url": "https://waymo.com/blog/2026/02/waymo-raises-usd16-billion-investment-round/"
   },
   {
@@ -118,7 +118,7 @@
     "Cornerstone investors"
    ],
    "form": "IPO (Hong Kong dual-primary)",
-   "note": "~HK$6.7B gross at HK$139/share — the largest autonomous-driving IPO globally in 2025.",
+   "note": "~HK$6.7B gross at HK$139/share, the largest autonomous-driving IPO globally in 2025.",
    "url": "https://ir.pony.ai/news-releases/news-release-details/pony-ai-inc-announces-pricing-hong-kong-initial-public-offering"
   },
   {
@@ -191,7 +191,7 @@
     "Public market investors"
    ],
    "form": "IPO (Hong Kong dual-primary)",
-   "note": "HK$4.16B — the largest capital raise in the lidar industry to date.",
+   "note": "HK$4.16B, the largest capital raise in the lidar industry to date.",
    "url": "https://www.bloomberg.com/news/articles/2025-09-16/lidar-giant-hesai-rises-in-hk-debut-after-535-million-listing"
   },
   {
@@ -260,7 +260,7 @@
     "Institutional placees"
    ],
    "form": "Follow-on placement",
-   "note": "~HK$4.7B June 2025 placement — the first of two 2025 top-ups funding ADAS scale and robotaxi projects.",
+   "note": "~HK$4.7B June 2025 placement, the first of two 2025 top-ups funding ADAS scale and robotaxi projects.",
    "url": "https://www.thestandard.com.hk/innovation/article/304552/Horizon-Robotics-to-raise-HK47-billion-from-share-placements"
   },
   {
@@ -272,7 +272,7 @@
     "Private placement investors"
    ],
    "form": "IPO",
-   "note": "$260M Nasdaq IPO plus ~$153M concurrent placements at a ~$5.4B valuation — the largest US AV IPO of 2024.",
+   "note": "$260M Nasdaq IPO plus ~$153M concurrent placements at a ~$5.4B valuation, the largest US AV IPO of 2024.",
    "url": "https://www.bloomberg.com/news/articles/2024-11-27/driverless-tech-firm-pony-ai-s-shares-climb-19-after-us-ipo"
   },
   {
@@ -315,7 +315,7 @@
     "Cornerstone investors"
    ],
    "form": "IPO",
-   "note": "HK$5.4B — Hong Kong's biggest IPO of 2024, priced at the top of the range.",
+   "note": "HK$5.4B, Hong Kong's biggest IPO of 2024, priced at the top of the range.",
    "url": "https://www.bloomberg.com/news/articles/2024-10-22/horizon-robotics-raises-696-million-in-hong-kong-ipo"
   },
   {
@@ -370,7 +370,7 @@
     "General Motors"
    ],
    "form": "Parent infusion",
-   "note": "GM's bridge funding as Cruise relaunched testing — preceding GM's December 2024 decision to absorb the unit.",
+   "note": "GM's bridge funding as Cruise relaunched testing, preceding GM's December 2024 decision to absorb the unit.",
    "url": "https://techcrunch.com/2024/06/11/gm-gives-cruise-850m-lifeline-as-it-relaunches-robotaxis-in-houston"
   },
   {

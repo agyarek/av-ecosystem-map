@@ -1,0 +1,173 @@
+/* map.css :: the wall chart page. Everything that is not the chart stays quiet. */
+
+.map-head {
+  display: flex; align-items: flex-end; justify-content: space-between;
+  gap: 24px; flex-wrap: wrap; padding-top: 28px;
+}
+.chart-title {
+  font-size: clamp(24px, 3vw, 38px); font-weight: 800;
+  letter-spacing: -0.02em; font-variation-settings: 'wdth' 116; margin-top: 6px;
+}
+.chart-honesty { max-width: 44ch; text-align: right; }
+@media (max-width: 700px) { .chart-honesty { text-align: left; } }
+
+/* --------------------------------------------------------------- rail */
+.map-rail { margin-top: 16px; display: grid; gap: 8px; }
+.rail-row { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+.rail-group { display: inline-flex; gap: 6px; flex-wrap: wrap; }
+.rail-label {
+  font-family: var(--font-mono); font-size: 10.5px; font-weight: 600;
+  letter-spacing: .1em; text-transform: uppercase; color: var(--muted);
+  margin-right: 2px;
+}
+.rail-label:not(:first-child) { margin-left: 10px; }
+.rail-text {
+  font-family: var(--font-mono); font-size: 12px;
+  background: var(--paper-2); border: 1px solid var(--rule);
+  border-radius: var(--r-pill); padding: 5px 12px; width: 150px;
+}
+.rail-text:focus { border-color: var(--cyan); }
+.rail-spacer { flex: 1; }
+.rail-zoom .chip, .rail-export .chip { border-radius: var(--r-chip); }
+#filter-state { min-height: 18px; }
+
+/* --------------------------------------------------------------- stage */
+.poster-stage { position: relative; margin-top: 12px; }
+.poster-viewport {
+  aspect-ratio: 6800 / 4560;
+  max-height: calc(100vh - 120px);
+  width: 100%;
+  overflow: hidden; position: relative;
+  background: var(--paper-2);
+  border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule);
+  cursor: grab; touch-action: none;
+  contain: layout paint;
+}
+.poster-viewport:active { cursor: grabbing; }
+.poster-viewport:focus-visible { outline-offset: -3px; }
+#poster { width: 100%; height: 100%; display: block; }
+
+/* SVG chip states. Filtering and selection dim, never reflow. */
+#poster [data-chip] { transition: opacity 160ms; cursor: pointer; }
+#poster.has-sel [data-chip], #poster.has-sel .district-shell,
+#poster.has-sel .band-label, #poster.has-sel .medallion-shell { opacity: .12; }
+#poster.has-sel [data-chip].lit { opacity: 1; }
+#poster [data-chip].dimmed { opacity: .13; }
+#poster.has-sel [data-chip].dimmed:not(.lit) { opacity: .06; }
+#poster [data-chip]:hover .chip-body,
+#poster [data-chip].kbd-focus .chip-body { stroke: var(--cyan); stroke-width: 2.5; }
+#poster [data-chip].sel .chip-body { stroke: var(--cyan); stroke-width: 5; }
+#poster [data-chip]:focus { outline: none; }
+#poster .links path {
+  fill: none; stroke: var(--cyan); opacity: .85;
+  vector-effect: non-scaling-stroke; stroke-width: 2.2px;
+}
+#poster .pulse { animation: chip-pulse 900ms ease-out 2; transform-box: fill-box; transform-origin: center; }
+@keyframes chip-pulse { 0% { transform: scale(1); } 35% { transform: scale(1.12); } 100% { transform: scale(1); } }
+
+/* --------------------------------------------------------------- card */
+#company-card {
+  position: absolute; right: 16px; bottom: 16px; z-index: 30;
+  width: min(340px, calc(100vw - 32px));
+  background: var(--paper-2); border: 1px solid var(--rule);
+  border-radius: var(--r-card); padding: 16px;
+  box-shadow: 0 18px 48px rgba(18, 19, 15, .2);
+}
+#company-card .cc-top { display: flex; align-items: flex-start; gap: 10px; }
+#company-card h2 { font-size: 18px; font-weight: 800; font-variation-settings: 'wdth' 112; line-height: 1.15; }
+#company-card .cc-close { margin-left: auto; color: var(--muted); font-size: 18px; line-height: 1; padding: 2px 6px; }
+#company-card .cc-close:hover { color: var(--alert); }
+#company-card .cc-layer { display: inline-flex; align-items: center; gap: 6px; font-family: var(--font-mono); font-size: 11px; color: var(--muted); margin-top: 6px; }
+#company-card .cc-layer .dot { width: 9px; height: 9px; border-radius: 3px; }
+#company-card .cc-sub { font-size: 13.5px; color: var(--ink-2); margin-top: 8px; line-height: 1.45; }
+#company-card .cc-partners { margin-top: 10px; font-size: 12.5px; max-height: 130px; overflow: auto; }
+#company-card .cc-partners button {
+  display: inline-block; padding: 1px 0; color: var(--cyan); font-size: 12.5px; text-align: left;
+}
+#company-card .cc-partners .pk { color: var(--muted); font-family: var(--font-mono); font-size: 10.5px; }
+#company-card .cc-actions { display: flex; gap: 8px; margin-top: 12px; flex-wrap: wrap; }
+#company-card .cc-actions a { font-size: 11px; }
+#company-card.sheet {
+  position: fixed; left: 50%; transform: translateX(-50%);
+  right: auto; bottom: 12px; z-index: 150;
+  width: min(420px, calc(100vw - 24px));
+}
+
+/* --------------------------------------------------------------- navigator (mobile) */
+#navigator .med-strip {
+  display: grid; grid-auto-flow: column; grid-auto-columns: minmax(200px, 1fr);
+  gap: 10px; overflow-x: auto; padding: 4px 0 12px;
+  scroll-snap-type: x mandatory;
+}
+#navigator .med-card {
+  scroll-snap-align: start;
+  background: var(--ink); color: var(--paper);
+  border-radius: var(--r-medallion); padding: 16px; min-height: 128px;
+  display: flex; flex-direction: column; gap: 6px; text-align: left;
+}
+:root[data-theme="dark"] #navigator .med-card { background: var(--paper-2); color: var(--ink); border: 1px solid var(--rule); }
+#navigator .med-card .mono-tile { font-size: 15px; font-weight: 800; }
+#navigator .med-card .mc-name { font-weight: 800; font-size: 16px; }
+#navigator .med-card .mc-claim { font-size: 12px; opacity: .75; line-height: 1.4; }
+#navigator details {
+  border: 1px solid var(--rule); border-radius: var(--r-card);
+  background: var(--paper-2); margin-top: 10px; overflow: hidden;
+}
+#navigator summary {
+  display: flex; align-items: center; gap: 10px; padding: 14px 16px;
+  cursor: pointer; list-style: none; font-weight: 700;
+}
+#navigator summary::-webkit-details-marker { display: none; }
+#navigator summary .bar { width: 6px; height: 22px; border-radius: 3px; flex: none; }
+#navigator summary .cnt { margin-left: auto; font-family: var(--font-mono); font-size: 13px; color: var(--muted); }
+#navigator .dgrid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; padding: 0 16px 16px;
+}
+@media (max-width: 420px) { #navigator .dgrid { grid-template-columns: repeat(2, 1fr); } }
+#navigator .dchip {
+  border: 1px solid var(--rule); border-radius: var(--r-chip);
+  background: var(--paper); padding: 10px 8px; text-align: center;
+  display: flex; flex-direction: column; align-items: center; gap: 6px;
+  position: relative; font-size: 12px; line-height: 1.25;
+}
+#navigator .dchip .mono-tile { width: 40px; height: 40px; font-size: 16px; }
+#navigator .dchip .gd { position: absolute; top: 6px; right: 6px; }
+#navigator .dchip.exited { opacity: .55; text-decoration: line-through; }
+.mono-tile {
+  display: grid; place-items: center; width: 48px; height: 48px;
+  border-radius: 10px; color: #fff; font-weight: 800; font-size: 18px;
+  background: var(--tile, var(--ink-2));
+}
+.mono-tile img { width: 100%; height: 100%; object-fit: contain; border-radius: 10px; }
+
+/* --------------------------------------------------------------- legend */
+.map-legend { margin-top: 24px; padding-bottom: 8px; }
+#legend-layers { display: flex; gap: 8px 16px; flex-wrap: wrap; }
+#legend-layers .lg {
+  display: inline-flex; align-items: center; gap: 7px;
+  font-size: 12.5px; color: var(--ink-2);
+}
+#legend-layers .lg .sw { width: 14px; height: 14px; border-radius: 4px; flex: none; }
+#legend-layers .lg .n { font-family: var(--font-mono); font-size: 11px; color: var(--muted); }
+.legend-marks { display: flex; gap: 8px 22px; flex-wrap: wrap; margin-top: 12px; }
+.legend-marks > span { display: inline-flex; align-items: center; gap: 7px; }
+.pip-demo { display: inline-flex; gap: 2px; }
+.pip-demo::before, .pip-demo::after {
+  content: ""; width: 7px; height: 7px; border-radius: 50%; display: inline-block;
+  background: oklch(var(--layer-l) var(--layer-c) 150);
+}
+.pip-demo::after { background: oklch(var(--layer-l) var(--layer-c) 20); }
+
+/* --------------------------------------------------------------- print */
+@media print {
+  @page { size: A0 landscape; margin: 0; }
+  body.print-a1 { }
+  .map-head, .map-rail, .map-legend, #company-card, #navigator-wrap { display: none !important; }
+  .poster-viewport {
+    aspect-ratio: auto; max-height: none; overflow: visible;
+    border: 0; width: 100%; height: auto;
+  }
+  #poster { width: 100%; height: auto; }
+  #poster.has-sel [data-chip], #poster [data-chip].dimmed { opacity: 1 !important; }
+  #poster .links { display: none; }
+}

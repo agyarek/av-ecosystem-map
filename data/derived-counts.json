@@ -1,0 +1,75 @@
+{
+ "meta": {
+  "generatedBy": "tools/build-indexes.py",
+  "companyCount": 560,
+  "medallion": [
+   "Baidu Apollo Go",
+   "May Mobility",
+   "Motional",
+   "Nuro",
+   "Pony.ai",
+   "Tesla",
+   "Waymo",
+   "Wayve",
+   "WeRide",
+   "Zoox"
+  ]
+ },
+ "layers": {
+  "Governance: Regulators & Government": 76,
+  "Fleet Operations & Depot": 70,
+  "Vehicle Platform & Manufacturing": 67,
+  "Governance: Standards, Safety & Advocacy": 58,
+  "AV Driver / Autonomy Software": 55,
+  "Connectivity & Infrastructure": 55,
+  "Demand & Commercial Platforms": 53,
+  "Data, Maps & Simulation": 47,
+  "Sensing & Compute Hardware": 38,
+  "Capital, Insurance & Risk": 38,
+  "AV Middleware & Tooling": 3
+ },
+ "regions": {
+  "North America": 265,
+  "Europe": 152,
+  "Greater China": 75,
+  "Middle East & Africa": 35,
+  "Asia-Pacific": 32,
+  "Global": 1
+ },
+ "status": {
+  "active": 537,
+  "wound-down": 15,
+  "acquired": 5,
+  "bankrupt": 3
+ },
+ "maturityTop": {
+  "Commercial-scaled": 179,
+  "Commercial-limited": 99,
+  "Active regulatory regime": 56,
+  "N/A": 20,
+  "Production": 13,
+  "Published standard": 12,
+  "Historical": 10,
+  "Commercial-scaled in components": 8,
+  "Active standard setter": 8,
+  "Commercial supplier": 4,
+  "Commercial-scaled platform": 4,
+  "Active regulator": 4
+ },
+ "stations": {
+  "request": 53,
+  "driver": 191,
+  "vehicle": 64,
+  "pitlane": 70,
+  "across": 172
+ },
+ "gaps": {
+  "companies": 560,
+  "withMappedPartners": 128,
+  "withoutMappedPartners": 432,
+  "mappedEdges": 148,
+  "withDomain": 441,
+  "withDisclosedFunding": 49,
+  "spokenTo": 18
+ }
+}

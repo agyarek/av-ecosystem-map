@@ -1,0 +1,2869 @@
+{
+ "meta": {
+  "generatedBy": "tools/build-indexes.py",
+  "edgeCount": 148,
+  "companiesWithPartners": 128,
+  "companiesWithout": 432,
+  "kinds": {
+   "Same family": 33,
+   "Vehicle platform": 18,
+   "Demand": 16,
+   "Regulatory": 13,
+   "Software": 13,
+   "Compute": 10,
+   "Fleet ops": 8,
+   "Investment": 8,
+   "Delivery": 7,
+   "Sensing supply": 7,
+   "Manufacturing": 4,
+   "Freight": 4,
+   "Acquisition": 2,
+   "Mapping": 2,
+   "Safety research": 1,
+   "Charging": 1,
+   "Simulation": 1
+  }
+ },
+ "bySlug": {
+  "abu-dhabi-itc": {
+   "name": "Abu Dhabi ITC",
+   "count": 2,
+   "partners": [
+    {
+     "partner": "Uber",
+     "k": "Regulatory",
+     "n": "ITC authorization enables fully driverless Uber/WeRide operations in Abu Dhabi.",
+     "slug": "uber",
+     "cat": "Demand & Commercial Platforms"
+    },
+    {
+     "partner": "WeRide",
+     "k": "Regulatory",
+     "n": "ITC authorized fully driverless WeRide robotaxi operations.",
+     "slug": "weride",
+     "cat": "AV Driver / Autonomy Software"
+    }
+   ]
+  },
+  "aeva": {
+   "name": "Aeva",
+   "count": 1,
+   "partners": [
+    {
+     "partner": "Torc Robotics",
+     "k": "Sensing supply",
+     "n": "Aeva 4D LiDAR is standard on the autonomous Freightliner Cascadia program.",
+     "slug": "torc-robotics",
+     "cat": "AV Driver / Autonomy Software"
+    }
+   ]
+  },
+  "applied-intuition": {
+   "name": "Applied Intuition",
+   "count": 1,
+   "partners": [
+    {
+     "partner": "Isuzu",
+     "k": "Software",
+     "n": "Partnership to productionize autonomous trucks in Japan.",
+     "slug": "isuzu",
+     "cat": "Vehicle Platform & Manufacturing"
+    }
+   ]
+  },
+  "aurora-innovation": {
+   "name": "Aurora Innovation",
+   "count": 7,
+   "partners": [
+    {
+     "partner": "NVIDIA DRIVE",
+     "k": "Compute",
+     "n": "DRIVE Thor plus Continental hardware underpin Aurora's driverless trucks.",
+     "slug": "nvidia-drive",
+     "cat": "AV Driver / Autonomy Software"
+    },
+    {
+     "partner": "McLane Company",
+     "k": "Freight",
+     "n": "Autonomous grocery freight for McLane in Texas.",
+     "slug": "mclane-company",
+     "cat": "Demand & Commercial Platforms"
+    },
+    {
+     "partner": "Uber Freight",
+     "k": "Freight",
+     "n": "Aurora hauls commercial freight brokered through Uber Freight.",
+     "slug": "uber-freight",
+     "cat": "Demand & Commercial Platforms"
+    },
+    {
+     "partner": "Werner Enterprises",
+     "k": "Freight",
+     "n": "Driverless Dallas-Houston hauls for Werner.",
+     "slug": "werner-enterprises",
+     "cat": "Demand & Commercial Platforms"
+    },
+    {
+     "partner": "Continental",
+     "k": "Manufacturing",
+     "n": "Continental industrializes Aurora's driverless hardware kit at scale.",
+     "slug": "continental",
+     "cat": "Vehicle Platform & Manufacturing"
+    },
+    {
+     "partner": "PACCAR",
+     "k": "Vehicle platform",
+     "n": "Autonomy-ready Peterbilt 579s carry the Aurora Driver.",
+     "slug": "paccar",
+     "cat": "Vehicle Platform & Manufacturing"
+    },
+    {
+     "partner": "Volvo Trucks / Volvo Autonomous Solutions",
+     "k": "Vehicle platform",
+     "n": "The Volvo VNL Autonomous is factory-built for Aurora's driverless lanes.",
+     "slug": "volvo-trucks-volvo-autonomous-solutions",
+     "cat": "Vehicle Platform & Manufacturing"
+    }
+   ]
+  },
+  "autotalks": {
+   "name": "Autotalks",
+   "count": 1,
+   "partners": [
+    {
+     "partner": "Qualcomm",
+     "k": "Acquisition",
+     "n": "Completed acquisition of the V2X chipmaker in 2025.",
+     "slug": "qualcomm",
+     "cat": "Connectivity & Infrastructure"
+    }
+   ]
+  },
+  "avis-budget-group": {
+   "name": "Avis Budget Group",
+   "count": 1,
+   "partners": [
+    {
+     "partner": "Waymo",
+     "k": "Fleet ops",
+     "n": "Avis manages Waymo fleet operations in Dallas.",
+     "slug": "waymo",
+     "cat": "AV Driver / Autonomy Software"
+    }
+   ]
+  },
+  "avride": {
+   "name": "Avride",
+   "count": 2,
+   "partners": [
+    {
+     "partner": "Uber",
+     "k": "Demand",
+     "n": "Avride robotaxis and sidewalk robots deploy through Uber in Dallas.",
+     "slug": "uber",
+     "cat": "Demand & Commercial Platforms"
+    },
+    {
+     "partner": "Hyundai Motor Group",
+     "k": "Vehicle platform",
+     "n": "Ioniq 5 supply deal for Avride's robotaxi fleet.",
+     "slug": "hyundai-motor-group",
+     "cat": "Vehicle Platform & Manufacturing"
+    }
+   ]
+  },
+  "baic-group": {
+   "name": "BAIC Group",
+   "count": 1,
+   "partners": [
+    {
+     "partner": "Pony.ai",
+     "k": "Vehicle platform",
+     "n": "Co-developing Gen-7 robotaxis on BAIC's EV platform.",
+     "slug": "pony-ai",
+     "cat": "AV Driver / Autonomy Software"
+    }
+   ]
+  },
+  "bmw-personal-pilot-adas": {
+   "name": "BMW Personal Pilot / ADAS",
+   "count": 2,
+   "partners": [
+    {
+     "partner": "Qualcomm Snapdragon Ride",
+     "k": "Compute",
+     "n": "Snapdragon Ride powers BMW's automated-driving stack.",
+     "slug": "qualcomm-snapdragon-ride",
+     "cat": "Sensing & Compute Hardware"
+    },
+    {
+     "partner": "Innoviz",
+     "k": "Sensing supply",
+     "n": "InnovizOne LiDAR enables BMW's Level 3 Personal Pilot.",
+     "slug": "innoviz",
+     "cat": "Sensing & Compute Hardware"
+    }
+   ]
+  },
+  "byd": {
+   "name": "BYD",
+   "count": 1,
+   "partners": [
+    {
+     "partner": "Uber",
+     "k": "Vehicle platform",
+     "n": "Multi-market EV supply deal with future autonomy collaboration.",
+     "slug": "uber",
+     "cat": "Demand & Commercial Platforms"
+    }
+   ]
+  },
+  "baidu-apollo-go": {
+   "name": "Baidu Apollo Go",
+   "count": 5,
+   "partners": [
+    {
+     "partner": "Lyft",
+     "k": "Demand",
+     "n": "Apollo Go robotaxis planned on Lyft/FREE NOW in Germany and the UK.",
+     "slug": "lyft",
+     "cat": "Demand & Commercial Platforms"
+    },
+    {
+     "partner": "Uber",
+     "k": "Demand",
+     "n": "Apollo Go robotaxis join the Uber platform across Asia and the Middle East.",
+     "slug": "uber",
+     "cat": "Demand & Commercial Platforms"
+    },
+    {
+     "partner": "Baidu Apollo HD Map / Baidu Maps",
+     "k": "Mapping",
+     "n": "Baidu's map stack underpins Apollo Go operations.",
+     "slug": "baidu-apollo-hd-map-baidu-maps",
+     "cat": "Data, Maps & Simulation"
+    },
+    {
+     "partner": "Dubai RTA",
+     "k": "Regulatory",
+     "n": "RTA pilot fleet brings Apollo Go robotaxis to Dubai.",
+     "slug": "dubai-rta",
+     "cat": "Governance: Regulators & Government"
+    },
+    {
+     "partner": "Baidu Apollo RT6",
+     "k": "Same family",
+     "n": "The purpose-built RT6 is Apollo Go's sixth-generation robotaxi.",
+     "slug": "baidu-apollo-rt6",
+     "cat": "Vehicle Platform & Manufacturing"
+    }
+   ]
+  },
+  "baidu-apollo-hd-map-baidu-maps": {
+   "name": "Baidu Apollo HD Map / Baidu Maps",
+   "count": 1,
+   "partners": [
+    {
+     "partner": "Baidu Apollo Go",
+     "k": "Mapping",
+     "n": "Baidu's map stack underpins Apollo Go operations.",
+     "slug": "baidu-apollo-go",
+     "cat": "AV Driver / Autonomy Software"
+    }
+   ]
+  },
+  "baidu-apollo-rt6": {
+   "name": "Baidu Apollo RT6",
+   "count": 1,
+   "partners": [
+    {
+     "partner": "Baidu Apollo Go",
+     "k": "Same family",
+     "n": "The purpose-built RT6 is Apollo Go's sixth-generation robotaxi.",
+     "slug": "baidu-apollo-go",
+     "cat": "AV Driver / Autonomy Software"
+    }
+   ]
+  },
+  "beep": {
+   "name": "Beep",
+   "count": 2,
+   "partners": [
+    {
+     "partner": "Oxa",
+     "k": "Software",
+     "n": "Oxa's driver software runs Beep's shuttle deployments.",
+     "slug": "oxa",
+     "cat": "AV Driver / Autonomy Software"
+    },
+    {
+     "partner": "Holon",
+     "k": "Vehicle platform",
+     "n": "US launch operator for the HOLON urban mover.",
+     "slug": "holon",
+     "cat": "Vehicle Platform & Manufacturing"
+    }
+   ]
+  },
+  "benteler-group": {
+   "name": "Benteler Group",
+   "count": 1,
+   "partners": [
+    {
+     "partner": "Holon",
+     "k": "Same family",
+     "n": "Benteler-founded purpose-built shuttle maker.",
+     "slug": "holon",
+     "cat": "Vehicle Platform & Manufacturing"
+    }
+   ]
+  },
+  "california-department-of-motor-vehicles-california-dmv": {
+   "name": "California Department of Motor Vehicles (California DMV)",
+   "count": 2,
+   "partners": [
+    {
+     "partner": "Waymo",
+     "k": "Regulatory",
+     "n": "Holds California driverless testing and deployment permits.",
+     "slug": "waymo",
+     "cat": "AV Driver / Autonomy Software"
+    },
+    {
+     "partner": "Zoox",
+     "k": "Regulatory",
+     "n": "Tests driverless in Foster City and San Francisco under DMV permits.",
+     "slug": "zoox",
+     "cat": "Vehicle Platform & Manufacturing"
+    }
+   ]
+  },
+  "california-public-utilities-commission-cpuc": {
+   "name": "California Public Utilities Commission (CPUC)",
+   "count": 2,
+   "partners": [
+    {
+     "partner": "Waymo",
+     "k": "Regulatory",
+     "n": "CPUC authorizes Waymo's fared driverless passenger service in California.",
+     "slug": "waymo",
+     "cat": "AV Driver / Autonomy Software"
+    },
+    {
+     "partner": "Zoox",
+     "k": "Regulatory",
+     "n": "CPUC pilot permits govern Zoox passenger operations in California.",
+     "slug": "zoox",
+     "cat": "Vehicle Platform & Manufacturing"
+    }
+   ]
+  },
+  "caocao-mobility": {
+   "name": "CaoCao Mobility",
+   "count": 1,
+   "partners": [
+    {
+     "partner": "Geely",
+     "k": "Same family",
+     "n": "Geely's ride-hailing arm; robotaxi pilots run on Geely platforms.",
+     "slug": "geely",
+     "cat": "Vehicle Platform & Manufacturing"
+    }
+   ]
+  },
+  "cartken": {
+   "name": "Cartken",
+   "count": 1,
+   "partners": [
+    {
+     "partner": "Uber Eats",
+     "k": "Delivery",
+     "n": "Cartken robots deliver for Uber Eats in Miami and Japan.",
+     "slug": "uber-eats",
+     "cat": "Demand & Commercial Platforms"
+    }
+   ]
+  },
+  "coco-robotics": {
+   "name": "Coco Robotics",
+   "count": 2,
+   "partners": [
+    {
+     "partner": "DoorDash",
+     "k": "Delivery",
+     "n": "Multi-market sidewalk delivery on the DoorDash network.",
+     "slug": "doordash",
+     "cat": "Demand & Commercial Platforms"
+    },
+    {
+     "partner": "Uber Eats",
+     "k": "Delivery",
+     "n": "Coco sidewalk robots are integrated into Uber Eats in LA and Miami.",
+     "slug": "uber-eats",
+     "cat": "Demand & Commercial Platforms"
+    }
+   ]
+  },
+  "comfortdelgro-zig": {
+   "name": "ComfortDelGro Zig",
+   "count": 1,
+   "partners": [
+    {
+     "partner": "Pony.ai",
+     "k": "Demand",
+     "n": "Singapore robotaxi trial with CDG's Zig app and fleet operations.",
+     "slug": "pony-ai",
+     "cat": "AV Driver / Autonomy Software"
+    }
+   ]
+  },
+  "continental": {
+   "name": "Continental",
+   "count": 2,
+   "partners": [
+    {
+     "partner": "Aurora Innovation",
+     "k": "Manufacturing",
+     "n": "Continental industrializes Aurora's driverless hardware kit at scale.",
+     "slug": "aurora-innovation",
+     "cat": "AV Driver / Autonomy Software"
+    },
+    {
+     "partner": "Elektrobit",
+     "k": "Same family",
+     "n": "Continental's automotive software subsidiary.",
+     "slug": "elektrobit",
+     "cat": "AV Middleware & Tooling"
+    }
+   ]
+  },
+  "daimler-truck": {
+   "name": "Daimler Truck",
+   "count": 1,
+   "partners": [
+    {
+     "partner": "Torc Robotics",
+     "k": "Same family",
+     "n": "Majority-owned by Daimler Truck since 2019.",
+     "slug": "torc-robotics",
+     "cat": "AV Driver / Autonomy Software"
+    }
+   ]
+  },
+  "daimler-truck-freightliner": {
+   "name": "Daimler Truck / Freightliner",
+   "count": 1,
+   "partners": [
+    {
+     "partner": "Torc Robotics",
+     "k": "Vehicle platform",
+     "n": "The autonomous-ready Freightliner Cascadia is Torc's launch platform.",
+     "slug": "torc-robotics",
+     "cat": "AV Driver / Autonomy Software"
+    }
+   ]
+  },
+  "didi": {
+   "name": "DiDi",
+   "count": 1,
+   "partners": [
+    {
+     "partner": "DiDi Autonomous Driving",
+     "k": "Same family",
+     "n": "DiDi's robotaxi R&D arm feeding its ride-hail network.",
+     "slug": "didi-autonomous-driving",
+     "cat": "AV Driver / Autonomy Software"
+    }
+   ]
+  },
+  "didi-autonomous-driving": {
+   "name": "DiDi Autonomous Driving",
+   "count": 2,
+   "partners": [
+    {
+     "partner": "GAC Group / GAC Toyota",
+     "k": "Manufacturing",
+     "n": "JV to mass-produce robotaxis on GAC Aion EV platforms.",
+     "slug": "gac-group-gac-toyota",
+     "cat": "Vehicle Platform & Manufacturing"
+    },
+    {
+     "partner": "DiDi",
+     "k": "Same family",
+     "n": "DiDi's robotaxi R&D arm feeding its ride-hail network.",
+     "slug": "didi",
+     "cat": "Demand & Commercial Platforms"
+    }
+   ]
+  },
+  "doordash": {
+   "name": "DoorDash",
+   "count": 2,
+   "partners": [
+    {
+     "partner": "Coco Robotics",
+     "k": "Delivery",
+     "n": "Multi-market sidewalk delivery on the DoorDash network.",
+     "slug": "coco-robotics",
+     "cat": "Demand & Commercial Platforms"
+    },
+    {
+     "partner": "DoorDash Dot",
+     "k": "Same family",
+     "n": "DoorDash Labs' purpose-built autonomous delivery robot.",
+     "slug": "doordash-dot",
+     "cat": "Demand & Commercial Platforms"
+    }
+   ]
+  },
+  "doordash-dot": {
+   "name": "DoorDash Dot",
+   "count": 1,
+   "partners": [
+    {
+     "partner": "DoorDash",
+     "k": "Same family",
+     "n": "DoorDash Labs' purpose-built autonomous delivery robot.",
+     "slug": "doordash",
+     "cat": "Demand & Commercial Platforms"
+    }
+   ]
+  },
+  "dubai-rta": {
+   "name": "Dubai RTA",
+   "count": 2,
+   "partners": [
+    {
+     "partner": "Baidu Apollo Go",
+     "k": "Regulatory",
+     "n": "RTA pilot fleet brings Apollo Go robotaxis to Dubai.",
+     "slug": "baidu-apollo-go",
+     "cat": "AV Driver / Autonomy Software"
+    },
+    {
+     "partner": "Pony.ai",
+     "k": "Regulatory",
+     "n": "RTA pilot program brings Pony robotaxis to Dubai roads.",
+     "slug": "pony-ai",
+     "cat": "AV Driver / Autonomy Software"
+    }
+   ]
+  },
+  "evgo": {
+   "name": "EVgo",
+   "count": 1,
+   "partners": [
+    {
+     "partner": "Uber",
+     "k": "Charging",
+     "n": "Dedicated fast-charging depots for Uber EV and AV fleets in NY, LA, SF and Boston.",
+     "slug": "uber",
+     "cat": "Demand & Commercial Platforms"
+    }
+   ]
+  },
+  "elektrobit": {
+   "name": "Elektrobit",
+   "count": 1,
+   "partners": [
+    {
+     "partner": "Continental",
+     "k": "Same family",
+     "n": "Continental's automotive software subsidiary.",
+     "slug": "continental",
+     "cat": "Vehicle Platform & Manufacturing"
+    }
+   ]
+  },
+  "element-fleet-management": {
+   "name": "Element Fleet Management",
+   "count": 1,
+   "partners": [
+    {
+     "partner": "Waymo",
+     "k": "Fleet ops",
+     "n": "Multi-year fleet-management partnership for San Diego (announced Jun 2026).",
+     "slug": "waymo",
+     "cat": "AV Driver / Autonomy Software"
+    }
+   ]
+  },
+  "free-now": {
+   "name": "FREE NOW",
+   "count": 1,
+   "partners": [
+    {
+     "partner": "Lyft",
+     "k": "Acquisition",
+     "n": "Lyft acquired FREE NOW (2025) as its European demand arm.",
+     "slug": "lyft",
+     "cat": "Demand & Commercial Platforms"
+    }
+   ]
+  },
+  "foretellix": {
+   "name": "Foretellix",
+   "count": 1,
+   "partners": [
+    {
+     "partner": "NVIDIA DRIVE Sim / Omniverse / Cosmos",
+     "k": "Simulation",
+     "n": "Foretify verification integrates with DRIVE Sim and Omniverse.",
+     "slug": "nvidia-drive-sim-omniverse-cosmos",
+     "cat": "Data, Maps & Simulation"
+    }
+   ]
+  },
+  "gac-group-gac-toyota": {
+   "name": "GAC Group / GAC Toyota",
+   "count": 3,
+   "partners": [
+    {
+     "partner": "DiDi Autonomous Driving",
+     "k": "Manufacturing",
+     "n": "JV to mass-produce robotaxis on GAC Aion EV platforms.",
+     "slug": "didi-autonomous-driving",
+     "cat": "AV Driver / Autonomy Software"
+    },
+    {
+     "partner": "Pony.ai",
+     "k": "Manufacturing",
+     "n": "GAC-Toyota lines build Pony.ai's Gen-7 robotaxi vehicles.",
+     "slug": "pony-ai",
+     "cat": "AV Driver / Autonomy Software"
+    },
+    {
+     "partner": "Ruqi Mobility",
+     "k": "Same family",
+     "n": "GAC-backed robotaxi and ride-hailing platform.",
+     "slug": "ruqi-mobility",
+     "cat": "Demand & Commercial Platforms"
+    }
+   ]
+  },
+  "go-inc": {
+   "name": "GO Inc.",
+   "count": 1,
+   "partners": [
+    {
+     "partner": "Waymo",
+     "k": "Fleet ops",
+     "n": "Tokyo taxi app GO manages Waymo's first international testing fleet.",
+     "slug": "waymo",
+     "cat": "AV Driver / Autonomy Software"
+    }
+   ]
+  },
+  "gatik": {
+   "name": "Gatik",
+   "count": 2,
+   "partners": [
+    {
+     "partner": "Isuzu",
+     "k": "Investment",
+     "n": "Isuzu invested; co-developing autonomous medium-duty trucks.",
+     "slug": "isuzu",
+     "cat": "Vehicle Platform & Manufacturing"
+    },
+    {
+     "partner": "Gatik Commercial Network",
+     "k": "Same family",
+     "n": "Gatik's freight-network-as-a-service brand.",
+     "slug": "gatik-commercial-network",
+     "cat": "Demand & Commercial Platforms"
+    }
+   ]
+  },
+  "gatik-commercial-network": {
+   "name": "Gatik Commercial Network",
+   "count": 1,
+   "partners": [
+    {
+     "partner": "Gatik",
+     "k": "Same family",
+     "n": "Gatik's freight-network-as-a-service brand.",
+     "slug": "gatik",
+     "cat": "AV Driver / Autonomy Software"
+    }
+   ]
+  },
+  "geely": {
+   "name": "Geely",
+   "count": 2,
+   "partners": [
+    {
+     "partner": "CaoCao Mobility",
+     "k": "Same family",
+     "n": "Geely's ride-hailing arm; robotaxi pilots run on Geely platforms.",
+     "slug": "caocao-mobility",
+     "cat": "Demand & Commercial Platforms"
+    },
+    {
+     "partner": "Zeekr",
+     "k": "Same family",
+     "n": "Geely's premium EV brand supplying robotaxi platforms.",
+     "slug": "zeekr",
+     "cat": "Vehicle Platform & Manufacturing"
+    }
+   ]
+  },
+  "grab": {
+   "name": "Grab",
+   "count": 2,
+   "partners": [
+    {
+     "partner": "WeRide",
+     "k": "Demand",
+     "n": "Grab operates WeRide autonomous shuttle routes in Singapore.",
+     "slug": "weride",
+     "cat": "AV Driver / Autonomy Software"
+    },
+    {
+     "partner": "Vay",
+     "k": "Investment",
+     "n": "Grab invested in Vay to bring remote driving to Southeast Asian fleets.",
+     "slug": "vay",
+     "cat": "Connectivity & Infrastructure"
+    }
+   ]
+  },
+  "here-technologies": {
+   "name": "HERE Technologies",
+   "count": 1,
+   "partners": [
+    {
+     "partner": "Mercedes-Benz Drive Pilot / MB.Drive",
+     "k": "Mapping",
+     "n": "HERE HD Live Map is a certified input to Drive Pilot Level 3.",
+     "slug": "mercedes-benz-drive-pilot-mb-drive",
+     "cat": "AV Driver / Autonomy Software"
+    }
+   ]
+  },
+  "hertz": {
+   "name": "Hertz",
+   "count": 1,
+   "partners": [
+    {
+     "partner": "UVeye",
+     "k": "Fleet ops",
+     "n": "AI vehicle-inspection lanes rolled out across Hertz locations.",
+     "slug": "uveye",
+     "cat": "Fleet Operations & Depot"
+    }
+   ]
+  },
+  "hesai": {
+   "name": "Hesai",
+   "count": 1,
+   "partners": [
+    {
+     "partner": "Pony.ai",
+     "k": "Sensing supply",
+     "n": "Hesai LiDAR anchors the sensor suite across Pony robotaxi generations.",
+     "slug": "pony-ai",
+     "cat": "AV Driver / Autonomy Software"
+    }
+   ]
+  },
+  "holon": {
+   "name": "Holon",
+   "count": 3,
+   "partners": [
+    {
+     "partner": "Benteler Group",
+     "k": "Same family",
+     "n": "Benteler-founded purpose-built shuttle maker.",
+     "slug": "benteler-group",
+     "cat": "Vehicle Platform & Manufacturing"
+    },
+    {
+     "partner": "Mobileye",
+     "k": "Software",
+     "n": "Mobileye Drive automates the HOLON urban shuttle.",
+     "slug": "mobileye",
+     "cat": "Vehicle Platform & Manufacturing"
+    },
+    {
+     "partner": "Beep",
+     "k": "Vehicle platform",
+     "n": "US launch operator for the HOLON urban mover.",
+     "slug": "beep",
+     "cat": "Demand & Commercial Platforms"
+    }
+   ]
+  },
+  "horizon-robotics": {
+   "name": "Horizon Robotics",
+   "count": 1,
+   "partners": [
+    {
+     "partner": "Volkswagen Group / CARIAD",
+     "k": "Compute",
+     "n": "CARIZON JV develops ADAS on Horizon Journey chips for VW in China.",
+     "slug": "volkswagen-group-cariad",
+     "cat": "Vehicle Platform & Manufacturing"
+    }
+   ]
+  },
+  "hyundai-motor-group": {
+   "name": "Hyundai Motor Group",
+   "count": 4,
+   "partners": [
+    {
+     "partner": "Motional",
+     "k": "Same family",
+     "n": "Hyundai JV; the Ioniq 5 robotaxi was its purpose-built platform.",
+     "slug": "motional",
+     "cat": "AV Driver / Autonomy Software"
+    },
+    {
+     "partner": "Sonatus",
+     "k": "Software",
+     "n": "Vehicle-data software shipping in Hyundai and Kia production models.",
+     "slug": "sonatus",
+     "cat": "AV Middleware & Tooling"
+    },
+    {
+     "partner": "Avride",
+     "k": "Vehicle platform",
+     "n": "Ioniq 5 supply deal for Avride's robotaxi fleet.",
+     "slug": "avride",
+     "cat": "AV Driver / Autonomy Software"
+    },
+    {
+     "partner": "Waymo",
+     "k": "Vehicle platform",
+     "n": "US-built Ioniq 5s join the Waymo fleet under a multi-year supply deal.",
+     "slug": "waymo",
+     "cat": "AV Driver / Autonomy Software"
+    }
+   ]
+  },
+  "innoviz": {
+   "name": "Innoviz",
+   "count": 1,
+   "partners": [
+    {
+     "partner": "BMW Personal Pilot / ADAS",
+     "k": "Sensing supply",
+     "n": "InnovizOne LiDAR enables BMW's Level 3 Personal Pilot.",
+     "slug": "bmw-personal-pilot-adas",
+     "cat": "AV Driver / Autonomy Software"
+    }
+   ]
+  },
+  "isuzu": {
+   "name": "Isuzu",
+   "count": 2,
+   "partners": [
+    {
+     "partner": "Gatik",
+     "k": "Investment",
+     "n": "Isuzu invested; co-developing autonomous medium-duty trucks.",
+     "slug": "gatik",
+     "cat": "AV Driver / Autonomy Software"
+    },
+    {
+     "partner": "Applied Intuition",
+     "k": "Software",
+     "n": "Partnership to productionize autonomous trucks in Japan.",
+     "slug": "applied-intuition",
+     "cat": "AV Driver / Autonomy Software"
+    }
+   ]
+  },
+  "iveco-group": {
+   "name": "Iveco Group",
+   "count": 1,
+   "partners": [
+    {
+     "partner": "Plus",
+     "k": "Vehicle platform",
+     "n": "SuperDrive integrates into IVECO S-Way trucks for Europe.",
+     "slug": "plus",
+     "cat": "AV Driver / Autonomy Software"
+    }
+   ]
+  },
+  "jaguar-land-rover": {
+   "name": "Jaguar Land Rover",
+   "count": 1,
+   "partners": [
+    {
+     "partner": "Waymo",
+     "k": "Vehicle platform",
+     "n": "The Jaguar I-PACE is the workhorse of Waymo's current driverless fleet.",
+     "slug": "waymo",
+     "cat": "AV Driver / Autonomy Software"
+    }
+   ]
+  },
+  "lucid": {
+   "name": "Lucid",
+   "count": 2,
+   "partners": [
+    {
+     "partner": "Uber",
+     "k": "Investment",
+     "n": "$300M Uber investment; 20k+ Gravity SUVs planned as robotaxis over six years.",
+     "slug": "uber",
+     "cat": "Demand & Commercial Platforms"
+    },
+    {
+     "partner": "Nuro",
+     "k": "Vehicle platform",
+     "n": "The Nuro Driver is integrated on the Lucid Gravity for the Uber program.",
+     "slug": "nuro",
+     "cat": "Vehicle Platform & Manufacturing"
+    }
+   ]
+  },
+  "luminar": {
+   "name": "Luminar",
+   "count": 1,
+   "partners": [
+    {
+     "partner": "Volvo Cars",
+     "k": "Sensing supply",
+     "n": "Iris LiDAR ships on the Volvo EX90.",
+     "slug": "volvo-cars",
+     "cat": "Vehicle Platform & Manufacturing"
+    }
+   ]
+  },
+  "lyft": {
+   "name": "Lyft",
+   "count": 7,
+   "partners": [
+    {
+     "partner": "FREE NOW",
+     "k": "Acquisition",
+     "n": "Lyft acquired FREE NOW (2025) as its European demand arm.",
+     "slug": "free-now",
+     "cat": "Demand & Commercial Platforms"
+    },
+    {
+     "partner": "Baidu Apollo Go",
+     "k": "Demand",
+     "n": "Apollo Go robotaxis planned on Lyft/FREE NOW in Germany and the UK.",
+     "slug": "baidu-apollo-go",
+     "cat": "AV Driver / Autonomy Software"
+    },
+    {
+     "partner": "May Mobility",
+     "k": "Demand",
+     "n": "May Mobility autonomous rides are live on Lyft in Atlanta.",
+     "slug": "may-mobility",
+     "cat": "AV Driver / Autonomy Software"
+    },
+    {
+     "partner": "Motional",
+     "k": "Demand",
+     "n": "Ran driverless rides on the Lyft network in Las Vegas before refocusing.",
+     "slug": "motional",
+     "cat": "AV Driver / Autonomy Software"
+    },
+    {
+     "partner": "Waymo",
+     "k": "Fleet ops",
+     "n": "Nashville: rides hail in the Waymo app; Lyft handles fleet servicing via Flexdrive.",
+     "slug": "waymo",
+     "cat": "AV Driver / Autonomy Software"
+    },
+    {
+     "partner": "Lyft Flexdrive",
+     "k": "Same family",
+     "n": "Flexdrive is Lyft's fleet-management subsidiary.",
+     "slug": "lyft-flexdrive",
+     "cat": "Fleet Operations & Depot"
+    },
+    {
+     "partner": "Mobileye",
+     "k": "Software",
+     "n": "Mobileye Drive-equipped AVs to join the Lyft network, Dallas first.",
+     "slug": "mobileye",
+     "cat": "Vehicle Platform & Manufacturing"
+    }
+   ]
+  },
+  "lyft-flexdrive": {
+   "name": "Lyft Flexdrive",
+   "count": 2,
+   "partners": [
+    {
+     "partner": "Waymo",
+     "k": "Fleet ops",
+     "n": "Lyft's Flexdrive services and manages Waymo's Nashville fleet.",
+     "slug": "waymo",
+     "cat": "AV Driver / Autonomy Software"
+    },
+    {
+     "partner": "Lyft",
+     "k": "Same family",
+     "n": "Flexdrive is Lyft's fleet-management subsidiary.",
+     "slug": "lyft",
+     "cat": "Demand & Commercial Platforms"
+    }
+   ]
+  },
+  "moia": {
+   "name": "MOIA",
+   "count": 3,
+   "partners": [
+    {
+     "partner": "Uber",
+     "k": "Demand",
+     "n": "MOIA's autonomous ID.Buzz vehicles carry riders on the Uber platform in Los Angeles.",
+     "slug": "uber",
+     "cat": "Demand & Commercial Platforms"
+    },
+    {
+     "partner": "Volkswagen Group / CARIAD",
+     "k": "Same family",
+     "n": "MOIA is Volkswagen Group's mobility company and operator of the autonomous ID.Buzz program.",
+     "slug": "volkswagen-group-cariad",
+     "cat": "Vehicle Platform & Manufacturing"
+    },
+    {
+     "partner": "Mobileye Drive",
+     "k": "Software",
+     "n": "The ID.Buzz AD program runs Mobileye Drive with a 27-sensor suite.",
+     "slug": "mobileye-drive",
+     "cat": "Demand & Commercial Platforms"
+    }
+   ]
+  },
+  "magna": {
+   "name": "Magna",
+   "count": 1,
+   "partners": [
+    {
+     "partner": "Waymo",
+     "k": "Manufacturing",
+     "n": "Co-operates the Mesa, AZ plant that integrates the Waymo Driver into new robotaxis.",
+     "slug": "waymo",
+     "cat": "AV Driver / Autonomy Software"
+    }
+   ]
+  },
+  "may-mobility": {
+   "name": "May Mobility",
+   "count": 4,
+   "partners": [
+    {
+     "partner": "Lyft",
+     "k": "Demand",
+     "n": "May Mobility autonomous rides are live on Lyft in Atlanta.",
+     "slug": "lyft",
+     "cat": "Demand & Commercial Platforms"
+    },
+    {
+     "partner": "Uber",
+     "k": "Demand",
+     "n": "May Mobility AVs serve Uber riders, starting in Arlington, TX.",
+     "slug": "uber",
+     "cat": "Demand & Commercial Platforms"
+    },
+    {
+     "partner": "Toyota",
+     "k": "Investment",
+     "n": "Toyota-backed; the autonomous Sienna is May's platform.",
+     "slug": "toyota",
+     "cat": "Vehicle Platform & Manufacturing"
+    },
+    {
+     "partner": "Via",
+     "k": "Software",
+     "n": "Via's booking and dispatch software powers May Mobility transit deployments.",
+     "slug": "via",
+     "cat": "Fleet Operations & Depot"
+    }
+   ]
+  },
+  "mclane-company": {
+   "name": "McLane Company",
+   "count": 1,
+   "partners": [
+    {
+     "partner": "Aurora Innovation",
+     "k": "Freight",
+     "n": "Autonomous grocery freight for McLane in Texas.",
+     "slug": "aurora-innovation",
+     "cat": "AV Driver / Autonomy Software"
+    }
+   ]
+  },
+  "mercedes-benz": {
+   "name": "Mercedes-Benz",
+   "count": 3,
+   "partners": [
+    {
+     "partner": "NVIDIA DRIVE",
+     "k": "Compute",
+     "n": "MB.OS automated driving runs on NVIDIA DRIVE compute.",
+     "slug": "nvidia-drive",
+     "cat": "AV Driver / Autonomy Software"
+    },
+    {
+     "partner": "Mercedes-Benz Drive Pilot / MB.Drive",
+     "k": "Same family",
+     "n": "Mercedes' certified Level 3 system and its successor stack.",
+     "slug": "mercedes-benz-drive-pilot-mb-drive",
+     "cat": "AV Driver / Autonomy Software"
+    },
+    {
+     "partner": "Momenta",
+     "k": "Software",
+     "n": "Momenta powers urban assisted driving for Mercedes China models.",
+     "slug": "momenta",
+     "cat": "AV Driver / Autonomy Software"
+    }
+   ]
+  },
+  "mercedes-benz-drive-pilot-mb-drive": {
+   "name": "Mercedes-Benz Drive Pilot / MB.Drive",
+   "count": 3,
+   "partners": [
+    {
+     "partner": "HERE Technologies",
+     "k": "Mapping",
+     "n": "HERE HD Live Map is a certified input to Drive Pilot Level 3.",
+     "slug": "here-technologies",
+     "cat": "Data, Maps & Simulation"
+    },
+    {
+     "partner": "Mercedes-Benz",
+     "k": "Same family",
+     "n": "Mercedes' certified Level 3 system and its successor stack.",
+     "slug": "mercedes-benz",
+     "cat": "Vehicle Platform & Manufacturing"
+    },
+    {
+     "partner": "Valeo",
+     "k": "Sensing supply",
+     "n": "Valeo SCALA LiDAR enables Drive Pilot's Level 3 certification.",
+     "slug": "valeo",
+     "cat": "Vehicle Platform & Manufacturing"
+    }
+   ]
+  },
+  "mobileye": {
+   "name": "Mobileye",
+   "count": 5,
+   "partners": [
+    {
+     "partner": "Mobileye Drive",
+     "k": "Same family",
+     "n": "Mobileye's turnkey Level-4 driver for fleets.",
+     "slug": "mobileye-drive",
+     "cat": "Demand & Commercial Platforms"
+    },
+    {
+     "partner": "Mobileye REM / RoadBook",
+     "k": "Same family",
+     "n": "Crowdsourced mapping layer feeding Mobileye autonomy.",
+     "slug": "mobileye-rem-roadbook",
+     "cat": "Data, Maps & Simulation"
+    },
+    {
+     "partner": "Holon",
+     "k": "Software",
+     "n": "Mobileye Drive automates the HOLON urban shuttle.",
+     "slug": "holon",
+     "cat": "Vehicle Platform & Manufacturing"
+    },
+    {
+     "partner": "Lyft",
+     "k": "Software",
+     "n": "Mobileye Drive-equipped AVs to join the Lyft network, Dallas first.",
+     "slug": "lyft",
+     "cat": "Demand & Commercial Platforms"
+    },
+    {
+     "partner": "Volkswagen Group / CARIAD",
+     "k": "Software",
+     "n": "SuperVision and Chauffeur programs across Volkswagen Group brands.",
+     "slug": "volkswagen-group-cariad",
+     "cat": "Vehicle Platform & Manufacturing"
+    }
+   ]
+  },
+  "mobileye-drive": {
+   "name": "Mobileye Drive",
+   "count": 2,
+   "partners": [
+    {
+     "partner": "Mobileye",
+     "k": "Same family",
+     "n": "Mobileye's turnkey Level-4 driver for fleets.",
+     "slug": "mobileye",
+     "cat": "Vehicle Platform & Manufacturing"
+    },
+    {
+     "partner": "MOIA",
+     "k": "Software",
+     "n": "The ID.Buzz AD program runs Mobileye Drive with a 27-sensor suite.",
+     "slug": "moia",
+     "cat": "Demand & Commercial Platforms"
+    }
+   ]
+  },
+  "mobileye-rem-roadbook": {
+   "name": "Mobileye REM / RoadBook",
+   "count": 1,
+   "partners": [
+    {
+     "partner": "Mobileye",
+     "k": "Same family",
+     "n": "Crowdsourced mapping layer feeding Mobileye autonomy.",
+     "slug": "mobileye",
+     "cat": "Vehicle Platform & Manufacturing"
+    }
+   ]
+  },
+  "momenta": {
+   "name": "Momenta",
+   "count": 3,
+   "partners": [
+    {
+     "partner": "Uber",
+     "k": "Demand",
+     "n": "Momenta L4 vehicles planned on Uber in Europe, starting with Munich (2026).",
+     "slug": "uber",
+     "cat": "Demand & Commercial Platforms"
+    },
+    {
+     "partner": "SAIC Motor",
+     "k": "Investment",
+     "n": "Long-time SAIC autonomy partner across IM Motors lines.",
+     "slug": "saic-motor",
+     "cat": "Vehicle Platform & Manufacturing"
+    },
+    {
+     "partner": "Mercedes-Benz",
+     "k": "Software",
+     "n": "Momenta powers urban assisted driving for Mercedes China models.",
+     "slug": "mercedes-benz",
+     "cat": "Vehicle Platform & Manufacturing"
+    }
+   ]
+  },
+  "moove-av-moove": {
+   "name": "Moove AV / Moove",
+   "count": 1,
+   "partners": [
+    {
+     "partner": "Waymo",
+     "k": "Fleet ops",
+     "n": "Moove finances and runs Waymo fleet operations and depots in Phoenix and Miami.",
+     "slug": "waymo",
+     "cat": "AV Driver / Autonomy Software"
+    }
+   ]
+  },
+  "motional": {
+   "name": "Motional",
+   "count": 3,
+   "partners": [
+    {
+     "partner": "Uber Eats",
+     "k": "Delivery",
+     "n": "Piloted autonomous Uber Eats deliveries in Santa Monica.",
+     "slug": "uber-eats",
+     "cat": "Demand & Commercial Platforms"
+    },
+    {
+     "partner": "Lyft",
+     "k": "Demand",
+     "n": "Ran driverless rides on the Lyft network in Las Vegas before refocusing.",
+     "slug": "lyft",
+     "cat": "Demand & Commercial Platforms"
+    },
+    {
+     "partner": "Hyundai Motor Group",
+     "k": "Same family",
+     "n": "Hyundai JV; the Ioniq 5 robotaxi was its purpose-built platform.",
+     "slug": "hyundai-motor-group",
+     "cat": "Vehicle Platform & Manufacturing"
+    }
+   ]
+  },
+  "nhtsa": {
+   "name": "NHTSA",
+   "count": 3,
+   "partners": [
+    {
+     "partner": "Tesla Robotaxi / FSD",
+     "k": "Regulatory",
+     "n": "FSD and robotaxi operations are under active NHTSA investigations.",
+     "slug": "tesla-robotaxi-fsd",
+     "cat": "AV Driver / Autonomy Software"
+    },
+    {
+     "partner": "Waymo",
+     "k": "Regulatory",
+     "n": "Subject of NHTSA defect evaluations and AV incident-reporting requirements.",
+     "slug": "waymo",
+     "cat": "AV Driver / Autonomy Software"
+    },
+    {
+     "partner": "Zoox",
+     "k": "Regulatory",
+     "n": "Self-certified its purpose-built robotaxi under FMVSS; recall and inquiry dialogue ongoing.",
+     "slug": "zoox",
+     "cat": "Vehicle Platform & Manufacturing"
+    }
+   ]
+  },
+  "nvidia": {
+   "name": "NVIDIA",
+   "count": 4,
+   "partners": [
+    {
+     "partner": "Uber",
+     "k": "Compute",
+     "n": "Scaling a 100k-vehicle Level-4-ready fleet on NVIDIA DRIVE Hyperion.",
+     "slug": "uber",
+     "cat": "Demand & Commercial Platforms"
+    },
+    {
+     "partner": "Wayve",
+     "k": "Investment",
+     "n": "Investor and compute partner behind Wayve's embodied-AI driving stack.",
+     "slug": "wayve",
+     "cat": "AV Driver / Autonomy Software"
+    },
+    {
+     "partner": "NVIDIA DRIVE",
+     "k": "Same family",
+     "n": "The automotive platform arm of NVIDIA.",
+     "slug": "nvidia-drive",
+     "cat": "AV Driver / Autonomy Software"
+    },
+    {
+     "partner": "NVIDIA DRIVE Sim / Omniverse / Cosmos",
+     "k": "Same family",
+     "n": "NVIDIA's simulation and world-model stack for AV development.",
+     "slug": "nvidia-drive-sim-omniverse-cosmos",
+     "cat": "Data, Maps & Simulation"
+    }
+   ]
+  },
+  "nvidia-drive": {
+   "name": "NVIDIA DRIVE",
+   "count": 7,
+   "partners": [
+    {
+     "partner": "Aurora Innovation",
+     "k": "Compute",
+     "n": "DRIVE Thor plus Continental hardware underpin Aurora's driverless trucks.",
+     "slug": "aurora-innovation",
+     "cat": "AV Driver / Autonomy Software"
+    },
+    {
+     "partner": "Mercedes-Benz",
+     "k": "Compute",
+     "n": "MB.OS automated driving runs on NVIDIA DRIVE compute.",
+     "slug": "mercedes-benz",
+     "cat": "Vehicle Platform & Manufacturing"
+    },
+    {
+     "partner": "Nuro",
+     "k": "Compute",
+     "n": "The Nuro Driver runs on NVIDIA DRIVE Thor compute.",
+     "slug": "nuro",
+     "cat": "Vehicle Platform & Manufacturing"
+    },
+    {
+     "partner": "Toyota",
+     "k": "Compute",
+     "n": "Toyota builds next-gen automated driving on DRIVE AGX.",
+     "slug": "toyota",
+     "cat": "Vehicle Platform & Manufacturing"
+    },
+    {
+     "partner": "Volvo Cars",
+     "k": "Compute",
+     "n": "The Volvo EX90's core computer is NVIDIA DRIVE Orin.",
+     "slug": "volvo-cars",
+     "cat": "Vehicle Platform & Manufacturing"
+    },
+    {
+     "partner": "Zeekr",
+     "k": "Compute",
+     "n": "Zeekr ADAS ships on NVIDIA Orin/Thor compute.",
+     "slug": "zeekr",
+     "cat": "Vehicle Platform & Manufacturing"
+    },
+    {
+     "partner": "NVIDIA",
+     "k": "Same family",
+     "n": "The automotive platform arm of NVIDIA.",
+     "slug": "nvidia",
+     "cat": "Sensing & Compute Hardware"
+    }
+   ]
+  },
+  "nvidia-drive-sim-omniverse-cosmos": {
+   "name": "NVIDIA DRIVE Sim / Omniverse / Cosmos",
+   "count": 2,
+   "partners": [
+    {
+     "partner": "NVIDIA",
+     "k": "Same family",
+     "n": "NVIDIA's simulation and world-model stack for AV development.",
+     "slug": "nvidia",
+     "cat": "Sensing & Compute Hardware"
+    },
+    {
+     "partner": "Foretellix",
+     "k": "Simulation",
+     "n": "Foretify verification integrates with DRIVE Sim and Omniverse.",
+     "slug": "foretellix",
+     "cat": "AV Driver / Autonomy Software"
+    }
+   ]
+  },
+  "nevada-department-of-motor-vehicles-nevada-dmv": {
+   "name": "Nevada Department of Motor Vehicles (Nevada DMV)",
+   "count": 1,
+   "partners": [
+    {
+     "partner": "Zoox",
+     "k": "Regulatory",
+     "n": "Nevada permits underpin Zoox's Las Vegas public robotaxi service.",
+     "slug": "zoox",
+     "cat": "Vehicle Platform & Manufacturing"
+    }
+   ]
+  },
+  "nio": {
+   "name": "Nio",
+   "count": 1,
+   "partners": [
+    {
+     "partner": "Seyond",
+     "k": "Sensing supply",
+     "n": "Falcon LiDAR is standard on Nio's flagship models.",
+     "slug": "seyond",
+     "cat": "Sensing & Compute Hardware"
+    }
+   ]
+  },
+  "nissan": {
+   "name": "Nissan",
+   "count": 1,
+   "partners": [
+    {
+     "partner": "Wayve",
+     "k": "Software",
+     "n": "Wayve AI Driver powers Nissan's next-generation ProPILOT from 2027.",
+     "slug": "wayve",
+     "cat": "AV Driver / Autonomy Software"
+    }
+   ]
+  },
+  "nuro": {
+   "name": "Nuro",
+   "count": 4,
+   "partners": [
+    {
+     "partner": "NVIDIA DRIVE",
+     "k": "Compute",
+     "n": "The Nuro Driver runs on NVIDIA DRIVE Thor compute.",
+     "slug": "nvidia-drive",
+     "cat": "AV Driver / Autonomy Software"
+    },
+    {
+     "partner": "Nuro Driver",
+     "k": "Same family",
+     "n": "Licensing brand for Nuro's Level 4 driver.",
+     "slug": "nuro-driver",
+     "cat": "Demand & Commercial Platforms"
+    },
+    {
+     "partner": "Uber",
+     "k": "Software",
+     "n": "The Nuro Driver powers Uber's premium robotaxi program on Lucid vehicles.",
+     "slug": "uber",
+     "cat": "Demand & Commercial Platforms"
+    },
+    {
+     "partner": "Lucid",
+     "k": "Vehicle platform",
+     "n": "The Nuro Driver is integrated on the Lucid Gravity for the Uber program.",
+     "slug": "lucid",
+     "cat": "Vehicle Platform & Manufacturing"
+    }
+   ]
+  },
+  "nuro-driver": {
+   "name": "Nuro Driver",
+   "count": 1,
+   "partners": [
+    {
+     "partner": "Nuro",
+     "k": "Same family",
+     "n": "Licensing brand for Nuro's Level 4 driver.",
+     "slug": "nuro",
+     "cat": "Vehicle Platform & Manufacturing"
+    }
+   ]
+  },
+  "ouster": {
+   "name": "Ouster",
+   "count": 2,
+   "partners": [
+    {
+     "partner": "Ouster BlueCity",
+     "k": "Same family",
+     "n": "Ouster's roadside and intersection perception product line.",
+     "slug": "ouster-bluecity",
+     "cat": "Connectivity & Infrastructure"
+    },
+    {
+     "partner": "Serve Robotics",
+     "k": "Sensing supply",
+     "n": "Ouster digital LiDAR guides Serve's sidewalk robots.",
+     "slug": "serve-robotics",
+     "cat": "AV Driver / Autonomy Software"
+    }
+   ]
+  },
+  "ouster-bluecity": {
+   "name": "Ouster BlueCity",
+   "count": 1,
+   "partners": [
+    {
+     "partner": "Ouster",
+     "k": "Same family",
+     "n": "Ouster's roadside and intersection perception product line.",
+     "slug": "ouster",
+     "cat": "Sensing & Compute Hardware"
+    }
+   ]
+  },
+  "oxa": {
+   "name": "Oxa",
+   "count": 1,
+   "partners": [
+    {
+     "partner": "Beep",
+     "k": "Software",
+     "n": "Oxa's driver software runs Beep's shuttle deployments.",
+     "slug": "beep",
+     "cat": "Demand & Commercial Platforms"
+    }
+   ]
+  },
+  "paccar": {
+   "name": "PACCAR",
+   "count": 1,
+   "partners": [
+    {
+     "partner": "Aurora Innovation",
+     "k": "Vehicle platform",
+     "n": "Autonomy-ready Peterbilt 579s carry the Aurora Driver.",
+     "slug": "aurora-innovation",
+     "cat": "AV Driver / Autonomy Software"
+    }
+   ]
+  },
+  "plus": {
+   "name": "Plus",
+   "count": 1,
+   "partners": [
+    {
+     "partner": "Iveco Group",
+     "k": "Vehicle platform",
+     "n": "SuperDrive integrates into IVECO S-Way trucks for Europe.",
+     "slug": "iveco-group",
+     "cat": "Vehicle Platform & Manufacturing"
+    }
+   ]
+  },
+  "pony-ai": {
+   "name": "Pony.ai",
+   "count": 12,
+   "partners": [
+    {
+     "partner": "Tencent Cloud",
+     "k": "Compute",
+     "n": "Cloud infrastructure plus WeChat distribution for robotaxi services.",
+     "slug": "tencent-cloud",
+     "cat": "Connectivity & Infrastructure"
+    },
+    {
+     "partner": "ComfortDelGro Zig",
+     "k": "Demand",
+     "n": "Singapore robotaxi trial with CDG's Zig app and fleet operations.",
+     "slug": "comfortdelgro-zig",
+     "cat": "Demand & Commercial Platforms"
+    },
+    {
+     "partner": "Ruqi Mobility",
+     "k": "Demand",
+     "n": "GAC's Ruqi app dispatches Pony robotaxis in Guangzhou.",
+     "slug": "ruqi-mobility",
+     "cat": "Demand & Commercial Platforms"
+    },
+    {
+     "partner": "Uber",
+     "k": "Demand",
+     "n": "Pony robotaxis ride on the Uber platform in the Middle East.",
+     "slug": "uber",
+     "cat": "Demand & Commercial Platforms"
+    },
+    {
+     "partner": "GAC Group / GAC Toyota",
+     "k": "Manufacturing",
+     "n": "GAC-Toyota lines build Pony.ai's Gen-7 robotaxi vehicles.",
+     "slug": "gac-group-gac-toyota",
+     "cat": "Vehicle Platform & Manufacturing"
+    },
+    {
+     "partner": "Dubai RTA",
+     "k": "Regulatory",
+     "n": "RTA pilot program brings Pony robotaxis to Dubai roads.",
+     "slug": "dubai-rta",
+     "cat": "Governance: Regulators & Government"
+    },
+    {
+     "partner": "PonyPilot / Pony.ai Robotaxi",
+     "k": "Same family",
+     "n": "PonyPilot is Pony.ai's own robotaxi-hailing service.",
+     "slug": "ponypilot-pony-ai-robotaxi",
+     "cat": "Demand & Commercial Platforms"
+    },
+    {
+     "partner": "Hesai",
+     "k": "Sensing supply",
+     "n": "Hesai LiDAR anchors the sensor suite across Pony robotaxi generations.",
+     "slug": "hesai",
+     "cat": "Sensing & Compute Hardware"
+    },
+    {
+     "partner": "Verne",
+     "k": "Software",
+     "n": "Pony.ai supplies its Gen-7 autonomy stack for Verne's Zagreb robotaxi launch on Arcfox Alpha T5 EVs.",
+     "slug": "verne",
+     "cat": "Demand & Commercial Platforms"
+    },
+    {
+     "partner": "BAIC Group",
+     "k": "Vehicle platform",
+     "n": "Co-developing Gen-7 robotaxis on BAIC's EV platform.",
+     "slug": "baic-group",
+     "cat": "Vehicle Platform & Manufacturing"
+    },
+    {
+     "partner": "Stellantis",
+     "k": "Vehicle platform",
+     "n": "European robotaxi collaboration on Stellantis light-commercial vans (announced 2025).",
+     "slug": "stellantis",
+     "cat": "Vehicle Platform & Manufacturing"
+    },
+    {
+     "partner": "Toyota",
+     "k": "Vehicle platform",
+     "n": "Toyota JV puts the Pony Driver into bZ4X-based robotaxis for China fleets.",
+     "slug": "toyota",
+     "cat": "Vehicle Platform & Manufacturing"
+    }
+   ]
+  },
+  "ponypilot-pony-ai-robotaxi": {
+   "name": "PonyPilot / Pony.ai Robotaxi",
+   "count": 1,
+   "partners": [
+    {
+     "partner": "Pony.ai",
+     "k": "Same family",
+     "n": "PonyPilot is Pony.ai's own robotaxi-hailing service.",
+     "slug": "pony-ai",
+     "cat": "AV Driver / Autonomy Software"
+    }
+   ]
+  },
+  "qualcomm": {
+   "name": "Qualcomm",
+   "count": 1,
+   "partners": [
+    {
+     "partner": "Autotalks",
+     "k": "Acquisition",
+     "n": "Completed acquisition of the V2X chipmaker in 2025.",
+     "slug": "autotalks",
+     "cat": "Connectivity & Infrastructure"
+    }
+   ]
+  },
+  "qualcomm-automotive": {
+   "name": "Qualcomm Automotive",
+   "count": 1,
+   "partners": [
+    {
+     "partner": "Qualcomm Snapdragon Ride",
+     "k": "Same family",
+     "n": "Qualcomm's ADAS and autonomy compute platform.",
+     "slug": "qualcomm-snapdragon-ride",
+     "cat": "Sensing & Compute Hardware"
+    }
+   ]
+  },
+  "qualcomm-snapdragon-ride": {
+   "name": "Qualcomm Snapdragon Ride",
+   "count": 2,
+   "partners": [
+    {
+     "partner": "BMW Personal Pilot / ADAS",
+     "k": "Compute",
+     "n": "Snapdragon Ride powers BMW's automated-driving stack.",
+     "slug": "bmw-personal-pilot-adas",
+     "cat": "AV Driver / Autonomy Software"
+    },
+    {
+     "partner": "Qualcomm Automotive",
+     "k": "Same family",
+     "n": "Qualcomm's ADAS and autonomy compute platform.",
+     "slug": "qualcomm-automotive",
+     "cat": "Sensing & Compute Hardware"
+    }
+   ]
+  },
+  "renault-group": {
+   "name": "Renault Group",
+   "count": 1,
+   "partners": [
+    {
+     "partner": "WeRide",
+     "k": "Vehicle platform",
+     "n": "Renault vans host WeRide shuttles for European deployments.",
+     "slug": "weride",
+     "cat": "AV Driver / Autonomy Software"
+    }
+   ]
+  },
+  "ruqi-mobility": {
+   "name": "Ruqi Mobility",
+   "count": 2,
+   "partners": [
+    {
+     "partner": "Pony.ai",
+     "k": "Demand",
+     "n": "GAC's Ruqi app dispatches Pony robotaxis in Guangzhou.",
+     "slug": "pony-ai",
+     "cat": "AV Driver / Autonomy Software"
+    },
+    {
+     "partner": "GAC Group / GAC Toyota",
+     "k": "Same family",
+     "n": "GAC-backed robotaxi and ride-hailing platform.",
+     "slug": "gac-group-gac-toyota",
+     "cat": "Vehicle Platform & Manufacturing"
+    }
+   ]
+  },
+  "saic-motor": {
+   "name": "SAIC Motor",
+   "count": 1,
+   "partners": [
+    {
+     "partner": "Momenta",
+     "k": "Investment",
+     "n": "Long-time SAIC autonomy partner across IM Motors lines.",
+     "slug": "momenta",
+     "cat": "AV Driver / Autonomy Software"
+    }
+   ]
+  },
+  "serve-robotics": {
+   "name": "Serve Robotics",
+   "count": 3,
+   "partners": [
+    {
+     "partner": "Uber",
+     "k": "Delivery",
+     "n": "Uber spinout and investor; Serve robots deliver Uber Eats orders.",
+     "slug": "uber",
+     "cat": "Demand & Commercial Platforms"
+    },
+    {
+     "partner": "Uber Eats",
+     "k": "Delivery",
+     "n": "Thousands of Serve robots fulfill Uber Eats orders across US metros.",
+     "slug": "uber-eats",
+     "cat": "Demand & Commercial Platforms"
+    },
+    {
+     "partner": "Ouster",
+     "k": "Sensing supply",
+     "n": "Ouster digital LiDAR guides Serve's sidewalk robots.",
+     "slug": "ouster",
+     "cat": "Sensing & Compute Hardware"
+    }
+   ]
+  },
+  "seyond": {
+   "name": "Seyond",
+   "count": 1,
+   "partners": [
+    {
+     "partner": "Nio",
+     "k": "Sensing supply",
+     "n": "Falcon LiDAR is standard on Nio's flagship models.",
+     "slug": "nio",
+     "cat": "AV Driver / Autonomy Software"
+    }
+   ]
+  },
+  "singapore-land-transport-authority-lta": {
+   "name": "Singapore Land Transport Authority (LTA)",
+   "count": 1,
+   "partners": [
+    {
+     "partner": "WeRide",
+     "k": "Regulatory",
+     "n": "LTA sanctions WeRide's public shuttle routes in Singapore.",
+     "slug": "weride",
+     "cat": "AV Driver / Autonomy Software"
+    }
+   ]
+  },
+  "sonatus": {
+   "name": "Sonatus",
+   "count": 1,
+   "partners": [
+    {
+     "partner": "Hyundai Motor Group",
+     "k": "Software",
+     "n": "Vehicle-data software shipping in Hyundai and Kia production models.",
+     "slug": "hyundai-motor-group",
+     "cat": "Vehicle Platform & Manufacturing"
+    }
+   ]
+  },
+  "stellantis": {
+   "name": "Stellantis",
+   "count": 2,
+   "partners": [
+    {
+     "partner": "Pony.ai",
+     "k": "Vehicle platform",
+     "n": "European robotaxi collaboration on Stellantis light-commercial vans (announced 2025).",
+     "slug": "pony-ai",
+     "cat": "AV Driver / Autonomy Software"
+    },
+    {
+     "partner": "Uber",
+     "k": "Vehicle platform",
+     "n": "Stellantis to supply thousands of AV-ready vans for Uber's robotaxi network.",
+     "slug": "uber",
+     "cat": "Demand & Commercial Platforms"
+    }
+   ]
+  },
+  "swiss-re": {
+   "name": "Swiss Re",
+   "count": 1,
+   "partners": [
+    {
+     "partner": "Waymo",
+     "k": "Safety research",
+     "n": "Joint liability-claims research benchmarking Waymo safety against human drivers.",
+     "slug": "waymo",
+     "cat": "AV Driver / Autonomy Software"
+    }
+   ]
+  },
+  "tencent-cloud": {
+   "name": "Tencent Cloud",
+   "count": 1,
+   "partners": [
+    {
+     "partner": "Pony.ai",
+     "k": "Compute",
+     "n": "Cloud infrastructure plus WeChat distribution for robotaxi services.",
+     "slug": "pony-ai",
+     "cat": "AV Driver / Autonomy Software"
+    }
+   ]
+  },
+  "tesla": {
+   "name": "Tesla",
+   "count": 3,
+   "partners": [
+    {
+     "partner": "Tesla AI Hardware",
+     "k": "Same family",
+     "n": "In-house FSD computer and training silicon.",
+     "slug": "tesla-ai-hardware",
+     "cat": "Sensing & Compute Hardware"
+    },
+    {
+     "partner": "Tesla Robotaxi / FSD",
+     "k": "Same family",
+     "n": "Tesla's in-house robotaxi service running FSD.",
+     "slug": "tesla-robotaxi-fsd",
+     "cat": "AV Driver / Autonomy Software"
+    },
+    {
+     "partner": "Tesla Supercharger (Robotaxi)",
+     "k": "Same family",
+     "n": "Supercharger network doubles as the robotaxi charging backbone.",
+     "slug": "tesla-supercharger-robotaxi",
+     "cat": "Fleet Operations & Depot"
+    }
+   ]
+  },
+  "tesla-ai-hardware": {
+   "name": "Tesla AI Hardware",
+   "count": 1,
+   "partners": [
+    {
+     "partner": "Tesla",
+     "k": "Same family",
+     "n": "In-house FSD computer and training silicon.",
+     "slug": "tesla",
+     "cat": "Vehicle Platform & Manufacturing"
+    }
+   ]
+  },
+  "tesla-robotaxi-fsd": {
+   "name": "Tesla Robotaxi / FSD",
+   "count": 2,
+   "partners": [
+    {
+     "partner": "NHTSA",
+     "k": "Regulatory",
+     "n": "FSD and robotaxi operations are under active NHTSA investigations.",
+     "slug": "nhtsa",
+     "cat": "Governance: Regulators & Government"
+    },
+    {
+     "partner": "Tesla",
+     "k": "Same family",
+     "n": "Tesla's in-house robotaxi service running FSD.",
+     "slug": "tesla",
+     "cat": "Vehicle Platform & Manufacturing"
+    }
+   ]
+  },
+  "tesla-supercharger-robotaxi": {
+   "name": "Tesla Supercharger (Robotaxi)",
+   "count": 1,
+   "partners": [
+    {
+     "partner": "Tesla",
+     "k": "Same family",
+     "n": "Supercharger network doubles as the robotaxi charging backbone.",
+     "slug": "tesla",
+     "cat": "Vehicle Platform & Manufacturing"
+    }
+   ]
+  },
+  "tier-iv": {
+   "name": "Tier IV",
+   "count": 1,
+   "partners": [
+    {
+     "partner": "Tier IV / Autoware",
+     "k": "Same family",
+     "n": "Commercial arm of the open-source Autoware stack.",
+     "slug": "tier-iv-autoware",
+     "cat": "AV Driver / Autonomy Software"
+    }
+   ]
+  },
+  "tier-iv-autoware": {
+   "name": "Tier IV / Autoware",
+   "count": 1,
+   "partners": [
+    {
+     "partner": "Tier IV",
+     "k": "Same family",
+     "n": "Commercial arm of the open-source Autoware stack.",
+     "slug": "tier-iv",
+     "cat": "AV Middleware & Tooling"
+    }
+   ]
+  },
+  "torc-robotics": {
+   "name": "Torc Robotics",
+   "count": 3,
+   "partners": [
+    {
+     "partner": "Daimler Truck",
+     "k": "Same family",
+     "n": "Majority-owned by Daimler Truck since 2019.",
+     "slug": "daimler-truck",
+     "cat": "Vehicle Platform & Manufacturing"
+    },
+    {
+     "partner": "Aeva",
+     "k": "Sensing supply",
+     "n": "Aeva 4D LiDAR is standard on the autonomous Freightliner Cascadia program.",
+     "slug": "aeva",
+     "cat": "Sensing & Compute Hardware"
+    },
+    {
+     "partner": "Daimler Truck / Freightliner",
+     "k": "Vehicle platform",
+     "n": "The autonomous-ready Freightliner Cascadia is Torc's launch platform.",
+     "slug": "daimler-truck-freightliner",
+     "cat": "Vehicle Platform & Manufacturing"
+    }
+   ]
+  },
+  "toyota": {
+   "name": "Toyota",
+   "count": 5,
+   "partners": [
+    {
+     "partner": "NVIDIA DRIVE",
+     "k": "Compute",
+     "n": "Toyota builds next-gen automated driving on DRIVE AGX.",
+     "slug": "nvidia-drive",
+     "cat": "AV Driver / Autonomy Software"
+    },
+    {
+     "partner": "May Mobility",
+     "k": "Investment",
+     "n": "Toyota-backed; the autonomous Sienna is May's platform.",
+     "slug": "may-mobility",
+     "cat": "AV Driver / Autonomy Software"
+    },
+    {
+     "partner": "Woven by Toyota",
+     "k": "Same family",
+     "n": "Toyota's software and mobility R&D subsidiary.",
+     "slug": "woven-by-toyota",
+     "cat": "Data, Maps & Simulation"
+    },
+    {
+     "partner": "Pony.ai",
+     "k": "Vehicle platform",
+     "n": "Toyota JV puts the Pony Driver into bZ4X-based robotaxis for China fleets.",
+     "slug": "pony-ai",
+     "cat": "AV Driver / Autonomy Software"
+    },
+    {
+     "partner": "Waymo",
+     "k": "Vehicle platform",
+     "n": "Preliminary alliance to bring Waymo autonomy to personally owned vehicles.",
+     "slug": "waymo",
+     "cat": "AV Driver / Autonomy Software"
+    }
+   ]
+  },
+  "transdev": {
+   "name": "Transdev",
+   "count": 1,
+   "partners": [
+    {
+     "partner": "Waymo",
+     "k": "Fleet ops",
+     "n": "Runs Waymo depot operations across Phoenix, SF, LA, Austin and Nashville.",
+     "slug": "waymo",
+     "cat": "AV Driver / Autonomy Software"
+    }
+   ]
+  },
+  "uveye": {
+   "name": "UVeye",
+   "count": 1,
+   "partners": [
+    {
+     "partner": "Hertz",
+     "k": "Fleet ops",
+     "n": "AI vehicle-inspection lanes rolled out across Hertz locations.",
+     "slug": "hertz",
+     "cat": "Fleet Operations & Depot"
+    }
+   ]
+  },
+  "uber": {
+   "name": "Uber",
+   "count": 23,
+   "partners": [
+    {
+     "partner": "EVgo",
+     "k": "Charging",
+     "n": "Dedicated fast-charging depots for Uber EV and AV fleets in NY, LA, SF and Boston.",
+     "slug": "evgo",
+     "cat": "Fleet Operations & Depot"
+    },
+    {
+     "partner": "NVIDIA",
+     "k": "Compute",
+     "n": "Scaling a 100k-vehicle Level-4-ready fleet on NVIDIA DRIVE Hyperion.",
+     "slug": "nvidia",
+     "cat": "Sensing & Compute Hardware"
+    },
+    {
+     "partner": "Serve Robotics",
+     "k": "Delivery",
+     "n": "Uber spinout and investor; Serve robots deliver Uber Eats orders.",
+     "slug": "serve-robotics",
+     "cat": "AV Driver / Autonomy Software"
+    },
+    {
+     "partner": "Avride",
+     "k": "Demand",
+     "n": "Avride robotaxis and sidewalk robots deploy through Uber in Dallas.",
+     "slug": "avride",
+     "cat": "AV Driver / Autonomy Software"
+    },
+    {
+     "partner": "Baidu Apollo Go",
+     "k": "Demand",
+     "n": "Apollo Go robotaxis join the Uber platform across Asia and the Middle East.",
+     "slug": "baidu-apollo-go",
+     "cat": "AV Driver / Autonomy Software"
+    },
+    {
+     "partner": "MOIA",
+     "k": "Demand",
+     "n": "MOIA's autonomous ID.Buzz vehicles carry riders on the Uber platform in Los Angeles.",
+     "slug": "moia",
+     "cat": "Demand & Commercial Platforms"
+    },
+    {
+     "partner": "May Mobility",
+     "k": "Demand",
+     "n": "May Mobility AVs serve Uber riders, starting in Arlington, TX.",
+     "slug": "may-mobility",
+     "cat": "AV Driver / Autonomy Software"
+    },
+    {
+     "partner": "Momenta",
+     "k": "Demand",
+     "n": "Momenta L4 vehicles planned on Uber in Europe, starting with Munich (2026).",
+     "slug": "momenta",
+     "cat": "AV Driver / Autonomy Software"
+    },
+    {
+     "partner": "Pony.ai",
+     "k": "Demand",
+     "n": "Pony robotaxis ride on the Uber platform in the Middle East.",
+     "slug": "pony-ai",
+     "cat": "AV Driver / Autonomy Software"
+    },
+    {
+     "partner": "Verne",
+     "k": "Demand",
+     "n": "Verne's Zagreb robotaxi rides will be hailed through the Uber app.",
+     "slug": "verne",
+     "cat": "Demand & Commercial Platforms"
+    },
+    {
+     "partner": "Volkswagen Group / CARIAD",
+     "k": "Demand",
+     "n": "Autonomous VW ID. Buzz fleet launching on Uber in Los Angeles.",
+     "slug": "volkswagen-group-cariad",
+     "cat": "Vehicle Platform & Manufacturing"
+    },
+    {
+     "partner": "Waymo",
+     "k": "Demand",
+     "n": "Waymo robotaxis are hailed exclusively through the Uber app in Austin and Atlanta.",
+     "slug": "waymo",
+     "cat": "AV Driver / Autonomy Software"
+    },
+    {
+     "partner": "WeRide",
+     "k": "Demand",
+     "n": "WeRide driverless robotaxis run on Uber in Abu Dhabi, with a 15-city expansion plan.",
+     "slug": "weride",
+     "cat": "AV Driver / Autonomy Software"
+    },
+    {
+     "partner": "Lucid",
+     "k": "Investment",
+     "n": "$300M Uber investment; 20k+ Gravity SUVs planned as robotaxis over six years.",
+     "slug": "lucid",
+     "cat": "Vehicle Platform & Manufacturing"
+    },
+    {
+     "partner": "Waabi",
+     "k": "Investment",
+     "n": "Backed Waabi's $1B raise; Waabi trucks haul on Uber Freight.",
+     "slug": "waabi",
+     "cat": "AV Driver / Autonomy Software"
+    },
+    {
+     "partner": "Wayve",
+     "k": "Investment",
+     "n": "Strategic investor; partnering toward L4 deployments on the Uber network.",
+     "slug": "wayve",
+     "cat": "AV Driver / Autonomy Software"
+    },
+    {
+     "partner": "Abu Dhabi ITC",
+     "k": "Regulatory",
+     "n": "ITC authorization enables fully driverless Uber/WeRide operations in Abu Dhabi.",
+     "slug": "abu-dhabi-itc",
+     "cat": "Governance: Regulators & Government"
+    },
+    {
+     "partner": "Uber AV Infrastructure",
+     "k": "Same family",
+     "n": "Uber's in-house depot, charging and operations arm for partner AVs.",
+     "slug": "uber-av-infrastructure",
+     "cat": "Fleet Operations & Depot"
+    },
+    {
+     "partner": "Uber Eats",
+     "k": "Same family",
+     "n": "Shared network: Eats routes sidewalk robots and robotaxi deliveries.",
+     "slug": "uber-eats",
+     "cat": "Demand & Commercial Platforms"
+    },
+    {
+     "partner": "Uber Freight",
+     "k": "Same family",
+     "n": "Uber's logistics arm brokering autonomous truck capacity.",
+     "slug": "uber-freight",
+     "cat": "Demand & Commercial Platforms"
+    },
+    {
+     "partner": "Nuro",
+     "k": "Software",
+     "n": "The Nuro Driver powers Uber's premium robotaxi program on Lucid vehicles.",
+     "slug": "nuro",
+     "cat": "Vehicle Platform & Manufacturing"
+    },
+    {
+     "partner": "BYD",
+     "k": "Vehicle platform",
+     "n": "Multi-market EV supply deal with future autonomy collaboration.",
+     "slug": "byd",
+     "cat": "Vehicle Platform & Manufacturing"
+    },
+    {
+     "partner": "Stellantis",
+     "k": "Vehicle platform",
+     "n": "Stellantis to supply thousands of AV-ready vans for Uber's robotaxi network.",
+     "slug": "stellantis",
+     "cat": "Vehicle Platform & Manufacturing"
+    }
+   ]
+  },
+  "uber-av-infrastructure": {
+   "name": "Uber AV Infrastructure",
+   "count": 1,
+   "partners": [
+    {
+     "partner": "Uber",
+     "k": "Same family",
+     "n": "Uber's in-house depot, charging and operations arm for partner AVs.",
+     "slug": "uber",
+     "cat": "Demand & Commercial Platforms"
+    }
+   ]
+  },
+  "uber-eats": {
+   "name": "Uber Eats",
+   "count": 6,
+   "partners": [
+    {
+     "partner": "Cartken",
+     "k": "Delivery",
+     "n": "Cartken robots deliver for Uber Eats in Miami and Japan.",
+     "slug": "cartken",
+     "cat": "Demand & Commercial Platforms"
+    },
+    {
+     "partner": "Coco Robotics",
+     "k": "Delivery",
+     "n": "Coco sidewalk robots are integrated into Uber Eats in LA and Miami.",
+     "slug": "coco-robotics",
+     "cat": "Demand & Commercial Platforms"
+    },
+    {
+     "partner": "Motional",
+     "k": "Delivery",
+     "n": "Piloted autonomous Uber Eats deliveries in Santa Monica.",
+     "slug": "motional",
+     "cat": "AV Driver / Autonomy Software"
+    },
+    {
+     "partner": "Serve Robotics",
+     "k": "Delivery",
+     "n": "Thousands of Serve robots fulfill Uber Eats orders across US metros.",
+     "slug": "serve-robotics",
+     "cat": "AV Driver / Autonomy Software"
+    },
+    {
+     "partner": "Waymo",
+     "k": "Delivery",
+     "n": "Waymo vehicles deliver Uber Eats orders in Metro Phoenix.",
+     "slug": "waymo",
+     "cat": "AV Driver / Autonomy Software"
+    },
+    {
+     "partner": "Uber",
+     "k": "Same family",
+     "n": "Shared network: Eats routes sidewalk robots and robotaxi deliveries.",
+     "slug": "uber",
+     "cat": "Demand & Commercial Platforms"
+    }
+   ]
+  },
+  "uber-freight": {
+   "name": "Uber Freight",
+   "count": 3,
+   "partners": [
+    {
+     "partner": "Aurora Innovation",
+     "k": "Freight",
+     "n": "Aurora hauls commercial freight brokered through Uber Freight.",
+     "slug": "aurora-innovation",
+     "cat": "AV Driver / Autonomy Software"
+    },
+    {
+     "partner": "Waabi",
+     "k": "Freight",
+     "n": "Autonomous loads dispatched via Uber Freight.",
+     "slug": "waabi",
+     "cat": "AV Driver / Autonomy Software"
+    },
+    {
+     "partner": "Uber",
+     "k": "Same family",
+     "n": "Uber's logistics arm brokering autonomous truck capacity.",
+     "slug": "uber",
+     "cat": "Demand & Commercial Platforms"
+    }
+   ]
+  },
+  "valeo": {
+   "name": "Valeo",
+   "count": 1,
+   "partners": [
+    {
+     "partner": "Mercedes-Benz Drive Pilot / MB.Drive",
+     "k": "Sensing supply",
+     "n": "Valeo SCALA LiDAR enables Drive Pilot's Level 3 certification.",
+     "slug": "mercedes-benz-drive-pilot-mb-drive",
+     "cat": "AV Driver / Autonomy Software"
+    }
+   ]
+  },
+  "vay": {
+   "name": "Vay",
+   "count": 1,
+   "partners": [
+    {
+     "partner": "Grab",
+     "k": "Investment",
+     "n": "Grab invested in Vay to bring remote driving to Southeast Asian fleets.",
+     "slug": "grab",
+     "cat": "Demand & Commercial Platforms"
+    }
+   ]
+  },
+  "verne": {
+   "name": "Verne",
+   "count": 2,
+   "partners": [
+    {
+     "partner": "Uber",
+     "k": "Demand",
+     "n": "Verne's Zagreb robotaxi rides will be hailed through the Uber app.",
+     "slug": "uber",
+     "cat": "Demand & Commercial Platforms"
+    },
+    {
+     "partner": "Pony.ai",
+     "k": "Software",
+     "n": "Pony.ai supplies its Gen-7 autonomy stack for Verne's Zagreb robotaxi launch on Arcfox Alpha T5 EVs.",
+     "slug": "pony-ai",
+     "cat": "AV Driver / Autonomy Software"
+    }
+   ]
+  },
+  "via": {
+   "name": "Via",
+   "count": 1,
+   "partners": [
+    {
+     "partner": "May Mobility",
+     "k": "Software",
+     "n": "Via's booking and dispatch software powers May Mobility transit deployments.",
+     "slug": "may-mobility",
+     "cat": "AV Driver / Autonomy Software"
+    }
+   ]
+  },
+  "volkswagen-group-cariad": {
+   "name": "Volkswagen Group / CARIAD",
+   "count": 5,
+   "partners": [
+    {
+     "partner": "Horizon Robotics",
+     "k": "Compute",
+     "n": "CARIZON JV develops ADAS on Horizon Journey chips for VW in China.",
+     "slug": "horizon-robotics",
+     "cat": "AV Driver / Autonomy Software"
+    },
+    {
+     "partner": "Uber",
+     "k": "Demand",
+     "n": "Autonomous VW ID. Buzz fleet launching on Uber in Los Angeles.",
+     "slug": "uber",
+     "cat": "Demand & Commercial Platforms"
+    },
+    {
+     "partner": "MOIA",
+     "k": "Same family",
+     "n": "MOIA is Volkswagen Group's mobility company and operator of the autonomous ID.Buzz program.",
+     "slug": "moia",
+     "cat": "Demand & Commercial Platforms"
+    },
+    {
+     "partner": "Mobileye",
+     "k": "Software",
+     "n": "SuperVision and Chauffeur programs across Volkswagen Group brands.",
+     "slug": "mobileye",
+     "cat": "Vehicle Platform & Manufacturing"
+    },
+    {
+     "partner": "XPeng",
+     "k": "Software",
+     "n": "VW licenses XPeng's autonomous-driving stack for China-market EVs from 2026.",
+     "slug": "xpeng",
+     "cat": "AV Driver / Autonomy Software"
+    }
+   ]
+  },
+  "volvo-cars": {
+   "name": "Volvo Cars",
+   "count": 2,
+   "partners": [
+    {
+     "partner": "NVIDIA DRIVE",
+     "k": "Compute",
+     "n": "The Volvo EX90's core computer is NVIDIA DRIVE Orin.",
+     "slug": "nvidia-drive",
+     "cat": "AV Driver / Autonomy Software"
+    },
+    {
+     "partner": "Luminar",
+     "k": "Sensing supply",
+     "n": "Iris LiDAR ships on the Volvo EX90.",
+     "slug": "luminar",
+     "cat": "Sensing & Compute Hardware"
+    }
+   ]
+  },
+  "volvo-trucks-volvo-autonomous-solutions": {
+   "name": "Volvo Trucks / Volvo Autonomous Solutions",
+   "count": 2,
+   "partners": [
+    {
+     "partner": "Aurora Innovation",
+     "k": "Vehicle platform",
+     "n": "The Volvo VNL Autonomous is factory-built for Aurora's driverless lanes.",
+     "slug": "aurora-innovation",
+     "cat": "AV Driver / Autonomy Software"
+    },
+    {
+     "partner": "Waabi",
+     "k": "Vehicle platform",
+     "n": "The Waabi Driver was ported to the Volvo VNL without retraining.",
+     "slug": "waabi",
+     "cat": "AV Driver / Autonomy Software"
+    }
+   ]
+  },
+  "waabi": {
+   "name": "Waabi",
+   "count": 3,
+   "partners": [
+    {
+     "partner": "Uber Freight",
+     "k": "Freight",
+     "n": "Autonomous loads dispatched via Uber Freight.",
+     "slug": "uber-freight",
+     "cat": "Demand & Commercial Platforms"
+    },
+    {
+     "partner": "Uber",
+     "k": "Investment",
+     "n": "Backed Waabi's $1B raise; Waabi trucks haul on Uber Freight.",
+     "slug": "uber",
+     "cat": "Demand & Commercial Platforms"
+    },
+    {
+     "partner": "Volvo Trucks / Volvo Autonomous Solutions",
+     "k": "Vehicle platform",
+     "n": "The Waabi Driver was ported to the Volvo VNL without retraining.",
+     "slug": "volvo-trucks-volvo-autonomous-solutions",
+     "cat": "Vehicle Platform & Manufacturing"
+    }
+   ]
+  },
+  "waymo": {
+   "name": "Waymo",
+   "count": 19,
+   "partners": [
+    {
+     "partner": "Uber Eats",
+     "k": "Delivery",
+     "n": "Waymo vehicles deliver Uber Eats orders in Metro Phoenix.",
+     "slug": "uber-eats",
+     "cat": "Demand & Commercial Platforms"
+    },
+    {
+     "partner": "Uber",
+     "k": "Demand",
+     "n": "Waymo robotaxis are hailed exclusively through the Uber app in Austin and Atlanta.",
+     "slug": "uber",
+     "cat": "Demand & Commercial Platforms"
+    },
+    {
+     "partner": "Avis Budget Group",
+     "k": "Fleet ops",
+     "n": "Avis manages Waymo fleet operations in Dallas.",
+     "slug": "avis-budget-group",
+     "cat": "Fleet Operations & Depot"
+    },
+    {
+     "partner": "Element Fleet Management",
+     "k": "Fleet ops",
+     "n": "Multi-year fleet-management partnership for San Diego (announced Jun 2026).",
+     "slug": "element-fleet-management",
+     "cat": "Fleet Operations & Depot"
+    },
+    {
+     "partner": "GO Inc.",
+     "k": "Fleet ops",
+     "n": "Tokyo taxi app GO manages Waymo's first international testing fleet.",
+     "slug": "go-inc",
+     "cat": "Demand & Commercial Platforms"
+    },
+    {
+     "partner": "Lyft",
+     "k": "Fleet ops",
+     "n": "Nashville: rides hail in the Waymo app; Lyft handles fleet servicing via Flexdrive.",
+     "slug": "lyft",
+     "cat": "Demand & Commercial Platforms"
+    },
+    {
+     "partner": "Lyft Flexdrive",
+     "k": "Fleet ops",
+     "n": "Lyft's Flexdrive services and manages Waymo's Nashville fleet.",
+     "slug": "lyft-flexdrive",
+     "cat": "Fleet Operations & Depot"
+    },
+    {
+     "partner": "Moove AV / Moove",
+     "k": "Fleet ops",
+     "n": "Moove finances and runs Waymo fleet operations and depots in Phoenix and Miami.",
+     "slug": "moove-av-moove",
+     "cat": "Fleet Operations & Depot"
+    },
+    {
+     "partner": "Transdev",
+     "k": "Fleet ops",
+     "n": "Runs Waymo depot operations across Phoenix, SF, LA, Austin and Nashville.",
+     "slug": "transdev",
+     "cat": "Fleet Operations & Depot"
+    },
+    {
+     "partner": "Magna",
+     "k": "Manufacturing",
+     "n": "Co-operates the Mesa, AZ plant that integrates the Waymo Driver into new robotaxis.",
+     "slug": "magna",
+     "cat": "Vehicle Platform & Manufacturing"
+    },
+    {
+     "partner": "California Department of Motor Vehicles (California DMV)",
+     "k": "Regulatory",
+     "n": "Holds California driverless testing and deployment permits.",
+     "slug": "california-department-of-motor-vehicles-california-dmv",
+     "cat": "Governance: Regulators & Government"
+    },
+    {
+     "partner": "California Public Utilities Commission (CPUC)",
+     "k": "Regulatory",
+     "n": "CPUC authorizes Waymo's fared driverless passenger service in California.",
+     "slug": "california-public-utilities-commission-cpuc",
+     "cat": "Governance: Regulators & Government"
+    },
+    {
+     "partner": "NHTSA",
+     "k": "Regulatory",
+     "n": "Subject of NHTSA defect evaluations and AV incident-reporting requirements.",
+     "slug": "nhtsa",
+     "cat": "Governance: Regulators & Government"
+    },
+    {
+     "partner": "Swiss Re",
+     "k": "Safety research",
+     "n": "Joint liability-claims research benchmarking Waymo safety against human drivers.",
+     "slug": "swiss-re",
+     "cat": "Capital, Insurance & Risk"
+    },
+    {
+     "partner": "Waymo One",
+     "k": "Same family",
+     "n": "Waymo One is Waymo's own consumer ride-hailing app and service brand.",
+     "slug": "waymo-one",
+     "cat": "Demand & Commercial Platforms"
+    },
+    {
+     "partner": "Hyundai Motor Group",
+     "k": "Vehicle platform",
+     "n": "US-built Ioniq 5s join the Waymo fleet under a multi-year supply deal.",
+     "slug": "hyundai-motor-group",
+     "cat": "Vehicle Platform & Manufacturing"
+    },
+    {
+     "partner": "Jaguar Land Rover",
+     "k": "Vehicle platform",
+     "n": "The Jaguar I-PACE is the workhorse of Waymo's current driverless fleet.",
+     "slug": "jaguar-land-rover",
+     "cat": "Vehicle Platform & Manufacturing"
+    },
+    {
+     "partner": "Toyota",
+     "k": "Vehicle platform",
+     "n": "Preliminary alliance to bring Waymo autonomy to personally owned vehicles.",
+     "slug": "toyota",
+     "cat": "Vehicle Platform & Manufacturing"
+    },
+    {
+     "partner": "Zeekr",
+     "k": "Vehicle platform",
+     "n": "The purpose-built Zeekr RT is Waymo's next-generation robotaxi.",
+     "slug": "zeekr",
+     "cat": "Vehicle Platform & Manufacturing"
+    }
+   ]
+  },
+  "waymo-one": {
+   "name": "Waymo One",
+   "count": 1,
+   "partners": [
+    {
+     "partner": "Waymo",
+     "k": "Same family",
+     "n": "Waymo One is Waymo's own consumer ride-hailing app and service brand.",
+     "slug": "waymo",
+     "cat": "AV Driver / Autonomy Software"
+    }
+   ]
+  },
+  "wayve": {
+   "name": "Wayve",
+   "count": 4,
+   "partners": [
+    {
+     "partner": "NVIDIA",
+     "k": "Investment",
+     "n": "Investor and compute partner behind Wayve's embodied-AI driving stack.",
+     "slug": "nvidia",
+     "cat": "Sensing & Compute Hardware"
+    },
+    {
+     "partner": "Uber",
+     "k": "Investment",
+     "n": "Strategic investor; partnering toward L4 deployments on the Uber network.",
+     "slug": "uber",
+     "cat": "Demand & Commercial Platforms"
+    },
+    {
+     "partner": "Wayve AI Driver",
+     "k": "Same family",
+     "n": "Wayve's productized driver software for OEM and fleet partners.",
+     "slug": "wayve-ai-driver",
+     "cat": "Demand & Commercial Platforms"
+    },
+    {
+     "partner": "Nissan",
+     "k": "Software",
+     "n": "Wayve AI Driver powers Nissan's next-generation ProPILOT from 2027.",
+     "slug": "nissan",
+     "cat": "Vehicle Platform & Manufacturing"
+    }
+   ]
+  },
+  "wayve-ai-driver": {
+   "name": "Wayve AI Driver",
+   "count": 1,
+   "partners": [
+    {
+     "partner": "Wayve",
+     "k": "Same family",
+     "n": "Wayve's productized driver software for OEM and fleet partners.",
+     "slug": "wayve",
+     "cat": "AV Driver / Autonomy Software"
+    }
+   ]
+  },
+  "weride": {
+   "name": "WeRide",
+   "count": 6,
+   "partners": [
+    {
+     "partner": "Grab",
+     "k": "Demand",
+     "n": "Grab operates WeRide autonomous shuttle routes in Singapore.",
+     "slug": "grab",
+     "cat": "Demand & Commercial Platforms"
+    },
+    {
+     "partner": "Uber",
+     "k": "Demand",
+     "n": "WeRide driverless robotaxis run on Uber in Abu Dhabi, with a 15-city expansion plan.",
+     "slug": "uber",
+     "cat": "Demand & Commercial Platforms"
+    },
+    {
+     "partner": "Abu Dhabi ITC",
+     "k": "Regulatory",
+     "n": "ITC authorized fully driverless WeRide robotaxi operations.",
+     "slug": "abu-dhabi-itc",
+     "cat": "Governance: Regulators & Government"
+    },
+    {
+     "partner": "Singapore Land Transport Authority (LTA)",
+     "k": "Regulatory",
+     "n": "LTA sanctions WeRide's public shuttle routes in Singapore.",
+     "slug": "singapore-land-transport-authority-lta",
+     "cat": "Governance: Regulators & Government"
+    },
+    {
+     "partner": "WeRide Go / WeRide Robotaxi",
+     "k": "Same family",
+     "n": "WeRide's consumer robotaxi service brand.",
+     "slug": "weride-go-weride-robotaxi",
+     "cat": "Demand & Commercial Platforms"
+    },
+    {
+     "partner": "Renault Group",
+     "k": "Vehicle platform",
+     "n": "Renault vans host WeRide shuttles for European deployments.",
+     "slug": "renault-group",
+     "cat": "Vehicle Platform & Manufacturing"
+    }
+   ]
+  },
+  "weride-go-weride-robotaxi": {
+   "name": "WeRide Go / WeRide Robotaxi",
+   "count": 1,
+   "partners": [
+    {
+     "partner": "WeRide",
+     "k": "Same family",
+     "n": "WeRide's consumer robotaxi service brand.",
+     "slug": "weride",
+     "cat": "AV Driver / Autonomy Software"
+    }
+   ]
+  },
+  "werner-enterprises": {
+   "name": "Werner Enterprises",
+   "count": 1,
+   "partners": [
+    {
+     "partner": "Aurora Innovation",
+     "k": "Freight",
+     "n": "Driverless Dallas-Houston hauls for Werner.",
+     "slug": "aurora-innovation",
+     "cat": "AV Driver / Autonomy Software"
+    }
+   ]
+  },
+  "woven-by-toyota": {
+   "name": "Woven by Toyota",
+   "count": 1,
+   "partners": [
+    {
+     "partner": "Toyota",
+     "k": "Same family",
+     "n": "Toyota's software and mobility R&D subsidiary.",
+     "slug": "toyota",
+     "cat": "Vehicle Platform & Manufacturing"
+    }
+   ]
+  },
+  "xpeng": {
+   "name": "XPeng",
+   "count": 1,
+   "partners": [
+    {
+     "partner": "Volkswagen Group / CARIAD",
+     "k": "Software",
+     "n": "VW licenses XPeng's autonomous-driving stack for China-market EVs from 2026.",
+     "slug": "volkswagen-group-cariad",
+     "cat": "Vehicle Platform & Manufacturing"
+    }
+   ]
+  },
+  "zeekr": {
+   "name": "Zeekr",
+   "count": 3,
+   "partners": [
+    {
+     "partner": "NVIDIA DRIVE",
+     "k": "Compute",
+     "n": "Zeekr ADAS ships on NVIDIA Orin/Thor compute.",
+     "slug": "nvidia-drive",
+     "cat": "AV Driver / Autonomy Software"
+    },
+    {
+     "partner": "Geely",
+     "k": "Same family",
+     "n": "Geely's premium EV brand supplying robotaxi platforms.",
+     "slug": "geely",
+     "cat": "Vehicle Platform & Manufacturing"
+    },
+    {
+     "partner": "Waymo",
+     "k": "Vehicle platform",
+     "n": "The purpose-built Zeekr RT is Waymo's next-generation robotaxi.",
+     "slug": "waymo",
+     "cat": "AV Driver / Autonomy Software"
+    }
+   ]
+  },
+  "zoox": {
+   "name": "Zoox",
+   "count": 4,
+   "partners": [
+    {
+     "partner": "California Department of Motor Vehicles (California DMV)",
+     "k": "Regulatory",
+     "n": "Tests driverless in Foster City and San Francisco under DMV permits.",
+     "slug": "california-department-of-motor-vehicles-california-dmv",
+     "cat": "Governance: Regulators & Government"
+    },
+    {
+     "partner": "California Public Utilities Commission (CPUC)",
+     "k": "Regulatory",
+     "n": "CPUC pilot permits govern Zoox passenger operations in California.",
+     "slug": "california-public-utilities-commission-cpuc",
+     "cat": "Governance: Regulators & Government"
+    },
+    {
+     "partner": "NHTSA",
+     "k": "Regulatory",
+     "n": "Self-certified its purpose-built robotaxi under FMVSS; recall and inquiry dialogue ongoing.",
+     "slug": "nhtsa",
+     "cat": "Governance: Regulators & Government"
+    },
+    {
+     "partner": "Nevada Department of Motor Vehicles (Nevada DMV)",
+     "k": "Regulatory",
+     "n": "Nevada permits underpin Zoox's Las Vegas public robotaxi service.",
+     "slug": "nevada-department-of-motor-vehicles-nevada-dmv",
+     "cat": "Governance: Regulators & Government"
+    }
+   ]
+  }
+ }
+}

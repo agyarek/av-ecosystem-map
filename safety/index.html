@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What Has Gone Wrong · Safety · AV Ecosystem Map</title>
+<meta name="description" content="The AV incident register: how safety is measured and why the comparisons disagree, the chronological record from Tempe to Wuhan, software recalls as a new regulatory object, and the fleet-wide failures.">
+<meta property="og:title" content="What Has Gone Wrong · AV Ecosystem Map">
+<meta property="og:description" content="The AV incident register: how safety is measured and why the comparisons disagree, the chronological record from Tempe to Wuhan, software recalls as a new regulatory object, and the fleet-wide failures.">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://agyarek.github.io/av-ecosystem-map/assets/cards/safety.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%2312130F'/><rect x='18' y='44' width='40' height='12' rx='6' fill='%23F2B705'/><circle cx='78' cy='50' r='9' fill='%2300A5B8'/></svg>">
+<script>try{const t=localStorage.getItem('avTheme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');if(t==='dark')document.documentElement.dataset.theme='dark';}catch(e){}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,400..900&family=Source+Serif+4:opsz,wght@8..60,400..700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/base.css">
+<link rel="stylesheet" href="../assets/css/article.css">
+</head>
+<body data-page="safety">
+<a class="skip-link" href="#content">Skip to content</a>
+
+<header class="site">
+  <div class="bar">
+    <a class="wordmark" href="../"><span class="dash" aria-hidden="true"></span>AV&nbsp;ECOSYSTEM&nbsp;MAP</a>
+    <nav class="primary" aria-label="Primary">
+      <a data-nav="map" href="../map/">Map</a>
+      <a data-nav="companies" href="../companies/">Companies</a>
+      <a data-nav="operators" href="../operators/">The Ten</a>
+      <a data-nav="partnerships" href="../partnerships/">Partnerships</a>
+      <a data-nav="funding" href="../funding/">Money</a>
+      <a data-nav="regulation" href="../regulation/">Rules</a>
+      <a data-nav="beyond-roads" href="../beyond-roads/">Beyond Roads</a>
+    </nav>
+    <div class="chrome-tools">
+      <div id="site-search" role="search">
+        <input type="search" placeholder="SEARCH 560" autocomplete="off" spellcheck="false" aria-label="Search companies">
+        <div id="search-results" role="listbox" aria-label="Search results"></div>
+      </div>
+      <button id="theme-toggle" aria-label="Toggle light and dark theme">
+        <svg class="sun" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="8" cy="8" r="3.2"/><path d="M8 .8v2M8 13.2v2M.8 8h2M13.2 8h2M2.9 2.9l1.4 1.4M11.7 11.7l1.4 1.4M13.1 2.9l-1.4 1.4M4.3 11.7l-1.4 1.4"/></svg>
+        <svg class="moon" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M13.5 9.5A5.8 5.8 0 0 1 6.5 2.5a5.8 5.8 0 1 0 7 7z"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="content" class="container article">
+<div class="article-head">
+  <p class="eyebrow"><span class="tick">■</span> WHAT HAS GONE WRONG</p>
+  <h1 class="page-title">Read like an operator,<br>not like a headline</h1>
+  <p class="standfirst">This page is neither a case for the technology nor a case against it. It is the
+    incident record, the recall record, and the measurement problem underneath both, written the way an
+    operations review would write them.</p>
+</div>
+
+<section>
+  <h2 class="sec"><span class="n">01</span>The measurement problem, first</h2>
+  <div class="prose">
+    <p>Waymo's own comparative safety claim circulates in at least three forms across 2026 sources:
+      <strong>13 times fewer</strong> serious-injury-or-worse crashes than human drivers (June 2026),
+      <strong>90 percent fewer</strong> serious crashes (February 2026), and <strong>91 percent
+      fewer</strong> serious injury crashes (December 2025). These are not necessarily contradictory,
+      since they may cover different denominators and periods. They are, however, three different
+      sentences doing one marketing job, and publishing any of them without methodology is how a safety
+      case becomes a slogan. This site shows all three, dated, and notes that the underlying exposure
+      data is not independently auditable.</p>
+    <p>Mileage figures disagree the same way: 170M-plus autonomous miles per a June 2026 Waymo
+      statement, against 220M-plus rider-only miles through March 2026 in earlier compilations.
+      Rider-only miles and total autonomous miles are different denominators, and any comparison that
+      does not define its denominator first is decoration. The general rule this page applies: define
+      terms, date figures, and prefer filings over press.</p>
+  </div>
+</section>
+
+<section>
+  <h2 class="sec"><span class="n">02</span>The incident register</h2>
+  <p class="prose">Chronological, each entry carrying what happened and what the regulator did. The
+    pattern worth noticing is the industry's reflexes maturing: from a fatality that ended a programme,
+    to recalls that patch fleets in weeks.</p>
+  <div style="margin-top:20px">
+    <div class="incident-row"><span class="d">Mar 2018</span><span class="op">Uber ATG</span>
+      <span class="what">A test vehicle struck and killed a pedestrian in Tempe, Arizona, the industry's first pedestrian fatality.</span>
+      <span class="result"><b>Programme-ending.</b> Uber exited AV development; the division sold to Aurora in 2020, and Uber has not built a driver since.</span></div>
+    <div class="incident-row"><span class="d">Oct 2023</span><span class="op">Cruise</span>
+      <span class="what">A robotaxi struck a pedestrian thrown into its path by another car, then dragged her while attempting to pull over in San Francisco.</span>
+      <span class="result"><b>Licence-ending.</b> California DMV revoked the permit; Cruise suspended driverless operations nationwide and filed an ADS recall that November.</span></div>
+    <div class="incident-row"><span class="d">Dec 2024</span><span class="op">Cruise / GM</span>
+      <span class="what">GM shut the robotaxi business entirely.</span>
+      <span class="result">Folded into GM's personal-vehicle ADAS group in February 2025. The capital stopped before the regulator had to.</span></div>
+    <div class="incident-row"><span class="d">Jan 2025</span><span class="op">NHTSA on Cruise</span>
+      <span class="what">Closed its preliminary investigation after analysing 2,759 collision reports including 1,113 pedestrian conflicts, finding five pedestrian collisions with three injuries and avoiding action taken in each.</span>
+      <span class="result">Closed without further action, a data point the loudest takes on either side rarely quote.</span></div>
+    <div class="incident-row"><span class="d">Dec 2025</span><span class="op">Waymo</span>
+      <span class="what">A San Francisco power outage killed traffic signals; robotaxis halted in traffic and caused gridlock.</span>
+      <span class="result"><b>Political.</b> A 2 March 2026 city hearing; SF Emergency Management said first responders had become default roadside assistance and called it untenable; Waymo shipped a software update.</span></div>
+    <div class="incident-row"><span class="d">Jan 2026</span><span class="op">Waymo</span>
+      <span class="what">A robotaxi struck a child near a school in Santa Monica, with minor injuries.</span>
+      <span class="result"><b>Escalating.</b> NHTSA and NTSB both opened investigations into behaviour around school buses.</span></div>
+    <div class="incident-row"><span class="d">31 Mar 2026</span><span class="op">Baidu Apollo Go</span>
+      <span class="what">More than 100 robotaxis stopped simultaneously across Wuhan after a cloud-linked failure, stranding passengers up to two hours; SOS buttons returned unavailability messages and support calls disconnected.</span>
+      <span class="result"><b>Industry-freezing.</b> A joint MIIT, MoT and PSB meeting on 14 April; Wuhan operations suspended; nationwide permit freeze from 29 April, reported easing only in late July.</span></div>
+    <div class="incident-row"><span class="d">Apr 2025</span><span class="op">Xiaomi</span>
+      <span class="what">A fatal SU7 crash in driver-assist mode, in the adjacent consumer-ADAS world.</span>
+      <span class="result"><b>Language-changing.</b> MIIT banned misleading marketing terms including "autonomous driving" and "hands-free driving" for L2 systems.</span></div>
+  </div>
+</section>
+
+<section>
+  <h2 class="sec"><span class="n">03</span>Recalls: a genuinely new regulatory object</h2>
+  <div class="prose">
+    <p>A software recall does not summon cars to a workshop; it patches a fleet over the air and files
+      the paperwork that makes the defect public. Waymo has now filed six, and the register reads like
+      an engineering syllabus: June 2024, 672 vehicles after a collision with a utility pole in a
+      Phoenix alley. May 2025, 1,212 vehicles for minor collisions with gates and chains. December 2025,
+      3,000-plus vehicles for illegally passing stopped school buses in Austin.</p>
+    <p>Then 2026 turned the pattern serious. On <strong>12 May</strong>, approximately 3,800 vehicles
+      for a defect allowing them to drive onto flooded roadways, affecting fifth and sixth-generation
+      systems, with operating limits imposed during extreme weather. On <strong>18 June</strong>,
+      <strong>3,871 vehicles</strong> after 13 incidents of robotaxis entering closed freeway
+      construction zones, six near Phoenix in April and seven in the Bay Area in May; the NHTSA filing
+      states vehicles may enter and drive at posted speed by inappropriately prioritising avoidance of
+      other hazards or failing to recognise the closure, covering fifth-generation systems manufactured
+      May 2022 to May 2026. Waymo restricted freeway operations from 19 May, and as of 13 June the
+      remedy was still under development.</p>
+    <p>Waymo began offering freeway rides in November 2025 and had them suspended within seven months.
+      That sequence deserves to be stated exactly that plainly, and so does its other half: a
+      four-thousand-vehicle behavioural defect was contained by a software gate in days, which no
+      human-driver fleet can do at all.</p>
+  </div>
+</section>
+
+<section>
+  <h2 class="sec"><span class="n">04</span>The interesting category: fleet-wide failure</h2>
+  <div class="hard-part">
+    <p class="hp-label">The question the industry has not answered</p>
+    <p>The Wuhan outage and the San Francisco power cut are qualitatively different from every
+      per-vehicle defect above, because they were simultaneous and fleet-wide, and because each turned a
+      private product into a public-safety problem within minutes. Industry engineers attributed the
+      Wuhan stall to a safety self-check mechanism, which is the same shape as Waymo's dark-signal
+      behaviour: each vehicle failed safe, and the fleet failed the city. Individually correct,
+      collectively catastrophic. Robotaxis are now an emergency-services dependency, and no operator has
+      published what its fleet does when the cloud, the grid or the network goes away.</p>
+  </div>
+</section>
+
+<section>
+  <h2 class="sec"><span class="n">05</span>What nobody publishes</h2>
+  <div class="prose">
+    <p>Comparable per-mile exposure data across operators. Every safety claim on this page is
+      self-reported against a denominator its author chose. Until operators publish audited exposure
+      data on a common definition, the honest summary of AV safety is: the per-vehicle record looks
+      good, the fleet-level record has two bad days in it, and the comparison to human driving is being
+      graded by the students.</p>
+  </div>
+</section>
+
+<div class="keep-going">
+  <p class="eyebrow">KEEP GOING</p>
+  <div class="kg-row">
+    <a class="btn" href="../regulation/">WHAT REGULATORS DID ABOUT IT</a>
+    <a class="btn" href="../operators/waymo/">WAYMO'S FULL PICTURE</a>
+    <a class="btn" href="../map/?layer=standards">THE SAFETY BODIES ON THE CHART</a>
+  </div>
+</div>
+</main>
+
+<footer class="site">
+  <div class="container">
+    <p class="cta">A company that should be listed, a partnership not yet mapped, a detail that is wrong?
+      <a href="mailto:agyarek+avecosystemmap@gmail.com?subject=AV%20map%20correction">Send a correction</a>:
+      this map gets better through exactly those conversations.</p>
+    <p class="fine">Autonomous Vehicle Ecosystem Map · compiled by <a href="../method/">Kofi Agyare-Kwabi</a> from public filings, permits and announcements · updated 25 July 2026</p>
+  </div>
+</footer>
+
+<script src="../assets/js/core.js"></script>
+</body>
+</html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Waymo · The Ten · AV Ecosystem Map</title>
+<meta name="description" content="Waymo runs the only fully driverless paid service at scale: about half a million rides a week across 11 US metros. The architecture, the vehicles, the $16B round, the six recalls, and the arithmetic behind the million-ride target.">
+<meta property="og:title" content="Waymo · The Ten · AV Ecosystem Map">
+<meta property="og:description" content="Waymo runs the only fully driverless paid service at scale: about half a million rides a week across 11 US metros. The architecture, the vehicles, the $16B round, the six recalls, and the arithmetic behind the million-ride target.">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://agyarek.github.io/av-ecosystem-map/assets/cards/op-waymo.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%2312130F'/><rect x='18' y='44' width='40' height='12' rx='6' fill='%23F2B705'/><circle cx='78' cy='50' r='9' fill='%2300A5B8'/></svg>">
+<script>try{const t=localStorage.getItem('avTheme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');if(t==='dark')document.documentElement.dataset.theme='dark';}catch(e){}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,400..900&family=Source+Serif+4:opsz,wght@8..60,400..700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/css/base.css">
+<link rel="stylesheet" href="../../assets/css/article.css">
+</head>
+<body data-page="operators">
+<a class="skip-link" href="#content">Skip to content</a>
+
+<header class="site">
+  <div class="bar">
+    <a class="wordmark" href="../../"><span class="dash" aria-hidden="true"></span>AV&nbsp;ECOSYSTEM&nbsp;MAP</a>
+    <nav class="primary" aria-label="Primary">
+      <a data-nav="map" href="../../map/">Map</a>
+      <a data-nav="companies" href="../../companies/">Companies</a>
+      <a data-nav="operators" href="../../operators/">The Ten</a>
+      <a data-nav="partnerships" href="../../partnerships/">Partnerships</a>
+      <a data-nav="funding" href="../../funding/">Money</a>
+      <a data-nav="regulation" href="../../regulation/">Rules</a>
+      <a data-nav="beyond-roads" href="../../beyond-roads/">Beyond Roads</a>
+    </nav>
+    <div class="chrome-tools">
+      <div id="site-search" role="search">
+        <input type="search" placeholder="SEARCH 560" autocomplete="off" spellcheck="false" aria-label="Search companies">
+        <div id="search-results" role="listbox" aria-label="Search results"></div>
+      </div>
+      <button id="theme-toggle" aria-label="Toggle light and dark theme">
+        <svg class="sun" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="8" cy="8" r="3.2"/><path d="M8 .8v2M8 13.2v2M.8 8h2M13.2 8h2M2.9 2.9l1.4 1.4M11.7 11.7l1.4 1.4M13.1 2.9l-1.4 1.4M4.3 11.7l-1.4 1.4"/></svg>
+        <svg class="moon" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M13.5 9.5A5.8 5.8 0 0 1 6.5 2.5a5.8 5.8 0 1 0 7 7z"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="content" class="container article">
+<div class="article-head">
+  <p class="eyebrow"><a href="../">THE TEN</a> <span class="tick">■</span> 01</p>
+  <div class="op-hero" style="margin-top:14px">
+    <span class="mono-tile" style="--tile:oklch(var(--layer-l) var(--layer-c) 265)">WA</span>
+    <div>
+      <h1 class="page-title" style="font-size:clamp(34px,4.5vw,60px)">Waymo</h1>
+      <p class="oh-meta">Mountain View, US · Alphabet · founded 2009 as the Google Self-Driving Car Project</p>
+    </div>
+  </div>
+  <p class="standfirst">Waymo is the operator every other operator is measured against: the only company
+    running fully driverless paid rides at scale, and therefore the first to discover, in public, what
+    that actually costs.</p>
+</div>
+
+<section>
+  <h2 class="sec"><span class="n">01</span>Where you can meet it today</h2>
+  <div class="meet-list">
+    <div class="m-row"><span class="k">Open to the public</span><span class="v">Phoenix, San Francisco Bay Area, Los Angeles, Austin, Atlanta, Miami, Nashville, Dallas, Houston, San Antonio and Orlando (July 2026). Seven of those Sun Belt markets opened within the preceding year.</span></div>
+    <div class="m-row"><span class="k">Opening next</span><span class="v">San Diego, Las Vegas, Tampa and Denver, announced 8 July 2026, each starting employee-only. Detroit, Washington DC and London remain in the announced pipeline; Tokyo is in preparation with Nihon Kotsu and GO.</span></div>
+    <div class="m-row"><span class="k">Does it charge</span><span class="v">Yes, at ride-hail prices, plus a $29.99 monthly subscription tier launched June 2026 in high-demand cities.</span></div>
+    <div class="m-row"><span class="k">Safety operator</span><span class="v">None aboard. Rider-only operation is the product.</span></div>
+    <div class="m-row"><span class="k">Caveat</span><span class="v">Freeway service has been suspended since 19 May 2026 pending a software fix. Surface streets are unaffected.</span></div>
+  </div>
+  <div class="fact-grid">
+    <div class="fact"><span class="num">~500,000</span><span class="lbl">paid rides per week, mid-2026</span><span class="src">sources range 400k to 500k; TechCrunch reported 500k across 10 cities in March 2026</span></div>
+    <div class="fact"><span class="num">3,067</span><span class="lbl">vehicles, per Waymo's own Dec 2025 NHTSA filing</span><span class="src">press estimates since run 3,000 to 4,000; the filing is the auditable number</span></div>
+    <div class="fact"><span class="num">10×</span><span class="lbl">ride growth in under two years</span><span class="src">from ~50k weekly in May 2024</span></div>
+  </div>
+</section>
+
+<section>
+  <h2 class="sec"><span class="n">02</span>The architecture</h2>
+  <div class="prose">
+    <p>Waymo is the reference implementation of the sensor-rich school: lidar, cameras and radar fused
+      against high-definition maps, validated by tens of billions of simulated miles. The cost of that
+      choice is hardware and mapping expense per vehicle and per city. What it buys is a driver whose
+      safety case regulators have so far accepted at face value, in the form of rider-only permits across
+      eleven metros.</p>
+    <p>The sixth-generation system, now in public service, is where the cost curve bends: 42 percent
+      fewer sensors than the fifth generation and a reported unit cost below $20,000, less than half its
+      predecessor. Waymo's bet is that scale and generation-on-generation sensor reduction get the
+      hardware bill down faster than camera-first rivals can get their safety case up.</p>
+  </div>
+</section>
+
+<section>
+  <h2 class="sec"><span class="n">03</span>The vehicle</h2>
+  <div class="prose">
+    <p>The Jaguar I-PACE remains the workhorse and is being phased out. The purpose-built,
+      Zeekr-manufactured platform publicly named the <strong>Ojai</strong> began carrying public riders on
+      28 May 2026 in Los Angeles, Phoenix and San Francisco. Hyundai IONIQ 5s are ramping under a
+      multi-year supply deal with 50,000 units lined up and Arizona production expected late 2026, and
+      Magna co-operates the Mesa plant that integrates the Waymo Driver. A preliminary Toyota alliance
+      points at personally owned vehicles, which would be a different business entirely.</p>
+    <p>Four vehicle suppliers is not an accident. It is a hedge against tariffs, against single-source
+      manufacturing risk, and against any one automaker deciding it would rather keep the robotaxi
+      economics for itself.</p>
+  </div>
+</section>
+
+<section>
+  <h2 class="sec"><span class="n">04</span>The money</h2>
+  <div class="prose">
+    <p>Waymo closed a <strong>$16B round in February 2026 at a $126B valuation</strong>, up from $45B in
+      October 2024, with Alphabet joined by Sequoia, DST Global, Dragoneer, Andreessen Horowitz, Silver
+      Lake, Tiger Global, T. Rowe Price and Fidelity. Bloomberg put annualised revenue near
+      <strong>$355M as of February 2026</strong>, which prices the company at roughly 355 times revenue.
+      Alphabet's Other Bets segment, which contains Waymo, reported $411M of revenue against a $2.1B loss
+      in Q1 2026.</p>
+    <p>The capital is buying vehicles, depots and city launches. Whether it is buying a business is the
+      subject of <a href="../../economics/">The Arithmetic</a>.</p>
+  </div>
+</section>
+
+<section>
+  <h2 class="sec"><span class="n">05</span>The partners <span class="n" data-partner-count="waymo"></span></h2>
+  <p class="prose">Waymo's depot layer is entirely outsourced: Moove finances and runs Phoenix and Miami,
+    Transdev runs five metros, Element Fleet Management signed for San Diego in June 2026, and Lyft's
+    Flexdrive runs Nashville. The vehicle chain runs four deep. Mapped relationships below, from the
+    partnership data; each links into the wall chart.</p>
+  <div class="partner-groups" data-partners="waymo"></div>
+</section>
+
+<section>
+  <h2 class="sec"><span class="n">06</span>The hard part</h2>
+  <div class="hard-part">
+    <p class="hp-label">What Waymo has not solved</p>
+    <p>Waymo has now filed six software recalls, and its freeway service, launched November 2025, was
+      suspended within seven months after 13 incidents of vehicles entering closed construction zones.
+      The 18 June 2026 recall covering 3,871 vehicles states the remedy was still under development.
+      Meanwhile the company's own target of one million weekly rides by the end of 2026 requires roughly
+      7,200 vehicles by an independent FutureSearch estimate, against an observed addition rate of 265 to
+      300 per month, which lands nearer 6,000 vehicles and 775,000 to 840,000 weekly rides. The gap
+      between the target and the arithmetic is the most honest measure of where Waymo actually is.</p>
+  </div>
+</section>
+
+<section>
+  <h2 class="sec"><span class="n">07</span>What to watch</h2>
+  <ul class="watch-list">
+    <li>Whether the freeway recall remedy ships and freeway service resumes before the end of 2026.
+      <span class="caption">Falsifiable via NHTSA filings; suspended since 19 May 2026.</span></li>
+    <li>Whether weekly rides reach one million by 31 December 2026, which the vehicle-addition arithmetic
+      says they will not. <span class="caption">Target stated by co-CEO Tekedra Mawakana.</span></li>
+    <li>Whether London launches under the UK's Automated Passenger Services permits, whose applications
+      opened 22 May 2026, making it Waymo's first market outside US rules.
+      <span class="caption">Transport for London consent is the gate.</span></li>
+  </ul>
+</section>
+
+<div class="keep-going">
+  <p class="eyebrow">KEEP GOING</p>
+  <div class="kg-row">
+    <a class="btn" href="../../map/#waymo">WAYMO ON THE WALL CHART</a>
+    <a class="btn" href="../baidu-apollo-go/">NEXT: BAIDU APOLLO GO</a>
+    <a class="btn" href="../../safety/">THE RECALL REGISTER</a>
+  </div>
+</div>
+</main>
+
+<footer class="site">
+  <div class="container">
+    <p class="cta">A company that should be listed, a partnership not yet mapped, a detail that is wrong?
+      <a href="mailto:agyarek+avecosystemmap@gmail.com?subject=AV%20map%20correction">Send a correction</a>:
+      this map gets better through exactly those conversations.</p>
+    <p class="fine">Autonomous Vehicle Ecosystem Map · compiled by <a href="../../method/">Kofi Agyare-Kwabi</a> from public filings, permits and announcements · updated 25 July 2026</p>
+  </div>
+</footer>
+
+<script src="../../assets/js/core.js"></script>
+<script src="../../assets/js/operators.js"></script>
+</body>
+</html>

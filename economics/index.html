@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Arithmetic · Economics · AV Ecosystem Map</title>
+<meta name="description" content="Will any of this pay? The robotaxi cost-per-mile question, the published estimates and their provenance, an interactive calculator with honest defaults, and the comparative cases: Waymo, Tesla, Baidu, Aurora.">
+<meta property="og:title" content="The Arithmetic · AV Ecosystem Map">
+<meta property="og:description" content="Will any of this pay? The robotaxi cost-per-mile question, the published estimates and their provenance, an interactive calculator with honest defaults, and the comparative cases: Waymo, Tesla, Baidu, Aurora.">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://agyarek.github.io/av-ecosystem-map/assets/cards/economics.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%2312130F'/><rect x='18' y='44' width='40' height='12' rx='6' fill='%23F2B705'/><circle cx='78' cy='50' r='9' fill='%2300A5B8'/></svg>">
+<script>try{const t=localStorage.getItem('avTheme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');if(t==='dark')document.documentElement.dataset.theme='dark';}catch(e){}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,400..900&family=Source+Serif+4:opsz,wght@8..60,400..700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/base.css">
+<link rel="stylesheet" href="../assets/css/article.css">
+</head>
+<body data-page="economics">
+<a class="skip-link" href="#content">Skip to content</a>
+
+<header class="site">
+  <div class="bar">
+    <a class="wordmark" href="../"><span class="dash" aria-hidden="true"></span>AV&nbsp;ECOSYSTEM&nbsp;MAP</a>
+    <nav class="primary" aria-label="Primary">
+      <a data-nav="map" href="../map/">Map</a>
+      <a data-nav="companies" href="../companies/">Companies</a>
+      <a data-nav="operators" href="../operators/">The Ten</a>
+      <a data-nav="partnerships" href="../partnerships/">Partnerships</a>
+      <a data-nav="funding" href="../funding/">Money</a>
+      <a data-nav="regulation" href="../regulation/">Rules</a>
+      <a data-nav="beyond-roads" href="../beyond-roads/">Beyond Roads</a>
+    </nav>
+    <div class="chrome-tools">
+      <div id="site-search" role="search">
+        <input type="search" placeholder="SEARCH 560" autocomplete="off" spellcheck="false" aria-label="Search companies">
+        <div id="search-results" role="listbox" aria-label="Search results"></div>
+      </div>
+      <button id="theme-toggle" aria-label="Toggle light and dark theme">
+        <svg class="sun" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="8" cy="8" r="3.2"/><path d="M8 .8v2M8 13.2v2M.8 8h2M13.2 8h2M2.9 2.9l1.4 1.4M11.7 11.7l1.4 1.4M13.1 2.9l-1.4 1.4M4.3 11.7l-1.4 1.4"/></svg>
+        <svg class="moon" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M13.5 9.5A5.8 5.8 0 0 1 6.5 2.5a5.8 5.8 0 1 0 7 7z"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="content" class="container article">
+<div class="article-head">
+  <p class="eyebrow"><span class="tick">■</span> THE ARITHMETIC</p>
+  <h1 class="page-title">Will any of this pay?</h1>
+  <p class="standfirst">A robotaxi operator is a capital-intensive fleet business carrying a software
+    company's valuation. It buys expensive hardware, parks it in expensive depots, insures it against a
+    legal regime nobody has finished writing, and sells short rides at ride-hail prices. The whole
+    question fits in one number.</p>
+</div>
+
+<section>
+  <h2 class="sec"><span class="n">01</span>The shape of the business</h2>
+  <div class="prose">
+    <p>Strip the branding away and every operator on this map runs the same machine: vehicles that cost
+      $50,000 to $150,000 with their autonomy kit, driven as many paid miles per day as demand allows,
+      against costs that are mostly fixed per mile. The lever that makes any of it plausible is
+      utilisation. A private car works about an hour a day; a robotaxi can work twenty. That twentyfold
+      difference is what spreads the hardware bill thin enough to compete with a human driver who brings
+      their own car to work.</p>
+    <p>The one number that matters is <strong>fully-loaded cost per revenue mile</strong>. Third-party
+      analysis puts Waymo's 2025 figure near <strong>$1.98</strong>. Every bull case in the sector
+      reduces to the same claim: that number halves. At $1.98 against a roughly $16 fare over eight
+      miles, a vehicle earns back very little. At $0.99, contribution rises to roughly $70,000 per
+      vehicle per year and a $90,000 purpose-built robotaxi pays for itself in about sixteen months.</p>
+  </div>
+  <div class="note" style="margin-top:20px">
+    <p><strong>Provenance warning, before you quote anything.</strong> No operator publishes
+      fully-loaded cost per mile. The $1.98 figure is a third-party analyst estimate circulating across
+      several publications, and at least one trail leads back to a Reddit analysis. That is the state of
+      public knowledge in this industry, which is exactly why the calculator below exists: substitute
+      your own assumptions and stop depending on anyone's estimate, including this site's.</p>
+  </div>
+</section>
+
+<section>
+  <h2 class="sec"><span class="n">02</span>Break the business yourself</h2>
+  <p class="prose">Defaults describe a plausible 2026 US robotaxi, tuned so the optimist's case just
+    about closes: a purpose-built EV with a current-generation kit, twenty service hours, and a fare at
+    ride-hail rates. Every field is an editorial claim; change any of them.</p>
+  <div class="calc">
+    <div class="calc-inputs" id="calc-inputs"></div>
+    <div class="calc-out">
+      <div class="co-big">
+        <p class="eyebrow" style="color:inherit;opacity:.7">COST PER PAID MILE</p>
+        <span class="num" id="o-cpm">–</span>
+        <p class="caption" id="o-verdict" style="color:inherit;opacity:.75;margin-top:6px"></p>
+      </div>
+      <div class="co-row">
+        <div class="fact"><span class="num" id="o-profit">–</span><span class="lbl">profit per vehicle per day</span></div>
+        <div class="fact"><span class="num" id="o-payback">–</span><span class="lbl">payback on the vehicle</span></div>
+        <div class="fact"><span class="num" id="o-breakeven">–</span><span class="lbl">breakeven paid miles per day</span></div>
+      </div>
+      <div class="fact"><span class="lbl" style="font-weight:700;color:var(--ink)">Where the money goes, per day</span><div id="o-split" style="margin-top:8px"></div></div>
+      <p class="caption calc-note">The Waymo-versus-Tesla argument lives in exactly two inputs: the
+        autonomy kit cost and the vehicles-per-remote-operator ratio. Move those two and watch the
+        conclusion follow.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2 class="sec"><span class="n">03</span>The published cost anatomy, treated as a target</h2>
+  <div class="prose">
+    <p>Published breakdowns for a mature operation land in the $0.30 to $0.50 per mile range: vehicle
+      depreciation at $0.08 to $0.12 amortised over 500,000-plus miles, energy $0.03 to $0.05,
+      maintenance $0.03 to $0.05, insurance $0.05 to $0.08 declining as safety data accumulates, remote
+      monitoring $0.05 to $0.10 declining with autonomy quality, and technology and compute $0.03 to
+      $0.05. Treat that as a destination rather than a description. Nobody operates there today, and the
+      gap between it and the $1.98 estimate is the industry's entire remaining homework.</p>
+  </div>
+</section>
+
+<section>
+  <h2 class="sec"><span class="n">04</span>Four operators, four different bets</h2>
+  <div class="prose">
+    <p><strong>Waymo</strong> carries the reference cost structure: the most vehicles, the most cities,
+      and a $126B February 2026 valuation against roughly $355M of annualised revenue, which is about
+      355 times revenue. The sixth-generation hardware at a reported sub-$20,000 kit cost is its answer
+      to the arithmetic. <strong>Tesla</strong> prices a five-mile ride near $8 against Waymo's $15 to
+      17, betting that cameras-only hardware and no mapping bill halve the cost line; the claim is partly
+      testable now through Austin's losses and partly a 2027 question about Cybercab production. That its
+      base fare tripled in March 2026 suggests the first data arrived and argued back.</p>
+    <p><strong>Baidu</strong> has the cheaper vehicle and the denser anchor city, and a reasonable
+      inference is that Apollo Go reaches company-level profitability before Waymo does. Its unit
+      breakeven claims in Wuhan, like <strong>Pony.ai's</strong> in Shenzhen and Guangzhou, are
+      vehicle-level in single cities, and the distinction between that and company profitability should
+      stay visible whenever either is quoted.</p>
+    <p><strong>Aurora</strong> offers the cleanest comparison in the industry because its benchmark is a
+      freight rate rather than a subsidised fare. A 2026 target of 200-plus driverless trucks against an
+      $80M revenue run rate implies about $400,000 per truck per year, against $300,000 to $450,000 for
+      a conventional Class 8 truck with a driver, where removing the driver saves roughly $70,000 to
+      $90,000 a year. The headroom is thinner than the robotaxi story suggests, which is why Aurora
+      sells reliability and insurance economics as hard as it sells the driver.</p>
+  </div>
+</section>
+
+<section>
+  <h2 class="sec"><span class="n">05</span>The honest close</h2>
+  <div class="hard-part">
+    <p class="hp-label">Where the arithmetic actually stands</p>
+    <p>Uber's CFO said plainly, on the record, in August 2025: autonomous vehicles today are not
+      profitable. Alphabet's Other Bets, which contains Waymo, lost $2.1B in Q1 2026. Every published
+      breakeven claim in the industry is per-vehicle in a single city. The bull case requires the cost
+      line to halve, and the evidence that it will is a hardware roadmap, not an income statement. That
+      is not a dismissal; it is a timestamp.</p>
+  </div>
+</section>
+
+<div class="keep-going">
+  <p class="eyebrow">KEEP GOING</p>
+  <div class="kg-row">
+    <a class="btn" href="../funding/">WHO IS FUNDING THE GAP</a>
+    <a class="btn" href="../operators/">THE TEN, COMPARED</a>
+    <a class="btn" href="../beyond-roads/">WHERE THE MATHS ALREADY WORKS</a>
+  </div>
+</div>
+</main>
+
+<footer class="site">
+  <div class="container">
+    <p class="cta">A company that should be listed, a partnership not yet mapped, a detail that is wrong?
+      <a href="mailto:agyarek+avecosystemmap@gmail.com?subject=AV%20map%20correction">Send a correction</a>:
+      this map gets better through exactly those conversations.</p>
+    <p class="fine">Autonomous Vehicle Ecosystem Map · compiled by <a href="../method/">Kofi Agyare-Kwabi</a> from public filings, permits and announcements · updated 25 July 2026</p>
+  </div>
+</footer>
+
+<script src="../assets/js/core.js"></script>
+<script src="../assets/js/economics.js"></script>
+</body>
+</html>

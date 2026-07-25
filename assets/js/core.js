@@ -80,7 +80,9 @@
   };
   const go = c => {
     close();
+    input.value = '';
     if (page === 'map' && window.AVposter) { window.AVposter.select(c.s, true); return; }
+    if (page === 'companies' && window.AVledger) { window.AVledger.open(c.s); return; }
     location.href = page === 'map'
       ? ROOT + 'map/#' + c.s
       : ROOT + 'companies/?open=' + encodeURIComponent(c.s);

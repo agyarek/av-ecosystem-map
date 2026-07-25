@@ -1,0 +1,3385 @@
+[
+ {
+  "n": "Apex.AI",
+  "s": "apex-ai",
+  "c": "AV Driver / Autonomy Software",
+  "b": "Safe real-time middleware for software-defined vehicles and robotics"
+ },
+ {
+  "n": "Applied Intuition",
+  "s": "applied-intuition",
+  "c": "AV Driver / Autonomy Software",
+  "b": "Simulation & synthetic data; Testing, validation & safety assurance; AV middlewa"
+ },
+ {
+  "n": "Argo AI",
+  "s": "argo-ai",
+  "c": "AV Driver / Autonomy Software",
+  "b": "Ford/VW-backed L4 developer whose alumni seeded Ford Latitude AI",
+  "x": 1
+ },
+ {
+  "n": "Aurora Innovation",
+  "s": "aurora-innovation",
+  "c": "AV Driver / Autonomy Software",
+  "b": "Driverless Dallas-Houston freight, scaling to 200+ trucks by 2026"
+ },
+ {
+  "n": "AutoX",
+  "s": "autox",
+  "c": "AV Driver / Autonomy Software",
+  "b": "Early driverless robotaxi pilots across Shenzhen and Guangzhou"
+ },
+ {
+  "n": "AutoX / Tensor",
+  "s": "autox-tensor",
+  "c": "AV Driver / Autonomy Software",
+  "b": "Tensor robocars aimed at personally owned L4 driving from 2026",
+  "x": 1
+ },
+ {
+  "n": "Avride",
+  "s": "avride",
+  "c": "AV Driver / Autonomy Software",
+  "b": "Autonomous goods delivery"
+ },
+ {
+  "n": "Baidu (Apollo Go)",
+  "s": "baidu-apollo-go",
+  "c": "AV Driver / Autonomy Software",
+  "b": "China's largest robotaxi operator with 3.2M rides in Q1 2026"
+ },
+ {
+  "n": "Baidu Apollo Go",
+  "s": "baidu-apollo-go-c8",
+  "c": "AV Driver / Autonomy Software",
+  "b": "Robotaxi & passenger L4; Robotaxi consumer services; Purpose-built robotaxi/pod "
+ },
+ {
+  "n": "BMW Personal Pilot / ADAS",
+  "s": "bmw-personal-pilot-adas",
+  "c": "AV Driver / Autonomy Software",
+  "b": "Took Level 3 to German roads on the 7-Series flagship"
+ },
+ {
+  "n": "Bot Auto",
+  "s": "bot-auto",
+  "c": "AV Driver / Autonomy Software",
+  "b": "First fully humanless commercial truckload, Houston to Dallas"
+ },
+ {
+  "n": "Coco",
+  "s": "coco",
+  "c": "AV Driver / Autonomy Software",
+  "b": "Goods delivery autonomy"
+ },
+ {
+  "n": "comma.ai",
+  "s": "comma-ai",
+  "c": "AV Driver / Autonomy Software",
+  "b": "L2+/L3 consumer ADAS stacks; AV middleware, dev platforms & tooling"
+ },
+ {
+  "n": "Cruise",
+  "s": "cruise",
+  "c": "AV Driver / Autonomy Software",
+  "b": "GM's robotaxi program, since folded into personal-vehicle ADAS",
+  "x": 1
+ },
+ {
+  "n": "Cyngn",
+  "s": "cyngn",
+  "c": "AV Driver / Autonomy Software",
+  "b": "DriveMod autonomy for tuggers and forklifts, orders tripled YoY"
+ },
+ {
+  "n": "DeepRoute.ai",
+  "s": "deeproute-ai",
+  "c": "AV Driver / Autonomy Software",
+  "b": "Map-free ADAS on 300k+ vehicles, targeting 1.3M by year-end"
+ },
+ {
+  "n": "DiDi Autonomous Driving",
+  "s": "didi-autonomous-driving",
+  "c": "AV Driver / Autonomy Software",
+  "b": "Robotaxi & passenger L4; Ridehail & demand aggregation"
+ },
+ {
+  "n": "dSPACE",
+  "s": "dspace",
+  "c": "AV Driver / Autonomy Software",
+  "b": "Paderborn validation toolchain that acquired Understand.ai"
+ },
+ {
+  "n": "Embark Trucks",
+  "s": "embark-trucks",
+  "c": "AV Driver / Autonomy Software",
+  "b": "Early L4 trucking SPAC whose assets went to Applied Intuition",
+  "x": 1
+ },
+ {
+  "n": "Foretellix",
+  "s": "foretellix",
+  "c": "AV Driver / Autonomy Software",
+  "b": "Simulation & synthetic data; Testing, validation & safety assurance"
+ },
+ {
+  "n": "Gatik",
+  "s": "gatik",
+  "c": "AV Driver / Autonomy Software",
+  "b": "Autonomous trucking L4; Goods delivery autonomy"
+ },
+ {
+  "n": "Ghost Autonomy",
+  "s": "ghost-autonomy",
+  "c": "AV Driver / Autonomy Software",
+  "b": "OpenAI-backed highway autonomy startup, wound down in 2024",
+  "x": 1
+ },
+ {
+  "n": "Horizon Robotics",
+  "s": "horizon-robotics",
+  "c": "AV Driver / Autonomy Software",
+  "b": "Compute / SoC / AI chips; L2+/L3 consumer ADAS stacks"
+ },
+ {
+  "n": "Huawei IAS/ADS (Qiankun)",
+  "s": "huawei-ias-ads-qiankun",
+  "c": "AV Driver / Autonomy Software",
+  "b": "Qiankun ADS 4 across 22+ partner models, targeting 3M units"
+ },
+ {
+  "n": "Huawei Intelligent Automotive Solution / Yinwang",
+  "s": "huawei-intelligent-automotive-solution-yinwang",
+  "c": "AV Driver / Autonomy Software",
+  "b": "HIMA alliance stack behind AITO, Luxeed, Stelato and Maextro"
+ },
+ {
+  "n": "Huawei Intelligent Automotive Solutions",
+  "s": "huawei-intelligent-automotive-solutions",
+  "c": "AV Driver / Autonomy Software",
+  "b": "L2+/L3 consumer ADAS stacks; Compute / SoC / AI chips"
+ },
+ {
+  "n": "Inceptio Technology",
+  "s": "inceptio-technology",
+  "c": "AV Driver / Autonomy Software",
+  "b": "Factory-installed L4 trucks running China's freight corridors"
+ },
+ {
+  "n": "Kiwibot",
+  "s": "kiwibot",
+  "c": "AV Driver / Autonomy Software",
+  "b": "Campus delivery bots now Robot.com, piloting the R-noid humanoid"
+ },
+ {
+  "n": "Kodiak AI",
+  "s": "kodiak-ai",
+  "c": "AV Driver / Autonomy Software",
+  "b": "Driverless trucks hauling Permian Basin freight, revenue up 74%"
+ },
+ {
+  "n": "May Mobility",
+  "s": "may-mobility",
+  "c": "AV Driver / Autonomy Software",
+  "b": "Robotaxi & passenger L4; AV middleware, dev platforms & tooling"
+ },
+ {
+  "n": "Mercedes-Benz Drive Pilot / MB.Drive",
+  "s": "mercedes-benz-drive-pilot-mb-drive",
+  "c": "AV Driver / Autonomy Software",
+  "b": "Certified Level 3 operation in Germany, Nevada and California"
+ },
+ {
+  "n": "Momenta",
+  "s": "momenta",
+  "c": "AV Driver / Autonomy Software",
+  "b": "OEM data flywheel across 680k+ Momenta-equipped vehicles"
+ },
+ {
+  "n": "Motional",
+  "s": "motional",
+  "c": "AV Driver / Autonomy Software",
+  "b": "Hyundai-backed robotaxis riding on Uber in Las Vegas"
+ },
+ {
+  "n": "Nio",
+  "s": "nio",
+  "c": "AV Driver / Autonomy Software",
+  "b": "Banyan 3.3.0 world-model update rolled out to 460k+ vehicles"
+ },
+ {
+  "n": "NVIDIA DRIVE",
+  "s": "nvidia-drive",
+  "c": "AV Driver / Autonomy Software",
+  "b": "Compute / SoC / AI chips; Simulation & synthetic data; AV middleware, dev platfo"
+ },
+ {
+  "n": "Oxa",
+  "s": "oxa",
+  "c": "AV Driver / Autonomy Software",
+  "b": "Industrial fleet autonomy backed by the UK National Wealth Fund"
+ },
+ {
+  "n": "Plus",
+  "s": "plus",
+  "c": "AV Driver / Autonomy Software",
+  "b": "Autonomous trucking L4; L2+/L3 consumer ADAS stacks"
+ },
+ {
+  "n": "Pony.ai",
+  "s": "pony-ai",
+  "c": "AV Driver / Autonomy Software",
+  "b": "Robotaxi & passenger L4; Autonomous trucking L4"
+ },
+ {
+  "n": "Pronto.ai",
+  "s": "pronto-ai",
+  "c": "AV Driver / Autonomy Software",
+  "b": "Autonomous haulage across Heidelberg quarries after SafeAI deal"
+ },
+ {
+  "n": "QCraft",
+  "s": "qcraft",
+  "c": "AV Driver / Autonomy Software",
+  "b": "Robotaxi-rooted NOA maker with $100M raised for physical AI"
+ },
+ {
+  "n": "Refraction AI",
+  "s": "refraction-ai",
+  "c": "AV Driver / Autonomy Software",
+  "b": "Lightweight bike-lane delivery robots with Ann Arbor roots"
+ },
+ {
+  "n": "Serve Robotics",
+  "s": "serve-robotics",
+  "c": "AV Driver / Autonomy Software",
+  "b": "Sidewalk fleet on Uber Eats, targeting 2,000 robots by 2026"
+ },
+ {
+  "n": "Stack AV",
+  "s": "stack-av",
+  "c": "AV Driver / Autonomy Software",
+  "b": "SoftBank-backed trucking venture led by former Argo AI leaders"
+ },
+ {
+  "n": "Starship Technologies",
+  "s": "starship-technologies",
+  "c": "AV Driver / Autonomy Software",
+  "b": "9M autonomous deliveries logged across 2,700 sidewalk robots"
+ },
+ {
+  "n": "Tesla Robotaxi / FSD",
+  "s": "tesla-robotaxi-fsd",
+  "c": "AV Driver / Autonomy Software",
+  "b": "Robotaxi & passenger L4; L2+/L3 consumer ADAS stacks; Robotaxi consumer services"
+ },
+ {
+  "n": "Tier IV / Autoware",
+  "s": "tier-iv-autoware",
+  "c": "AV Driver / Autonomy Software",
+  "b": "AV middleware, dev platforms & tooling; Robotaxi & passenger L4"
+ },
+ {
+  "n": "Torc Robotics",
+  "s": "torc-robotics",
+  "c": "AV Driver / Autonomy Software",
+  "b": "Daimler Truck's L4 subsidiary targeting 2027 commercial launch"
+ },
+ {
+  "n": "TuSimple",
+  "s": "tusimple",
+  "c": "AV Driver / Autonomy Software",
+  "b": "Former autonomous trucking leader, now CreateAI in AI and gaming",
+  "x": 1
+ },
+ {
+  "n": "Waabi",
+  "s": "waabi",
+  "c": "AV Driver / Autonomy Software",
+  "b": "Autonomous trucking L4; Simulation & synthetic data"
+ },
+ {
+  "n": "Waymo",
+  "s": "waymo",
+  "c": "AV Driver / Autonomy Software",
+  "b": "Robotaxi & passenger L4; Robotaxi consumer services"
+ },
+ {
+  "n": "Wayve",
+  "s": "wayve",
+  "c": "AV Driver / Autonomy Software",
+  "b": "Map-light end-to-end driving AI with $2.8B raised"
+ },
+ {
+  "n": "WeRide",
+  "s": "weride",
+  "c": "AV Driver / Autonomy Software",
+  "b": "Robotaxi & passenger L4; Goods delivery autonomy; Robotaxi consumer services"
+ },
+ {
+  "n": "XPeng",
+  "s": "xpeng",
+  "c": "AV Driver / Autonomy Software",
+  "b": "VW licenses its AD stack for China EVs starting 2026"
+ },
+ {
+  "n": "XPeng XNGP",
+  "s": "xpeng-xngp",
+  "c": "AV Driver / Autonomy Software",
+  "b": "China-wide urban ADAS moving onto in-house Turing AI chips"
+ },
+ {
+  "n": "Aeva",
+  "s": "aeva",
+  "c": "Sensing & Compute Hardware",
+  "b": "FMCW 4D LiDAR chosen for the autonomous Freightliner Cascadia"
+ },
+ {
+  "n": "Ambarella",
+  "s": "ambarella",
+  "c": "Sensing & Compute Hardware",
+  "b": "CVflow SoCs bringing edge-AI vision to lower-power ADAS"
+ },
+ {
+  "n": "Arbe Robotics",
+  "s": "arbe-robotics",
+  "c": "Sensing & Compute Hardware",
+  "b": "Perception-grade 4D imaging radar chipsets for Tier-1 programs"
+ },
+ {
+  "n": "Baraja",
+  "s": "baraja",
+  "c": "Sensing & Compute Hardware",
+  "b": "Spectrum-scan LiDAR from Sydney, engineered against interference"
+ },
+ {
+  "n": "Black Sesame Technologies",
+  "s": "black-sesame-technologies",
+  "c": "Sensing & Compute Hardware",
+  "b": "HK-listed SoC maker in China's domestic ADAS compute push"
+ },
+ {
+  "n": "Cepton",
+  "s": "cepton",
+  "c": "Sensing & Compute Hardware",
+  "b": "Long-range ADAS LiDAR now sold through Koito's Tier-1 channel"
+ },
+ {
+  "n": "Hesai",
+  "s": "hesai",
+  "c": "Sensing & Compute Hardware",
+  "b": "EXT color-detecting LiDAR heading to 2026 mass production"
+ },
+ {
+  "n": "Hexagon | NovAtel",
+  "s": "hexagon-novatel",
+  "c": "Sensing & Compute Hardware",
+  "b": "Reference-grade GNSS/INS for AV development and test fleets"
+ },
+ {
+  "n": "Infineon Technologies",
+  "s": "infineon-technologies",
+  "c": "Sensing & Compute Hardware",
+  "b": "Radar chips and safety MCUs inside zonal ADAS architectures"
+ },
+ {
+  "n": "Innoviz",
+  "s": "innoviz",
+  "c": "Sensing & Compute Hardware",
+  "b": "MEMS LiDAR carrying BMW and Volkswagen series nominations"
+ },
+ {
+  "n": "LeddarTech",
+  "s": "leddartech",
+  "c": "Sensing & Compute Hardware",
+  "b": "Low-level sensor-fusion software grown from LiDAR roots"
+ },
+ {
+  "n": "Livox",
+  "s": "livox",
+  "c": "Sensing & Compute Hardware",
+  "b": "DJI-linked LiDAR putting low-cost sensing in developer hands"
+ },
+ {
+  "n": "Luminar",
+  "s": "luminar",
+  "c": "Sensing & Compute Hardware",
+  "b": "Long-range LiDAR that reached production on the Volvo EX90",
+  "x": 1
+ },
+ {
+  "n": "MicroVision",
+  "s": "microvision",
+  "c": "Sensing & Compute Hardware",
+  "b": "Consolidator holding Ibeo and Luminar LiDAR portfolios"
+ },
+ {
+  "n": "NXP Semiconductors",
+  "s": "nxp-semiconductors",
+  "c": "Sensing & Compute Hardware",
+  "b": "Radar processors plus secure in-vehicle networking silicon"
+ },
+ {
+  "n": "OmniVision",
+  "s": "omnivision",
+  "c": "Sensing & Compute Hardware",
+  "b": "HDR image sensors inside Tier-1 automotive camera modules"
+ },
+ {
+  "n": "Onsemi",
+  "s": "onsemi",
+  "c": "Sensing & Compute Hardware",
+  "b": "Cameras & vision sensors; Radar (incl. 4D imaging)"
+ },
+ {
+  "n": "Ouster",
+  "s": "ouster",
+  "c": "Sensing & Compute Hardware",
+  "b": "Digital LiDAR at $49M quarterly revenue, 12,600+ sensors shipped"
+ },
+ {
+  "n": "Point One Navigation",
+  "s": "point-one-navigation",
+  "c": "Sensing & Compute Hardware",
+  "b": "Polaris RTK corrections, now paired with STMicroelectronics"
+ },
+ {
+  "n": "Qualcomm Automotive",
+  "s": "qualcomm-automotive",
+  "c": "Sensing & Compute Hardware",
+  "b": "Snapdragon Ride uniting cockpit, connectivity and ADAS compute"
+ },
+ {
+  "n": "Renesas Electronics",
+  "s": "renesas-electronics",
+  "c": "Sensing & Compute Hardware",
+  "b": "R-Car SoCs, the Japanese mainstay of ADAS and vehicle compute"
+ },
+ {
+  "n": "Rivian Autonomy Platform",
+  "s": "rivian-autonomy-platform",
+  "c": "Sensing & Compute Hardware",
+  "b": "Custom self-driving chip powering the Autonomy+ package"
+ },
+ {
+  "n": "RoboSense",
+  "s": "robosense",
+  "c": "Sensing & Compute Hardware",
+  "b": "LiDAR design wins across 177 models from 36 OEMs"
+ },
+ {
+  "n": "SBG Systems",
+  "s": "sbg-systems",
+  "c": "Sensing & Compute Hardware",
+  "b": "French INS and IMU supplier for ground truth and localization"
+ },
+ {
+  "n": "Septentrio",
+  "s": "septentrio",
+  "c": "Sensing & Compute Hardware",
+  "b": "Leuven-built high-precision GNSS joining Hexagon's portfolio"
+ },
+ {
+  "n": "Seyond",
+  "s": "seyond",
+  "c": "Sensing & Compute Hardware",
+  "b": "Past 1M LiDAR deliveries with shipments up 385% year over year"
+ },
+ {
+  "n": "Sony Semiconductor Solutions",
+  "s": "sony-semiconductor-solutions",
+  "c": "Sensing & Compute Hardware",
+  "b": "Image sensor leader planning a TSMC Japan JV for physical AI"
+ },
+ {
+  "n": "Swift Navigation",
+  "s": "swift-navigation",
+  "c": "Sensing & Compute Hardware",
+  "b": "Skylark corrections pushing lane-level GNSS to mass-market cars"
+ },
+ {
+  "n": "Tesla AI Hardware",
+  "s": "tesla-ai-hardware",
+  "c": "Sensing & Compute Hardware",
+  "b": "In-house FSD computers behind a camera-first autonomy path"
+ },
+ {
+  "n": "Texas Instruments",
+  "s": "texas-instruments",
+  "c": "Sensing & Compute Hardware",
+  "b": "Jacinto compute and mmWave radar for cost-down ADAS stacks"
+ },
+ {
+  "n": "Trimble Applanix",
+  "s": "trimble-applanix",
+  "c": "Sensing & Compute Hardware",
+  "b": "Position-and-orientation systems standard in mobile mapping"
+ },
+ {
+  "n": "u-blox",
+  "s": "u-blox",
+  "c": "Sensing & Compute Hardware",
+  "b": "Swiss GNSS modules shipping across automotive and IoT at volume"
+ },
+ {
+  "n": "Uhnder",
+  "s": "uhnder",
+  "c": "Sensing & Compute Hardware",
+  "b": "Digital 4D imaging radar for LiDAR-like redundancy at radar cost"
+ },
+ {
+  "n": "NVIDIA",
+  "s": "nvidia",
+  "c": "Sensing & Compute Hardware",
+  "b": "DRIVE Thor ramping beneath Waabi, Nuro, WeRide and Pony stacks"
+ },
+ {
+  "n": "Qualcomm Snapdragon Ride",
+  "s": "qualcomm-snapdragon-ride",
+  "c": "Sensing & Compute Hardware",
+  "b": "Compute / SoC / AI chips; V2X & connectivity"
+ },
+ {
+  "n": "Quanergy Systems",
+  "s": "quanergy-systems",
+  "c": "Sensing & Compute Hardware",
+  "b": "Solid-state LiDAR SPAC re-emerged as industrial Quanergy Solutions",
+  "x": 1
+ },
+ {
+  "n": "Velodyne Lidar",
+  "s": "velodyne-lidar",
+  "c": "Sensing & Compute Hardware",
+  "b": "Spinning LiDAR pioneer whose line lives on inside Ouster",
+  "x": 1
+ },
+ {
+  "n": "ZF Friedrichshafen",
+  "s": "zf-friedrichshafen",
+  "c": "Sensing & Compute Hardware",
+  "b": "Tier-1 ADAS portfolio moving to Harman in a EUR1.5B deal"
+ },
+ {
+  "n": "aiMotive",
+  "s": "aimotive",
+  "c": "Data, Maps & Simulation",
+  "b": "Stellantis-owned AD stack with an LOI pointing to Qualcomm"
+ },
+ {
+  "n": "aiMotive aiSim",
+  "s": "aimotive-aisim",
+  "c": "Data, Maps & Simulation",
+  "b": "aiSim simulation paired with aiDrive and aiWare acceleration"
+ },
+ {
+  "n": "Ansys AVxcelerate / AV Simulation",
+  "s": "ansys-avxcelerate-av-simulation",
+  "c": "Data, Maps & Simulation",
+  "b": "Physics-grade sensor simulation for virtual safety validation"
+ },
+ {
+  "n": "Appen",
+  "s": "appen",
+  "c": "Data, Maps & Simulation",
+  "b": "Crowd-powered annotation spanning speech, text and vision"
+ },
+ {
+  "n": "Applus+ IDIADA",
+  "s": "applus-idiada",
+  "c": "Data, Maps & Simulation",
+  "b": "Tarragona proving ground plus global ADAS homologation support"
+ },
+ {
+  "n": "Baidu Apollo HD Map / Baidu Maps",
+  "s": "baidu-apollo-hd-map-baidu-maps",
+  "c": "Data, Maps & Simulation",
+  "b": "HD map backbone feeding Apollo Go's operating cities"
+ },
+ {
+  "n": "CARLA",
+  "s": "carla",
+  "c": "Data, Maps & Simulation",
+  "b": "Open-source baseline simulator for AV research worldwide"
+ },
+ {
+  "n": "CloudFactory",
+  "s": "cloudfactory",
+  "c": "Data, Maps & Simulation",
+  "b": "Managed annotation teams staffed from Nepal to the UK"
+ },
+ {
+  "n": "Cognata",
+  "s": "cognata",
+  "c": "Data, Maps & Simulation",
+  "b": "Rehovot-built sim spanning sensors, traffic agents and scenarios"
+ },
+ {
+  "n": "CVAT.ai",
+  "s": "cvat-ai",
+  "c": "Data, Maps & Simulation",
+  "b": "Open-source video annotation for self-managed labeling teams"
+ },
+ {
+  "n": "Deepen AI",
+  "s": "deepen-ai",
+  "c": "Data, Maps & Simulation",
+  "b": "Sensor calibration plus 3D LiDAR annotation in one toolchain"
+ },
+ {
+  "n": "DeepMap",
+  "s": "deepmap",
+  "c": "Data, Maps & Simulation",
+  "b": "HD localization startup absorbed into NVIDIA DRIVE in 2021",
+  "x": 1
+ },
+ {
+  "n": "DEKRA",
+  "s": "dekra",
+  "c": "Data, Maps & Simulation",
+  "b": "European TIC incumbent for vehicle testing and type-approval"
+ },
+ {
+  "n": "dSPACE ASM / AURELION",
+  "s": "dspace-asm-aurelion",
+  "c": "Data, Maps & Simulation",
+  "b": "ASM vehicle models plus AURELION sensor-realistic rendering"
+ },
+ {
+  "n": "Dynamic Map Platform",
+  "s": "dynamic-map-platform",
+  "c": "Data, Maps & Simulation",
+  "b": "Japan's consortium-style HD map funded by domestic automakers"
+ },
+ {
+  "n": "exida",
+  "s": "exida",
+  "c": "Data, Maps & Simulation",
+  "b": "ISO 26262 and SOTIF certification for safety-critical stacks"
+ },
+ {
+  "n": "HERE Technologies",
+  "s": "here-technologies",
+  "c": "Data, Maps & Simulation",
+  "b": "HD Live Map inside Mercedes-Benz DRIVE PILOT and Personal Pilot"
+ },
+ {
+  "n": "Hexagon VIRES Virtual Test Drive",
+  "s": "hexagon-vires-virtual-test-drive",
+  "c": "Data, Maps & Simulation",
+  "b": "Virtual Test Drive scenarios aligned to ASAM OpenSCENARIO"
+ },
+ {
+  "n": "HORIBA MIRA",
+  "s": "horiba-mira",
+  "c": "Data, Maps & Simulation",
+  "b": "Nuneaton proving ground anchoring UK CAV test programs"
+ },
+ {
+  "n": "HumanSignal / Label Studio",
+  "s": "humansignal-label-studio",
+  "c": "Data, Maps & Simulation",
+  "b": "Label Studio, open-source labeling from vision to multimodal"
+ },
+ {
+  "n": "iMerit",
+  "s": "imerit",
+  "c": "Data, Maps & Simulation",
+  "b": "Edge-case LiDAR and video labeling by managed expert teams"
+ },
+ {
+  "n": "Intertek",
+  "s": "intertek",
+  "c": "Data, Maps & Simulation",
+  "b": "Global TIC network for AV hardware and vehicle compliance"
+ },
+ {
+  "n": "IPG Automotive",
+  "s": "ipg-automotive",
+  "c": "Data, Maps & Simulation",
+  "b": "CarMaker at the core of closed-loop virtual vehicle testing"
+ },
+ {
+  "n": "Kognic",
+  "s": "kognic",
+  "c": "Data, Maps & Simulation",
+  "b": "Multi-sensor annotation trusted by BMW, Bosch and Qualcomm"
+ },
+ {
+  "n": "Labelbox",
+  "s": "labelbox",
+  "c": "Data, Maps & Simulation",
+  "b": "Data factory uniting labeling, curation and model evaluation"
+ },
+ {
+  "n": "Mapbox",
+  "s": "mapbox",
+  "c": "Data, Maps & Simulation",
+  "b": "Developer-first maps powering fleet and mobility interfaces"
+ },
+ {
+  "n": "MathWorks",
+  "s": "mathworks",
+  "c": "Data, Maps & Simulation",
+  "b": "RoadRunner and Simulink beneath model-based AV development"
+ },
+ {
+  "n": "Mobileye REM / RoadBook",
+  "s": "mobileye-rem-roadbook",
+  "c": "Data, Maps & Simulation",
+  "b": "Crowdsourced RoadBook maps drawn from production ADAS cars"
+ },
+ {
+  "n": "MORAI",
+  "s": "morai",
+  "c": "Data, Maps & Simulation",
+  "b": "MORAI SIM digital twins in a dSPACE validation partnership"
+ },
+ {
+  "n": "NavInfo",
+  "s": "navinfo",
+  "c": "Data, Maps & Simulation",
+  "b": "Official-grade HD map licenses inside China's geodata regime"
+ },
+ {
+  "n": "NVIDIA DeepMap",
+  "s": "nvidia-deepmap",
+  "c": "Data, Maps & Simulation",
+  "b": "Mapping tech now shipped as a DRIVE platform capability",
+  "x": 1
+ },
+ {
+  "n": "NVIDIA DRIVE Sim / Omniverse / Cosmos",
+  "s": "nvidia-drive-sim-omniverse-cosmos",
+  "c": "Data, Maps & Simulation",
+  "b": "Cosmos world models driving generative closed-loop simulation"
+ },
+ {
+  "n": "Parallel Domain",
+  "s": "parallel-domain",
+  "c": "Data, Maps & Simulation",
+  "b": "Controllable synthetic sensor data for rare-event perception"
+ },
+ {
+  "n": "rFpro",
+  "s": "rfpro",
+  "c": "Data, Maps & Simulation",
+  "b": "Motorsport-grade simulation now shipping AV elevate for ADAS"
+ },
+ {
+  "n": "Sama",
+  "s": "sama",
+  "c": "Data, Maps & Simulation",
+  "b": "Image, video and LiDAR annotation from Africa-first delivery hubs"
+ },
+ {
+  "n": "Sanborn Map Company",
+  "s": "sanborn-map-company",
+  "c": "Data, Maps & Simulation",
+  "b": "Legacy geospatial house for AV map collection and city basemaps"
+ },
+ {
+  "n": "Scale AI",
+  "s": "scale-ai",
+  "c": "Data, Maps & Simulation",
+  "b": "AV perception labeling roots, expanded by Meta's $14.3B stake"
+ },
+ {
+  "n": "SuperAnnotate",
+  "s": "superannotate",
+  "c": "Data, Maps & Simulation",
+  "b": "Software-first labeling pipelines for CV and multimodal data"
+ },
+ {
+  "n": "Telenav",
+  "s": "telenav",
+  "c": "Data, Maps & Simulation",
+  "b": "OEM navigation software with a long connected-car lineage"
+ },
+ {
+  "n": "TELUS Digital AI / Playment",
+  "s": "telus-digital-ai-playment",
+  "c": "Data, Maps & Simulation",
+  "b": "Playment annotation platform inside TELUS Digital's AI arm"
+ },
+ {
+  "n": "TomTom",
+  "s": "tomtom",
+  "c": "Data, Maps & Simulation",
+  "b": "Independent map supplier advancing the Orbis Maps platform"
+ },
+ {
+  "n": "TÜV NORD",
+  "s": "tüv-nord",
+  "c": "Data, Maps & Simulation",
+  "b": "Hanover TIC services from functional safety to homologation"
+ },
+ {
+  "n": "TÜV Rheinland",
+  "s": "tüv-rheinland",
+  "c": "Data, Maps & Simulation",
+  "b": "Cologne-based assessor for ADAS validation and cybersecurity"
+ },
+ {
+  "n": "V7 Labs",
+  "s": "v7-labs",
+  "c": "Data, Maps & Simulation",
+  "b": "Automated labeling workflows with dataset QA built in"
+ },
+ {
+  "n": "VSI Labs",
+  "s": "vsi-labs",
+  "c": "Data, Maps & Simulation",
+  "b": "Hands-on independent benchmarking of AV stacks and sensors"
+ },
+ {
+  "n": "Waabi World",
+  "s": "waabi-world",
+  "c": "Data, Maps & Simulation",
+  "b": "Closed-loop mixed-reality sim proving the Waabi Driver"
+ },
+ {
+  "n": "Woven by Toyota",
+  "s": "woven-by-toyota",
+  "c": "Data, Maps & Simulation",
+  "b": "Arene vehicle OS plus the Woven City testbed near Mount Fuji"
+ },
+ {
+  "n": "5G Automotive Association",
+  "s": "5g-automotive-association",
+  "c": "Connectivity & Infrastructure",
+  "b": "Automaker-telecom alliance steering the C-V2X 2030 roadmap"
+ },
+ {
+  "n": "Alibaba Cloud",
+  "s": "alibaba-cloud",
+  "c": "Connectivity & Infrastructure",
+  "b": "Edge cloud and city brain for China's vehicle-road-cloud push"
+ },
+ {
+  "n": "Autocrypt",
+  "s": "autocrypt",
+  "c": "Connectivity & Infrastructure",
+  "b": "V2X PKI and credentialing security from pilot to production fleets"
+ },
+ {
+  "n": "Autotalks",
+  "s": "autotalks",
+  "c": "Connectivity & Infrastructure",
+  "b": "Fabless V2V/V2I chipmaker, now under Qualcomm's roof"
+ },
+ {
+  "n": "AVL",
+  "s": "avl",
+  "c": "Connectivity & Infrastructure",
+  "b": "Powertrain-to-ADAS validation labs behind global OEM programs"
+ },
+ {
+  "n": "Baidu Apollo ACE / Vehicle-Road-Cloud",
+  "s": "baidu-apollo-ace-vehicle-road-cloud",
+  "c": "Connectivity & Infrastructure",
+  "b": "Vehicle-road-cloud backbone beneath China's robotaxi cities"
+ },
+ {
+  "n": "Block Harbor",
+  "s": "block-harbor",
+  "c": "Connectivity & Infrastructure",
+  "b": "Vehicle security engineering and SOC services for US OEMs"
+ },
+ {
+  "n": "C2A Security",
+  "s": "c2a-security",
+  "c": "Connectivity & Infrastructure",
+  "b": "EVSec DevSecOps platform; Daimler Truck enterprise-wide"
+ },
+ {
+  "n": "Cavnue",
+  "s": "cavnue",
+  "c": "Connectivity & Infrastructure",
+  "b": "Roadside, smart-city & digital infrastructure; Curb / PUDO / parking"
+ },
+ {
+  "n": "China Mobile",
+  "s": "china-mobile",
+  "c": "Connectivity & Infrastructure",
+  "b": "Carrier muscle behind China's C-V2X and road-cloud pilots"
+ },
+ {
+  "n": "China TransInfo / Qianfang Technology",
+  "s": "china-transinfo-qianfang-technology",
+  "c": "Connectivity & Infrastructure",
+  "b": "ITS contractor wiring Chinese traffic management at scale"
+ },
+ {
+  "n": "China Unicom",
+  "s": "china-unicom",
+  "c": "Connectivity & Infrastructure",
+  "b": "5G edge and V2X networks across China's AV pilot zones"
+ },
+ {
+  "n": "Cohda Wireless",
+  "s": "cohda-wireless",
+  "c": "Connectivity & Infrastructure",
+  "b": "DSRC and C-V2X radios inside global connected-road trials"
+ },
+ {
+  "n": "Commsignia",
+  "s": "commsignia",
+  "c": "Connectivity & Infrastructure",
+  "b": "Roadside units and V2X stacks for smart-corridor buildouts"
+ },
+ {
+  "n": "Cybellum",
+  "s": "cybellum",
+  "c": "Connectivity & Infrastructure",
+  "b": "SBOM-driven product security, now part of LG Electronics"
+ },
+ {
+  "n": "Derq",
+  "s": "derq",
+  "c": "Connectivity & Infrastructure",
+  "b": "Roadside AI predicting crashes before they happen, Dubai-backed"
+ },
+ {
+  "n": "Designated Driver",
+  "s": "designated-driver",
+  "c": "Connectivity & Infrastructure",
+  "b": "Early mover in remote operations for stuck autonomous fleets"
+ },
+ {
+  "n": "DriveU.auto",
+  "s": "driveu-auto",
+  "c": "Connectivity & Infrastructure",
+  "b": "Low-latency video transport that keeps remote drivers in sync"
+ },
+ {
+  "n": "Econolite",
+  "s": "econolite",
+  "c": "Connectivity & Infrastructure",
+  "b": "Signal controllers in thousands of North American intersections"
+ },
+ {
+  "n": "Ericsson",
+  "s": "ericsson",
+  "c": "Connectivity & Infrastructure",
+  "b": "5GAA founding networks for teleoperation and cooperative driving"
+ },
+ {
+  "n": "ETAS / ESCRYPT",
+  "s": "etas-escrypt",
+  "c": "Connectivity & Infrastructure",
+  "b": "Bosch's embedded software arm with ESCRYPT vehicle security"
+ },
+ {
+  "n": "Fernride",
+  "s": "fernride",
+  "c": "Connectivity & Infrastructure",
+  "b": "Teleoperation-first electric trucking for yards and ports"
+ },
+ {
+  "n": "Fibocom",
+  "s": "fibocom",
+  "c": "Connectivity & Infrastructure",
+  "b": "Cellular modules riding the connected-vehicle supply chain"
+ },
+ {
+  "n": "GridMatrix",
+  "s": "gridmatrix",
+  "c": "Connectivity & Infrastructure",
+  "b": "Street-network analytics for safety, congestion and emissions"
+ },
+ {
+  "n": "GuardKnox",
+  "s": "guardknox",
+  "c": "Connectivity & Infrastructure",
+  "b": "Secure zonal computers for software-defined vehicles"
+ },
+ {
+  "n": "Harman",
+  "s": "harman",
+  "c": "Connectivity & Infrastructure",
+  "b": "Savari V2X software folded into connected-car platforms"
+ },
+ {
+  "n": "Hayden AI",
+  "s": "hayden-ai",
+  "c": "Connectivity & Infrastructure",
+  "b": "Bus-lane and curb enforcement vision cities already run"
+ },
+ {
+  "n": "Huawei",
+  "s": "huawei",
+  "c": "Connectivity & Infrastructure",
+  "b": "China's connectivity heavyweight across vehicle, cloud and road"
+ },
+ {
+  "n": "Imperium Drive / Fetch",
+  "s": "imperium-drive-fetch",
+  "c": "Connectivity & Infrastructure",
+  "b": "Remote-delivered rental cars proving UK teledriving rules"
+ },
+ {
+  "n": "Iteris",
+  "s": "iteris",
+  "c": "Connectivity & Infrastructure",
+  "b": "Traffic detection and road-agency software, now under Almaviva"
+ },
+ {
+  "n": "Kapsch TrafficCom",
+  "s": "kapsch-trafficcom",
+  "c": "Connectivity & Infrastructure",
+  "b": "Tolling and traffic management converging with V2X corridors"
+ },
+ {
+  "n": "Karamba Security",
+  "s": "karamba-security",
+  "c": "Connectivity & Infrastructure",
+  "b": "Runtime ECU protection hardening embedded vehicle code"
+ },
+ {
+  "n": "Miovision",
+  "s": "miovision",
+  "c": "Connectivity & Infrastructure",
+  "b": "Intersection analytics with GenAI signal retiming via Mateo AI"
+ },
+ {
+  "n": "Nokia",
+  "s": "nokia",
+  "c": "Connectivity & Infrastructure",
+  "b": "Private wireless and edge networks for depots and remote ops"
+ },
+ {
+  "n": "NoTraffic",
+  "s": "notraffic",
+  "c": "Connectivity & Infrastructure",
+  "b": "AI signal control digitizing intersections for mixed traffic"
+ },
+ {
+  "n": "Ottopia",
+  "s": "ottopia",
+  "c": "Connectivity & Infrastructure",
+  "b": "Remote assistance software standing behind AV fleets"
+ },
+ {
+  "n": "Ouster BlueCity",
+  "s": "ouster-bluecity",
+  "c": "Connectivity & Infrastructure",
+  "b": "Digital lidar watching intersections instead of vehicles"
+ },
+ {
+  "n": "Phantom Auto",
+  "s": "phantom-auto",
+  "c": "Connectivity & Infrastructure",
+  "b": "Teleoperation pioneer; operations wound down in 2024",
+  "x": 1
+ },
+ {
+  "n": "PlaxidityX (ex-Argus)",
+  "s": "plaxidityx-ex-argus",
+  "c": "Connectivity & Infrastructure",
+  "b": "Embedded auto cyber, ex-Argus, restructuring under Aumovio",
+  "x": 1
+ },
+ {
+  "n": "PlaxidityX / Argus Cyber Security",
+  "s": "plaxidityx-argus-cyber-security",
+  "c": "Connectivity & Infrastructure",
+  "b": "Argus-born intrusion detection guarding connected fleets"
+ },
+ {
+  "n": "Q-Free",
+  "s": "q-free",
+  "c": "Connectivity & Infrastructure",
+  "b": "Tolling-to-ITS platforms readying corridors for autonomy"
+ },
+ {
+  "n": "Qualcomm",
+  "s": "qualcomm",
+  "c": "Connectivity & Infrastructure",
+  "b": "Snapdragon Digital Chassis from modem to Ride SoC"
+ },
+ {
+  "n": "Quectel Wireless",
+  "s": "quectel-wireless",
+  "c": "Connectivity & Infrastructure",
+  "b": "IoT and vehicle modules on compliance watchlists worldwide"
+ },
+ {
+  "n": "Rekor Systems",
+  "s": "rekor-systems",
+  "c": "Connectivity & Infrastructure",
+  "b": "Waycare-powered roadway intelligence for state agencies"
+ },
+ {
+  "n": "SafeRide Technologies",
+  "s": "saferide-technologies",
+  "c": "Connectivity & Infrastructure",
+  "b": "In-vehicle network anomaly detection for fleet SOCs"
+ },
+ {
+  "n": "SWARCO",
+  "s": "swarco",
+  "c": "Connectivity & Infrastructure",
+  "b": "European signals incumbent with a C-ITS upgrade path"
+ },
+ {
+  "n": "Tencent Cloud",
+  "s": "tencent-cloud",
+  "c": "Connectivity & Infrastructure",
+  "b": "Automotive cloud and map services tying China's AV ecosystem"
+ },
+ {
+  "n": "TUV SUD",
+  "s": "tuv-sud",
+  "c": "Connectivity & Infrastructure",
+  "b": "Testing & safety assurance"
+ },
+ {
+  "n": "UL Solutions",
+  "s": "ul-solutions",
+  "c": "Connectivity & Infrastructure",
+  "b": "UL 4600 certification anchoring AV safety cases"
+ },
+ {
+  "n": "Upstream Security",
+  "s": "upstream-security",
+  "c": "Connectivity & Infrastructure",
+  "b": "Cloud SOC monitoring millions of connected vehicles"
+ },
+ {
+  "n": "Valerann",
+  "s": "valerann",
+  "c": "Connectivity & Infrastructure",
+  "b": "Fused road intelligence giving operators a live network view"
+ },
+ {
+  "n": "Vay",
+  "s": "vay",
+  "c": "Connectivity & Infrastructure",
+  "b": "Teledriven rentals: 100-car Kia fleet, 35,000 trips, Grab-backed"
+ },
+ {
+  "n": "Vector Informatik",
+  "s": "vector-informatik",
+  "c": "Connectivity & Infrastructure",
+  "b": "CANoe tooling every vehicle-network engineer knows"
+ },
+ {
+  "n": "VicOne",
+  "s": "vicone",
+  "c": "Connectivity & Infrastructure",
+  "b": "Trend Micro's automotive SOC and vulnerability arm"
+ },
+ {
+  "n": "Yunex Traffic",
+  "s": "yunex-traffic",
+  "c": "Connectivity & Infrastructure",
+  "b": "Siemens-heritage traffic systems in cities worldwide"
+ },
+ {
+  "n": "Aisin",
+  "s": "aisin",
+  "c": "Vehicle Platform & Manufacturing",
+  "b": "Toyota-group actuation and driveline for redundant platforms"
+ },
+ {
+  "n": "Aptiv",
+  "s": "aptiv",
+  "c": "Vehicle Platform & Manufacturing",
+  "b": "Vehicle architecture supplier and Motional co-founder"
+ },
+ {
+  "n": "BAIC Group",
+  "s": "baic-group",
+  "c": "Vehicle Platform & Manufacturing",
+  "b": "State-owned OEM behind Arcfox robotaxi platforms"
+ },
+ {
+  "n": "Baidu Apollo RT6",
+  "s": "baidu-apollo-rt6",
+  "c": "Vehicle Platform & Manufacturing",
+  "b": "Sixth-gen purpose-built robotaxi driving Apollo Go's costs down"
+ },
+ {
+  "n": "Benteler Group",
+  "s": "benteler-group",
+  "c": "Vehicle Platform & Manufacturing",
+  "b": "Contract manufacturing & upfitting; Purpose-built robotaxi/pod makers"
+ },
+ {
+  "n": "Bosch",
+  "s": "bosch",
+  "c": "Vehicle Platform & Manufacturing",
+  "b": "The largest Tier-1, from braking redundancy to ADAS sensors"
+ },
+ {
+  "n": "BYD",
+  "s": "byd",
+  "c": "Vehicle Platform & Manufacturing",
+  "b": "EV scale champion with Momenta-linked autonomy programs"
+ },
+ {
+  "n": "Continental",
+  "s": "continental",
+  "c": "Vehicle Platform & Manufacturing",
+  "b": "Radar; Tier-1 integrators; Cybersecurity via Argus"
+ },
+ {
+  "n": "Daimler Truck",
+  "s": "daimler-truck",
+  "c": "Vehicle Platform & Manufacturing",
+  "b": "Torc parent industrializing L4 Freightliner Cascadias"
+ },
+ {
+  "n": "Daimler Truck / Freightliner",
+  "s": "daimler-truck-freightliner",
+  "c": "Vehicle Platform & Manufacturing",
+  "b": "Autonomous-ready Cascadias built for Torc's driver-out runs"
+ },
+ {
+  "n": "Denso",
+  "s": "denso",
+  "c": "Vehicle Platform & Manufacturing",
+  "b": "Toyota-group electronics scaling automated driving parts"
+ },
+ {
+  "n": "Desay SV",
+  "s": "desay-sv",
+  "c": "Vehicle Platform & Manufacturing",
+  "b": "China's cockpit and driving-domain controller powerhouse"
+ },
+ {
+  "n": "EasyMile",
+  "s": "easymile",
+  "c": "Vehicle Platform & Manufacturing",
+  "b": "Low-speed shuttles proving campus and industrial autonomy"
+ },
+ {
+  "n": "EDAG Group",
+  "s": "edag-group",
+  "c": "Vehicle Platform & Manufacturing",
+  "b": "Engineering house turning AV concepts into road-legal builds"
+ },
+ {
+  "n": "Einride",
+  "s": "einride",
+  "c": "Vehicle Platform & Manufacturing",
+  "b": "Cabless electric freight pods with a Nasdaq listing (ENRD)"
+ },
+ {
+  "n": "Ford",
+  "s": "ford",
+  "c": "Vehicle Platform & Manufacturing",
+  "b": "BlueCruise hands-free today, eyes-off teased for 2028"
+ },
+ {
+  "n": "Forvia",
+  "s": "forvia",
+  "c": "Vehicle Platform & Manufacturing",
+  "b": "Fail-operational by-wire steering clearing the road to L4"
+ },
+ {
+  "n": "Forvia / Hella",
+  "s": "forvia-hella",
+  "c": "Vehicle Platform & Manufacturing",
+  "b": "Lighting and HMI electronics for passenger-facing robotaxis"
+ },
+ {
+  "n": "Foxconn (Foxtron/MIH)",
+  "s": "foxconn-foxtron-mih",
+  "c": "Vehicle Platform & Manufacturing",
+  "b": "MIH open skateboard bringing electronics-grade EV manufacture"
+ },
+ {
+  "n": "Foxconn / Foxtron / MIH",
+  "s": "foxconn-foxtron-mih-c213",
+  "c": "Vehicle Platform & Manufacturing",
+  "b": "Contract EV manufacturing wildcard for AV-ready platforms"
+ },
+ {
+  "n": "GAC Group / GAC Toyota",
+  "s": "gac-group-gac-toyota",
+  "c": "Vehicle Platform & Manufacturing",
+  "b": "Toyota JV capacity behind Pony.ai's mass-market robotaxis"
+ },
+ {
+  "n": "Geely",
+  "s": "geely",
+  "c": "Vehicle Platform & Manufacturing",
+  "b": "OEM AV platform suppliers; Contract manufacturing & upfitting"
+ },
+ {
+  "n": "General Motors",
+  "s": "general-motors",
+  "c": "Vehicle Platform & Manufacturing",
+  "b": "Refocused on personal autonomy after absorbing Cruise",
+  "x": 1
+ },
+ {
+  "n": "Holon",
+  "s": "holon",
+  "c": "Vehicle Platform & Manufacturing",
+  "b": "Benteler-backed people movers with Jacksonville manufacturing"
+ },
+ {
+  "n": "Hyundai Mobis",
+  "s": "hyundai-mobis",
+  "c": "Vehicle Platform & Manufacturing",
+  "b": "In-house modules behind IONIQ robotaxis and PBV lines"
+ },
+ {
+  "n": "Hyundai Motor Group",
+  "s": "hyundai-motor-group",
+  "c": "Vehicle Platform & Manufacturing",
+  "b": "IONIQ 5s for Motional and Waymo — 50,000 committed"
+ },
+ {
+  "n": "Isuzu",
+  "s": "isuzu",
+  "c": "Vehicle Platform & Manufacturing",
+  "b": "Medium-duty truck platforms under Gatik's driverless routes"
+ },
+ {
+  "n": "Iveco Group",
+  "s": "iveco-group",
+  "c": "Vehicle Platform & Manufacturing",
+  "b": "European heavy platforms in Plus-linked trucking programs"
+ },
+ {
+  "n": "Jaguar Land Rover",
+  "s": "jaguar-land-rover",
+  "c": "Vehicle Platform & Manufacturing",
+  "b": "The I-PACE: Waymo's first scaled robotaxi workhorse"
+ },
+ {
+  "n": "Joyson Electronics / Preh",
+  "s": "joyson-electronics-preh",
+  "c": "Vehicle Platform & Manufacturing",
+  "b": "Cockpit and safety electronics from a China-global Tier-1"
+ },
+ {
+  "n": "Kia",
+  "s": "kia",
+  "c": "Vehicle Platform & Manufacturing",
+  "b": "PBV lineup eyeing purpose-built autonomous fleets"
+ },
+ {
+  "n": "Local Motors / Olli",
+  "s": "local-motors-olli",
+  "c": "Vehicle Platform & Manufacturing",
+  "b": "Olli shuttle maker; ceased operations in 2022",
+  "x": 1
+ },
+ {
+  "n": "Lucid",
+  "s": "lucid",
+  "c": "Vehicle Platform & Manufacturing",
+  "b": "Gravity SUVs becoming Uber's Nuro-powered robotaxis"
+ },
+ {
+  "n": "Lucid Motors",
+  "s": "lucid-motors",
+  "c": "Vehicle Platform & Manufacturing",
+  "b": "$500M from Uber and 35,000 Gravity robotaxis committed"
+ },
+ {
+  "n": "Magna",
+  "s": "magna",
+  "c": "Vehicle Platform & Manufacturing",
+  "b": "Tier-1 integrators; Contract manufacturing & upfitting"
+ },
+ {
+  "n": "Magna Steyr",
+  "s": "magna-steyr",
+  "c": "Vehicle Platform & Manufacturing",
+  "b": "Graz contract lines building Xpeng and INEOS vehicles"
+ },
+ {
+  "n": "Mercedes-Benz",
+  "s": "mercedes-benz",
+  "c": "Vehicle Platform & Manufacturing",
+  "b": "Production L3 pioneer with Momenta ties in China"
+ },
+ {
+  "n": "Mobileye",
+  "s": "mobileye",
+  "c": "Vehicle Platform & Manufacturing",
+  "b": "L2+/L3 consumer ADAS stacks; Compute / SoC / AI chips; Cameras & vision sensors"
+ },
+ {
+  "n": "Navya / Gaussin-Macnica Mobility",
+  "s": "navya-gaussin-macnica-mobility",
+  "c": "Vehicle Platform & Manufacturing",
+  "b": "Shuttle pioneer's installed base under Macnica stewardship",
+  "x": 1
+ },
+ {
+  "n": "Neolix",
+  "s": "neolix",
+  "c": "Vehicle Platform & Manufacturing",
+  "b": "16,000+ delivery vehicles across 15 countries"
+ },
+ {
+  "n": "Nissan",
+  "s": "nissan",
+  "c": "Vehicle Platform & Manufacturing",
+  "b": "ProPILOT next-gen on Wayve; Tokyo robotaxi pilot with Uber"
+ },
+ {
+  "n": "Nuro",
+  "s": "nuro",
+  "c": "Vehicle Platform & Manufacturing",
+  "b": "The Nuro Driver, licensed from delivery pods to Lucid SUVs"
+ },
+ {
+  "n": "PACCAR",
+  "s": "paccar",
+  "c": "Vehicle Platform & Manufacturing",
+  "b": "Peterbilt and Kenworth chassis under autonomous freight"
+ },
+ {
+  "n": "PIX Moving",
+  "s": "pix-moving",
+  "c": "Vehicle Platform & Manufacturing",
+  "b": "Modular skateboard pods for custom low-speed autonomy"
+ },
+ {
+  "n": "REE Automotive",
+  "s": "ree-automotive",
+  "c": "Vehicle Platform & Manufacturing",
+  "b": "By-wire corners for AV-ready commercial platforms"
+ },
+ {
+  "n": "REEF / Oxa-enabled vehicle integrators",
+  "s": "reef-oxa-enabled-vehicle-integrators",
+  "c": "Vehicle Platform & Manufacturing",
+  "b": "The quiet upfitters adapting base vehicles for Oxa and Beep"
+ },
+ {
+  "n": "Renault Group",
+  "s": "renault-group",
+  "c": "Vehicle Platform & Manufacturing",
+  "b": "European L4 shuttle pathway with WeRide Robobus programs"
+ },
+ {
+  "n": "Rivian",
+  "s": "rivian",
+  "c": "Vehicle Platform & Manufacturing",
+  "b": "R2 tapped for 10,000 future Uber robotaxis"
+ },
+ {
+  "n": "Roush Industries",
+  "s": "roush-industries",
+  "c": "Vehicle Platform & Manufacturing",
+  "b": "Upfitter turning Kodiak prototypes into fleet trucks"
+ },
+ {
+  "n": "SAIC Motor",
+  "s": "saic-motor",
+  "c": "Vehicle Platform & Manufacturing",
+  "b": "China's densest OEM bridge into Momenta autonomy"
+ },
+ {
+  "n": "Sany Heavy Industry",
+  "s": "sany-heavy-industry",
+  "c": "Vehicle Platform & Manufacturing",
+  "b": "Heavy trucks carrying Pony.ai's China freight autonomy"
+ },
+ {
+  "n": "Stellantis",
+  "s": "stellantis",
+  "c": "Vehicle Platform & Manufacturing",
+  "b": "Wayve-powered STLA AutoDrive path targeting 2028 launches"
+ },
+ {
+  "n": "Tesla",
+  "s": "tesla",
+  "c": "Vehicle Platform & Manufacturing",
+  "b": "Consumer fleet plus in-house autonomy, the Waymo counter-model"
+ },
+ {
+  "n": "Toyota",
+  "s": "toyota",
+  "c": "Vehicle Platform & Manufacturing",
+  "b": "Capital and platforms behind Woven, May Mobility and Pony.ai"
+ },
+ {
+  "n": "Udelv",
+  "s": "udelv",
+  "c": "Vehicle Platform & Manufacturing",
+  "b": "Purpose-built Transporter pods for driverless delivery",
+  "x": 1
+ },
+ {
+  "n": "Valeo",
+  "s": "valeo",
+  "c": "Vehicle Platform & Manufacturing",
+  "b": "Production lidar history plus VW-Mobileye ADAS programs"
+ },
+ {
+  "n": "Elektrobit",
+  "s": "elektrobit",
+  "c": "AV Middleware & Tooling",
+  "b": "EB corbos Linux inside Mobileye Drive's L4 stack"
+ },
+ {
+  "n": "Sonatus",
+  "s": "sonatus",
+  "c": "AV Middleware & Tooling",
+  "b": "SDV software running in 6M+ Hyundai-group vehicles"
+ },
+ {
+  "n": "Tier IV",
+  "s": "tier-iv",
+  "c": "AV Middleware & Tooling",
+  "b": "Autoware's open-source L4 stack, Toyota-reinvested"
+ },
+ {
+  "n": "Volkswagen Group / CARIAD",
+  "s": "volkswagen-group-cariad",
+  "c": "Vehicle Platform & Manufacturing",
+  "b": "ID.Buzz robotaxis on Uber in LA through MOIA"
+ },
+ {
+  "n": "Volvo Autonomous Solutions",
+  "s": "volvo-autonomous-solutions",
+  "c": "Vehicle Platform & Manufacturing",
+  "b": "VNL Autonomous factory-built for Waabi's driver-out path"
+ },
+ {
+  "n": "Volvo Cars",
+  "s": "volvo-cars",
+  "c": "Vehicle Platform & Manufacturing",
+  "b": "Baidu JV EVs and NVIDIA DRIVE inside consumer Volvos"
+ },
+ {
+  "n": "Volvo Group (Trucks)",
+  "s": "volvo-group-trucks",
+  "c": "Vehicle Platform & Manufacturing",
+  "b": "Aurora-driven VNLs running Dallas-Oklahoma City daily"
+ },
+ {
+  "n": "Volvo Trucks / Volvo Autonomous Solutions",
+  "s": "volvo-trucks-volvo-autonomous-solutions",
+  "c": "Vehicle Platform & Manufacturing",
+  "b": "Redundant Class 8 platforms for Aurora and Waabi freight"
+ },
+ {
+  "n": "Yutong Bus",
+  "s": "yutong-bus",
+  "c": "Vehicle Platform & Manufacturing",
+  "b": "Bus-scale manufacturing behind WeRide's Robobus fleets"
+ },
+ {
+  "n": "Zeekr",
+  "s": "zeekr",
+  "c": "Vehicle Platform & Manufacturing",
+  "b": "Geely EVs carrying Waymo's sixth-generation Driver"
+ },
+ {
+  "n": "ZF",
+  "s": "zf",
+  "c": "Vehicle Platform & Manufacturing",
+  "b": "Braking and steering redundancy coupled to perception"
+ },
+ {
+  "n": "Zoox",
+  "s": "zoox",
+  "c": "Vehicle Platform & Manufacturing",
+  "b": "Robotaxi & passenger L4; Purpose-built robotaxi/pod makers; Robotaxi consumer se"
+ },
+ {
+  "n": "Apollo Go",
+  "s": "apollo-go",
+  "c": "Demand & Commercial Platforms",
+  "b": "China's most visible robotaxi brand, now driverless in Dubai"
+ },
+ {
+  "n": "Aurora Horizon",
+  "s": "aurora-horizon",
+  "c": "Demand & Commercial Platforms",
+  "b": "Carrier-facing product selling Aurora's driverless miles"
+ },
+ {
+  "n": "AutoX Robotaxi",
+  "s": "autox-robotaxi",
+  "c": "Demand & Commercial Platforms",
+  "b": "Shenzhen robotaxi era that seeded today's Tensor"
+ },
+ {
+  "n": "Avride Robotaxi",
+  "s": "avride-robotaxi",
+  "c": "Demand & Commercial Platforms",
+  "b": "Dallas robotaxis and sidewalk bots on the Uber network"
+ },
+ {
+  "n": "Beep",
+  "s": "beep",
+  "c": "Demand & Commercial Platforms",
+  "b": "Managed autonomous shuttles for campuses and communities"
+ },
+ {
+  "n": "Bolt",
+  "s": "bolt",
+  "c": "Demand & Commercial Platforms",
+  "b": "Europe-to-Africa ridehail watching for AV supply"
+ },
+ {
+  "n": "CaoCao Mobility",
+  "s": "caocao-mobility",
+  "c": "Demand & Commercial Platforms",
+  "b": "Geely's ridehail arm with a robotaxi platform pitch"
+ },
+ {
+  "n": "Careem",
+  "s": "careem",
+  "c": "Demand & Commercial Platforms",
+  "b": "Uber-owned MENA super-app holding Gulf AV distribution optionality"
+ },
+ {
+  "n": "Cartken",
+  "s": "cartken",
+  "c": "Demand & Commercial Platforms",
+  "b": "Mitsubishi Electric affiliate ordered ~100 Hauler sidewalk robots"
+ },
+ {
+  "n": "Coco Robotics",
+  "s": "coco-robotics",
+  "c": "Demand & Commercial Platforms",
+  "b": "$80M raised to scale sidewalk delivery toward 10,000 vehicles"
+ },
+ {
+  "n": "ComfortDelGro Zig",
+  "s": "comfortdelgro-zig",
+  "c": "Demand & Commercial Platforms",
+  "b": "Singapore taxi incumbent tied to Pony.ai's Punggol shuttles"
+ },
+ {
+  "n": "Curb",
+  "s": "curb",
+  "c": "Demand & Commercial Platforms",
+  "b": "Taxi e-hail and payments as a legacy bridge into AV dispatch"
+ },
+ {
+  "n": "DiDi",
+  "s": "didi",
+  "c": "Demand & Commercial Platforms",
+  "b": "China ride-hailing leader with DiMA LLM assistant research"
+ },
+ {
+  "n": "DoorDash",
+  "s": "doordash",
+  "c": "Demand & Commercial Platforms",
+  "b": "Delivery marketplace building Dot while partnering with Serve"
+ },
+ {
+  "n": "DoorDash Dot",
+  "s": "doordash-dot",
+  "c": "Demand & Commercial Platforms",
+  "b": "30 lb in-house robot with hundreds of Phoenix test deliveries"
+ },
+ {
+  "n": "Flexport",
+  "s": "flexport",
+  "c": "Demand & Commercial Platforms",
+  "b": "Digital freight forwarder on the autonomous trucking watchlist"
+ },
+ {
+  "n": "FREE NOW",
+  "s": "free-now",
+  "c": "Demand & Commercial Platforms",
+  "b": "European multimodal ridehail rooted in taxi-heavy markets"
+ },
+ {
+  "n": "Gatik Commercial Network",
+  "s": "gatik-commercial-network",
+  "c": "Demand & Commercial Platforms",
+  "b": "Middle-mile autonomy hauling for Loblaw, Walmart, Kroger, Tyson"
+ },
+ {
+  "n": "Geotab",
+  "s": "geotab",
+  "c": "Demand & Commercial Platforms",
+  "b": "Oakville telematics at scale for mixed human-AV fleet data"
+ },
+ {
+  "n": "GO Inc.",
+  "s": "go-inc",
+  "c": "Demand & Commercial Platforms",
+  "b": "Japan taxi app partnering on Waymo's Tokyo preparatory tests"
+ },
+ {
+  "n": "Grab",
+  "s": "grab",
+  "c": "Demand & Commercial Platforms",
+  "b": "Southeast Asia superapp operating WeRide shuttles in Singapore"
+ },
+ {
+  "n": "HERE Marketplace / Location Services",
+  "s": "here-marketplace-location-services",
+  "c": "Demand & Commercial Platforms",
+  "b": "OEM-backed map platform licensing location APIs to mobility"
+ },
+ {
+  "n": "Instacart",
+  "s": "instacart",
+  "c": "Demand & Commercial Platforms",
+  "b": "Grocery delivery marketplace adjacent to autonomous last mile"
+ },
+ {
+  "n": "Kakao T",
+  "s": "kakao-t",
+  "c": "Demand & Commercial Platforms",
+  "b": "South Korean mobility app and potential robotaxi channel"
+ },
+ {
+  "n": "Kodiak Commercial Network",
+  "s": "kodiak-commercial-network",
+  "c": "Demand & Commercial Platforms",
+  "b": "Autonomous trucking with a modular retrofit hardware model"
+ },
+ {
+  "n": "Lyft",
+  "s": "lyft",
+  "c": "Demand & Commercial Platforms",
+  "b": "Ridehail & demand aggregation; Robotaxi consumer services"
+ },
+ {
+  "n": "May Mobility Service",
+  "s": "may-mobility-service",
+  "c": "Demand & Commercial Platforms",
+  "b": "Driver-out shuttle service expanding to Lyft riders in Atlanta"
+ },
+ {
+  "n": "McLane Company",
+  "s": "mclane-company",
+  "c": "Demand & Commercial Platforms",
+  "b": "Berkshire distributor with driverless Aurora Dallas-Houston hauls"
+ },
+ {
+  "n": "Mobileye Drive",
+  "s": "mobileye-drive",
+  "c": "Demand & Commercial Platforms",
+  "b": "Turnkey AV driver licensed to OEMs and transit operators"
+ },
+ {
+  "n": "Moovit",
+  "s": "moovit",
+  "c": "Demand & Commercial Platforms",
+  "b": "Intel-owned transit app poised to route Mobileye Drive trips"
+ },
+ {
+  "n": "Nexar",
+  "s": "nexar",
+  "c": "Demand & Commercial Platforms",
+  "b": "Dashcam fleet monetizing real-time road perception for AV maps"
+ },
+ {
+  "n": "Nuro Delivery",
+  "s": "nuro-delivery",
+  "c": "Demand & Commercial Platforms",
+  "b": "Delivery pilots spanning Kroger, 7-Eleven and Uber Eats",
+  "x": 1
+ },
+ {
+  "n": "Nuro Driver",
+  "s": "nuro-driver",
+  "c": "Demand & Commercial Platforms",
+  "b": "Licensed autonomy anchoring Uber and Lucid's robotaxi plans"
+ },
+ {
+  "n": "NVIDIA DRIVE / Halos",
+  "s": "nvidia-drive-halos",
+  "c": "Demand & Commercial Platforms",
+  "b": "Compute, simulation and safety platform across AV supply chains"
+ },
+ {
+  "n": "Obi",
+  "s": "obi",
+  "c": "Demand & Commercial Platforms",
+  "b": "Ride-price comparison & metasearch"
+ },
+ {
+  "n": "PonyPilot / Pony.ai Robotaxi",
+  "s": "ponypilot-pony-ai-robotaxi",
+  "c": "Demand & Commercial Platforms",
+  "b": "Robotaxi service across China posting Q1 2026 revenue growth"
+ },
+ {
+  "n": "Ridecell",
+  "s": "ridecell",
+  "c": "Demand & Commercial Platforms",
+  "b": "Fleet automation platform for dispatch and maintenance workflows"
+ },
+ {
+  "n": "Ruqi Mobility",
+  "s": "ruqi-mobility",
+  "c": "Demand & Commercial Platforms",
+  "b": "GAC-affiliated ridehail channel for Greater Bay Area robotaxis"
+ },
+ {
+  "n": "Samsara",
+  "s": "samsara",
+  "c": "Demand & Commercial Platforms",
+  "b": "Connected-ops telemetry feeding underwriting for hybrid fleets"
+ },
+ {
+  "n": "T3 Go",
+  "s": "t3-go",
+  "c": "Demand & Commercial Platforms",
+  "b": "Chinese ride-hailing platform backed by major automakers"
+ },
+ {
+  "n": "Tactile Mobility",
+  "s": "tactile-mobility",
+  "c": "Demand & Commercial Platforms",
+  "b": "Virtual sensing selling road-friction data for ODD decisions"
+ },
+ {
+  "n": "Tesla Robotaxi",
+  "s": "tesla-robotaxi",
+  "c": "Demand & Commercial Platforms",
+  "b": "FSD-powered ridehail active in Austin and Miami"
+ },
+ {
+  "n": "TomTom Orbis / Maps APIs",
+  "s": "tomtom-orbis-maps-apis",
+  "c": "Demand & Commercial Platforms",
+  "b": "Orbis maps and traffic APIs for robotaxi routing and ETAs"
+ },
+ {
+  "n": "Uber",
+  "s": "uber",
+  "c": "Demand & Commercial Platforms",
+  "b": "Ridehail & demand aggregation; Robotaxi consumer services; Goods delivery & frei"
+ },
+ {
+  "n": "Uber Eats",
+  "s": "uber-eats",
+  "c": "Demand & Commercial Platforms",
+  "b": "Delivery arm piloting Serve, Cartken and Nuro robot couriers"
+ },
+ {
+  "n": "Uber Freight",
+  "s": "uber-freight",
+  "c": "Demand & Commercial Platforms",
+  "b": "Chicago brokerage positioned to route autonomous truck demand"
+ },
+ {
+  "n": "Waabi Driver Commercial Network",
+  "s": "waabi-driver-commercial-network",
+  "c": "Demand & Commercial Platforms",
+  "b": "AI-first trucking autonomy commercialized with Volvo partnership"
+ },
+ {
+  "n": "Waymo One",
+  "s": "waymo-one",
+  "c": "Demand & Commercial Platforms",
+  "b": "Benchmark robotaxi with hundreds of thousands of paid weekly rides"
+ },
+ {
+  "n": "Wayve AI Driver",
+  "s": "wayve-ai-driver",
+  "c": "Demand & Commercial Platforms",
+  "b": "$2.8B-funded map-light AV driver tied to Stellantis and Uber"
+ },
+ {
+  "n": "WeRide Go / WeRide Robotaxi",
+  "s": "weride-go-weride-robotaxi",
+  "c": "Demand & Commercial Platforms",
+  "b": "Driverless Uber rides in Abu Dhabi and 100+ Middle East robotaxis"
+ },
+ {
+  "n": "Werner Enterprises",
+  "s": "werner-enterprises",
+  "c": "Demand & Commercial Platforms",
+  "b": "Omaha carrier stretching Aurora pilots onto Fort Worth-Phoenix"
+ },
+ {
+  "n": "Ampcontrol",
+  "s": "ampcontrol",
+  "c": "Fleet Operations & Depot",
+  "b": "Charge-scheduling software that minimizes depot downtime"
+ },
+ {
+  "n": "Anyline",
+  "s": "anyline",
+  "c": "Fleet Operations & Depot",
+  "b": "Vienna data-capture scanning tire sidewalls for fleet checks"
+ },
+ {
+  "n": "Autofleet",
+  "s": "autofleet",
+  "c": "Fleet Operations & Depot",
+  "b": "Tel Aviv rebalancing and utilization engine for shared fleets"
+ },
+ {
+  "n": "Autolane",
+  "s": "autolane",
+  "c": "Fleet Operations & Depot",
+  "b": "Curb, PUDO & parking"
+ },
+ {
+  "n": "Automotus",
+  "s": "automotus",
+  "c": "Fleet Operations & Depot",
+  "b": "Curb cameras credited with cutting Pittsburgh double parking"
+ },
+ {
+  "n": "Avis Budget Group",
+  "s": "avis-budget-group",
+  "c": "Fleet Operations & Depot",
+  "b": "Rental incumbent with a multi-year Waymo Dallas fleet-ops deal",
+  "x": 1
+ },
+ {
+  "n": "Avomo",
+  "s": "avomo",
+  "c": "Fleet Operations & Depot",
+  "b": "Runs 400+ Waymo-Uber vehicles across Austin and Atlanta"
+ },
+ {
+  "n": "bp pulse",
+  "s": "bp-pulse",
+  "c": "Fleet Operations & Depot",
+  "b": "Energy major's charging arm built for high-utilization fleets"
+ },
+ {
+  "n": "ChargePoint",
+  "s": "chargepoint",
+  "c": "Fleet Operations & Depot",
+  "b": "Installed charging base repositioned as AV depot infrastructure"
+ },
+ {
+  "n": "Coord",
+  "s": "coord",
+  "c": "Fleet Operations & Depot",
+  "b": "Curb data platform born out of Sidewalk Labs' city work",
+  "x": 1
+ },
+ {
+  "n": "Cox Automotive",
+  "s": "cox-automotive",
+  "c": "Fleet Operations & Depot",
+  "b": "Cleaning, maintenance & inspection; Fleet management & MaaS operations"
+ },
+ {
+  "n": "Electra",
+  "s": "electra",
+  "c": "Fleet Operations & Depot",
+  "b": "Named in Uber's Paris and Madrid AV utilization-guarantee deals"
+ },
+ {
+  "n": "Electrify America",
+  "s": "electrify-america",
+  "c": "Fleet Operations & Depot",
+  "b": "National fast-charging backbone across US and Canadian sites"
+ },
+ {
+  "n": "Element Fleet Management",
+  "s": "element-fleet-management",
+  "c": "Fleet Operations & Depot",
+  "b": "Toronto lessor announcing a Waymo San Diego pact in June 2026"
+ },
+ {
+  "n": "Enterprise Fleet Management",
+  "s": "enterprise-fleet-management",
+  "c": "Fleet Operations & Depot",
+  "b": "St. Louis fleet group whose branch density suits AV servicing"
+ },
+ {
+  "n": "EO Charging",
+  "s": "eo-charging",
+  "c": "Fleet Operations & Depot",
+  "b": "UK charging specialist with deep commercial-van fleet roots",
+  "x": 1
+ },
+ {
+  "n": "EVgo",
+  "s": "evgo",
+  "c": "Fleet Operations & Depot",
+  "b": "Uber charging pact spurring depots in NY, LA, SF and Boston"
+ },
+ {
+  "n": "Fleetio",
+  "s": "fleetio",
+  "c": "Fleet Operations & Depot",
+  "b": "Work orders, inspections and cost tracking for depot fleets"
+ },
+ {
+  "n": "Flexdrive",
+  "s": "flexdrive",
+  "c": "Fleet Operations & Depot",
+  "b": "Launched Waymo Nashville depot operations in April 2026"
+ },
+ {
+  "n": "Flowbird",
+  "s": "flowbird",
+  "c": "Fleet Operations & Depot",
+  "b": "Meters and payment systems across global municipal parking"
+ },
+ {
+  "n": "Forum Mobility",
+  "s": "forum-mobility",
+  "c": "Fleet Operations & Depot",
+  "b": "Charging depots and trucks-as-a-service for drayage fleets"
+ },
+ {
+  "n": "Greenlane",
+  "s": "greenlane",
+  "c": "Fleet Operations & Depot",
+  "b": "JV with OEM and utility backing for truck corridor charging"
+ },
+ {
+  "n": "Heliox",
+  "s": "heliox",
+  "c": "Fleet Operations & Depot",
+  "b": "Siemens-owned depot charging for e-buses and heavy fleets"
+ },
+ {
+  "n": "Hertz",
+  "s": "hertz",
+  "c": "Fleet Operations & Depot",
+  "b": "Expanding UVeye inspection scanners to 100+ US airports"
+ },
+ {
+  "n": "Hubber",
+  "s": "hubber",
+  "c": "Fleet Operations & Depot",
+  "b": "London-market charger named in Uber's AV charging strategy"
+ },
+ {
+  "n": "InductEV",
+  "s": "inductev",
+  "c": "Fleet Operations & Depot",
+  "b": "Inductive pads charging transit fleets without plug labor"
+ },
+ {
+  "n": "Ionity",
+  "s": "ionity",
+  "c": "Fleet Operations & Depot",
+  "b": "Automaker-owned high-power charging across European highways"
+ },
+ {
+  "n": "Kempower",
+  "s": "kempower",
+  "c": "Fleet Operations & Depot",
+  "b": "Modular DC fast-charging hardware from Lahti, Finland"
+ },
+ {
+  "n": "Keolis",
+  "s": "keolis",
+  "c": "Fleet Operations & Depot",
+  "b": "Global transit operator with autonomous shuttle deployments"
+ },
+ {
+  "n": "Lacuna Technologies",
+  "s": "lacuna-technologies",
+  "c": "Fleet Operations & Depot",
+  "b": "Open mobility data and digital policy tooling for cities",
+  "x": 1
+ },
+ {
+  "n": "Lyft Flexdrive",
+  "s": "lyft-flexdrive",
+  "c": "Fleet Operations & Depot",
+  "b": "Lyft fleet arm holding Waymo's Nashville maintenance mandate"
+ },
+ {
+  "n": "May Mobility Operations",
+  "s": "may-mobility-operations",
+  "c": "Fleet Operations & Depot",
+  "b": "Route design and service operations live in Peachtree Corners"
+ },
+ {
+  "n": "Monk AI",
+  "s": "monk-ai",
+  "c": "Fleet Operations & Depot",
+  "b": "Paris AI reading vehicle damage for insurers and rental fleets"
+ },
+ {
+  "n": "Moove",
+  "s": "moove",
+  "c": "Fleet Operations & Depot",
+  "b": "Vehicle financing for ridehail drivers across global markets"
+ },
+ {
+  "n": "Moove AV / Moove",
+  "s": "moove-av-moove",
+  "c": "Fleet Operations & Depot",
+  "b": "Fleet management & MaaS operations; Cleaning, maintenance & inspection; Charging"
+ },
+ {
+  "n": "Motive",
+  "s": "motive",
+  "c": "Fleet Operations & Depot",
+  "b": "Compliance and safety visibility for trucking's autonomy shift"
+ },
+ {
+  "n": "NaaS Technology",
+  "s": "naas-technology",
+  "c": "Fleet Operations & Depot",
+  "b": "Beijing charging aggregator inside China's EV energy ecosystem"
+ },
+ {
+  "n": "Optibus",
+  "s": "optibus",
+  "c": "Fleet Operations & Depot",
+  "b": "Transit scheduling software able to slot in AV shuttles"
+ },
+ {
+  "n": "ParkMobile",
+  "s": "parkmobile",
+  "c": "Fleet Operations & Depot",
+  "b": "Parking app brought into SFMTA's 2026 payment modernization"
+ },
+ {
+  "n": "Parkopedia",
+  "s": "parkopedia",
+  "c": "Fleet Operations & Depot",
+  "b": "Parking and staging data licensed for connected cars and AVs"
+ },
+ {
+  "n": "Passport",
+  "s": "passport",
+  "c": "Fleet Operations & Depot",
+  "b": "Charlotte curb platform partnered with Automotus in 2026"
+ },
+ {
+  "n": "PayByPhone",
+  "s": "paybyphone",
+  "c": "Fleet Operations & Depot",
+  "b": "Vancouver parking payments in the UK National Parking Platform"
+ },
+ {
+  "n": "Pitstop",
+  "s": "pitstop",
+  "c": "Fleet Operations & Depot",
+  "b": "Vehicle-data failure forecasting for fleet uptime planning"
+ },
+ {
+  "n": "Populus",
+  "s": "populus",
+  "c": "Fleet Operations & Depot",
+  "b": "City data layer managing curb policy for delivery and shared fleets"
+ },
+ {
+  "n": "PowerFlex",
+  "s": "powerflex",
+  "c": "Fleet Operations & Depot",
+  "b": "Depot solar, storage and managed charging for commercial sites"
+ },
+ {
+  "n": "Preteckt",
+  "s": "preteckt",
+  "c": "Fleet Operations & Depot",
+  "b": "Predictive maintenance specialized for transit and heavy trucks"
+ },
+ {
+  "n": "RideCo",
+  "s": "rideco",
+  "c": "Fleet Operations & Depot",
+  "b": "Waterloo dispatch for pooled rides, paratransit, microtransit"
+ },
+ {
+  "n": "Robodock",
+  "s": "robodock",
+  "c": "Fleet Operations & Depot",
+  "b": "Robotic charging startup building quietly ahead of announcements"
+ },
+ {
+  "n": "RoboTire",
+  "s": "robotire",
+  "c": "Fleet Operations & Depot",
+  "b": "Michigan robotics automating the tire-change bay"
+ },
+ {
+  "n": "Rocsys",
+  "s": "rocsys",
+  "c": "Fleet Operations & Depot",
+  "b": "Charging & energy (depot / robotic); Cleaning, maintenance & inspection"
+ },
+ {
+  "n": "Spare",
+  "s": "spare",
+  "c": "Fleet Operations & Depot",
+  "b": "Demand-responsive booking engine for agency transit fleets"
+ },
+ {
+  "n": "SpotHero",
+  "s": "spothero",
+  "c": "Fleet Operations & Depot",
+  "b": "Off-street parking marketplace fit for robotaxi staging"
+ },
+ {
+  "n": "TeraWatt Infrastructure",
+  "s": "terawatt-infrastructure",
+  "c": "Fleet Operations & Depot",
+  "b": "Buying freight-corridor real estate for truck charging centers"
+ },
+ {
+  "n": "Tesla Supercharger (Robotaxi)",
+  "s": "tesla-supercharger-robotaxi",
+  "c": "Fleet Operations & Depot",
+  "b": "Charging & energy"
+ },
+ {
+  "n": "Tire Profiles",
+  "s": "tire-profiles",
+  "c": "Fleet Operations & Depot",
+  "b": "Automated tire and alignment inspection in the service lane"
+ },
+ {
+  "n": "Tractable",
+  "s": "tractable",
+  "c": "Fleet Operations & Depot",
+  "b": "Visual damage appraisal AI for auto and property insurers"
+ },
+ {
+  "n": "Transdev",
+  "s": "transdev",
+  "c": "Fleet Operations & Depot",
+  "b": "Waymo depot ops spanning Phoenix, SF, LA, Austin and Nashville"
+ },
+ {
+  "n": "Uber AV Infrastructure",
+  "s": "uber-av-infrastructure",
+  "c": "Fleet Operations & Depot",
+  "b": "Fleet management & MaaS operations; Charging & energy (depot / robotic)"
+ },
+ {
+  "n": "UVeye",
+  "s": "uveye",
+  "c": "Fleet Operations & Depot",
+  "b": "20-30 second scans in 300 dealerships and Amazon delivery hubs"
+ },
+ {
+  "n": "Via",
+  "s": "via",
+  "c": "Fleet Operations & Depot",
+  "b": "Microtransit platform with a strong public-sector footprint"
+ },
+ {
+  "n": "Vianova",
+  "s": "vianova",
+  "c": "Fleet Operations & Depot",
+  "b": "Paris mobility-data node for European curb and logistics policy"
+ },
+ {
+  "n": "Voltera",
+  "s": "voltera",
+  "c": "Fleet Operations & Depot",
+  "b": "Develops, owns and operates charging sites for commercial fleets"
+ },
+ {
+  "n": "WattEV",
+  "s": "wattev",
+  "c": "Fleet Operations & Depot",
+  "b": "Port-side truck charging paired with its own electric hauling"
+ },
+ {
+  "n": "WiTricity",
+  "s": "witricity",
+  "c": "Fleet Operations & Depot",
+  "b": "Wireless charging IP for hands-off robotaxi top-ups"
+ },
+ {
+  "n": "XCharge",
+  "s": "xcharge",
+  "c": "Fleet Operations & Depot",
+  "b": "Battery-integrated fast chargers for grid-constrained sites"
+ },
+ {
+  "n": "Xoompark",
+  "s": "xoompark",
+  "c": "Fleet Operations & Depot",
+  "b": "Charging & energy (depot / robotic); Curb / PUDO / parking"
+ },
+ {
+  "n": "Zeem Solutions",
+  "s": "zeem-solutions",
+  "c": "Fleet Operations & Depot",
+  "b": "Charging & energy (depot / robotic); Fleet management & MaaS operations"
+ },
+ {
+  "n": "Zoba",
+  "s": "zoba",
+  "c": "Fleet Operations & Depot",
+  "b": "Boston analytics placing shared vehicles where demand will be"
+ },
+ {
+  "n": "Admiral Group",
+  "s": "admiral-group",
+  "c": "Capital, Insurance & Risk",
+  "b": "Personal motor insurance"
+ },
+ {
+  "n": "AIG",
+  "s": "aig",
+  "c": "Capital, Insurance & Risk",
+  "b": "AV insurance & underwriting; Product liability and cyber"
+ },
+ {
+  "n": "Allianz Commercial",
+  "s": "allianz-commercial",
+  "c": "Capital, Insurance & Risk",
+  "b": "Munich carrier sizing product-liability cover for AV fleets"
+ },
+ {
+  "n": "Aon",
+  "s": "aon",
+  "c": "Capital, Insurance & Risk",
+  "b": "Risk Capital segment brokering AV programs before they standardize"
+ },
+ {
+  "n": "Apollo ibott",
+  "s": "apollo-ibott",
+  "c": "Capital, Insurance & Risk",
+  "b": "AI and autonomous systems liability; AV insurance & underwriting"
+ },
+ {
+  "n": "Armilla AI",
+  "s": "armilla-ai",
+  "c": "Capital, Insurance & Risk",
+  "b": "AI insurance and model risk"
+ },
+ {
+  "n": "Avinew",
+  "s": "avinew",
+  "c": "Capital, Insurance & Risk",
+  "b": "AV insurance & underwriting",
+  "x": 1
+ },
+ {
+  "n": "Aviva",
+  "s": "aviva",
+  "c": "Capital, Insurance & Risk",
+  "b": "Personal and commercial motor insurance"
+ },
+ {
+  "n": "AXA XL",
+  "s": "axa-xl",
+  "c": "Capital, Insurance & Risk",
+  "b": "AV insurance & underwriting; Reinsurance and specialty risk"
+ },
+ {
+  "n": "Beazley",
+  "s": "beazley",
+  "c": "Capital, Insurance & Risk",
+  "b": "Cyber and specialty liability"
+ },
+ {
+  "n": "Cambridge Mobile Telematics",
+  "s": "cambridge-mobile-telematics",
+  "c": "Capital, Insurance & Risk",
+  "b": "Telematics and risk scoring"
+ },
+ {
+  "n": "CCC Intelligent Solutions",
+  "s": "ccc-intelligent-solutions",
+  "c": "Capital, Insurance & Risk",
+  "b": "Claims and collision workflows absorbing ADAS repair complexity"
+ },
+ {
+  "n": "CFC",
+  "s": "cfc",
+  "c": "Capital, Insurance & Risk",
+  "b": "Specialist MGA for cyber and emerging AV software risk"
+ },
+ {
+  "n": "China Pacific Insurance Company",
+  "s": "china-pacific-insurance-company",
+  "c": "Capital, Insurance & Risk",
+  "b": "Commercial fleet insurance; AV risk evidence"
+ },
+ {
+  "n": "Chubb",
+  "s": "chubb",
+  "c": "Capital, Insurance & Risk",
+  "b": "AV insurance & underwriting; Cyber and technology liability"
+ },
+ {
+  "n": "Coalition",
+  "s": "coalition",
+  "c": "Capital, Insurance & Risk",
+  "b": "Cyber liability and AI-enabled cyber risk"
+ },
+ {
+  "n": "Cover Whale",
+  "s": "cover-whale",
+  "c": "Capital, Insurance & Risk",
+  "b": "Commercial trucking insurance; Telematics-linked underwriting"
+ },
+ {
+  "n": "Fairmatic",
+  "s": "fairmatic",
+  "c": "Capital, Insurance & Risk",
+  "b": "Telematics-priced commercial auto for the human-to-AV shift"
+ },
+ {
+  "n": "Gallagher",
+  "s": "gallagher",
+  "c": "Capital, Insurance & Risk",
+  "b": "Rolling Meadows broker for fleet and specialty AV placements"
+ },
+ {
+  "n": "HDI Global",
+  "s": "hdi-global",
+  "c": "Capital, Insurance & Risk",
+  "b": "Commercial insurance and industrial risk"
+ },
+ {
+  "n": "Koop Technologies",
+  "s": "koop-technologies",
+  "c": "Capital, Insurance & Risk",
+  "b": "AV insurance & underwriting; Compliance, security and trust management"
+ },
+ {
+  "n": "LexisNexis Risk Solutions",
+  "s": "lexisnexis-risk-solutions",
+  "c": "Capital, Insurance & Risk",
+  "b": "Risk data pipes as AV liability shifts from driver to system"
+ },
+ {
+  "n": "Lloyd's of London",
+  "s": "lloyd-s-of-london",
+  "c": "Capital, Insurance & Risk",
+  "b": "Specialty insurance market; Reinsurance and risk transfer"
+ },
+ {
+  "n": "Lockton",
+  "s": "lockton",
+  "c": "Capital, Insurance & Risk",
+  "b": "Privately held Kansas City broker for transport risk programs"
+ },
+ {
+  "n": "Marsh",
+  "s": "marsh",
+  "c": "Capital, Insurance & Risk",
+  "b": "Largest global broker by scale for complex commercial programs"
+ },
+ {
+  "n": "Mitchell / Enlyte",
+  "s": "mitchell-enlyte",
+  "c": "Capital, Insurance & Risk",
+  "b": "San Diego collision-estimating rails for AV-era repair costs"
+ },
+ {
+  "n": "MS&AD Insurance Group",
+  "s": "ms-ad-insurance-group",
+  "c": "Capital, Insurance & Risk",
+  "b": "Tokyo insurance group with strategic capital in May Mobility"
+ },
+ {
+  "n": "Munich Re",
+  "s": "munich-re",
+  "c": "Capital, Insurance & Risk",
+  "b": "Reinsurance and risk transfer; AI and cyber liability"
+ },
+ {
+  "n": "Netradyne",
+  "s": "netradyne",
+  "c": "Capital, Insurance & Risk",
+  "b": "Fleet video safety and risk analytics"
+ },
+ {
+  "n": "Nirvana Insurance",
+  "s": "nirvana-insurance",
+  "c": "Capital, Insurance & Risk",
+  "b": "Safety-data trucking underwriter adjacent to autonomous freight"
+ },
+ {
+  "n": "Progressive",
+  "s": "progressive",
+  "c": "Capital, Insurance & Risk",
+  "b": "Commercial and personal auto insurance"
+ },
+ {
+  "n": "State Farm Ventures",
+  "s": "state-farm-ventures",
+  "c": "Capital, Insurance & Risk",
+  "b": "Venture arm investing in mobility to read changing risk pools"
+ },
+ {
+  "n": "Swiss Re",
+  "s": "swiss-re",
+  "c": "Capital, Insurance & Risk",
+  "b": "Reinsurance and risk transfer; AV insurance & underwriting"
+ },
+ {
+  "n": "Tokio Marine Kiln",
+  "s": "tokio-marine-kiln",
+  "c": "Capital, Insurance & Risk",
+  "b": "Lloyd's specialty writer for IP and technology E&O exposure"
+ },
+ {
+  "n": "TÜV SÜD",
+  "s": "tüv-süd",
+  "c": "Capital, Insurance & Risk",
+  "b": "Independent reviewer of Waymo, Aurora and Gatik safety practices"
+ },
+ {
+  "n": "Verisk Analytics",
+  "s": "verisk-analytics",
+  "c": "Capital, Insurance & Risk",
+  "b": "Neutral data layer for actuarial pricing of AV exposure"
+ },
+ {
+  "n": "WTW",
+  "s": "wtw",
+  "c": "Capital, Insurance & Risk",
+  "b": "Broker and risk advisory; Insurance consulting and technology"
+ },
+ {
+  "n": "Zurich Insurance Group",
+  "s": "zurich-insurance-group",
+  "c": "Capital, Insurance & Risk",
+  "b": "Swiss carrier pairing commercial auto with risk engineering"
+ },
+ {
+  "n": "Abu Dhabi ITC",
+  "s": "abu-dhabi-itc",
+  "c": "Governance: Regulators & Government",
+  "b": "Transport regulator for Yas Island and the emirate's robotaxis"
+ },
+ {
+  "n": "Arizona Department of Transportation (ADOT)",
+  "s": "arizona-department-of-transportation-adot",
+  "c": "Governance: Regulators & Government",
+  "b": "Permissive Arizona roads hosting Waymo, Nuro and Zoox pilots"
+ },
+ {
+  "n": "Arizona DOT",
+  "s": "arizona-dot",
+  "c": "Governance: Regulators & Government",
+  "b": "Continues driverless approvals with no safety driver required"
+ },
+ {
+  "n": "Beijing High-Level Automated Driving Demonstration Area",
+  "s": "beijing-high-level-automated-driving-demonstration-area",
+  "c": "Governance: Regulators & Government",
+  "b": "Permitting zone behind Baidu, Pony.ai and WeRide robotaxi approvals"
+ },
+ {
+  "n": "California CPUC",
+  "s": "california-cpuc",
+  "c": "Governance: Regulators & Government",
+  "b": "Authorized Waymo's 2024 paid-service expansion to LA and SF peninsula"
+ },
+ {
+  "n": "California Department of Motor Vehicles (California DMV)",
+  "s": "california-department-of-motor-vehicles-california-dmv",
+  "c": "Governance: Regulators & Government",
+  "b": "Issues California AV permits and collects disengagement reports"
+ },
+ {
+  "n": "California DMV",
+  "s": "california-dmv",
+  "c": "Governance: Regulators & Government",
+  "b": "New rules open AV trucking and transit in California from Jul 2026"
+ },
+ {
+  "n": "California Public Utilities Commission (CPUC)",
+  "s": "california-public-utilities-commission-cpuc",
+  "c": "Governance: Regulators & Government",
+  "b": "Gatekeeper for paid robotaxi fares after California DMV sign-off"
+ },
+ {
+  "n": "Changsha / Hunan Xiangjiang New Area ICV Authorities",
+  "s": "changsha-hunan-xiangjiang-new-area-icv-authorities",
+  "c": "Governance: Regulators & Government",
+  "b": "Hunan pilot-zone authority named in Pony.ai expansion plans"
+ },
+ {
+  "n": "China MIIT",
+  "s": "china-miit",
+  "c": "Governance: Regulators & Government",
+  "b": "Paused new China AV licenses during a national safety review"
+ },
+ {
+  "n": "China municipal pilot zones",
+  "s": "china-municipal-pilot-zones",
+  "c": "Governance: Regulators & Government",
+  "b": "Local robotaxi licensing across Beijing, Shanghai, Wuhan, Guangzhou"
+ },
+ {
+  "n": "City of Dallas Department of Transportation",
+  "s": "city-of-dallas-department-of-transportation",
+  "c": "Governance: Regulators & Government",
+  "b": "Street-level host for Waymo and Zoox launch planning in Dallas"
+ },
+ {
+  "n": "District Department of Transportation (DDOT)",
+  "s": "district-department-of-transportation-ddot",
+  "c": "Governance: Regulators & Government",
+  "b": "Local stakeholder for Zoox's announced Washington, DC testing"
+ },
+ {
+  "n": "Dubai RTA",
+  "s": "dubai-rta",
+  "c": "Governance: Regulators & Government",
+  "b": "Hosts Apollo Go, WeRide and Pony.ai trials under Dubai's AV strategy"
+ },
+ {
+  "n": "EU (Type Approval / AI Act)",
+  "s": "eu-type-approval-ai-act",
+  "c": "Governance: Regulators & Government",
+  "b": "AI Act high-risk rules reach automated driving in August 2027"
+ },
+ {
+  "n": "European Commission DG GROW / DG MOVE",
+  "s": "european-commission-dg-grow-dg-move",
+  "c": "Governance: Regulators & Government",
+  "b": "Europe / UK; EU type approval"
+ },
+ {
+  "n": "Federal Highway Administration (FHWA)",
+  "s": "federal-highway-administration-fhwa",
+  "c": "Governance: Regulators & Government",
+  "b": "US federal; infrastructure"
+ },
+ {
+  "n": "Federal Motor Carrier Safety Administration (FMCSA)",
+  "s": "federal-motor-carrier-safety-administration-fmcsa",
+  "c": "Governance: Regulators & Government",
+  "b": "US federal; freight and trucking"
+ },
+ {
+  "n": "Federal Trade Commission (FTC)",
+  "s": "federal-trade-commission-ftc",
+  "c": "Governance: Regulators & Government",
+  "b": "US federal; consumer protection"
+ },
+ {
+  "n": "Florida Department of Highway Safety and Motor Vehicles (FLHSMV)",
+  "s": "florida-department-of-highway-safety-and-motor-vehicles-flhsmv",
+  "c": "Governance: Regulators & Government",
+  "b": "Vehicle authority in a permissive state drawing Miami robotaxi bids"
+ },
+ {
+  "n": "France Ministry for Ecological Transition / Transport Directorate",
+  "s": "france-ministry-for-ecological-transition-transport-directorate",
+  "c": "Governance: Regulators & Government",
+  "b": "French trial authorizer amid WeRide and Renault demonstrations"
+ },
+ {
+  "n": "Georgia Department of Driver Services",
+  "s": "georgia-department-of-driver-services",
+  "c": "Governance: Regulators & Government",
+  "b": "Licensing authority as Waymo, Uber and Zoox converge on Atlanta"
+ },
+ {
+  "n": "Germany Federal Ministry for Digital and Transport (BMDV)",
+  "s": "germany-federal-ministry-for-digital-and-transport-bmdv",
+  "c": "Governance: Regulators & Government",
+  "b": "Ministry writing Germany's automated-driving deployment law"
+ },
+ {
+  "n": "Germany KBA",
+  "s": "germany-kba",
+  "c": "Governance: Regulators & Government",
+  "b": "L4 test approvals running to end-2026, extendable through 2028"
+ },
+ {
+  "n": "Guangzhou Intelligent Connected Vehicle Pilot Authorities",
+  "s": "guangzhou-intelligent-connected-vehicle-pilot-authorities",
+  "c": "Governance: Regulators & Government",
+  "b": "Nansha-anchored permits behind dense Pony.ai and WeRide fleets"
+ },
+ {
+  "n": "Hong Kong Transport Department",
+  "s": "hong-kong-transport-department",
+  "c": "Governance: Regulators & Government",
+  "b": "Gateway for Chinese AV expansion into tightly regulated cities"
+ },
+ {
+  "n": "Japan Ministry of Economy, Trade and Industry (METI)",
+  "s": "japan-ministry-of-economy-trade-and-industry-meti",
+  "c": "Governance: Regulators & Government",
+  "b": "Funds Japan's RoAD to the L4 commercialization program with MLIT"
+ },
+ {
+  "n": "Japan Ministry of Land, Infrastructure, Transport and Tourism (MLIT)",
+  "s": "japan-ministry-of-land-infrastructure-transport-and-tourism-mlit",
+  "c": "Governance: Regulators & Government",
+  "b": "Vehicle-safety approvals central to Waymo's Tokyo exploration"
+ },
+ {
+  "n": "Japan MLIT",
+  "s": "japan-mlit",
+  "c": "Governance: Regulators & Government",
+  "b": "Targets a Level 4 certification mechanism rollout by end-2026"
+ },
+ {
+  "n": "Japan National Police Agency (NPA)",
+  "s": "japan-national-police-agency-npa",
+  "c": "Governance: Regulators & Government",
+  "b": "Road-traffic permissions inside Japan's 2023 Level 4 framework"
+ },
+ {
+  "n": "Kraftfahrt-Bundesamt (KBA)",
+  "s": "kraftfahrt-bundesamt-kba",
+  "c": "Governance: Regulators & Government",
+  "b": "Type-approved Mercedes-Benz Drive Pilot for consumer Level 3"
+ },
+ {
+  "n": "Los Angeles Department of Transportation (LADOT)",
+  "s": "los-angeles-department-of-transportation-ladot",
+  "c": "Governance: Regulators & Government",
+  "b": "City mobility agency alongside Waymo's Los Angeles expansion"
+ },
+ {
+  "n": "Miami-Dade Department of Transportation and Public Works",
+  "s": "miami-dade-department-of-transportation-and-public-works",
+  "c": "Governance: Regulators & Government",
+  "b": "US state / local; city/county transport authority"
+ },
+ {
+  "n": "MIIT (China)",
+  "s": "miit-china",
+  "c": "Governance: Regulators & Government",
+  "b": "Drafting China's first mandatory ADS standard, effective Jul 2027"
+ },
+ {
+  "n": "Ministry of Industry and Information Technology (MIIT)",
+  "s": "ministry-of-industry-and-information-technology-miit",
+  "c": "Governance: Regulators & Government",
+  "b": "Coordinates ICV policy, telecoms and pilot zones across China"
+ },
+ {
+  "n": "Ministry of Public Security of the People's Republic of China",
+  "s": "ministry-of-public-security-of-the-people-s-republic-of-china",
+  "c": "Governance: Regulators & Government",
+  "b": "Traffic policing arm of China's driverless permit policy stack"
+ },
+ {
+  "n": "Ministry of Transport (China)",
+  "s": "ministry-of-transport-china",
+  "c": "Governance: Regulators & Government",
+  "b": "Runs staged robotaxi gates from safety-driver tests to paid service"
+ },
+ {
+  "n": "Ministry of Transport of the People's Republic of China",
+  "s": "ministry-of-transport-of-the-people-s-republic-of-china",
+  "c": "Governance: Regulators & Government",
+  "b": "Scores operators on driverless mileage and critical interventions"
+ },
+ {
+  "n": "National Transportation Safety Board (NTSB)",
+  "s": "national-transportation-safety-board-ntsb",
+  "c": "Governance: Regulators & Government",
+  "b": "US federal; safety investigation"
+ },
+ {
+  "n": "Netherlands RDW",
+  "s": "netherlands-rdw",
+  "c": "Governance: Regulators & Government",
+  "b": "Dutch vehicle authority granting EU approvals and test exemptions"
+ },
+ {
+  "n": "Nevada Department of Motor Vehicles (Nevada DMV)",
+  "s": "nevada-department-of-motor-vehicles-nevada-dmv",
+  "c": "Governance: Regulators & Government",
+  "b": "Permit home for Zoox and Motional robotaxi work in Las Vegas"
+ },
+ {
+  "n": "Nevada DMV",
+  "s": "nevada-dmv",
+  "c": "Governance: Regulators & Government",
+  "b": "Early permissive AV statute with no level-specific certification"
+ },
+ {
+  "n": "New York State Department of Motor Vehicles",
+  "s": "new-york-state-department-of-motor-vehicles",
+  "c": "Governance: Regulators & Government",
+  "b": "Permit path into a future high-demand New York robotaxi market"
+ },
+ {
+  "n": "NHTSA",
+  "s": "nhtsa",
+  "c": "Governance: Regulators & Government",
+  "b": "Proposed removing brake-pedal mandates for ADS-only vehicles"
+ },
+ {
+  "n": "NHTSA Office of Automation Safety",
+  "s": "nhtsa-office-of-automation-safety",
+  "c": "Governance: Regulators & Government",
+  "b": "Runs Standing General Order crash reporting for ADS incidents"
+ },
+ {
+  "n": "Office of Management and Budget / OIRA",
+  "s": "office-of-management-and-budget-oira",
+  "c": "Governance: Regulators & Government",
+  "b": "US federal; rule review"
+ },
+ {
+  "n": "Oregon Department of Transportation (ODOT)",
+  "s": "oregon-department-of-transportation-odot",
+  "c": "Governance: Regulators & Government",
+  "b": "State roads agency where AV access awaits legal modernization"
+ },
+ {
+  "n": "Phoenix Sky Harbor International Airport",
+  "s": "phoenix-sky-harbor-international-airport",
+  "c": "Governance: Regulators & Government",
+  "b": "Curb rules behind Waymo's early commercial airport integration"
+ },
+ {
+  "n": "Qatar Ministry of Transport",
+  "s": "qatar-ministry-of-transport",
+  "c": "Governance: Regulators & Government",
+  "b": "Enabled Pony.ai's Doha pilot alongside Mowasalat/Karwa"
+ },
+ {
+  "n": "San Francisco International Airport Commission / SFO",
+  "s": "san-francisco-international-airport-commission-sfo",
+  "c": "Governance: Regulators & Government",
+  "b": "Grants the airport access robotaxis need beyond state road permits"
+ },
+ {
+  "n": "San Francisco Municipal Transportation Agency (SFMTA)",
+  "s": "san-francisco-municipal-transportation-agency-sfmta",
+  "c": "Governance: Regulators & Government",
+  "b": "City agency managing robotaxi curb and emergency-response impacts"
+ },
+ {
+  "n": "Saudi Transport General Authority (TGA)",
+  "s": "saudi-transport-general-authority-tga",
+  "c": "Governance: Regulators & Government",
+  "b": "Gulf transport licensor watched for shuttle and freight AV pilots"
+ },
+ {
+  "n": "SFMTA",
+  "s": "sfmta",
+  "c": "Governance: Regulators & Government",
+  "b": "Municipal transit voice into CPUC, DMV and NHTSA AV policy"
+ },
+ {
+  "n": "Shanghai Pudong New Area ICV / Robotaxi Pilot Authorities",
+  "s": "shanghai-pudong-new-area-icv-robotaxi-pilot-authorities",
+  "c": "Governance: Regulators & Government",
+  "b": "Granted Pony.ai fully driverless commercial status in Pudong"
+ },
+ {
+  "n": "Shenzhen Transport Bureau / ICV Pilot Authorities",
+  "s": "shenzhen-transport-bureau-icv-pilot-authorities",
+  "c": "Governance: Regulators & Government",
+  "b": "Opened Shenzhen city centers to driverless robotaxi operation"
+ },
+ {
+  "n": "Singapore Land Transport Authority (LTA)",
+  "s": "singapore-land-transport-authority-lta",
+  "c": "Governance: Regulators & Government",
+  "b": "Anchors Grab/WeRide and ComfortDelGro/Pony shuttle trials"
+ },
+ {
+  "n": "Singapore LTA",
+  "s": "singapore-lta",
+  "c": "Governance: Regulators & Government",
+  "b": "Consulted the public on national AV legislation in mid-2026"
+ },
+ {
+  "n": "South Korea Ministry of Land, Infrastructure and Transport (MOLIT)",
+  "s": "south-korea-ministry-of-land-infrastructure-and-transport-molit",
+  "c": "Governance: Regulators & Government",
+  "b": "Sets Korea's vehicle standards and smart-city AV pilot rules"
+ },
+ {
+  "n": "Swedish Transport Agency",
+  "s": "swedish-transport-agency",
+  "c": "Governance: Regulators & Government",
+  "b": "Permits in the Volvo and Einride autonomous trucking heartland"
+ },
+ {
+  "n": "Switzerland Federal Roads Office (FEDRO / ASTRA)",
+  "s": "switzerland-federal-roads-office-fedro-astra",
+  "c": "Governance: Regulators & Government",
+  "b": "Motorway policy and trial approvals for Swiss robotaxi pilots"
+ },
+ {
+  "n": "Tennessee Department of Transportation (TDOT)",
+  "s": "tennessee-department-of-transportation-tdot",
+  "c": "Governance: Regulators & Government",
+  "b": "Highway operations amid Waymo, Lyft and Flexdrive Nashville plans"
+ },
+ {
+  "n": "Texas Department of Motor Vehicles (TxDMV)",
+  "s": "texas-department-of-motor-vehicles-txdmv",
+  "c": "Governance: Regulators & Government",
+  "b": "Registers fleets as Tesla, Aurora, Kodiak and Waymo scale in Texas"
+ },
+ {
+  "n": "Texas Department of Transportation (TxDOT)",
+  "s": "texas-department-of-transportation-txdot",
+  "c": "Governance: Regulators & Government",
+  "b": "US state / local; freight corridors"
+ },
+ {
+  "n": "Texas DMV",
+  "s": "texas-dmv",
+  "c": "Governance: Regulators & Government",
+  "b": "Mandatory commercial AV operator authorization from May 2026"
+ },
+ {
+  "n": "Tokyo Metropolitan Government",
+  "s": "tokyo-metropolitan-government",
+  "c": "Governance: Regulators & Government",
+  "b": "Gulf / Asia; city transport authority"
+ },
+ {
+  "n": "U.S. Department of Transportation (USDOT)",
+  "s": "u-s-department-of-transportation-usdot",
+  "c": "Governance: Regulators & Government",
+  "b": "Federal umbrella over NHTSA, FMCSA and FHWA on AV rulemaking"
+ },
+ {
+  "n": "UAE Ministry of Energy and Infrastructure / Federal Transport Authorities",
+  "s": "uae-ministry-of-energy-and-infrastructure-federal-transport-authorities",
+  "c": "Governance: Regulators & Government",
+  "b": "Federal coordination as Dubai and Abu Dhabi scale AV pilots"
+ },
+ {
+  "n": "UK CCAV / AV Act",
+  "s": "uk-ccav-av-act",
+  "c": "Governance: Regulators & Government",
+  "b": "Spring 2026 pilots ahead of full AV Act rollout in H2 2027"
+ },
+ {
+  "n": "UK CCAV / DfT",
+  "s": "uk-ccav-dft",
+  "c": "Governance: Regulators & Government",
+  "b": "Coordinates the Automated Vehicles Act 2024 regime and London pilots"
+ },
+ {
+  "n": "UK Centre for Connected and Autonomous Vehicles (CCAV)",
+  "s": "uk-centre-for-connected-and-autonomous-vehicles-ccav",
+  "c": "Governance: Regulators & Government",
+  "b": "Funds and steers UK self-driving trials accelerating into 2026"
+ },
+ {
+  "n": "UK Department for Transport (DfT)",
+  "s": "uk-department-for-transport-dft",
+  "c": "Governance: Regulators & Government",
+  "b": "Transport ministry as Waymo, Uber/Wayve and Baidu eye London"
+ },
+ {
+  "n": "UK Vehicle Certification Agency (VCA)",
+  "s": "uk-vehicle-certification-agency-vca",
+  "c": "Governance: Regulators & Government",
+  "b": "UK type-approval arm for maturing self-driving authorizations"
+ },
+ {
+  "n": "UNECE WP.29",
+  "s": "unece-wp-29",
+  "c": "Governance: Regulators & Government",
+  "b": "GRVA's UN-wide ADS regulation headed to a June 2026 vote"
+ },
+ {
+  "n": "UNECE WP.29 / GRVA",
+  "s": "unece-wp-29-grva",
+  "c": "Governance: Regulators & Government",
+  "b": "Europe / UK; international vehicle regulation"
+ },
+ {
+  "n": "USDOT",
+  "s": "usdot",
+  "c": "Governance: Regulators & Government",
+  "b": "Convened the first National AV Safety Forum in 2026"
+ },
+ {
+  "n": "Wuhan Intelligent Connected Vehicle Pilot Authorities",
+  "s": "wuhan-intelligent-connected-vehicle-pilot-authorities",
+  "c": "Governance: Regulators & Government",
+  "b": "Oversees one of Apollo Go's highest-scale robotaxi deployments"
+ },
+ {
+  "n": "3GPP",
+  "s": "3gpp",
+  "c": "Governance: Standards, Safety & Advocacy",
+  "b": "Cellular standards body defining C-V2X and 5G for smart roads"
+ },
+ {
+  "n": "AAA Foundation for Traffic Safety",
+  "s": "aaa-foundation-for-traffic-safety",
+  "c": "Governance: Standards, Safety & Advocacy",
+  "b": "Research on driver understanding and misuse of automation"
+ },
+ {
+  "n": "Advocates for Highway and Auto Safety",
+  "s": "advocates-for-highway-and-auto-safety",
+  "c": "Governance: Standards, Safety & Advocacy",
+  "b": "Coalition pushing stronger vehicle and highway safety rules"
+ },
+ {
+  "n": "Alliance for Automotive Innovation",
+  "s": "alliance-for-automotive-innovation",
+  "c": "Governance: Standards, Safety & Advocacy",
+  "b": "Light-duty OEM trade voice on FMVSS and ADAS policy"
+ },
+ {
+  "n": "ASAM e.V.",
+  "s": "asam-e-v",
+  "c": "Governance: Standards, Safety & Advocacy",
+  "b": "Keeper of the OpenX file formats behind AV simulation"
+ },
+ {
+  "n": "ASAM OpenDRIVE",
+  "s": "asam-opendrive",
+  "c": "Governance: Standards, Safety & Advocacy",
+  "b": "Road-network exchange format, version 1.9.0 shipped May 2026"
+ },
+ {
+  "n": "ASAM OpenLABEL",
+  "s": "asam-openlabel",
+  "c": "Governance: Standards, Safety & Advocacy",
+  "b": "Common annotation format linking labeling to validation"
+ },
+ {
+  "n": "ASAM OpenODD",
+  "s": "asam-openodd",
+  "c": "Governance: Standards, Safety & Advocacy",
+  "b": "Machine-readable ODD spec bridging safety cases and insurers"
+ },
+ {
+  "n": "ASAM OpenSCENARIO DSL",
+  "s": "asam-openscenario-dsl",
+  "c": "Governance: Standards, Safety & Advocacy",
+  "b": "Scenario-authoring language for scalable simulation tests"
+ },
+ {
+  "n": "ASAM OpenSCENARIO XML",
+  "s": "asam-openscenario-xml",
+  "c": "Governance: Standards, Safety & Advocacy",
+  "b": "Vendor-neutral XML for exchanging dynamic driving scenarios"
+ },
+ {
+  "n": "ASAM OSI",
+  "s": "asam-osi",
+  "c": "Governance: Standards, Safety & Advocacy",
+  "b": "Open interface wiring sensors and simulators to AV stacks"
+ },
+ {
+  "n": "Automated Vehicle Safety Consortium (AVSC)",
+  "s": "automated-vehicle-safety-consortium-avsc",
+  "c": "Governance: Standards, Safety & Advocacy",
+  "b": "Precompetitive library of AV safety best practices and terms"
+ },
+ {
+  "n": "Autonomous Vehicle Industry Association (AVIA)",
+  "s": "autonomous-vehicle-industry-association-avia",
+  "c": "Governance: Standards, Safety & Advocacy",
+  "b": "Washington policy voice for robotaxi and AV trucking developers"
+ },
+ {
+  "n": "AUVSI",
+  "s": "auvsi",
+  "c": "Governance: Standards, Safety & Advocacy",
+  "b": "Autonomy advocacy spanning air, ground, maritime and cyber"
+ },
+ {
+  "n": "AVIA",
+  "s": "avia",
+  "c": "Governance: Standards, Safety & Advocacy",
+  "b": "Published its third annual State of AV report in 2026"
+ },
+ {
+  "n": "AVSC",
+  "s": "avsc",
+  "c": "Governance: Standards, Safety & Advocacy",
+  "b": "Waymo, Zoox, Aurora, Motional and Torc safety consortium"
+ },
+ {
+  "n": "CEN/TC 278 Intelligent Transport Systems",
+  "s": "cen-tc-278-intelligent-transport-systems",
+  "c": "Governance: Standards, Safety & Advocacy",
+  "b": "European committee for ITS and mobility data interoperability"
+ },
+ {
+  "n": "Consumer Reports",
+  "s": "consumer-reports",
+  "c": "Governance: Standards, Safety & Advocacy",
+  "b": "Rates active driving assistance and scrutinizes marketing claims"
+ },
+ {
+  "n": "ETSI TC ITS",
+  "s": "etsi-tc-its",
+  "c": "Governance: Standards, Safety & Advocacy",
+  "b": "Writes Europe's V2X and cooperative-ITS communications specs"
+ },
+ {
+  "n": "Euro NCAP",
+  "s": "euro-ncap",
+  "c": "Governance: Standards, Safety & Advocacy",
+  "b": "Assisted Driving grades that steer European L2 feature design"
+ },
+ {
+  "n": "Highway Loss Data Institute (HLDI)",
+  "s": "highway-loss-data-institute-hldi",
+  "c": "Governance: Standards, Safety & Advocacy",
+  "b": "Turns insurance claims data into ADAS effectiveness evidence"
+ },
+ {
+  "n": "IEEE",
+  "s": "ieee",
+  "c": "Governance: Standards, Safety & Advocacy",
+  "b": "Engineering body whose 2846 is cited beside ISO and UL norms"
+ },
+ {
+  "n": "IEEE 2846",
+  "s": "ieee-2846",
+  "c": "Governance: Standards, Safety & Advocacy",
+  "b": "Formalizes road-user assumptions in ADS safety models"
+ },
+ {
+  "n": "IEEE P2851",
+  "s": "ieee-p2851",
+  "c": "Governance: Standards, Safety & Advocacy",
+  "b": "Draft standard for exchanging safety analyses across tools"
+ },
+ {
+  "n": "IEEE Standards Association",
+  "s": "ieee-standards-association",
+  "c": "Governance: Standards, Safety & Advocacy",
+  "b": "Standards venue for AV decision-making, ethics and connectivity"
+ },
+ {
+  "n": "Insurance Institute for Highway Safety (IIHS)",
+  "s": "insurance-institute-for-highway-safety-iihs",
+  "c": "Governance: Standards, Safety & Advocacy",
+  "b": "Safeguards ratings that tested 14 partial-automation systems"
+ },
+ {
+  "n": "International Brotherhood of Teamsters",
+  "s": "international-brotherhood-of-teamsters",
+  "c": "Governance: Standards, Safety & Advocacy",
+  "b": "Union voice for human operators in autonomous trucking debates"
+ },
+ {
+  "n": "International Organization for Standardization (ISO)",
+  "s": "international-organization-for-standardization-iso",
+  "c": "Governance: Standards, Safety & Advocacy",
+  "b": "165-plus national members behind automotive safety standards"
+ },
+ {
+  "n": "ISO",
+  "s": "iso",
+  "c": "Governance: Standards, Safety & Advocacy",
+  "b": "TC22 developing AI/ML safety guidance to follow 26262 and SOTIF"
+ },
+ {
+  "n": "ISO / TC 204",
+  "s": "iso-tc-204",
+  "c": "Governance: Standards, Safety & Advocacy",
+  "b": "Standards bodies & standards: ISO 26262, ISO 21448 SOTIF, ISO 34503 ODD"
+ },
+ {
+  "n": "ISO 21448 SOTIF",
+  "s": "iso-21448-sotif",
+  "c": "Governance: Standards, Safety & Advocacy",
+  "b": "Targets risk from functional insufficiency and foreseeable misuse"
+ },
+ {
+  "n": "ISO 26262",
+  "s": "iso-26262",
+  "c": "Governance: Standards, Safety & Advocacy",
+  "b": "Functional safety bedrock for series-production E/E systems"
+ },
+ {
+  "n": "ISO 34501",
+  "s": "iso-34501",
+  "c": "Governance: Standards, Safety & Advocacy",
+  "b": "Defines the shared vocabulary of ADS test scenarios"
+ },
+ {
+  "n": "ISO 34502",
+  "s": "iso-34502",
+  "c": "Governance: Standards, Safety & Advocacy",
+  "b": "2022 framework for scenario-based ADS safety evaluation"
+ },
+ {
+  "n": "ISO 34503",
+  "s": "iso-34503",
+  "c": "Governance: Standards, Safety & Advocacy",
+  "b": "Hierarchical taxonomy for defining L3/L4 operating domains"
+ },
+ {
+  "n": "ISO 34504",
+  "s": "iso-34504",
+  "c": "Governance: Standards, Safety & Advocacy",
+  "b": "2024 scenario-categorization capstone to the 34501 series"
+ },
+ {
+  "n": "ISO/TC 204 Intelligent Transport Systems",
+  "s": "iso-tc-204-intelligent-transport-systems",
+  "c": "Governance: Standards, Safety & Advocacy",
+  "b": "ISO committee linking vehicles, infrastructure and services"
+ },
+ {
+  "n": "ISO/TC 22 Road Vehicles",
+  "s": "iso-tc-22-road-vehicles",
+  "c": "Governance: Standards, Safety & Advocacy",
+  "b": "Road-vehicle committee feeding AV safety-case evidence needs"
+ },
+ {
+  "n": "ISO/TR 4804",
+  "s": "iso-tr-4804",
+  "c": "Governance: Standards, Safety & Advocacy",
+  "b": "Reference report pairing ADS safety with cybersecurity"
+ },
+ {
+  "n": "ITS America",
+  "s": "its-america",
+  "c": "Governance: Standards, Safety & Advocacy",
+  "b": "Convener bridging AVs, V2X and city traffic infrastructure"
+ },
+ {
+  "n": "Mcity",
+  "s": "mcity",
+  "c": "Governance: Standards, Safety & Advocacy",
+  "b": "Ann Arbor's dedicated connected and automated test facility"
+ },
+ {
+  "n": "Mobileye Responsibility-Sensitive Safety (RSS)",
+  "s": "mobileye-responsibility-sensitive-safety-rss",
+  "c": "Governance: Standards, Safety & Advocacy",
+  "b": "2017 mathematical model of responsibility in safe driving"
+ },
+ {
+  "n": "National Safety Council",
+  "s": "national-safety-council",
+  "c": "Governance: Standards, Safety & Advocacy",
+  "b": "Road to Zero programs linking human factors and AV risk"
+ },
+ {
+  "n": "Open Autonomy Safety Case Framework",
+  "s": "open-autonomy-safety-case-framework",
+  "c": "Governance: Standards, Safety & Advocacy",
+  "b": "Open 2024 template for structuring autonomy safety cases"
+ },
+ {
+  "n": "Open Mobility Foundation",
+  "s": "open-mobility-foundation",
+  "c": "Governance: Standards, Safety & Advocacy",
+  "b": "City-led steward of MDS and curb data specifications"
+ },
+ {
+  "n": "Partners for Automated Vehicle Education (PAVE)",
+  "s": "partners-for-automated-vehicle-education-pave",
+  "c": "Governance: Standards, Safety & Advocacy",
+  "b": "Public-education coalition demystifying AVs for policymakers"
+ },
+ {
+  "n": "PAVE",
+  "s": "pave",
+  "c": "Governance: Standards, Safety & Advocacy",
+  "b": "AI condition reports for rental, remarketing and fleet vehicles"
+ },
+ {
+  "n": "SAE Industry Technologies Consortia",
+  "s": "sae-industry-technologies-consortia",
+  "c": "Governance: Standards, Safety & Advocacy",
+  "b": "SAE affiliate hosting the AVSC precompetitive program"
+ },
+ {
+  "n": "SAE International",
+  "s": "sae-international",
+  "c": "Governance: Standards, Safety & Advocacy",
+  "b": "Standards bodies & standards: SAE J3016"
+ },
+ {
+  "n": "SAE J3016",
+  "s": "sae-j3016",
+  "c": "Governance: Standards, Safety & Advocacy",
+  "b": "The taxonomy behind driving automation Levels 0 through 5"
+ },
+ {
+  "n": "SAE J3134 ADS Marker Lamps",
+  "s": "sae-j3134-ads-marker-lamps",
+  "c": "Governance: Standards, Safety & Advocacy",
+  "b": "Recommended practice for turquoise ADS marker lamps"
+ },
+ {
+  "n": "Safety First for Automated Driving",
+  "s": "safety-first-for-automated-driving",
+  "c": "Governance: Standards, Safety & Advocacy",
+  "b": "2019 industry white paper with 12 safety-by-design principles"
+ },
+ {
+  "n": "Teamsters",
+  "s": "teamsters",
+  "c": "Governance: Standards, Safety & Advocacy",
+  "b": "Pledged legal action after California cleared heavy AV trucks"
+ },
+ {
+  "n": "UL 4600",
+  "s": "ul-4600",
+  "c": "Governance: Standards, Safety & Advocacy",
+  "b": "Standards bodies & standards: UL 4600"
+ },
+ {
+  "n": "UL Standards & Engagement",
+  "s": "ul-standards-engagement",
+  "c": "Governance: Standards, Safety & Advocacy",
+  "b": "Nonprofit whose safety-case approach spread beyond certification"
+ },
+ {
+  "n": "UL Standards (UL 4600)",
+  "s": "ul-standards-ul-4600",
+  "c": "Governance: Standards, Safety & Advocacy",
+  "b": "UL 4600 Edition 3 adds autonomous-trucking guidance"
+ },
+ {
+  "n": "W3C Automotive Working Group",
+  "s": "w3c-automotive-working-group",
+  "c": "Governance: Standards, Safety & Advocacy",
+  "b": "Web standards home of the Vehicle Signal Specification"
+ },
+ {
+  "n": "Waymo Safety Framework",
+  "s": "waymo-safety-framework",
+  "c": "Governance: Standards, Safety & Advocacy",
+  "b": "Company safety case made de facto influential by fleet scale"
+ },
+ {
+  "n": "ByteDance",
+  "s": "bytedance",
+  "c": "AV Driver / Autonomy Software",
+  "b": "World-model autonomy research (Seed group); cockpit AI shipping today"
+ },
+ {
+  "n": "Li Auto",
+  "s": "li-auto",
+  "c": "Vehicle Platform & Manufacturing",
+  "b": "In-house ADAS and agentic parking at consumer scale"
+ },
+ {
+  "n": "Leapmotor",
+  "s": "leapmotor",
+  "c": "Vehicle Platform & Manufacturing",
+  "b": "Mass-market EVs ramping front-facing lidar and ADAS downmarket"
+ },
+ {
+  "n": "Verne",
+  "s": "verne",
+  "c": "Demand & Commercial Platforms",
+  "b": "Rimac-born robotaxi operator contracted in eleven cities"
+ },
+ {
+  "n": "MOIA",
+  "s": "moia",
+  "c": "Demand & Commercial Platforms",
+  "b": "VW's autonomous ID.Buzz service arm, live on Uber in LA"
+ },
+ {
+  "n": "Aseon Labs",
+  "s": "aseon-labs",
+  "c": "Fleet Operations & Depot",
+  "b": "\"Depot in a box\" pitstops: charging, cleaning, inspection"
+ },
+ {
+  "n": "ENSO",
+  "s": "enso",
+  "c": "Fleet Operations & Depot",
+  "b": "EV-native tires priced 10-20% under the majors, sold direct"
+ }
+]

@@ -173,7 +173,7 @@
         <p class="about">${esc(c.about || c.sub || '')}</p>
         <dl>${dl.map(([k, v]) => `<dt>${esc(k)}</dt><dd>${esc(String(v))}</dd>`).join('')}</dl>
         ${(c.sources || []).length ? `<div class="d-src"><h4>Sources</h4>${c.sources.map(s =>
-          `<div><a href="${esc(s.url)}" rel="noopener">${esc(s.title)}</a> <span class="caption">(${esc(s.date)})</span></div>`).join('')}</div>` : ''}
+          `<div><a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${esc(s.title)}</a> <span class="caption">(${esc(s.date)})</span></div>`).join('')}</div>` : ''}
       </div>
       <div>
         <div class="d-partners"><h4>Mapped partnerships${p ? ` · ${p.count}` : ''}</h4>

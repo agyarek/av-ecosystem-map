@@ -178,3 +178,11 @@ table.spec td { font-size: 14px; }
 .calc-out .co-row { display: flex; gap: 12px; flex-wrap: wrap; }
 .calc-out .fact { flex: 1 1 150px; }
 .calc-note { margin-top: 18px; }
+
+.src-list { list-style: none; margin-top: 4px; max-width: var(--measure); }
+.src-list li {
+  padding: 10px 0; border-bottom: 1px solid var(--rule);
+  display: flex; gap: 12px; align-items: baseline; justify-content: space-between;
+}
+.src-list li a { color: var(--cyan); font-weight: 600; }
+.src-list li .caption { font-family: var(--font-mono); white-space: nowrap; }

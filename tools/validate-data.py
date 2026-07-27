@@ -9,7 +9,7 @@ The checks encode the four defect classes found in July 2026 (character-split
 arrays, blank regions, corrupt country fragments, freetext confidence) so
 none of them can silently return.
 """
-import json, os, re, sys, collections
+import json, os, re, sys, collections, urllib.parse
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 def load(name):
@@ -80,10 +80,18 @@ for c in companies:
     if lv and not DATE_RE.match(lv):
         err(f"{cid} {c['name']}: lastVerified '{lv}' not ISO")
     for s in c.get("sources", []):
-        if not s.get("url", "").startswith("https://"):
-            err(f"{cid} {c['name']}: source url '{s.get('url')}' not https")
+        url = s.get("url", "")
+        if not url.startswith("https://"):
+            err(f"{cid} {c['name']}: source url '{url}' not https")
+        # A source must point at the article itself. A bare publication
+        # homepage cites nothing: it is unverifiable the day after it is
+        # written, because the front page has already moved on.
+        elif not [seg for seg in urllib.parse.urlparse(url).path.split("/") if seg]:
+            err(f"{cid} {c['name']}: source url '{url}' is a bare homepage, not an article")
         if not DATE_RE.match(s.get("date", "")):
             err(f"{cid} {c['name']}: source date '{s.get('date')}' not ISO")
+        if not s.get("title", "").strip():
+            err(f"{cid} {c['name']}: source for {url} has no title")
 
 # enrichment: every edge endpoint and operator resolves to a company name
 for op in enrichment.get("operators", []):

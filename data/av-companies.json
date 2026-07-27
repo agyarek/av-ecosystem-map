@@ -159,9 +159,9 @@
   "lastVerified": "2026-07-25",
   "sources": [
    {
-    "url": "https://ir.aurora.tech",
+    "url": "https://ir.aurora.tech/news-events/press-releases/detail/144/aurora-launches-second-generation-driverless-trucks-in-u-s-to-meet-customer-demand",
     "date": "2026-07-22",
-    "title": "Aurora launches second-generation driverless trucks"
+    "title": "Aurora Launches Second-Generation Driverless Trucks in U.S. to Meet Customer Demand"
    }
   ]
  },
@@ -352,14 +352,14 @@
   "lastVerified": "2026-07-25",
   "sources": [
    {
-    "url": "https://www.bloomberg.com",
+    "url": "https://www.bloomberg.com/news/articles/2026-07-23/china-resumes-issuing-robotaxi-licenses-after-months-long-freeze",
     "date": "2026-07-23",
-    "title": "China said to resume issuing robotaxi permits in selected cities"
+    "title": "Bloomberg: China Resumes Issuing Robotaxi Licenses After Months-Long Freeze"
    },
    {
-    "url": "https://ir.baidu.com",
-    "date": "2026-04-30",
-    "title": "Baidu Q1 2026: Apollo Go passes 22M cumulative rides"
+    "url": "https://ir.baidu.com/news-releases/news-release-details/baidu-announces-first-quarter-2026-results",
+    "date": "2026-05-18",
+    "title": "Baidu Announces First Quarter 2026 Results: Apollo Go passes 22M cumulative rides"
    }
   ]
  },
@@ -1149,7 +1149,15 @@
   "foundedYear": 2017,
   "fundingUSD": 383,
   "slug": "may-mobility",
-  "status": "active"
+  "status": "active",
+  "sources": [
+   {
+    "url": "https://maymobility.com/posts/lyft-and-may-mobility-deploy-their-first-autonomous-vehicle-fleet-in-atlanta/",
+    "title": "Lyft and May Mobility deploy their first autonomous vehicle fleet in Atlanta",
+    "date": "2025-09-10"
+   }
+  ],
+  "lastVerified": "2026-07-25"
  },
  {
   "id": "c30",
@@ -1269,9 +1277,9 @@
   "lastVerified": "2026-07-25",
   "sources": [
    {
-    "url": "https://motional.com",
-    "date": "2026-03-31",
-    "title": "Motional IONIQ 5 robotaxis live on Uber in Las Vegas"
+    "url": "https://investor.uber.com/news-events/news/press-release-details/2026/Uber-and-Motional-Launch-Robotaxi-Service-in-Las-Vegas/default.aspx",
+    "date": "2026-03-13",
+    "title": "Uber and Motional Launch Robotaxi Service in Las Vegas"
    }
   ]
  },
@@ -1467,7 +1475,15 @@
   "milesReal": 2.4,
   "valuationUSD": 4530,
   "slug": "pony-ai",
-  "status": "active"
+  "status": "active",
+  "sources": [
+   {
+    "url": "https://ir.pony.ai/news-releases/news-release-details/pony-ai-inc-reports-first-quarter-2026-financial-results",
+    "title": "Pony AI Q1 2026 results: fleet passes 1,700 robotaxis, year-end target raised to 3,500+",
+    "date": "2026-05-26"
+   }
+  ],
+  "lastVerified": "2026-07-25"
  },
  {
   "id": "c38",
@@ -1619,9 +1635,9 @@
   "lastVerified": "2026-07-25",
   "sources": [
    {
-    "url": "https://investors.serverobotics.com",
-    "date": "2025-12-31",
-    "title": "Serve Robotics reaches 2,000-robot fleet target"
+    "url": "https://www.globenewswire.com/news-release/2025/12/12/3204583/0/en/Serve-Robotics-Builds-2-000-Autonomous-Delivery-Robots-Creating-Largest-Sidewalk-Delivery-Fleet-in-the-U-S.html",
+    "date": "2025-12-12",
+    "title": "Serve Robotics Builds 2,000 Autonomous Delivery Robots, Creating Largest Sidewalk Delivery Fleet in the U.S."
    }
   ]
  },
@@ -1943,14 +1959,14 @@
   "lastVerified": "2026-07-25",
   "sources": [
    {
-    "url": "https://techcrunch.com",
+    "url": "https://techcrunch.com/2026/03/27/waymo-skyrocketing-ridership-in-one-chart/",
     "date": "2026-03-27",
-    "title": "TechCrunch: Waymo reaches 500,000 weekly paid rides"
+    "title": "TechCrunch: Waymo's skyrocketing ridership in one chart (500,000 weekly paid rides)"
    },
    {
-    "url": "https://www.nhtsa.gov",
+    "url": "https://static.nhtsa.gov/odi/rcl/2026/RCLRPT-26E035-7637.pdf",
     "date": "2026-06-18",
-    "title": "NHTSA recall 3,871 Waymo vehicles, freeway construction zones"
+    "title": "NHTSA Part 573 Safety Recall Report 26E035: 3,871 Waymo vehicles, freeway construction zones"
    }
   ]
  },
@@ -1997,9 +2013,9 @@
   "lastVerified": "2026-07-25",
   "sources": [
    {
-    "url": "https://wayve.ai",
+    "url": "https://wayve.ai/press/series-d/",
     "date": "2026-02-25",
-    "title": "Wayve closes $1.2B Series D at $8.6B valuation"
+    "title": "Wayve secures $1.5B to deploy its global autonomy platform ($1.2B Series D at $8.6B)"
    }
   ]
  },
@@ -2043,7 +2059,15 @@
   "fleetSize": 1023,
   "valuationUSD": 5300,
   "slug": "weride",
-  "status": "active"
+  "status": "active",
+  "sources": [
+   {
+    "url": "https://ir.weride.ai/news-releases/news-release-details/wrd-30-becomes-chinas-first-four-time-urban-intelligent-driving",
+    "title": "WeRide Q1 2026 results: record revenue up 57.6% YoY; Abu Dhabi service covers ~70% of core areas",
+    "date": "2026-05-13"
+   }
+  ],
+  "lastVerified": "2026-07-25"
  },
  {
   "id": "c52",
@@ -2600,9 +2624,9 @@
   "lastVerified": "2026-07-25",
   "sources": [
    {
-    "url": "https://www.reuters.com",
+    "url": "https://investors.luminartech.com/news-events/press-releases/detail/110/luminar-technologies-inc-initiates-voluntary-chapter-11",
     "date": "2025-12-15",
-    "title": "Luminar files for Chapter 11 bankruptcy protection"
+    "title": "Luminar Technologies Initiates Voluntary Chapter 11 Proceedings to Facilitate Value-Maximizing Sale Process"
    }
   ]
  },
@@ -8824,7 +8848,15 @@
   "fundingUSD": 2340,
   "valuationUSD": 6000,
   "slug": "nuro",
-  "status": "active"
+  "status": "active",
+  "sources": [
+   {
+    "url": "https://www.nuro.ai/blog/nuro-announces-series-e-financing-at-6b-valuation-backed-by-leading-financial-and-strategic-investors",
+    "title": "Nuro announces Series E financing at $6B valuation, backed by leading financial and strategic investors",
+    "date": "2025-08-21"
+   }
+  ],
+  "lastVerified": "2026-07-25"
  },
  {
   "id": "c236",
@@ -9233,9 +9265,9 @@
   "lastVerified": "2026-07-25",
   "sources": [
    {
-    "url": "https://electrek.co",
+    "url": "https://electrek.co/2026/07/21/tesla-robotaxi-tampa-orlando-austin-fleet-stalls/",
     "date": "2026-07-21",
-    "title": "Electrek: Tesla robotaxi fleet tracking, Austin and new metros"
+    "title": "Electrek: Tesla adds Robotaxi in Tampa and Orlando as Austin stalls at 17 cars"
    }
   ]
  },
@@ -9798,14 +9830,14 @@
   "lastVerified": "2026-07-25",
   "sources": [
    {
-    "url": "https://zoox.com",
-    "date": "2026-06-25",
-    "title": "Zoox unveils production robotaxi ahead of series manufacturing"
+    "url": "https://www.cnbc.com/2026/06/24/amazons-zoox-unveils-redesigned-robotaxi-ahead-of-upcoming-expansion.html",
+    "date": "2026-06-24",
+    "title": "CNBC: Amazon's Zoox unveils redesigned robotaxi ahead of upcoming expansion"
    },
    {
-    "url": "https://www.nhtsa.gov",
+    "url": "https://www.federalregister.gov/documents/2026/03/11/2026-04730/zoox-receipt-of-application-for-temporary-exemption-from-various-requirements-of-the-federal-motor",
     "date": "2026-03-11",
-    "title": "NHTSA request for comment on Zoox Part 555 petition"
+    "title": "Federal Register: Zoox receipt of application for temporary exemption from various FMVSS requirements; request for comment"
    }
   ]
  },
@@ -11355,9 +11387,9 @@
   "lastVerified": "2026-07-25",
   "sources": [
    {
-    "url": "https://electrek.co",
+    "url": "https://electrek.co/2026/07/21/tesla-robotaxi-tampa-orlando-austin-fleet-stalls/",
     "date": "2026-07-21",
-    "title": "Electrek: Tesla adds Tampa and Orlando robotaxi service"
+    "title": "Electrek: Tesla adds Robotaxi in Tampa and Orlando as Austin stalls at 17 cars"
    }
   ]
  },
@@ -20519,9 +20551,9 @@
   "lastVerified": "2026-07-25",
   "sources": [
    {
-    "url": "https://techcrunch.com",
+    "url": "https://techcrunch.com/2026/06/26/this-silicon-valley-startup-has-raised-10m-to-build-pitstops-to-clean-and-charge-robotaxis/",
     "date": "2026-06-26",
-    "title": "TechCrunch: Aseon Labs raises $10M to build robotaxi pitstops"
+    "title": "TechCrunch: Aseon Labs raises $10M to build pitstops that clean and charge robotaxis"
    }
   ],
   "slug": "aseon-labs",

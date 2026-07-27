@@ -35,7 +35,7 @@
     </nav>
     <div class="chrome-tools">
       <div id="site-search" role="search">
-        <input type="search" placeholder="SEARCH 560" autocomplete="off" spellcheck="false" aria-label="Search companies">
+        <input type="search" placeholder="SEARCH 561" autocomplete="off" spellcheck="false" aria-label="Search companies">
         <div id="search-results" role="listbox" aria-label="Search results"></div>
       </div>
       <button id="theme-toggle" aria-label="Toggle light and dark theme">
@@ -57,8 +57,8 @@
     </div>
   </div>
   <p class="standfirst">Tesla is running the industry's largest architectural experiment: cameras only, no
-    prior map dependence, one end-to-end network trained by millions of customer cars. The service exists.
-    The question is the gap between the map and the fleet.</p>
+    prior map dependence, one end-to-end network trained by millions of customer cars. The service is operating
+    commercially; the open question is how quickly vehicle numbers follow the mapped service area.</p>
 </div>
 
 <section>
@@ -67,7 +67,7 @@
     <div class="m-row"><span class="k">Unsupervised</span><span class="v">Austin, Dallas and Houston, Texas, plus Tampa and Orlando added 21 July 2026.</span></div>
     <div class="m-row"><span class="k">With safety drivers</span><span class="v">San Francisco Bay Area, over 500 vehicles, operating under California rules that require a driver aboard.</span></div>
     <div class="m-row"><span class="k">Filed</span><span class="v">A Nevada permit application on 5 June 2026 for up to 5,000 vehicles.</span></div>
-    <div class="m-row"><span class="k">Does it charge</span><span class="v">Yes. Pricing history is its own story: $4.20 flat at the June 2025 launch, $1 base plus $1 per mile from July 2025, and the base fare tripled in March 2026.</span></div>
+    <div class="m-row"><span class="k">Does it charge</span><span class="v">Yes. Pricing has moved several times: $4.20 flat at the June 2025 launch, $1 base plus $1 per mile from July 2025, and the base fare tripled in March 2026.</span></div>
     <div class="m-row"><span class="k">Human oversight</span><span class="v">Remote operators monitor rides and can take direct control at low speed to reposition a stuck vehicle, so the service is not free of human involvement.</span></div>
   </div>
   <div class="fact-grid">
@@ -87,18 +87,18 @@
       the FSD v15 rewrite, which grows the driving model from roughly 1 billion to about 10 billion
       parameters and is targeted for late 2026 or early 2027. Musk's argument is that deploying
       unsupervised at scale before that rewrite makes no sense.</p>
-    <p>There is a hardware asterisk with a large population attached: Hardware 3 vehicles, a substantial
+    <p>One hardware constraint affects a large share of the existing fleet: Hardware 3 vehicles, a substantial
       share of the global fleet, lack the memory bandwidth for unsupervised operation and cannot be
-      upgraded without replacing both the compute unit and the cameras. The promise that every car is a
-      robotaxi has quietly become a promise about newer cars.</p>
+      upgraded without replacing both the compute unit and the cameras. In practice this narrows the near-term robotaxi
+      fleet to more recent vehicles.</p>
   </div>
 </section>
 
 <section>
   <h2 class="sec"><span class="n">03</span>The vehicle</h2>
   <div class="prose">
-    <p>Today's service runs on production Model Ys, which is the whole point of the strategy: no
-      retrofit, no purpose-built platform, just cars off the existing line. The purpose-built Cybercab
+    <p>Today's service runs on production Model Ys, which is central to the strategy: no retrofit and no
+      separate platform, just vehicles from the existing line. The purpose-built Cybercab
       remains the forward promise, and its production economics are a 2027 question. Morgan Stanley's
       December 2025 forecast of 1,000 Tesla robotaxis operating by the end of 2026 is the reference
       external estimate against which the current count of roughly 21 can be judged.</p>
@@ -129,12 +129,12 @@
   <h2 class="sec"><span class="n">06</span>The hard part</h2>
   <div class="hard-part">
     <p class="hp-label">What Tesla has not solved</p>
-    <p>The map is metro-wide and the fleet is seventeen cars. Austin's geofence has covered roughly 245
-      square miles since 3 June 2026, while the active unsupervised fleet there fell from about 25
-      vehicles in late April to about 17 by 21 July. Coverage without density produces long waits, and
-      density is gated on a model rewrite that has not shipped and a hardware generation that cannot be
-      upgraded in place. Until v15 lands, the robotaxi is a demonstration of intent operating at the
-      scale of a large taxi office.</p>
+    <p>The service area and the fleet are growing at different rates. Austin's geofence has covered
+      roughly 245 square miles since 3 June 2026, while the active unsupervised fleet there moved from
+      about 25 vehicles in late April to about 17 by 21 July, per community fleet tracking. Wide
+      coverage at low vehicle density lengthens wait times, and density is currently gated on the FSD
+      v15 rewrite and on a hardware generation that cannot be upgraded in place. The strategy is
+      coherent; the question is when the software milestone arrives to unlock it.</p>
   </div>
 </section>
 

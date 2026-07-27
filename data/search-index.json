@@ -1471,7 +1471,7 @@
   "n": "Quectel Wireless",
   "s": "quectel-wireless",
   "c": "Connectivity & Infrastructure",
-  "b": "IoT and vehicle modules on compliance watchlists worldwide",
+  "b": "IoT and vehicle connectivity modules, subject to varying regulatory treatment ac",
   "r": "Greater China",
   "m": "Scaled"
  },
@@ -1727,7 +1727,7 @@
   "n": "Foxconn / Foxtron / MIH",
   "s": "foxconn",
   "c": "Vehicle Platform & Manufacturing",
-  "b": "Contract EV manufacturing wildcard for AV-ready platforms",
+  "b": "Contract EV manufacturing for AV-ready platforms",
   "r": "Greater China",
   "m": "Commercial"
  },
@@ -2246,7 +2246,7 @@
   "n": "Flexport",
   "s": "flexport",
   "c": "Demand & Commercial Platforms",
-  "b": "Digital freight forwarder on the autonomous trucking watchlist",
+  "b": "Digital freight forwarder relevant to autonomous trucking",
   "r": "North America",
   "m": "Scaled"
  },
@@ -4517,6 +4517,14 @@
   "s": "enso",
   "c": "Fleet Operations & Depot",
   "b": "EV-native tires priced 10-20% under the majors, sold direct",
+  "r": "Europe",
+  "m": "Commercial"
+ },
+ {
+  "n": "Bliq",
+  "s": "bliq",
+  "c": "AV Driver / Autonomy Software",
+  "b": "Retrofit autonomy stack running driverless fleets under remote supervision",
   "r": "Europe",
   "m": "Commercial"
  }

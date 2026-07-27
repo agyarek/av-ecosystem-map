@@ -15,7 +15,7 @@
 <rect x="206" y="366" width="1748" height="948" rx="14" fill="#FFFFFF" stroke="#DEDFD8" stroke-width="2"/>
 <rect x="206" y="366" width="1748" height="8" rx="4" fill="oklch(0.62 0.075 265)"/>
 <text x="226" y="475" font-size="34" font-weight="700" fill="#12130F">AV DRIVER / AUTONOMY SOFTWARE</text>
-<text x="1934" y="475" font-size="34" font-weight="600" text-anchor="end" font-family="IBM Plex Mono, monospace" fill="oklch(0.62 0.075 265)">51</text>
+<text x="1934" y="475" font-size="34" font-weight="600" text-anchor="end" font-family="IBM Plex Mono, monospace" fill="oklch(0.62 0.075 265)">52</text>
 <rect x="1966" y="366" width="1268" height="948" rx="14" fill="#FFFFFF" stroke="#DEDFD8" stroke-width="2"/>
 <rect x="1966" y="366" width="1268" height="8" rx="4" fill="oklch(0.62 0.075 200)"/>
 <text x="1986" y="475" font-size="34" font-weight="700" fill="#12130F">SENSING &amp; COMPUTE HARDWARE</text>
@@ -181,7 +181,7 @@
 <text x="1560" y="748" font-size="34" font-weight="800" text-anchor="middle" fill="#FFFFFF">WA</text>
 <text x="1560" y="792" font-size="17" text-anchor="middle" fill="#12130F">Waabi</text>
 </g>
-<g class="chip" data-slug="baidu-apollo-go">
+<g class="chip" data-slug="baidu">
 <rect x="1648" y="686" width="144" height="148" rx="12" fill="#FAFAF7" stroke="#DEDFD8"/>
 <rect x="1684" y="698" width="72" height="72" rx="16" fill="oklch(0.66 0.06 265)"/>
 <text x="1720" y="748" font-size="34" font-weight="800" text-anchor="middle" fill="#FFFFFF">BA</text>
@@ -258,127 +258,133 @@
 <text x="1720" y="908" font-size="34" font-weight="800" text-anchor="middle" fill="#FFFFFF">AV</text>
 <text x="1720" y="952" font-size="17" text-anchor="middle" fill="#12130F">Avride</text>
 </g>
-<g class="chip" data-slug="bot-auto">
+<g class="chip" data-slug="bliq">
 <rect x="1808" y="846" width="144" height="148" rx="12" fill="#FAFAF7" stroke="#DEDFD8"/>
 <rect x="1844" y="858" width="72" height="72" rx="16" fill="oklch(0.66 0.06 265)"/>
-<text x="1880" y="908" font-size="34" font-weight="800" text-anchor="middle" fill="#FFFFFF">BA</text>
-<text x="1880" y="952" font-size="17" text-anchor="middle" fill="#12130F">Bot Auto</text>
+<text x="1880" y="908" font-size="34" font-weight="800" text-anchor="middle" fill="#FFFFFF">BL</text>
+<text x="1880" y="952" font-size="17" text-anchor="middle" fill="#12130F">Bliq</text>
 </g>
-<g class="chip" data-slug="coco">
+<g class="chip" data-slug="bot-auto">
 <rect x="208" y="1006" width="144" height="148" rx="12" fill="#FAFAF7" stroke="#DEDFD8"/>
 <rect x="244" y="1018" width="72" height="72" rx="16" fill="oklch(0.66 0.06 265)"/>
-<text x="280" y="1068" font-size="34" font-weight="800" text-anchor="middle" fill="#FFFFFF">CO</text>
-<text x="280" y="1112" font-size="17" text-anchor="middle" fill="#12130F">Coco</text>
+<text x="280" y="1068" font-size="34" font-weight="800" text-anchor="middle" fill="#FFFFFF">BA</text>
+<text x="280" y="1112" font-size="17" text-anchor="middle" fill="#12130F">Bot Auto</text>
 </g>
-<g class="chip" data-slug="oxa">
+<g class="chip" data-slug="coco">
 <rect x="368" y="1006" width="144" height="148" rx="12" fill="#FAFAF7" stroke="#DEDFD8"/>
 <rect x="404" y="1018" width="72" height="72" rx="16" fill="oklch(0.66 0.06 265)"/>
-<text x="440" y="1068" font-size="34" font-weight="800" text-anchor="middle" fill="#FFFFFF">OX</text>
-<text x="440" y="1112" font-size="17" text-anchor="middle" fill="#12130F">Oxa</text>
+<text x="440" y="1068" font-size="34" font-weight="800" text-anchor="middle" fill="#FFFFFF">CO</text>
+<text x="440" y="1112" font-size="17" text-anchor="middle" fill="#12130F">Coco</text>
 </g>
-<g class="chip" data-slug="pronto-ai">
+<g class="chip" data-slug="oxa">
 <rect x="528" y="1006" width="144" height="148" rx="12" fill="#FAFAF7" stroke="#DEDFD8"/>
 <rect x="564" y="1018" width="72" height="72" rx="16" fill="oklch(0.66 0.06 265)"/>
-<text x="600" y="1068" font-size="34" font-weight="800" text-anchor="middle" fill="#FFFFFF">PA</text>
-<text x="600" y="1112" font-size="17" text-anchor="middle" fill="#12130F">Pronto.ai</text>
+<text x="600" y="1068" font-size="34" font-weight="800" text-anchor="middle" fill="#FFFFFF">OX</text>
+<text x="600" y="1112" font-size="17" text-anchor="middle" fill="#12130F">Oxa</text>
 </g>
-<g class="chip" data-slug="autox">
+<g class="chip" data-slug="pronto-ai">
 <rect x="688" y="1006" width="144" height="148" rx="12" fill="#FAFAF7" stroke="#DEDFD8"/>
 <rect x="724" y="1018" width="72" height="72" rx="16" fill="oklch(0.66 0.06 265)"/>
-<text x="760" y="1068" font-size="34" font-weight="800" text-anchor="middle" fill="#FFFFFF">AU</text>
-<text x="760" y="1112" font-size="17" text-anchor="middle" fill="#12130F">AutoX</text>
+<text x="760" y="1068" font-size="34" font-weight="800" text-anchor="middle" fill="#FFFFFF">PA</text>
+<text x="760" y="1112" font-size="17" text-anchor="middle" fill="#12130F">Pronto.ai</text>
 </g>
-<g class="chip" data-slug="bytedance">
+<g class="chip" data-slug="autox">
 <rect x="848" y="1006" width="144" height="148" rx="12" fill="#FAFAF7" stroke="#DEDFD8"/>
 <rect x="884" y="1018" width="72" height="72" rx="16" fill="oklch(0.66 0.06 265)"/>
-<text x="920" y="1068" font-size="34" font-weight="800" text-anchor="middle" fill="#FFFFFF">BY</text>
-<text x="920" y="1112" font-size="17" text-anchor="middle" fill="#12130F">ByteDance</text>
+<text x="920" y="1068" font-size="34" font-weight="800" text-anchor="middle" fill="#FFFFFF">AU</text>
+<text x="920" y="1112" font-size="17" text-anchor="middle" fill="#12130F">AutoX</text>
 </g>
-<g class="chip" data-slug="cyngn">
+<g class="chip" data-slug="bytedance">
 <rect x="1008" y="1006" width="144" height="148" rx="12" fill="#FAFAF7" stroke="#DEDFD8"/>
 <rect x="1044" y="1018" width="72" height="72" rx="16" fill="oklch(0.66 0.06 265)"/>
-<text x="1080" y="1068" font-size="34" font-weight="800" text-anchor="middle" fill="#FFFFFF">CY</text>
-<text x="1080" y="1112" font-size="17" text-anchor="middle" fill="#12130F">Cyngn</text>
+<text x="1080" y="1068" font-size="34" font-weight="800" text-anchor="middle" fill="#FFFFFF">BY</text>
+<text x="1080" y="1112" font-size="17" text-anchor="middle" fill="#12130F">ByteDance</text>
 </g>
-<g class="chip" data-slug="tusimple">
+<g class="chip" data-slug="cyngn">
 <rect x="1168" y="1006" width="144" height="148" rx="12" fill="#FAFAF7" stroke="#DEDFD8"/>
 <rect x="1204" y="1018" width="72" height="72" rx="16" fill="oklch(0.66 0.06 265)"/>
-<text x="1240" y="1068" font-size="34" font-weight="800" text-anchor="middle" fill="#FFFFFF">TU</text>
-<text x="1240" y="1112" font-size="17" text-anchor="middle" fill="#12130F">TuSimple</text>
-<line x1="1174" y1="1012" x2="1306" y2="1142" stroke="#6E7268" stroke-width="2" opacity=".5"/>
+<text x="1240" y="1068" font-size="34" font-weight="800" text-anchor="middle" fill="#FFFFFF">CY</text>
+<text x="1240" y="1112" font-size="17" text-anchor="middle" fill="#12130F">Cyngn</text>
 </g>
-<g class="chip" data-slug="didi-autonomous-driving">
+<g class="chip" data-slug="tusimple">
 <rect x="1328" y="1006" width="144" height="148" rx="12" fill="#FAFAF7" stroke="#DEDFD8"/>
 <rect x="1364" y="1018" width="72" height="72" rx="16" fill="oklch(0.66 0.06 265)"/>
-<text x="1400" y="1068" font-size="34" font-weight="800" text-anchor="middle" fill="#FFFFFF">DA</text>
-<text x="1400" y="1112" font-size="17" text-anchor="middle" fill="#12130F">DiDi Autonomous</text>
-<text x="1400" y="1132" font-size="17" text-anchor="middle" fill="#12130F">Driving</text>
+<text x="1400" y="1068" font-size="34" font-weight="800" text-anchor="middle" fill="#FFFFFF">TU</text>
+<text x="1400" y="1112" font-size="17" text-anchor="middle" fill="#12130F">TuSimple</text>
+<line x1="1334" y1="1012" x2="1466" y2="1142" stroke="#6E7268" stroke-width="2" opacity=".5"/>
 </g>
-<g class="chip" data-slug="sonatus">
+<g class="chip" data-slug="didi-autonomous-driving">
 <rect x="1488" y="1006" width="144" height="148" rx="12" fill="#FAFAF7" stroke="#DEDFD8"/>
 <rect x="1524" y="1018" width="72" height="72" rx="16" fill="oklch(0.66 0.06 265)"/>
-<text x="1560" y="1068" font-size="34" font-weight="800" text-anchor="middle" fill="#FFFFFF">SO</text>
-<text x="1560" y="1112" font-size="17" text-anchor="middle" fill="#12130F">Sonatus</text>
+<text x="1560" y="1068" font-size="34" font-weight="800" text-anchor="middle" fill="#FFFFFF">DA</text>
+<text x="1560" y="1112" font-size="17" text-anchor="middle" fill="#12130F">DiDi Autonomous</text>
+<text x="1560" y="1132" font-size="17" text-anchor="middle" fill="#12130F">Driving</text>
 </g>
-<g class="chip" data-slug="tier-iv">
+<g class="chip" data-slug="sonatus">
 <rect x="1648" y="1006" width="144" height="148" rx="12" fill="#FAFAF7" stroke="#DEDFD8"/>
 <rect x="1684" y="1018" width="72" height="72" rx="16" fill="oklch(0.66 0.06 265)"/>
-<text x="1720" y="1068" font-size="34" font-weight="800" text-anchor="middle" fill="#FFFFFF">TI</text>
-<text x="1720" y="1112" font-size="17" text-anchor="middle" fill="#12130F">Tier IV</text>
+<text x="1720" y="1068" font-size="34" font-weight="800" text-anchor="middle" fill="#FFFFFF">SO</text>
+<text x="1720" y="1112" font-size="17" text-anchor="middle" fill="#12130F">Sonatus</text>
 </g>
-<g class="chip" data-slug="autox-tensor">
+<g class="chip" data-slug="tier-iv">
 <rect x="1808" y="1006" width="144" height="148" rx="12" fill="#FAFAF7" stroke="#DEDFD8"/>
 <rect x="1844" y="1018" width="72" height="72" rx="16" fill="oklch(0.66 0.06 265)"/>
-<text x="1880" y="1068" font-size="34" font-weight="800" text-anchor="middle" fill="#FFFFFF">AT</text>
-<text x="1880" y="1112" font-size="17" text-anchor="middle" fill="#12130F">AutoX / Tensor</text>
-<line x1="1814" y1="1012" x2="1946" y2="1142" stroke="#6E7268" stroke-width="2" opacity=".5"/>
+<text x="1880" y="1068" font-size="34" font-weight="800" text-anchor="middle" fill="#FFFFFF">TI</text>
+<text x="1880" y="1112" font-size="17" text-anchor="middle" fill="#12130F">Tier IV</text>
 </g>
-<g class="chip" data-slug="cruise">
+<g class="chip" data-slug="autox-tensor">
 <rect x="208" y="1166" width="144" height="148" rx="12" fill="#FAFAF7" stroke="#DEDFD8"/>
 <rect x="244" y="1178" width="72" height="72" rx="16" fill="oklch(0.66 0.06 265)"/>
-<text x="280" y="1228" font-size="34" font-weight="800" text-anchor="middle" fill="#FFFFFF">CR</text>
-<text x="280" y="1272" font-size="17" text-anchor="middle" fill="#12130F">Cruise</text>
+<text x="280" y="1228" font-size="34" font-weight="800" text-anchor="middle" fill="#FFFFFF">AT</text>
+<text x="280" y="1272" font-size="17" text-anchor="middle" fill="#12130F">AutoX / Tensor</text>
 <line x1="214" y1="1172" x2="346" y2="1302" stroke="#6E7268" stroke-width="2" opacity=".5"/>
-<circle cx="338" cy="1180" r="6" fill="#F2B705"/>
 </g>
-<g class="chip" data-slug="elektrobit">
+<g class="chip" data-slug="cruise">
 <rect x="368" y="1166" width="144" height="148" rx="12" fill="#FAFAF7" stroke="#DEDFD8"/>
 <rect x="404" y="1178" width="72" height="72" rx="16" fill="oklch(0.66 0.06 265)"/>
-<text x="440" y="1228" font-size="34" font-weight="800" text-anchor="middle" fill="#FFFFFF">EL</text>
-<text x="440" y="1272" font-size="17" text-anchor="middle" fill="#12130F">Elektrobit</text>
+<text x="440" y="1228" font-size="34" font-weight="800" text-anchor="middle" fill="#FFFFFF">CR</text>
+<text x="440" y="1272" font-size="17" text-anchor="middle" fill="#12130F">Cruise</text>
+<line x1="374" y1="1172" x2="506" y2="1302" stroke="#6E7268" stroke-width="2" opacity=".5"/>
+<circle cx="498" cy="1180" r="6" fill="#F2B705"/>
 </g>
-<g class="chip" data-slug="qcraft">
+<g class="chip" data-slug="elektrobit">
 <rect x="528" y="1166" width="144" height="148" rx="12" fill="#FAFAF7" stroke="#DEDFD8"/>
 <rect x="564" y="1178" width="72" height="72" rx="16" fill="oklch(0.66 0.06 265)"/>
-<text x="600" y="1228" font-size="34" font-weight="800" text-anchor="middle" fill="#FFFFFF">QC</text>
-<text x="600" y="1272" font-size="17" text-anchor="middle" fill="#12130F">QCraft</text>
+<text x="600" y="1228" font-size="34" font-weight="800" text-anchor="middle" fill="#FFFFFF">EL</text>
+<text x="600" y="1272" font-size="17" text-anchor="middle" fill="#12130F">Elektrobit</text>
 </g>
-<g class="chip" data-slug="stack-av">
+<g class="chip" data-slug="qcraft">
 <rect x="688" y="1166" width="144" height="148" rx="12" fill="#FAFAF7" stroke="#DEDFD8"/>
 <rect x="724" y="1178" width="72" height="72" rx="16" fill="oklch(0.66 0.06 265)"/>
-<text x="760" y="1228" font-size="34" font-weight="800" text-anchor="middle" fill="#FFFFFF">SA</text>
-<text x="760" y="1272" font-size="17" text-anchor="middle" fill="#12130F">Stack AV</text>
+<text x="760" y="1228" font-size="34" font-weight="800" text-anchor="middle" fill="#FFFFFF">QC</text>
+<text x="760" y="1272" font-size="17" text-anchor="middle" fill="#12130F">QCraft</text>
 </g>
-<g class="chip" data-slug="argo-ai">
+<g class="chip" data-slug="stack-av">
 <rect x="848" y="1166" width="144" height="148" rx="12" fill="#FAFAF7" stroke="#DEDFD8"/>
 <rect x="884" y="1178" width="72" height="72" rx="16" fill="oklch(0.66 0.06 265)"/>
-<text x="920" y="1228" font-size="34" font-weight="800" text-anchor="middle" fill="#FFFFFF">AA</text>
-<text x="920" y="1272" font-size="17" text-anchor="middle" fill="#12130F">Argo AI</text>
-<line x1="854" y1="1172" x2="986" y2="1302" stroke="#6E7268" stroke-width="2" opacity=".5"/>
+<text x="920" y="1228" font-size="34" font-weight="800" text-anchor="middle" fill="#FFFFFF">SA</text>
+<text x="920" y="1272" font-size="17" text-anchor="middle" fill="#12130F">Stack AV</text>
 </g>
-<g class="chip" data-slug="embark-trucks">
+<g class="chip" data-slug="argo-ai">
 <rect x="1008" y="1166" width="144" height="148" rx="12" fill="#FAFAF7" stroke="#DEDFD8"/>
 <rect x="1044" y="1178" width="72" height="72" rx="16" fill="oklch(0.66 0.06 265)"/>
-<text x="1080" y="1228" font-size="34" font-weight="800" text-anchor="middle" fill="#FFFFFF">ET</text>
-<text x="1080" y="1272" font-size="17" text-anchor="middle" fill="#12130F">Embark Trucks</text>
+<text x="1080" y="1228" font-size="34" font-weight="800" text-anchor="middle" fill="#FFFFFF">AA</text>
+<text x="1080" y="1272" font-size="17" text-anchor="middle" fill="#12130F">Argo AI</text>
 <line x1="1014" y1="1172" x2="1146" y2="1302" stroke="#6E7268" stroke-width="2" opacity=".5"/>
 </g>
-<g class="chip" data-slug="ghost-autonomy">
+<g class="chip" data-slug="embark-trucks">
 <rect x="1168" y="1166" width="144" height="148" rx="12" fill="#FAFAF7" stroke="#DEDFD8"/>
 <rect x="1204" y="1178" width="72" height="72" rx="16" fill="oklch(0.66 0.06 265)"/>
-<text x="1240" y="1228" font-size="34" font-weight="800" text-anchor="middle" fill="#FFFFFF">GA</text>
-<text x="1240" y="1272" font-size="17" text-anchor="middle" fill="#12130F">Ghost Autonomy</text>
+<text x="1240" y="1228" font-size="34" font-weight="800" text-anchor="middle" fill="#FFFFFF">ET</text>
+<text x="1240" y="1272" font-size="17" text-anchor="middle" fill="#12130F">Embark Trucks</text>
 <line x1="1174" y1="1172" x2="1306" y2="1302" stroke="#6E7268" stroke-width="2" opacity=".5"/>
+</g>
+<g class="chip" data-slug="ghost-autonomy">
+<rect x="1328" y="1166" width="144" height="148" rx="12" fill="#FAFAF7" stroke="#DEDFD8"/>
+<rect x="1364" y="1178" width="72" height="72" rx="16" fill="oklch(0.66 0.06 265)"/>
+<text x="1400" y="1228" font-size="34" font-weight="800" text-anchor="middle" fill="#FFFFFF">GA</text>
+<text x="1400" y="1272" font-size="17" text-anchor="middle" fill="#12130F">Ghost Autonomy</text>
+<line x1="1334" y1="1172" x2="1466" y2="1302" stroke="#6E7268" stroke-width="2" opacity=".5"/>
 </g>
 <g class="chip" data-slug="infineon-technologies">
 <rect x="1968" y="526" width="144" height="148" rx="12" fill="#FAFAF7" stroke="#DEDFD8"/>
@@ -1821,7 +1827,7 @@
 <text x="5880" y="2028" font-size="34" font-weight="800" text-anchor="middle" fill="#FFFFFF">FO</text>
 <text x="5880" y="2072" font-size="17" text-anchor="middle" fill="#12130F">Ford</text>
 </g>
-<g class="chip" data-slug="foxconn-foxtron-mih-c213">
+<g class="chip" data-slug="foxconn">
 <rect x="5968" y="1966" width="144" height="148" rx="12" fill="#FAFAF7" stroke="#DEDFD8"/>
 <rect x="6004" y="1978" width="72" height="72" rx="16" fill="oklch(0.66 0.06 40)"/>
 <text x="6040" y="2028" font-size="34" font-weight="800" text-anchor="middle" fill="#FFFFFF">FF</text>
@@ -3594,7 +3600,7 @@
 <text x="2504" y="1984" font-size="19" text-anchor="middle" fill="#B9BCB2">million rides a week across 11</text>
 <text x="2504" y="2010" font-size="19" text-anchor="middle" fill="#B9BCB2">US metros (mid-2026).</text>
 </g>
-<g class="op" data-slug="baidu-apollo-go-c8">
+<g class="op" data-slug="baidu-apollo-go">
 <rect x="2884" y="1710" width="136" height="136" rx="28" fill="#FAFAF7"/>
 <text x="2952" y="1804" font-size="62" font-weight="900" text-anchor="middle" fill="#12130F">BA</text>
 <text x="2952" y="1888" font-size="31" font-weight="700" text-anchor="middle" fill="#FAFAF7">Baidu Apollo Go</text>
@@ -3676,5 +3682,5 @@
 <text x="4296" y="2490" font-size="19" text-anchor="middle" fill="#B9BCB2">in Las Vegas, March 2026.</text>
 </g>
 <text x="200" y="4490" font-size="30" font-weight="700" fill="#12130F">AUTONOMOUS VEHICLE ECOSYSTEM MAP</text>
-<text x="6600" y="4490" font-size="26" text-anchor="end" font-family="IBM Plex Mono, monospace" fill="#6E7268">560 ORGANISATIONS · 11 LAYERS · COMPILED BY KOFI AGYARE-KWABI</text>
+<text x="6600" y="4490" font-size="26" text-anchor="end" font-family="IBM Plex Mono, monospace" fill="#6E7268">561 ORGANISATIONS · 11 LAYERS · COMPILED BY KOFI AGYARE-KWABI</text>
 </svg>

@@ -2,7 +2,7 @@
 
 **Live: [agyarek.github.io/av-ecosystem-map](https://agyarek.github.io/av-ecosystem-map/)**
 
-An interactive field atlas of the autonomous vehicle industry: 560 organisations across eleven layers, the partnerships between them, the money behind them, the regulators who permit them, and the adjacent industries where autonomy shipped first.
+An interactive field atlas of the autonomous vehicle industry: 561 organisations across eleven layers, the partnerships between them, the money behind them, the regulators who permit them, and the adjacent industries where autonomy shipped first.
 
 Compiled and maintained by Kofi Agyare-Kwabi, ex-Uber Country Manager, GTM & Partnerships, Wharton MBA.
 
@@ -11,7 +11,7 @@ Compiled and maintained by Kofi Agyare-Kwabi, ex-Uber Country Manager, GTM & Par
 | Route | What it is |
 |---|---|
 | `/` | The loop: how a driverless ride works, and the waterline beneath it |
-| `/map/` | The wall chart: all 560 on one 6800×4560 poster, zoom/filter/export/print |
+| `/map/` | The wall chart: all 561 on one 6800×4560 poster, zoom/filter/export/print |
 | `/companies/` | The ledger: every field, sortable, filterable, URL-shareable, CSV/JSON export |
 | `/operators/` + 10 pages | The ten operators a passenger can actually meet, in depth |
 | `/partnerships/` | 148 mapped relationships organised by function; the demand-layer story |
@@ -32,7 +32,7 @@ everything derivable into `data/` at build time; the browser renders and never r
 ├── data/         source of truth + generated indexes (never edit generated files by hand)
 └── tools/
     ├── validate-data.py        invariants; run before every commit, fail on error
-    ├── build-poster-layout.py  freezes wall-chart geometry (560/560 placed, verified)
+    ├── build-poster-layout.py  freezes wall-chart geometry (561/561 placed, verified)
     ├── build-indexes.py        partner index, derived counts, search index
     ├── fetch-logos.py          logo pipeline (run in an unrestricted network; the
     │                           monogram tiles are the deliberate fallback until then)

@@ -1,7 +1,7 @@
 {
  "meta": {
   "generatedBy": "tools/build-indexes.py",
-  "companyCount": 560,
+  "companyCount": 561,
   "medallion": [
    "Baidu Apollo Go",
    "May Mobility",
@@ -20,7 +20,7 @@
   "Fleet Operations & Depot": 70,
   "Vehicle Platform & Manufacturing": 67,
   "Governance: Standards, Safety & Advocacy": 58,
-  "AV Driver / Autonomy Software": 55,
+  "AV Driver / Autonomy Software": 56,
   "Connectivity & Infrastructure": 55,
   "Demand & Commercial Platforms": 53,
   "Data, Maps & Simulation": 47,
@@ -30,21 +30,21 @@
  },
  "regions": {
   "North America": 265,
-  "Europe": 152,
+  "Europe": 153,
   "Greater China": 75,
   "Middle East & Africa": 35,
   "Asia-Pacific": 32,
   "Global": 1
  },
  "status": {
-  "active": 537,
+  "active": 538,
   "wound-down": 15,
   "acquired": 5,
   "bankrupt": 3
  },
  "maturityTop": {
   "Commercial-scaled": 179,
-  "Commercial-limited": 99,
+  "Commercial-limited": 100,
   "Active regulatory regime": 56,
   "N/A": 20,
   "Production": 13,
@@ -58,17 +58,17 @@
  },
  "stations": {
   "request": 53,
-  "driver": 191,
+  "driver": 192,
   "vehicle": 64,
   "pitlane": 70,
   "across": 172
  },
  "gaps": {
-  "companies": 560,
+  "companies": 561,
   "withMappedPartners": 128,
-  "withoutMappedPartners": 432,
+  "withoutMappedPartners": 433,
   "mappedEdges": 148,
-  "withDomain": 441,
+  "withDomain": 442,
   "withDisclosedFunding": 49,
   "spokenTo": 18
  }

@@ -1342,7 +1342,8 @@
   "GAC Group / GAC Toyota": "gac-motor.com",
   "BAIC Group": "baicgroup.com.cn",
   "MOIA": "moia.io",
-  "ENSO": "ensotyres.com"
+  "ENSO": "ensotyres.com",
+  "Bliq": "bliq.ai"
  },
  "known": {
   "Waymo": "The only fully driverless paid service at scale: about half a million rides a week across 11 US metros (mid-2026).",
@@ -1416,6 +1417,7 @@
   "Stellantis": "Fourth-largest automaker, supplying AV-ready van platforms to Uber and Pony.ai.",
   "Volkswagen Group / CARIAD": "Europe's largest automaker, betting on XPeng, Horizon and Mobileye stacks plus its own ID. Buzz AV.",
   "Verne": "Rimac-born operator behind Europe's first commercial robotaxi launch, Zagreb H2 2026",
-  "MOIA": "VW's autonomous ID.Buzz service, live on Uber in Los Angeles"
+  "MOIA": "VW's autonomous ID.Buzz service, live on Uber in Los Angeles",
+  "Bliq": "First company approved to run fully driverless road operations in an EU member state, in Estonia (May 2026)."
  }
 }

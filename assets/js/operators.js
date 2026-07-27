@@ -1,8 +1,34 @@
-/* operators.js :: fills partner sections on operator pages from
-   data/partner-index.json, so partnership edits never require touching prose. */
+/* operators.js :: fills partner sections and the citation trail on operator
+   pages from the data, so partnership and source edits never require touching
+   prose. A deep-dive page that states dated facts has to show its working. */
 (function () {
   'use strict';
   const { esc, json, ROOT } = window.AV;
+
+  // ---------------------------------------------------------- sources
+  const srcSlot = document.querySelector('[data-sources]');
+  if (srcSlot) {
+    json('data/av-companies.json').then(cs => {
+      const rec = cs.find(c => c.slug === srcSlot.dataset.sources);
+      const sources = (rec && rec.sources) || [];
+      if (!sources.length) {
+        srcSlot.innerHTML = '<p class="caption">Claims on this page are drawn from the record in '
+          + `<a href="${ROOT}companies/?open=${esc(srcSlot.dataset.sources)}">the ledger</a>, `
+          + 'which carries no filed sources yet. Corrections reach a human via the footer.</p>';
+        return;
+      }
+      srcSlot.innerHTML = '<ul class="src-list">' + sources.map(s =>
+        `<li><a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${esc(s.title)}</a>
+         <span class="caption">${esc(s.date)}</span></li>`).join('')
+        + `</ul><p class="caption">Every other figure on this page is dated in place and traceable
+           through <a href="${ROOT}companies/?open=${esc(srcSlot.dataset.sources)}">the full record</a>
+           and <a href="${ROOT}method/">Method</a>.</p>`;
+    }).catch(() => {
+      srcSlot.innerHTML = '<p class="caption">The source list failed to load.</p>';
+    });
+  }
+
+  // ---------------------------------------------------------- partners
   const slots = document.querySelectorAll('[data-partners]');
   if (!slots.length) return;
   json('data/partner-index.json').then(pidx => {

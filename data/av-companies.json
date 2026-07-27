@@ -1149,7 +1149,15 @@
   "foundedYear": 2017,
   "fundingUSD": 383,
   "slug": "may-mobility",
-  "status": "active"
+  "status": "active",
+  "sources": [
+   {
+    "url": "https://maymobility.com/posts/lyft-and-may-mobility-deploy-their-first-autonomous-vehicle-fleet-in-atlanta/",
+    "title": "Lyft and May Mobility deploy their first autonomous vehicle fleet in Atlanta",
+    "date": "2025-09-10"
+   }
+  ],
+  "lastVerified": "2026-07-25"
  },
  {
   "id": "c30",
@@ -1467,7 +1475,15 @@
   "milesReal": 2.4,
   "valuationUSD": 4530,
   "slug": "pony-ai",
-  "status": "active"
+  "status": "active",
+  "sources": [
+   {
+    "url": "https://ir.pony.ai/news-releases/news-release-details/pony-ai-inc-reports-first-quarter-2026-financial-results",
+    "title": "Pony AI Q1 2026 results: fleet passes 1,700 robotaxis, year-end target raised to 3,500+",
+    "date": "2026-05-26"
+   }
+  ],
+  "lastVerified": "2026-07-25"
  },
  {
   "id": "c38",
@@ -2043,7 +2059,15 @@
   "fleetSize": 1023,
   "valuationUSD": 5300,
   "slug": "weride",
-  "status": "active"
+  "status": "active",
+  "sources": [
+   {
+    "url": "https://ir.weride.ai/news-releases/news-release-details/wrd-30-becomes-chinas-first-four-time-urban-intelligent-driving",
+    "title": "WeRide Q1 2026 results: record revenue up 57.6% YoY; Abu Dhabi service covers ~70% of core areas",
+    "date": "2026-05-13"
+   }
+  ],
+  "lastVerified": "2026-07-25"
  },
  {
   "id": "c52",
@@ -8824,7 +8848,15 @@
   "fundingUSD": 2340,
   "valuationUSD": 6000,
   "slug": "nuro",
-  "status": "active"
+  "status": "active",
+  "sources": [
+   {
+    "url": "https://www.nuro.ai/blog/nuro-announces-series-e-financing-at-6b-valuation-backed-by-leading-financial-and-strategic-investors",
+    "title": "Nuro announces Series E financing at $6B valuation, backed by leading financial and strategic investors",
+    "date": "2025-08-21"
+   }
+  ],
+  "lastVerified": "2026-07-25"
  },
  {
   "id": "c236",

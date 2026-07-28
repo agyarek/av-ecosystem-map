@@ -34,11 +34,16 @@
 /* --------------------------------------------------------------- stage */
 .poster-stage { position: relative; margin-top: 12px; }
 .poster-viewport {
-  aspect-ratio: 6800 / 4560;
-  max-height: calc(100vh - 120px);
-  width: 100%;
+  /* The rosette is nearly square, so the viewport takes its shape rather than
+     letterboxing it inside a wide box that would only ever show grey. */
+  aspect-ratio: 8918 / 8178;
+  max-height: calc(100vh - 130px);
+  max-width: calc((100vh - 130px) * 8918 / 8178);
+  width: 100%; margin: 0 auto;
   overflow: hidden; position: relative;
-  background: var(--paper-2);
+  /* the same ground the poster paints, so letterboxing round a near-square
+     rosette reads as margin rather than as a second surface */
+  background: var(--paper);
   border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule);
   cursor: grab; touch-action: none;
   contain: layout paint;
@@ -50,7 +55,7 @@
 /* SVG chip states. Filtering and selection dim, never reflow. */
 #poster [data-chip] { transition: opacity 160ms; cursor: pointer; }
 #poster.has-sel [data-chip], #poster.has-sel .district-shell,
-#poster.has-sel .band-label, #poster.has-sel .medallion-shell { opacity: .12; }
+#poster.has-sel .medallion-shell { opacity: .16; }
 #poster.has-sel [data-chip].lit { opacity: 1; }
 #poster [data-chip].dimmed { opacity: .13; }
 #poster.has-sel [data-chip].dimmed:not(.lit) { opacity: .06; }
@@ -58,6 +63,24 @@
 #poster [data-chip].kbd-focus .chip-body { stroke: var(--cyan); stroke-width: 2.5; }
 #poster [data-chip].sel .chip-body { stroke: var(--cyan); stroke-width: 5; }
 #poster [data-chip]:focus { outline: none; }
+
+/* A layer answers as one piece: the panel and every tile in it lift away from
+   the hexagon together, the frame takes the layer's own colour, and the header
+   band fills in. Nothing reflows and nothing else dims. */
+#poster .district {
+  transform-box: view-box; transform-origin: var(--hx) var(--hy);
+  transition: transform 260ms cubic-bezier(.2, .8, .3, 1);
+}
+#poster .district.hot { transform: scale(1.022); }
+#poster .d-glow, #poster .d-tint, #poster .d-wash { transition: opacity 220ms ease; }
+#poster .district.hot .d-glow { opacity: .9; }
+#poster .district.hot .d-tint { opacity: .3; }
+#poster .district.hot .d-wash { opacity: .11; }
+#poster .district.hot .hex-edge { stroke-width: 22; }
+#poster .hex-edge { transition: stroke-width 220ms ease; }
+@media (prefers-reduced-motion: reduce) {
+  #poster .district, #poster .district.hot { transition: none; transform: none; }
+}
 #poster .links path {
   fill: none; stroke: var(--cyan); opacity: .85;
   vector-effect: non-scaling-stroke; stroke-width: 2.2px;
@@ -66,32 +89,88 @@
 @keyframes chip-pulse { 0% { transform: scale(1); } 35% { transform: scale(1.12); } 100% { transform: scale(1); } }
 
 /* --------------------------------------------------------------- card */
+/* The card opens beside the company it belongs to and follows it while the
+   camera moves; poster.js writes left/top. */
 #company-card {
-  position: absolute; right: 16px; bottom: 16px; z-index: 30;
-  width: min(340px, calc(100vw - 32px));
+  position: absolute; left: 16px; top: 16px; z-index: 30;
+  width: min(360px, calc(100vw - 32px));
+  max-height: min(540px, calc(100% - 28px)); overflow: auto; overscroll-behavior: contain;
   background: var(--paper-2); border: 1px solid var(--rule);
   border-radius: var(--r-card); padding: 16px;
   box-shadow: 0 18px 48px rgba(18, 19, 15, .2);
 }
 #company-card .cc-top { display: flex; align-items: flex-start; gap: 10px; }
+#company-card .cc-logo { width: 40px; height: 40px; flex: none; font-size: 15px; border-radius: 9px; }
+#company-card .cc-id { min-width: 0; }
 #company-card h2 { font-size: 18px; font-weight: 800; font-variation-settings: 'wdth' 112; line-height: 1.15; }
 #company-card .cc-close { margin-left: auto; color: var(--muted); font-size: 18px; line-height: 1; padding: 2px 6px; }
 #company-card .cc-close:hover { color: var(--alert); }
-#company-card .cc-layer { display: inline-flex; align-items: center; gap: 6px; font-family: var(--font-mono); font-size: 11px; color: var(--muted); margin-top: 6px; }
-#company-card .cc-layer .dot { width: 9px; height: 9px; border-radius: 3px; }
-#company-card .cc-sub { font-size: 13.5px; color: var(--ink-2); margin-top: 8px; line-height: 1.45; }
-#company-card .cc-partners { margin-top: 10px; font-size: 12.5px; max-height: 130px; overflow: auto; }
+#company-card .cc-layer { font-family: var(--font-mono); font-size: 11px; line-height: 1.5; color: var(--muted); margin-top: 5px; }
+#company-card .cc-layer .dot { display: inline-block; vertical-align: -1px; width: 9px; height: 9px; border-radius: 3px; margin-right: 5px; }
+#company-card .cc-sub { font-size: 13.5px; color: var(--ink-2); margin-top: 10px; line-height: 1.45; }
+#company-card .cc-facts {
+  display: grid; grid-template-columns: auto 1fr; gap: 3px 10px;
+  margin-top: 12px; padding-top: 10px; border-top: 1px solid var(--rule);
+  font-size: 12px; line-height: 1.4;
+}
+#company-card .cc-facts dt { font-family: var(--font-mono); font-size: 10px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); padding-top: 1px; }
+#company-card .cc-facts dd { color: var(--ink-2); }
+#company-card .cc-partners, #company-card .cc-src {
+  margin-top: 12px; padding-top: 10px; border-top: 1px solid var(--rule); font-size: 12.5px;
+}
 #company-card .cc-partners button {
   display: inline-block; padding: 1px 0; color: var(--cyan); font-size: 12.5px; text-align: left;
 }
-#company-card .cc-partners .pk { color: var(--muted); font-family: var(--font-mono); font-size: 10.5px; }
-#company-card .cc-actions { display: flex; gap: 8px; margin-top: 12px; flex-wrap: wrap; }
+#company-card .pk { color: var(--muted); font-family: var(--font-mono); font-size: 10px; letter-spacing: .06em; }
+#company-card .cc-src div { margin-top: 4px; }
+#company-card .cc-actions { display: flex; gap: 8px; margin-top: 14px; flex-wrap: wrap; }
 #company-card .cc-actions a { font-size: 11px; }
 #company-card.sheet {
-  position: fixed; left: 50%; transform: translateX(-50%);
-  right: auto; bottom: 12px; z-index: 150;
-  width: min(420px, calc(100vw - 24px));
+  position: fixed; left: 50%; top: auto; transform: translateX(-50%);
+  right: auto; bottom: 12px; z-index: 350;
+  width: min(420px, calc(100vw - 24px)); max-height: 60vh;
 }
+/* in full screen the sheet must leave the chart visible behind it */
+#map-shell:fullscreen #company-card.sheet,
+body.fs-pseudo #company-card.sheet { max-height: 44vh; }
+
+/* ---------------------------------------------------------- full screen */
+/* Native full screen where the browser allows a div; a fixed overlay where it
+   does not, which is every iPhone. The rail travels with the chart either way,
+   so filters and zoom stay reachable. */
+#map-shell:fullscreen, #map-shell:-webkit-full-screen, body.fs-pseudo #map-shell {
+  display: flex; flex-direction: column; background: var(--paper);
+  padding: 8px 0 0;
+}
+body.fs-pseudo #map-shell { position: fixed; inset: 0; z-index: 300; }
+body.fs-pseudo { overflow: hidden; }
+/* The rail travels into full screen, but on a phone the filter chips would eat
+   the screen they were meant to free, so it is capped and scrolls instead. */
+#map-shell:fullscreen .map-rail, body.fs-pseudo #map-shell .map-rail {
+  flex: 0 1 auto; margin-top: 0; padding: 0 14px; max-width: none;
+  max-height: 26vh; overflow-y: auto; overscroll-behavior: contain;
+}
+@media (max-width: 760px) {
+  #map-shell:fullscreen .rail-export .chip:not(#x-full),
+  body.fs-pseudo #map-shell .rail-export .chip:not(#x-full) { display: none; }
+  /* one line per filter group, scrolled sideways, so the rail costs three rows
+     of height instead of ten */
+  #map-shell:fullscreen .rail-row, body.fs-pseudo #map-shell .rail-row,
+  #map-shell:fullscreen .rail-group, body.fs-pseudo #map-shell .rail-group {
+    flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none;
+  }
+  #map-shell:fullscreen .rail-row .chip, body.fs-pseudo #map-shell .rail-row .chip,
+  #map-shell:fullscreen .rail-text, body.fs-pseudo #map-shell .rail-text { flex: none; }
+  #map-shell:fullscreen #filter-state, body.fs-pseudo #map-shell #filter-state { display: none; }
+}
+#map-shell:fullscreen .poster-stage, body.fs-pseudo #map-shell .poster-stage {
+  flex: 1 1 auto; min-height: 0; margin-top: 8px;
+}
+#map-shell:fullscreen .poster-viewport, body.fs-pseudo #map-shell .poster-viewport {
+  aspect-ratio: auto; max-height: none; max-width: none; height: 100%; border: 0;
+}
+.nav-fs { margin-bottom: 14px; }
+.nav-fs .btn { width: 100%; text-align: center; }
 
 /* --------------------------------------------------------------- navigator (mobile) */
 #navigator .med-strip {
@@ -168,7 +247,9 @@
     border: 0; width: 100%; height: auto;
   }
   #poster { width: 100%; height: auto; }
-  #poster.has-sel [data-chip], #poster [data-chip].dimmed { opacity: 1 !important; }
+  #poster.has-sel [data-chip], #poster [data-chip].dimmed,
+  #poster.has-sel .district-shell, #poster.has-sel .medallion-shell { opacity: 1 !important; }
+  #poster .district, #poster .district.hot { transform: none !important; }
   #poster .links { display: none; }
 }
 

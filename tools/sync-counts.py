@@ -11,8 +11,8 @@ data/derived-counts.json instead.
 
 data/counts-lock.json records what is currently written, which makes the
 rewrite exact and idempotent: it replaces the previous value, never a number
-that happens to look similar. Word boundaries protect against substrings, so
-the 4560 in the poster's 6800 x 4560 canvas is never touched.
+that happens to look similar. Word boundaries protect against substrings, so a
+canvas dimension or a hue angle is never mistaken for a company count.
 """
 import json, os, re, sys
 

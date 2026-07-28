@@ -1,14 +1,20 @@
 /* poster.js :: the wall chart.
    Renders data/poster-layout.json verbatim (geometry is frozen at build time),
    then adds camera, selection, filters, exports and keyboard navigation.
+
+   The composition is a hexagonal rosette: the ten operators inside a hexagon,
+   the ten remaining layers docked on its six borders as rotated panels. The
+   panels tilt; the company tiles inside them never do.
+
    Filtering dims; it never reflows. One company, one chip, always. */
 (function () {
   'use strict';
-  const { ROOT, esc, json, reducedMotion } = window.AV;
+  const { ROOT, esc, json, fmtM, reducedMotion } = window.AV;
 
   const svg = document.getElementById('poster');
   const viewport = document.getElementById('poster-viewport');
   const stage = document.getElementById('poster-stage');
+  const shell = document.getElementById('map-shell');
   const rail = document.getElementById('map-rail');
   const navWrap = document.getElementById('navigator-wrap');
   const card = document.getElementById('company-card');
@@ -22,12 +28,24 @@
     'Capital, Insurance & Risk': 'capital', 'Governance: Regulators & Government': 'regulators',
     'Governance: Standards, Safety & Advocacy': 'standards'
   };
+  // The home page still tells the ride as four stages. The chart no longer draws
+  // them as bands, so a stage anchor resolves to the districts it covers.
+  const STAGE_DISTRICTS = {
+    request: ['demand-commercial-platforms'],
+    driver: ['av-driver-autonomy-software', 'sensing-compute-hardware',
+             'data-maps-simulation', 'connectivity-infrastructure'],
+    vehicle: ['vehicle-platform-manufacturing'],
+    pitlane: ['fleet-operations-depot'],
+    across: ['capital-insurance-risk', 'governance-regulators-government',
+             'governance-standards-safety-advocacy'],
+  };
   const REGION_KEY = r => r.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
   const MATS = ['Scaled', 'Commercial', 'Pilot', 'R&D', 'Governance', 'Historical', 'Other'];
 
   let L = null, slim = null, bySlug = null, partners = null;
   let manifest = null, spriteText = null, atlasDataURL = null;
-  let W = 0, H = 0;
+  let full = null, fullPromise = null;      // the complete records, fetched on demand
+  let W = 0, H = 0, MS = null;
   const state = {
     sel: null, layers: new Set(), regions: new Set(), mats: new Set(),
     spoken: false, exited: false, q: ''
@@ -49,6 +67,7 @@
     return lines.slice(0, maxlines);
   };
   const oklch = (hue, l, c) => `oklch(${l} ${c} ${hue})`;
+  const isOperator = slug => L.medallion.some(mo => mo.slug === slug);
 
   // ------------------------------------------------------------ SVG build
   // Remote favicon services, tried in order. These are what make logos appear
@@ -139,15 +158,25 @@
     });
   }
 
-  // Navigator tiles are HTML, so a plain lazy <img> over the monogram is enough.
+  // Navigator tiles and the card header are HTML, so a plain lazy <img> over the
+  // monogram is enough.
   const navLogo = slug => {
     const d = bySlug[slug] && bySlug[slug].d;
     return d ? `<img src="${LOGO_SOURCES[0](d)}" alt="" loading="lazy" decoding="async"
       onload="this.style.opacity=1" onerror="this.remove()">` : '';
   };
 
+  // A district panel: root side square so it sits flush against the hexagon,
+  // outer corners rounded. Drawn inside translate(ox,oy) rotate(rot).
+  function panelPath(d, r) {
+    const x = d.x, w = d.w, h = d.h;
+    return d.out > 0
+      ? `M ${x} 0 L ${x + w} 0 L ${x + w} ${h - r} Q ${x + w} ${h} ${x + w - r} ${h} L ${x + r} ${h} Q ${x} ${h} ${x} ${h - r} Z`
+      : `M ${x} 0 L ${x} ${-(h - r)} Q ${x} ${-h} ${x + r} ${-h} L ${x + w - r} ${-h} Q ${x + w} ${-h} ${x + w} ${-(h - r)} L ${x + w} 0 Z`;
+  }
+
   function buildSVG(forExport) {
-    const m = L.meta;
+    const m = L.meta, hx = L.hex;
     const X = forExport;  // export = fixed light-paper colours, no interactivity
     const C = {
       paper: X ? '#FAFAF7' : 'var(--paper)', ink: X ? '#12130F' : 'var(--ink)',
@@ -161,80 +190,94 @@
     o.push(`<rect width="${W}" height="${H}" fill="${C.paper}"/>`);
     o.push(`<g class="world">`);
 
-    for (const b of L.bands) {
-      const ty = b.y + b.labelH * 0.66;
-      o.push(`<g class="band-label">`);
-      o.push(`<text x="${b.x}" y="${ty}" font-size="52" font-weight="800" letter-spacing="6" fill="${C.ink}" font-family="Archivo, sans-serif">${esc(b.label)}</text>`);
-      o.push(`<text x="${b.x + b.w}" y="${ty}" font-size="30" text-anchor="end" fill="${C.muted}" font-style="italic" font-family="Archivo, sans-serif">${esc(b.note)}</text>`);
-      o.push(`<line x1="${b.x}" y1="${b.y + b.labelH - 14}" x2="${b.x + b.w}" y2="${b.y + b.labelH - 14}" stroke="${C.ink}" stroke-width="4"/>`);
-      o.push(`</g>`);
-    }
+    const chipsOf = {};
+    for (const c of L.chips) (chipsOf[c.district] = chipsOf[c.district] || []).push(c);
 
     for (const d of L.districts) {
-      o.push(`<g class="district-shell">`);
-      o.push(`<rect x="${d.x + 6}" y="${d.y + 6}" width="${d.w - 12}" height="${d.h - 12}" rx="14" fill="${C.card}" stroke="${C.rule}" stroke-width="2"/>`);
-      o.push(`<rect x="${d.x + 6}" y="${d.y + 6}" width="${d.w - 12}" height="8" rx="4" fill="${hueFill(d.hue)}"/>`);
+      // One group per layer: frame and tiles move, light up and lift together.
+      o.push(X ? `<g>` : `<g class="district" data-district="${esc(d.id)}">`);
+      o.push(`<g class="district-shell" transform="translate(${d.ox},${d.oy}) rotate(${d.rot})">`);
+      const hy = d.out > 0 ? 0 : -d.headerH;
+      o.push(`<path class="d-frame" d="${panelPath(d, 18)}" fill="${C.card}" stroke="${C.rule}" stroke-width="2"/>`);
+      // a whisper of the layer's own colour, so the rosette reads as ten layers
+      // from across the room and not as ten identical white plates
+      o.push(`<path class="d-wash" d="${panelPath(d, 18)}" fill="${hueFill(d.hue)}" opacity=".05"/>`);
+      o.push(`<rect class="d-tint" x="${d.x}" y="${hy}" width="${d.w}" height="${d.headerH}" fill="${hueFill(d.hue)}" opacity=".13"/>`);
+      o.push(`<rect x="${d.x}" y="${hy + (d.out > 0 ? d.headerH - 9 : 0)}" width="${d.w}" height="9" fill="${hueFill(d.hue)}"/>`);
+      if (!X) o.push(`<path class="d-glow" d="${panelPath(d, 18)}" fill="none" stroke="${hueFill(d.hue)}" stroke-width="7" opacity="0"/>`);
+      const ty = d.out > 0 ? 132 : -78;
       const label = d.layer.replace('Governance: ', '');
-      o.push(`<text x="${d.x + 26}" y="${d.y + d.headerH * 0.72}" font-size="34" font-weight="700" fill="${C.ink}" font-family="Archivo, sans-serif">${esc(label.toUpperCase())}</text>`);
-      o.push(`<text x="${d.x + d.w - 26}" y="${d.y + d.headerH * 0.72}" font-size="34" font-weight="600" text-anchor="end" font-family="IBM Plex Mono, monospace" fill="${hueFill(d.hue)}">${d.count}</text>`);
+      o.push(`<text x="${d.x + 30}" y="${ty}" font-size="40" font-weight="700" fill="${C.ink}" font-family="Archivo, sans-serif">${esc(label.toUpperCase())}</text>`);
+      o.push(`<text x="${d.x + d.w - 30}" y="${ty}" font-size="40" font-weight="600" text-anchor="end" font-family="IBM Plex Mono, monospace" fill="${hueFill(d.hue)}">${d.count}</text>`);
       o.push(`</g>`);
-    }
 
-    for (const c of L.chips) {
-      const cx = c.x + c.w / 2, cy = c.y;
-      const meta = bySlug[c.slug] || {};
-      if (!X) {
-        const aria = [c.name, meta.c || '', meta.r || ''].filter(Boolean).join(', ')
-          + (partners.bySlug[c.slug] ? `; ${partners.bySlug[c.slug].count} mapped partners` : '')
-          + (c.spokenTo ? '; spoken with directly' : '') + (c.exited ? '; exited' : '');
-        o.push(`<g data-chip data-slug="${esc(c.slug)}" data-cat="${esc(SHORT[meta.c] || '')}" data-region="${esc(REGION_KEY(meta.r || ''))}" data-mat="${esc(meta.m || '')}" data-text="${esc((c.name + ' ' + (meta.b || '')).toLowerCase())}" ${c.spokenTo ? 'data-spoken="1"' : ''} ${c.exited ? 'data-exited="1"' : ''} tabindex="-1" role="button" aria-label="${esc(aria)}">`);
-      } else {
-        o.push(`<g>`);
+      for (const c of chipsOf[d.id] || []) {
+        const cx = c.x + c.w / 2, cy = c.y;
+        const meta = bySlug[c.slug] || {};
+        if (!X) {
+          const aria = [c.name, meta.c || '', meta.r || ''].filter(Boolean).join(', ')
+            + (partners.bySlug[c.slug] ? `; ${partners.bySlug[c.slug].count} mapped partners` : '')
+            + (c.spokenTo ? '; spoken with directly' : '') + (c.exited ? '; exited' : '');
+          o.push(`<g data-chip data-slug="${esc(c.slug)}" data-cx="${cx}" data-cy="${c.y + c.h / 2}" data-cat="${esc(SHORT[meta.c] || '')}" data-region="${esc(REGION_KEY(meta.r || ''))}" data-mat="${esc(meta.m || '')}" data-text="${esc((c.name + ' ' + (meta.b || '')).toLowerCase())}" ${c.spokenTo ? 'data-spoken="1"' : ''} ${c.exited ? 'data-exited="1"' : ''} tabindex="-1" role="button" aria-label="${esc(aria)}">`);
+        } else {
+          o.push(`<g>`);
+        }
+        o.push(`<rect class="chip-body" x="${c.x + 8}" y="${c.y + 6}" width="${c.w - 16}" height="${c.h - 12}" rx="12" fill="${C.paper}" stroke="${C.rule}"/>`);
+        o.push(logoMarkup(c.slug, cx, cy + 18, 72, c.hue, c.mono, X));
+        wrapText(c.name).forEach((ln, i) => {
+          o.push(`<text x="${cx}" y="${cy + 112 + i * 20}" font-size="17" text-anchor="middle" fill="${C.ink}" font-family="Archivo, sans-serif">${esc(ln)}</text>`);
+        });
+        (c.pips || []).forEach((hue, i) => {
+          o.push(`<circle cx="${c.x + 22 + i * 16}" cy="${c.y + 20}" r="5.5" fill="${hueFill(hue)}"/>`);
+        });
+        if (c.exited) o.push(`<line x1="${c.x + 14}" y1="${c.y + 12}" x2="${c.x + c.w - 14}" y2="${c.y + c.h - 18}" stroke="${C.muted}" stroke-width="2" opacity=".5"/>`);
+        if (c.spokenTo) o.push(`<circle cx="${c.x + c.w - 22}" cy="${c.y + 20}" r="6" fill="${C.yellow}"/>`);
+        o.push(`</g>`);
       }
-      o.push(`<rect class="chip-body" x="${c.x + 8}" y="${c.y + 6}" width="${c.w - 16}" height="${c.h - 12}" rx="12" fill="${C.paper}" stroke="${C.rule}"/>`);
-      o.push(logoMarkup(c.slug, cx, cy + 18, 72, c.hue, c.mono, X));
-      wrapText(c.name).forEach((ln, i) => {
-        o.push(`<text x="${cx}" y="${cy + 112 + i * 20}" font-size="17" text-anchor="middle" fill="${C.ink}" font-family="Archivo, sans-serif">${esc(ln)}</text>`);
-      });
-      (c.pips || []).forEach((hue, i) => {
-        o.push(`<circle cx="${c.x + 22 + i * 16}" cy="${c.y + 20}" r="5.5" fill="${hueFill(hue)}"/>`);
-      });
-      if (c.exited) o.push(`<line x1="${c.x + 14}" y1="${c.y + 12}" x2="${c.x + c.w - 14}" y2="${c.y + c.h - 18}" stroke="${C.muted}" stroke-width="2" opacity=".5"/>`);
-      if (c.spokenTo) o.push(`<circle cx="${c.x + c.w - 22}" cy="${c.y + 20}" r="6" fill="${C.yellow}"/>`);
       o.push(`</g>`);
     }
 
-    const mb = m.medallionBox;
-    o.push(`<g class="medallion-shell"><rect x="${mb.x + 6}" y="${mb.y + 6}" width="${mb.w - 12}" height="${mb.h - 12}" rx="20" fill="${C.med}"/>`);
-    o.push(`<text x="${mb.x + mb.w / 2}" y="${mb.y + 108}" font-size="60" font-weight="900" letter-spacing="14" text-anchor="middle" fill="${C.medtx}" font-family="Archivo, sans-serif">THE TEN</text>`);
-    o.push(`<text x="${mb.x + mb.w / 2}" y="${mb.y + 150}" font-size="26" text-anchor="middle" fill="${C.yellow}" font-family="IBM Plex Mono, monospace" letter-spacing="3">OPERATORS A PASSENGER CAN ACTUALLY MEET</text></g>`);
+    // ------------------------------------------------------- the hexagon
+    const pts = hx.points.map(p => p.join(',')).join(' ');
+    o.push(X ? `<g>` : `<g class="district" data-district="the-ten">`);
+    o.push(`<g class="medallion-shell">`);
+    o.push(`<polygon class="hex-fill" points="${pts}" fill="${C.med}"/>`);
+    o.push(`<polygon class="hex-edge" points="${pts}" fill="none" stroke="${C.yellow}" stroke-width="14"/>`);
+    o.push(`<text x="${hx.cx}" y="${hx.titleY}" font-size="86" font-weight="900" letter-spacing="18" text-anchor="middle" fill="${C.medtx}" font-family="Archivo, sans-serif">${esc(hx.title)}</text>`);
+    o.push(`<text x="${hx.cx}" y="${hx.subY}" font-size="28" text-anchor="middle" fill="${C.yellow}" font-family="IBM Plex Mono, monospace" letter-spacing="4">${esc(hx.sub)}</text>`);
+    o.push(`<line x1="${hx.cx - 520}" y1="${hx.ruleY}" x2="${hx.cx + 520}" y2="${hx.ruleY}" stroke="${C.medsub}" stroke-width="2" opacity=".4"/>`);
+    o.push(`<text x="${hx.cx}" y="${hx.footY}" font-size="24" text-anchor="middle" fill="${C.medsub}" font-family="IBM Plex Mono, monospace" letter-spacing="3">${esc(hx.foot)}</text>`);
+    o.push(`</g>`);
+
     for (const c of L.medallion) {
       const cx = c.x + c.w / 2;
       const meta = bySlug[c.slug] || {};
       if (!X) {
-        o.push(`<g data-chip data-med data-slug="${esc(c.slug)}" data-cat="${esc(SHORT[meta.c] || '')}" data-region="${esc(REGION_KEY(meta.r || ''))}" data-mat="${esc(meta.m || '')}" data-text="${esc((c.name + ' ' + (meta.b || '')).toLowerCase())}" ${meta.g ? 'data-spoken="1"' : ''} tabindex="-1" role="button" aria-label="${esc(c.name + '; operator; ' + (c.claim || ''))}">`);
+        o.push(`<g data-chip data-med data-slug="${esc(c.slug)}" data-cx="${cx}" data-cy="${c.y + MS.logoY + MS.logo / 2}" data-cat="${esc(SHORT[meta.c] || '')}" data-region="${esc(REGION_KEY(meta.r || ''))}" data-mat="${esc(meta.m || '')}" data-text="${esc((c.name + ' ' + (meta.b || '')).toLowerCase())}" ${meta.g ? 'data-spoken="1"' : ''} tabindex="-1" role="button" aria-label="${esc(c.name + '; operator; ' + (c.claim || ''))}">`);
       } else o.push(`<g>`);
-      // The operator marks sit on the dark medallion, so they get a light
-      // plate behind them rather than the layer-hue tile used on chips.
+      // The operator marks sit on the dark hexagon, so they get a light plate
+      // behind them rather than the layer-hue tile used on chips.
       const lm = manifest && manifest[c.slug];
       const dom = bySlug[c.slug] && bySlug[c.slug].d;
+      const half = MS.logo / 2;
       if (lm) {
-        o.push(logoMarkup(c.slug, cx, c.y + 70, 136, c.hue, c.mono, X));
+        o.push(logoMarkup(c.slug, cx, c.y + MS.logoY, MS.logo, c.hue, c.mono, X));
       } else {
-        o.push(`<rect class="chip-body" x="${cx - 68}" y="${c.y + 70}" width="136" height="136" rx="28" fill="${C.medtx}"/>`);
-        o.push(`<text x="${cx}" y="${c.y + 164}" font-size="62" font-weight="900" text-anchor="middle" fill="${C.med}" font-family="Archivo, sans-serif">${esc(c.mono)}</text>`);
+        o.push(`<rect class="chip-body" x="${cx - half}" y="${c.y + MS.logoY}" width="${MS.logo}" height="${MS.logo}" rx="36" fill="${C.medtx}"/>`);
+        o.push(`<text x="${cx}" y="${c.y + MS.logoY + MS.logo * 0.68}" font-size="${MS.logo * 0.44}" font-weight="900" text-anchor="middle" fill="${C.med}" font-family="Archivo, sans-serif">${esc(c.mono)}</text>`);
         if (!X && dom) {
-          o.push(`<rect class="logo-bg" data-logo-bg="${esc(c.slug)}" x="${cx - 68}" y="${c.y + 70}" width="136" height="136" rx="28" fill="#FFFFFF" opacity="0"/>`);
+          o.push(`<rect class="logo-bg" data-logo-bg="${esc(c.slug)}" x="${cx - half}" y="${c.y + MS.logoY}" width="${MS.logo}" height="${MS.logo}" rx="36" fill="#FFFFFF" opacity="0"/>`);
           o.push(`<image class="logo-img" data-logo="${esc(c.slug)}" data-domain="${esc(dom)}" data-try="0" ` +
-            `x="${cx - 56}" y="${c.y + 82}" width="112" height="112" preserveAspectRatio="xMidYMid meet" opacity="0"/>`);
+            `x="${cx - half + 12}" y="${c.y + MS.logoY + 12}" width="${MS.logo - 24}" height="${MS.logo - 24}" preserveAspectRatio="xMidYMid meet" opacity="0"/>`);
         }
       }
-      o.push(`<text x="${cx}" y="${c.y + 248}" font-size="31" font-weight="700" text-anchor="middle" fill="${C.medtx}" font-family="Archivo, sans-serif">${esc(c.name)}</text>`);
-      wrapText(c.claim || '', 30, 4).forEach((ln, j) => {
-        o.push(`<text x="${cx}" y="${c.y + 292 + j * 26}" font-size="19" text-anchor="middle" fill="${C.medsub}" font-family="Archivo, sans-serif">${esc(ln)}</text>`);
+      o.push(`<text x="${cx}" y="${c.y + MS.nameY}" font-size="${MS.nameSize}" font-weight="700" text-anchor="middle" fill="${C.medtx}" font-family="Archivo, sans-serif">${esc(c.name)}</text>`);
+      wrapText(c.claim || '', MS.claimChars, 4).forEach((ln, j) => {
+        o.push(`<text x="${cx}" y="${c.y + MS.claimY + j * MS.claimStep}" font-size="${MS.claimSize}" text-anchor="middle" fill="${C.medsub}" font-family="Archivo, sans-serif">${esc(ln)}</text>`);
       });
       o.push(`</g>`);
     }
+    o.push(`</g>`);
 
     o.push(`<text x="${m.margin}" y="${H - 70}" font-size="30" font-weight="700" fill="${C.ink}" font-family="Archivo, sans-serif">AUTONOMOUS VEHICLE ECOSYSTEM MAP</text>`);
     o.push(`<text x="${W - m.margin}" y="${H - 70}" font-size="26" text-anchor="end" font-family="IBM Plex Mono, monospace" fill="${C.muted}">${m.companyCount} ORGANISATIONS · 11 LAYERS · COMPILED BY KOFI AGYARE-KWABI</text>`);
@@ -246,11 +289,15 @@
   // ------------------------------------------------------------ camera
   const cam = { x: 0, y: 0, w: 1, h: 1 };
   let fitW = 1;
+  const OVERSCAN = 0.3;   // how far past an edge the camera may travel, as a
+                          // fraction of the viewport, so a corner company can
+                          // still be parked near the top left
   const vpSize = () => ({ vw: viewport.clientWidth, vh: viewport.clientHeight });
 
   function applyCam() {
     svg.setAttribute('viewBox', `${cam.x} ${cam.y} ${cam.w} ${cam.h}`);
     sweepLogos();
+    positionCard();
   }
   function clampCam() {
     const { vw, vh } = vpSize();
@@ -259,8 +306,9 @@
     const minS = vw / fitW, maxS = 4;
     if (s < minS) { cam.w = fitW; cam.h = cam.w * vh / vw; }
     if (s > maxS) { cam.w = vw / maxS; cam.h = cam.w * vh / vw; }
-    cam.x = cam.w >= W ? (W - cam.w) / 2 : Math.max(0, Math.min(W - cam.w, cam.x));
-    cam.y = cam.h >= H ? (H - cam.h) / 2 : Math.max(0, Math.min(H - cam.h, cam.y));
+    const ox = cam.w * OVERSCAN, oy = cam.h * OVERSCAN;
+    cam.x = cam.w >= W ? (W - cam.w) / 2 : Math.max(-ox, Math.min(W - cam.w + ox, cam.x));
+    cam.y = cam.h >= H ? (H - cam.h) / 2 : Math.max(-oy, Math.min(H - cam.h + oy, cam.y));
   }
   function fit() {
     const { vw, vh } = vpSize();
@@ -282,11 +330,14 @@
     };
   }
   let flyToken = 0;
-  function flyTo(px, py, targetW) {
+  // fx, fy say where in the viewport the target should land, as fractions.
+  // Selection parks a company near the top left and opens its card beside it.
+  function flyTo(px, py, targetW, fx, fy) {
+    fx = fx == null ? 0.5 : fx; fy = fy == null ? 0.5 : fy;
     const from = { ...cam }, token = ++flyToken;
     const to = { w: Math.max(vpSize().vw / 4, Math.min(fitW, targetW)) };
     to.h = to.w * vpSize().vh / vpSize().vw;
-    to.x = px - to.w / 2; to.y = py - to.h / 2;
+    to.x = px - fx * to.w; to.y = py - fy * to.h;
     if (reducedMotion()) { Object.assign(cam, to); clampCam(); applyCam(); return; }
     const t0 = performance.now(), D = 480;
     const ease = t => t < .5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
@@ -308,11 +359,12 @@
     }, { passive: false });
 
     const pts = new Map();
-    let pinch0 = null, moved = false;
+    let pinch0 = null, moved = false, downOn = null;
     viewport.addEventListener('pointerdown', e => {
       viewport.setPointerCapture(e.pointerId);
       pts.set(e.pointerId, { x: e.clientX, y: e.clientY });
       moved = false;
+      downOn = e.target;
       if (pts.size === 2) {
         const [a, b] = [...pts.values()];
         pinch0 = { d: Math.hypot(a.x - b.x, a.y - b.y), w: cam.w };
@@ -337,17 +389,31 @@
         moved = true;
       }
     });
-    const up = e => { pts.delete(e.pointerId); if (pts.size < 2) pinch0 = null; };
+    // Selection happens on pointerup, not click: the viewport captures the
+    // pointer so it can keep receiving drags outside its own box, and a captured
+    // pointer retargets the compatibility click event to the capturing element,
+    // so a click listener on the SVG never sees which chip was pressed.
+    const up = e => {
+      if (viewport.hasPointerCapture && viewport.hasPointerCapture(e.pointerId)) {
+        viewport.releasePointerCapture(e.pointerId);
+      }
+      const tap = e.type === 'pointerup' && pts.size === 1 && !moved;
+      pts.delete(e.pointerId);
+      if (pts.size < 2) pinch0 = null;
+      if (tap) {
+        const t = downOn && downOn.closest ? downOn : document.elementFromPoint(e.clientX, e.clientY);
+        const g = t && t.closest ? t.closest('[data-chip]') : null;
+        if (g) select(g.dataset.slug, true);
+        else clearSel();
+      }
+      downOn = null;
+    };
     viewport.addEventListener('pointerup', up);
     viewport.addEventListener('pointercancel', up);
 
-    // click = select (suppressed after a drag)
-    svg.addEventListener('click', e => {
-      if (moved) return;
-      const g = e.target.closest('[data-chip]');
-      if (g) select(g.dataset.slug, false);
-      else clearSel();
-    });
+    // hovering anywhere in a layer lights the whole layer
+    svg.addEventListener('pointerover', e => setHot(e.target.closest('.district')));
+    svg.addEventListener('pointerleave', () => setHot(null));
 
     document.getElementById('z-in').addEventListener('click', () => zoomAt(cam.x + cam.w / 2, cam.y + cam.h / 2, 1.45));
     document.getElementById('z-out').addEventListener('click', () => zoomAt(cam.x + cam.w / 2, cam.y + cam.h / 2, 1 / 1.45));
@@ -355,13 +421,52 @@
     addEventListener('resize', () => { fit(); });
   }
 
+  // ------------------------------------------------------------ hover
+  let hotEl = null;
+  function setHot(el) {
+    if (el === hotEl) return;
+    if (hotEl) hotEl.classList.remove('hot');
+    hotEl = el || null;
+    if (hotEl) hotEl.classList.add('hot');
+  }
+
+  // ------------------------------------------------------------ full screen
+  let pseudoFS = false;
+  const fsOn = () => !!(document.fullscreenElement || document.webkitFullscreenElement) || pseudoFS;
+  function toggleFullscreen() {
+    if (fsOn()) {
+      if (document.exitFullscreen) document.exitFullscreen().catch(() => {});
+      else if (document.webkitExitFullscreen) document.webkitExitFullscreen();
+      if (pseudoFS) { pseudoFS = false; afterFS(); }
+      return;
+    }
+    const req = shell.requestFullscreen || shell.webkitRequestFullscreen;
+    // iOS Safari will not put a div full screen, so fall back to a fixed overlay
+    // that fills the browser viewport instead of refusing the request.
+    if (req) req.call(shell).then(afterFS).catch(() => { pseudoFS = true; afterFS(); });
+    else { pseudoFS = true; afterFS(); }
+  }
+  function afterFS() {
+    document.body.classList.toggle('fs-pseudo', pseudoFS);
+    const on = fsOn();
+    const btn = document.getElementById('x-full');
+    if (btn) { btn.textContent = on ? 'EXIT FULL SCREEN' : 'FULL SCREEN'; btn.setAttribute('aria-pressed', on); }
+    chooseMode();
+    requestAnimationFrame(() => { fit(); positionCard(); });
+  }
+  function bindFullscreen() {
+    const btn = document.getElementById('x-full');
+    if (btn) btn.addEventListener('click', toggleFullscreen);
+    const nb = document.getElementById('nav-full');
+    if (nb) nb.addEventListener('click', e => { e.preventDefault(); toggleFullscreen(); });
+    document.addEventListener('fullscreenchange', afterFS);
+    document.addEventListener('webkitfullscreenchange', afterFS);
+    addEventListener('keydown', e => { if (e.key === 'Escape' && pseudoFS) toggleFullscreen(); });
+  }
+
   // ------------------------------------------------------------ selection
   const chipEl = slug => svg.querySelector(`[data-chip][data-slug="${CSS.escape(slug)}"]`);
-  const centerOf = g => {
-    const b = g.querySelector('.chip-body') || g;
-    const x = parseFloat(b.getAttribute('x')), y = parseFloat(b.getAttribute('y'));
-    return { x: x + parseFloat(b.getAttribute('width')) / 2, y: y + parseFloat(b.getAttribute('height')) / 2 };
-  };
+  const centerOf = g => ({ x: +g.dataset.cx, y: +g.dataset.cy });
 
   function select(slug, fly) {
     const g = chipEl(slug);
@@ -393,15 +498,18 @@
         requestAnimationFrame(() => { path.style.strokeDashoffset = '0'; });
       }
     }
+    renderCard(slug, partnerRows);
     if (fly) {
-      flyTo(from.x, from.y, Math.min(fitW, 2600));
+      // park the company near the top left, with enough margin that it reads as
+      // the thing in focus, and leave the room to its right for the card
+      flyTo(from.x, from.y, Math.min(fitW, 2400), 0.2, 0.24);
       if (!reducedMotion()) {
         g.classList.remove('pulse'); void g.getBoundingClientRect();
         g.classList.add('pulse');
         setTimeout(() => g.classList.remove('pulse'), 2000);
       }
     }
-    renderCard(slug, partnerRows);
+    ensureFull().then(() => { if (state.sel === slug) renderCard(slug, partnerRows); });
     history.replaceState(null, '', location.pathname + location.search + '#' + slug);
   }
 
@@ -415,31 +523,80 @@
     if (!soft) history.replaceState(null, '', location.pathname + location.search);
   }
 
+  // The full records are 700KB, which is not worth loading for a page nobody may
+  // click into. The card renders from the slim index first and fills in.
+  function ensureFull() {
+    return fullPromise || (fullPromise = json('data/av-companies.json')
+      .then(a => { full = Object.fromEntries(a.map(c => [c.slug, c])); })
+      .catch(() => { full = {}; }));
+  }
+
   function renderCard(slug, partnerRows) {
     const meta = bySlug[slug] || {};
-    const isOp = L.medallion.some(mo => mo.slug === slug);
+    const rec = (full && full[slug]) || null;
+    const op = isOperator(slug);
     const hue = window.AV.HUES[meta.c] ?? 220;
     const grouped = {};
     for (const p of partnerRows) (grouped[p.k] = grouped[p.k] || []).push(p);
+    const facts = rec ? [
+      ['HQ', rec.hq], ['Founded', rec.founded], ['Maturity', rec.opMaturity],
+      ['Deployment', rec.deployment], ['Fleet', rec.fleetSize],
+      ['Funding', rec.fundingUSD ? fmtM(rec.fundingUSD) : ''],
+      ['Valuation', rec.valuationUSD ? fmtM(rec.valuationUSD) : ''],
+      ['Investors', rec.investors],
+      ['Status', rec.status === 'active' ? 'Active'
+        : (rec.acquiredBy ? 'Acquired by ' + rec.acquiredBy : 'Exited')],
+      ['Also in', (rec.all || []).filter(a => a !== rec.cat && window.AV.HUES[a]).join(' · ')],
+      ['Confidence', rec.confidence], ['Last verified', rec.lastVerified],
+    ].filter(([, v]) => v) : [];
+    const sources = (rec && rec.sources) || [];
     card.innerHTML = `
-      <div class="cc-top"><h2>${esc(meta.n || slug)}</h2>
-        <button class="cc-close" aria-label="Close details">×</button></div>
-      <p class="cc-layer"><span class="dot" style="background:oklch(var(--layer-l) var(--layer-c) ${hue})"></span>${esc(meta.c || '')}${meta.r ? ' · ' + esc(meta.r) : ''}${meta.x ? ' · exited' : ''}${meta.g ? ' · <span class="gold-dot"></span> spoken with' : ''}</p>
-      ${meta.b ? `<p class="cc-sub">${esc(meta.b)}</p>` : ''}
-      <div class="cc-partners">${partnerRows.length
+      <div class="cc-top">
+        <span class="mono-tile cc-logo" aria-hidden="true" style="--tile:oklch(var(--layer-l) var(--layer-c) ${hue})">${esc((rec && rec.mono) || (meta.n || slug).slice(0, 2).toUpperCase())}${navLogo(slug)}</span>
+        <div class="cc-id">
+          <h2>${esc(meta.n || slug)}</h2>
+          <p class="cc-layer"><span class="dot" style="background:oklch(var(--layer-l) var(--layer-c) ${hue})"></span>${esc(meta.c || '')}${meta.r ? ' · ' + esc(meta.r) : ''}${meta.x ? ' · exited' : ''}${meta.g ? ' · <span class="gold-dot"></span> spoken with' : ''}</p>
+        </div>
+        <button class="cc-close" aria-label="Close details">×</button>
+      </div>
+      ${(rec && (rec.about || rec.sub)) || meta.b ? `<p class="cc-sub">${esc((rec && (rec.about || rec.sub)) || meta.b)}</p>` : ''}
+      ${facts.length ? `<dl class="cc-facts">${facts.map(([k, v]) =>
+        `<dt>${esc(k)}</dt><dd>${esc(String(v))}</dd>`).join('')}</dl>` : ''}
+      <div class="cc-partners"><span class="pk">PARTNERSHIPS</span> ${partnerRows.length
         ? Object.entries(grouped).map(([k, ps]) =>
           `<div><span class="pk">${esc(k.toUpperCase())}</span> ${ps.map(p =>
             p.slug ? `<button data-go="${esc(p.slug)}">${esc(p.partner)}</button>` : esc(p.partner)
           ).join(' · ')}</div>`).join('')
-        : '<span class="caption">No partnerships mapped yet. Know one? The footer takes corrections.</span>'}</div>
+        : '<span class="caption">None mapped yet. The footer takes corrections.</span>'}</div>
+      ${sources.length ? `<div class="cc-src"><span class="pk">SOURCES</span>${sources.map(s =>
+        `<div><a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${esc(s.title)}</a>${s.date ? ` <span class="caption">${esc(s.date)}</span>` : ''}</div>`).join('')}</div>` : ''}
       <div class="cc-actions">
-        ${isOp ? `<a class="btn" href="${ROOT}operators/${esc(slug)}/">OPERATOR PAGE</a>` : ''}
-        <a class="btn" href="${ROOT}companies/?open=${encodeURIComponent(slug)}">FULL RECORD</a>
+        ${op ? `<a class="btn" href="${ROOT}operators/${esc(slug)}/">OPERATOR PAGE</a>` : ''}
+        <a class="btn" href="${ROOT}companies/?open=${encodeURIComponent(slug)}">${op ? 'LEDGER ROW' : 'OPEN IN THE LEDGER'}</a>
       </div>`;
     card.hidden = false;
     card.querySelector('.cc-close').addEventListener('click', () => clearSel());
     card.querySelectorAll('[data-go]').forEach(b =>
       b.addEventListener('click', () => select(b.dataset.go, true)));
+    positionCard();
+  }
+
+  // The card follows its company: it opens beside the chip and tracks it while
+  // the camera moves, flipping to the other side rather than covering it.
+  function positionCard() {
+    if (!state.sel || card.hidden || card.classList.contains('sheet')) return;
+    const g = chipEl(state.sel);
+    if (!g) return;
+    const gb = g.getBoundingClientRect(), sb = stage.getBoundingClientRect();
+    const vb = viewport.getBoundingClientRect();   // the chart, which may be
+    const cw = card.offsetWidth, ch = card.offsetHeight, PAD = 14;  // narrower
+    const minL = vb.left - sb.left + PAD, maxL = vb.right - sb.left - cw - PAD;
+    let left = gb.right - sb.left + 18;
+    if (left > maxL) left = gb.left - sb.left - cw - 18;   // flip rather than cover
+    left = Math.max(minL, Math.min(left, maxL));
+    const top = Math.max(vb.top - sb.top + PAD,
+      Math.min(gb.top - sb.top - 8, vb.bottom - sb.top - ch - PAD));
+    card.style.left = left + 'px'; card.style.top = top + 'px';
   }
 
   // ------------------------------------------------------------ filters
@@ -505,7 +662,7 @@
     document.getElementById('f-exited').setAttribute('aria-pressed', state.exited);
     document.getElementById('f-clear').hidden = !any;
     liveState.textContent = any
-      ? `${n} of 560 organisations match. Non-matching chips are dimmed in place, never removed.` : '';
+      ? `${n} of ${L.meta.companyCount} organisations match. Non-matching chips are dimmed in place, never removed.` : '';
     syncURL();
     if (navWrap && !navWrap.hidden) buildNavigator();
   }
@@ -540,6 +697,7 @@
       if (e.key === '+' || e.key === '=') { zoomAt(cam.x + cam.w / 2, cam.y + cam.h / 2, 1.45); e.preventDefault(); }
       else if (e.key === '-') { zoomAt(cam.x + cam.w / 2, cam.y + cam.h / 2, 1 / 1.45); e.preventDefault(); }
       else if (e.key === 'Home') { fit(); e.preventDefault(); }
+      else if (e.key === 'f' || e.key === 'F') { toggleFullscreen(); e.preventDefault(); }
       else if (e.key === 'Escape') { clearSel(); setKbd(null); }
       else if (e.key === 'Enter' || e.key === ' ') {
         if (kbd) { select(kbd.dataset.slug, true); e.preventDefault(); }
@@ -554,6 +712,7 @@
     kbd = g;
     if (g) {
       g.classList.add('kbd-focus');
+      setHot(g.closest('.district'));
       const c = centerOf(g);
       const pad = cam.w * 0.06;
       if (c.x < cam.x + pad || c.x > cam.x + cam.w - pad || c.y < cam.y + pad || c.y > cam.y + cam.h - pad) {
@@ -658,7 +817,7 @@
 
   // ------------------------------------------------------------ navigator (mobile)
   const isNarrow = () => matchMedia('(max-width: 859px)').matches
-    && !new URLSearchParams(location.search).has('chart');
+    && !new URLSearchParams(location.search).has('chart') && !fsOn();
   function buildNavigator() {
     const nav = document.getElementById('navigator');
     const districtChips = id => L.chips.filter(c => c.district === id)
@@ -689,18 +848,24 @@
       b.addEventListener('click', () => {
         const slug = b.dataset.navsel;
         state.sel = slug;
-        renderCard(slug, (partners.bySlug[slug] || { partners: [] }).partners);
+        const rows = (partners.bySlug[slug] || { partners: [] }).partners;
+        renderCard(slug, rows);
+        ensureFull().then(() => { if (state.sel === slug) renderCard(slug, rows); });
         history.replaceState(null, '', location.pathname + location.search + '#' + slug);
       }));
   }
   function chooseMode() {
     const narrow = isNarrow();
+    // On a phone there is no room to park a card beside a chip, so it becomes a
+    // sheet even in full screen. It still has to live inside the element that
+    // went full screen, or the browser would not paint it at all.
+    const sheet = matchMedia('(max-width: 759px)').matches;
     stage.hidden = narrow;
     rail.hidden = narrow;
     navWrap.hidden = !narrow;
-    // the floating card must escape the hidden stage on small screens
-    card.classList.toggle('sheet', narrow);
-    (narrow ? document.body : stage).appendChild(card);
+    card.classList.toggle('sheet', sheet);
+    if (sheet) { card.style.left = card.style.top = ''; }
+    ((narrow && !fsOn()) ? document.body : stage).appendChild(card);
     if (narrow) buildNavigator(); else fit();
   }
 
@@ -710,7 +875,7 @@
       json('data/poster-layout.json'), json('data/search-index.json'), json('data/partner-index.json')
     ]);
     L = layout; slim = slimIdx; partners = pIdx;
-    W = L.meta.width; H = L.meta.height;
+    W = L.meta.width; H = L.meta.height; MS = L.meta.medStyle;
     bySlug = Object.fromEntries(slim.map(c => [c.s, c]));
 
     try {  // logo assets are optional by design; monograms are the default
@@ -721,46 +886,43 @@
     } catch (e) { manifest = null; }
 
     svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
+    // every layer lifts away from the same point, the centre of the hexagon
+    svg.style.setProperty('--hx', L.hex.cx + 'px');
+    svg.style.setProperty('--hy', L.hex.cy + 'px');
     svg.innerHTML = (spriteText ? `<defs>${spriteText.replace(/^[^>]*>/, '').replace(/<\/svg>\s*$/, '')}</defs>` : '') + buildSVG(false);
 
     document.getElementById('legend-layers').innerHTML = L.districts.map(d =>
       `<span class="lg"><span class="sw" style="background:oklch(var(--layer-l) var(--layer-c) ${d.hue})"></span>${esc(d.layer.replace('Governance: ', ''))} <span class="n">${d.count}</span></span>`
     ).join('') + `<span class="lg"><span class="sw" style="background:oklch(var(--layer-l) var(--layer-c) 105)"></span>Middleware &amp; Tooling renders inside the autonomy district <span class="n">3</span></span>
-      <span class="lg"><span class="sw" style="background:var(--ink)"></span>The Ten, centre <span class="n">10</span></span>`;
+      <span class="lg"><span class="sw" style="background:var(--ink)"></span>The Ten, inside the hexagon <span class="n">10</span></span>`;
 
     // capture the deep-link hash before syncURL can rewrite the address bar
     const initial = decodeURIComponent(location.hash.slice(1));
 
     // stage anchors from the home-page loop: fly to a region, not a company
-    const bandRect = id => {
-      const target = {
-        request: { district: 'demand-commercial-platforms' },
-        driver: { band: 'driver' },
-        vehicle: { district: 'vehicle-platform-manufacturing' },
-        pitlane: { band: 'pitlane' },
-        across: { band: 'across' },
-        ten: { medallion: true },
-      }[id];
-      if (!target) return null;
-      if (target.medallion) return L.meta.medallionBox;
-      const ds = target.district
-        ? L.districts.filter(d => d.id === target.district)
-        : L.districts.filter(d => d.band === target.band);
+    const stageRect = id => {
+      if (id === 'ten') return L.meta.medallionBox;
+      const ids = STAGE_DISTRICTS[id];
+      if (!ids) return null;
+      const ds = L.districts.filter(d => ids.includes(d.id));
       if (!ds.length) return null;
-      const x0 = Math.min(...ds.map(d => d.x)), y0 = Math.min(...ds.map(d => d.y));
-      const x1 = Math.max(...ds.map(d => d.x + d.w)), y1 = Math.max(...ds.map(d => d.y + d.h));
+      const x0 = Math.min(...ds.map(d => d.bbox.x)), y0 = Math.min(...ds.map(d => d.bbox.y));
+      const x1 = Math.max(...ds.map(d => d.bbox.x + d.bbox.w));
+      const y1 = Math.max(...ds.map(d => d.bbox.y + d.bbox.h));
       return { x: x0, y: y0, w: x1 - x0, h: y1 - y0 };
     };
-    const flyToBand = id => {
-      const r = bandRect(id);
+    const flyToStage = id => {
+      const r = stageRect(id);
       if (!r) return false;
       flyTo(r.x + r.w / 2, r.y + r.h / 2,
         Math.max(r.w * 1.12, r.h * 1.12 * vpSize().vw / vpSize().vh));
+      const ids = id === 'ten' ? ['the-ten'] : (STAGE_DISTRICTS[id] || []);
+      setHot(svg.querySelector(`.district[data-district="${CSS.escape(ids[0] || '')}"]`));
       return true;
     };
 
     sweepLogos();
-    buildRail(); readURL(); bindCamera(); bindKeys(); bindExport();
+    buildRail(); readURL(); bindCamera(); bindKeys(); bindExport(); bindFullscreen();
     chooseMode();
     applyFilters();
     matchMedia('(max-width: 859px)').addEventListener('change', chooseMode);
@@ -768,17 +930,17 @@
       // let first paint land, then fly (company slug or stage anchor)
       requestAnimationFrame(() => setTimeout(() => {
         if (chipEl(initial)) select(initial, true);
-        else flyToBand(initial);
+        else flyToStage(initial);
       }, 60));
     }
     addEventListener('hashchange', () => {
       const s = decodeURIComponent(location.hash.slice(1));
       if (s && chipEl(s) && s !== state.sel) select(s, true);
-      else if (s && !chipEl(s)) flyToBand(s);
+      else if (s && !chipEl(s)) flyToStage(s);
       else if (!s) clearSel(true);
     });
 
-    window.AVposter = { select };
+    window.AVposter = { select, fit, toggleFullscreen };
   }
 
   boot().catch(err => {

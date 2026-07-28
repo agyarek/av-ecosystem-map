@@ -17,15 +17,16 @@ ENR = json.load(open(os.path.join(ROOT, "data", "av-enrichment.json"), encoding=
 KNOWN = ENR.get("known", {})
 USE_LOGOS = "--logos" in sys.argv
 m = L["meta"]
+MS = m["medStyle"]
 
-INK, PAPER, RULE, MUTED = "#12130F", "#FAFAF7", "#DEDFD8", "#6E7268"
-YELLOW, CYAN = "#F2B705", "#00A5B8"
+INK, PAPER, CARD, RULE, MUTED = "#12130F", "#FAFAF7", "#FFFFFF", "#DEDFD8", "#6E7268"
+YELLOW, CYAN, MEDSUB = "#F2B705", "#00A5B8", "#B9BCB2"
 
 def oklch(hue, l=0.62, c=0.075): return f"oklch({l} {c} {hue})"
 def esc(s): return html.escape(str(s), quote=True)
 
 def wrap(name, maxchars=15, maxlines=2):
-    words, lines, cur = name.split(), [], ""
+    words, lines, cur = str(name).split(), [], ""
     for w in words:
         t = (cur + " " + w).strip()
         if len(t) <= maxchars: cur = t
@@ -35,38 +36,43 @@ def wrap(name, maxchars=15, maxlines=2):
             if len(lines) == maxlines: break
     if cur and len(lines) < maxlines: lines.append(cur)
     if len(lines) == maxlines and len(" ".join(words)) > sum(len(x) for x in lines) + len(lines):
-        lines[-1] = lines[-1][:maxchars - 1] + "\u2026"
+        lines[-1] = lines[-1][:maxchars - 1] + "…"
     return lines[:maxlines]
+
+def panel_path(d, r=18):
+    """Root side square so it sits flush against the hexagon, outer corners rounded."""
+    x, w, h, out = d["x"], d["w"], d["h"], d["out"]
+    if out > 0:
+        return (f'M {x} 0 L {x+w} 0 L {x+w} {h-r} Q {x+w} {h} {x+w-r} {h} '
+                f'L {x+r} {h} Q {x} {h} {x} {h-r} Z')
+    return (f'M {x} 0 L {x} {-(h-r)} Q {x} {-h} {x+r} {-h} '
+            f'L {x+w-r} {-h} Q {x+w} {-h} {x+w} {-(h-r)} L {x+w} 0 Z')
 
 o = []
 o.append(f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {m["width"]} {m["height"]}" '
          f'width="{m["width"]}" height="{m["height"]}" font-family="Archivo, Helvetica, Arial, sans-serif">')
 o.append(f'<rect width="{m["width"]}" height="{m["height"]}" fill="{PAPER}"/>')
 
-# --- bands -------------------------------------------------------------
-for b in L["bands"]:
-    ty = b["y"] + b["labelH"] * 0.66
-    o.append(f'<text x="{b["x"]}" y="{ty:.0f}" font-size="52" font-weight="800" '
-             f'letter-spacing="6" fill="{INK}">{esc(b["label"])}</text>')
-    o.append(f'<text x="{b["x"]+ b["w"]}" y="{ty:.0f}" font-size="30" text-anchor="end" '
-             f'fill="{MUTED}" font-style="italic">{esc(b["note"])}</text>')
-    o.append(f'<line x1="{b["x"]}" y1="{b["y"]+b["labelH"]-14}" x2="{b["x"]+b["w"]}" '
-             f'y2="{b["y"]+b["labelH"]-14}" stroke="{INK}" stroke-width="4"/>')
-
-# --- districts ---------------------------------------------------------
+# --- districts: rotated panels docked on the hexagon's six borders -------
 for d in L["districts"]:
     col = oklch(d["hue"])
-    o.append(f'<rect x="{d["x"]+6}" y="{d["y"]+6}" width="{d["w"]-12}" height="{d["h"]-12}" '
-             f'rx="14" fill="#FFFFFF" stroke="{RULE}" stroke-width="2"/>')
-    o.append(f'<rect x="{d["x"]+6}" y="{d["y"]+6}" width="{d["w"]-12}" height="8" rx="4" fill="{col}"/>')
+    out, hh = d["out"], d["headerH"]
+    hy = 0 if out > 0 else -hh                      # header band, local top
+    ty = 132 if out > 0 else -78                    # header baseline
+    o.append(f'<g transform="translate({d["ox"]},{d["oy"]}) rotate({d["rot"]})">')
+    o.append(f'<path d="{panel_path(d)}" fill="{CARD}" stroke="{RULE}" stroke-width="2"/>')
+    o.append(f'<path d="{panel_path(d)}" fill="{col}" opacity=".05"/>')
+    o.append(f'<rect x="{d["x"]}" y="{hy}" width="{d["w"]}" height="{hh}" fill="{col}" opacity=".13"/>')
+    o.append(f'<rect x="{d["x"]}" y="{hy + (hh - 9 if out > 0 else 0)}" width="{d["w"]}" '
+             f'height="9" fill="{col}"/>')
     label = d["layer"].replace("Governance: ", "")
-    o.append(f'<text x="{d["x"]+26}" y="{d["y"]+d["headerH"]*0.72:.0f}" font-size="34" '
-             f'font-weight="700" fill="{INK}">{esc(label.upper())}</text>')
-    o.append(f'<text x="{d["x"]+d["w"]-26}" y="{d["y"]+d["headerH"]*0.72:.0f}" font-size="34" '
-             f'font-weight="600" text-anchor="end" font-family="IBM Plex Mono, monospace" '
-             f'fill="{col}">{d["count"]}</text>')
+    o.append(f'<text x="{d["x"]+30}" y="{ty}" font-size="40" font-weight="700" '
+             f'fill="{INK}">{esc(label.upper())}</text>')
+    o.append(f'<text x="{d["x"]+d["w"]-30}" y="{ty}" font-size="40" font-weight="600" '
+             f'text-anchor="end" font-family="IBM Plex Mono, monospace" fill="{col}">{d["count"]}</text>')
+    o.append('</g>')
 
-# --- chips -------------------------------------------------------------
+# --- chips: upright tiles on each panel's rotated lattice ---------------
 for c in L["chips"]:
     cx, cy = c["x"] + c["w"] / 2, c["y"]
     col = oklch(c["hue"], 0.66, 0.06)
@@ -91,36 +97,44 @@ for c in L["chips"]:
         o.append(f'<circle cx="{c["x"]+c["w"]-22}" cy="{c["y"]+20}" r="6" fill="{YELLOW}"/>')
     o.append('</g>')
 
-# --- medallion ---------------------------------------------------------
-mb = m["medallionBox"]
-o.append(f'<rect x="{mb["x"]+6}" y="{mb["y"]+6}" width="{mb["w"]-12}" height="{mb["h"]-12}" '
-         f'rx="20" fill="{INK}"/>')
-o.append(f'<text x="{mb["x"]+mb["w"]/2:.0f}" y="{mb["y"]+108}" font-size="60" font-weight="900" '
-         f'letter-spacing="14" text-anchor="middle" fill="{PAPER}">THE TEN</text>')
-o.append(f'<text x="{mb["x"]+mb["w"]/2:.0f}" y="{mb["y"]+150}" font-size="26" text-anchor="middle" '
-         f'fill="{YELLOW}" font-family="IBM Plex Mono, monospace" letter-spacing="3">'
-         f'OPERATORS A PASSENGER CAN ACTUALLY MEET</text>')
+# --- the hexagon, and the ten inside it ---------------------------------
+hx = L["hex"]
+pts = " ".join(f'{x},{y}' for x, y in hx["points"])
+o.append(f'<polygon points="{pts}" fill="{INK}"/>')
+o.append(f'<polygon points="{pts}" fill="none" stroke="{YELLOW}" stroke-width="14"/>')
+o.append(f'<text x="{hx["cx"]}" y="{hx["titleY"]}" font-size="86" font-weight="900" '
+         f'letter-spacing="18" text-anchor="middle" fill="{PAPER}">{esc(hx["title"])}</text>')
+o.append(f'<text x="{hx["cx"]}" y="{hx["subY"]}" font-size="28" text-anchor="middle" '
+         f'fill="{YELLOW}" font-family="IBM Plex Mono, monospace" letter-spacing="4">'
+         f'{esc(hx["sub"])}</text>')
 for c in L["medallion"]:
     cx = c["x"] + c["w"] / 2
+    half = MS["logo"] / 2
     o.append(f'<g class="op" data-slug="{esc(c["slug"])}">')
     logo = os.path.join(ROOT, "assets", "logos", c["slug"] + ".svg")
     if USE_LOGOS and os.path.exists(logo):
-        o.append(f'<image href="assets/logos/{esc(c["slug"])}.svg" x="{cx-68:.0f}" '
-                 f'y="{c["y"]+70:.0f}" width="136" height="136" preserveAspectRatio="xMidYMid meet"/>')
+        o.append(f'<image href="assets/logos/{esc(c["slug"])}.svg" x="{cx-half:.0f}" '
+                 f'y="{c["y"]+MS["logoY"]:.0f}" width="{MS["logo"]}" height="{MS["logo"]}" '
+                 f'preserveAspectRatio="xMidYMid meet"/>')
     else:
-        o.append(f'<rect x="{cx-68:.0f}" y="{c["y"]+70:.0f}" width="136" height="136" rx="28" '
-                 f'fill="{PAPER}"/>')
-        o.append(f'<text x="{cx:.0f}" y="{c["y"]+164:.0f}" font-size="62" font-weight="900" '
-                 f'text-anchor="middle" fill="{INK}">{esc(c["mono"])}</text>')
-    o.append(f'<text x="{cx:.0f}" y="{c["y"]+248:.0f}" font-size="31" font-weight="700" '
-             f'text-anchor="middle" fill="{PAPER}">{esc(c["name"])}</text>')
-    # The dead space under an operator name is the most valuable real estate on the
-    # poster. It carries the one claim that earns that company its place in the centre.
+        o.append(f'<rect x="{cx-half:.0f}" y="{c["y"]+MS["logoY"]:.0f}" width="{MS["logo"]}" '
+                 f'height="{MS["logo"]}" rx="36" fill="{PAPER}"/>')
+        o.append(f'<text x="{cx:.0f}" y="{c["y"]+MS["logoY"]+MS["logo"]*0.68:.0f}" font-size="80" '
+                 f'font-weight="900" text-anchor="middle" fill="{INK}">{esc(c["mono"])}</text>')
+    o.append(f'<text x="{cx:.0f}" y="{c["y"]+MS["nameY"]:.0f}" font-size="{MS["nameSize"]}" '
+             f'font-weight="700" text-anchor="middle" fill="{PAPER}">{esc(c["name"])}</text>')
+    # The space under an operator name is the most valuable on the poster. It carries
+    # the one claim that earns that company its place in the centre.
     claim = KNOWN.get(c["name"], "")
-    for j, ln in enumerate(wrap(claim, maxchars=30, maxlines=4)):
-        o.append(f'<text x="{cx:.0f}" y="{c["y"]+292+j*26:.0f}" font-size="19" '
-                 f'text-anchor="middle" fill="#B9BCB2">{esc(ln)}</text>')
+    for j, ln in enumerate(wrap(claim, maxchars=MS["claimChars"], maxlines=4)):
+        o.append(f'<text x="{cx:.0f}" y="{c["y"]+MS["claimY"]+j*MS["claimStep"]:.0f}" '
+                 f'font-size="{MS["claimSize"]}" text-anchor="middle" fill="{MEDSUB}">{esc(ln)}</text>')
     o.append('</g>')
+o.append(f'<line x1="{hx["cx"]-520}" y1="{hx["ruleY"]}" x2="{hx["cx"]+520}" y2="{hx["ruleY"]}" '
+         f'stroke="{MEDSUB}" stroke-width="2" opacity=".4"/>')
+o.append(f'<text x="{hx["cx"]}" y="{hx["footY"]}" font-size="24" text-anchor="middle" '
+         f'fill="{MEDSUB}" font-family="IBM Plex Mono, monospace" letter-spacing="3">'
+         f'{esc(hx["foot"])}</text>')
 
 o.append(f'<text x="{m["margin"]}" y="{m["height"]-70}" font-size="30" font-weight="700" '
          f'fill="{INK}">AUTONOMOUS VEHICLE ECOSYSTEM MAP</text>')

@@ -34,8 +34,10 @@ everything derivable into `data/` at build time; the browser renders and never r
     ├── validate-data.py        invariants; run before every commit, fail on error
     ├── build-poster-layout.py  freezes wall-chart geometry (561/561 placed, verified)
     ├── build-indexes.py        partner index, derived counts, search index
-    ├── fetch-logos.py          logo pipeline (run in an unrestricted network; the
-    │                           monogram tiles are the deliberate fallback until then)
+    ├── fetch-logos.py          OPTIONAL logo upgrade: fetches, trims and commits
+    │                           real marks. Logos already load at runtime from a
+    │                           favicon service, so this is for print/export
+    │                           quality and offline resilience, not a prerequisite
     ├── build-social-cards.py   1200×630 OG cards rendered from the poster
     ├── render-poster.py        proofing render → poster-reference.svg
     └── make-csv.py             flat CSV export

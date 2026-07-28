@@ -5,7 +5,8 @@
   "c": "AV Driver / Autonomy Software",
   "b": "Safe real-time middleware for software-defined vehicles and robotics",
   "r": "North America",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "apex.ai"
  },
  {
   "n": "Applied Intuition",
@@ -13,7 +14,8 @@
   "c": "AV Driver / Autonomy Software",
   "b": "Simulation & synthetic data; Testing, validation & safety assurance; AV middlewa",
   "r": "North America",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "appliedintuition.com"
  },
  {
   "n": "Argo AI",
@@ -31,6 +33,7 @@
   "b": "Driverless Dallas-Houston freight, scaling to 200+ trucks by 2026",
   "r": "North America",
   "m": "Commercial",
+  "d": "aurora.tech",
   "g": 1
  },
  {
@@ -39,7 +42,8 @@
   "c": "AV Driver / Autonomy Software",
   "b": "Early driverless robotaxi pilots across Shenzhen and Guangzhou",
   "r": "Greater China",
-  "m": "Commercial"
+  "m": "Commercial",
+  "d": "autox.ai"
  },
  {
   "n": "AutoX / Tensor",
@@ -56,7 +60,8 @@
   "c": "AV Driver / Autonomy Software",
   "b": "Autonomous goods delivery",
   "r": "North America",
-  "m": "Commercial"
+  "m": "Commercial",
+  "d": "avride.ai"
  },
  {
   "n": "Baidu (Apollo Go)",
@@ -64,7 +69,8 @@
   "c": "AV Driver / Autonomy Software",
   "b": "China's largest robotaxi operator with 3.2M rides in Q1 2026",
   "r": "Greater China",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "apollo.auto"
  },
  {
   "n": "Baidu Apollo Go",
@@ -72,7 +78,8 @@
   "c": "AV Driver / Autonomy Software",
   "b": "Robotaxi & passenger L4; Robotaxi consumer services; Purpose-built robotaxi/pod ",
   "r": "Greater China",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "apollo.auto"
  },
  {
   "n": "BMW Personal Pilot / ADAS",
@@ -80,7 +87,8 @@
   "c": "AV Driver / Autonomy Software",
   "b": "Took Level 3 to German roads on the 7-Series flagship",
   "r": "Europe",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "bmw.com"
  },
  {
   "n": "Bot Auto",
@@ -88,7 +96,8 @@
   "c": "AV Driver / Autonomy Software",
   "b": "First fully humanless commercial truckload, Houston to Dallas",
   "r": "North America",
-  "m": "Pilot"
+  "m": "Pilot",
+  "d": "bot.auto"
  },
  {
   "n": "Coco",
@@ -96,7 +105,8 @@
   "c": "AV Driver / Autonomy Software",
   "b": "Goods delivery autonomy",
   "r": "North America",
-  "m": "Commercial"
+  "m": "Commercial",
+  "d": "cocodelivery.com"
  },
  {
   "n": "comma.ai",
@@ -104,7 +114,8 @@
   "c": "AV Driver / Autonomy Software",
   "b": "L2+/L3 consumer ADAS stacks; AV middleware, dev platforms & tooling",
   "r": "North America",
-  "m": "Commercial"
+  "m": "Commercial",
+  "d": "comma.ai"
  },
  {
   "n": "Cruise",
@@ -130,7 +141,8 @@
   "c": "AV Driver / Autonomy Software",
   "b": "Map-free ADAS on 300k+ vehicles, targeting 1.3M by year-end",
   "r": "Greater China",
-  "m": "Historical"
+  "m": "Historical",
+  "d": "deeproute.ai"
  },
  {
   "n": "DiDi Autonomous Driving",
@@ -138,7 +150,8 @@
   "c": "AV Driver / Autonomy Software",
   "b": "Robotaxi & passenger L4; Ridehail & demand aggregation",
   "r": "Greater China",
-  "m": "Pilot"
+  "m": "Pilot",
+  "d": "didiglobal.com"
  },
  {
   "n": "dSPACE",
@@ -146,7 +159,8 @@
   "c": "AV Driver / Autonomy Software",
   "b": "Paderborn validation toolchain that acquired Understand.ai",
   "r": "Europe",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "dspace.com"
  },
  {
   "n": "Embark Trucks",
@@ -163,7 +177,8 @@
   "c": "AV Driver / Autonomy Software",
   "b": "Simulation & synthetic data; Testing, validation & safety assurance",
   "r": "Middle East & Africa",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "foretellix.com"
  },
  {
   "n": "Gatik",
@@ -171,7 +186,8 @@
   "c": "AV Driver / Autonomy Software",
   "b": "Autonomous trucking L4; Goods delivery autonomy",
   "r": "North America",
-  "m": "Commercial"
+  "m": "Commercial",
+  "d": "gatik.ai"
  },
  {
   "n": "Ghost Autonomy",
@@ -188,7 +204,8 @@
   "c": "AV Driver / Autonomy Software",
   "b": "Compute / SoC / AI chips; L2+/L3 consumer ADAS stacks",
   "r": "Greater China",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "horizon.cc"
  },
  {
   "n": "Huawei IAS/ADS (Qiankun)",
@@ -196,7 +213,8 @@
   "c": "AV Driver / Autonomy Software",
   "b": "Qiankun ADS 4 across 22+ partner models, targeting 3M units",
   "r": "Greater China",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "huawei.com"
  },
  {
   "n": "Huawei Intelligent Automotive Solution / Yinwang",
@@ -204,7 +222,8 @@
   "c": "AV Driver / Autonomy Software",
   "b": "HIMA alliance stack behind AITO, Luxeed, Stelato and Maextro",
   "r": "Greater China",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "huawei.com"
  },
  {
   "n": "Huawei Intelligent Automotive Solutions",
@@ -212,7 +231,8 @@
   "c": "AV Driver / Autonomy Software",
   "b": "L2+/L3 consumer ADAS stacks; Compute / SoC / AI chips",
   "r": "Greater China",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "huawei.com"
  },
  {
   "n": "Inceptio Technology",
@@ -220,7 +240,8 @@
   "c": "AV Driver / Autonomy Software",
   "b": "Factory-installed L4 trucks running China's freight corridors",
   "r": "Greater China",
-  "m": "Pilot"
+  "m": "Pilot",
+  "d": "inceptio.ai"
  },
  {
   "n": "Kiwibot",
@@ -228,7 +249,8 @@
   "c": "AV Driver / Autonomy Software",
   "b": "Campus delivery bots now Robot.com, piloting the R-noid humanoid",
   "r": "North America",
-  "m": "Commercial"
+  "m": "Commercial",
+  "d": "kiwibot.com"
  },
  {
   "n": "Kodiak AI",
@@ -236,7 +258,8 @@
   "c": "AV Driver / Autonomy Software",
   "b": "Driverless trucks hauling Permian Basin freight, revenue up 74%",
   "r": "North America",
-  "m": "Commercial"
+  "m": "Commercial",
+  "d": "kodiak.ai"
  },
  {
   "n": "May Mobility",
@@ -244,7 +267,8 @@
   "c": "AV Driver / Autonomy Software",
   "b": "Robotaxi & passenger L4; AV middleware, dev platforms & tooling",
   "r": "North America",
-  "m": "Commercial"
+  "m": "Commercial",
+  "d": "maymobility.com"
  },
  {
   "n": "Mercedes-Benz Drive Pilot / MB.Drive",
@@ -252,7 +276,8 @@
   "c": "AV Driver / Autonomy Software",
   "b": "Certified Level 3 operation in Germany, Nevada and California",
   "r": "Europe",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "mercedes-benz.com"
  },
  {
   "n": "Momenta",
@@ -260,7 +285,8 @@
   "c": "AV Driver / Autonomy Software",
   "b": "OEM data flywheel across 680k+ Momenta-equipped vehicles",
   "r": "Greater China",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "momenta.cn"
  },
  {
   "n": "Motional",
@@ -269,6 +295,7 @@
   "b": "Hyundai-backed robotaxis riding on Uber in Las Vegas",
   "r": "North America",
   "m": "Commercial",
+  "d": "motional.com",
   "g": 1
  },
  {
@@ -277,7 +304,8 @@
   "c": "AV Driver / Autonomy Software",
   "b": "Banyan 3.3.0 world-model update rolled out to 460k+ vehicles",
   "r": "Greater China",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "nio.com"
  },
  {
   "n": "NVIDIA DRIVE",
@@ -285,7 +313,8 @@
   "c": "AV Driver / Autonomy Software",
   "b": "Compute / SoC / AI chips; Simulation & synthetic data; AV middleware, dev platfo",
   "r": "North America",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "nvidia.com"
  },
  {
   "n": "Oxa",
@@ -293,7 +322,8 @@
   "c": "AV Driver / Autonomy Software",
   "b": "Industrial fleet autonomy backed by the UK National Wealth Fund",
   "r": "Europe",
-  "m": "Commercial"
+  "m": "Commercial",
+  "d": "oxa.tech"
  },
  {
   "n": "Plus",
@@ -301,7 +331,8 @@
   "c": "AV Driver / Autonomy Software",
   "b": "Autonomous trucking L4; L2+/L3 consumer ADAS stacks",
   "r": "North America",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "plus.ai"
  },
  {
   "n": "Pony.ai",
@@ -310,6 +341,7 @@
   "b": "Robotaxi & passenger L4; Autonomous trucking L4",
   "r": "Greater China",
   "m": "Commercial",
+  "d": "pony.ai",
   "g": 1
  },
  {
@@ -318,7 +350,8 @@
   "c": "AV Driver / Autonomy Software",
   "b": "Autonomous haulage across Heidelberg quarries after SafeAI deal",
   "r": "North America",
-  "m": "Commercial"
+  "m": "Commercial",
+  "d": "pronto.ai"
  },
  {
   "n": "QCraft",
@@ -342,7 +375,8 @@
   "c": "AV Driver / Autonomy Software",
   "b": "Sidewalk fleet on Uber Eats, targeting 2,000 robots by 2026",
   "r": "North America",
-  "m": "Commercial"
+  "m": "Commercial",
+  "d": "serverobotics.com"
  },
  {
   "n": "Stack AV",
@@ -350,7 +384,8 @@
   "c": "AV Driver / Autonomy Software",
   "b": "SoftBank-backed trucking venture led by former Argo AI leaders",
   "r": "North America",
-  "m": "Pilot"
+  "m": "Pilot",
+  "d": "stackav.com"
  },
  {
   "n": "Starship Technologies",
@@ -358,7 +393,8 @@
   "c": "AV Driver / Autonomy Software",
   "b": "9M autonomous deliveries logged across 2,700 sidewalk robots",
   "r": "North America",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "starship.xyz"
  },
  {
   "n": "Tesla Robotaxi / FSD",
@@ -366,7 +402,8 @@
   "c": "AV Driver / Autonomy Software",
   "b": "Robotaxi & passenger L4; L2+/L3 consumer ADAS stacks; Robotaxi consumer services",
   "r": "North America",
-  "m": "Commercial"
+  "m": "Commercial",
+  "d": "tesla.com"
  },
  {
   "n": "Tier IV / Autoware",
@@ -374,7 +411,8 @@
   "c": "AV Driver / Autonomy Software",
   "b": "AV middleware, dev platforms & tooling; Robotaxi & passenger L4",
   "r": "Asia-Pacific",
-  "m": "Commercial"
+  "m": "Commercial",
+  "d": "tier4.jp"
  },
  {
   "n": "Torc Robotics",
@@ -382,7 +420,8 @@
   "c": "AV Driver / Autonomy Software",
   "b": "Daimler Truck's L4 subsidiary targeting 2027 commercial launch",
   "r": "North America",
-  "m": "Pilot"
+  "m": "Pilot",
+  "d": "torc.ai"
  },
  {
   "n": "TuSimple",
@@ -391,6 +430,7 @@
   "b": "Former autonomous trucking leader, now CreateAI in AI and gaming",
   "r": "North America",
   "m": "Historical",
+  "d": "tusimple.com",
   "x": 1
  },
  {
@@ -399,7 +439,8 @@
   "c": "AV Driver / Autonomy Software",
   "b": "Autonomous trucking L4; Simulation & synthetic data",
   "r": "North America",
-  "m": "Commercial"
+  "m": "Commercial",
+  "d": "waabi.ai"
  },
  {
   "n": "Waymo",
@@ -408,6 +449,7 @@
   "b": "Robotaxi & passenger L4; Robotaxi consumer services",
   "r": "North America",
   "m": "Scaled",
+  "d": "waymo.com",
   "g": 1
  },
  {
@@ -417,6 +459,7 @@
   "b": "Map-light end-to-end driving AI with $2.8B raised",
   "r": "Europe",
   "m": "Pilot",
+  "d": "wayve.ai",
   "g": 1
  },
  {
@@ -425,7 +468,8 @@
   "c": "AV Driver / Autonomy Software",
   "b": "Robotaxi & passenger L4; Goods delivery autonomy; Robotaxi consumer services",
   "r": "Greater China",
-  "m": "Commercial"
+  "m": "Commercial",
+  "d": "weride.ai"
  },
  {
   "n": "XPeng",
@@ -433,7 +477,8 @@
   "c": "AV Driver / Autonomy Software",
   "b": "VW licenses its AD stack for China EVs starting 2026",
   "r": "Greater China",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "xpeng.com"
  },
  {
   "n": "XPeng XNGP",
@@ -441,7 +486,8 @@
   "c": "AV Driver / Autonomy Software",
   "b": "China-wide urban ADAS moving onto in-house Turing AI chips",
   "r": "Greater China",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "xpeng.com"
  },
  {
   "n": "Aeva",
@@ -449,7 +495,8 @@
   "c": "Sensing & Compute Hardware",
   "b": "FMCW 4D LiDAR chosen for the autonomous Freightliner Cascadia",
   "r": "North America",
-  "m": "Commercial"
+  "m": "Commercial",
+  "d": "aeva.com"
  },
  {
   "n": "Ambarella",
@@ -457,7 +504,8 @@
   "c": "Sensing & Compute Hardware",
   "b": "CVflow SoCs bringing edge-AI vision to lower-power ADAS",
   "r": "North America",
-  "m": "Commercial"
+  "m": "Commercial",
+  "d": "ambarella.com"
  },
  {
   "n": "Arbe Robotics",
@@ -465,7 +513,8 @@
   "c": "Sensing & Compute Hardware",
   "b": "Perception-grade 4D imaging radar chipsets for Tier-1 programs",
   "r": "Middle East & Africa",
-  "m": "Commercial"
+  "m": "Commercial",
+  "d": "arberobotics.com"
  },
  {
   "n": "Baraja",
@@ -489,7 +538,8 @@
   "c": "Sensing & Compute Hardware",
   "b": "Long-range ADAS LiDAR now sold through Koito's Tier-1 channel",
   "r": "North America",
-  "m": "Commercial"
+  "m": "Commercial",
+  "d": "cepton.com"
  },
  {
   "n": "Hesai",
@@ -497,7 +547,8 @@
   "c": "Sensing & Compute Hardware",
   "b": "EXT color-detecting LiDAR heading to 2026 mass production",
   "r": "Greater China",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "hesaitech.com"
  },
  {
   "n": "Hexagon | NovAtel",
@@ -505,7 +556,8 @@
   "c": "Sensing & Compute Hardware",
   "b": "Reference-grade GNSS/INS for AV development and test fleets",
   "r": "North America",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "novatel.com"
  },
  {
   "n": "Infineon Technologies",
@@ -513,7 +565,8 @@
   "c": "Sensing & Compute Hardware",
   "b": "Radar chips and safety MCUs inside zonal ADAS architectures",
   "r": "Europe",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "infineon.com"
  },
  {
   "n": "Innoviz",
@@ -521,7 +574,8 @@
   "c": "Sensing & Compute Hardware",
   "b": "MEMS LiDAR carrying BMW and Volkswagen series nominations",
   "r": "Middle East & Africa",
-  "m": "Commercial"
+  "m": "Commercial",
+  "d": "innoviz.tech"
  },
  {
   "n": "LeddarTech",
@@ -529,7 +583,8 @@
   "c": "Sensing & Compute Hardware",
   "b": "Low-level sensor-fusion software grown from LiDAR roots",
   "r": "North America",
-  "m": "Commercial"
+  "m": "Commercial",
+  "d": "leddartech.com"
  },
  {
   "n": "Livox",
@@ -537,7 +592,8 @@
   "c": "Sensing & Compute Hardware",
   "b": "DJI-linked LiDAR putting low-cost sensing in developer hands",
   "r": "Greater China",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "livoxtech.com"
  },
  {
   "n": "Luminar",
@@ -546,6 +602,7 @@
   "b": "Long-range LiDAR that reached production on the Volvo EX90",
   "r": "North America",
   "m": "Historical",
+  "d": "luminartech.com",
   "x": 1
  },
  {
@@ -554,7 +611,8 @@
   "c": "Sensing & Compute Hardware",
   "b": "Consolidator holding Ibeo and Luminar LiDAR portfolios",
   "r": "North America",
-  "m": "Commercial"
+  "m": "Commercial",
+  "d": "microvision.com"
  },
  {
   "n": "NXP Semiconductors",
@@ -562,7 +620,8 @@
   "c": "Sensing & Compute Hardware",
   "b": "Radar processors plus secure in-vehicle networking silicon",
   "r": "Europe",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "nxp.com"
  },
  {
   "n": "OmniVision",
@@ -570,7 +629,8 @@
   "c": "Sensing & Compute Hardware",
   "b": "HDR image sensors inside Tier-1 automotive camera modules",
   "r": "North America",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "ovt.com"
  },
  {
   "n": "Onsemi",
@@ -578,7 +638,8 @@
   "c": "Sensing & Compute Hardware",
   "b": "Cameras & vision sensors; Radar (incl. 4D imaging)",
   "r": "North America",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "onsemi.com"
  },
  {
   "n": "Ouster",
@@ -586,7 +647,8 @@
   "c": "Sensing & Compute Hardware",
   "b": "Digital LiDAR at $49M quarterly revenue, 12,600+ sensors shipped",
   "r": "North America",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "ouster.com"
  },
  {
   "n": "Point One Navigation",
@@ -594,7 +656,8 @@
   "c": "Sensing & Compute Hardware",
   "b": "Polaris RTK corrections, now paired with STMicroelectronics",
   "r": "North America",
-  "m": "Commercial"
+  "m": "Commercial",
+  "d": "pointonenav.com"
  },
  {
   "n": "Qualcomm Automotive",
@@ -602,7 +665,8 @@
   "c": "Sensing & Compute Hardware",
   "b": "Snapdragon Ride uniting cockpit, connectivity and ADAS compute",
   "r": "North America",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "qualcomm.com"
  },
  {
   "n": "Renesas Electronics",
@@ -610,7 +674,8 @@
   "c": "Sensing & Compute Hardware",
   "b": "R-Car SoCs, the Japanese mainstay of ADAS and vehicle compute",
   "r": "Asia-Pacific",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "renesas.com"
  },
  {
   "n": "Rivian Autonomy Platform",
@@ -618,7 +683,8 @@
   "c": "Sensing & Compute Hardware",
   "b": "Custom self-driving chip powering the Autonomy+ package",
   "r": "North America",
-  "m": "Commercial"
+  "m": "Commercial",
+  "d": "rivian.com"
  },
  {
   "n": "RoboSense",
@@ -626,7 +692,8 @@
   "c": "Sensing & Compute Hardware",
   "b": "LiDAR design wins across 177 models from 36 OEMs",
   "r": "Greater China",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "robosense.ai"
  },
  {
   "n": "SBG Systems",
@@ -634,7 +701,8 @@
   "c": "Sensing & Compute Hardware",
   "b": "French INS and IMU supplier for ground truth and localization",
   "r": "Europe",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "sbg-systems.com"
  },
  {
   "n": "Septentrio",
@@ -642,7 +710,8 @@
   "c": "Sensing & Compute Hardware",
   "b": "Leuven-built high-precision GNSS joining Hexagon's portfolio",
   "r": "Europe",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "septentrio.com"
  },
  {
   "n": "Seyond",
@@ -650,7 +719,8 @@
   "c": "Sensing & Compute Hardware",
   "b": "Past 1M LiDAR deliveries with shipments up 385% year over year",
   "r": "North America",
-  "m": "Commercial"
+  "m": "Commercial",
+  "d": "seyond.com"
  },
  {
   "n": "Sony Semiconductor Solutions",
@@ -658,7 +728,8 @@
   "c": "Sensing & Compute Hardware",
   "b": "Image sensor leader planning a TSMC Japan JV for physical AI",
   "r": "Asia-Pacific",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "sony-semicon.com"
  },
  {
   "n": "Swift Navigation",
@@ -666,7 +737,8 @@
   "c": "Sensing & Compute Hardware",
   "b": "Skylark corrections pushing lane-level GNSS to mass-market cars",
   "r": "North America",
-  "m": "Commercial"
+  "m": "Commercial",
+  "d": "swiftnav.com"
  },
  {
   "n": "Tesla AI Hardware",
@@ -674,7 +746,8 @@
   "c": "Sensing & Compute Hardware",
   "b": "In-house FSD computers behind a camera-first autonomy path",
   "r": "North America",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "tesla.com"
  },
  {
   "n": "Texas Instruments",
@@ -682,7 +755,8 @@
   "c": "Sensing & Compute Hardware",
   "b": "Jacinto compute and mmWave radar for cost-down ADAS stacks",
   "r": "North America",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "ti.com"
  },
  {
   "n": "Trimble Applanix",
@@ -690,7 +764,8 @@
   "c": "Sensing & Compute Hardware",
   "b": "Position-and-orientation systems standard in mobile mapping",
   "r": "North America",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "trimble.com"
  },
  {
   "n": "u-blox",
@@ -698,7 +773,8 @@
   "c": "Sensing & Compute Hardware",
   "b": "Swiss GNSS modules shipping across automotive and IoT at volume",
   "r": "Europe",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "u-blox.com"
  },
  {
   "n": "Uhnder",
@@ -706,7 +782,8 @@
   "c": "Sensing & Compute Hardware",
   "b": "Digital 4D imaging radar for LiDAR-like redundancy at radar cost",
   "r": "North America",
-  "m": "Commercial"
+  "m": "Commercial",
+  "d": "uhnder.com"
  },
  {
   "n": "NVIDIA",
@@ -715,6 +792,7 @@
   "b": "DRIVE Thor ramping beneath Waabi, Nuro, WeRide and Pony stacks",
   "r": "North America",
   "m": "Scaled",
+  "d": "nvidia.com",
   "g": 1
  },
  {
@@ -723,7 +801,8 @@
   "c": "Sensing & Compute Hardware",
   "b": "Compute / SoC / AI chips; V2X & connectivity",
   "r": "North America",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "qualcomm.com"
  },
  {
   "n": "Quanergy Systems",
@@ -749,7 +828,8 @@
   "c": "Sensing & Compute Hardware",
   "b": "Tier-1 ADAS portfolio moving to Harman in a EUR1.5B deal",
   "r": "Europe",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "zf.com"
  },
  {
   "n": "aiMotive",
@@ -757,7 +837,8 @@
   "c": "Data, Maps & Simulation",
   "b": "Stellantis-owned AD stack with an LOI pointing to Qualcomm",
   "r": "Europe",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "aimotive.com"
  },
  {
   "n": "aiMotive aiSim",
@@ -765,7 +846,8 @@
   "c": "Data, Maps & Simulation",
   "b": "aiSim simulation paired with aiDrive and aiWare acceleration",
   "r": "Europe",
-  "m": "Commercial"
+  "m": "Commercial",
+  "d": "aimotive.com"
  },
  {
   "n": "Ansys AVxcelerate / AV Simulation",
@@ -773,7 +855,8 @@
   "c": "Data, Maps & Simulation",
   "b": "Physics-grade sensor simulation for virtual safety validation",
   "r": "North America",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "ansys.com"
  },
  {
   "n": "Appen",
@@ -781,7 +864,8 @@
   "c": "Data, Maps & Simulation",
   "b": "Crowd-powered annotation spanning speech, text and vision",
   "r": "Asia-Pacific",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "appen.com"
  },
  {
   "n": "Applus+ IDIADA",
@@ -797,7 +881,8 @@
   "c": "Data, Maps & Simulation",
   "b": "HD map backbone feeding Apollo Go's operating cities",
   "r": "Greater China",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "baidu.com"
  },
  {
   "n": "CARLA",
@@ -805,7 +890,8 @@
   "c": "Data, Maps & Simulation",
   "b": "Open-source baseline simulator for AV research worldwide",
   "r": "Europe",
-  "m": "R&D"
+  "m": "R&D",
+  "d": "carla.org"
  },
  {
   "n": "CloudFactory",
@@ -821,7 +907,8 @@
   "c": "Data, Maps & Simulation",
   "b": "Rehovot-built sim spanning sensors, traffic agents and scenarios",
   "r": "Middle East & Africa",
-  "m": "Commercial"
+  "m": "Commercial",
+  "d": "cognata.com"
  },
  {
   "n": "CVAT.ai",
@@ -829,7 +916,8 @@
   "c": "Data, Maps & Simulation",
   "b": "Open-source video annotation for self-managed labeling teams",
   "r": "North America",
-  "m": "Commercial"
+  "m": "Commercial",
+  "d": "cvat.ai"
  },
  {
   "n": "Deepen AI",
@@ -837,7 +925,8 @@
   "c": "Data, Maps & Simulation",
   "b": "Sensor calibration plus 3D LiDAR annotation in one toolchain",
   "r": "North America",
-  "m": "Commercial"
+  "m": "Commercial",
+  "d": "deepen.ai"
  },
  {
   "n": "DeepMap",
@@ -854,7 +943,8 @@
   "c": "Data, Maps & Simulation",
   "b": "European TIC incumbent for vehicle testing and type-approval",
   "r": "Europe",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "dekra.com"
  },
  {
   "n": "dSPACE ASM / AURELION",
@@ -862,7 +952,8 @@
   "c": "Data, Maps & Simulation",
   "b": "ASM vehicle models plus AURELION sensor-realistic rendering",
   "r": "Europe",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "dspace.com"
  },
  {
   "n": "Dynamic Map Platform",
@@ -878,7 +969,8 @@
   "c": "Data, Maps & Simulation",
   "b": "ISO 26262 and SOTIF certification for safety-critical stacks",
   "r": "North America",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "exida.com"
  },
  {
   "n": "HERE Technologies",
@@ -886,7 +978,8 @@
   "c": "Data, Maps & Simulation",
   "b": "HD Live Map inside Mercedes-Benz DRIVE PILOT and Personal Pilot",
   "r": "Europe",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "here.com"
  },
  {
   "n": "Hexagon VIRES Virtual Test Drive",
@@ -894,7 +987,8 @@
   "c": "Data, Maps & Simulation",
   "b": "Virtual Test Drive scenarios aligned to ASAM OpenSCENARIO",
   "r": "Europe",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "hexagon.com"
  },
  {
   "n": "HORIBA MIRA",
@@ -902,7 +996,8 @@
   "c": "Data, Maps & Simulation",
   "b": "Nuneaton proving ground anchoring UK CAV test programs",
   "r": "Europe",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "horiba-mira.com"
  },
  {
   "n": "HumanSignal / Label Studio",
@@ -910,7 +1005,8 @@
   "c": "Data, Maps & Simulation",
   "b": "Label Studio, open-source labeling from vision to multimodal",
   "r": "North America",
-  "m": "Commercial"
+  "m": "Commercial",
+  "d": "humansignal.com"
  },
  {
   "n": "iMerit",
@@ -918,7 +1014,8 @@
   "c": "Data, Maps & Simulation",
   "b": "Edge-case LiDAR and video labeling by managed expert teams",
   "r": "North America",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "imerit.net"
  },
  {
   "n": "Intertek",
@@ -926,7 +1023,8 @@
   "c": "Data, Maps & Simulation",
   "b": "Global TIC network for AV hardware and vehicle compliance",
   "r": "Europe",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "intertek.com"
  },
  {
   "n": "IPG Automotive",
@@ -934,7 +1032,8 @@
   "c": "Data, Maps & Simulation",
   "b": "CarMaker at the core of closed-loop virtual vehicle testing",
   "r": "Europe",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "ipg-automotive.com"
  },
  {
   "n": "Kognic",
@@ -942,7 +1041,8 @@
   "c": "Data, Maps & Simulation",
   "b": "Multi-sensor annotation trusted by BMW, Bosch and Qualcomm",
   "r": "Europe",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "kognic.com"
  },
  {
   "n": "Labelbox",
@@ -950,7 +1050,8 @@
   "c": "Data, Maps & Simulation",
   "b": "Data factory uniting labeling, curation and model evaluation",
   "r": "North America",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "labelbox.com"
  },
  {
   "n": "Mapbox",
@@ -958,7 +1059,8 @@
   "c": "Data, Maps & Simulation",
   "b": "Developer-first maps powering fleet and mobility interfaces",
   "r": "North America",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "mapbox.com"
  },
  {
   "n": "MathWorks",
@@ -966,7 +1068,8 @@
   "c": "Data, Maps & Simulation",
   "b": "RoadRunner and Simulink beneath model-based AV development",
   "r": "North America",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "mathworks.com"
  },
  {
   "n": "Mobileye REM / RoadBook",
@@ -974,7 +1077,8 @@
   "c": "Data, Maps & Simulation",
   "b": "Crowdsourced RoadBook maps drawn from production ADAS cars",
   "r": "Middle East & Africa",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "mobileye.com"
  },
  {
   "n": "MORAI",
@@ -990,7 +1094,8 @@
   "c": "Data, Maps & Simulation",
   "b": "Official-grade HD map licenses inside China's geodata regime",
   "r": "Greater China",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "navinfo.com"
  },
  {
   "n": "NVIDIA DeepMap",
@@ -1007,7 +1112,8 @@
   "c": "Data, Maps & Simulation",
   "b": "Cosmos world models driving generative closed-loop simulation",
   "r": "North America",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "nvidia.com"
  },
  {
   "n": "Parallel Domain",
@@ -1015,7 +1121,8 @@
   "c": "Data, Maps & Simulation",
   "b": "Controllable synthetic sensor data for rare-event perception",
   "r": "North America",
-  "m": "Commercial"
+  "m": "Commercial",
+  "d": "paralleldomain.com"
  },
  {
   "n": "rFpro",
@@ -1023,7 +1130,8 @@
   "c": "Data, Maps & Simulation",
   "b": "Motorsport-grade simulation now shipping AV elevate for ADAS",
   "r": "Europe",
-  "m": "Commercial"
+  "m": "Commercial",
+  "d": "rfpro.com"
  },
  {
   "n": "Sama",
@@ -1031,7 +1139,8 @@
   "c": "Data, Maps & Simulation",
   "b": "Image, video and LiDAR annotation from Africa-first delivery hubs",
   "r": "North America",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "sama.com"
  },
  {
   "n": "Sanborn Map Company",
@@ -1047,7 +1156,8 @@
   "c": "Data, Maps & Simulation",
   "b": "AV perception labeling roots, expanded by Meta's $14.3B stake",
   "r": "North America",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "scale.com"
  },
  {
   "n": "SuperAnnotate",
@@ -1055,7 +1165,8 @@
   "c": "Data, Maps & Simulation",
   "b": "Software-first labeling pipelines for CV and multimodal data",
   "r": "North America",
-  "m": "Commercial"
+  "m": "Commercial",
+  "d": "superannotate.com"
  },
  {
   "n": "Telenav",
@@ -1071,7 +1182,8 @@
   "c": "Data, Maps & Simulation",
   "b": "Playment annotation platform inside TELUS Digital's AI arm",
   "r": "North America",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "telusdigital.com"
  },
  {
   "n": "TomTom",
@@ -1079,7 +1191,8 @@
   "c": "Data, Maps & Simulation",
   "b": "Independent map supplier advancing the Orbis Maps platform",
   "r": "Europe",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "tomtom.com"
  },
  {
   "n": "TÜV NORD",
@@ -1095,7 +1208,8 @@
   "c": "Data, Maps & Simulation",
   "b": "Cologne-based assessor for ADAS validation and cybersecurity",
   "r": "Europe",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "tuv.com"
  },
  {
   "n": "V7 Labs",
@@ -1103,7 +1217,8 @@
   "c": "Data, Maps & Simulation",
   "b": "Automated labeling workflows with dataset QA built in",
   "r": "Europe",
-  "m": "Commercial"
+  "m": "Commercial",
+  "d": "v7labs.com"
  },
  {
   "n": "VSI Labs",
@@ -1119,7 +1234,8 @@
   "c": "Data, Maps & Simulation",
   "b": "Closed-loop mixed-reality sim proving the Waabi Driver",
   "r": "North America",
-  "m": "Pilot"
+  "m": "Pilot",
+  "d": "waabi.ai"
  },
  {
   "n": "Woven by Toyota",
@@ -1127,7 +1243,8 @@
   "c": "Data, Maps & Simulation",
   "b": "Arene vehicle OS plus the Woven City testbed near Mount Fuji",
   "r": "Asia-Pacific",
-  "m": "Commercial"
+  "m": "Commercial",
+  "d": "woven.toyota"
  },
  {
   "n": "5G Automotive Association",
@@ -1135,7 +1252,8 @@
   "c": "Connectivity & Infrastructure",
   "b": "Automaker-telecom alliance steering the C-V2X 2030 roadmap",
   "r": "Europe",
-  "m": "Governance"
+  "m": "Governance",
+  "d": "5gaa.org"
  },
  {
   "n": "Alibaba Cloud",
@@ -1143,7 +1261,8 @@
   "c": "Connectivity & Infrastructure",
   "b": "Edge cloud and city brain for China's vehicle-road-cloud push",
   "r": "Greater China",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "alibabacloud.com"
  },
  {
   "n": "Autocrypt",
@@ -1151,7 +1270,8 @@
   "c": "Connectivity & Infrastructure",
   "b": "V2X PKI and credentialing security from pilot to production fleets",
   "r": "Asia-Pacific",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "autocrypt.io"
  },
  {
   "n": "Autotalks",
@@ -1159,7 +1279,8 @@
   "c": "Connectivity & Infrastructure",
   "b": "Fabless V2V/V2I chipmaker, now under Qualcomm's roof",
   "r": "Middle East & Africa",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "autotalks.com"
  },
  {
   "n": "AVL",
@@ -1167,7 +1288,8 @@
   "c": "Connectivity & Infrastructure",
   "b": "Powertrain-to-ADAS validation labs behind global OEM programs",
   "r": "Europe",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "avl.com"
  },
  {
   "n": "Baidu Apollo ACE / Vehicle-Road-Cloud",
@@ -1175,7 +1297,8 @@
   "c": "Connectivity & Infrastructure",
   "b": "Vehicle-road-cloud backbone beneath China's robotaxi cities",
   "r": "Greater China",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "apollo.auto"
  },
  {
   "n": "Block Harbor",
@@ -1191,7 +1314,8 @@
   "c": "Connectivity & Infrastructure",
   "b": "EVSec DevSecOps platform; Daimler Truck enterprise-wide",
   "r": "Middle East & Africa",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "c2a-sec.com"
  },
  {
   "n": "Cavnue",
@@ -1199,7 +1323,8 @@
   "c": "Connectivity & Infrastructure",
   "b": "Roadside, smart-city & digital infrastructure; Curb / PUDO / parking",
   "r": "North America",
-  "m": "Pilot"
+  "m": "Pilot",
+  "d": "cavnue.com"
  },
  {
   "n": "China Mobile",
@@ -1231,7 +1356,8 @@
   "c": "Connectivity & Infrastructure",
   "b": "DSRC and C-V2X radios inside global connected-road trials",
   "r": "Asia-Pacific",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "cohdawireless.com"
  },
  {
   "n": "Commsignia",
@@ -1239,7 +1365,8 @@
   "c": "Connectivity & Infrastructure",
   "b": "Roadside units and V2X stacks for smart-corridor buildouts",
   "r": "North America",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "commsignia.com"
  },
  {
   "n": "Cybellum",
@@ -1247,7 +1374,8 @@
   "c": "Connectivity & Infrastructure",
   "b": "SBOM-driven product security, now part of LG Electronics",
   "r": "Middle East & Africa",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "cybellum.com"
  },
  {
   "n": "Derq",
@@ -1255,7 +1383,8 @@
   "c": "Connectivity & Infrastructure",
   "b": "Roadside AI predicting crashes before they happen, Dubai-backed",
   "r": "Middle East & Africa",
-  "m": "Commercial"
+  "m": "Commercial",
+  "d": "derq.com"
  },
  {
   "n": "Designated Driver",
@@ -1271,7 +1400,8 @@
   "c": "Connectivity & Infrastructure",
   "b": "Low-latency video transport that keeps remote drivers in sync",
   "r": "Middle East & Africa",
-  "m": "Commercial"
+  "m": "Commercial",
+  "d": "driveu.auto"
  },
  {
   "n": "Econolite",
@@ -1279,7 +1409,8 @@
   "c": "Connectivity & Infrastructure",
   "b": "Signal controllers in thousands of North American intersections",
   "r": "North America",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "econolite.com"
  },
  {
   "n": "Ericsson",
@@ -1287,7 +1418,8 @@
   "c": "Connectivity & Infrastructure",
   "b": "5GAA founding networks for teleoperation and cooperative driving",
   "r": "Europe",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "ericsson.com"
  },
  {
   "n": "ETAS / ESCRYPT",
@@ -1295,7 +1427,8 @@
   "c": "Connectivity & Infrastructure",
   "b": "Bosch's embedded software arm with ESCRYPT vehicle security",
   "r": "Europe",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "etas.com"
  },
  {
   "n": "Fernride",
@@ -1303,7 +1436,8 @@
   "c": "Connectivity & Infrastructure",
   "b": "Teleoperation-first electric trucking for yards and ports",
   "r": "Europe",
-  "m": "Commercial"
+  "m": "Commercial",
+  "d": "fernride.com"
  },
  {
   "n": "Fibocom",
@@ -1311,7 +1445,8 @@
   "c": "Connectivity & Infrastructure",
   "b": "Cellular modules riding the connected-vehicle supply chain",
   "r": "Greater China",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "fibocom.com"
  },
  {
   "n": "GridMatrix",
@@ -1327,7 +1462,8 @@
   "c": "Connectivity & Infrastructure",
   "b": "Secure zonal computers for software-defined vehicles",
   "r": "Middle East & Africa",
-  "m": "Commercial"
+  "m": "Commercial",
+  "d": "guardknox.com"
  },
  {
   "n": "Harman",
@@ -1335,7 +1471,8 @@
   "c": "Connectivity & Infrastructure",
   "b": "Savari V2X software folded into connected-car platforms",
   "r": "North America",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "harman.com"
  },
  {
   "n": "Hayden AI",
@@ -1343,7 +1480,8 @@
   "c": "Connectivity & Infrastructure",
   "b": "Bus-lane and curb enforcement vision cities already run",
   "r": "North America",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "hayden.ai"
  },
  {
   "n": "Huawei",
@@ -1351,7 +1489,8 @@
   "c": "Connectivity & Infrastructure",
   "b": "China's connectivity heavyweight across vehicle, cloud and road",
   "r": "Greater China",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "huawei.com"
  },
  {
   "n": "Imperium Drive / Fetch",
@@ -1367,7 +1506,8 @@
   "c": "Connectivity & Infrastructure",
   "b": "Traffic detection and road-agency software, now under Almaviva",
   "r": "North America",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "iteris.com"
  },
  {
   "n": "Kapsch TrafficCom",
@@ -1375,7 +1515,8 @@
   "c": "Connectivity & Infrastructure",
   "b": "Tolling and traffic management converging with V2X corridors",
   "r": "Europe",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "kapsch.net"
  },
  {
   "n": "Karamba Security",
@@ -1383,7 +1524,8 @@
   "c": "Connectivity & Infrastructure",
   "b": "Runtime ECU protection hardening embedded vehicle code",
   "r": "Middle East & Africa",
-  "m": "Commercial"
+  "m": "Commercial",
+  "d": "karambasecurity.com"
  },
  {
   "n": "Miovision",
@@ -1391,7 +1533,8 @@
   "c": "Connectivity & Infrastructure",
   "b": "Intersection analytics with GenAI signal retiming via Mateo AI",
   "r": "North America",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "miovision.com"
  },
  {
   "n": "Nokia",
@@ -1399,7 +1542,8 @@
   "c": "Connectivity & Infrastructure",
   "b": "Private wireless and edge networks for depots and remote ops",
   "r": "Europe",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "nokia.com"
  },
  {
   "n": "NoTraffic",
@@ -1415,7 +1559,8 @@
   "c": "Connectivity & Infrastructure",
   "b": "Remote assistance software standing behind AV fleets",
   "r": "Middle East & Africa",
-  "m": "Commercial"
+  "m": "Commercial",
+  "d": "ottopia.tech"
  },
  {
   "n": "Ouster BlueCity",
@@ -1423,7 +1568,8 @@
   "c": "Connectivity & Infrastructure",
   "b": "Digital lidar watching intersections instead of vehicles",
   "r": "North America",
-  "m": "Commercial"
+  "m": "Commercial",
+  "d": "ouster.com"
  },
  {
   "n": "Phantom Auto",
@@ -1441,6 +1587,7 @@
   "b": "Embedded auto cyber, ex-Argus, restructuring under Aumovio",
   "r": "Middle East & Africa",
   "m": "Historical",
+  "d": "plaxidityx.com",
   "x": 1
  },
  {
@@ -1449,7 +1596,8 @@
   "c": "Connectivity & Infrastructure",
   "b": "Argus-born intrusion detection guarding connected fleets",
   "r": "Middle East & Africa",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "plaxidityx.com"
  },
  {
   "n": "Q-Free",
@@ -1457,7 +1605,8 @@
   "c": "Connectivity & Infrastructure",
   "b": "Tolling-to-ITS platforms readying corridors for autonomy",
   "r": "Europe",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "q-free.com"
  },
  {
   "n": "Qualcomm",
@@ -1465,7 +1614,8 @@
   "c": "Connectivity & Infrastructure",
   "b": "Snapdragon Digital Chassis from modem to Ride SoC",
   "r": "North America",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "qualcomm.com"
  },
  {
   "n": "Quectel Wireless",
@@ -1473,7 +1623,8 @@
   "c": "Connectivity & Infrastructure",
   "b": "IoT and vehicle connectivity modules, subject to varying regulatory treatment ac",
   "r": "Greater China",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "quectel.com"
  },
  {
   "n": "Rekor Systems",
@@ -1481,7 +1632,8 @@
   "c": "Connectivity & Infrastructure",
   "b": "Waycare-powered roadway intelligence for state agencies",
   "r": "North America",
-  "m": "Commercial"
+  "m": "Commercial",
+  "d": "rekor.ai"
  },
  {
   "n": "SafeRide Technologies",
@@ -1497,7 +1649,8 @@
   "c": "Connectivity & Infrastructure",
   "b": "European signals incumbent with a C-ITS upgrade path",
   "r": "Europe",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "swarco.com"
  },
  {
   "n": "Tencent Cloud",
@@ -1505,7 +1658,8 @@
   "c": "Connectivity & Infrastructure",
   "b": "Automotive cloud and map services tying China's AV ecosystem",
   "r": "Greater China",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "tencent.com"
  },
  {
   "n": "TUV SUD",
@@ -1513,7 +1667,8 @@
   "c": "Connectivity & Infrastructure",
   "b": "Testing & safety assurance",
   "r": "Europe",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "tuvsud.com"
  },
  {
   "n": "UL Solutions",
@@ -1521,7 +1676,8 @@
   "c": "Connectivity & Infrastructure",
   "b": "UL 4600 certification anchoring AV safety cases",
   "r": "North America",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "ul.com"
  },
  {
   "n": "Upstream Security",
@@ -1529,7 +1685,8 @@
   "c": "Connectivity & Infrastructure",
   "b": "Cloud SOC monitoring millions of connected vehicles",
   "r": "Middle East & Africa",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "upstream.auto"
  },
  {
   "n": "Valerann",
@@ -1545,7 +1702,8 @@
   "c": "Connectivity & Infrastructure",
   "b": "Teledriven rentals: 100-car Kia fleet, 35,000 trips, Grab-backed",
   "r": "Europe",
-  "m": "Commercial"
+  "m": "Commercial",
+  "d": "vay.io"
  },
  {
   "n": "Vector Informatik",
@@ -1553,7 +1711,8 @@
   "c": "Connectivity & Infrastructure",
   "b": "CANoe tooling every vehicle-network engineer knows",
   "r": "Europe",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "vector.com"
  },
  {
   "n": "VicOne",
@@ -1561,7 +1720,8 @@
   "c": "Connectivity & Infrastructure",
   "b": "Trend Micro's automotive SOC and vulnerability arm",
   "r": "Greater China",
-  "m": "Commercial"
+  "m": "Commercial",
+  "d": "vicone.com"
  },
  {
   "n": "Yunex Traffic",
@@ -1569,7 +1729,8 @@
   "c": "Connectivity & Infrastructure",
   "b": "Siemens-heritage traffic systems in cities worldwide",
   "r": "Europe",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "yunextraffic.com"
  },
  {
   "n": "Aisin",
@@ -1585,7 +1746,8 @@
   "c": "Vehicle Platform & Manufacturing",
   "b": "Vehicle architecture supplier and Motional co-founder",
   "r": "Europe",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "aptiv.com"
  },
  {
   "n": "BAIC Group",
@@ -1593,7 +1755,8 @@
   "c": "Vehicle Platform & Manufacturing",
   "b": "State-owned OEM behind Arcfox robotaxi platforms",
   "r": "Greater China",
-  "m": "Commercial"
+  "m": "Commercial",
+  "d": "baicgroup.com.cn"
  },
  {
   "n": "Baidu Apollo RT6",
@@ -1601,7 +1764,8 @@
   "c": "Vehicle Platform & Manufacturing",
   "b": "Sixth-gen purpose-built robotaxi driving Apollo Go's costs down",
   "r": "Greater China",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "apollo.auto"
  },
  {
   "n": "Benteler Group",
@@ -1609,7 +1773,8 @@
   "c": "Vehicle Platform & Manufacturing",
   "b": "Contract manufacturing & upfitting; Purpose-built robotaxi/pod makers",
   "r": "Europe",
-  "m": "Commercial"
+  "m": "Commercial",
+  "d": "benteler.com"
  },
  {
   "n": "Bosch",
@@ -1617,7 +1782,8 @@
   "c": "Vehicle Platform & Manufacturing",
   "b": "The largest Tier-1, from braking redundancy to ADAS sensors",
   "r": "Europe",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "bosch.com"
  },
  {
   "n": "BYD",
@@ -1625,7 +1791,8 @@
   "c": "Vehicle Platform & Manufacturing",
   "b": "EV scale champion with Momenta-linked autonomy programs",
   "r": "Greater China",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "byd.com"
  },
  {
   "n": "Continental",
@@ -1633,7 +1800,8 @@
   "c": "Vehicle Platform & Manufacturing",
   "b": "Radar; Tier-1 integrators; Cybersecurity via Argus",
   "r": "Europe",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "continental.com"
  },
  {
   "n": "Daimler Truck",
@@ -1641,7 +1809,8 @@
   "c": "Vehicle Platform & Manufacturing",
   "b": "Torc parent industrializing L4 Freightliner Cascadias",
   "r": "Europe",
-  "m": "Commercial"
+  "m": "Commercial",
+  "d": "daimlertruck.com"
  },
  {
   "n": "Daimler Truck / Freightliner",
@@ -1649,7 +1818,8 @@
   "c": "Vehicle Platform & Manufacturing",
   "b": "Autonomous-ready Cascadias built for Torc's driver-out runs",
   "r": "Europe",
-  "m": "Commercial"
+  "m": "Commercial",
+  "d": "daimlertruck.com"
  },
  {
   "n": "Denso",
@@ -1657,7 +1827,8 @@
   "c": "Vehicle Platform & Manufacturing",
   "b": "Toyota-group electronics scaling automated driving parts",
   "r": "Asia-Pacific",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "denso.com"
  },
  {
   "n": "Desay SV",
@@ -1673,7 +1844,8 @@
   "c": "Vehicle Platform & Manufacturing",
   "b": "Low-speed shuttles proving campus and industrial autonomy",
   "r": "Europe",
-  "m": "Commercial"
+  "m": "Commercial",
+  "d": "easymile.com"
  },
  {
   "n": "EDAG Group",
@@ -1689,7 +1861,8 @@
   "c": "Vehicle Platform & Manufacturing",
   "b": "Cabless electric freight pods with a Nasdaq listing (ENRD)",
   "r": "Europe",
-  "m": "Commercial"
+  "m": "Commercial",
+  "d": "einride.tech"
  },
  {
   "n": "Ford",
@@ -1697,7 +1870,8 @@
   "c": "Vehicle Platform & Manufacturing",
   "b": "BlueCruise hands-free today, eyes-off teased for 2028",
   "r": "North America",
-  "m": "Commercial"
+  "m": "Commercial",
+  "d": "ford.com"
  },
  {
   "n": "Forvia",
@@ -1705,7 +1879,8 @@
   "c": "Vehicle Platform & Manufacturing",
   "b": "Fail-operational by-wire steering clearing the road to L4",
   "r": "Europe",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "forvia.com"
  },
  {
   "n": "Forvia / Hella",
@@ -1713,7 +1888,8 @@
   "c": "Vehicle Platform & Manufacturing",
   "b": "Lighting and HMI electronics for passenger-facing robotaxis",
   "r": "Europe",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "forvia.com"
  },
  {
   "n": "Foxconn (Foxtron/MIH)",
@@ -1737,7 +1913,8 @@
   "c": "Vehicle Platform & Manufacturing",
   "b": "Toyota JV capacity behind Pony.ai's mass-market robotaxis",
   "r": "Greater China",
-  "m": "Commercial"
+  "m": "Commercial",
+  "d": "gac-motor.com"
  },
  {
   "n": "Geely",
@@ -1745,7 +1922,8 @@
   "c": "Vehicle Platform & Manufacturing",
   "b": "OEM AV platform suppliers; Contract manufacturing & upfitting",
   "r": "Greater China",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "geely.com"
  },
  {
   "n": "General Motors",
@@ -1754,6 +1932,7 @@
   "b": "Refocused on personal autonomy after absorbing Cruise",
   "r": "North America",
   "m": "Historical",
+  "d": "gm.com",
   "x": 1
  },
  {
@@ -1778,7 +1957,8 @@
   "c": "Vehicle Platform & Manufacturing",
   "b": "IONIQ 5s for Motional and Waymo, 50,000 committed",
   "r": "Asia-Pacific",
-  "m": "Commercial"
+  "m": "Commercial",
+  "d": "hyundai.com"
  },
  {
   "n": "Isuzu",
@@ -1786,7 +1966,8 @@
   "c": "Vehicle Platform & Manufacturing",
   "b": "Medium-duty truck platforms under Gatik's driverless routes",
   "r": "Asia-Pacific",
-  "m": "Commercial"
+  "m": "Commercial",
+  "d": "isuzu.co.jp"
  },
  {
   "n": "Iveco Group",
@@ -1794,7 +1975,8 @@
   "c": "Vehicle Platform & Manufacturing",
   "b": "European heavy platforms in Plus-linked trucking programs",
   "r": "Europe",
-  "m": "Commercial"
+  "m": "Commercial",
+  "d": "ivecogroup.com"
  },
  {
   "n": "Jaguar Land Rover",
@@ -1802,7 +1984,8 @@
   "c": "Vehicle Platform & Manufacturing",
   "b": "The I-PACE: Waymo's first scaled robotaxi workhorse",
   "r": "Europe",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "jaguarlandrover.com"
  },
  {
   "n": "Joyson Electronics / Preh",
@@ -1819,6 +2002,7 @@
   "b": "PBV lineup eyeing purpose-built autonomous fleets",
   "r": "Asia-Pacific",
   "m": "Commercial",
+  "d": "kia.com",
   "g": 1
  },
  {
@@ -1836,7 +2020,8 @@
   "c": "Vehicle Platform & Manufacturing",
   "b": "Gravity SUVs becoming Uber's Nuro-powered robotaxis",
   "r": "North America",
-  "m": "Commercial"
+  "m": "Commercial",
+  "d": "lucidmotors.com"
  },
  {
   "n": "Lucid Motors",
@@ -1844,7 +2029,8 @@
   "c": "Vehicle Platform & Manufacturing",
   "b": "$500M from Uber and 35,000 Gravity robotaxis committed",
   "r": "North America",
-  "m": "R&D"
+  "m": "R&D",
+  "d": "lucidmotors.com"
  },
  {
   "n": "Magna",
@@ -1852,7 +2038,8 @@
   "c": "Vehicle Platform & Manufacturing",
   "b": "Tier-1 integrators; Contract manufacturing & upfitting",
   "r": "North America",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "magna.com"
  },
  {
   "n": "Magna Steyr",
@@ -1860,7 +2047,8 @@
   "c": "Vehicle Platform & Manufacturing",
   "b": "Graz contract lines building Xpeng and INEOS vehicles",
   "r": "Europe",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "magna.com"
  },
  {
   "n": "Mercedes-Benz",
@@ -1868,7 +2056,8 @@
   "c": "Vehicle Platform & Manufacturing",
   "b": "Production L3 pioneer with Momenta ties in China",
   "r": "Europe",
-  "m": "Commercial"
+  "m": "Commercial",
+  "d": "mercedes-benz.com"
  },
  {
   "n": "Mobileye",
@@ -1876,7 +2065,8 @@
   "c": "Vehicle Platform & Manufacturing",
   "b": "L2+/L3 consumer ADAS stacks; Compute / SoC / AI chips; Cameras & vision sensors",
   "r": "Middle East & Africa",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "mobileye.com"
  },
  {
   "n": "Navya / Gaussin-Macnica Mobility",
@@ -1901,7 +2091,8 @@
   "c": "Vehicle Platform & Manufacturing",
   "b": "ProPILOT next-gen on Wayve; Tokyo robotaxi pilot with Uber",
   "r": "Asia-Pacific",
-  "m": "Other"
+  "m": "Other",
+  "d": "nissan-global.com"
  },
  {
   "n": "Nuro",
@@ -1909,7 +2100,8 @@
   "c": "Vehicle Platform & Manufacturing",
   "b": "The Nuro Driver, licensed from delivery pods to Lucid SUVs",
   "r": "North America",
-  "m": "Commercial"
+  "m": "Commercial",
+  "d": "nuro.ai"
  },
  {
   "n": "PACCAR",
@@ -1917,7 +2109,8 @@
   "c": "Vehicle Platform & Manufacturing",
   "b": "Peterbilt and Kenworth chassis under autonomous freight",
   "r": "North America",
-  "m": "Commercial"
+  "m": "Commercial",
+  "d": "paccar.com"
  },
  {
   "n": "PIX Moving",
@@ -1933,7 +2126,8 @@
   "c": "Vehicle Platform & Manufacturing",
   "b": "By-wire corners for AV-ready commercial platforms",
   "r": "Middle East & Africa",
-  "m": "Commercial"
+  "m": "Commercial",
+  "d": "ree.auto"
  },
  {
   "n": "REEF / Oxa-enabled vehicle integrators",
@@ -1949,7 +2143,8 @@
   "c": "Vehicle Platform & Manufacturing",
   "b": "European L4 shuttle pathway with WeRide Robobus programs",
   "r": "Europe",
-  "m": "Pilot"
+  "m": "Pilot",
+  "d": "renaultgroup.com"
  },
  {
   "n": "Rivian",
@@ -1958,6 +2153,7 @@
   "b": "R2 tapped for 10,000 future Uber robotaxis",
   "r": "North America",
   "m": "R&D",
+  "d": "rivian.com",
   "g": 1
  },
  {
@@ -1966,7 +2162,8 @@
   "c": "Vehicle Platform & Manufacturing",
   "b": "Upfitter turning Kodiak prototypes into fleet trucks",
   "r": "North America",
-  "m": "Commercial"
+  "m": "Commercial",
+  "d": "roush.com"
  },
  {
   "n": "SAIC Motor",
@@ -1974,7 +2171,8 @@
   "c": "Vehicle Platform & Manufacturing",
   "b": "China's densest OEM bridge into Momenta autonomy",
   "r": "Greater China",
-  "m": "Commercial"
+  "m": "Commercial",
+  "d": "saicmotor.com"
  },
  {
   "n": "Sany Heavy Industry",
@@ -1990,7 +2188,8 @@
   "c": "Vehicle Platform & Manufacturing",
   "b": "Wayve-powered STLA AutoDrive path targeting 2028 launches",
   "r": "Europe",
-  "m": "R&D"
+  "m": "R&D",
+  "d": "stellantis.com"
  },
  {
   "n": "Tesla",
@@ -1998,7 +2197,8 @@
   "c": "Vehicle Platform & Manufacturing",
   "b": "Consumer fleet plus in-house autonomy, the Waymo counter-model",
   "r": "North America",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "tesla.com"
  },
  {
   "n": "Toyota",
@@ -2006,7 +2206,8 @@
   "c": "Vehicle Platform & Manufacturing",
   "b": "Capital and platforms behind Woven, May Mobility and Pony.ai",
   "r": "Asia-Pacific",
-  "m": "Commercial"
+  "m": "Commercial",
+  "d": "toyota.com"
  },
  {
   "n": "Udelv",
@@ -2023,7 +2224,8 @@
   "c": "Vehicle Platform & Manufacturing",
   "b": "Production lidar history plus VW-Mobileye ADAS programs",
   "r": "Europe",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "valeo.com"
  },
  {
   "n": "Elektrobit",
@@ -2031,7 +2233,8 @@
   "c": "AV Middleware & Tooling",
   "b": "EB corbos Linux inside Mobileye Drive's L4 stack",
   "r": "Europe",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "elektrobit.com"
  },
  {
   "n": "Sonatus",
@@ -2039,7 +2242,8 @@
   "c": "AV Middleware & Tooling",
   "b": "SDV software running in 6M+ Hyundai-group vehicles",
   "r": "North America",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "sonatus.com"
  },
  {
   "n": "Tier IV",
@@ -2047,7 +2251,8 @@
   "c": "AV Middleware & Tooling",
   "b": "Autoware's open-source L4 stack, Toyota-reinvested",
   "r": "Asia-Pacific",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "tier4.jp"
  },
  {
   "n": "Volkswagen Group / CARIAD",
@@ -2055,7 +2260,8 @@
   "c": "Vehicle Platform & Manufacturing",
   "b": "ID.Buzz robotaxis on Uber in LA through MOIA",
   "r": "Europe",
-  "m": "Commercial"
+  "m": "Commercial",
+  "d": "volkswagen-group.com"
  },
  {
   "n": "Volvo Autonomous Solutions",
@@ -2063,7 +2269,8 @@
   "c": "Vehicle Platform & Manufacturing",
   "b": "VNL Autonomous factory-built for Waabi's driver-out path",
   "r": "Europe",
-  "m": "Commercial"
+  "m": "Commercial",
+  "d": "volvoautonomoussolutions.com"
  },
  {
   "n": "Volvo Cars",
@@ -2071,7 +2278,8 @@
   "c": "Vehicle Platform & Manufacturing",
   "b": "Baidu JV EVs and NVIDIA DRIVE inside consumer Volvos",
   "r": "Europe",
-  "m": "Other"
+  "m": "Other",
+  "d": "volvocars.com"
  },
  {
   "n": "Volvo Group (Trucks)",
@@ -2079,7 +2287,8 @@
   "c": "Vehicle Platform & Manufacturing",
   "b": "Aurora-driven VNLs running Dallas-Oklahoma City daily",
   "r": "Europe",
-  "m": "Commercial"
+  "m": "Commercial",
+  "d": "volvogroup.com"
  },
  {
   "n": "Volvo Trucks / Volvo Autonomous Solutions",
@@ -2087,7 +2296,8 @@
   "c": "Vehicle Platform & Manufacturing",
   "b": "Redundant Class 8 platforms for Aurora and Waabi freight",
   "r": "Europe",
-  "m": "Commercial"
+  "m": "Commercial",
+  "d": "volvotrucks.com"
  },
  {
   "n": "Yutong Bus",
@@ -2095,7 +2305,8 @@
   "c": "Vehicle Platform & Manufacturing",
   "b": "Bus-scale manufacturing behind WeRide's Robobus fleets",
   "r": "Greater China",
-  "m": "Commercial"
+  "m": "Commercial",
+  "d": "yutong.com"
  },
  {
   "n": "Zeekr",
@@ -2103,7 +2314,8 @@
   "c": "Vehicle Platform & Manufacturing",
   "b": "Geely EVs carrying Waymo's sixth-generation Driver",
   "r": "Greater China",
-  "m": "Commercial"
+  "m": "Commercial",
+  "d": "zeekrglobal.com"
  },
  {
   "n": "ZF",
@@ -2111,7 +2323,8 @@
   "c": "Vehicle Platform & Manufacturing",
   "b": "Braking and steering redundancy coupled to perception",
   "r": "Europe",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "zf.com"
  },
  {
   "n": "Zoox",
@@ -2120,6 +2333,7 @@
   "b": "Robotaxi & passenger L4; Purpose-built robotaxi/pod makers; Robotaxi consumer se",
   "r": "North America",
   "m": "Commercial",
+  "d": "zoox.com",
   "g": 1
  },
  {
@@ -2128,7 +2342,8 @@
   "c": "Demand & Commercial Platforms",
   "b": "China's most visible robotaxi brand, now driverless in Dubai",
   "r": "Greater China",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "apollo.auto"
  },
  {
   "n": "Aurora Horizon",
@@ -2136,7 +2351,8 @@
   "c": "Demand & Commercial Platforms",
   "b": "Carrier-facing product selling Aurora's driverless miles",
   "r": "North America",
-  "m": "Commercial"
+  "m": "Commercial",
+  "d": "aurora.tech"
  },
  {
   "n": "AutoX Robotaxi",
@@ -2144,7 +2360,8 @@
   "c": "Demand & Commercial Platforms",
   "b": "Shenzhen robotaxi era that seeded today's Tensor",
   "r": "Greater China",
-  "m": "Commercial"
+  "m": "Commercial",
+  "d": "autox.ai"
  },
  {
   "n": "Avride Robotaxi",
@@ -2152,7 +2369,8 @@
   "c": "Demand & Commercial Platforms",
   "b": "Dallas robotaxis and sidewalk bots on the Uber network",
   "r": "North America",
-  "m": "Commercial"
+  "m": "Commercial",
+  "d": "avride.ai"
  },
  {
   "n": "Beep",
@@ -2160,7 +2378,8 @@
   "c": "Demand & Commercial Platforms",
   "b": "Managed autonomous shuttles for campuses and communities",
   "r": "North America",
-  "m": "Commercial"
+  "m": "Commercial",
+  "d": "ridebeep.com"
  },
  {
   "n": "Bolt",
@@ -2168,7 +2387,8 @@
   "c": "Demand & Commercial Platforms",
   "b": "Europe-to-Africa ridehail watching for AV supply",
   "r": "Europe",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "bolt.eu"
  },
  {
   "n": "CaoCao Mobility",
@@ -2176,7 +2396,8 @@
   "c": "Demand & Commercial Platforms",
   "b": "Geely's ridehail arm with a robotaxi platform pitch",
   "r": "Greater China",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "caocaokeji.cn"
  },
  {
   "n": "Careem",
@@ -2184,7 +2405,8 @@
   "c": "Demand & Commercial Platforms",
   "b": "Uber-owned MENA super-app holding Gulf AV distribution optionality",
   "r": "Middle East & Africa",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "careem.com"
  },
  {
   "n": "Cartken",
@@ -2192,7 +2414,8 @@
   "c": "Demand & Commercial Platforms",
   "b": "Mitsubishi Electric affiliate ordered ~100 Hauler sidewalk robots",
   "r": "North America",
-  "m": "Commercial"
+  "m": "Commercial",
+  "d": "cartken.com"
  },
  {
   "n": "Coco Robotics",
@@ -2200,7 +2423,8 @@
   "c": "Demand & Commercial Platforms",
   "b": "$80M raised to scale sidewalk delivery toward 10,000 vehicles",
   "r": "North America",
-  "m": "Commercial"
+  "m": "Commercial",
+  "d": "cocodelivery.com"
  },
  {
   "n": "ComfortDelGro Zig",
@@ -2208,7 +2432,8 @@
   "c": "Demand & Commercial Platforms",
   "b": "Singapore taxi incumbent tied to Pony.ai's Punggol shuttles",
   "r": "Asia-Pacific",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "comfortdelgro.com"
  },
  {
   "n": "Curb",
@@ -2224,7 +2449,8 @@
   "c": "Demand & Commercial Platforms",
   "b": "China ride-hailing leader with DiMA LLM assistant research",
   "r": "Greater China",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "didiglobal.com"
  },
  {
   "n": "DoorDash",
@@ -2232,7 +2458,8 @@
   "c": "Demand & Commercial Platforms",
   "b": "Delivery marketplace building Dot while partnering with Serve",
   "r": "North America",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "doordash.com"
  },
  {
   "n": "DoorDash Dot",
@@ -2240,7 +2467,8 @@
   "c": "Demand & Commercial Platforms",
   "b": "30 lb in-house robot with hundreds of Phoenix test deliveries",
   "r": "North America",
-  "m": "Pilot"
+  "m": "Pilot",
+  "d": "doordash.com"
  },
  {
   "n": "Flexport",
@@ -2248,7 +2476,8 @@
   "c": "Demand & Commercial Platforms",
   "b": "Digital freight forwarder relevant to autonomous trucking",
   "r": "North America",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "flexport.com"
  },
  {
   "n": "FREE NOW",
@@ -2256,7 +2485,8 @@
   "c": "Demand & Commercial Platforms",
   "b": "European multimodal ridehail rooted in taxi-heavy markets",
   "r": "Europe",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "free-now.com"
  },
  {
   "n": "Gatik Commercial Network",
@@ -2264,7 +2494,8 @@
   "c": "Demand & Commercial Platforms",
   "b": "Middle-mile autonomy hauling for Loblaw, Walmart, Kroger, Tyson",
   "r": "North America",
-  "m": "Commercial"
+  "m": "Commercial",
+  "d": "gatik.ai"
  },
  {
   "n": "Geotab",
@@ -2272,7 +2503,8 @@
   "c": "Demand & Commercial Platforms",
   "b": "Oakville telematics at scale for mixed human-AV fleet data",
   "r": "North America",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "geotab.com"
  },
  {
   "n": "GO Inc.",
@@ -2280,7 +2512,8 @@
   "c": "Demand & Commercial Platforms",
   "b": "Japan taxi app partnering on Waymo's Tokyo preparatory tests",
   "r": "Asia-Pacific",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "goinc.jp"
  },
  {
   "n": "Grab",
@@ -2288,7 +2521,8 @@
   "c": "Demand & Commercial Platforms",
   "b": "Southeast Asia superapp operating WeRide shuttles in Singapore",
   "r": "Asia-Pacific",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "grab.com"
  },
  {
   "n": "HERE Marketplace / Location Services",
@@ -2296,7 +2530,8 @@
   "c": "Demand & Commercial Platforms",
   "b": "OEM-backed map platform licensing location APIs to mobility",
   "r": "Europe",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "here.com"
  },
  {
   "n": "Instacart",
@@ -2304,7 +2539,8 @@
   "c": "Demand & Commercial Platforms",
   "b": "Grocery delivery marketplace adjacent to autonomous last mile",
   "r": "North America",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "instacart.com"
  },
  {
   "n": "Kakao T",
@@ -2320,7 +2556,8 @@
   "c": "Demand & Commercial Platforms",
   "b": "Autonomous trucking with a modular retrofit hardware model",
   "r": "North America",
-  "m": "Commercial"
+  "m": "Commercial",
+  "d": "kodiak.ai"
  },
  {
   "n": "Lyft",
@@ -2329,6 +2566,7 @@
   "b": "Ridehail & demand aggregation; Robotaxi consumer services",
   "r": "North America",
   "m": "Scaled",
+  "d": "lyft.com",
   "g": 1
  },
  {
@@ -2337,7 +2575,8 @@
   "c": "Demand & Commercial Platforms",
   "b": "Driver-out shuttle service expanding to Lyft riders in Atlanta",
   "r": "North America",
-  "m": "Commercial"
+  "m": "Commercial",
+  "d": "maymobility.com"
  },
  {
   "n": "McLane Company",
@@ -2345,7 +2584,8 @@
   "c": "Demand & Commercial Platforms",
   "b": "Berkshire distributor with driverless Aurora Dallas-Houston hauls",
   "r": "North America",
-  "m": "Commercial"
+  "m": "Commercial",
+  "d": "mclaneco.com"
  },
  {
   "n": "Mobileye Drive",
@@ -2353,7 +2593,8 @@
   "c": "Demand & Commercial Platforms",
   "b": "Turnkey AV driver licensed to OEMs and transit operators",
   "r": "Middle East & Africa",
-  "m": "Commercial"
+  "m": "Commercial",
+  "d": "mobileye.com"
  },
  {
   "n": "Moovit",
@@ -2369,7 +2610,8 @@
   "c": "Demand & Commercial Platforms",
   "b": "Dashcam fleet monetizing real-time road perception for AV maps",
   "r": "North America",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "getnexar.com"
  },
  {
   "n": "Nuro Delivery",
@@ -2378,6 +2620,7 @@
   "b": "Delivery pilots spanning Kroger, 7-Eleven and Uber Eats",
   "r": "North America",
   "m": "Historical",
+  "d": "nuro.ai",
   "x": 1
  },
  {
@@ -2386,7 +2629,8 @@
   "c": "Demand & Commercial Platforms",
   "b": "Licensed autonomy anchoring Uber and Lucid's robotaxi plans",
   "r": "North America",
-  "m": "Commercial"
+  "m": "Commercial",
+  "d": "nuro.ai"
  },
  {
   "n": "NVIDIA DRIVE / Halos",
@@ -2394,7 +2638,8 @@
   "c": "Demand & Commercial Platforms",
   "b": "Compute, simulation and safety platform across AV supply chains",
   "r": "North America",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "nvidia.com"
  },
  {
   "n": "Obi",
@@ -2411,6 +2656,7 @@
   "b": "Robotaxi service across China posting Q1 2026 revenue growth",
   "r": "Greater China",
   "m": "Scaled",
+  "d": "pony.ai",
   "g": 1
  },
  {
@@ -2419,7 +2665,8 @@
   "c": "Demand & Commercial Platforms",
   "b": "Fleet automation platform for dispatch and maintenance workflows",
   "r": "North America",
-  "m": "Commercial"
+  "m": "Commercial",
+  "d": "ridecell.com"
  },
  {
   "n": "Ruqi Mobility",
@@ -2427,7 +2674,8 @@
   "c": "Demand & Commercial Platforms",
   "b": "GAC-affiliated ridehail channel for Greater Bay Area robotaxis",
   "r": "Greater China",
-  "m": "Commercial"
+  "m": "Commercial",
+  "d": "ruqimobility.com"
  },
  {
   "n": "Samsara",
@@ -2435,7 +2683,8 @@
   "c": "Demand & Commercial Platforms",
   "b": "Connected-ops telemetry feeding underwriting for hybrid fleets",
   "r": "North America",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "samsara.com"
  },
  {
   "n": "T3 Go",
@@ -2459,7 +2708,8 @@
   "c": "Demand & Commercial Platforms",
   "b": "FSD-powered ridehail active in Austin and Miami",
   "r": "North America",
-  "m": "Commercial"
+  "m": "Commercial",
+  "d": "tesla.com"
  },
  {
   "n": "TomTom Orbis / Maps APIs",
@@ -2467,7 +2717,8 @@
   "c": "Demand & Commercial Platforms",
   "b": "Orbis maps and traffic APIs for robotaxi routing and ETAs",
   "r": "Europe",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "tomtom.com"
  },
  {
   "n": "Uber",
@@ -2476,6 +2727,7 @@
   "b": "Ridehail & demand aggregation; Robotaxi consumer services; Goods delivery & frei",
   "r": "North America",
   "m": "Scaled",
+  "d": "uber.com",
   "g": 1
  },
  {
@@ -2484,7 +2736,8 @@
   "c": "Demand & Commercial Platforms",
   "b": "Delivery arm piloting Serve, Cartken and Nuro robot couriers",
   "r": "North America",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "uber.com"
  },
  {
   "n": "Uber Freight",
@@ -2492,7 +2745,8 @@
   "c": "Demand & Commercial Platforms",
   "b": "Chicago brokerage positioned to route autonomous truck demand",
   "r": "North America",
-  "m": "Commercial"
+  "m": "Commercial",
+  "d": "uberfreight.com"
  },
  {
   "n": "Waabi Driver Commercial Network",
@@ -2500,7 +2754,8 @@
   "c": "Demand & Commercial Platforms",
   "b": "AI-first trucking autonomy commercialized with Volvo partnership",
   "r": "North America",
-  "m": "Commercial"
+  "m": "Commercial",
+  "d": "waabi.ai"
  },
  {
   "n": "Waymo One",
@@ -2508,7 +2763,8 @@
   "c": "Demand & Commercial Platforms",
   "b": "Benchmark robotaxi with hundreds of thousands of paid weekly rides",
   "r": "North America",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "waymo.com"
  },
  {
   "n": "Wayve AI Driver",
@@ -2516,7 +2772,8 @@
   "c": "Demand & Commercial Platforms",
   "b": "$2.8B-funded map-light AV driver tied to Stellantis and Uber",
   "r": "Europe",
-  "m": "Commercial"
+  "m": "Commercial",
+  "d": "wayve.ai"
  },
  {
   "n": "WeRide Go / WeRide Robotaxi",
@@ -2524,7 +2781,8 @@
   "c": "Demand & Commercial Platforms",
   "b": "Driverless Uber rides in Abu Dhabi and 100+ Middle East robotaxis",
   "r": "Greater China",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "weride.ai"
  },
  {
   "n": "Werner Enterprises",
@@ -2532,7 +2790,8 @@
   "c": "Demand & Commercial Platforms",
   "b": "Omaha carrier stretching Aurora pilots onto Fort Worth-Phoenix",
   "r": "North America",
-  "m": "Pilot"
+  "m": "Pilot",
+  "d": "werner.com"
  },
  {
   "n": "Ampcontrol",
@@ -2540,7 +2799,8 @@
   "c": "Fleet Operations & Depot",
   "b": "Charge-scheduling software that minimizes depot downtime",
   "r": "North America",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "ampcontrol.io"
  },
  {
   "n": "Anyline",
@@ -2548,7 +2808,8 @@
   "c": "Fleet Operations & Depot",
   "b": "Vienna data-capture scanning tire sidewalls for fleet checks",
   "r": "Europe",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "anyline.com"
  },
  {
   "n": "Autofleet",
@@ -2556,7 +2817,8 @@
   "c": "Fleet Operations & Depot",
   "b": "Tel Aviv rebalancing and utilization engine for shared fleets",
   "r": "Middle East & Africa",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "autofleet.io"
  },
  {
   "n": "Autolane",
@@ -2581,6 +2843,7 @@
   "b": "Rental incumbent with a multi-year Waymo Dallas fleet-ops deal",
   "r": "North America",
   "m": "Historical",
+  "d": "avisbudgetgroup.com",
   "x": 1
  },
  {
@@ -2597,7 +2860,8 @@
   "c": "Fleet Operations & Depot",
   "b": "Energy major's charging arm built for high-utilization fleets",
   "r": "Europe",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "bp.com"
  },
  {
   "n": "ChargePoint",
@@ -2605,7 +2869,8 @@
   "c": "Fleet Operations & Depot",
   "b": "Installed charging base repositioned as AV depot infrastructure",
   "r": "North America",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "chargepoint.com"
  },
  {
   "n": "Coord",
@@ -2622,7 +2887,8 @@
   "c": "Fleet Operations & Depot",
   "b": "Cleaning, maintenance & inspection; Fleet management & MaaS operations",
   "r": "North America",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "coxautoinc.com"
  },
  {
   "n": "Electra",
@@ -2638,7 +2904,8 @@
   "c": "Fleet Operations & Depot",
   "b": "National fast-charging backbone across US and Canadian sites",
   "r": "North America",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "electrifyamerica.com"
  },
  {
   "n": "Element Fleet Management",
@@ -2646,7 +2913,8 @@
   "c": "Fleet Operations & Depot",
   "b": "Toronto lessor announcing a Waymo San Diego pact in June 2026",
   "r": "North America",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "elementfleet.com"
  },
  {
   "n": "Enterprise Fleet Management",
@@ -2654,7 +2922,8 @@
   "c": "Fleet Operations & Depot",
   "b": "St. Louis fleet group whose branch density suits AV servicing",
   "r": "North America",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "efleets.com"
  },
  {
   "n": "EO Charging",
@@ -2671,7 +2940,8 @@
   "c": "Fleet Operations & Depot",
   "b": "Uber charging pact spurring depots in NY, LA, SF and Boston",
   "r": "North America",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "evgo.com"
  },
  {
   "n": "Fleetio",
@@ -2679,7 +2949,8 @@
   "c": "Fleet Operations & Depot",
   "b": "Work orders, inspections and cost tracking for depot fleets",
   "r": "North America",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "fleetio.com"
  },
  {
   "n": "Flexdrive",
@@ -2703,7 +2974,8 @@
   "c": "Fleet Operations & Depot",
   "b": "Charging depots and trucks-as-a-service for drayage fleets",
   "r": "North America",
-  "m": "Commercial"
+  "m": "Commercial",
+  "d": "forummobility.com"
  },
  {
   "n": "Greenlane",
@@ -2727,7 +2999,8 @@
   "c": "Fleet Operations & Depot",
   "b": "Expanding UVeye inspection scanners to 100+ US airports",
   "r": "North America",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "hertz.com"
  },
  {
   "n": "Hubber",
@@ -2743,7 +3016,8 @@
   "c": "Fleet Operations & Depot",
   "b": "Inductive pads charging transit fleets without plug labor",
   "r": "North America",
-  "m": "Commercial"
+  "m": "Commercial",
+  "d": "inductev.com"
  },
  {
   "n": "Ionity",
@@ -2751,7 +3025,8 @@
   "c": "Fleet Operations & Depot",
   "b": "Automaker-owned high-power charging across European highways",
   "r": "Europe",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "ionity.eu"
  },
  {
   "n": "Kempower",
@@ -2759,7 +3034,8 @@
   "c": "Fleet Operations & Depot",
   "b": "Modular DC fast-charging hardware from Lahti, Finland",
   "r": "Europe",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "kempower.com"
  },
  {
   "n": "Keolis",
@@ -2767,7 +3043,8 @@
   "c": "Fleet Operations & Depot",
   "b": "Global transit operator with autonomous shuttle deployments",
   "r": "Europe",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "keolis.com"
  },
  {
   "n": "Lacuna Technologies",
@@ -2784,7 +3061,8 @@
   "c": "Fleet Operations & Depot",
   "b": "Lyft fleet arm holding Waymo's Nashville maintenance mandate",
   "r": "North America",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "flexdrive.com"
  },
  {
   "n": "May Mobility Operations",
@@ -2792,7 +3070,8 @@
   "c": "Fleet Operations & Depot",
   "b": "Route design and service operations live in Peachtree Corners",
   "r": "North America",
-  "m": "Commercial"
+  "m": "Commercial",
+  "d": "maymobility.com"
  },
  {
   "n": "Monk AI",
@@ -2808,7 +3087,8 @@
   "c": "Fleet Operations & Depot",
   "b": "Vehicle financing for ridehail drivers across global markets",
   "r": "Middle East & Africa",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "moove.io"
  },
  {
   "n": "Moove AV / Moove",
@@ -2817,6 +3097,7 @@
   "b": "Fleet management & MaaS operations; Cleaning, maintenance & inspection; Charging",
   "r": "Middle East & Africa",
   "m": "Scaled",
+  "d": "moove.io",
   "g": 1
  },
  {
@@ -2825,7 +3106,8 @@
   "c": "Fleet Operations & Depot",
   "b": "Compliance and safety visibility for trucking's autonomy shift",
   "r": "North America",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "gomotive.com"
  },
  {
   "n": "NaaS Technology",
@@ -2841,7 +3123,8 @@
   "c": "Fleet Operations & Depot",
   "b": "Transit scheduling software able to slot in AV shuttles",
   "r": "Middle East & Africa",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "optibus.com"
  },
  {
   "n": "ParkMobile",
@@ -2849,7 +3132,8 @@
   "c": "Fleet Operations & Depot",
   "b": "Parking app brought into SFMTA's 2026 payment modernization",
   "r": "North America",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "parkmobile.io"
  },
  {
   "n": "Parkopedia",
@@ -2857,7 +3141,8 @@
   "c": "Fleet Operations & Depot",
   "b": "Parking and staging data licensed for connected cars and AVs",
   "r": "Europe",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "parkopedia.com"
  },
  {
   "n": "Passport",
@@ -2873,7 +3158,8 @@
   "c": "Fleet Operations & Depot",
   "b": "Vancouver parking payments in the UK National Parking Platform",
   "r": "North America",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "paybyphone.com"
  },
  {
   "n": "Pitstop",
@@ -2889,7 +3175,8 @@
   "c": "Fleet Operations & Depot",
   "b": "City data layer managing curb policy for delivery and shared fleets",
   "r": "North America",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "populus.ai"
  },
  {
   "n": "PowerFlex",
@@ -2897,7 +3184,8 @@
   "c": "Fleet Operations & Depot",
   "b": "Depot solar, storage and managed charging for commercial sites",
   "r": "North America",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "powerflex.com"
  },
  {
   "n": "Preteckt",
@@ -2913,7 +3201,8 @@
   "c": "Fleet Operations & Depot",
   "b": "Waterloo dispatch for pooled rides, paratransit, microtransit",
   "r": "North America",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "rideco.com"
  },
  {
   "n": "Robodock",
@@ -2938,7 +3227,8 @@
   "c": "Fleet Operations & Depot",
   "b": "Charging & energy (depot / robotic); Cleaning, maintenance & inspection",
   "r": "Europe",
-  "m": "Commercial"
+  "m": "Commercial",
+  "d": "rocsys.com"
  },
  {
   "n": "Spare",
@@ -2946,7 +3236,8 @@
   "c": "Fleet Operations & Depot",
   "b": "Demand-responsive booking engine for agency transit fleets",
   "r": "North America",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "sparelabs.com"
  },
  {
   "n": "SpotHero",
@@ -2954,7 +3245,8 @@
   "c": "Fleet Operations & Depot",
   "b": "Off-street parking marketplace fit for robotaxi staging",
   "r": "North America",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "spothero.com"
  },
  {
   "n": "TeraWatt Infrastructure",
@@ -2962,7 +3254,8 @@
   "c": "Fleet Operations & Depot",
   "b": "Buying freight-corridor real estate for truck charging centers",
   "r": "North America",
-  "m": "Commercial"
+  "m": "Commercial",
+  "d": "terawattinfrastructure.com"
  },
  {
   "n": "Tesla Supercharger (Robotaxi)",
@@ -2970,7 +3263,8 @@
   "c": "Fleet Operations & Depot",
   "b": "Charging & energy",
   "r": "North America",
-  "m": "Pilot"
+  "m": "Pilot",
+  "d": "tesla.com"
  },
  {
   "n": "Tire Profiles",
@@ -2986,7 +3280,8 @@
   "c": "Fleet Operations & Depot",
   "b": "Visual damage appraisal AI for auto and property insurers",
   "r": "Europe",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "tractable.ai"
  },
  {
   "n": "Transdev",
@@ -2994,7 +3289,8 @@
   "c": "Fleet Operations & Depot",
   "b": "Waymo depot ops spanning Phoenix, SF, LA, Austin and Nashville",
   "r": "Europe",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "transdev.com"
  },
  {
   "n": "Uber AV Infrastructure",
@@ -3003,6 +3299,7 @@
   "b": "Fleet management & MaaS operations; Charging & energy (depot / robotic)",
   "r": "North America",
   "m": "Scaled",
+  "d": "uber.com",
   "g": 1
  },
  {
@@ -3011,7 +3308,8 @@
   "c": "Fleet Operations & Depot",
   "b": "20-30 second scans in 300 dealerships and Amazon delivery hubs",
   "r": "Middle East & Africa",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "uveye.com"
  },
  {
   "n": "Via",
@@ -3020,6 +3318,7 @@
   "b": "Microtransit platform with a strong public-sector footprint",
   "r": "North America",
   "m": "Scaled",
+  "d": "ridewithvia.com",
   "g": 1
  },
  {
@@ -3044,7 +3343,8 @@
   "c": "Fleet Operations & Depot",
   "b": "Port-side truck charging paired with its own electric hauling",
   "r": "North America",
-  "m": "Commercial"
+  "m": "Commercial",
+  "d": "wattev.com"
  },
  {
   "n": "WiTricity",
@@ -3052,7 +3352,8 @@
   "c": "Fleet Operations & Depot",
   "b": "Wireless charging IP for hands-off robotaxi top-ups",
   "r": "North America",
-  "m": "Commercial"
+  "m": "Commercial",
+  "d": "witricity.com"
  },
  {
   "n": "XCharge",
@@ -3093,7 +3394,8 @@
   "c": "Capital, Insurance & Risk",
   "b": "Personal motor insurance",
   "r": "Europe",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "admiralgroup.co.uk"
  },
  {
   "n": "AIG",
@@ -3101,7 +3403,8 @@
   "c": "Capital, Insurance & Risk",
   "b": "AV insurance & underwriting; Product liability and cyber",
   "r": "North America",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "aig.com"
  },
  {
   "n": "Allianz Commercial",
@@ -3109,7 +3412,8 @@
   "c": "Capital, Insurance & Risk",
   "b": "Munich carrier sizing product-liability cover for AV fleets",
   "r": "Europe",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "allianz.com"
  },
  {
   "n": "Aon",
@@ -3117,7 +3421,8 @@
   "c": "Capital, Insurance & Risk",
   "b": "Risk Capital segment brokering AV programs before they standardize",
   "r": "Europe",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "aon.com"
  },
  {
   "n": "Apollo ibott",
@@ -3150,7 +3455,8 @@
   "c": "Capital, Insurance & Risk",
   "b": "Personal and commercial motor insurance",
   "r": "Europe",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "aviva.com"
  },
  {
   "n": "AXA XL",
@@ -3166,7 +3472,8 @@
   "c": "Capital, Insurance & Risk",
   "b": "Cyber and specialty liability",
   "r": "Europe",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "beazley.com"
  },
  {
   "n": "Cambridge Mobile Telematics",
@@ -3174,7 +3481,8 @@
   "c": "Capital, Insurance & Risk",
   "b": "Telematics and risk scoring",
   "r": "North America",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "cmtelematics.com"
  },
  {
   "n": "CCC Intelligent Solutions",
@@ -3182,7 +3490,8 @@
   "c": "Capital, Insurance & Risk",
   "b": "Claims and collision workflows absorbing ADAS repair complexity",
   "r": "North America",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "cccis.com"
  },
  {
   "n": "CFC",
@@ -3206,7 +3515,8 @@
   "c": "Capital, Insurance & Risk",
   "b": "AV insurance & underwriting; Cyber and technology liability",
   "r": "Europe",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "chubb.com"
  },
  {
   "n": "Coalition",
@@ -3222,7 +3532,8 @@
   "c": "Capital, Insurance & Risk",
   "b": "Commercial trucking insurance; Telematics-linked underwriting",
   "r": "North America",
-  "m": "Commercial"
+  "m": "Commercial",
+  "d": "coverwhale.com"
  },
  {
   "n": "Fairmatic",
@@ -3230,7 +3541,8 @@
   "c": "Capital, Insurance & Risk",
   "b": "Telematics-priced commercial auto for the human-to-AV shift",
   "r": "North America",
-  "m": "Commercial"
+  "m": "Commercial",
+  "d": "fairmatic.com"
  },
  {
   "n": "Gallagher",
@@ -3238,7 +3550,8 @@
   "c": "Capital, Insurance & Risk",
   "b": "Rolling Meadows broker for fleet and specialty AV placements",
   "r": "North America",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "ajg.com"
  },
  {
   "n": "HDI Global",
@@ -3246,7 +3559,8 @@
   "c": "Capital, Insurance & Risk",
   "b": "Commercial insurance and industrial risk",
   "r": "Europe",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "hdi.global"
  },
  {
   "n": "Koop Technologies",
@@ -3262,7 +3576,8 @@
   "c": "Capital, Insurance & Risk",
   "b": "Risk data pipes as AV liability shifts from driver to system",
   "r": "North America",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "lexisnexis.com"
  },
  {
   "n": "Lloyd's of London",
@@ -3270,7 +3585,8 @@
   "c": "Capital, Insurance & Risk",
   "b": "Specialty insurance market; Reinsurance and risk transfer",
   "r": "Europe",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "lloyds.com"
  },
  {
   "n": "Lockton",
@@ -3278,7 +3594,8 @@
   "c": "Capital, Insurance & Risk",
   "b": "Privately held Kansas City broker for transport risk programs",
   "r": "North America",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "lockton.com"
  },
  {
   "n": "Marsh",
@@ -3286,7 +3603,8 @@
   "c": "Capital, Insurance & Risk",
   "b": "Largest global broker by scale for complex commercial programs",
   "r": "North America",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "marsh.com"
  },
  {
   "n": "Mitchell / Enlyte",
@@ -3294,7 +3612,8 @@
   "c": "Capital, Insurance & Risk",
   "b": "San Diego collision-estimating rails for AV-era repair costs",
   "r": "North America",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "enlyte.com"
  },
  {
   "n": "MS&AD Insurance Group",
@@ -3310,7 +3629,8 @@
   "c": "Capital, Insurance & Risk",
   "b": "Reinsurance and risk transfer; AI and cyber liability",
   "r": "Europe",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "munichre.com"
  },
  {
   "n": "Netradyne",
@@ -3318,7 +3638,8 @@
   "c": "Capital, Insurance & Risk",
   "b": "Fleet video safety and risk analytics",
   "r": "North America",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "netradyne.com"
  },
  {
   "n": "Nirvana Insurance",
@@ -3334,7 +3655,8 @@
   "c": "Capital, Insurance & Risk",
   "b": "Commercial and personal auto insurance",
   "r": "North America",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "progressive.com"
  },
  {
   "n": "State Farm Ventures",
@@ -3342,7 +3664,8 @@
   "c": "Capital, Insurance & Risk",
   "b": "Venture arm investing in mobility to read changing risk pools",
   "r": "North America",
-  "m": "Commercial"
+  "m": "Commercial",
+  "d": "statefarm.com"
  },
  {
   "n": "Swiss Re",
@@ -3350,7 +3673,8 @@
   "c": "Capital, Insurance & Risk",
   "b": "Reinsurance and risk transfer; AV insurance & underwriting",
   "r": "Europe",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "swissre.com"
  },
  {
   "n": "Tokio Marine Kiln",
@@ -3358,7 +3682,8 @@
   "c": "Capital, Insurance & Risk",
   "b": "Lloyd's specialty writer for IP and technology E&O exposure",
   "r": "Europe",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "tokiomarinekiln.com"
  },
  {
   "n": "TÜV SÜD",
@@ -3366,7 +3691,8 @@
   "c": "Capital, Insurance & Risk",
   "b": "Independent reviewer of Waymo, Aurora and Gatik safety practices",
   "r": "Europe",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "tuvsud.com"
  },
  {
   "n": "Verisk Analytics",
@@ -3374,7 +3700,8 @@
   "c": "Capital, Insurance & Risk",
   "b": "Neutral data layer for actuarial pricing of AV exposure",
   "r": "North America",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "verisk.com"
  },
  {
   "n": "WTW",
@@ -3382,7 +3709,8 @@
   "c": "Capital, Insurance & Risk",
   "b": "Broker and risk advisory; Insurance consulting and technology",
   "r": "Europe",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "wtwco.com"
  },
  {
   "n": "Zurich Insurance Group",
@@ -3390,7 +3718,8 @@
   "c": "Capital, Insurance & Risk",
   "b": "Swiss carrier pairing commercial auto with risk engineering",
   "r": "Europe",
-  "m": "Scaled"
+  "m": "Scaled",
+  "d": "zurich.com"
  },
  {
   "n": "Abu Dhabi ITC",
@@ -3398,7 +3727,8 @@
   "c": "Governance: Regulators & Government",
   "b": "Transport regulator for Yas Island and the emirate's robotaxis",
   "r": "Middle East & Africa",
-  "m": "Governance"
+  "m": "Governance",
+  "d": "itc.gov.ae"
  },
  {
   "n": "Arizona Department of Transportation (ADOT)",
@@ -3406,7 +3736,8 @@
   "c": "Governance: Regulators & Government",
   "b": "Permissive Arizona roads hosting Waymo, Nuro and Zoox pilots",
   "r": "North America",
-  "m": "Governance"
+  "m": "Governance",
+  "d": "azdot.gov"
  },
  {
   "n": "Arizona DOT",
@@ -3414,7 +3745,8 @@
   "c": "Governance: Regulators & Government",
   "b": "Continues driverless approvals with no safety driver required",
   "r": "North America",
-  "m": "Other"
+  "m": "Other",
+  "d": "azdot.gov"
  },
  {
   "n": "Beijing High-Level Automated Driving Demonstration Area",
@@ -3430,7 +3762,8 @@
   "c": "Governance: Regulators & Government",
   "b": "Authorized Waymo's 2024 paid-service expansion to LA and SF peninsula",
   "r": "North America",
-  "m": "Governance"
+  "m": "Governance",
+  "d": "cpuc.ca.gov"
  },
  {
   "n": "California Department of Motor Vehicles (California DMV)",
@@ -3438,7 +3771,8 @@
   "c": "Governance: Regulators & Government",
   "b": "Issues California AV permits and collects disengagement reports",
   "r": "North America",
-  "m": "Governance"
+  "m": "Governance",
+  "d": "dmv.ca.gov"
  },
  {
   "n": "California DMV",
@@ -3446,7 +3780,8 @@
   "c": "Governance: Regulators & Government",
   "b": "New rules open AV trucking and transit in California from Jul 2026",
   "r": "North America",
-  "m": "Governance"
+  "m": "Governance",
+  "d": "dmv.ca.gov"
  },
  {
   "n": "California Public Utilities Commission (CPUC)",
@@ -3454,7 +3789,8 @@
   "c": "Governance: Regulators & Government",
   "b": "Gatekeeper for paid robotaxi fares after California DMV sign-off",
   "r": "North America",
-  "m": "Governance"
+  "m": "Governance",
+  "d": "cpuc.ca.gov"
  },
  {
   "n": "Changsha / Hunan Xiangjiang New Area ICV Authorities",
@@ -3470,7 +3806,8 @@
   "c": "Governance: Regulators & Government",
   "b": "Paused new China AV licenses during a national safety review",
   "r": "Greater China",
-  "m": "Governance"
+  "m": "Governance",
+  "d": "miit.gov.cn"
  },
  {
   "n": "China municipal pilot zones",
@@ -3502,7 +3839,8 @@
   "c": "Governance: Regulators & Government",
   "b": "Hosts Apollo Go, WeRide and Pony.ai trials under Dubai's AV strategy",
   "r": "Middle East & Africa",
-  "m": "Governance"
+  "m": "Governance",
+  "d": "rta.ae"
  },
  {
   "n": "EU (Type Approval / AI Act)",
@@ -3510,7 +3848,8 @@
   "c": "Governance: Regulators & Government",
   "b": "AI Act high-risk rules reach automated driving in August 2027",
   "r": "Europe",
-  "m": "Other"
+  "m": "Other",
+  "d": "ec.europa.eu"
  },
  {
   "n": "European Commission DG GROW / DG MOVE",
@@ -3518,7 +3857,8 @@
   "c": "Governance: Regulators & Government",
   "b": "Europe / UK; EU type approval",
   "r": "Europe",
-  "m": "Governance"
+  "m": "Governance",
+  "d": "ec.europa.eu"
  },
  {
   "n": "Federal Highway Administration (FHWA)",
@@ -3526,7 +3866,8 @@
   "c": "Governance: Regulators & Government",
   "b": "US federal; infrastructure",
   "r": "North America",
-  "m": "Governance"
+  "m": "Governance",
+  "d": "fhwa.dot.gov"
  },
  {
   "n": "Federal Motor Carrier Safety Administration (FMCSA)",
@@ -3534,7 +3875,8 @@
   "c": "Governance: Regulators & Government",
   "b": "US federal; freight and trucking",
   "r": "North America",
-  "m": "Governance"
+  "m": "Governance",
+  "d": "fmcsa.dot.gov"
  },
  {
   "n": "Federal Trade Commission (FTC)",
@@ -3542,7 +3884,8 @@
   "c": "Governance: Regulators & Government",
   "b": "US federal; consumer protection",
   "r": "North America",
-  "m": "Governance"
+  "m": "Governance",
+  "d": "ftc.gov"
  },
  {
   "n": "Florida Department of Highway Safety and Motor Vehicles (FLHSMV)",
@@ -3550,7 +3893,8 @@
   "c": "Governance: Regulators & Government",
   "b": "Vehicle authority in a permissive state drawing Miami robotaxi bids",
   "r": "North America",
-  "m": "Governance"
+  "m": "Governance",
+  "d": "flhsmv.gov"
  },
  {
   "n": "France Ministry for Ecological Transition / Transport Directorate",
@@ -3574,7 +3918,8 @@
   "c": "Governance: Regulators & Government",
   "b": "Ministry writing Germany's automated-driving deployment law",
   "r": "Europe",
-  "m": "Governance"
+  "m": "Governance",
+  "d": "bmdv.bund.de"
  },
  {
   "n": "Germany KBA",
@@ -3582,7 +3927,8 @@
   "c": "Governance: Regulators & Government",
   "b": "L4 test approvals running to end-2026, extendable through 2028",
   "r": "Europe",
-  "m": "Other"
+  "m": "Other",
+  "d": "kba.de"
  },
  {
   "n": "Guangzhou Intelligent Connected Vehicle Pilot Authorities",
@@ -3598,7 +3944,8 @@
   "c": "Governance: Regulators & Government",
   "b": "Gateway for Chinese AV expansion into tightly regulated cities",
   "r": "Greater China",
-  "m": "Governance"
+  "m": "Governance",
+  "d": "td.gov.hk"
  },
  {
   "n": "Japan Ministry of Economy, Trade and Industry (METI)",
@@ -3606,7 +3953,8 @@
   "c": "Governance: Regulators & Government",
   "b": "Funds Japan's RoAD to the L4 commercialization program with MLIT",
   "r": "Asia-Pacific",
-  "m": "Governance"
+  "m": "Governance",
+  "d": "meti.go.jp"
  },
  {
   "n": "Japan Ministry of Land, Infrastructure, Transport and Tourism (MLIT)",
@@ -3614,7 +3962,8 @@
   "c": "Governance: Regulators & Government",
   "b": "Vehicle-safety approvals central to Waymo's Tokyo exploration",
   "r": "Asia-Pacific",
-  "m": "Governance"
+  "m": "Governance",
+  "d": "mlit.go.jp"
  },
  {
   "n": "Japan MLIT",
@@ -3622,7 +3971,8 @@
   "c": "Governance: Regulators & Government",
   "b": "Targets a Level 4 certification mechanism rollout by end-2026",
   "r": "Asia-Pacific",
-  "m": "Other"
+  "m": "Other",
+  "d": "mlit.go.jp"
  },
  {
   "n": "Japan National Police Agency (NPA)",
@@ -3630,7 +3980,8 @@
   "c": "Governance: Regulators & Government",
   "b": "Road-traffic permissions inside Japan's 2023 Level 4 framework",
   "r": "Asia-Pacific",
-  "m": "Governance"
+  "m": "Governance",
+  "d": "npa.go.jp"
  },
  {
   "n": "Kraftfahrt-Bundesamt (KBA)",
@@ -3638,7 +3989,8 @@
   "c": "Governance: Regulators & Government",
   "b": "Type-approved Mercedes-Benz Drive Pilot for consumer Level 3",
   "r": "Europe",
-  "m": "Governance"
+  "m": "Governance",
+  "d": "kba.de"
  },
  {
   "n": "Los Angeles Department of Transportation (LADOT)",
@@ -3662,7 +4014,8 @@
   "c": "Governance: Regulators & Government",
   "b": "Drafting China's first mandatory ADS standard, effective Jul 2027",
   "r": "Greater China",
-  "m": "Other"
+  "m": "Other",
+  "d": "miit.gov.cn"
  },
  {
   "n": "Ministry of Industry and Information Technology (MIIT)",
@@ -3670,7 +4023,8 @@
   "c": "Governance: Regulators & Government",
   "b": "Coordinates ICV policy, telecoms and pilot zones across China",
   "r": "Greater China",
-  "m": "Governance"
+  "m": "Governance",
+  "d": "miit.gov.cn"
  },
  {
   "n": "Ministry of Public Security of the People's Republic of China",
@@ -3686,7 +4040,8 @@
   "c": "Governance: Regulators & Government",
   "b": "Runs staged robotaxi gates from safety-driver tests to paid service",
   "r": "Greater China",
-  "m": "Other"
+  "m": "Other",
+  "d": "mot.gov.cn"
  },
  {
   "n": "Ministry of Transport of the People's Republic of China",
@@ -3694,7 +4049,8 @@
   "c": "Governance: Regulators & Government",
   "b": "Scores operators on driverless mileage and critical interventions",
   "r": "Greater China",
-  "m": "Governance"
+  "m": "Governance",
+  "d": "mot.gov.cn"
  },
  {
   "n": "National Transportation Safety Board (NTSB)",
@@ -3702,7 +4058,8 @@
   "c": "Governance: Regulators & Government",
   "b": "US federal; safety investigation",
   "r": "North America",
-  "m": "Governance"
+  "m": "Governance",
+  "d": "ntsb.gov"
  },
  {
   "n": "Netherlands RDW",
@@ -3710,7 +4067,8 @@
   "c": "Governance: Regulators & Government",
   "b": "Dutch vehicle authority granting EU approvals and test exemptions",
   "r": "Europe",
-  "m": "Governance"
+  "m": "Governance",
+  "d": "rdw.nl"
  },
  {
   "n": "Nevada Department of Motor Vehicles (Nevada DMV)",
@@ -3718,7 +4076,8 @@
   "c": "Governance: Regulators & Government",
   "b": "Permit home for Zoox and Motional robotaxi work in Las Vegas",
   "r": "North America",
-  "m": "Governance"
+  "m": "Governance",
+  "d": "dmv.nv.gov"
  },
  {
   "n": "Nevada DMV",
@@ -3726,7 +4085,8 @@
   "c": "Governance: Regulators & Government",
   "b": "Early permissive AV statute with no level-specific certification",
   "r": "North America",
-  "m": "Other"
+  "m": "Other",
+  "d": "dmv.nv.gov"
  },
  {
   "n": "New York State Department of Motor Vehicles",
@@ -3734,7 +4094,8 @@
   "c": "Governance: Regulators & Government",
   "b": "Permit path into a future high-demand New York robotaxi market",
   "r": "North America",
-  "m": "Governance"
+  "m": "Governance",
+  "d": "dmv.ny.gov"
  },
  {
   "n": "NHTSA",
@@ -3742,7 +4103,8 @@
   "c": "Governance: Regulators & Government",
   "b": "Proposed removing brake-pedal mandates for ADS-only vehicles",
   "r": "North America",
-  "m": "Governance"
+  "m": "Governance",
+  "d": "nhtsa.gov"
  },
  {
   "n": "NHTSA Office of Automation Safety",
@@ -3750,7 +4112,8 @@
   "c": "Governance: Regulators & Government",
   "b": "Runs Standing General Order crash reporting for ADS incidents",
   "r": "North America",
-  "m": "Governance"
+  "m": "Governance",
+  "d": "nhtsa.gov"
  },
  {
   "n": "Office of Management and Budget / OIRA",
@@ -3774,7 +4137,8 @@
   "c": "Governance: Regulators & Government",
   "b": "Curb rules behind Waymo's early commercial airport integration",
   "r": "North America",
-  "m": "Governance"
+  "m": "Governance",
+  "d": "skyharbor.com"
  },
  {
   "n": "Qatar Ministry of Transport",
@@ -3790,7 +4154,8 @@
   "c": "Governance: Regulators & Government",
   "b": "Grants the airport access robotaxis need beyond state road permits",
   "r": "North America",
-  "m": "Governance"
+  "m": "Governance",
+  "d": "flysfo.com"
  },
  {
   "n": "San Francisco Municipal Transportation Agency (SFMTA)",
@@ -3798,7 +4163,8 @@
   "c": "Governance: Regulators & Government",
   "b": "City agency managing robotaxi curb and emergency-response impacts",
   "r": "North America",
-  "m": "Governance"
+  "m": "Governance",
+  "d": "sfmta.com"
  },
  {
   "n": "Saudi Transport General Authority (TGA)",
@@ -3806,7 +4172,8 @@
   "c": "Governance: Regulators & Government",
   "b": "Gulf transport licensor watched for shuttle and freight AV pilots",
   "r": "Middle East & Africa",
-  "m": "Governance"
+  "m": "Governance",
+  "d": "tga.gov.sa"
  },
  {
   "n": "SFMTA",
@@ -3814,7 +4181,8 @@
   "c": "Governance: Regulators & Government",
   "b": "Municipal transit voice into CPUC, DMV and NHTSA AV policy",
   "r": "North America",
-  "m": "Other"
+  "m": "Other",
+  "d": "sfmta.com"
  },
  {
   "n": "Shanghai Pudong New Area ICV / Robotaxi Pilot Authorities",
@@ -3838,7 +4206,8 @@
   "c": "Governance: Regulators & Government",
   "b": "Anchors Grab/WeRide and ComfortDelGro/Pony shuttle trials",
   "r": "Asia-Pacific",
-  "m": "Governance"
+  "m": "Governance",
+  "d": "lta.gov.sg"
  },
  {
   "n": "Singapore LTA",
@@ -3846,7 +4215,8 @@
   "c": "Governance: Regulators & Government",
   "b": "Consulted the public on national AV legislation in mid-2026",
   "r": "Asia-Pacific",
-  "m": "Other"
+  "m": "Other",
+  "d": "lta.gov.sg"
  },
  {
   "n": "South Korea Ministry of Land, Infrastructure and Transport (MOLIT)",
@@ -3854,7 +4224,8 @@
   "c": "Governance: Regulators & Government",
   "b": "Sets Korea's vehicle standards and smart-city AV pilot rules",
   "r": "Asia-Pacific",
-  "m": "Governance"
+  "m": "Governance",
+  "d": "molit.go.kr"
  },
  {
   "n": "Swedish Transport Agency",
@@ -3862,7 +4233,8 @@
   "c": "Governance: Regulators & Government",
   "b": "Permits in the Volvo and Einride autonomous trucking heartland",
   "r": "Europe",
-  "m": "Governance"
+  "m": "Governance",
+  "d": "transportstyrelsen.se"
  },
  {
   "n": "Switzerland Federal Roads Office (FEDRO / ASTRA)",
@@ -3870,7 +4242,8 @@
   "c": "Governance: Regulators & Government",
   "b": "Motorway policy and trial approvals for Swiss robotaxi pilots",
   "r": "Europe",
-  "m": "Governance"
+  "m": "Governance",
+  "d": "astra.admin.ch"
  },
  {
   "n": "Tennessee Department of Transportation (TDOT)",
@@ -3886,7 +4259,8 @@
   "c": "Governance: Regulators & Government",
   "b": "Registers fleets as Tesla, Aurora, Kodiak and Waymo scale in Texas",
   "r": "North America",
-  "m": "Governance"
+  "m": "Governance",
+  "d": "txdmv.gov"
  },
  {
   "n": "Texas Department of Transportation (TxDOT)",
@@ -3894,7 +4268,8 @@
   "c": "Governance: Regulators & Government",
   "b": "US state / local; freight corridors",
   "r": "North America",
-  "m": "Governance"
+  "m": "Governance",
+  "d": "txdot.gov"
  },
  {
   "n": "Texas DMV",
@@ -3902,7 +4277,8 @@
   "c": "Governance: Regulators & Government",
   "b": "Mandatory commercial AV operator authorization from May 2026",
   "r": "North America",
-  "m": "Other"
+  "m": "Other",
+  "d": "txdmv.gov"
  },
  {
   "n": "Tokyo Metropolitan Government",
@@ -3910,7 +4286,8 @@
   "c": "Governance: Regulators & Government",
   "b": "Gulf / Asia; city transport authority",
   "r": "Asia-Pacific",
-  "m": "Governance"
+  "m": "Governance",
+  "d": "metro.tokyo.lg.jp"
  },
  {
   "n": "U.S. Department of Transportation (USDOT)",
@@ -3918,7 +4295,8 @@
   "c": "Governance: Regulators & Government",
   "b": "Federal umbrella over NHTSA, FMCSA and FHWA on AV rulemaking",
   "r": "North America",
-  "m": "Governance"
+  "m": "Governance",
+  "d": "transportation.gov"
  },
  {
   "n": "UAE Ministry of Energy and Infrastructure / Federal Transport Authorities",
@@ -3934,7 +4312,8 @@
   "c": "Governance: Regulators & Government",
   "b": "Spring 2026 pilots ahead of full AV Act rollout in H2 2027",
   "r": "Europe",
-  "m": "Other"
+  "m": "Other",
+  "d": "gov.uk"
  },
  {
   "n": "UK CCAV / DfT",
@@ -3942,7 +4321,8 @@
   "c": "Governance: Regulators & Government",
   "b": "Coordinates the Automated Vehicles Act 2024 regime and London pilots",
   "r": "Europe",
-  "m": "Governance"
+  "m": "Governance",
+  "d": "gov.uk"
  },
  {
   "n": "UK Centre for Connected and Autonomous Vehicles (CCAV)",
@@ -3950,7 +4330,8 @@
   "c": "Governance: Regulators & Government",
   "b": "Funds and steers UK self-driving trials accelerating into 2026",
   "r": "Europe",
-  "m": "Governance"
+  "m": "Governance",
+  "d": "gov.uk"
  },
  {
   "n": "UK Department for Transport (DfT)",
@@ -3958,7 +4339,8 @@
   "c": "Governance: Regulators & Government",
   "b": "Transport ministry as Waymo, Uber/Wayve and Baidu eye London",
   "r": "Europe",
-  "m": "Governance"
+  "m": "Governance",
+  "d": "gov.uk"
  },
  {
   "n": "UK Vehicle Certification Agency (VCA)",
@@ -3966,7 +4348,8 @@
   "c": "Governance: Regulators & Government",
   "b": "UK type-approval arm for maturing self-driving authorizations",
   "r": "Europe",
-  "m": "Governance"
+  "m": "Governance",
+  "d": "gov.uk"
  },
  {
   "n": "UNECE WP.29",
@@ -3974,7 +4357,8 @@
   "c": "Governance: Regulators & Government",
   "b": "GRVA's UN-wide ADS regulation headed to a June 2026 vote",
   "r": "Europe",
-  "m": "Other"
+  "m": "Other",
+  "d": "unece.org"
  },
  {
   "n": "UNECE WP.29 / GRVA",
@@ -3982,7 +4366,8 @@
   "c": "Governance: Regulators & Government",
   "b": "Europe / UK; international vehicle regulation",
   "r": "Europe",
-  "m": "Governance"
+  "m": "Governance",
+  "d": "unece.org"
  },
  {
   "n": "USDOT",
@@ -3990,7 +4375,8 @@
   "c": "Governance: Regulators & Government",
   "b": "Convened the first National AV Safety Forum in 2026",
   "r": "North America",
-  "m": "Other"
+  "m": "Other",
+  "d": "transportation.gov"
  },
  {
   "n": "Wuhan Intelligent Connected Vehicle Pilot Authorities",
@@ -4006,7 +4392,8 @@
   "c": "Governance: Standards, Safety & Advocacy",
   "b": "Cellular standards body defining C-V2X and 5G for smart roads",
   "r": "Europe",
-  "m": "Governance"
+  "m": "Governance",
+  "d": "3gpp.org"
  },
  {
   "n": "AAA Foundation for Traffic Safety",
@@ -4014,7 +4401,8 @@
   "c": "Governance: Standards, Safety & Advocacy",
   "b": "Research on driver understanding and misuse of automation",
   "r": "North America",
-  "m": "R&D"
+  "m": "R&D",
+  "d": "aaafoundation.org"
  },
  {
   "n": "Advocates for Highway and Auto Safety",
@@ -4022,7 +4410,8 @@
   "c": "Governance: Standards, Safety & Advocacy",
   "b": "Coalition pushing stronger vehicle and highway safety rules",
   "r": "North America",
-  "m": "Other"
+  "m": "Other",
+  "d": "saferoads.org"
  },
  {
   "n": "Alliance for Automotive Innovation",
@@ -4030,7 +4419,8 @@
   "c": "Governance: Standards, Safety & Advocacy",
   "b": "Light-duty OEM trade voice on FMVSS and ADAS policy",
   "r": "North America",
-  "m": "Governance"
+  "m": "Governance",
+  "d": "autosinnovate.org"
  },
  {
   "n": "ASAM e.V.",
@@ -4038,7 +4428,8 @@
   "c": "Governance: Standards, Safety & Advocacy",
   "b": "Keeper of the OpenX file formats behind AV simulation",
   "r": "Europe",
-  "m": "Governance"
+  "m": "Governance",
+  "d": "asam.net"
  },
  {
   "n": "ASAM OpenDRIVE",
@@ -4046,7 +4437,8 @@
   "c": "Governance: Standards, Safety & Advocacy",
   "b": "Road-network exchange format, version 1.9.0 shipped May 2026",
   "r": "Europe",
-  "m": "Governance"
+  "m": "Governance",
+  "d": "asam.net"
  },
  {
   "n": "ASAM OpenLABEL",
@@ -4054,7 +4446,8 @@
   "c": "Governance: Standards, Safety & Advocacy",
   "b": "Common annotation format linking labeling to validation",
   "r": "Europe",
-  "m": "Governance"
+  "m": "Governance",
+  "d": "asam.net"
  },
  {
   "n": "ASAM OpenODD",
@@ -4062,7 +4455,8 @@
   "c": "Governance: Standards, Safety & Advocacy",
   "b": "Machine-readable ODD spec bridging safety cases and insurers",
   "r": "Europe",
-  "m": "Governance"
+  "m": "Governance",
+  "d": "asam.net"
  },
  {
   "n": "ASAM OpenSCENARIO DSL",
@@ -4070,7 +4464,8 @@
   "c": "Governance: Standards, Safety & Advocacy",
   "b": "Scenario-authoring language for scalable simulation tests",
   "r": "Europe",
-  "m": "Governance"
+  "m": "Governance",
+  "d": "asam.net"
  },
  {
   "n": "ASAM OpenSCENARIO XML",
@@ -4078,7 +4473,8 @@
   "c": "Governance: Standards, Safety & Advocacy",
   "b": "Vendor-neutral XML for exchanging dynamic driving scenarios",
   "r": "Europe",
-  "m": "Governance"
+  "m": "Governance",
+  "d": "asam.net"
  },
  {
   "n": "ASAM OSI",
@@ -4086,7 +4482,8 @@
   "c": "Governance: Standards, Safety & Advocacy",
   "b": "Open interface wiring sensors and simulators to AV stacks",
   "r": "Europe",
-  "m": "Governance"
+  "m": "Governance",
+  "d": "asam.net"
  },
  {
   "n": "Automated Vehicle Safety Consortium (AVSC)",
@@ -4102,7 +4499,8 @@
   "c": "Governance: Standards, Safety & Advocacy",
   "b": "Washington policy voice for robotaxi and AV trucking developers",
   "r": "North America",
-  "m": "Governance"
+  "m": "Governance",
+  "d": "theavindustry.org"
  },
  {
   "n": "AUVSI",
@@ -4110,7 +4508,8 @@
   "c": "Governance: Standards, Safety & Advocacy",
   "b": "Autonomy advocacy spanning air, ground, maritime and cyber",
   "r": "North America",
-  "m": "Governance"
+  "m": "Governance",
+  "d": "auvsi.org"
  },
  {
   "n": "AVIA",
@@ -4118,7 +4517,8 @@
   "c": "Governance: Standards, Safety & Advocacy",
   "b": "Published its third annual State of AV report in 2026",
   "r": "North America",
-  "m": "Governance"
+  "m": "Governance",
+  "d": "theavindustry.org"
  },
  {
   "n": "AVSC",
@@ -4134,7 +4534,8 @@
   "c": "Governance: Standards, Safety & Advocacy",
   "b": "European committee for ITS and mobility data interoperability",
   "r": "Europe",
-  "m": "Governance"
+  "m": "Governance",
+  "d": "cen.eu"
  },
  {
   "n": "Consumer Reports",
@@ -4142,7 +4543,8 @@
   "c": "Governance: Standards, Safety & Advocacy",
   "b": "Rates active driving assistance and scrutinizes marketing claims",
   "r": "North America",
-  "m": "Other"
+  "m": "Other",
+  "d": "consumerreports.org"
  },
  {
   "n": "ETSI TC ITS",
@@ -4150,7 +4552,8 @@
   "c": "Governance: Standards, Safety & Advocacy",
   "b": "Writes Europe's V2X and cooperative-ITS communications specs",
   "r": "Europe",
-  "m": "Governance"
+  "m": "Governance",
+  "d": "etsi.org"
  },
  {
   "n": "Euro NCAP",
@@ -4158,7 +4561,8 @@
   "c": "Governance: Standards, Safety & Advocacy",
   "b": "Assisted Driving grades that steer European L2 feature design",
   "r": "Europe",
-  "m": "Other"
+  "m": "Other",
+  "d": "euroncap.com"
  },
  {
   "n": "Highway Loss Data Institute (HLDI)",
@@ -4166,7 +4570,8 @@
   "c": "Governance: Standards, Safety & Advocacy",
   "b": "Turns insurance claims data into ADAS effectiveness evidence",
   "r": "North America",
-  "m": "R&D"
+  "m": "R&D",
+  "d": "iihs.org"
  },
  {
   "n": "IEEE",
@@ -4174,7 +4579,8 @@
   "c": "Governance: Standards, Safety & Advocacy",
   "b": "Engineering body whose 2846 is cited beside ISO and UL norms",
   "r": "North America",
-  "m": "Other"
+  "m": "Other",
+  "d": "ieee.org"
  },
  {
   "n": "IEEE 2846",
@@ -4182,7 +4588,8 @@
   "c": "Governance: Standards, Safety & Advocacy",
   "b": "Formalizes road-user assumptions in ADS safety models",
   "r": "North America",
-  "m": "Governance"
+  "m": "Governance",
+  "d": "ieee.org"
  },
  {
   "n": "IEEE P2851",
@@ -4190,7 +4597,8 @@
   "c": "Governance: Standards, Safety & Advocacy",
   "b": "Draft standard for exchanging safety analyses across tools",
   "r": "North America",
-  "m": "R&D"
+  "m": "R&D",
+  "d": "ieee.org"
  },
  {
   "n": "IEEE Standards Association",
@@ -4198,7 +4606,8 @@
   "c": "Governance: Standards, Safety & Advocacy",
   "b": "Standards venue for AV decision-making, ethics and connectivity",
   "r": "North America",
-  "m": "Governance"
+  "m": "Governance",
+  "d": "ieee.org"
  },
  {
   "n": "Insurance Institute for Highway Safety (IIHS)",
@@ -4206,7 +4615,8 @@
   "c": "Governance: Standards, Safety & Advocacy",
   "b": "Safeguards ratings that tested 14 partial-automation systems",
   "r": "North America",
-  "m": "Other"
+  "m": "Other",
+  "d": "iihs.org"
  },
  {
   "n": "International Brotherhood of Teamsters",
@@ -4214,7 +4624,8 @@
   "c": "Governance: Standards, Safety & Advocacy",
   "b": "Union voice for human operators in autonomous trucking debates",
   "r": "North America",
-  "m": "Governance"
+  "m": "Governance",
+  "d": "teamster.org"
  },
  {
   "n": "International Organization for Standardization (ISO)",
@@ -4222,7 +4633,8 @@
   "c": "Governance: Standards, Safety & Advocacy",
   "b": "165-plus national members behind automotive safety standards",
   "r": "Europe",
-  "m": "Governance"
+  "m": "Governance",
+  "d": "iso.org"
  },
  {
   "n": "ISO",
@@ -4230,7 +4642,8 @@
   "c": "Governance: Standards, Safety & Advocacy",
   "b": "TC22 developing AI/ML safety guidance to follow 26262 and SOTIF",
   "r": "Europe",
-  "m": "Other"
+  "m": "Other",
+  "d": "iso.org"
  },
  {
   "n": "ISO / TC 204",
@@ -4238,7 +4651,8 @@
   "c": "Governance: Standards, Safety & Advocacy",
   "b": "Standards bodies & standards: ISO 26262, ISO 21448 SOTIF, ISO 34503 ODD",
   "r": "Europe",
-  "m": "Governance"
+  "m": "Governance",
+  "d": "iso.org"
  },
  {
   "n": "ISO 21448 SOTIF",
@@ -4246,7 +4660,8 @@
   "c": "Governance: Standards, Safety & Advocacy",
   "b": "Targets risk from functional insufficiency and foreseeable misuse",
   "r": "Europe",
-  "m": "Governance"
+  "m": "Governance",
+  "d": "iso.org"
  },
  {
   "n": "ISO 26262",
@@ -4254,7 +4669,8 @@
   "c": "Governance: Standards, Safety & Advocacy",
   "b": "Functional safety bedrock for series-production E/E systems",
   "r": "Europe",
-  "m": "Governance"
+  "m": "Governance",
+  "d": "iso.org"
  },
  {
   "n": "ISO 34501",
@@ -4262,7 +4678,8 @@
   "c": "Governance: Standards, Safety & Advocacy",
   "b": "Defines the shared vocabulary of ADS test scenarios",
   "r": "Europe",
-  "m": "Governance"
+  "m": "Governance",
+  "d": "iso.org"
  },
  {
   "n": "ISO 34502",
@@ -4270,7 +4687,8 @@
   "c": "Governance: Standards, Safety & Advocacy",
   "b": "2022 framework for scenario-based ADS safety evaluation",
   "r": "Europe",
-  "m": "Governance"
+  "m": "Governance",
+  "d": "iso.org"
  },
  {
   "n": "ISO 34503",
@@ -4278,7 +4696,8 @@
   "c": "Governance: Standards, Safety & Advocacy",
   "b": "Hierarchical taxonomy for defining L3/L4 operating domains",
   "r": "Europe",
-  "m": "Governance"
+  "m": "Governance",
+  "d": "iso.org"
  },
  {
   "n": "ISO 34504",
@@ -4286,7 +4705,8 @@
   "c": "Governance: Standards, Safety & Advocacy",
   "b": "2024 scenario-categorization capstone to the 34501 series",
   "r": "Europe",
-  "m": "Governance"
+  "m": "Governance",
+  "d": "iso.org"
  },
  {
   "n": "ISO/TC 204 Intelligent Transport Systems",
@@ -4294,7 +4714,8 @@
   "c": "Governance: Standards, Safety & Advocacy",
   "b": "ISO committee linking vehicles, infrastructure and services",
   "r": "Europe",
-  "m": "Other"
+  "m": "Other",
+  "d": "iso.org"
  },
  {
   "n": "ISO/TC 22 Road Vehicles",
@@ -4302,7 +4723,8 @@
   "c": "Governance: Standards, Safety & Advocacy",
   "b": "Road-vehicle committee feeding AV safety-case evidence needs",
   "r": "Europe",
-  "m": "Other"
+  "m": "Other",
+  "d": "iso.org"
  },
  {
   "n": "ISO/TR 4804",
@@ -4310,7 +4732,8 @@
   "c": "Governance: Standards, Safety & Advocacy",
   "b": "Reference report pairing ADS safety with cybersecurity",
   "r": "Europe",
-  "m": "Other"
+  "m": "Other",
+  "d": "iso.org"
  },
  {
   "n": "ITS America",
@@ -4318,7 +4741,8 @@
   "c": "Governance: Standards, Safety & Advocacy",
   "b": "Convener bridging AVs, V2X and city traffic infrastructure",
   "r": "North America",
-  "m": "Governance"
+  "m": "Governance",
+  "d": "itsamerica.org"
  },
  {
   "n": "Mcity",
@@ -4326,7 +4750,8 @@
   "c": "Governance: Standards, Safety & Advocacy",
   "b": "Ann Arbor's dedicated connected and automated test facility",
   "r": "North America",
-  "m": "Pilot"
+  "m": "Pilot",
+  "d": "umich.edu"
  },
  {
   "n": "Mobileye Responsibility-Sensitive Safety (RSS)",
@@ -4334,7 +4759,8 @@
   "c": "Governance: Standards, Safety & Advocacy",
   "b": "2017 mathematical model of responsibility in safe driving",
   "r": "Middle East & Africa",
-  "m": "Other"
+  "m": "Other",
+  "d": "mobileye.com"
  },
  {
   "n": "National Safety Council",
@@ -4342,7 +4768,8 @@
   "c": "Governance: Standards, Safety & Advocacy",
   "b": "Road to Zero programs linking human factors and AV risk",
   "r": "North America",
-  "m": "Other"
+  "m": "Other",
+  "d": "nsc.org"
  },
  {
   "n": "Open Autonomy Safety Case Framework",
@@ -4358,7 +4785,8 @@
   "c": "Governance: Standards, Safety & Advocacy",
   "b": "City-led steward of MDS and curb data specifications",
   "r": "North America",
-  "m": "Other"
+  "m": "Other",
+  "d": "openmobilityfoundation.org"
  },
  {
   "n": "Partners for Automated Vehicle Education (PAVE)",
@@ -4366,7 +4794,8 @@
   "c": "Governance: Standards, Safety & Advocacy",
   "b": "Public-education coalition demystifying AVs for policymakers",
   "r": "North America",
-  "m": "Governance"
+  "m": "Governance",
+  "d": "pavecampaign.org"
  },
  {
   "n": "PAVE",
@@ -4374,7 +4803,8 @@
   "c": "Governance: Standards, Safety & Advocacy",
   "b": "AI condition reports for rental, remarketing and fleet vehicles",
   "r": "North America",
-  "m": "Commercial"
+  "m": "Commercial",
+  "d": "pavecampaign.org"
  },
  {
   "n": "SAE Industry Technologies Consortia",
@@ -4382,7 +4812,8 @@
   "c": "Governance: Standards, Safety & Advocacy",
   "b": "SAE affiliate hosting the AVSC precompetitive program",
   "r": "North America",
-  "m": "Other"
+  "m": "Other",
+  "d": "sae.org"
  },
  {
   "n": "SAE International",
@@ -4390,7 +4821,8 @@
   "c": "Governance: Standards, Safety & Advocacy",
   "b": "Standards bodies & standards: SAE J3016",
   "r": "North America",
-  "m": "Governance"
+  "m": "Governance",
+  "d": "sae.org"
  },
  {
   "n": "SAE J3016",
@@ -4398,7 +4830,8 @@
   "c": "Governance: Standards, Safety & Advocacy",
   "b": "The taxonomy behind driving automation Levels 0 through 5",
   "r": "North America",
-  "m": "Governance"
+  "m": "Governance",
+  "d": "sae.org"
  },
  {
   "n": "SAE J3134 ADS Marker Lamps",
@@ -4406,7 +4839,8 @@
   "c": "Governance: Standards, Safety & Advocacy",
   "b": "Recommended practice for turquoise ADS marker lamps",
   "r": "North America",
-  "m": "Other"
+  "m": "Other",
+  "d": "sae.org"
  },
  {
   "n": "Safety First for Automated Driving",
@@ -4422,7 +4856,8 @@
   "c": "Governance: Standards, Safety & Advocacy",
   "b": "Pledged legal action after California cleared heavy AV trucks",
   "r": "North America",
-  "m": "Other"
+  "m": "Other",
+  "d": "teamster.org"
  },
  {
   "n": "UL 4600",
@@ -4438,7 +4873,8 @@
   "c": "Governance: Standards, Safety & Advocacy",
   "b": "Nonprofit whose safety-case approach spread beyond certification",
   "r": "North America",
-  "m": "Governance"
+  "m": "Governance",
+  "d": "ulse.org"
  },
  {
   "n": "UL Standards (UL 4600)",
@@ -4446,7 +4882,8 @@
   "c": "Governance: Standards, Safety & Advocacy",
   "b": "UL 4600 Edition 3 adds autonomous-trucking guidance",
   "r": "North America",
-  "m": "Other"
+  "m": "Other",
+  "d": "ulse.org"
  },
  {
   "n": "W3C Automotive Working Group",
@@ -4454,7 +4891,8 @@
   "c": "Governance: Standards, Safety & Advocacy",
   "b": "Web standards home of the Vehicle Signal Specification",
   "r": "North America",
-  "m": "Governance"
+  "m": "Governance",
+  "d": "w3.org"
  },
  {
   "n": "Waymo Safety Framework",
@@ -4462,7 +4900,8 @@
   "c": "Governance: Standards, Safety & Advocacy",
   "b": "Company safety case made de facto influential by fleet scale",
   "r": "North America",
-  "m": "Other"
+  "m": "Other",
+  "d": "waymo.com"
  },
  {
   "n": "ByteDance",
@@ -4502,7 +4941,8 @@
   "c": "Demand & Commercial Platforms",
   "b": "VW's autonomous ID.Buzz service arm, live on Uber in LA",
   "r": "Europe",
-  "m": "Commercial"
+  "m": "Commercial",
+  "d": "moia.io"
  },
  {
   "n": "Aseon Labs",
@@ -4518,7 +4958,8 @@
   "c": "Fleet Operations & Depot",
   "b": "EV-native tires priced 10-20% under the majors, sold direct",
   "r": "Europe",
-  "m": "Commercial"
+  "m": "Commercial",
+  "d": "ensotyres.com"
  },
  {
   "n": "Bliq",
@@ -4526,6 +4967,7 @@
   "c": "AV Driver / Autonomy Software",
   "b": "Retrofit autonomy stack running driverless fleets under remote supervision",
   "r": "Europe",
-  "m": "Commercial"
+  "m": "Commercial",
+  "d": "bliq.ai"
  }
 ]

@@ -42,9 +42,9 @@ def crop_around(cx, cy, w):
     return f'{max(0, min(W - w, cx - w / 2)):.0f} {max(0, min(H - h, cy - h / 2)):.0f} {w:.0f} {h:.0f}'
 
 CARDS = [
-    ("home", "The autonomous vehicle industry, drawn to scale", "560 ORGANISATIONS · 11 LAYERS", None),
-    ("map", "The Wall Chart", "ALL 560 ON ONE POSTER", None),
-    ("companies", "The Ledger", "560 ROWS · EVERY FIELD · SHAREABLE VIEWS", None),
+    ("home", "The autonomous vehicle industry, drawn to scale", f"{L['meta']['companyCount']} ORGANISATIONS · 11 LAYERS", None),
+    ("map", "The Wall Chart", f"ALL {L['meta']['companyCount']} ON ONE POSTER", None),
+    ("companies", "The Ledger", f"{L['meta']['companyCount']} ROWS · EVERY FIELD · SHAREABLE VIEWS", None),
     ("operators", "The Ten", "OPERATORS A PASSENGER CAN ACTUALLY MEET",
      crop_around(mb["x"] + mb["w"] / 2, mb["y"] + mb["h"] / 2, mb["w"] * 1.35)),
     ("partnerships", "The Web", "148 MAPPED RELATIONSHIPS BY FUNCTION", None),
@@ -54,7 +54,7 @@ CARDS = [
     ("safety", "What Has Gone Wrong", "INCIDENTS · RECALLS · SYSTEMIC FAILURES", None),
     ("owning-one", "Can I Buy One?", "THE PART THAT WENT BACKWARDS", None),
     ("beyond-roads", "Beyond Roads", "AUTONOMY SHIPPED IN 2008. NOT HERE.", None),
-    ("method", "Method & Gaps", "128 OF 560 MAPPED · CORRECTIONS WELCOME", None),
+    ("method", "Method & Gaps", f"128 OF {L['meta']['companyCount']} MAPPED · CORRECTIONS WELCOME", None),
 ]
 for m_ in L["medallion"]:
     CARDS.append((f'op-{m_["slug"]}', m_["name"], "THE TEN · OPERATOR DEEP DIVE",

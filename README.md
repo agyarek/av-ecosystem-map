@@ -11,7 +11,7 @@ Compiled and maintained by Kofi Agyare-Kwabi, ex-Uber Country Manager, GTM & Par
 | Route | What it is |
 |---|---|
 | `/` | The loop: how a driverless ride works, and the waterline beneath it |
-| `/map/` | The wall chart: all 561 on one 6800×4560 poster, zoom/filter/export/print |
+| `/map/` | The wall chart: all 561 on one poster, a hexagonal rosette; zoom, filter, full screen, export, print |
 | `/companies/` | The ledger: every field, sortable, filterable, URL-shareable, CSV/JSON export |
 | `/operators/` + 10 pages | The ten operators a passenger can actually meet, in depth |
 | `/partnerships/` | 148 mapped relationships organised by function; the demand-layer story |
@@ -32,7 +32,9 @@ everything derivable into `data/` at build time; the browser renders and never r
 ├── data/         source of truth + generated indexes (never edit generated files by hand)
 └── tools/
     ├── validate-data.py        invariants; run before every commit, fail on error
-    ├── build-poster-layout.py  freezes wall-chart geometry (561/561 placed, verified)
+    ├── build-poster-layout.py  freezes wall-chart geometry: a hexagon of ten
+    │                           operators with the ten remaining layers docked
+    │                           flush on its six borders (561/561 placed, verified)
     ├── build-indexes.py        partner index, derived counts, search index
     ├── fetch-logos.py          OPTIONAL logo upgrade: fetches, trims and commits
     │                           real marks. Logos already load at runtime from a

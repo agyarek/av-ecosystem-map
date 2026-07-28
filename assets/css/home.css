@@ -140,3 +140,12 @@ table.compare thead th {
   background: var(--paper-2); padding: 18px 22px;
 }
 .provenance .caption { margin-top: 6px; }
+
+/* The circuit needs vertical room: at 844px wide it is 476px tall, taller than
+   a landscape phone viewport. Serve the same four stages as the list instead. */
+@media (orientation: landscape) and (max-height: 560px) {
+  .loop-wrap { display: none; }
+  .loop-list { display: block; }
+  .wl-above { padding: 12px 0 18px; gap: clamp(16px, 5vw, 48px); }
+  .provenance { padding: 14px 18px; }
+}

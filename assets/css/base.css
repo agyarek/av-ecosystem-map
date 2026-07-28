@@ -49,7 +49,14 @@
 [hidden] { display: none !important; }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+  /* Mobile browsers inflate long text blocks in landscape while leaving short
+     flex items such as the wordmark alone, which inverts the type hierarchy.
+     Opt out and let the scale below do the work. */
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
 body {
   background: var(--paper); color: var(--ink);
   font-family: var(--font-display);
@@ -79,12 +86,12 @@ input, select { font: inherit; color: inherit; }
 }
 .eyebrow .tick { color: var(--yellow); }
 h1.page-title {
-  font-size: clamp(38px, 5.5vw, 76px); font-weight: 800; line-height: 1.02;
+  font-size: clamp(38px, min(5.5vw, 9vh), 76px); font-weight: 800; line-height: 1.02;
   letter-spacing: -0.03em; font-variation-settings: 'wdth' 118;
   margin: 10px 0 0; text-wrap: balance;
 }
 h2.section-head, .section-head {
-  font-size: clamp(24px, 3vw, 38px); font-weight: 800; line-height: 1.1;
+  font-size: clamp(24px, min(3vw, 4.6vh), 38px); font-weight: 800; line-height: 1.1;
   letter-spacing: -0.02em; font-variation-settings: 'wdth' 112;
 }
 .standfirst {
@@ -251,7 +258,7 @@ table.data tr:hover > td { background: color-mix(in oklab, var(--cyan) 5%, trans
 .table-scroll { overflow-x: auto; }
 
 .stat-row { display: flex; gap: clamp(20px, 4vw, 48px); flex-wrap: wrap; }
-.stat .num { font-size: clamp(26px, 3vw, 40px); font-weight: 600; display: block; }
+.stat .num { font-size: clamp(26px, min(3vw, 4.6vh), 40px); font-weight: 600; display: block; }
 .stat .lbl { font-size: 12.5px; color: var(--muted); }
 
 .note {
@@ -289,4 +296,27 @@ table.data tr:hover > td { background: color-mix(in oklab, var(--cyan) 5%, trans
 @media print {
   header.site, footer.site, .keep-going, #theme-toggle, .skip-link { display: none !important; }
   body { background: #fff; color: #000; }
+}
+
+/* ---------------------------------------------------------------- short viewports
+   In practice a phone held sideways: plenty of width, very little height. The
+   fluid type scale above already stops headings growing here, since every
+   clamp tracks the shorter dimension. What is left is vertical rhythm, which
+   was tuned for tall screens and wastes the little height available. Body copy
+   is deliberately not reduced; it is already at its portrait size, which is
+   the size that reads correctly. */
+@media (orientation: landscape) and (max-height: 560px) {
+  header.site .bar { padding: 6px clamp(12px, 3vw, 24px); gap: 12px; flex-wrap: nowrap; }
+  /* The width breakpoint below wraps the nav onto its own row, which costs a
+     quarter of a landscape phone's height. There is enough width here to keep
+     one row and let the nav scroll instead. */
+  nav.primary { order: 0; flex: 1 1 auto; min-width: 0; margin: 0; padding: 0; }
+  .chrome-tools { flex: none; }
+  #site-search input { width: min(140px, 22vw); }
+  .page-head { padding: 24px 0 16px; }
+  section + section, .stack > * + * { margin-top: 40px; }
+  footer.site { margin-top: 48px; padding: 28px 0 36px; }
+  .keep-going { margin-top: 40px; padding-top: 24px; }
+  .doors { gap: 12px; }
+  .door { min-height: 0; }
 }

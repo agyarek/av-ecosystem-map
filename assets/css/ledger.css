@@ -2,7 +2,7 @@
 
 .ledger-head { padding-bottom: 16px; }
 .ledger-title {
-  font-size: clamp(26px, 3.4vw, 44px); font-weight: 800;
+  font-size: clamp(26px, min(3.4vw, 5.2vh), 44px); font-weight: 800;
   letter-spacing: -0.02em; font-variation-settings: 'wdth' 116; margin-top: 6px;
 }
 .ledger-honesty { margin-top: 10px; }

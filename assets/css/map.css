@@ -171,3 +171,13 @@
   #poster.has-sel [data-chip], #poster [data-chip].dimmed { opacity: 1 !important; }
   #poster .links { display: none; }
 }
+
+/* Remote logos fade in over their monogram tile, so a slow favicon never
+   shows as a blank square. */
+#poster image.logo-img, #poster rect.logo-bg { transition: opacity 220ms ease; }
+.mono-tile { position: relative; overflow: hidden; }
+.mono-tile img {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  object-fit: contain; background: #fff; border-radius: inherit;
+  opacity: 0; transition: opacity 220ms ease;
+}

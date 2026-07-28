@@ -120,9 +120,13 @@ def maturity_bucket(c):
         return "R&D"
     return "Other"
 
+domains = enrichment.get("domains", {})
 search = [{"n": c["name"], "s": c["slug"], "c": c["cat"],
            "b": (c.get("sub") or "")[:80],
            "r": c.get("region", ""), "m": maturity_bucket(c),
+           # domain travels with the index so the browser can load a real logo
+           # without a build step; see assets/js/poster.js
+           **({"d": domains[c["name"]]} if c["name"] in domains else {}),
            **({"x": 1} if c["status"] != "active" else {}),
            **({"g": 1} if c.get("spokenTo") else {})}
           for c in companies]

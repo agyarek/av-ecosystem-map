@@ -130,7 +130,7 @@
       directory: <code>validate-data.py</code> asserts the invariants every page depends on and fails
       the build otherwise; <code>build-poster-layout.py</code> freezes the wall chart's geometry and
       verifies all 561 organisations placed; <code>build-indexes.py</code> derives partner lists,
-      counts and the search index; <code>fetch-logos.py</code> runs the logo pipeline quarterly;
+      counts and the search index; <code>fetch-logos.py</code> is an optional upgrade that commits real logo assets for print and export, since the chart otherwise loads marks at runtime from a public favicon service and falls back to a monogram tile where none resolves;
       <code>make-csv.py</code> exports the flat file. The browser renders; it does not solve.</p>
     <p>Records carry a <code>lastVerified</code> date where a claim has been re-checked. The intended
       cadence is a monthly data pass and a quarterly logo refresh, and the two fastest-aging subjects,

@@ -51,6 +51,16 @@
   const oklch = (hue, l, c) => `oklch(${l} ${c} ${hue})`;
 
   // ------------------------------------------------------------ SVG build
+  // Remote favicon services, tried in order. These are what make logos appear
+  // with no build step: the browser fetches them directly, so the committed
+  // assets from tools/fetch-logos.py are an optional quality upgrade rather
+  // than a prerequisite. When those assets exist they take precedence below.
+  const LOGO_SOURCES = [
+    d => `https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=${encodeURIComponent('https://' + d)}&size=256`,
+    d => `https://www.google.com/s2/favicons?domain=${encodeURIComponent(d)}&sz=128`,
+    d => `https://icons.duckduckgo.com/ip3/${encodeURIComponent(d)}.ico`,
+  ];
+
   function logoMarkup(slug, cx, cy, size, hue, mono, forExport) {
     const m = manifest && manifest[slug];
     const half = size / 2;
@@ -62,13 +72,79 @@
       const href = forExport && atlasDataURL ? atlasDataURL : ROOT + 'assets/logos/atlas.png';
       return `<svg x="${cx - half}" y="${cy}" width="${size}" height="${size}" viewBox="${m.atlas.x} ${m.atlas.y} ${A.cell} ${A.cell}"><image href="${href}" width="${A.w}" height="${A.h}"/></svg>`;
     }
-    // The deliberate fallback: a monogram tile in the layer hue. Rendered
-    // consistently it reads as a design decision, not a missing image.
+    // Monogram tile in the layer hue. It always renders, and a remote logo is
+    // layered over it once loaded, so a slow or missing favicon degrades to a
+    // deliberate-looking tile rather than a hole.
     const fill = forExport ? oklch(hue, 0.66, 0.06) : `oklch(var(--tile-l) var(--tile-c) ${hue})`;
     const txfill = forExport ? '#FFFFFF' : 'var(--tile-ink)';
-    return `<rect x="${cx - half}" y="${cy}" width="${size}" height="${size}" rx="${size * 0.22}" fill="${fill}"/>` +
+    const tile =
+      `<rect x="${cx - half}" y="${cy}" width="${size}" height="${size}" rx="${size * 0.22}" fill="${fill}"/>` +
       `<text x="${cx}" y="${cy + size * 0.69}" font-size="${size * 0.47}" font-weight="800" text-anchor="middle" fill="${txfill}" font-family="Archivo, sans-serif">${esc(mono)}</text>`;
+    const domain = bySlug[slug] && bySlug[slug].d;
+    if (forExport || !domain) return tile;
+    // href is filled in by the lazy loader once the chip is near the viewport
+    return tile +
+      `<rect class="logo-bg" data-logo-bg="${esc(slug)}" x="${cx - half}" y="${cy}" width="${size}" height="${size}" rx="${size * 0.22}" fill="#FFFFFF" opacity="0"/>` +
+      `<image class="logo-img" data-logo="${esc(slug)}" data-domain="${esc(domain)}" data-try="0" ` +
+      `x="${cx - half + size * 0.08}" y="${cy + size * 0.08}" width="${size * 0.84}" height="${size * 0.84}" ` +
+      `preserveAspectRatio="xMidYMid meet" opacity="0"/>`;
   }
+
+  // ------------------------------------------------------------ lazy logos
+  // 442 favicon requests at once would stall a phone, so load only what is on
+  // or near screen, newest camera position first, and top up after each move.
+  const logoQueue = { pending: new Set(), inflight: 0, MAX: 8 };
+  function bindLogo(img) {
+    const domain = img.dataset.domain;
+    const attempt = () => {
+      const t = +img.dataset.try;
+      if (t >= LOGO_SOURCES.length) { logoQueue.inflight--; pump(); return; }
+      img.dataset.try = t + 1;
+      img.setAttribute('href', LOGO_SOURCES[t](domain));
+    };
+    img.addEventListener('load', () => {
+      logoQueue.inflight--;
+      img.style.opacity = '1';
+      const bg = svg.querySelector(`[data-logo-bg="${CSS.escape(img.dataset.logo)}"]`);
+      if (bg) bg.style.opacity = '1';
+      pump();
+    }, { once: false });
+    img.addEventListener('error', attempt);
+    attempt();
+  }
+  function pump() {
+    while (logoQueue.inflight < logoQueue.MAX && logoQueue.pending.size) {
+      const img = logoQueue.pending.values().next().value;
+      logoQueue.pending.delete(img);
+      logoQueue.inflight++;
+      bindLogo(img);
+    }
+  }
+  let logoSweepScheduled = false;
+  function sweepLogos() {
+    if (logoSweepScheduled) return;
+    logoSweepScheduled = true;
+    requestAnimationFrame(() => {
+      logoSweepScheduled = false;
+      const pad = cam.w * 0.35;
+      const x0 = cam.x - pad, x1 = cam.x + cam.w + pad;
+      const y0 = cam.y - pad, y1 = cam.y + cam.h + pad;
+      svg.querySelectorAll('image.logo-img:not([data-queued])').forEach(img => {
+        const x = +img.getAttribute('x'), y = +img.getAttribute('y');
+        if (x < x0 || x > x1 || y < y0 || y > y1) return;
+        img.dataset.queued = '1';
+        logoQueue.pending.add(img);
+      });
+      pump();
+    });
+  }
+
+  // Navigator tiles are HTML, so a plain lazy <img> over the monogram is enough.
+  const navLogo = slug => {
+    const d = bySlug[slug] && bySlug[slug].d;
+    return d ? `<img src="${LOGO_SOURCES[0](d)}" alt="" loading="lazy" decoding="async"
+      onload="this.style.opacity=1" onerror="this.remove()">` : '';
+  };
 
   function buildSVG(forExport) {
     const m = L.meta;
@@ -138,12 +214,20 @@
       if (!X) {
         o.push(`<g data-chip data-med data-slug="${esc(c.slug)}" data-cat="${esc(SHORT[meta.c] || '')}" data-region="${esc(REGION_KEY(meta.r || ''))}" data-mat="${esc(meta.m || '')}" data-text="${esc((c.name + ' ' + (meta.b || '')).toLowerCase())}" ${meta.g ? 'data-spoken="1"' : ''} tabindex="-1" role="button" aria-label="${esc(c.name + '; operator; ' + (c.claim || ''))}">`);
       } else o.push(`<g>`);
+      // The operator marks sit on the dark medallion, so they get a light
+      // plate behind them rather than the layer-hue tile used on chips.
       const lm = manifest && manifest[c.slug];
+      const dom = bySlug[c.slug] && bySlug[c.slug].d;
       if (lm) {
         o.push(logoMarkup(c.slug, cx, c.y + 70, 136, c.hue, c.mono, X));
       } else {
         o.push(`<rect class="chip-body" x="${cx - 68}" y="${c.y + 70}" width="136" height="136" rx="28" fill="${C.medtx}"/>`);
         o.push(`<text x="${cx}" y="${c.y + 164}" font-size="62" font-weight="900" text-anchor="middle" fill="${C.med}" font-family="Archivo, sans-serif">${esc(c.mono)}</text>`);
+        if (!X && dom) {
+          o.push(`<rect class="logo-bg" data-logo-bg="${esc(c.slug)}" x="${cx - 68}" y="${c.y + 70}" width="136" height="136" rx="28" fill="#FFFFFF" opacity="0"/>`);
+          o.push(`<image class="logo-img" data-logo="${esc(c.slug)}" data-domain="${esc(dom)}" data-try="0" ` +
+            `x="${cx - 56}" y="${c.y + 82}" width="112" height="112" preserveAspectRatio="xMidYMid meet" opacity="0"/>`);
+        }
       }
       o.push(`<text x="${cx}" y="${c.y + 248}" font-size="31" font-weight="700" text-anchor="middle" fill="${C.medtx}" font-family="Archivo, sans-serif">${esc(c.name)}</text>`);
       wrapText(c.claim || '', 30, 4).forEach((ln, j) => {
@@ -166,6 +250,7 @@
 
   function applyCam() {
     svg.setAttribute('viewBox', `${cam.x} ${cam.y} ${cam.w} ${cam.h}`);
+    sweepLogos();
   }
   function clampCam() {
     const { vw, vh } = vpSize();
@@ -582,7 +667,7 @@
       <div class="med-strip" role="list" aria-label="The ten operators">
         ${L.medallion.map(mo => `
           <button class="med-card" role="listitem" data-navsel="${esc(mo.slug)}">
-            <span class="mono-tile" style="--tile:oklch(var(--layer-l) var(--layer-c) ${mo.hue})">${esc(mo.mono)}</span>
+            <span class="mono-tile" style="--tile:oklch(var(--layer-l) var(--layer-c) ${mo.hue})">${esc(mo.mono)}${navLogo(mo.slug)}</span>
             <span class="mc-name">${esc(mo.name)}</span>
             <span class="mc-claim">${esc(mo.claim || '')}</span>
           </button>`).join('')}
@@ -595,7 +680,7 @@
             ${districtChips(d.id).map(c => `
               <button class="dchip${c.exited ? ' exited' : ''}" data-navsel="${esc(c.slug)}">
                 ${c.spokenTo ? '<span class="gd gold-dot" aria-hidden="true"></span>' : ''}
-                <span class="mono-tile" style="--tile:oklch(var(--layer-l) var(--layer-c) ${c.hue})">${esc(c.mono)}</span>
+                <span class="mono-tile" style="--tile:oklch(var(--layer-l) var(--layer-c) ${c.hue})">${esc(c.mono)}${navLogo(c.slug)}</span>
                 <span>${esc(c.name)}</span>
               </button>`).join('')}
           </div>
@@ -674,6 +759,7 @@
       return true;
     };
 
+    sweepLogos();
     buildRail(); readURL(); bindCamera(); bindKeys(); bindExport();
     chooseMode();
     applyFilters();

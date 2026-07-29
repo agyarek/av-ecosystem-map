@@ -55,8 +55,8 @@
 #lg-table th .dir { font-size: 9px; }
 #lg-table th[aria-sort="ascending"] button, #lg-table th[aria-sort="descending"] button { color: var(--cyan); }
 #lg-table tbody tr.row { cursor: pointer; }
-#lg-table tbody tr.row { content-visibility: auto; contain-intrinsic-size: auto 52px; }
-body.compact #lg-table tbody tr.row { contain-intrinsic-size: auto 36px; }
+#lg-table tbody tr.row { content-visibility: auto; contain-intrinsic-size: auto 60px; }
+body.compact #lg-table tbody tr.row { contain-intrinsic-size: auto 44px; }
 body.compact #lg-table td { padding: 5px 10px; font-size: 13px; }
 #lg-table td.c-name { font-weight: 700; }
 #lg-table td .layer-tag { display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; }
@@ -132,7 +132,7 @@ tr.detail > td { padding: 0; border-bottom: 1px solid var(--ink); background: va
     contain-intrinsic-size: auto 86px;
   }
   #lg-table tbody tr.row td { display: none; border: 0; padding: 0; }
-  #lg-table tbody tr.row td.c-name { display: flex; grid-column: 1; font-size: 15px; white-space: normal; }
+  #lg-table tbody tr.row td.c-name { display: block; grid-column: 1; font-size: 15px; white-space: normal; }
   #lg-table tbody tr.row td.c-cat { display: block; grid-column: 1; }
   #lg-table tbody tr.row td.c-region { display: block; grid-column: 1; color: var(--muted); font-size: 12.5px; }
   #lg-table tbody tr.row td.c-funding { display: block; grid-column: 2; grid-row: 1; text-align: right; }
@@ -154,9 +154,23 @@ tr.detail > td { padding: 0; border-bottom: 1px solid var(--ink); background: va
   }
 }
 
-/* The company logo travels with the name, in the table and in the detail. */
-#lg-table td.c-name { display: flex; align-items: center; gap: 9px; flex-wrap: wrap; }
-.row-logo { width: 26px; height: 26px; flex: none; font-size: 10px; border-radius: 7px; }
+/* The company logo travels with the name, in the table and in the detail. The
+   cell stays a table-cell so its border lines up with the rest of the row; the
+   flex layout happens one level in.
+
+   Two columns: the mark, then everything else. A long name wraps inside its own
+   column beside the mark rather than pushing itself onto a line below and
+   stranding the mark above it, and the spoken-with label sits under the name
+   hugging its own text. Flex could not do the last part, because an item forced
+   onto a new line by its basis is also stretched by it. */
+#lg-table td.c-name { min-width: 218px; }
+#lg-table td.c-name .nm-wrap {
+  display: grid; grid-template-columns: auto minmax(0, 1fr);
+  align-items: center; gap: 5px 9px;
+}
+#lg-table td.c-name .nm { grid-column: 2; }
+#lg-table td.c-name .spoken-tag { grid-column: 2; justify-self: start; }
+.row-logo { grid-column: 1; width: 26px; height: 26px; font-size: 10px; border-radius: 7px; }
 /* Spoken with directly is the most expensive fact on this site to acquire, so it
    is spelled out rather than hinted at with a dot. */
 .spoken-tag {

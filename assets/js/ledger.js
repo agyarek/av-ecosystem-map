@@ -136,7 +136,9 @@
     $('lg-head').innerHTML = '<tr>' + shownCols().map(c => {
       const cur = state.sort[0] && state.sort[0][0] === c.k ? state.sort[0][1] : null;
       const aria = cur ? ` aria-sort="${cur === 'asc' ? 'ascending' : 'descending'}"` : '';
-      return `<th${aria}><button data-sort="${c.k}" title="Sort by ${esc(c.l)}; shift-click for a second key">${esc(c.l)}<span class="dir" aria-hidden="true">${cur ? (cur === 'asc' ? '▲' : '▼') : ''}</span></button></th>`;
+      // the class rides along so the mobile card layout can show the same two
+      // labels its rows show, and hide the rest
+      return `<th class="${c.cls || ''}"${aria}><button data-sort="${c.k}" title="Sort by ${esc(c.l)}; shift-click for a second key">${esc(c.l)}<span class="dir" aria-hidden="true">${cur ? (cur === 'asc' ? '▲' : '▼') : ''}</span></button></th>`;
     }).join('') + '</tr>';
   }
 
@@ -283,6 +285,25 @@
     </div>`;
   }
 
+  // Where the table has its own scroll pane, an opened row is moved inside it:
+  // scrollIntoView would also scroll the page, dragging the pane past its sticky
+  // stop and taking the column headers off the top of the screen with it.
+  function scrollRowToTop(tr) {
+    const pane = $('lg-scroll');
+    const headH = ($('lg-head').offsetHeight || 0) + 4;
+    if (pane.scrollHeight > pane.clientHeight + 1) {
+      // pin the pane under the chrome first: measuring inside it only means
+      // anything once the page has stopped moving it around
+      const hdr = document.querySelector('header.site');
+      const anchor = pane.getBoundingClientRect().top + scrollY - (hdr ? hdr.offsetHeight : 0);
+      scrollTo({ top: Math.max(0, anchor), behavior: 'instant' });
+      pane.scrollTop += tr.getBoundingClientRect().top - pane.getBoundingClientRect().top - headH;
+    } else {
+      // scroll-margin-top on tr.row keeps the row clear of the sticky chrome
+      tr.scrollIntoView({ block: 'start', behavior: 'instant' });
+    }
+  }
+
   function closeDetail() {
     document.querySelectorAll('tr.detail').forEach(t => t.remove());
     document.querySelectorAll('tr.row[aria-expanded="true"]').forEach(t => t.setAttribute('aria-expanded', 'false'));
@@ -300,8 +321,7 @@
     tr.after(dt);
     mountLogos(dt);
     fillDetailExtras(c, dt);
-    // scroll-margin-top on tr.row keeps the row clear of the sticky header
-    tr.scrollIntoView({ block: 'start', behavior: 'instant' });
+    scrollRowToTop(tr);
   }
 
   // ------------------------------------------------------------ export
@@ -455,6 +475,75 @@
       e.target.checked ? state.cols.add(v) : state.cols.delete(v);
       applyAll();
     });
+    // The table pane is sized against the space left under the site chrome,
+    // which is sticky and changes height as the nav wraps.
+    const siteHeader = document.querySelector('header.site');
+    const setStickTop = () => document.documentElement.style
+      .setProperty('--stick-top', (siteHeader ? siteHeader.offsetHeight : 0) + 'px');
+    setStickTop();
+    // Turning a phone sideways changes the header's height, swaps the table
+    // between its two layouts and moves the scrolling from the pane to the page
+    // or back. Re-measure and put the open row back where it was, twice: iOS
+    // reports the new size before it has finished laying the page out.
+    // whichever row is under the top edge of the table right now: the thing the
+    // reader is looking at, and so the thing to return them to afterwards
+    let anchor = null, ticking = false;
+    const trackAnchor = () => {
+      ticking = false;
+      const pane = $('lg-scroll').getBoundingClientRect();
+      const y = Math.max(pane.top, siteHeader ? siteHeader.offsetHeight : 0) + 46;
+      if (y < 0 || y > innerHeight - 2) return;
+      const el = document.elementFromPoint(Math.max(2, pane.left + 40), y);
+      const tr = el && el.closest && el.closest('tr.row, tr.detail');
+      if (tr && tr.dataset.slug) anchor = tr.dataset.slug;
+    };
+    const onScroll = () => { if (!ticking) { ticking = true; requestAnimationFrame(trackAnchor); } };
+    addEventListener('scroll', onScroll, { passive: true });
+    $('lg-scroll').addEventListener('scroll', onScroll, { passive: true });
+
+    // Rows are content-visibility: auto, so the ones being skipped over are only
+    // measured as they come into view and the target keeps drifting under a
+    // single scroll. Land on it, look again, land on it again.
+    let settle;
+    const restore = (passes) => {
+      setStickTop();
+      const tr = $('r-' + (state.open || anchor));
+      if (!tr) return;
+      scrollRowToTop(tr);
+      if (passes > 0) requestAnimationFrame(() => restore(passes - 1));
+    };
+    const relayout = () => {
+      restore(3);
+      clearTimeout(settle);
+      settle = setTimeout(() => restore(3), 260);
+    };
+    addEventListener('resize', relayout);
+    addEventListener('orientationchange', relayout);
+    if (window.visualViewport) visualViewport.addEventListener('resize', setStickTop);
+
+    // On a phone the pane is not a scroller — the page is — so the jump buttons
+    // move whichever one is actually carrying the rows.
+    const scroller = $('lg-scroll');
+    const paneScrolls = () => scroller.scrollHeight > scroller.clientHeight + 1;
+    const jump = end => {
+      if (paneScrolls()) {
+        // pin the pane first, so both ends of the table land fully on screen
+        const anchor = scroller.getBoundingClientRect().top + scrollY
+          - (siteHeader ? siteHeader.offsetHeight : 0);
+        scrollTo({ top: Math.max(0, anchor), behavior: 'smooth' });
+        scroller.scrollTo({ top: end ? scroller.scrollHeight : 0, behavior: 'smooth' });
+      } else {
+        const r = scroller.getBoundingClientRect();
+        scrollTo({
+          top: Math.max(0, end ? r.bottom + scrollY - innerHeight + 12
+            : r.top + scrollY - (siteHeader ? siteHeader.offsetHeight : 0) - 8),
+          behavior: 'smooth'
+        });
+      }
+    };
+    $('lg-top').addEventListener('click', () => jump(false));
+    $('lg-bottom').addEventListener('click', () => jump(true));
+
     $('sheet-toggle').addEventListener('click', () => {
       const open = document.body.classList.toggle('sheet-open');
       $('sheet-toggle').setAttribute('aria-expanded', open);

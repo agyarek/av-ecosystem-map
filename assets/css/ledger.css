@@ -46,7 +46,32 @@
 /* ------------------------------------------------------------- table */
 #lg-scroll { position: relative; border-top: 1px solid var(--rule); }
 #lg-table { min-width: 900px; }
-#lg-table thead th { position: sticky; top: 0; background: var(--paper); z-index: 5; }
+/* The header can only stick to a box that scrolls vertically. The table is wider
+   than the page at every desktop width, so it has to keep its own horizontal
+   scroll — which makes #lg-scroll the scroll container whether we like it or
+   not. Give it the height left under the site chrome and it scrolls in both
+   directions, with the column headers pinned to its top edge for as long as
+   there are rows beneath them. Below the mobile breakpoint the header is hidden
+   and the rows are cards, so the box goes back to growing with the page. */
+@media (min-width: 681px) {
+  #lg-scroll {
+    overflow: auto; overscroll-behavior-y: contain;
+    /* dvh, so the pane does not resize under the row you are reading every time
+       a phone's address bar slides away. The floor keeps it usable on a phone
+       held sideways, where there is very little height to divide up. */
+    max-height: max(260px, calc(100vh - var(--stick-top, 56px) - 16px));
+    max-height: max(260px, calc(100dvh - var(--stick-top, 56px) - 16px));
+    /* The pane is a viewport tall, so it pins under the chrome once the page has
+       scrolled the introduction away: the page scroll gets you to the table, and
+       from there the table scrolls itself, always fully on screen. */
+    position: sticky; top: var(--stick-top, 56px);
+  }
+}
+#lg-table thead th {
+  position: sticky; top: 0; background: var(--paper); z-index: 5;
+  /* the cell's own border scrolls away with the table; this rule does not */
+  box-shadow: inset 0 -1px var(--rule);
+}
 #lg-table th button {
   font: inherit; letter-spacing: inherit; text-transform: inherit; color: inherit;
   display: inline-flex; align-items: center; gap: 5px; padding: 0;
@@ -125,7 +150,22 @@ tr.detail > td { padding: 0; border-bottom: 1px solid var(--ink); background: va
 /* ------------------------------------------------------------- mobile */
 @media (max-width: 680px) {
   #lg-table { min-width: 0; width: 100%; }
-  #lg-table thead { display: none; }
+  /* The rows are cards here, not a grid of cells, so the header keeps only the
+     two labels a card actually shows — and they are still the sort buttons.
+     Nothing overflows sideways at this width, so #lg-scroll can stop being a
+     scroll container and let the header stick to the page under the chrome. */
+  #lg-scroll { overflow: visible; }
+  #lg-table thead {
+    display: block; position: sticky; top: var(--stick-top, 56px); z-index: 6;
+    background: var(--paper);
+  }
+  #lg-table thead tr {
+    display: grid; grid-template-columns: 1fr auto; align-items: baseline;
+    gap: 12px; padding: 9px 4px; border-bottom: 1px solid var(--rule);
+  }
+  #lg-table thead th { display: none; position: static; box-shadow: none; padding: 0; border: 0; }
+  #lg-table thead th.c-name { display: block; grid-column: 1; }
+  #lg-table thead th.c-funding { display: block; grid-column: 2; text-align: right; }
   #lg-table tbody tr.row {
     display: grid; grid-template-columns: 1fr auto; gap: 2px 12px;
     padding: 12px 4px; border-bottom: 1px solid var(--rule);
@@ -183,12 +223,40 @@ tr.detail > td { padding: 0; border-bottom: 1px solid var(--ink); background: va
   background: var(--yellow); color: #12130F;
   font-family: var(--font-mono); font-size: 10px; font-weight: 600; letter-spacing: .12em;
 }
+/* Once the row is open the detail panel carries the same label a few pixels
+   below, so the row's copy comes off rather than saying it twice. */
+#lg-table tr.row[aria-expanded="true"] .spoken-tag { display: none; }
+
+/* ------------------------------------------------------------- scroll nav */
+.scroll-nav {
+  position: fixed; right: 14px; bottom: 14px; z-index: 125;
+  display: flex; flex-direction: column; gap: 8px; align-items: flex-end;
+}
+.scroll-nav button {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 8px 13px; background: var(--paper-2); color: var(--ink);
+  border: 1px solid var(--rule); border-radius: var(--r-pill);
+  box-shadow: 0 8px 24px rgba(18, 19, 15, .18);
+  font-family: var(--font-mono); font-size: 10.5px; font-weight: 600; letter-spacing: .1em;
+  cursor: pointer;
+}
+.scroll-nav button:hover { border-color: var(--cyan); color: var(--cyan); }
+.scroll-nav svg { display: block; flex: none; }
+@media (max-width: 680px) {
+  /* the filters button owns the right-hand corner on a phone, so these sit
+     alongside it rather than stacking on top of it */
+  .scroll-nav { right: auto; left: 14px; flex-direction: row; }
+  .scroll-nav button { padding: 8px 11px; }
+}
+@media print { .scroll-nav { display: none; } }
+
 .d-credit {
   position: absolute; right: 8px; bottom: 8px;
   font-family: var(--font-mono); font-size: 9px; letter-spacing: .06em;
   color: #fff; background: rgba(18, 19, 15, .62); padding: 2px 6px; border-radius: 4px;
 }
-/* An opened row scrolls to the top of the page, clear of the sticky header, so
-   the company in focus is the first thing under the chrome. */
-#lg-table tr.row { scroll-margin-top: 128px; }
-@media (max-width: 859px) { #lg-table tr.row { scroll-margin-top: 96px; } }
+/* An opened row scrolls to the top of the page, clear of the sticky chrome, so
+   the company in focus is the first thing under it — and clear of the sticky
+   column headers too. */
+#lg-table tr.row { scroll-margin-top: calc(var(--stick-top, 96px) + 44px); }
+@media (min-width: 681px) { #lg-table tr.row { scroll-margin-top: 44px; } }

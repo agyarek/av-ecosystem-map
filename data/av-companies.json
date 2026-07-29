@@ -76,7 +76,14 @@
   "foundedYear": 2017,
   "valuationUSD": 15000,
   "slug": "applied-intuition",
-  "status": "active"
+  "status": "active",
+  "sources": [
+   {
+    "title": "Applied Intuition hits $15B valuation with $600M Series F fundraising and tender offer",
+    "url": "https://www.appliedintuition.com/press-releases/series-f",
+    "date": "2025-06-04"
+   }
+  ]
  },
  {
   "id": "c2",
@@ -289,7 +296,7 @@
   "country": "China",
   "regions": "",
   "founded": "2013",
-  "leadership": "Robin Li (Baidu CEO)",
+  "leadership": "Robin Li, co-founder and CEO of Baidu; Wang Yunpeng, corporate vice president and president of the Intelligent Driving Group",
   "about": "China's largest robotaxi operator (Apollo Go app + RT6 vehicle); scaling globally via Uber/Lyft",
   "model": "",
   "financing": "Public",
@@ -326,7 +333,7 @@
   "country": "China",
   "regions": "China; Gulf and international expansion announced",
   "founded": "2013 Apollo program; Apollo Go service later",
-  "leadership": "Baidu Apollo leadership; Robin Li at parent Baidu",
+  "leadership": "Robin Li, co-founder and CEO of Baidu; Wang Yunpeng, corporate vice president and president of the Intelligent Driving Group",
   "about": "Baidu's robotaxi service is the largest Chinese deployment anchor, centered on Wuhan and other Chinese cities, with international partnerships forming in the Gulf and Europe.",
   "model": "Robotaxi fares; autonomous driving technology ecosystem; platform partnerships",
   "financing": "Public parent / subsidiary business line",
@@ -378,7 +385,7 @@
   "country": "Germany",
   "regions": "Germany; global vehicle markets",
   "founded": "1916",
-  "leadership": "Oliver Zipse, CEO",
+  "leadership": "Oliver Zipse, Chairman of the Board of Management, retiring 13 May 2026; Milan Nedeljkovic named to succeed him",
   "about": "BMW commercialized Level 3 in limited contexts but 2026 reporting indicates it is also stepping back from L3 on cost and demand grounds, favoring Level 2 systems.",
   "model": "Vehicle sales; software-enabled driver assistance",
   "financing": "Public company",
@@ -397,7 +404,14 @@
   "region": "Europe",
   "foundedYear": 1916,
   "slug": "bmw-personal-pilot-adas",
-  "status": "active"
+  "status": "active",
+  "sources": [
+   {
+    "title": "Following Mercedes, BMW also abandons Level 3 automated driving",
+    "url": "https://www.electrive.com/2026/02/23/following-mercedes-bmw-also-abandons-level-3-automated-driving/",
+    "date": "2026-02-23"
+   }
+  ]
  },
  {
   "id": "c10",
@@ -883,7 +897,14 @@
   "foundedYear": 2015,
   "fundingUSD": 2600,
   "slug": "horizon-robotics",
-  "status": "active"
+  "status": "active",
+  "sources": [
+   {
+    "title": "China steps up the ADAS race: Horizon Robotics locks in full Journey 6 series to take on Nvidia",
+    "url": "https://www.digitimes.com/news/a20250716PD209/horizon-robotics-nvidia-adas-automotive-chips.html",
+    "date": "2025-07-16"
+   }
+  ]
  },
  {
   "id": "c23",
@@ -899,7 +920,7 @@
   "country": "China",
   "regions": "",
   "founded": "2019",
-  "leadership": "Jin Yuzhi (IAS BU CEO)",
+  "leadership": "Xu Zhijun, rotating chairman of Huawei; Jin Yuzhi, CEO of the Intelligent Automotive Solution business unit",
   "about": "Huawei intelligent-driving unit; Qiankun ADS 4 across AITO/Avatr and 22+ partner models",
   "model": "",
   "financing": "Subsidiary",
@@ -936,7 +957,7 @@
   "country": "China",
   "regions": "China",
   "founded": "2019 automotive BU; Yinwang later",
-  "leadership": "Richard Yu closely associated with Huawei automotive business",
+  "leadership": "Xu Zhijun, rotating chairman of Huawei; Jin Yuzhi, CEO of the Intelligent Automotive Solution business unit",
   "about": "Huawei supplies ADS / Qiankun intelligent driving, cockpit and automotive compute to Chinese automakers through supplier, Huawei Inside and HIMA models. It is one of China's most important ADAS stack players.",
   "model": "ADAS, cockpit and platform supply to automakers; branded alliance sales support",
   "financing": "Subsidiary / strategic automotive unit",
@@ -1193,7 +1214,14 @@
   "region": "Europe",
   "foundedYear": 1886,
   "slug": "mercedes-benz-drive-pilot-mb-drive",
-  "status": "active"
+  "status": "active",
+  "sources": [
+   {
+    "title": "Mercedes pauses Level 3 driving assistance, for now",
+    "url": "https://www.electrive.com/2026/01/12/mercedes-pauses-level-3-driving-assistance-for-now/",
+    "date": "2026-01-12"
+   }
+  ]
  },
  {
   "id": "c31",
@@ -1233,7 +1261,14 @@
   "fundingUSD": 2151,
   "valuationUSD": 9000,
   "slug": "momenta",
-  "status": "active"
+  "status": "active",
+  "sources": [
+   {
+    "title": "Momenta, Uber to start robotaxi testing in Germany in 2026",
+    "url": "https://cnevpost.com/2025/09/08/momenta-uber-robotaxi-testing-germany-2026/",
+    "date": "2025-09-08"
+   }
+  ]
  },
  {
   "id": "c32",
@@ -1300,7 +1335,7 @@
   "country": "China",
   "regions": "China; Europe",
   "founded": "2014",
-  "leadership": "William Li, founder and CEO",
+  "leadership": "William Li, founder, chairman and CEO; Ren Shaoqing, vice president and chief expert of smart driving R&D",
   "about": "Chinese premium EV maker with NIO Pilot / Navigate on Pilot and in-house compute moves. It is relevant for the ADAS talent, sensor and compute ecosystem rather than L4 robotaxi deployment.",
   "model": "Vehicle sales; optional software and services",
   "financing": "Public (NYSE/HKEX)",
@@ -1319,7 +1354,14 @@
   "region": "Greater China",
   "foundedYear": 2014,
   "slug": "nio",
-  "status": "active"
+  "status": "active",
+  "sources": [
+   {
+    "title": "Nio brings in former Alibaba exec as part of efforts to ramp up AI push",
+    "url": "https://cnevpost.com/2026/01/27/nio-brings-in-former-alibaba-exec-in-ai-push/",
+    "date": "2026-01-27"
+   }
+  ]
  },
  {
   "id": "c34",
@@ -1337,7 +1379,7 @@
   "country": "US",
   "regions": "Global; strong US, China, Europe robotaxi/OEM footprint",
   "founded": "1993",
-  "leadership": "Jensen Huang, founder and CEO",
+  "leadership": "Jensen Huang, founder and CEO; Ali Kani, vice president and general manager of automotive",
   "about": "NVIDIA is both compute platform and autonomy software ecosystem provider through DRIVE AGX, DriveOS, Thor, Omniverse and DRIVE Sim. It is a central dependency for AV stacks and developers.",
   "model": "Chips, systems, software platforms and developer ecosystem licensing / sales",
   "financing": "Public company",
@@ -2110,7 +2152,14 @@
   "region": "Greater China",
   "foundedYear": 2014,
   "slug": "xpeng",
-  "status": "active"
+  "status": "active",
+  "sources": [
+   {
+    "title": "Xpeng CEO takes company's first robotaxi ride as internal testing begins",
+    "url": "https://cnevpost.com/2026/07/09/xpeng-ceo-first-robotaxi-ride-internal-testing-begins/",
+    "date": "2026-07-09"
+   }
+  ]
  },
  {
   "id": "c53",
@@ -2405,7 +2454,14 @@
   "foundedYear": 2014,
   "fundingUSD": 717,
   "slug": "hesai",
-  "status": "active"
+  "status": "active",
+  "sources": [
+   {
+    "title": "Hesai sustains profitability as LiDAR shipments surge and secures Mercedes order",
+    "url": "https://cnevpost.com/2026/05/19/hesai-sustains-profitability-q1-2026/",
+    "date": "2026-05-19"
+   }
+  ]
  },
  {
   "id": "c61",
@@ -2871,7 +2927,7 @@
   "country": "US",
   "regions": "Global OEM programs; China, Europe, US",
   "founded": "1985",
-  "leadership": "Cristiano Amon, CEO",
+  "leadership": "Cristiano Amon, President and CEO; Nakul Duggal, EVP and group general manager for automotive, industrial and embedded IoT",
   "about": "Qualcomm's Snapdragon Digital Chassis and Ride platforms target cockpit, connectivity, ADAS and centralized vehicle compute.",
   "model": "Sells SoCs, platforms, software and connectivity technology to automakers and Tier-1s.",
   "financing": "Public",
@@ -3382,7 +3438,7 @@
   "country": "US",
   "regions": "",
   "founded": "1993",
-  "leadership": "Jensen Huang (CEO)",
+  "leadership": "Jensen Huang, founder and CEO; Ali Kani, vice president and general manager of automotive",
   "about": "Leading AV compute (DRIVE Orin/Thor) + DRIVE Sim; powers Uber L4 ecosystem",
   "model": "",
   "financing": "Public (NASDAQ: NVDA)",
@@ -3419,7 +3475,7 @@
   "country": "US",
   "regions": "Global",
   "founded": "1985",
-  "leadership": "Cristiano Amon, CEO",
+  "leadership": "Cristiano Amon, President and CEO; Nakul Duggal, EVP and group general manager for automotive, industrial and embedded IoT",
   "about": "Qualcomm's automotive compute and connectivity platform for ADAS and automated driving.",
   "model": "Chip/platform sales; software stack",
   "financing": "Public company",
@@ -3527,7 +3583,7 @@
   "country": "Germany",
   "regions": "",
   "founded": "1915",
-  "leadership": "Holger Klein (CEO)",
+  "leadership": "Mathias Miedreich, CEO since October 2025",
   "about": "Radar/camera/compute ADAS Tier-1; divesting ADAS unit to Harman",
   "model": "",
   "financing": "Private (foundation)",
@@ -3546,7 +3602,14 @@
   "region": "Europe",
   "foundedYear": 1915,
   "slug": "zf-friedrichshafen",
-  "status": "active"
+  "status": "active",
+  "sources": [
+   {
+    "title": "ZF Sells ADAS Business to In-Cabin Electronics Leader Harman",
+    "url": "https://press.zf.com/press/en/releases/release_98176.html",
+    "date": "2025-11-06"
+   }
+  ]
  },
  {
   "id": "c92",
@@ -3745,7 +3808,7 @@
   "country": "China",
   "regions": "China; selected overseas Apollo ecosystem exposure",
   "founded": "2000",
-  "leadership": "Robin Li, Co-founder and CEO, Baidu",
+  "leadership": "Robin Li, co-founder and CEO of Baidu; Wang Yunpeng, corporate vice president and president of the Intelligent Driving Group",
   "about": "Baidu's mapping and Apollo autonomy ecosystem supports Apollo Go robotaxi operations, AV development tools and Chinese HD map infrastructure.",
   "model": "Consumer maps, cloud/location APIs, AV platform services and internal Apollo robotaxi enablement.",
   "financing": "Public parent/subsidiary platform",
@@ -4548,7 +4611,7 @@
   "country": "Israel",
   "regions": "Global, through Mobileye-equipped vehicles and OEM customers",
   "founded": "1999",
-  "leadership": "Amnon Shashua, CEO",
+  "leadership": "Amnon Shashua, President and CEO, stepping aside once a successor is named (announced 23 July 2026)",
   "about": "Crowdsourced mapping and localization layer based on camera-equipped Mobileye vehicles, producing RoadBook map data for assisted and automated driving.",
   "model": "ADAS/autonomy chip and software sales; map data generated through fleet-scale camera data.",
   "financing": "Public; Intel-controlled public company",
@@ -4695,7 +4758,7 @@
   "country": "US",
   "regions": "Global through NVIDIA automotive and robotics ecosystem",
   "founded": "1993",
-  "leadership": "Jensen Huang, Founder and CEO",
+  "leadership": "Jensen Huang, founder and CEO; Ali Kani, vice president and general manager of automotive",
   "about": "NVIDIA's simulation, synthetic-data and world-model stack for AV and physical AI, spanning Omniverse, DRIVE Sim, Cosmos and Alpamayo/OmniDreams research.",
   "model": "Hardware, software platforms, cloud/licensing and ecosystem partnerships.",
   "financing": "Public",
@@ -5465,7 +5528,7 @@
   "country": "China",
   "regions": "China; Gulf pilots through Apollo Go ecosystem",
   "founded": "2013",
-  "leadership": "Robin Li, Baidu CEO; Apollo leadership verify",
+  "leadership": "Robin Li, co-founder and CEO of Baidu; Wang Yunpeng, corporate vice president and president of the Intelligent Driving Group",
   "about": "Baidu's Apollo ecosystem includes autonomous driving, robotaxi, maps, cloud and vehicle-road-cloud infrastructure capabilities for Chinese smart transportation pilots.",
   "model": "Cloud, AV operations, platform licensing and government/city projects",
   "financing": "Subsidiary / business unit",
@@ -6799,7 +6862,7 @@
   "country": "US",
   "regions": "Global",
   "founded": "1985",
-  "leadership": "Cristiano Amon (CEO)",
+  "leadership": "Cristiano Amon, President and CEO; Nakul Duggal, EVP and group general manager for automotive, industrial and embedded IoT",
   "about": "Semiconductor and connectivity anchor for automotive, including Snapdragon Digital Chassis, cellular modems, C-V2X and in-vehicle compute. After acquiring Autotalks, it is more central to V2X hardware.",
   "model": "Chip sales; licensing; automotive platform revenue",
   "financing": "Public (NASDAQ: QCOM)",
@@ -7353,7 +7416,7 @@
   "country": "Ireland",
   "regions": "Global OEM programs",
   "founded": "1994 / Aptiv 2017",
-  "leadership": "Kevin Clark, CEO historically",
+  "leadership": "Kevin Clark, Chairman and CEO; Javed Khan, EVP and President of Software, Advanced Safety and User Experience",
   "about": "Automotive technology supplier and co-founder of Motional with Hyundai; provides electrical architecture, software, and advanced safety systems.",
   "model": "Automotive components, electrical architecture, safety systems, and mobility technology investments.",
   "financing": "Public (NYSE: APTV)",
@@ -7372,7 +7435,14 @@
   "region": "Europe",
   "foundedYear": 1994,
   "slug": "aptiv",
-  "status": "active"
+  "status": "active",
+  "sources": [
+   {
+    "title": "Aptiv Names Joseph Liotine as CEO, Doug Ostermann as CFO of Planned Versigent Spinoff",
+    "url": "https://www.marketscreener.com/news/aptiv-names-joseph-liotine-as-ceo-doug-ostermann-as-cfo-of-planned-versigent-spinoff-ce7e5bd8dd81f325",
+    "date": "2026-02-11"
+   }
+  ]
  },
  {
   "id": "c196",
@@ -7502,7 +7572,7 @@
   "country": "Germany",
   "regions": "Global OEM and trucking programs",
   "founded": "1886",
-  "leadership": "Stefan Hartung, chairman",
+  "leadership": "Christian Fischer, Chairman of the board of management since 1 July 2026; Christoph Hartung, President of Cross-Domain Computing Solutions",
   "about": "Largest global automotive supplier with braking, steering, sensors, ADAS, and vehicle integration capabilities; former CARIAD automated-driving partner.",
   "model": "Sells components, systems and integration services to OEMs and commercial vehicle platforms.",
   "financing": "Private foundation-owned group",
@@ -7521,7 +7591,14 @@
   "region": "Europe",
   "foundedYear": 1886,
   "slug": "bosch",
-  "status": "active"
+  "status": "active",
+  "sources": [
+   {
+    "title": "Bosch CEO Resigns and Board Announces Leadership Changes",
+    "url": "https://fuelcellsworks.com/2026/06/26/battery/bosch-announces-ceo-resignation-and-board-leadership-changes",
+    "date": "2026-06-26"
+   }
+  ]
  },
  {
   "id": "c200",
@@ -7577,7 +7654,7 @@
   "country": "Germany",
   "regions": "Global OEM programs",
   "founded": "1871",
-  "leadership": "Nikolai Setzer; Automotive spin status to verify",
+  "leadership": "Christian Kotz, CEO since 1 January 2026; Frank Petznick, head of the Autonomous Mobility business area",
   "about": "Major Tier-1 automotive supplier providing radar, camera, lidar-related integration, braking, safety and ADAS systems.",
   "model": "Sells sensors, domain controllers, software and integrated systems to OEMs.",
   "financing": "Public (Aumovio)",
@@ -7596,7 +7673,14 @@
   "region": "Europe",
   "foundedYear": 1871,
   "slug": "continental",
-  "status": "active"
+  "status": "active",
+  "sources": [
+   {
+    "title": "Christian Kotz Appointed CEO of Continental",
+    "url": "https://www.continental.com/en/press/press-releases/20251217-supervisory-board-meeting/",
+    "date": "2025-12-17"
+   }
+  ]
  },
  {
   "id": "c202",
@@ -7875,7 +7959,7 @@
   "country": "US",
   "regions": "",
   "founded": "1903",
-  "leadership": "Jim Farley (CEO)",
+  "leadership": "Jim Farley, President and CEO; Sammy Omari, CEO of Latitude AI and Ford executive director of ADAS technologies",
   "about": "BlueCruise hands-free ADAS; teasing \"eyes-off\" system for 2028",
   "model": "",
   "financing": "Public",
@@ -7894,7 +7978,14 @@
   "region": "North America",
   "foundedYear": 1903,
   "slug": "ford",
-  "status": "active"
+  "status": "active",
+  "sources": [
+   {
+    "title": "Ford creates Latitude AI subsidiary to advance automated driving technologies",
+    "url": "https://www.autonomousvehicleinternational.com/news/adas/ford-creates-latitude-ai-subsidiary-to-advance-automated-driving-technologies.html",
+    "date": "2023-03-02"
+   }
+  ]
  },
  {
   "id": "c210",
@@ -8129,7 +8220,7 @@
   "country": "US",
   "regions": "North America; China",
   "founded": "1908",
-  "leadership": "Mary Barra (CEO)",
+  "leadership": "Mary Barra, Chair and CEO; Rashed Haq, vice president of vehicle autonomy",
   "about": "Automaker and former parent of Cruise's active robotaxi program; now focuses on personal-vehicle automation after ending Cruise robotaxi operations.",
   "model": "Vehicle sales, fleet sales, software and connected vehicle services.",
   "financing": "Public",
@@ -8148,7 +8239,14 @@
   "region": "North America",
   "foundedYear": 1908,
   "slug": "general-motors",
-  "status": "wound-down"
+  "status": "wound-down",
+  "sources": [
+   {
+    "title": "GM customers have driven 1 billion hands-free miles with Super Cruise Driver Assistance Technology",
+    "url": "https://news.gm.com/home.detail.html/Pages/topic/us/en/2026/apr/0428-super-cruise.html",
+    "date": "2026-04-28"
+   }
+  ]
  },
  {
   "id": "c217",
@@ -8238,7 +8336,7 @@
   "country": "South Korea",
   "regions": "Global; US robotaxi programs; Singapore manufacturing",
   "founded": "1967",
-  "leadership": "Euisun Chung; José Muñoz and Hyundai leadership to verify",
+  "leadership": "Euisun Chung, Executive Chair; Minwoo Park, President, head of the Advanced Vehicle Platform division and CEO of 42dot since February 2026",
   "about": "Automotive group behind Hyundai, Kia, Genesis, Motional ownership, IONIQ 5 robotaxi variants, and the Waymo IONIQ 5 platform partnership.",
   "model": "Vehicle manufacturing, mobility services, strategic AV ventures, and factory-integrated autonomous platforms.",
   "financing": "Public group / conglomerate",
@@ -8257,7 +8355,14 @@
   "region": "Asia-Pacific",
   "foundedYear": 1967,
   "slug": "hyundai-motor-group",
-  "status": "active"
+  "status": "active",
+  "sources": [
+   {
+    "title": "Hyundai Motor Group Appoints Dr. Minwoo Park as Head of Advanced Vehicle Platform Division and CEO of 42dot",
+    "url": "https://www.hyundai.com/worldwide/en/newsroom/detail/hyundai-motor-group-appoints-dr.-minwoo-park-as-head-of-advanced-vehicle-platform-division-and-ceo-of-42dot-0000001106",
+    "date": "2026-01-13"
+   }
+  ]
  },
  {
   "id": "c220",
@@ -8569,7 +8674,7 @@
   "country": "Canada",
   "regions": "Global; US Mesa Waymo facility",
   "founded": "1957",
-  "leadership": "Swamy Kotagiri (CEO)",
+  "leadership": "Swamy Kotagiri, President and CEO, previously president of Magna Electronics",
   "about": "Large contract manufacturer and automotive systems supplier partnering with Waymo to integrate Jaguar I-PACE and Zeekr vehicles in Arizona.",
   "model": "Contract manufacturing, vehicle engineering, components, electronics, and fleet integration.",
   "financing": "Public company",
@@ -8681,7 +8786,7 @@
   "country": "Israel",
   "regions": "Global OEM programs; Israel, Europe, China and US",
   "founded": "1999",
-  "leadership": "Amnon Shashua, president and CEO",
+  "leadership": "Amnon Shashua, President and CEO, announced on 23 July 2026 that he will step aside once a successor is named and has been offered the chairmanship; Intel remains the controlling shareholder",
   "about": "Intel-controlled public company and major supplier of EyeQ compute, SuperVision / Chauffeur ADAS and autonomy software. It sits between component supplier and automated-driving stack provider.",
   "model": "Sells chips, software stacks, mapping and full driving-assistance systems to automakers.",
   "financing": "Public company; Intel-controlled history",
@@ -8700,7 +8805,14 @@
   "region": "Middle East & Africa",
   "foundedYear": 1999,
   "slug": "mobileye",
-  "status": "active"
+  "status": "active",
+  "sources": [
+   {
+    "title": "Mobileye CEO Amnon Shashua to step aside as company pushes into robotaxis, robotics",
+    "url": "https://techcrunch.com/2026/07/23/mobileye-ceo-amnon-shashua-to-step-aside-as-company-pushes-into-robotaxis-robotics/",
+    "date": "2026-07-23"
+   }
+  ]
  },
  {
   "id": "c232",
@@ -9207,7 +9319,7 @@
   "country": "Netherlands",
   "regions": "",
   "founded": "2021",
-  "leadership": "Antonio Filosa (CEO)",
+  "leadership": "Antonio Filosa, CEO since June 2025",
   "about": "Shelved in-house STLA AutoDrive L3; leaning on suppliers (aiMotive, Qualcomm)",
   "model": "",
   "financing": "Public",
@@ -9226,7 +9338,14 @@
   "region": "Europe",
   "foundedYear": 2021,
   "slug": "stellantis",
-  "status": "active"
+  "status": "active",
+  "sources": [
+   {
+    "title": "Stellantis Unveils 60 Billion Euro Strategic Plan to Accelerate Growth and Profit",
+    "url": "https://www.stellantis.com/en/news/press-releases/2026/may/stellantis-unveils-60-billion-euro-strategic-plan-to-accelerate-growth-and-profit",
+    "date": "2026-05-21"
+   }
+  ]
  },
  {
   "id": "c246",
@@ -9295,7 +9414,7 @@
   "country": "Japan",
   "regions": "Global; US, Japan, China AV partnerships",
   "founded": "1937",
-  "leadership": "Koji Sato; Akio Toyoda as chairman",
+  "leadership": "Kenta Kon, President and CEO since April 2026; Koji Sato, Vice Chairman and Chief Industry Officer; automated driving sits in Woven by Toyota",
   "about": "Large global automaker with cautious but broad AV exposure through Woven, May Mobility, Pony.ai, Denso/Aisin, and exploratory Waymo collaboration.",
   "model": "Vehicle sales, mobility platforms, strategic investment, and safety/automation development.",
   "financing": "Public company",
@@ -9314,7 +9433,14 @@
   "region": "Asia-Pacific",
   "foundedYear": 1937,
   "slug": "toyota",
-  "status": "active"
+  "status": "active",
+  "sources": [
+   {
+    "title": "Management Team Formation Change: Koji Sato Moves to Vice Chairman, Kenta Kon Named New President",
+    "url": "https://toyotatimes.jp/en/toyota_news/1095.html",
+    "date": "2026-04-01"
+   }
+  ]
  },
  {
   "id": "c248",
@@ -9371,7 +9497,7 @@
   "country": "France",
   "regions": "Global OEM programs",
   "founded": "1923",
-  "leadership": "Christophe Perillat (CEO)",
+  "leadership": "Christophe Perillat, CEO since January 2022",
   "about": "Automotive supplier strong in ADAS, LiDAR, sensors, software, lighting, and electrification; partnered with Mobileye/VW on L2+ systems.",
   "model": "Sells components and integrated ADAS systems to OEMs.",
   "financing": "Public (Euronext)",
@@ -9513,7 +9639,7 @@
   "country": "Germany",
   "regions": "Global; Europe; China; US",
   "founded": "1937 / CARIAD 2020",
-  "leadership": "Oliver Blume; CARIAD leadership to verify",
+  "leadership": "Oliver Blume, Group CEO; Peter Bosch, CEO of CARIAD",
   "about": "Large OEM group whose software unit CARIAD has changed strategy after ending its Bosch automated-driving alliance.",
   "model": "Vehicle manufacturing, software-defined vehicle programs, platform and mobility services.",
   "financing": "Public",
@@ -9532,7 +9658,14 @@
   "region": "Europe",
   "foundedYear": 1937,
   "slug": "volkswagen-group-cariad",
-  "status": "active"
+  "status": "active",
+  "sources": [
+   {
+    "title": "Volkswagen Scales Back Cariad's Role, Turns to Rivian and Xpeng for Software Development",
+    "url": "https://ev.com/news/volkswagen-scales-back-cariads-role-turns-to-rivian-and-xpeng-for-software-development",
+    "date": "2025-09-18"
+   }
+  ]
  },
  {
   "id": "c254",
@@ -9808,7 +9941,7 @@
   "country": "US",
   "regions": "US; testing/announced in multiple metros",
   "founded": "2014",
-  "leadership": "Aicha Evans, CEO",
+  "leadership": "Aicha Evans, CEO; Amazon has held Zoox as a standalone business since 2020",
   "about": "Amazon-owned robotaxi developer with a bidirectional purpose-built vehicle built without traditional driver controls. It is moving from free / waitlist operations toward broader commercialization.",
   "model": "Robotaxi service revenue over time; Amazon-backed capital and fleet ownership.",
   "financing": "Subsidiary",
@@ -11450,7 +11583,7 @@
   "country": "US",
   "regions": "Global",
   "founded": "2009",
-  "leadership": "Dara Khosrowshahi (CEO)",
+  "leadership": "Dara Khosrowshahi, CEO; Sarfraz Maredia, global head of autonomous mobility and delivery",
   "about": "Global demand aggregator positioning itself as a multi-supplier robotaxi marketplace rather than an in-house AV developer.",
   "model": "Ridehail marketplace fees; delivery; freight; AV platform take-rate",
   "financing": "Public (NYSE: UBER)",
@@ -11471,7 +11604,14 @@
   "region": "North America",
   "foundedYear": 2009,
   "slug": "uber",
-  "status": "active"
+  "status": "active",
+  "sources": [
+   {
+    "title": "Uber Unveils Uber Autonomous Solutions to Accelerate Autonomous Mobility and Delivery Worldwide",
+    "url": "https://investor.uber.com/news-events/news/press-release-details/2026/Uber-Unveils-Uber-Autonomous-Solutions-to-Accelerate-Autonomous-Mobility--Delivery-Worldwide/default.aspx",
+    "date": "2026-02-23"
+   }
+  ]
  },
  {
   "id": "c306",

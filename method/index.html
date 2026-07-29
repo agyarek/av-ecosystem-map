@@ -89,7 +89,7 @@
       are treated with suspicion, since several recompute figures from each other; one such source was
       excluded entirely after citing regulatory actions dated in the future.</p>
     <p>Where credible sources genuinely disagree, this site shows the spread rather than silently
-      choosing: Waymo's weekly rides appear as "about half a million (mid-2026)" with the 400,000 to
+      choosing: Waymo's weekly rides appear as "about 500k (mid-2026)" with the 400,000 to
       500,000 range noted, its fleet as the 3,067 of its own December 2025 filing with press estimates
       of 3,000 to 4,000 alongside, and its comparative safety claim in all three published forms with
       dates. A map that resolves conflicts invisibly is asserting an authority it has not earned.</p>
@@ -114,13 +114,20 @@
       every stage, because that is true of them and of no other layer. That grouping is how the
       <a href="../">home page</a> tells the ride; the wall chart no longer draws it, because a company's
       layer is the thing a reader actually looks up and the stage is not.</p>
-    <p>On the chart itself the ten operators whose driver a member of the public can meet sit inside a
-      hexagon at the centre, a definition argued in full on <a href="../operators/">The Ten</a>. The ten
-      remaining layers dock onto the hexagon's six borders: each is a rectangle with one side flush
-      against a hexagon edge and the other three perpendicular to it, four borders carrying two layers
-      side by side and two carrying one. A layer's panel runs as deep as its company count needs, so
-      petal length is a reading of the data rather than a decoration. The panels tilt with the hexagon;
-      the company tiles inside them never do.</p>
+    <p>On the chart itself the ten operators whose driver a member of the public can meet sit inside an
+      octagon at the centre, a definition argued in full on <a href="../operators/">The Ten</a>. The ten
+      remaining layers tile the frame around it as rooms of a single plate, sharing their borders with
+      their neighbours: three across the top, two down each side, three along the bottom, running
+      clockwise in the order a ride passes through them. The side rooms reach in to the octagon's
+      corners, so their tile grids step around its bevels. Every room is axis-aligned and every label is
+      horizontal.</p>
+    <p>Company logos are fetched by the browser, not committed: each candidate source is measured before
+      it is shown, and a mark under 64 pixels is passed over for a better one rather than enlarged.
+      Pictures come from Wikipedia's summary API, which is why they appear only for organisations with
+      an article. Share prices need a quote provider with cross-origin access, so they are configured
+      rather than assumed; where none is set the price is simply absent. Leadership names link to a
+      LinkedIn people search rather than to a profile URL, because this dataset holds no verified
+      profile links and a guessed one would be worse than a search.</p>
     <p>The <strong>status</strong> field distinguishes what "exited" used to blur: <em>active</em>,
       <em>acquired</em> (absorbed, brand retired), <em>wound-down</em> (orderly shutdown), and
       <em>bankrupt</em> (insolvency proceedings). Struck-through chips on the chart carry one of the

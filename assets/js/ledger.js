@@ -2,7 +2,8 @@
    All state serialises into the URL so any view is shareable. */
 (function () {
   'use strict';
-  const { ROOT, esc, fmtM, json, HUES } = window.AV;
+  const { ROOT, esc, fmtM, json, HUES, layerColor, mountLogos, ICON,
+          linkedinSearch, wikiSummary, stockQuote } = window.AV;
 
   const SHORT = {
     'AV Driver / Autonomy Software': 'driver', 'Sensing & Compute Hardware': 'sensing',
@@ -15,12 +16,29 @@
   const RKEY = r => (r || '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
   const MATS = ['Scaled', 'Commercial', 'Pilot', 'R&D', 'Governance', 'Historical', 'Other'];
 
+  let slimBySlug = {};
+  const domainOf = c => (slimBySlug[c.slug] || {}).d || '';
+  const logoDomainOf = c => (slimBySlug[c.slug] || {}).l || domainOf(c);
+  const wikiOf = c => (slimBySlug[c.slug] || {}).w || '';
+  const tickerOf = c => (slimBySlug[c.slug] || {}).t || '';
+  // "Jane Doe and John Roe, co-CEOs" becomes linked names. The dataset holds no
+  // verified profile URLs, so each links to a LinkedIn people search scoped by
+  // company rather than to a guessed profile.
+  const people = (str, company) => String(str).split(/;\s*/).map(part => {
+    const m = part.match(/^([^,(]+?)(\s*[,(].*)?$/);
+    if (!m || !/[A-Za-z]{2}/.test(m[1]) || /^(n\/a|none|unknown)/i.test(m[1])) return esc(part);
+    const names = m[1].split(/\s+(?:and|&)\s+/).map(n => n.trim()).filter(Boolean);
+    return names.map(n =>
+      `<a class="li" href="${esc(linkedinSearch(n, company))}" target="_blank" rel="noopener noreferrer">${ICON.linkedin}${esc(n)}</a>`
+    ).join(' and ') + esc(m[2] || '');
+  }).join('; ');
+
   const layerTag = cat => `<span class="layer-tag"><span class="dot" style="background:oklch(var(--layer-l) var(--layer-c) ${HUES[cat] ?? 220})"></span>${esc((cat || '').replace('Governance: ', ''))}</span>`;
 
   // Column registry. `on` columns are the default view; the rest live in the picker.
   const COLS = [
     { k: 'name', l: 'Company', on: 1, cls: 'c-name', v: c => c.name,
-      h: (c, R) => `<span class="nm">${esc(c.name)}</span>${c.spokenTo ? '<span class="gold-dot" title="spoken with directly"></span>' : ''}` },
+      h: c => `<span class="mono-tile row-logo" aria-hidden="true" style="--tile:${layerColor(c.cat)}">${esc((c.mono || c.name.slice(0, 2)).toUpperCase())}${logoDomainOf(c) ? `<img alt="" data-logo-domain="${esc(logoDomainOf(c))}" decoding="async">` : ''}</span><span class="nm">${esc(c.name)}</span>${c.spokenTo ? '<span class="spoken-tag">SPOKEN WITH DIRECTLY</span>' : ''}` },
     { k: 'cat', l: 'Layer', on: 1, cls: 'c-cat', v: c => c.cat, h: c => layerTag(c.cat) },
     { k: 'sub', l: 'Sub-focus', on: 1, cls: 'c-sub', v: c => c.sub, h: c => `<span class="clamp">${esc(c.sub)}</span>` },
     { k: 'hq', l: 'HQ', on: 1, v: c => c.hq, h: c => esc(c.hq) },
@@ -29,14 +47,13 @@
     { k: 'maturity', l: 'Maturity', on: 1, v: c => c.opMaturity, h: c => `<span class="clamp">${esc(c.opMaturity || '')}</span>` },
     { k: 'funding', l: 'Funding', on: 1, num: 1, cls: 'num-cell c-funding', v: c => c.fundingUSD || 0, h: c => c.fundingUSD ? fmtM(c.fundingUSD) : '' },
     { k: 'fleet', l: 'Fleet', on: 1, num: 1, cls: 'num-cell', v: c => c.fleetSize || 0, h: c => c.fleetSize ? c.fleetSize.toLocaleString('en-US') : '' },
-    { k: 'signal', l: 'Signal', on: 1, cls: 'c-signal', v: c => c.signal, h: c => `<span class="clamp">${esc(c.signal || '')}</span>` },
+    { k: 'signal', l: 'Latest', on: 1, cls: 'c-signal', v: c => c.signal, h: c => `<span class="clamp">${esc(c.signal || '')}</span>` },
     { k: 'leadership', l: 'Leadership', v: c => c.leadership, h: c => `<span class="clamp">${esc(c.leadership || '')}</span>` },
     { k: 'model', l: 'Business model', v: c => c.model, h: c => `<span class="clamp">${esc(c.model || '')}</span>` },
     { k: 'financing', l: 'Financing', v: c => c.financing, h: c => `<span class="clamp">${esc(c.financing || '')}</span>` },
     { k: 'investors', l: 'Investors', v: c => c.investors, h: c => `<span class="clamp">${esc(c.investors || '')}</span>` },
     { k: 'deployment', l: 'Deployment', v: c => c.deployment, h: c => `<span class="clamp">${esc(c.deployment || '')}</span>` },
     { k: 'metrics', l: 'Metrics', v: c => c.metrics, h: c => `<span class="clamp">${esc(c.metrics || '')}</span>` },
-    { k: 'confidence', l: 'Confidence', v: c => c.confidence, h: c => esc(c.confidence || '') },
     { k: 'partners', l: 'Partners', num: 1, cls: 'num-cell', v: c => c._pcount, h: c => c._pcount || '' },
     { k: 'valuation', l: 'Valuation', num: 1, cls: 'num-cell', v: c => c.valuationUSD || 0, h: c => c.valuationUSD ? fmtM(c.valuationUSD) : '' },
     { k: 'milesReal', l: 'Real miles', num: 1, cls: 'num-cell', v: c => c.milesReal || 0, h: c => c.milesReal ? c.milesReal.toLocaleString('en-US') : '' },
@@ -131,6 +148,7 @@
   function render() {
     renderHead();
     $('lg-body').innerHTML = visible.map(rowHTML).join('');
+    mountLogos($('lg-body'));
     const empty = $('lg-empty');
     if (!visible.length) {
       const blocking = activeFilters().find(k => {
@@ -154,39 +172,111 @@
   }
 
   // ------------------------------------------------------------ detail
+  // A metrics string is one long sentence per company. Split it so each figure
+  // stands on its own line, and separate the fragments that carry a number from
+  // the ones that only say a number could not be established.
+  function metricBullets(c) {
+    const raw = [c.metrics, c.signal].filter(Boolean).join('; ');
+    let depth = 0, guarded = '';
+    for (const ch of raw) {
+      if ('([{'.includes(ch)) depth++;
+      else if (')]}'.includes(ch)) depth = Math.max(0, depth - 1);
+      guarded += (depth && (ch === ';' || ch === '.')) ? '\u0000' + ch.charCodeAt(0) : ch;
+    }
+    const parts = guarded.split(/;\s+|(?<=\.)\s+(?=[A-Z0-9])/)
+      .map(s => s.replace(/\u0000(\d+)/g, (_, n) => String.fromCharCode(+n)))
+      .map(s => s.trim().replace(/[;.]+$/, '')).filter(s => s.length > 3);
+    const seen = new Set(), facts = [], caveats = [];
+    for (const s of parts) {
+      const key = s.toLowerCase();
+      if (seen.has(key)) continue;
+      seen.add(key);
+      (/\d/.test(s) && !/^(unknown|not )/i.test(s) ? facts : caveats).push(s);
+    }
+    return { facts: facts.slice(0, 8), caveats: caveats.slice(0, 2) };
+  }
+
+  const carriesPassengers = c => !!(slimBySlug[c.slug] || {}).p;
+
+  // Everything that has to come off the network after the row opens: the picture,
+  // and the share price where the company is listed and a quote provider is
+  // configured. Both fail silently, because a detail panel that is missing a
+  // photo is fine and one showing a wrong price is not.
+  function fillDetailExtras(c, dt) {
+    const title = wikiOf(c);
+    if (title) wikiSummary(title).then(w => {
+      const box = dt.querySelector('.d-shot');
+      if (!w || !box || !box.isConnected) return;
+      box.innerHTML = `<a href="${esc(w.page)}" target="_blank" rel="noopener noreferrer">
+        <img src="${esc(w.thumb)}" alt="${esc(c.name)}" loading="lazy" decoding="async">
+        <span class="d-credit">Wikipedia</span></a>`;
+      box.hidden = false;
+    });
+    const slot = dt.querySelector('.d-quote');
+    const ticker = slot && slot.dataset.ticker;
+    if (!ticker) return;
+    slot.innerHTML = `<span class="tick">${esc(ticker)}</span>`;
+    stockQuote(ticker).then(q => {
+      if (!q || !slot.isConnected) return;
+      slot.innerHTML = `<span class="tick">${esc(ticker)}</span>
+        <strong>${q.price.toFixed(2)}</strong>
+        <span class="caption">as of ${q.at.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
+        ${q.at.toLocaleDateString([], { day: 'numeric', month: 'short' })}</span>`;
+    });
+  }
+
   function detailHTML(c) {
     const p = pIndex.bySlug[c.slug];
+    const site = domainOf(c);
+    const { facts, caveats } = metricBullets(c);
     const dl = [
       ['Type', c.type], ['All layers', (c.all || []).join(' · ')], ['HQ', c.hq],
-      ['Markets', c.regions], ['Founded', c.founded], ['Leadership', c.leadership],
+      ['Markets', c.regions], ['Founded', c.founded],
       ['Business model', c.model], ['Financing', c.financing], ['Investors', c.investors],
-      ['Maturity', c.opMaturity], ['Deployment', c.deployment], ['Metrics', c.metrics],
-      ['Signal', c.signal], ['Confidence', c.confidence], ['Status', c.status],
+      ['Maturity', c.opMaturity],
+      // deployment answers "where can I ride one", so it stays on the companies
+      // that carry passengers and comes off everyone else
+      ...(carriesPassengers(c) ? [['Deployment', c.deployment]] : []),
+      ['Status', c.status],
       ['Funding', c.fundingUSD ? fmtM(c.fundingUSD) : ''], ['Valuation', c.valuationUSD ? fmtM(c.valuationUSD) : ''],
       ['Fleet', c.fleetSize], ['Acquired by', c.acquiredBy], ['Segment', c.segment],
       ['Last verified', c.lastVerified],
     ].filter(([, v]) => v || v === 0);
     return `<div class="detail-inner">
-      <div>
-        <h3>${esc(c.name)}</h3>
-        <p class="caption">${layerTag(c.cat)} · ${esc(c.region)}${c.spokenTo ? ' · <span class="gold-dot"></span> spoken with directly' : ''}</p>
-        <p class="about">${esc(c.about || c.sub || '')}</p>
-        <dl>${dl.map(([k, v]) => `<dt>${esc(k)}</dt><dd>${esc(String(v))}</dd>`).join('')}</dl>
-        ${(c.sources || []).length ? `<div class="d-src"><h4>Sources</h4>${c.sources.map(s =>
-          `<div><a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${esc(s.title)}</a> <span class="caption">(${esc(s.date)})</span></div>`).join('')}</div>` : ''}
+      <div class="d-head">
+        <span class="mono-tile d-logo" aria-hidden="true" style="--tile:${layerColor(c.cat)}">${esc(c.mono || c.name.slice(0, 2).toUpperCase())}${site ? `<img alt="" data-logo-domain="${esc(site)}" decoding="async">` : ''}</span>
+        <div>
+          <h3>${esc(c.name)}</h3>
+          <p class="caption">${layerTag(c.cat)} · ${esc(c.region)}</p>
+        </div>
+        ${c.spokenTo ? '<p class="spoken-bar">SPOKEN WITH DIRECTLY</p>' : ''}
       </div>
-      <div>
-        <div class="d-partners"><h4>Mapped partnerships${p ? ` · ${p.count}` : ''}</h4>
-          ${p ? '<ul>' + p.partners.map(pp =>
-            `<li><span class="pk">${esc(pp.k.toUpperCase())}</span>${pp.slug
-              ? `<a href="../companies/?open=${encodeURIComponent(pp.slug)}">${esc(pp.partner)}</a>`
-              : esc(pp.partner)}${pp.n ? `<div class="caption">${esc(pp.n)}</div>` : ''}</li>`).join('') + '</ul>'
-            : '<p class="caption">None mapped yet. If you know one, the button below reaches a human.</p>'}
-        </div>
-        <div class="d-actions">
-          <a class="btn" href="../map/#${esc(c.slug)}">SHOW ON THE WALL CHART</a>
-          <a class="btn" href="mailto:agyarek+avecosystemmap@gmail.com?subject=${encodeURIComponent('AV map: ' + c.name)}">HELP IMPROVE THIS CARD</a>
-        </div>
+      ${site ? `<p class="d-site"><a href="https://${esc(site)}" target="_blank" rel="noopener noreferrer">${ICON.globe}${esc(site)}</a>
+        <span class="d-quote" data-ticker="${esc(tickerOf(c))}"></span></p>` : ''}
+      <div class="d-shot" hidden></div>
+      <p class="about">${esc(c.about || c.sub || '')}</p>
+      ${c.leadership && c.leadership !== 'N/A (defunct)'
+        ? `<div class="d-block"><h4>Leadership</h4><p class="d-people">${people(c.leadership, c.name)}</p></div>` : ''}
+      ${facts.length || caveats.length ? `<div class="d-block"><h4>Key metrics</h4>
+        ${facts.length ? `<ul class="d-metrics">${facts.map(s => `<li>${esc(s)}</li>`).join('')}</ul>` : ''}
+        ${caveats.map(s => `<p class="caption">${esc(s)}</p>`).join('')}</div>` : ''}
+      <div class="d-block"><h4>Record</h4>
+        <dl>${dl.map(([k, v]) => `<dt>${esc(k)}</dt><dd>${esc(String(v))}</dd>`).join('')}</dl></div>
+      <div class="d-block d-src"><h4>In the news</h4>
+        ${(c.sources || []).length ? c.sources.map(s =>
+          `<div>${ICON.news} <a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${esc(s.title)}</a> <span class="caption">${esc(s.date)}</span></div>`).join('')
+          : `<p class="caption">No article filed against this record yet. <a href="https://news.google.com/search?q=${encodeURIComponent('"' + c.name + '" autonomous')}" target="_blank" rel="noopener noreferrer">Search the news</a>, and the footer takes corrections.</p>`}
+      </div>
+      <div class="d-block d-partners"><h4>Mapped partnerships${p ? ` · ${p.count}` : ''}</h4>
+        ${p ? '<ul>' + p.partners.map(pp =>
+          `<li><span class="pk">${esc(pp.k.toUpperCase())}</span>${pp.slug
+            ? `<a href="../companies/?open=${encodeURIComponent(pp.slug)}">${esc(pp.partner)}</a>`
+            : esc(pp.partner)}${pp.n ? `<div class="caption">${esc(pp.n)}</div>` : ''}</li>`).join('') + '</ul>'
+          : '<p class="caption">None mapped yet. If you know one, the button below reaches a human.</p>'}
+      </div>
+      <div class="d-actions">
+        <a class="btn" href="../map/#${esc(c.slug)}">SHOW ON THE WALL CHART</a>
+        <a class="btn" href="mailto:agyarek+avecosystemmap@gmail.com?subject=${encodeURIComponent('AV map: ' + c.name)}">HELP IMPROVE THIS CARD</a>
       </div>
     </div>`;
   }
@@ -206,7 +296,10 @@
     dt.className = 'detail';
     dt.innerHTML = `<td colspan="${shownCols().length}">${detailHTML(c)}</td>`;
     tr.after(dt);
-    if (scroll) tr.scrollIntoView({ block: 'center', behavior: 'instant' });
+    mountLogos(dt);
+    fillDetailExtras(c, dt);
+    // scroll-margin-top on tr.row keeps the row clear of the sticky header
+    tr.scrollIntoView({ block: 'start', behavior: 'instant' });
   }
 
   // ------------------------------------------------------------ export
@@ -327,7 +420,7 @@
       const tr = e.target.closest('tr.row');
       if (tr && !e.target.closest('a, button')) {
         if (state.open === tr.dataset.slug) { closeDetail(); syncURL(); }
-        else { openDetail(tr, tr.dataset.slug, false); syncURL(); }
+        else { openDetail(tr, tr.dataset.slug, true); syncURL(); }
       }
     });
     document.querySelector('main').addEventListener('keydown', e => {
@@ -335,7 +428,7 @@
       if (tr && (e.key === 'Enter' || e.key === ' ')) {
         e.preventDefault();
         if (state.open === tr.dataset.slug) { closeDetail(); syncURL(); }
-        else { openDetail(tr, tr.dataset.slug, false); syncURL(); }
+        else { openDetail(tr, tr.dataset.slug, true); syncURL(); }
       }
     });
 
@@ -398,7 +491,7 @@
       json('data/av-companies.json'), json('data/partner-index.json'), json('data/search-index.json')
     ]);
     pIndex = pidx;
-    const slimBySlug = Object.fromEntries(slim.map(s => [s.s, s]));
+    slimBySlug = Object.fromEntries(slim.map(s => [s.s, s]));
     rows = companies.map(c => ({
       ...c,
       _text: [c.name, c.sub, c.about, c.deployment, c.investors].join(' ').toLowerCase(),

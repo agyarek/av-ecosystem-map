@@ -11,7 +11,7 @@ Compiled and maintained by Kofi Agyare-Kwabi, ex-Uber Country Manager, GTM & Par
 | Route | What it is |
 |---|---|
 | `/` | The loop: how a driverless ride works, and the waterline beneath it |
-| `/map/` | The wall chart: all 561 on one poster, a hexagonal rosette; zoom, filter, full screen, export, print |
+| `/map/` | The wall chart: all 561 on one plate with an octagonal centre; zoom, filter, full screen, export, print |
 | `/companies/` | The ledger: every field, sortable, filterable, URL-shareable, CSV/JSON export |
 | `/operators/` + 10 pages | The ten operators a passenger can actually meet, in depth |
 | `/partnerships/` | 148 mapped relationships organised by function; the demand-layer story |
@@ -32,14 +32,15 @@ everything derivable into `data/` at build time; the browser renders and never r
 ├── data/         source of truth + generated indexes (never edit generated files by hand)
 └── tools/
     ├── validate-data.py        invariants; run before every commit, fail on error
-    ├── build-poster-layout.py  freezes wall-chart geometry: a hexagon of ten
-    │                           operators with the ten remaining layers docked
-    │                           flush on its six borders (561/561 placed, verified)
+    ├── build-poster-layout.py  freezes wall-chart geometry: an octagon of ten
+    │                           operators, the ten remaining layers tiling the
+    │                           frame around it (561/561 placed, verified)
     ├── build-indexes.py        partner index, derived counts, search index
     ├── fetch-logos.py          OPTIONAL logo upgrade: fetches, trims and commits
-    │                           real marks. Logos already load at runtime from a
-    │                           favicon service, so this is for print/export
-    │                           quality and offline resilience, not a prerequisite
+    │                           real marks. Logos already load at runtime, measured
+    │                           before display so a low-resolution icon is passed
+    │                           over; this is for print/export quality and offline
+    │                           resilience, not a prerequisite
     ├── build-social-cards.py   1200×630 OG cards rendered from the poster
     ├── render-poster.py        proofing render → poster-reference.svg
     └── make-csv.py             flat CSV export
@@ -57,6 +58,15 @@ python3 tools/render-poster.py        # optional: refresh the reference SVG
 ```
 
 Push to `main`; GitHub Pages serves the branch root directly.
+
+## Two optional keys
+
+Both are off by default and the site works without either.
+
+| Where | What it buys |
+|---|---|
+| `LOGO_DEV_TOKEN` in `assets/js/core.js` | a real logo CDN in front of the keyless chain |
+| `STOCK_ENDPOINT` in `assets/js/core.js` | live share prices on listed companies; needs a provider that sends CORS headers |
 
 ## Corrections
 

@@ -121,12 +121,26 @@ def maturity_bucket(c):
     return "Other"
 
 domains = enrichment.get("domains", {})
+logo_domains = enrichment.get("logoDomains", {})
+wiki = enrichment.get("wiki", {})
+tickers = enrichment.get("tickers", {})
+passenger = set(enrichment.get("passengerOperators", []))
 search = [{"n": c["name"], "s": c["slug"], "c": c["cat"],
            "b": (c.get("sub") or "")[:80],
            "r": c.get("region", ""), "m": maturity_bucket(c),
            # domain travels with the index so the browser can load a real logo
-           # without a build step; see assets/js/poster.js
+           # and link to the company site without a build step; see poster.js.
+           # "l" overrides it for logos only, where a sub-brand's own site has no
+           # usable mark but its parent's does.
            **({"d": domains[c["name"]]} if c["name"] in domains else {}),
+           **({"l": logo_domains[c["name"]]} if c["name"] in logo_domains else {}),
+           # "w" is a Wikipedia article title, used at runtime for a freely
+           # licensed picture; "t" an exchange-qualified ticker
+           **({"w": wiki[c["name"]]} if c["name"] in wiki else {}),
+           **({"t": tickers[c["name"]]} if c["name"] in tickers else {}),
+           # "p" marks the organisations that carry passengers, which is who
+           # a deployment footprint is a real question for
+           **({"p": 1} if c["name"] in passenger else {}),
            **({"x": 1} if c["status"] != "active" else {}),
            **({"g": 1} if c.get("spokenTo") else {})}
           for c in companies]

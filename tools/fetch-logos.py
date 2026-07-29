@@ -29,7 +29,8 @@ MANIFEST = os.path.join(ROOT, "data", "logo-manifest.json")
 UA = {"User-Agent": "Mozilla/5.0 (compatible; av-ecosystem-map logo pipeline; "
       "+https://github.com/agyarek/av-ecosystem-map)"}
 TIMEOUT = 12
-ATLAS_CELL = 96          # px per mark in the atlas; chips render at 72
+ATLAS_CELL = 192         # px per mark in the atlas; chips render at 84, so this
+                         # stays crisp on a 2x display and in the 4x PNG export
 LOGO_API = os.environ.get("LOGO_API_TEMPLATE", "")  # e.g. https://img.logo.dev/{domain}?token=...
 
 def load(name):

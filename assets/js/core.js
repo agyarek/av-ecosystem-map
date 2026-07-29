@@ -33,7 +33,133 @@
     `oklch(var(--layer-l) var(--layer-c) ${HUES[cat] ?? 220})`;
   const reducedMotion = () => matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  window.AV = { ROOT, esc, fmtM, json, HUES, layerColor, reducedMotion };
+  // ------------------------------------------------------------- logos
+  // Remote logo sources, tried in order. These are what make marks appear with no
+  // build step; the committed assets from tools/fetch-logos.py are an optional
+  // quality upgrade rather than a prerequisite.
+  //
+  // Order is by resolution first and connection cost second. The aggregators live
+  // on one host each, so hundreds of companies share a handful of connections; a
+  // company's own touch icon is usually the sharpest mark available but costs a
+  // fresh DNS lookup and handshake per company, so it is only reached when the
+  // shared hosts return something too small to use. Clearbit's free logo API, the
+  // usual answer here, shut down in December 2025. Set LOGO_DEV_TOKEN to a
+  // logo.dev publishable token to put a real logo CDN in front; the keyless
+  // sources still apply without one.
+  const LOGO_DEV_TOKEN = '';
+  const LOGO_SOURCES = [
+    d => LOGO_DEV_TOKEN && `https://img.logo.dev/${encodeURIComponent(d)}?token=${LOGO_DEV_TOKEN}&size=256&format=png&retina=true`,
+    d => `https://unavatar.io/${encodeURIComponent(d)}?fallback=false`,
+    d => `https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=${encodeURIComponent('https://' + d)}&size=256`,
+    d => `https://${d}/apple-touch-icon.png`,
+    d => `https://${d}/apple-touch-icon-precomposed.png`,
+    d => `https://www.google.com/s2/favicons?domain=${encodeURIComponent(d)}&sz=128`,
+    d => `https://icons.duckduckgo.com/ip3/${encodeURIComponent(d)}.ico`,
+  ];
+  const LOGO_MIN = 64;   // below this a mark is only used if nothing better exists
+
+  // Probe each candidate with a plain Image so its real pixel size is known before
+  // anything is shown. The first mark at LOGO_MIN or better wins; if none clears
+  // the bar the largest one seen is used anyway, so a company with only a small
+  // icon still gets its logo rather than dropping to a monogram. `apply` receives
+  // the winning URL, or null when every source failed.
+  function probeLogo(domain, apply) {
+    let best = null, bestPx = 0;
+    (function step(i) {
+      if (i >= LOGO_SOURCES.length) return apply(best);
+      const url = LOGO_SOURCES[i](domain);
+      if (!url) return step(i + 1);
+      const test = new Image();
+      test.decoding = 'async';
+      test.onload = () => {
+        const px = Math.max(test.naturalWidth || 0, test.naturalHeight || 0);
+        if (px >= LOGO_MIN) return apply(url);
+        if (px > bestPx) { best = url; bestPx = px; }
+        step(i + 1);
+      };
+      test.onerror = () => step(i + 1);
+      test.src = url;
+    })(0);
+  }
+
+  // Fill every <img data-logo-domain="..."> under `root` with the best mark
+  // available, or remove it so whatever sits behind it (a monogram) shows through.
+  const mountLogos = root => {
+    (root || document).querySelectorAll('img[data-logo-domain]').forEach(el => {
+      const domain = el.dataset.logoDomain;
+      delete el.dataset.logoDomain;
+      probeLogo(domain, url => {
+        if (!url) return el.remove();
+        el.src = url; el.style.opacity = '1';
+      });
+    });
+  };
+
+  // ------------------------------------------------------------- icons
+  const ICON = {
+    globe: '<svg viewBox="0 0 16 16" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><circle cx="8" cy="8" r="6.2"/><path d="M1.8 8h12.4M8 1.8c1.7 1.7 2.6 3.9 2.6 6.2S9.7 12.5 8 14.2C6.3 12.5 5.4 10.3 5.4 8S6.3 3.5 8 1.8z"/></svg>',
+    linkedin: '<svg viewBox="0 0 16 16" width="13" height="13" fill="currentColor" aria-hidden="true"><path d="M3.2 5.8h2.2V13H3.2V5.8zM4.3 2.3a1.3 1.3 0 110 2.6 1.3 1.3 0 010-2.6zM7.1 5.8h2.1v1h.03c.3-.55 1-1.13 2.08-1.13 2.22 0 2.63 1.4 2.63 3.23V13h-2.2V9.35c0-.87-.02-2-1.24-2-1.24 0-1.43.94-1.43 1.93V13H7.1V5.8z"/></svg>',
+    news: '<svg viewBox="0 0 16 16" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><rect x="1.8" y="3" width="12.4" height="10" rx="1.4"/><path d="M4.2 5.8h5M4.2 8.2h5M4.2 10.6h3.4"/></svg>',
+  };
+  // A person's name, linked to a LinkedIn people search scoped by their company.
+  // This is a lookup, not a claimed profile URL: the dataset does not hold
+  // verified profile links, and inventing them would be worse than searching.
+  const linkedinSearch = (person, company) =>
+    'https://www.linkedin.com/search/results/people/?keywords=' +
+    encodeURIComponent([person, company].filter(Boolean).join(' '));
+
+  // -------------------------------------------------------- wikipedia
+  // A freely licensed picture and a one-line description, fetched when a card
+  // opens. The REST summary endpoint is CORS-open, needs no key, and follows
+  // redirects, so a near-miss title still resolves. A wrong or missing title
+  // returns 404 and the caller shows nothing, which is the whole failure mode.
+  const wikiCache = new Map();
+  function wikiSummary(title) {
+    if (!title) return Promise.resolve(null);
+    if (!wikiCache.has(title)) {
+      const url = 'https://en.wikipedia.org/api/rest_v1/page/summary/' +
+        encodeURIComponent(String(title).replace(/ /g, '_'));
+      wikiCache.set(title, fetch(url).then(r => r.ok ? r.json() : null).then(j => {
+        if (!j || j.type === 'disambiguation') return null;
+        const img = (j.originalimage && j.originalimage.source) || (j.thumbnail && j.thumbnail.source);
+        if (!img) return null;
+        return {
+          img, thumb: (j.thumbnail && j.thumbnail.source) || img,
+          page: (j.content_urls && j.content_urls.desktop && j.content_urls.desktop.page) ||
+                ('https://en.wikipedia.org/wiki/' + encodeURIComponent(String(title).replace(/ /g, '_'))),
+          extract: j.extract || '', title: j.title || title,
+        };
+      }).catch(() => null));
+    }
+    return wikiCache.get(title);
+  }
+
+  // ----------------------------------------------------------- quotes
+  // A static site cannot fetch a share price without a provider: none of the free
+  // quote endpoints send CORS headers, so the browser is refused before the data
+  // arrives. Point STOCK_ENDPOINT at a provider that does (Finnhub's free tier
+  // works from the browser) using {symbol} as the placeholder, and adjust
+  // READ_QUOTE if its response is not shaped like {c: price}. Left empty the card
+  // omits the price rather than showing a broken or stale one.
+  const STOCK_ENDPOINT = '';
+  const READ_QUOTE = j => (j && (j.c != null ? j.c : (j.price != null ? j.price : null)));
+  const quoteCache = new Map();
+  const stockEnabled = () => !!STOCK_ENDPOINT;
+  function stockQuote(ticker) {
+    if (!STOCK_ENDPOINT || !ticker) return Promise.resolve(null);
+    const symbol = String(ticker).split(':').pop();
+    if (!quoteCache.has(symbol)) {
+      quoteCache.set(symbol, fetch(STOCK_ENDPOINT.replace('{symbol}', encodeURIComponent(symbol)))
+        .then(r => r.ok ? r.json() : null)
+        .then(j => { const p = READ_QUOTE(j); return p == null ? null : { price: p, at: new Date() }; })
+        .catch(() => null));
+    }
+    return quoteCache.get(symbol);
+  }
+
+  window.AV = { ROOT, esc, fmtM, json, HUES, layerColor, reducedMotion,
+                LOGO_SOURCES, LOGO_MIN, probeLogo, mountLogos, ICON, linkedinSearch,
+                wikiSummary, stockQuote, stockEnabled };
 
   // ------------------------------------------------------------- theme
   const applyTheme = t => {

@@ -36,9 +36,9 @@
 .poster-viewport {
   /* The rosette is nearly square, so the viewport takes its shape rather than
      letterboxing it inside a wide box that would only ever show grey. */
-  aspect-ratio: 8918 / 8178;
+  aspect-ratio: 6574 / 6282;
   max-height: calc(100vh - 130px);
-  max-width: calc((100vh - 130px) * 8918 / 8178);
+  max-width: calc((100vh - 130px) * 6574 / 6282);
   width: 100%; margin: 0 auto;
   overflow: hidden; position: relative;
   /* the same ground the poster paints, so letterboxing round a near-square
@@ -64,23 +64,23 @@
 #poster [data-chip].sel .chip-body { stroke: var(--cyan); stroke-width: 5; }
 #poster [data-chip]:focus { outline: none; }
 
-/* A layer answers as one piece: the panel and every tile in it lift away from
-   the hexagon together, the frame takes the layer's own colour, and the header
-   band fills in. Nothing reflows and nothing else dims. */
-#poster .district {
-  transform-box: view-box; transform-origin: var(--hx) var(--hy);
-  transition: transform 260ms cubic-bezier(.2, .8, .3, 1);
-}
-#poster .district.hot { transform: scale(1.022); }
-#poster .d-glow, #poster .d-tint, #poster .d-wash { transition: opacity 220ms ease; }
-#poster .district.hot .d-glow { opacity: .9; }
-#poster .district.hot .d-tint { opacity: .3; }
-#poster .district.hot .d-wash { opacity: .11; }
-#poster .district.hot .hex-edge { stroke-width: 22; }
-#poster .hex-edge { transition: stroke-width 220ms ease; }
-@media (prefers-reduced-motion: reduce) {
-  #poster .district, #poster .district.hot { transition: none; transform: none; }
-}
+/* A layer answers as one piece: its whole room takes the layer's own colour and
+   its border lights up. The rooms share their borders, so nothing here may move
+   or scale — the highlight is colour and weight, and the lit district is raised
+   above its neighbours so its outline is not half-covered by theirs. */
+/* Borders keep a constant weight on screen at every zoom, so a highlighted
+   district reads the same whether the whole plate is in view or one tile is. */
+#poster .plate, #poster .d-edge, #poster .d-glow, #poster .oct-edge { vector-effect: non-scaling-stroke; }
+#poster .plate { stroke-width: 1.5px; }
+#poster .d-edge { stroke-width: 1.2px; }
+#poster .d-glow { stroke-width: 3px; }
+#poster .oct-edge { stroke-width: 3px; }
+#poster .d-glow, #poster .d-tint, #poster .d-wash { transition: opacity 200ms ease; }
+#poster .district.hot .d-glow { opacity: .95; }
+#poster .district.hot .d-tint { opacity: .32; }
+#poster .district.hot .d-wash { opacity: .13; }
+#poster .oct-edge { transition: stroke-width 200ms ease; }
+#poster .district.hot .oct-edge { stroke-width: 26; }
 #poster .links path {
   fill: none; stroke: var(--cyan); opacity: .85;
   vector-effect: non-scaling-stroke; stroke-width: 2.2px;
@@ -108,6 +108,30 @@
 #company-card .cc-layer { font-family: var(--font-mono); font-size: 11px; line-height: 1.5; color: var(--muted); margin-top: 5px; }
 #company-card .cc-layer .dot { display: inline-block; vertical-align: -1px; width: 9px; height: 9px; border-radius: 3px; margin-right: 5px; }
 #company-card .cc-sub { font-size: 13.5px; color: var(--ink-2); margin-top: 10px; line-height: 1.45; }
+#company-card .cc-site { margin-top: 9px; font-size: 12.5px; }
+#company-card .cc-site a, #company-card .cc-lead a.li {
+  display: inline-flex; align-items: center; gap: 5px; color: var(--cyan);
+}
+#company-card .cc-lead { margin-top: 10px; font-size: 12.5px; line-height: 1.6; }
+#company-card .cc-shot { margin-top: 12px; }
+#company-card .cc-shot a { display: block; position: relative; }
+#company-card .cc-shot img {
+  width: 100%; height: 150px; object-fit: cover;
+  border-radius: var(--r-chip); display: block; background: var(--paper);
+}
+.cc-credit, .d-credit {
+  position: absolute; right: 6px; bottom: 6px;
+  font-family: var(--font-mono); font-size: 9px; letter-spacing: .06em;
+  color: #fff; background: rgba(18, 19, 15, .62); padding: 2px 6px; border-radius: 4px;
+}
+/* Spoken with directly is the most expensive fact on this site to acquire, so
+   it is stated, not hinted at with a dot. */
+.spoken-bar {
+  margin-top: 10px; padding: 5px 10px; border-radius: var(--r-pill);
+  background: var(--yellow); color: #12130F;
+  font-family: var(--font-mono); font-size: 10px; font-weight: 600;
+  letter-spacing: .12em; text-align: center;
+}
 #company-card .cc-facts {
   display: grid; grid-template-columns: auto 1fr; gap: 3px 10px;
   margin-top: 12px; padding-top: 10px; border-top: 1px solid var(--rule);
@@ -212,12 +236,6 @@ body.fs-pseudo { overflow: hidden; }
 #navigator .dchip .mono-tile { width: 40px; height: 40px; font-size: 16px; }
 #navigator .dchip .gd { position: absolute; top: 6px; right: 6px; }
 #navigator .dchip.exited { opacity: .55; text-decoration: line-through; }
-.mono-tile {
-  display: grid; place-items: center; width: 48px; height: 48px;
-  border-radius: 10px; color: #fff; font-weight: 800; font-size: 18px;
-  background: var(--tile, var(--ink-2));
-}
-.mono-tile img { width: 100%; height: 100%; object-fit: contain; border-radius: 10px; }
 
 /* --------------------------------------------------------------- legend */
 .map-legend { margin-top: 24px; padding-bottom: 8px; }
@@ -256,9 +274,3 @@ body.fs-pseudo { overflow: hidden; }
 /* Remote logos fade in over their monogram tile, so a slow favicon never
    shows as a blank square. */
 #poster image.logo-img, #poster rect.logo-bg { transition: opacity 220ms ease; }
-.mono-tile { position: relative; overflow: hidden; }
-.mono-tile img {
-  position: absolute; inset: 0; width: 100%; height: 100%;
-  object-fit: contain; background: #fff; border-radius: inherit;
-  opacity: 0; transition: opacity 220ms ease;
-}

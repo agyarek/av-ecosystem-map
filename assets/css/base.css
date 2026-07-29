@@ -320,3 +320,19 @@ table.data tr:hover > td { background: color-mix(in oklab, var(--cyan) 5%, trans
   .doors { gap: 12px; }
   .door { min-height: 0; }
 }
+
+/* ------------------------------------------------------------- logo tile */
+/* A monogram in the layer's colour, with the real mark laid over it once it
+   loads. Used on the chart, in the ledger and on every card, so it lives here
+   rather than in one surface's stylesheet. */
+.mono-tile {
+  display: grid; place-items: center; width: 48px; height: 48px;
+  border-radius: 10px; color: #fff; font-weight: 800; font-size: 18px;
+  background: var(--tile, var(--ink-2));
+  position: relative; overflow: hidden;
+}
+.mono-tile img {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  object-fit: contain; background: #fff; border-radius: inherit;
+  opacity: 0; transition: opacity 220ms ease;
+}

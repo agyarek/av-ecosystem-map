@@ -513,6 +513,7 @@
       if (passes > 0) requestAnimationFrame(() => restore(passes - 1));
     };
     const relayout = () => {
+      placeNav();
       restore(3);
       clearTimeout(settle);
       settle = setTimeout(() => restore(3), 260);
@@ -541,6 +542,21 @@
         });
       }
     };
+    // The buttons belong to the table, so they ride its bottom-right corner
+    // rather than the window's: on a wide screen the table stops short of the
+    // window edge, and where it scrolls in its own pane its bottom edge is not
+    // the bottom of the screen either.
+    const nav = $('lg-scroll-nav');
+    const placeNav = () => {
+      if (!paneScrolls()) { nav.style.right = nav.style.bottom = ''; return; }
+      const r = scroller.getBoundingClientRect();
+      nav.style.right = Math.max(14, innerWidth - r.right + 16) + 'px';
+      nav.style.bottom = Math.max(14, innerHeight - r.bottom + 16) + 'px';
+    };
+    placeNav();
+    addEventListener('scroll', placeNav, { passive: true });
+    addEventListener('resize', placeNav);
+
     $('lg-top').addEventListener('click', () => jump(false));
     $('lg-bottom').addEventListener('click', () => jump(true));
 

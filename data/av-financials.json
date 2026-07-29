@@ -1,0 +1,210 @@
+{
+ "meta": {
+  "compiled": "2026-07-29",
+  "method": "Per-metric provenance for the comparison table. Values not carried here fall back to av-companies.json and are shown as 'carried from the site dataset'. Every URL appeared in an actual search result, primary source preferred. A metric that could not be verified is recorded as a typed null with a reason rather than omitted.",
+  "confidence": {
+   "disclosed": "Stated by the company or in a filing.",
+   "reported": "Carried by a major outlet, not company-confirmed in this pass.",
+   "estimated": "Derived or modelled on this site, not observed.",
+   "not-disclosed": "The company has never published this figure.",
+   "parent-funded": "Wholly owned; the figure does not exist separately.",
+   "unverified": "Circulating figures exist but none could be tied to a source in this pass."
+  },
+  "knownGaps": [
+   "Live market capitalisation is read from the quote endpoint at page load where a ticker exists. When that endpoint is not configured the cell reads 'listed, quote unavailable' rather than showing a stale number.",
+   "Private valuations are point-in-time marks from the last round that disclosed one. They are not comparable to a market capitalisation and are labelled distinctly in the table.",
+   "Fleet, real-mile and virtual-mile figures are carried from av-companies.json, where they were compiled from company statements and permit filings of varying vintage. They are not audited and rarely share an as-of date across companies."
+  ]
+ },
+ "companies": {
+  "waymo": {
+   "valuationUSDm": {
+    "v": 126000,
+    "conf": "disclosed",
+    "asOf": "2026-02-02",
+    "src": {
+     "t": "Waymo announces $16 billion funding round",
+     "u": "https://www.cnbc.com/2026/02/02/waymo-announced-16-billion-fundraising-round.html"
+    }
+   },
+   "marketCapUSDm": {
+    "v": null,
+    "conf": "not-disclosed",
+    "note": "Alphabet subsidiary; no separately traded equity."
+   },
+   "ownership": {
+    "v": "Alphabet subsidiary, majority-held",
+    "conf": "disclosed",
+    "asOf": "2026-02-02",
+    "src": {
+     "t": "Waymo announces $16 billion funding round",
+     "u": "https://www.cnbc.com/2026/02/02/waymo-announced-16-billion-fundraising-round.html"
+    }
+   }
+  },
+  "nuro": {
+   "valuationUSDm": {
+    "v": 6000,
+    "conf": "disclosed",
+    "asOf": "2025-08-21",
+    "src": {
+     "t": "Nuro Announces Series E Financing at $6B Valuation",
+     "u": "https://www.nuro.ai/blog/nuro-announces-series-e-financing-at-6b-valuation-backed-by-leading-financial-and-strategic-investors"
+    }
+   },
+   "ownership": {
+    "v": "Private",
+    "conf": "disclosed"
+   }
+  },
+  "wayve": {
+   "valuationUSDm": {
+    "v": 8600,
+    "conf": "reported",
+    "asOf": "2026-02-24",
+    "src": {
+     "t": "Wayve raises over $1 billion led by SoftBank",
+     "u": "https://wayve.ai/press/series-c/"
+    },
+    "note": "Carried from the site dataset; Wayve has not published a post-Series-D valuation."
+   },
+   "ownership": {
+    "v": "Private",
+    "conf": "disclosed"
+   }
+  },
+  "momenta": {
+   "valuationUSDm": {
+    "v": 9000,
+    "conf": "reported",
+    "asOf": "2026-07-08",
+    "src": {
+     "t": "Chinese autonomous driving firm Momenta rises in Hong Kong debut",
+     "u": "https://www.cnbc.com/2026/07/08/chinese-autonomous-driving-firm-momenta-rises-3percent-in-hong-kong-debut-.html"
+    },
+    "note": "Approximate USD equivalent of the ~HK$69.6B Hong Kong debut valuation."
+   },
+   "ownership": {
+    "v": "Listed, Hong Kong",
+    "conf": "disclosed",
+    "asOf": "2026-07-08",
+    "src": {
+     "t": "Chinese autonomous driving firm Momenta rises in Hong Kong debut",
+     "u": "https://www.cnbc.com/2026/07/08/chinese-autonomous-driving-firm-momenta-rises-3percent-in-hong-kong-debut-.html"
+    }
+   }
+  },
+  "einride": {
+   "valuationUSDm": {
+    "v": 1350,
+    "conf": "reported",
+    "asOf": "2026-02-26",
+    "src": {
+     "t": "Self-driving truck startup Einride raises $113M PIPE ahead of public debut",
+     "u": "https://techcrunch.com/2026/02/26/self-driving-truck-startup-einride-raises-113m-pipe-ahead-of-public-debut/"
+    },
+    "note": "Pre-money valuation attached to the PIPE, down from the $1.8B first attached to the SPAC deal."
+   },
+   "ownership": {
+    "v": "SPAC combination with Legato Merger Corp. III",
+    "conf": "reported",
+    "asOf": "2026-02-26",
+    "src": {
+     "t": "Self-driving truck startup Einride raises $113M PIPE ahead of public debut",
+     "u": "https://techcrunch.com/2026/02/26/self-driving-truck-startup-einride-raises-113m-pipe-ahead-of-public-debut/"
+    }
+   }
+  },
+  "zoox": {
+   "valuationUSDm": {
+    "v": null,
+    "conf": "parent-funded",
+    "note": "Wholly owned by Amazon since 2020. No rounds, no filings, no separate mark."
+   },
+   "ownership": {
+    "v": "Amazon subsidiary, wholly owned",
+    "conf": "disclosed"
+   }
+  },
+  "motional": {
+   "valuationUSDm": {
+    "v": null,
+    "conf": "unverified",
+    "note": "A $6.5B mark on the 2025 Series B is widely reported but no announcement or filing surfaced in this pass."
+   },
+   "ownership": {
+    "v": "Hyundai-controlled joint venture",
+    "conf": "reported"
+   }
+  },
+  "cruise": {
+   "valuationUSDm": {
+    "v": null,
+    "conf": "parent-funded",
+    "note": "GM subsidiary; robotaxi programme wound down in 2024."
+   },
+   "ownership": {
+    "v": "General Motors subsidiary",
+    "conf": "disclosed"
+   }
+  },
+  "applied-intuition": {
+   "valuationUSDm": {
+    "v": 15000,
+    "conf": "reported",
+    "asOf": "2025-06-17",
+    "src": {
+     "t": "Applied Intuition valuation following its Series F and tender offer",
+     "u": "https://sacra.com/c/applied-intuition/"
+    },
+    "note": "Reported alongside the June 2025 Series F and tender; not company-confirmed in this pass."
+   },
+   "ownership": {
+    "v": "Private",
+    "conf": "disclosed"
+   }
+  },
+  "pony-ai": {
+   "ownership": {
+    "v": "Listed, Nasdaq and Hong Kong dual-primary",
+    "conf": "disclosed"
+   }
+  },
+  "weride": {
+   "ownership": {
+    "v": "Listed, Nasdaq and Hong Kong dual-primary",
+    "conf": "disclosed"
+   }
+  },
+  "aurora-innovation": {
+   "ownership": {
+    "v": "Listed, Nasdaq",
+    "conf": "disclosed"
+   }
+  },
+  "hesai": {
+   "ownership": {
+    "v": "Listed, Nasdaq and Hong Kong dual-primary",
+    "conf": "disclosed"
+   }
+  },
+  "horizon-robotics": {
+   "ownership": {
+    "v": "Listed, Hong Kong",
+    "conf": "disclosed"
+   }
+  },
+  "kodiak-ai": {
+   "ownership": {
+    "v": "Listed via SPAC, Nasdaq",
+    "conf": "disclosed"
+   }
+  },
+  "luminar": {
+   "ownership": {
+    "v": "Listed, Nasdaq; bankruptcy proceedings",
+    "conf": "reported"
+   }
+  }
+ }
+}

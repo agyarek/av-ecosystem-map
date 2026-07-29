@@ -1,0 +1,170 @@
+{
+ "meta": {
+  "compiled": "2026-07-29",
+  "warning": "Read this section as a modelling tool, not as reported results. No operator publishes fully-loaded cost per mile, and none of the figures below are disclosed. Every value is an estimate assembled on this site from vehicle platforms, published hardware-cost claims and local wage and energy levels, then run through the same arithmetic as the calculator on the economics page. They are starting points to argue with. Change them.",
+  "baseline": "Where a company-specific basis was not available the value falls back to the published default on /economics/, so an unedited column is the site's generic operator, not a company-specific claim.",
+  "conf": "estimated"
+ },
+ "companies": {
+  "waymo": {
+   "name": "Waymo",
+   "note": "Jaguar I-Pace platform with a fifth-generation kit, the most expensive combination on the map. Highest utilisation and the deepest remote-assistance automation, so the operator ratio is the most favourable assumption here.",
+   "inputs": {
+    "vcap": 70000,
+    "kcap": 60000,
+    "life": 300000,
+    "days": 350,
+    "paid": 140,
+    "dead": 28,
+    "kwh": 0.3,
+    "elec": 0.25,
+    "ratio": 20,
+    "ophr": 28,
+    "hours": 20,
+    "maint": 0.06,
+    "ins": 0.1,
+    "fare": 2.1
+   }
+  },
+  "zoox": {
+   "name": "Zoox",
+   "note": "Purpose-built bidirectional vehicle with no steering wheel, manufactured in-house. Capex is a single figure rather than vehicle-plus-kit, and low fleet count means fixed costs spread badly.",
+   "inputs": {
+    "vcap": 110000,
+    "kcap": 0,
+    "life": 300000,
+    "days": 350,
+    "paid": 70,
+    "dead": 30,
+    "kwh": 0.3,
+    "elec": 0.25,
+    "ratio": 8,
+    "ophr": 28,
+    "hours": 16,
+    "maint": 0.06,
+    "ins": 0.1,
+    "fare": 2.0
+   }
+  },
+  "baidu-apollo-go": {
+   "name": "Baidu Apollo Go",
+   "note": "RT6 built to a stated sub-$30,000 target, the lowest hardware bill in the industry, against Chinese fare levels that are a fraction of US ride-hail.",
+   "inputs": {
+    "vcap": 28000,
+    "kcap": 0,
+    "life": 300000,
+    "days": 350,
+    "paid": 110,
+    "dead": 30,
+    "kwh": 0.3,
+    "elec": 0.09,
+    "ratio": 12,
+    "ophr": 6,
+    "hours": 20,
+    "maint": 0.06,
+    "ins": 0.1,
+    "fare": 0.65
+   }
+  },
+  "pony-ai": {
+   "name": "Pony.ai",
+   "note": "Seventh-generation kit at a stated ~70% cost reduction, on Chinese OEM platforms and Chinese operating costs.",
+   "inputs": {
+    "vcap": 32000,
+    "kcap": 18000,
+    "life": 300000,
+    "days": 350,
+    "paid": 100,
+    "dead": 30,
+    "kwh": 0.3,
+    "elec": 0.09,
+    "ratio": 12,
+    "ophr": 6,
+    "hours": 20,
+    "maint": 0.06,
+    "ins": 0.1,
+    "fare": 0.75
+   }
+  },
+  "weride": {
+   "name": "WeRide",
+   "note": "GXR platform across a wider geographic spread than any peer, which raises depot and support cost per vehicle relative to a single dense market.",
+   "inputs": {
+    "vcap": 35000,
+    "kcap": 20000,
+    "life": 300000,
+    "days": 350,
+    "paid": 90,
+    "dead": 30,
+    "kwh": 0.3,
+    "elec": 0.12,
+    "ratio": 10,
+    "ophr": 8,
+    "hours": 20,
+    "maint": 0.06,
+    "ins": 0.1,
+    "fare": 0.9
+   }
+  },
+  "tesla": {
+   "name": "Tesla",
+   "note": "Camera-only stack on a mass-produced consumer vehicle: by far the lowest capex assumption on the map, and the one most dependent on an unproven claim about supervision ratios.",
+   "inputs": {
+    "vcap": 42000,
+    "kcap": 2000,
+    "life": 300000,
+    "days": 350,
+    "paid": 130,
+    "dead": 30,
+    "kwh": 0.3,
+    "elec": 0.25,
+    "ratio": 10,
+    "ophr": 28,
+    "hours": 20,
+    "maint": 0.06,
+    "ins": 0.1,
+    "fare": 2.0
+   }
+  },
+  "may-mobility": {
+   "name": "May Mobility",
+   "note": "Fixed-route and microtransit rather than open ride-hail, on Sienna platforms. Shorter service hours and municipal contracts rather than metered fares.",
+   "inputs": {
+    "vcap": 48000,
+    "kcap": 35000,
+    "life": 300000,
+    "days": 350,
+    "paid": 60,
+    "dead": 30,
+    "kwh": 0.3,
+    "elec": 0.25,
+    "ratio": 6,
+    "ophr": 28,
+    "hours": 12,
+    "maint": 0.06,
+    "ins": 0.1,
+    "fare": 1.6
+   }
+  },
+  "motional": {
+   "name": "Motional",
+   "note": "IONIQ 5 platform built on a Hyundai line, relaunched at small scale in Las Vegas through Uber.",
+   "inputs": {
+    "vcap": 52000,
+    "kcap": 45000,
+    "life": 300000,
+    "days": 350,
+    "paid": 80,
+    "dead": 30,
+    "kwh": 0.3,
+    "elec": 0.25,
+    "ratio": 8,
+    "ophr": 28,
+    "hours": 20,
+    "maint": 0.06,
+    "ins": 0.1,
+    "fare": 2.0
+   }
+  }
+ }
+}

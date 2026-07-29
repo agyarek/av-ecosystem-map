@@ -13,6 +13,12 @@
     'Capital, Insurance & Risk': 'capital', 'Governance: Regulators & Government': 'regulators',
     'Governance: Standards, Safety & Advocacy': 'standards'
   };
+  // stored in millions of miles; a bare toLocaleString would read as units
+  const fmtMiles = v => !v ? '' :
+    v >= 1000 ? (v / 1000).toFixed(1).replace(/\.0$/, '') + 'bn'
+      : v >= 1 ? v.toFixed(1).replace(/\.0$/, '') + 'm'
+        : (v * 1000).toFixed(0) + 'k';
+
   const RKEY = r => (r || '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
   const MATS = ['Scaled', 'Commercial', 'Pilot', 'R&D', 'Governance', 'Historical', 'Other'];
 
@@ -58,8 +64,11 @@
     { k: 'metrics', l: 'Metrics', v: c => c.metrics, h: c => `<span class="clamp">${esc(c.metrics || '')}</span>` },
     { k: 'partners', l: 'Partners', num: 1, cls: 'num-cell', v: c => c._pcount, h: c => c._pcount || '' },
     { k: 'valuation', l: 'Valuation', num: 1, cls: 'num-cell', v: c => c.valuationUSD || 0, h: c => c.valuationUSD ? fmtM(c.valuationUSD) : '' },
-    { k: 'milesReal', l: 'Real miles', num: 1, cls: 'num-cell', v: c => c.milesReal || 0, h: c => c.milesReal ? c.milesReal.toLocaleString('en-US') : '' },
-    { k: 'milesVirtual', l: 'Virtual miles', num: 1, cls: 'num-cell', v: c => c.milesVirtual || 0, h: c => c.milesVirtual ? c.milesVirtual.toLocaleString('en-US') : '' },
+    // milesReal and milesVirtual are stored in MILLIONS of miles: Waymo's 220.6
+    // is 220.6 million, not two hundred and twenty. Rendering the raw number
+    // understated every operator on the map by six orders of magnitude.
+    { k: 'milesReal', l: 'Real miles', num: 1, cls: 'num-cell', v: c => c.milesReal || 0, h: c => fmtMiles(c.milesReal) },
+    { k: 'milesVirtual', l: 'Virtual miles', num: 1, cls: 'num-cell', v: c => c.milesVirtual || 0, h: c => fmtMiles(c.milesVirtual) },
     { k: 'acquiredBy', l: 'Acquirer', v: c => c.acquiredBy, h: c => esc(c.acquiredBy || '') },
     { k: 'segment', l: 'Segment', v: c => c.segment, h: c => esc(c.segment || '') },
     { k: 'status', l: 'Status', v: c => c.status, h: c => esc(c.status || '') },

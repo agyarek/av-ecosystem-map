@@ -157,9 +157,81 @@
     return quoteCache.get(symbol);
   }
 
+  // ------------------------------------------------- unit economics model
+  // One implementation of the robotaxi arithmetic, shared by the calculator on
+  // /economics/ and the side-by-side comparison on /funding/. Keeping it here is
+  // the point: two pages publishing different numbers from the same inputs would
+  // discredit both. Pure function, no DOM, no rounding — callers format.
+  const ECON_INPUTS = [
+    ['vcap', 'Vehicle capex, $', 45000],
+    ['kcap', 'Autonomy kit capex, $', 40000],
+    ['life', 'Vehicle life, miles', 300000],
+    ['days', 'Operating days per year', 350],
+    ['paid', 'Paid miles per day', 120],
+    ['dead', 'Deadhead share, %', 30],
+    ['kwh', 'Energy, kWh per mile', 0.30],
+    ['elec', 'Electricity, $ per kWh', 0.25],
+    ['ratio', 'Vehicles per remote operator', 15],
+    ['ophr', 'Remote operator cost, $ per hour', 28],
+    ['hours', 'Service hours per day', 20],
+    ['maint', 'Maintenance, $ per mile', 0.06],
+    ['ins', 'Insurance, $ per mile', 0.10],
+    ['fare', 'Fare, $ per paid mile', 2.00],
+  ];
+
+  function avEconomics(i) {
+    const n = k => { const v = parseFloat(i[k]); return isFinite(v) ? v : 0; };
+    const paid = Math.max(1, n('paid'));
+    const deadShare = Math.min(0.9, n('dead') / 100);
+    const total = paid / (1 - deadShare);
+    const capex = n('vcap') + n('kcap');
+
+    const perMile = {
+      'Depreciation': capex / Math.max(1, n('life')),
+      'Energy': n('kwh') * n('elec'),
+      'Maintenance': n('maint'),
+      'Insurance': n('ins'),
+    };
+    const remoteDay = n('ophr') * n('hours') / Math.max(1, n('ratio'));
+    const varPerTotalMile = Object.values(perMile).reduce((a, b) => a + b, 0);
+
+    const costDay = varPerTotalMile * total + remoteDay;
+    const revDay = paid * n('fare');
+    const profitDay = revDay - costDay;
+
+    // payback uses cash contribution: profit before the depreciation charge
+    const cashDay = profitDay + perMile['Depreciation'] * total;
+    // breakeven paid miles: fare*P = varPerTotalMile*P/(1-d) + remoteDay
+    const margin = n('fare') - varPerTotalMile / (1 - deadShare);
+
+    return {
+      capex, totalMiles: total, costDay, revDay, profitDay,
+      cpm: costDay / paid,
+      revPerMile: n('fare'),
+      profitYear: profitDay * n('days'),
+      paybackMonths: cashDay > 0 ? capex / cashDay / 30.4 : null,
+      breakeven: margin > 0 ? remoteDay / margin : null,
+      split: Object.entries(perMile).map(([k, v]) => [k, v * total])
+        .concat([['Remote operations', remoteDay]])
+        .sort((a, b) => b[1] - a[1]),
+    };
+  }
+
+  // ------------------------------------------------------------- charts
+  // Categorical series colours, validated for the two page surfaces rather than
+  // derived from the eleven-layer wheel: that wheel runs at chroma 0.075, which
+  // is right for tags on paper and far too low for adjacent chart fills to stay
+  // separable under deuteranopia. Fixed order, never cycled.
+  const CHART_LIGHT = ['#426bce', '#db6c00', '#0077a9', '#a78a00', '#ea5da9', '#207029'];
+  const CHART_DARK = ['#5680e6', '#da720d', '#0089b8', '#ad9000', '#db509c', '#1f812d'];
+  const chartColors = () =>
+    document.documentElement.dataset.theme === 'dark' ? CHART_DARK : CHART_LIGHT;
+  const OTHER_SERIES = 'Other';
+
   window.AV = { ROOT, esc, fmtM, json, HUES, layerColor, reducedMotion,
                 LOGO_SOURCES, LOGO_MIN, probeLogo, mountLogos, ICON, linkedinSearch,
-                wikiSummary, stockQuote, stockEnabled };
+                wikiSummary, stockQuote, stockEnabled,
+                ECON_INPUTS, avEconomics, chartColors, OTHER_SERIES };
 
   // ------------------------------------------------------------- theme
   const applyTheme = t => {

@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>The Money · Funding · AV Ecosystem Map</title>
-<meta name="description" content="$41.8B of disclosed autonomous vehicle funding events of $200M or more, August 2023 to July 2026: the timeline, who raised most, who invests repeatedly, and the gaps in this dataset.">
+<meta name="description" content="Quarter-by-quarter autonomous vehicle funding since 2021, a side-by-side comparison of up to four companies, and their unit economics modelled against each other. $41.8B of disclosed events of $200M or more, with the gaps in the dataset published alongside.">
 <meta property="og:title" content="The Money · AV Ecosystem Map">
-<meta property="og:description" content="$41.8B of disclosed autonomous vehicle funding events of $200M or more, August 2023 to July 2026: the timeline, who raised most, who invests repeatedly, and the gaps in this dataset.">
+<meta property="og:description" content="Quarter-by-quarter autonomous vehicle funding since 2021, a side-by-side comparison of up to four companies, and their unit economics modelled against each other. $41.8B of disclosed events of $200M or more, with the gaps in the dataset published alongside.">
 <meta property="og:type" content="article">
 <meta property="og:image" content="https://agyarek.github.io/av-ecosystem-map/assets/cards/funding.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -52,11 +52,96 @@
   <h1 class="page-title">$41.8B, and most of it<br>went to one company</h1>
   <p class="standfirst">Thirty disclosed events of $200M or more between August 2023 and July 2026.
     Concentration is the story: Waymo alone accounts for $26.6B of the total across three events, and
-    2026's first seven months were the heaviest window in the dataset.</p>
+    2026's first seven months were the heaviest window in the dataset. Below, the same money as a
+    quarterly series you can cut by company, then two comparison tables built to be argued with and
+    exported.</p>
 </div>
 
+<section aria-labelledby="exp-sec">
+  <h2 class="sec" id="exp-sec"><span class="n">01</span>When the money arrived</h2>
+  <div class="prose">
+    <p>A timeline tells you what happened. This tells you <em>when capital comes</em>: which quarters
+      run heavy, which run dry, whether a company raises on a cadence or in one lump, and how the split
+      between passenger autonomy, freight and the supplier layer has moved. Pick a window, pick a cut,
+      and narrow to particular companies to read their raise histories against each other.</p>
+  </div>
+
+  <div class="ch-controls" role="group" aria-label="Chart controls">
+    <div class="ch-row"><span class="lbl">Window</span><div class="chips" id="ch-range"></div></div>
+    <div class="ch-row"><span class="lbl">View</span><div class="chips" id="ch-mode"></div></div>
+    <div class="ch-row" id="ch-by-row"><span class="lbl">Split by</span><div class="chips" id="ch-by"></div></div>
+    <div class="ch-row"><span class="lbl">Companies</span><div class="chips" id="ch-companies"></div></div>
+  </div>
+
+  <p class="caption" id="ch-state" aria-live="polite" style="margin-top:14px"></p>
+
+  <div class="ch-plot" id="ch-capital"></div>
+  <div class="ch-legend" id="ch-legend"></div>
+  <p class="ch-sub">Events per quarter</p>
+  <div class="ch-plot" id="ch-count"></div>
+
+  <p class="caption" id="ch-coverage" style="margin-top:18px"></p>
+
+  <details class="ch-fallback">
+    <summary>Read the same figures as a table</summary>
+    <div class="table-scroll" id="ch-table"></div>
+  </details>
+</section>
+
+<section aria-labelledby="cmp-sec">
+  <h2 class="sec" id="cmp-sec"><span class="n">02</span>Two to four companies, side by side</h2>
+  <div class="prose">
+    <p>Choose the companies, then choose the measures. Every figure carries a marker for how well it is
+      known — <abbr class="cmark c-disclosed" title="Stated by the company or in a filing">D</abbr>isclosed,
+      <abbr class="cmark c-reported" title="Carried by a major outlet, not company-confirmed">R</abbr>eported,
+      <abbr class="cmark c-estimated" title="Derived or modelled on this site">E</abbr>stimated,
+      <abbr class="cmark c-carried" title="Carried from the site dataset">C</abbr>arried — and a blank
+      says <em>why</em> it is blank. Zoox reads as parent-funded rather than as a zero, because those are
+      not the same fact.</p>
+  </div>
+
+  <div class="cmp-slots" id="cmp-slots"></div>
+
+  <div class="cmp-wrap">
+    <div class="cmp-rail" id="cmp-rail"></div>
+    <div>
+      <div class="table-scroll" id="cmp-table"></div>
+      <div class="cmp-actions">
+        <button class="btn" id="cmp-export">EXPORT THIS TABLE AS PNG</button>
+        <span class="caption">The image carries the source link and attribution with it.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section aria-labelledby="eco-sec">
+  <h2 class="sec" id="eco-sec"><span class="n">03</span>Whose arithmetic works</h2>
+  <div class="prose">
+    <p>The calculator on <a href="../economics/">the economics page</a> models one hypothetical operator.
+      This runs real ones through the same arithmetic at once, so a $110,000 purpose-built vehicle at
+      seventy paid miles a day can be set against a $28,000 platform at Chinese fare levels and the
+      difference read off a single row. Every assumption is editable per company; change one and watch
+      only that column move.</p>
+  </div>
+
+  <div class="note" style="margin-top:18px"><p id="eco-warning"></p></div>
+
+  <div class="cmp-slots" id="eco-slots"></div>
+
+  <div class="cmp-wrap">
+    <div class="cmp-rail" id="eco-rail"></div>
+    <div>
+      <div class="table-scroll" id="eco-table"></div>
+      <div class="cmp-actions">
+        <button class="btn" id="eco-export">EXPORT THIS TABLE AS PNG</button>
+        <span class="caption">Exports label themselves as modelled, not reported.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section aria-labelledby="tl-sec">
-  <h2 class="sec" id="tl-sec"><span class="n">01</span>The timeline</h2>
+  <h2 class="sec" id="tl-sec"><span class="n">04</span>The timeline</h2>
   <div class="rail-row" id="fund-filters" style="display:flex;gap:6px;flex-wrap:wrap;margin-top:16px" role="group" aria-label="Filter by form and region"></div>
   <p class="caption" id="fund-state" aria-live="polite" style="margin-top:8px"></p>
   <div class="timeline-wrap"><div class="timeline" id="timeline"></div></div>
@@ -65,7 +150,7 @@
 </section>
 
 <section aria-labelledby="cuts-sec">
-  <h2 class="sec" id="cuts-sec"><span class="n">02</span>Three cuts through the same money</h2>
+  <h2 class="sec" id="cuts-sec"><span class="n">05</span>Three cuts through the same money</h2>
   <div class="prose"><p>The same thirty events, asked three different questions.</p></div>
   <div class="fact-grid" style="grid-template-columns:repeat(auto-fit,minmax(280px,1fr))">
     <div class="fact"><span class="lbl" style="font-weight:700;color:var(--ink)">Who raised the most</span><div id="cut-raised" style="margin-top:8px"></div></div>
@@ -84,7 +169,7 @@
 </section>
 
 <section aria-labelledby="gaps-sec">
-  <h2 class="sec" id="gaps-sec"><span class="n">03</span>What this dataset knows it is missing</h2>
+  <h2 class="sec" id="gaps-sec"><span class="n">06</span>What this dataset knows it is missing</h2>
   <p class="prose">A funding tracker that publishes its own gaps is more trustworthy than one that
     pretends completeness. These are carried in the data file itself, as content rather than metadata.</p>
   <div id="gaps-slot" style="margin-top:16px"></div>
@@ -113,6 +198,8 @@
 </footer>
 
 <script src="../assets/js/core.js"></script>
+<script src="../assets/js/export-png.js"></script>
 <script src="../assets/js/funding.js"></script>
+<script src="../assets/js/funding-compare.js"></script>
 </body>
 </html>

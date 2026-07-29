@@ -11,19 +11,30 @@ here, checked into the repo, and rendered verbatim at runtime.
 
 The composition
 ---------------
-A hexagonal rosette. The ten passenger operators sit inside a regular hexagon at the
-centre. The ten remaining layers dock onto the hexagon's six borders: every district
-is a rectangle whose root side lies flush with a hexagon edge and whose other three
-sides are perpendicular to it. Four edges carry two districts side by side, two carry
-one, so all ten touch the hexagon rather than stacking behind each other.
+One rounded rectangle with an octagon cut out of the middle. The ten passenger
+operators live inside the octagon. The ten remaining layers tile the frame around it
+and share their borders with their neighbours, so the chart reads as a single plate
+rather than as separate panels floating at angles:
 
-Company chips stay upright inside those tilted panels. The lattice rotates with the
-panel; the tiles do not, so 551 company names never have to be read at an angle. The
-lattice pitch is set from the tile size divided by the worst-case axis projection of
-the panel's rotation, which is what keeps upright tiles on a rotated grid from
-touching.
+    +---------------------------------------------------+
+    |    top 1      |     top 2      |      top 3        |
+    +--------+------+----------------+------+------------+
+    | left 1 |          .-------.           |  right 1   |
+    |        |         /  THE    \          |            |
+    +--------+        |   TEN     |         +------------+
+    | left 2 |         \         /          |  right 2   |
+    |        |          '-------'           |            |
+    +--------+------+----------------+------+------------+
+    |  bottom 3     |    bottom 2    |     bottom 1      |
+    +---------------------------------------------------+
 
-Petal depth is data, not decoration: a district is as deep as its company count needs.
+Left and right districts reach in to the octagon's corners, so their tile grids step
+around the 45-degree bevels. Every district is axis-aligned and every district label
+is horizontal: nothing on this chart has to be read sideways.
+
+Districts run clockwise from the top left in the order a ride passes through them, and
+each is sized so its tile grid holds its companies with as little slack as the geometry
+allows.
 
 Run it after any edit to data/av-companies.json:
     python3 tools/build-poster-layout.py
@@ -38,52 +49,40 @@ SRC  = os.path.join(ROOT, "data", "av-companies.json")
 OUT  = os.path.join(ROOT, "data", "poster-layout.json")
 
 # ---------------------------------------------------------------- constants
-M       = 160     # chip tile, px. Chips are upright squares everywhere on the chart.
-PITCH   = 196     # lattice pitch inside a district. See note below.
-COLS    = 9       # lattice columns across one hexagon edge
-HEX_R   = 1800    # hexagon circumradius == hexagon edge length
-INSET   = 18      # slack at each end of an edge so tiles clear the vertices
-GUTTER  = 24      # between two districts sharing one edge
-HEADER  = 210     # district header band, measured outward from the hexagon edge
-MARGIN  = 240     # canvas margin around the rosette
+M       = 160     # chip tile, px
+PITCH   = 178     # lattice pitch: tile plus the air between tiles
+OCT_R   = 1700    # octagon half-width (centre to a flat side)
+HEADER  = 210     # district header band
+PAD     = 26      # inset between a district border and its tile grid
+CLEAR   = 14      # clearance between a tile and the octagon's edge
+MARGIN  = 200     # canvas margin outside the plate
+PLATE_R = 56      # corner radius of the plate
 
-# PITCH must be at least M / max(|ux|, |uy|) for the steepest panel, or upright tiles
-# on a rotated lattice would overlap. The steepest panels sit at 30 degrees, where
-# that floor is 160 / cos(30) = 184.8. 196 clears it with room to breathe, and the
-# same pitch everywhere means one tile occupies the same area in every district.
-assert PITCH >= M / math.cos(math.radians(30)), "pitch too tight for 30-degree panels"
-assert COLS * PITCH <= HEX_R - 2 * INSET + 1, "lattice wider than a hexagon edge"
-
-# The ten passenger-AV operators that occupy the centre hexagon.
+# The ten passenger-AV operators that occupy the centre octagon.
 # See DECISION-LOG.md D-03 for why this list differs from v1's `operators` array.
 MEDALLION = [
     "Waymo", "Baidu Apollo Go", "Tesla", "Zoox", "Pony.ai",
     "WeRide", "Wayve", "Nuro", "May Mobility", "Motional",
 ]
 
-# AV Middleware & Tooling holds only 3 companies. It stays a real layer in the
+# AV Middleware & Tooling holds only 3 organisations. It stays a real layer in the
 # taxonomy (the site still says eleven layers) but renders as part of the autonomy
 # district rather than a district of its own.
 MERGE = {"AV Middleware & Tooling": "AV Driver / Autonomy Software"}
 
-# One entry per hexagon edge, clockwise from the upper-right edge. Districts inside
-# an entry are listed in clockwise order too, so reading the rosette clockwise from
-# the top follows the chain: demand, autonomy, sensing, maps, connectivity, vehicle,
-# fleet, capital, regulators, standards, and back to demand. Demand and autonomy meet
-# at twelve o'clock, which is where a ride starts.
-#
-# Which layer lands on which edge is not free: an edge carrying two districts splits
-# its columns between them, so pairing changes how deep a petal runs and therefore
-# the shape of the whole rosette. This arrangement keeps the chain intact while
-# holding the deepest petal to 1.75x the shallowest and the canvas landscape.
-SECTORS = [
-    ["AV Driver / Autonomy Software", "Sensing & Compute Hardware"],
-    ["Data, Maps & Simulation", "Connectivity & Infrastructure"],
-    ["Vehicle Platform & Manufacturing"],
-    ["Fleet Operations & Depot"],
-    ["Capital, Insurance & Risk", "Governance: Regulators & Government"],
-    ["Governance: Standards, Safety & Advocacy", "Demand & Commercial Platforms"],
-]
+# Districts in clockwise order from the top left, which is also the order a ride
+# passes through them: the autonomy stack across the top, the world it drives in
+# down the right, the machine and its upkeep along the bottom, who pays and who
+# permits up the left, back to the rider.
+BANDS = {
+    "top":    ["AV Driver / Autonomy Software", "Sensing & Compute Hardware",
+               "Data, Maps & Simulation"],
+    "right":  ["Connectivity & Infrastructure", "Vehicle Platform & Manufacturing"],
+    "bottom": ["Fleet Operations & Depot", "Capital, Insurance & Risk",
+               "Governance: Regulators & Government"],   # runs right to left
+    "left":   ["Governance: Standards, Safety & Advocacy",
+               "Demand & Commercial Platforms"],         # runs bottom to top
+}
 
 # Hues are re-tuned from v1 for a paper-white ground: same hue wheel, lower
 # chroma, so 561 tiles never turn into confetti.
@@ -96,39 +95,103 @@ HUE = {
     "Governance: Standards, Safety & Advocacy": 340,
 }
 
-# Type inside the hexagon, shared with tools/render-poster.py and assets/js/poster.js
+# Type inside the octagon, shared with tools/render-poster.py and assets/js/poster.js
 # so the two renderers cannot drift apart.
 MED_STYLE = {"logo": 200, "logoY": 70, "nameY": 320, "nameSize": 42,
              "claimY": 366, "claimStep": 34, "claimSize": 25, "claimChars": 32}
 
+SIDE = OCT_R * 2 * (math.sqrt(2) - 1)      # octagon edge length
+HALF = SIDE / 2                            # half of a flat side
 
-def slug_of(c):
-    """The slug field on the company record is the source of truth (it is
-    collision-resolved there); computing is only a fallback for older data."""
-    if c.get("slug"): return c["slug"]
-    return slug(c["name"])
 
 def slug(s):
-    """Plain slugifier for layer/district names."""
     out, prev = [], False
     for ch in s.lower():
         if ch.isalnum(): out.append(ch); prev = False
         elif not prev:   out.append("-"); prev = True
     return "".join(out).strip("-")
 
-def split_columns(counts, cols):
-    """Divide an edge's columns between the districts sharing it. Minimise the
-    deepest of the two petals first, then the wasted cells, so neither district
-    on an edge sticks out far past the other."""
-    if len(counts) == 1: return [cols]
-    n1, n2 = counts
-    best = None
-    for c1 in range(2, cols - 1):
-        c2 = cols - c1
-        r1, r2 = math.ceil(n1 / c1), math.ceil(n2 / c2)
-        key = (max(r1, r2), c1 * r1 - n1 + c2 * r2 - n2, abs(r1 - r2))
-        if best is None or key < best[0]: best = (key, [c1, c2])
-    return best[1]
+def slug_of(c):
+    """The slug field on the company record is the source of truth (it is
+    collision-resolved there); computing is only a fallback for older data."""
+    return c["slug"] if c.get("slug") else slug(c["name"])
+
+def oct_half_width(y):
+    """How far the octagon reaches from its centre line at height y. Flat between
+    the bevels, then falling away at 45 degrees."""
+    ay = abs(y)
+    if ay >= OCT_R: return 0.0
+    return OCT_R if ay <= HALF else OCT_R - (ay - HALF)
+
+def oct_half_height(x):
+    return oct_half_width(x)   # a regular octagon is its own transpose
+
+def octagon_points(cx, cy):
+    return [(cx - HALF, cy - OCT_R), (cx + HALF, cy - OCT_R),
+            (cx + OCT_R, cy - HALF), (cx + OCT_R, cy + HALF),
+            (cx + HALF, cy + OCT_R), (cx - HALF, cy + OCT_R),
+            (cx - OCT_R, cy + HALF), (cx - OCT_R, cy - HALF)]
+
+
+def grid_cells(rect, side, header_h):
+    """Tile cells that fit inside a district, in reading order, skipping any that
+    would touch the octagon. Coordinates are relative to an octagon at (0, 0).
+
+    `side` says which way the octagon lies, which is the only thing that decides
+    whether a cell is blocked; top and bottom districts never reach it."""
+    x0, y0, x1, y1 = rect
+    cells = []
+    gy = y0 + header_h + PAD
+    while gy + M <= y1 - PAD:
+        gx = x0 + PAD
+        while gx + M <= x1 - PAD:
+            if not blocked(gx, gy, side):
+                cells.append((round(gx, 1), round(gy, 1)))
+            gx += PITCH
+        gy += PITCH
+    return cells
+
+def blocked(gx, gy, side):
+    """True when a tile at (gx, gy) would overlap the octagon."""
+    if side not in ("left", "right"): return False
+    for cy in (gy, gy + M):
+        reach = oct_half_width(cy) + CLEAR
+        if side == "left" and gx + M > -reach: return True
+        if side == "right" and gx < reach: return True
+    return False
+
+
+def solve_side_band(names, counts, span, header_h):
+    """Width of a left or right band, and the tile cells inside each of its two
+    districts. The two share a width, so the band is as wide as the hungrier of
+    them needs; heights are split in proportion to their counts."""
+    total = sum(counts)
+    h1 = round(span * counts[0] / total / PITCH) * PITCH
+    h1 = max(PITCH * 3 + header_h, min(span - PITCH * 3 - header_h, h1))
+    return h1
+
+def fit_label(label, count, width, max_size=40, min_size=26):
+    """Choose a type size and line breaks so a district's name never runs into its
+    count. Archivo's bold caps average a shade under 0.6em, which is close enough
+    to keep a 4600px-wide chart honest without measuring glyphs."""
+    room = width - 60 - (len(str(count)) * max_size * 0.62) - 34
+    for size in range(max_size, min_size - 1, -2):
+        if len(label) * size * 0.585 <= room:
+            return size, [label]
+    # two lines, broken at the space nearest the middle
+    words = label.split()
+    if len(words) > 1:
+        best, mid = None, len(label) / 2
+        for i in range(1, len(words)):
+            a, b = " ".join(words[:i]), " ".join(words[i:])
+            d = abs(len(a) - mid)
+            if best is None or d < best[0]: best = (d, a, b)
+        lines = [best[1], best[2]]
+        for size in range(max_size - 4, min_size - 1, -2):
+            if max(len(l) for l in lines) * size * 0.585 <= room:
+                return size, lines
+        return min_size, lines
+    return min_size, [label]
 
 
 def main():
@@ -151,81 +214,118 @@ def main():
         if c["name"] in MEDALLION: continue
         buckets[MERGE.get(c["cat"], c["cat"])].append(c)
     for k in buckets:
-        # Rank inside a district: relevance score desc, then name. Deterministic,
-        # and it puts the best-known names in the row nearest the hexagon.
         buckets[k].sort(key=lambda c: (-c.get("score", 0), c["name"].lower()))
 
-    planned = [n for s in SECTORS for n in s]
+    planned = [n for b in BANDS.values() for n in b]
     if sorted(planned) != sorted(buckets):
-        sys.exit(f"FATAL: SECTORS covers {sorted(planned)}, data has {sorted(buckets)}")
+        sys.exit(f"FATAL: BANDS covers {sorted(planned)}, data has {sorted(buckets)}")
 
-    # ------------------------------------------------------------- hexagon
-    # Pointy-top: vertices top and bottom, flat vertical edges left and right. That
-    # orientation puts four of the six panels at a readable 30 degrees and the other
-    # two upright, where a flat-top hexagon would tilt four of them to 60.
-    apothem = HEX_R * math.sqrt(3) / 2
-    verts = [(0, -HEX_R), (apothem, -HEX_R / 2), (apothem, HEX_R / 2),
-             (0, HEX_R), (-apothem, HEX_R / 2), (-apothem, -HEX_R / 2)]
+    span = 2 * OCT_R                       # height shared by the left and right bands
 
+    # ------------------------------------------------- left and right band widths
+    # Grow a band until both of its districts hold their companies. Blocked cells
+    # are counted honestly, so a band that loses tiles to the bevel simply widens.
+    sides = {}
+    for side in ("left", "right"):
+        names = BANDS[side]
+        counts = [len(buckets[n]) for n in names]
+        h1 = solve_side_band(names, counts, span, HEADER)
+        heights = [h1, span - h1]
+        # left runs bottom to top, right runs top to bottom; both listed clockwise
+        if side == "left": heights = heights[::-1]
+        for cols in range(2, 24):
+            width = cols * PITCH + 2 * PAD
+            rects, ok = [], True
+            y = -OCT_R
+            for name, h in zip(names if side == "right" else names[::-1], heights):
+                if side == "left":
+                    rect = (-OCT_R - width, y, -HALF, y + h)
+                else:
+                    rect = (HALF, y, OCT_R + width, y + h)
+                cells = grid_cells(rect, side, HEADER)
+                if len(cells) < len(buckets[name]): ok = False
+                rects.append((name, rect, cells))
+                y += h
+            if ok:
+                sides[side] = (width, rects)
+                break
+        else:
+            sys.exit(f"FATAL: {side} band cannot be made wide enough")
+
+    plate_x0 = -OCT_R - sides["left"][0]
+    plate_x1 = OCT_R + sides["right"][0]
+    plate_w = plate_x1 - plate_x0
+
+    # ------------------------------------------------------ top and bottom bands
+    # Both run the full width of the plate, so the only free variable is depth.
+    # Take the shallowest depth that still fits all three districts side by side.
+    horiz = {}
+    for band in ("top", "bottom"):
+        names = BANDS[band] if band == "top" else BANDS[band][::-1]
+        counts = [len(buckets[n]) for n in names]
+        usable_cols = int((plate_w - 2 * PAD * len(names)) // PITCH)
+        for rows in range(2, 20):
+            need = [math.ceil(n / rows) for n in counts]
+            if sum(need) <= usable_cols: break
+        else:
+            sys.exit(f"FATAL: {band} band cannot be made deep enough")
+        depth = HEADER + rows * PITCH + 2 * PAD
+        # hand the leftover columns to the districts with the least slack
+        spare = usable_cols - sum(need)
+        order = sorted(range(len(need)), key=lambda i: -(counts[i] % rows or rows))
+        for k in range(spare):
+            need[order[k % len(need)]] += 1
+        widths = [c * PITCH + 2 * PAD for c in need]
+        widths[-1] += plate_w - sum(widths)      # absorb rounding on the last one
+        rects, x = [], plate_x0
+        for name, w in zip(names, widths):
+            y0 = -OCT_R - depth if band == "top" else OCT_R
+            rect = (x, y0, x + w, y0 + depth)
+            rects.append((name, rect, grid_cells(rect, band, HEADER)))
+            x += w
+        horiz[band] = (depth, rects)
+
+    plate_y0 = -OCT_R - horiz["top"][0]
+    plate_y1 = OCT_R + horiz["bottom"][0]
+
+    # ------------------------------------------------------------ assemble
     districts, chips = [], []
-    for e, layers in enumerate(SECTORS):
-        a, b = verts[e], verts[(e + 1) % 6]
-        px, py = (a[0] + b[0]) / 2, (a[1] + b[1]) / 2           # edge midpoint
-        nout = (px / (apothem), py / (apothem))                 # outward unit normal
-        dx, dy = b[0] - a[0], b[1] - a[1]
-        ln = math.hypot(dx, dy)
-        ux, uy = dx / ln, dy / ln
-        # Choose the edge direction that keeps a header upright: never past vertical,
-        # never upside down. Vertical edges settle to the book-spine convention.
-        if ux < -1e-9 or (abs(ux) < 1e-9 and ((px < 0) == (uy > 0))):
-            ux, uy = -ux, -uy
-        rot = math.degrees(math.atan2(uy, ux))
-        nlx, nly = -math.sin(math.radians(rot)), math.cos(math.radians(rot))
-        out = 1 if (nlx * nout[0] + nly * nout[1]) > 0 else -1
-        # Districts run clockwise along the edge; flip if local +x runs the other way.
-        tcw = (-nout[1], nout[0])
-        order = layers if (ux * tcw[0] + uy * tcw[1]) > 0 else layers[::-1]
-
-        cols = split_columns([len(buckets[n]) for n in order], COLS)
-        rows = [math.ceil(len(buckets[n]) / c) for n, c in zip(order, cols)]
-        depth = HEADER + max(rows) * PITCH        # both petals on an edge run level
-
-        def world(s, t):
-            return (px + s * ux + out * t * nlx, py + s * uy + out * t * nly)
-
-        s0 = -COLS * PITCH / 2                    # left end of the lattice
-        for i, name in enumerate(order):
+    for band in ("top", "right", "bottom", "left"):
+        rects = (horiz if band in ("top", "bottom") else sides)[band][1]
+        for name, rect, cells in rects:
             items = buckets[name]
-            cs = s0 + sum(cols[:i]) * PITCH       # this district's lattice start
-            fa = cs + (GUTTER / 2 if i else -INSET)                 # frame, near end
-            fb = cs + cols[i] * PITCH - (GUTTER / 2 if i < len(order) - 1 else -INSET)
-            poly = [world(fa, 0), world(fb, 0), world(fb, depth), world(fa, depth)]
-            xs, ys = [p[0] for p in poly], [p[1] for p in poly]
+            if len(cells) < len(items):
+                sys.exit(f"FATAL: {name} has {len(items)} companies for {len(cells)} cells")
+            x0, y0, x1, y1 = rect
+            # The header band runs the full width of the district and is clipped to
+            # its outline, so a left or right district's bevel cuts it rather than
+            # leaving a notch of blank plate. The type stays inside the part of that
+            # band the octagon can never reach.
+            tx0, tx1 = x0, x1
+            if band == "left":  tx1 = -OCT_R
+            if band == "right": tx0 = OCT_R
+            size, lines = fit_label(name.replace("Governance: ", "").upper(),
+                                    len(items), tx1 - tx0)
             districts.append({
-                "id": slug(name), "layer": name, "edge": e,
+                "id": slug(name), "layer": name, "band": band,
                 "hue": HUE.get(name, 220), "count": len(items),
-                "cols": cols[i], "rows": rows[i],
-                "ox": round(px, 1), "oy": round(py, 1), "rot": round(rot, 4), "out": out,
-                # local frame rect, to be drawn inside translate(ox,oy) rotate(rot)
-                "x": round(fa, 1), "y": round(min(0, out * depth), 1),
-                "w": round(fb - fa, 1), "h": round(depth, 1),
-                "headerH": HEADER,
-                "poly": [[round(x, 1), round(y, 1)] for x, y in poly],
-                "bbox": {"x": round(min(xs), 1), "y": round(min(ys), 1),
-                         "w": round(max(xs) - min(xs), 1), "h": round(max(ys) - min(ys), 1)},
-                "capacity": cols[i] * rows[i], "slack": cols[i] * rows[i] - len(items),
+                "x": round(x0, 1), "y": round(y0, 1),
+                "w": round(x1 - x0, 1), "h": round(y1 - y0, 1),
+                "poly": [[round(px, 1), round(py, 1)] for px, py in district_poly(rect, band)],
+                "header": {"x": round(x0, 1), "y": round(y0, 1),
+                           "w": round(x1 - x0, 1), "h": HEADER,
+                           "tx": round(tx0, 1), "tw": round(tx1 - tx0, 1)},
+                "labelSize": size, "labelLines": lines,
+                "capacity": len(cells), "slack": len(cells) - len(items),
             })
-            for j, c in enumerate(items):
-                wx, wy = world(cs + (j % cols[i] + 0.5) * PITCH,
-                               HEADER + (j // cols[i] + 0.5) * PITCH)
+            for c, (gx, gy) in zip(items, cells):
                 chips.append({
                     "name": c["name"], "slug": slug_of(c), "id": c["id"],
                     "district": slug(name),
-                    "x": round(wx - M / 2, 1), "y": round(wy - M / 2, 1), "w": M, "h": M,
+                    "x": gx, "y": gy, "w": M, "h": M,
                     "mono": c.get("mono", c["name"][:2].upper()),
                     "hue": HUE.get(name, 220),
                     "layers": len(c.get("all", [])),
-                    # hue pips for additional canonical layers beyond the district
                     "pips": [HUE[al] for al in c.get("all", [])
                              if al in HUE and al != MERGE.get(c["cat"], c["cat"])][:4],
                     "exited": bool(c.get("exited")),
@@ -233,10 +333,10 @@ def main():
                 })
 
     # ------------------------------------------------------ the ten, inside
-    # Rows of 3, 4 and 3 are the packing a hexagon asks for. The widest row sits on
-    # the hexagon's waist where the full width is available.
-    ROWS = [(3, 780, -900), (4, 740, -240), (3, 780, 420)]
-    CELL_H = 520
+    # Rows of 3, 4 and 3: the widest row sits on the octagon's waist, where the
+    # full width is available, and the outer rows step in with the bevels.
+    ROWS = [(3, 860, -1100), (4, 800, -270), (3, 860, 560)]
+    CELL_H = 540
     medallion, k = [], 0
     for n, cw, ry in ROWS:
         for i in range(n):
@@ -251,50 +351,48 @@ def main():
                 "claim": known.get(nm, ""),
             })
 
-    hexagon = {
-        "cx": 0, "cy": 0, "r": HEX_R, "apothem": round(apothem, 1),
-        "points": [[round(x, 1), round(y, 1)] for x, y in verts],
-        "titleY": -1080, "subY": -988, "ruleY": 1070, "footY": 1140,
+    octagon = {
+        "cx": 0, "cy": 0, "r": OCT_R, "side": round(SIDE, 1),
+        "points": [[round(x, 1), round(y, 1)] for x, y in octagon_points(0, 0)],
+        "titleY": -1330, "subY": -1245, "ruleY": 1220, "footY": 1292,
         "title": "THE TEN", "sub": "OPERATORS A PASSENGER CAN ACTUALLY MEET",
         "foot": f"10 OF {len(companies)} ORGANISATIONS ON THIS CHART",
     }
 
     # --------------------------------------------------------------- canvas
-    xs = [p[0] for d in districts for p in d["poly"]] + [v[0] for v in verts]
-    ys = [p[1] for d in districts for p in d["poly"]] + [v[1] for v in verts]
-    ox, oy = MARGIN - min(xs), MARGIN - min(ys)
-    W = round(max(xs) - min(xs) + 2 * MARGIN)
-    H = round(max(ys) - min(ys) + 2 * MARGIN)
+    ox, oy = MARGIN - plate_x0, MARGIN - plate_y0
+    W = round(plate_w + 2 * MARGIN)
+    H = round(plate_y1 - plate_y0 + 2 * MARGIN)
 
-    def shift(obj, keys=("x", "y")):
-        obj[keys[0]] = round(obj[keys[0]] + ox, 1)
-        obj[keys[1]] = round(obj[keys[1]] + oy, 1)
+    def shift_xy(o):
+        o["x"] = round(o["x"] + ox, 1); o["y"] = round(o["y"] + oy, 1)
 
     for d in districts:
-        d["ox"], d["oy"] = round(d["ox"] + ox, 1), round(d["oy"] + oy, 1)
+        shift_xy(d); shift_xy(d["header"])
+        d["header"]["tx"] = round(d["header"]["tx"] + ox, 1)
         d["poly"] = [[round(x + ox, 1), round(y + oy, 1)] for x, y in d["poly"]]
-        shift(d["bbox"])
-    for c in chips: shift(c)
-    for c in medallion: shift(c)
-    hexagon["cx"], hexagon["cy"] = round(ox, 1), round(oy, 1)
-    hexagon["points"] = [[round(x + ox, 1), round(y + oy, 1)] for x, y in hexagon["points"]]
-    for k_ in ("titleY", "subY", "ruleY", "footY"):
-        hexagon[k_] = round(hexagon[k_] + oy, 1)
+    for c in chips: shift_xy(c)
+    for c in medallion: shift_xy(c)
+    octagon["cx"], octagon["cy"] = round(ox, 1), round(oy, 1)
+    octagon["points"] = [[round(x + ox, 1), round(y + oy, 1)] for x, y in octagon["points"]]
+    for key in ("titleY", "subY", "ruleY", "footY"):
+        octagon[key] = round(octagon[key] + oy, 1)
 
     layout = {
         "meta": {
             "generatedBy": "tools/build-poster-layout.py",
-            "module": M, "pitch": PITCH, "cols": COLS, "margin": MARGIN,
-            "hexR": HEX_R, "headerH": HEADER,
-            "companyCount": len(companies), "medallionCount": len(MEDALLION),
-            "width": W, "height": H, "medStyle": MED_STYLE,
-            # the hexagon's bounding box, kept under its old name so the social-card
+            "module": M, "pitch": PITCH, "margin": MARGIN, "headerH": HEADER,
+            "octR": OCT_R, "companyCount": len(companies),
+            "medallionCount": len(MEDALLION), "medStyle": MED_STYLE,
+            "width": W, "height": H,
+            "plate": {"x": MARGIN, "y": MARGIN, "w": round(plate_w, 1),
+                      "h": round(plate_y1 - plate_y0, 1), "rx": PLATE_R},
+            # the octagon's bounding box, kept under its old name so the social-card
             # renderer can keep cropping to "the centre" without knowing the shape
-            "medallionBox": {"x": round(hexagon["cx"] - apothem, 1),
-                             "y": round(hexagon["cy"] - HEX_R, 1),
-                             "w": round(2 * apothem, 1), "h": 2 * HEX_R},
+            "medallionBox": {"x": round(ox - OCT_R, 1), "y": round(oy - OCT_R, 1),
+                             "w": 2 * OCT_R, "h": 2 * OCT_R},
         },
-        "hex": hexagon, "districts": districts, "chips": chips, "medallion": medallion,
+        "oct": octagon, "districts": districts, "chips": chips, "medallion": medallion,
     }
 
     placed = len(chips) + len(medallion)
@@ -304,13 +402,40 @@ def main():
     os.makedirs(os.path.dirname(OUT), exist_ok=True)
     json.dump(layout, open(OUT, "w", encoding="utf-8"), indent=1)
     print(f"canvas   {W} x {H}  (aspect {W/H:.2f})")
+    print(f"plate    {plate_w:.0f} x {plate_y1 - plate_y0:.0f}")
     print(f"placed   {placed} of {len(companies)} companies "
-          f"({len(medallion)} in the hexagon + {len(chips)} in districts)")
+          f"({len(medallion)} in the octagon + {len(chips)} in districts)")
     for d in districts:
-        print(f"  edge {d['edge']}  rot {d['rot']:>6.1f}  out {d['out']:+d}  "
-              f"{d['cols']}x{d['rows']}  slack {d['slack']:>2}  {d['layer']}")
-    print(f"tightest district slack: {min(d['slack'] for d in districts)}")
+        print(f"  {d['band']:<6} {d['count']:>3} in {d['capacity']:>3} cells "
+              f"(slack {d['slack']:>2})  {d['layer']}")
     print(f"wrote    {os.path.relpath(OUT, ROOT)}")
+
+
+def district_poly(rect, band):
+    """A district's true outline, clockwise. Top and bottom districts are plain
+    rectangles; left and right districts step around the octagon's bevel."""
+    x0, y0, x1, y1 = rect
+    if band in ("top", "bottom"):
+        return [(x0, y0), (x1, y0), (x1, y1), (x0, y1)]
+    inner = _inner_edge(y0, y1, -1 if band == "left" else 1)
+    if band == "left":
+        return [(x0, y0)] + inner + [(x0, y1)]
+    return [(x1, y0)] + [(x1, y1)] + inner[::-1]
+
+def _inner_edge(y0, y1, sign):
+    """Points down the octagon-facing edge of a side district, top to bottom.
+    sign is +1 for a district right of the octagon, -1 for one on its left. The
+    breaks at the bevels are what make the tile grid step in and out."""
+    out = []
+    for y in (y0, -HALF, HALF, y1):
+        if y0 <= y <= y1:
+            out.append((round(sign * oct_half_width(y), 1), round(y, 1)))
+    clean = []
+    for p in out:
+        if not clean or abs(p[0] - clean[-1][0]) > .5 or abs(p[1] - clean[-1][1]) > .5:
+            clean.append(p)
+    return clean
+
 
 if __name__ == "__main__":
     main()

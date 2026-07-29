@@ -1419,5 +1419,9 @@
   "Verne": "Rimac-born operator behind Europe's first commercial robotaxi launch, Zagreb H2 2026",
   "MOIA": "VW's autonomous ID.Buzz service, live on Uber in Los Angeles",
   "Bliq": "First company approved to run fully driverless road operations in an EU member state, in Estonia (May 2026)."
+ },
+ "logoDomains": {
+  "Baidu Apollo Go": "baidu.com",
+  "Baidu Apollo ACE / Vehicle-Road-Cloud": "baidu.com"
  }
 }

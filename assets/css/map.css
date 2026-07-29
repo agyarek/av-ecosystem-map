@@ -36,9 +36,9 @@
 .poster-viewport {
   /* The rosette is nearly square, so the viewport takes its shape rather than
      letterboxing it inside a wide box that would only ever show grey. */
-  aspect-ratio: 8918 / 8178;
+  aspect-ratio: 6574 / 6282;
   max-height: calc(100vh - 130px);
-  max-width: calc((100vh - 130px) * 8918 / 8178);
+  max-width: calc((100vh - 130px) * 6574 / 6282);
   width: 100%; margin: 0 auto;
   overflow: hidden; position: relative;
   /* the same ground the poster paints, so letterboxing round a near-square
@@ -64,23 +64,23 @@
 #poster [data-chip].sel .chip-body { stroke: var(--cyan); stroke-width: 5; }
 #poster [data-chip]:focus { outline: none; }
 
-/* A layer answers as one piece: the panel and every tile in it lift away from
-   the hexagon together, the frame takes the layer's own colour, and the header
-   band fills in. Nothing reflows and nothing else dims. */
-#poster .district {
-  transform-box: view-box; transform-origin: var(--hx) var(--hy);
-  transition: transform 260ms cubic-bezier(.2, .8, .3, 1);
-}
-#poster .district.hot { transform: scale(1.022); }
-#poster .d-glow, #poster .d-tint, #poster .d-wash { transition: opacity 220ms ease; }
-#poster .district.hot .d-glow { opacity: .9; }
-#poster .district.hot .d-tint { opacity: .3; }
-#poster .district.hot .d-wash { opacity: .11; }
-#poster .district.hot .hex-edge { stroke-width: 22; }
-#poster .hex-edge { transition: stroke-width 220ms ease; }
-@media (prefers-reduced-motion: reduce) {
-  #poster .district, #poster .district.hot { transition: none; transform: none; }
-}
+/* A layer answers as one piece: its whole room takes the layer's own colour and
+   its border lights up. The rooms share their borders, so nothing here may move
+   or scale — the highlight is colour and weight, and the lit district is raised
+   above its neighbours so its outline is not half-covered by theirs. */
+/* Borders keep a constant weight on screen at every zoom, so a highlighted
+   district reads the same whether the whole plate is in view or one tile is. */
+#poster .plate, #poster .d-edge, #poster .d-glow, #poster .oct-edge { vector-effect: non-scaling-stroke; }
+#poster .plate { stroke-width: 1.5px; }
+#poster .d-edge { stroke-width: 1.2px; }
+#poster .d-glow { stroke-width: 3px; }
+#poster .oct-edge { stroke-width: 3px; }
+#poster .d-glow, #poster .d-tint, #poster .d-wash { transition: opacity 200ms ease; }
+#poster .district.hot .d-glow { opacity: .95; }
+#poster .district.hot .d-tint { opacity: .32; }
+#poster .district.hot .d-wash { opacity: .13; }
+#poster .oct-edge { transition: stroke-width 200ms ease; }
+#poster .district.hot .oct-edge { stroke-width: 26; }
 #poster .links path {
   fill: none; stroke: var(--cyan); opacity: .85;
   vector-effect: non-scaling-stroke; stroke-width: 2.2px;

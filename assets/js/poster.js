@@ -2,9 +2,9 @@
    Renders data/poster-layout.json verbatim (geometry is frozen at build time),
    then adds camera, selection, filters, exports and keyboard navigation.
 
-   The composition is a hexagonal rosette: the ten operators inside a hexagon,
-   the ten remaining layers docked on its six borders as rotated panels. The
-   panels tilt; the company tiles inside them never do.
+   The composition is one rounded plate with an octagon cut out of the middle:
+   the ten operators inside the octagon, the ten remaining layers tiling the
+   frame around it and sharing their borders.
 
    Filtering dims; it never reflows. One company, one chip, always. */
 (function () {
@@ -68,17 +68,33 @@
   };
   const oklch = (hue, l, c) => `oklch(${l} ${c} ${hue})`;
   const isOperator = slug => L.medallion.some(mo => mo.slug === slug);
+  const logoDomain = slug => (bySlug[slug] && (bySlug[slug].l || bySlug[slug].d)) || '';
+  const siteDomain = slug => (bySlug[slug] && bySlug[slug].d) || '';
 
   // ------------------------------------------------------------ SVG build
-  // Remote favicon services, tried in order. These are what make logos appear
-  // with no build step: the browser fetches them directly, so the committed
-  // assets from tools/fetch-logos.py are an optional quality upgrade rather
-  // than a prerequisite. When those assets exist they take precedence below.
+  // Remote logo sources, tried in order. These are what make marks appear with no
+  // build step: the browser fetches them directly, so the committed assets from
+  // tools/fetch-logos.py are an optional quality upgrade rather than a
+  // prerequisite. When those assets exist they take precedence below.
+  //
+  // Order is by resolution first and connection cost second. The aggregators live
+  // on one host each, so 442 companies share a handful of connections; a company's
+  // own touch icon is usually the sharpest mark available but costs a fresh DNS
+  // lookup and handshake per company, so it is only reached when the shared hosts
+  // return something too small to use. Clearbit's free logo API, the usual answer
+  // here, shut down in December 2025. Set LOGO_DEV_TOKEN to a logo.dev publishable
+  // token to put a real logo CDN in front; the keyless sources still apply without.
+  const LOGO_DEV_TOKEN = '';
   const LOGO_SOURCES = [
+    d => LOGO_DEV_TOKEN && `https://img.logo.dev/${encodeURIComponent(d)}?token=${LOGO_DEV_TOKEN}&size=256&format=png&retina=true`,
+    d => `https://unavatar.io/${encodeURIComponent(d)}?fallback=false`,
     d => `https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=${encodeURIComponent('https://' + d)}&size=256`,
+    d => `https://${d}/apple-touch-icon.png`,
+    d => `https://${d}/apple-touch-icon-precomposed.png`,
     d => `https://www.google.com/s2/favicons?domain=${encodeURIComponent(d)}&sz=128`,
     d => `https://icons.duckduckgo.com/ip3/${encodeURIComponent(d)}.ico`,
   ];
+  const LOGO_MIN = 64;   // below this a mark is only used if nothing better exists
 
   function logoMarkup(slug, cx, cy, size, hue, mono, forExport) {
     const m = manifest && manifest[slug];
@@ -99,7 +115,7 @@
     const tile =
       `<rect x="${cx - half}" y="${cy}" width="${size}" height="${size}" rx="${size * 0.22}" fill="${fill}"/>` +
       `<text x="${cx}" y="${cy + size * 0.69}" font-size="${size * 0.47}" font-weight="800" text-anchor="middle" fill="${txfill}" font-family="Archivo, sans-serif">${esc(mono)}</text>`;
-    const domain = bySlug[slug] && bySlug[slug].d;
+    const domain = logoDomain(slug);
     if (forExport || !domain) return tile;
     // href is filled in by the lazy loader once the chip is near the viewport
     return tile +
@@ -113,23 +129,39 @@
   // 442 favicon requests at once would stall a phone, so load only what is on
   // or near screen, newest camera position first, and top up after each move.
   const logoQueue = { pending: new Set(), inflight: 0, MAX: 8 };
+  // Each candidate is probed with a plain Image first, so its real pixel size is
+  // known before anything is shown. The first mark at LOGO_MIN or better wins; if
+  // no source clears the bar the largest one seen is used anyway, so a company
+  // with only a small icon still gets its logo rather than dropping to a monogram.
   function bindLogo(img) {
     const domain = img.dataset.domain;
-    const attempt = () => {
-      const t = +img.dataset.try;
-      if (t >= LOGO_SOURCES.length) { logoQueue.inflight--; pump(); return; }
-      img.dataset.try = t + 1;
-      img.setAttribute('href', LOGO_SOURCES[t](domain));
-    };
-    img.addEventListener('load', () => {
+    const finish = href => {
       logoQueue.inflight--;
-      img.style.opacity = '1';
-      const bg = svg.querySelector(`[data-logo-bg="${CSS.escape(img.dataset.logo)}"]`);
-      if (bg) bg.style.opacity = '1';
+      if (href) {
+        img.setAttribute('href', href);
+        img.style.opacity = '1';
+        const bg = svg.querySelector(`[data-logo-bg="${CSS.escape(img.dataset.logo)}"]`);
+        if (bg) bg.style.opacity = '1';
+      }
       pump();
-    }, { once: false });
-    img.addEventListener('error', attempt);
-    attempt();
+    };
+    let best = null, bestPx = 0;
+    const probe = i => {
+      if (i >= LOGO_SOURCES.length) return finish(best);
+      const url = LOGO_SOURCES[i](domain);
+      if (!url) return probe(i + 1);
+      const test = new Image();
+      test.decoding = 'async';
+      test.onload = () => {
+        const px = Math.max(test.naturalWidth || 0, test.naturalHeight || 0);
+        if (px >= LOGO_MIN) return finish(url);
+        if (px > bestPx) { best = url; bestPx = px; }
+        probe(i + 1);
+      };
+      test.onerror = () => probe(i + 1);
+      test.src = url;
+    };
+    probe(0);
   }
   function pump() {
     while (logoQueue.inflight < logoQueue.MAX && logoQueue.pending.size) {
@@ -161,22 +193,37 @@
   // Navigator tiles and the card header are HTML, so a plain lazy <img> over the
   // monogram is enough.
   const navLogo = slug => {
-    const d = bySlug[slug] && bySlug[slug].d;
-    return d ? `<img src="${LOGO_SOURCES[0](d)}" alt="" loading="lazy" decoding="async"
-      onload="this.style.opacity=1" onerror="this.remove()">` : '';
+    const d = logoDomain(slug);
+    return d ? `<img alt="" data-htmlogo="${esc(d)}" decoding="async">` : '';
   };
-
-  // A district panel: root side square so it sits flush against the hexagon,
-  // outer corners rounded. Drawn inside translate(ox,oy) rotate(rot).
-  function panelPath(d, r) {
-    const x = d.x, w = d.w, h = d.h;
-    return d.out > 0
-      ? `M ${x} 0 L ${x + w} 0 L ${x + w} ${h - r} Q ${x + w} ${h} ${x + w - r} ${h} L ${x + r} ${h} Q ${x} ${h} ${x} ${h - r} Z`
-      : `M ${x} 0 L ${x} ${-(h - r)} Q ${x} ${-h} ${x + r} ${-h} L ${x + w - r} ${-h} Q ${x + w} ${-h} ${x + w} ${-(h - r)} L ${x + w} 0 Z`;
+  function bindHtmlLogos(root) {
+    root.querySelectorAll('img[data-htmlogo]').forEach(el => {
+      const domain = el.dataset.htmlogo;
+      delete el.dataset.htmlogo;
+      let best = null, bestPx = 0;
+      const done = url => { if (url) { el.src = url; el.style.opacity = '1'; } else el.remove(); };
+      const probe = i => {
+        if (i >= LOGO_SOURCES.length) return done(best);
+        const url = LOGO_SOURCES[i](domain);
+        if (!url) return probe(i + 1);
+        const test = new Image();
+        test.onload = () => {
+          const px = Math.max(test.naturalWidth || 0, test.naturalHeight || 0);
+          if (px >= LOGO_MIN) return done(url);
+          if (px > bestPx) { best = url; bestPx = px; }
+          probe(i + 1);
+        };
+        test.onerror = () => probe(i + 1);
+        test.src = url;
+      };
+      probe(0);
+    });
   }
 
+  const poly = pts => pts.map(p => p.join(',')).join(' ');
+
   function buildSVG(forExport) {
-    const m = L.meta, hx = L.hex;
+    const m = L.meta, oc = L.oct, PL = m.plate;
     const X = forExport;  // export = fixed light-paper colours, no interactivity
     const C = {
       paper: X ? '#FAFAF7' : 'var(--paper)', ink: X ? '#12130F' : 'var(--ink)',
@@ -187,28 +234,38 @@
     };
     const hueFill = h => X ? oklch(h, 0.62, 0.075) : `oklch(var(--layer-l) var(--layer-c) ${h})`;
     const o = [];
+    o.push(`<defs><clipPath id="plate-clip"><rect x="${PL.x}" y="${PL.y}" width="${PL.w}" height="${PL.h}" rx="${PL.rx}"/></clipPath>` +
+      L.districts.map(d => `<clipPath id="dc-${esc(d.id)}"><polygon points="${poly(d.poly)}"/></clipPath>`).join('') +
+      `</defs>`);
     o.push(`<rect width="${W}" height="${H}" fill="${C.paper}"/>`);
     o.push(`<g class="world">`);
+    // One plate. The districts are rooms inside it, not panels floating on it.
+    o.push(`<rect class="plate" x="${PL.x}" y="${PL.y}" width="${PL.w}" height="${PL.h}" rx="${PL.rx}" fill="${C.card}" stroke="${C.rule}" stroke-width="3"/>`);
+    o.push(`<g clip-path="url(#plate-clip)">`);
 
     const chipsOf = {};
     for (const c of L.chips) (chipsOf[c.district] = chipsOf[c.district] || []).push(c);
 
     for (const d of L.districts) {
-      // One group per layer: frame and tiles move, light up and lift together.
+      // One group per layer: room and tiles light up together.
       o.push(X ? `<g>` : `<g class="district" data-district="${esc(d.id)}">`);
-      o.push(`<g class="district-shell" transform="translate(${d.ox},${d.oy}) rotate(${d.rot})">`);
-      const hy = d.out > 0 ? 0 : -d.headerH;
-      o.push(`<path class="d-frame" d="${panelPath(d, 18)}" fill="${C.card}" stroke="${C.rule}" stroke-width="2"/>`);
-      // a whisper of the layer's own colour, so the rosette reads as ten layers
-      // from across the room and not as ten identical white plates
-      o.push(`<path class="d-wash" d="${panelPath(d, 18)}" fill="${hueFill(d.hue)}" opacity=".05"/>`);
-      o.push(`<rect class="d-tint" x="${d.x}" y="${hy}" width="${d.w}" height="${d.headerH}" fill="${hueFill(d.hue)}" opacity=".13"/>`);
-      o.push(`<rect x="${d.x}" y="${hy + (d.out > 0 ? d.headerH - 9 : 0)}" width="${d.w}" height="9" fill="${hueFill(d.hue)}"/>`);
-      if (!X) o.push(`<path class="d-glow" d="${panelPath(d, 18)}" fill="none" stroke="${hueFill(d.hue)}" stroke-width="7" opacity="0"/>`);
-      const ty = d.out > 0 ? 132 : -78;
-      const label = d.layer.replace('Governance: ', '');
-      o.push(`<text x="${d.x + 30}" y="${ty}" font-size="40" font-weight="700" fill="${C.ink}" font-family="Archivo, sans-serif">${esc(label.toUpperCase())}</text>`);
-      o.push(`<text x="${d.x + d.w - 30}" y="${ty}" font-size="40" font-weight="600" text-anchor="end" font-family="IBM Plex Mono, monospace" fill="${hueFill(d.hue)}">${d.count}</text>`);
+      o.push(`<g class="district-shell">`);
+      const hd = d.header;
+      // a whisper of the layer's own colour, so the plate reads as ten layers from
+      // across the room and not as ten identical white rectangles
+      o.push(`<polygon class="d-wash" points="${poly(d.poly)}" fill="${hueFill(d.hue)}" opacity=".05"/>`);
+      o.push(`<g clip-path="url(#dc-${esc(d.id)})">`);
+      o.push(`<rect class="d-tint" x="${hd.x}" y="${hd.y}" width="${hd.w}" height="${hd.h}" fill="${hueFill(d.hue)}" opacity=".13"/>`);
+      o.push(`<rect x="${hd.x}" y="${hd.y + hd.h - 9}" width="${hd.w}" height="9" fill="${hueFill(d.hue)}"/>`);
+      o.push(`</g>`);
+      const sz = d.labelSize, n = d.labelLines.length;
+      const base = hd.y + hd.h / 2 + sz * 0.36 - (sz * 0.62 * (n - 1)) / 2;
+      d.labelLines.forEach((line, i) => {
+        o.push(`<text x="${hd.tx + 30}" y="${base + i * sz * 1.06}" font-size="${sz}" font-weight="700" fill="${C.ink}" font-family="Archivo, sans-serif">${esc(line)}</text>`);
+      });
+      o.push(`<text x="${hd.tx + hd.tw - 30}" y="${hd.y + hd.h / 2 + sz * 0.36}" font-size="${sz}" font-weight="600" text-anchor="end" font-family="IBM Plex Mono, monospace" fill="${hueFill(d.hue)}">${d.count}</text>`);
+      o.push(`<polygon class="d-edge" points="${poly(d.poly)}" fill="none" stroke="${C.rule}" stroke-width="3"/>`);
+      if (!X) o.push(`<polygon class="d-glow" points="${poly(d.poly)}" fill="none" stroke="${hueFill(d.hue)}" stroke-width="9" opacity="0"/>`);
       o.push(`</g>`);
 
       for (const c of chipsOf[d.id] || []) {
@@ -218,12 +275,12 @@
           const aria = [c.name, meta.c || '', meta.r || ''].filter(Boolean).join(', ')
             + (partners.bySlug[c.slug] ? `; ${partners.bySlug[c.slug].count} mapped partners` : '')
             + (c.spokenTo ? '; spoken with directly' : '') + (c.exited ? '; exited' : '');
-          o.push(`<g data-chip data-slug="${esc(c.slug)}" data-cx="${cx}" data-cy="${c.y + c.h / 2}" data-cat="${esc(SHORT[meta.c] || '')}" data-region="${esc(REGION_KEY(meta.r || ''))}" data-mat="${esc(meta.m || '')}" data-text="${esc((c.name + ' ' + (meta.b || '')).toLowerCase())}" ${c.spokenTo ? 'data-spoken="1"' : ''} ${c.exited ? 'data-exited="1"' : ''} tabindex="-1" role="button" aria-label="${esc(aria)}">`);
+          o.push(`<g data-chip data-slug="${esc(c.slug)}" data-cx="${cx}" data-cy="${c.y + c.h / 2}" data-bx="${c.x + 8}" data-by="${c.y + 6}" data-bw="${c.w - 16}" data-bh="${c.h - 12}" data-cat="${esc(SHORT[meta.c] || '')}" data-region="${esc(REGION_KEY(meta.r || ''))}" data-mat="${esc(meta.m || '')}" data-text="${esc((c.name + ' ' + (meta.b || '')).toLowerCase())}" ${c.spokenTo ? 'data-spoken="1"' : ''} ${c.exited ? 'data-exited="1"' : ''} tabindex="-1" role="button" aria-label="${esc(aria)}">`);
         } else {
           o.push(`<g>`);
         }
         o.push(`<rect class="chip-body" x="${c.x + 8}" y="${c.y + 6}" width="${c.w - 16}" height="${c.h - 12}" rx="12" fill="${C.paper}" stroke="${C.rule}"/>`);
-        o.push(logoMarkup(c.slug, cx, cy + 18, 72, c.hue, c.mono, X));
+        o.push(logoMarkup(c.slug, cx, cy + 14, 84, c.hue, c.mono, X));
         wrapText(c.name).forEach((ln, i) => {
           o.push(`<text x="${cx}" y="${cy + 112 + i * 20}" font-size="17" text-anchor="middle" fill="${C.ink}" font-family="Archivo, sans-serif">${esc(ln)}</text>`);
         });
@@ -237,28 +294,30 @@
       o.push(`</g>`);
     }
 
-    // ------------------------------------------------------- the hexagon
-    const pts = hx.points.map(p => p.join(',')).join(' ');
+    o.push(`</g>`);   // end plate clip
+
+    // ------------------------------------------------------- the octagon
+    const opts = poly(oc.points);
     o.push(X ? `<g>` : `<g class="district" data-district="the-ten">`);
     o.push(`<g class="medallion-shell">`);
-    o.push(`<polygon class="hex-fill" points="${pts}" fill="${C.med}"/>`);
-    o.push(`<polygon class="hex-edge" points="${pts}" fill="none" stroke="${C.yellow}" stroke-width="14"/>`);
-    o.push(`<text x="${hx.cx}" y="${hx.titleY}" font-size="86" font-weight="900" letter-spacing="18" text-anchor="middle" fill="${C.medtx}" font-family="Archivo, sans-serif">${esc(hx.title)}</text>`);
-    o.push(`<text x="${hx.cx}" y="${hx.subY}" font-size="28" text-anchor="middle" fill="${C.yellow}" font-family="IBM Plex Mono, monospace" letter-spacing="4">${esc(hx.sub)}</text>`);
-    o.push(`<line x1="${hx.cx - 520}" y1="${hx.ruleY}" x2="${hx.cx + 520}" y2="${hx.ruleY}" stroke="${C.medsub}" stroke-width="2" opacity=".4"/>`);
-    o.push(`<text x="${hx.cx}" y="${hx.footY}" font-size="24" text-anchor="middle" fill="${C.medsub}" font-family="IBM Plex Mono, monospace" letter-spacing="3">${esc(hx.foot)}</text>`);
+    o.push(`<polygon class="oct-fill" points="${opts}" fill="${C.med}"/>`);
+    o.push(`<polygon class="oct-edge" points="${opts}" fill="none" stroke="${C.yellow}" stroke-width="14"/>`);
+    o.push(`<text x="${oc.cx}" y="${oc.titleY}" font-size="86" font-weight="900" letter-spacing="18" text-anchor="middle" fill="${C.medtx}" font-family="Archivo, sans-serif">${esc(oc.title)}</text>`);
+    o.push(`<text x="${oc.cx}" y="${oc.subY}" font-size="28" text-anchor="middle" fill="${C.yellow}" font-family="IBM Plex Mono, monospace" letter-spacing="4">${esc(oc.sub)}</text>`);
+    o.push(`<line x1="${oc.cx - 440}" y1="${oc.ruleY}" x2="${oc.cx + 440}" y2="${oc.ruleY}" stroke="${C.medsub}" stroke-width="2" opacity=".4"/>`);
+    o.push(`<text x="${oc.cx}" y="${oc.footY}" font-size="24" text-anchor="middle" fill="${C.medsub}" font-family="IBM Plex Mono, monospace" letter-spacing="3">${esc(oc.foot)}</text>`);
     o.push(`</g>`);
 
     for (const c of L.medallion) {
       const cx = c.x + c.w / 2;
       const meta = bySlug[c.slug] || {};
       if (!X) {
-        o.push(`<g data-chip data-med data-slug="${esc(c.slug)}" data-cx="${cx}" data-cy="${c.y + MS.logoY + MS.logo / 2}" data-cat="${esc(SHORT[meta.c] || '')}" data-region="${esc(REGION_KEY(meta.r || ''))}" data-mat="${esc(meta.m || '')}" data-text="${esc((c.name + ' ' + (meta.b || '')).toLowerCase())}" ${meta.g ? 'data-spoken="1"' : ''} tabindex="-1" role="button" aria-label="${esc(c.name + '; operator; ' + (c.claim || ''))}">`);
+        o.push(`<g data-chip data-med data-slug="${esc(c.slug)}" data-cx="${cx}" data-cy="${c.y + MS.logoY + MS.logo / 2}" data-bx="${cx - MS.logo / 2}" data-by="${c.y + MS.logoY}" data-bw="${MS.logo}" data-bh="${MS.logo}" data-cat="${esc(SHORT[meta.c] || '')}" data-region="${esc(REGION_KEY(meta.r || ''))}" data-mat="${esc(meta.m || '')}" data-text="${esc((c.name + ' ' + (meta.b || '')).toLowerCase())}" ${meta.g ? 'data-spoken="1"' : ''} tabindex="-1" role="button" aria-label="${esc(c.name + '; operator; ' + (c.claim || ''))}">`);
       } else o.push(`<g>`);
       // The operator marks sit on the dark hexagon, so they get a light plate
       // behind them rather than the layer-hue tile used on chips.
       const lm = manifest && manifest[c.slug];
-      const dom = bySlug[c.slug] && bySlug[c.slug].d;
+      const dom = logoDomain(c.slug);
       const half = MS.logo / 2;
       if (lm) {
         o.push(logoMarkup(c.slug, cx, c.y + MS.logoY, MS.logo, c.hue, c.mono, X));
@@ -279,8 +338,8 @@
     }
     o.push(`</g>`);
 
-    o.push(`<text x="${m.margin}" y="${H - 70}" font-size="30" font-weight="700" fill="${C.ink}" font-family="Archivo, sans-serif">AUTONOMOUS VEHICLE ECOSYSTEM MAP</text>`);
-    o.push(`<text x="${W - m.margin}" y="${H - 70}" font-size="26" text-anchor="end" font-family="IBM Plex Mono, monospace" fill="${C.muted}">${m.companyCount} ORGANISATIONS · 11 LAYERS · COMPILED BY KOFI AGYARE-KWABI</text>`);
+    o.push(`<text x="${PL.x}" y="${H - 70}" font-size="30" font-weight="700" fill="${C.ink}" font-family="Archivo, sans-serif">AUTONOMOUS VEHICLE ECOSYSTEM MAP</text>`);
+    o.push(`<text x="${PL.x + PL.w}" y="${H - 70}" font-size="26" text-anchor="end" font-family="IBM Plex Mono, monospace" fill="${C.muted}">${m.companyCount} ORGANISATIONS · 11 LAYERS · COMPILED BY KOFI AGYARE-KWABI</text>`);
     if (!X) o.push(`<g class="links" aria-hidden="true"></g>`);
     o.push(`</g>`);
     return o.join('');
@@ -427,7 +486,13 @@
     if (el === hotEl) return;
     if (hotEl) hotEl.classList.remove('hot');
     hotEl = el || null;
-    if (hotEl) hotEl.classList.add('hot');
+    if (!hotEl) return;
+    hotEl.classList.add('hot');
+    // Districts share their borders, so a highlighted edge would be half-covered
+    // by whichever neighbour happens to be drawn later. Lift it to the front.
+    const links = svg.querySelector('.links');
+    if (links && hotEl.parentNode === links.parentNode) links.parentNode.insertBefore(hotEl, links);
+    else if (hotEl.parentNode) hotEl.parentNode.appendChild(hotEl);
   }
 
   // ------------------------------------------------------------ full screen
@@ -468,6 +533,16 @@
   const chipEl = slug => svg.querySelector(`[data-chip][data-slug="${CSS.escape(slug)}"]`);
   const centerOf = g => ({ x: +g.dataset.cx, y: +g.dataset.cy });
 
+  // A partner line leaves a tile from the middle of whichever straight edge faces
+  // its partner, so it never crosses the logo it is pointing at.
+  function anchorOf(g, tx, ty) {
+    const x = +g.dataset.bx, y = +g.dataset.by, w = +g.dataset.bw, h = +g.dataset.bh;
+    const cx = x + w / 2, cy = y + h / 2, dx = tx - cx, dy = ty - cy;
+    return Math.abs(dx) * h >= Math.abs(dy) * w
+      ? { x: dx >= 0 ? x + w : x, y: cy }
+      : { x: cx, y: dy >= 0 ? y + h : y };
+  }
+
   function select(slug, fly) {
     const g = chipEl(slug);
     if (!g) return;
@@ -484,11 +559,12 @@
       const pg = chipEl(p.slug);
       if (!pg) continue;
       pg.classList.add('lit');
-      const to = centerOf(pg);
-      const mx = (from.x + to.x) / 2 + (to.y - from.y) * 0.12;
-      const my = (from.y + to.y) / 2 + (from.x - to.x) * 0.12;
+      const pc = centerOf(pg);
+      const a = anchorOf(g, pc.x, pc.y), b = anchorOf(pg, from.x, from.y);
+      const mx = (a.x + b.x) / 2 + (b.y - a.y) * 0.12;
+      const my = (a.y + b.y) / 2 + (a.x - b.x) * 0.12;
       const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-      path.setAttribute('d', `M ${from.x} ${from.y} Q ${mx} ${my} ${to.x} ${to.y}`);
+      path.setAttribute('d', `M ${a.x} ${a.y} Q ${mx} ${my} ${b.x} ${b.y}`);
       links.appendChild(path);
       if (!reducedMotion()) {
         const len = path.getTotalLength();
@@ -844,6 +920,7 @@
               </button>`).join('')}
           </div>
         </details>`).join('')}`;
+    bindHtmlLogos(nav);
     nav.querySelectorAll('[data-navsel]').forEach(b =>
       b.addEventListener('click', () => {
         const slug = b.dataset.navsel;
@@ -887,8 +964,6 @@
 
     svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
     // every layer lifts away from the same point, the centre of the hexagon
-    svg.style.setProperty('--hx', L.hex.cx + 'px');
-    svg.style.setProperty('--hy', L.hex.cy + 'px');
     svg.innerHTML = (spriteText ? `<defs>${spriteText.replace(/^[^>]*>/, '').replace(/<\/svg>\s*$/, '')}</defs>` : '') + buildSVG(false);
 
     document.getElementById('legend-layers').innerHTML = L.districts.map(d =>
@@ -906,9 +981,9 @@
       if (!ids) return null;
       const ds = L.districts.filter(d => ids.includes(d.id));
       if (!ds.length) return null;
-      const x0 = Math.min(...ds.map(d => d.bbox.x)), y0 = Math.min(...ds.map(d => d.bbox.y));
-      const x1 = Math.max(...ds.map(d => d.bbox.x + d.bbox.w));
-      const y1 = Math.max(...ds.map(d => d.bbox.y + d.bbox.h));
+      const x0 = Math.min(...ds.map(d => d.x)), y0 = Math.min(...ds.map(d => d.y));
+      const x1 = Math.max(...ds.map(d => d.x + d.w));
+      const y1 = Math.max(...ds.map(d => d.y + d.h));
       return { x: x0, y: y0, w: x1 - x0, h: y1 - y0 };
     };
     const flyToStage = id => {

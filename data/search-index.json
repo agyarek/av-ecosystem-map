@@ -79,7 +79,8 @@
   "b": "Robotaxi & passenger L4; Robotaxi consumer services; Purpose-built robotaxi/pod ",
   "r": "Greater China",
   "m": "Scaled",
-  "d": "apollo.auto"
+  "d": "apollo.auto",
+  "l": "baidu.com"
  },
  {
   "n": "BMW Personal Pilot / ADAS",
@@ -1298,7 +1299,8 @@
   "b": "Vehicle-road-cloud backbone beneath China's robotaxi cities",
   "r": "Greater China",
   "m": "Scaled",
-  "d": "apollo.auto"
+  "d": "apollo.auto",
+  "l": "baidu.com"
  },
  {
   "n": "Block Harbor",

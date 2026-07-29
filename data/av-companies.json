@@ -35,7 +35,14 @@
   "region": "North America",
   "foundedYear": 2017,
   "slug": "apex-ai",
-  "status": "active"
+  "status": "active",
+  "sources": [
+   {
+    "title": "Apex.AI chosen as strategic middleware software partner for HL Klemove's next-generation ADAS controllers",
+    "url": "https://www.apex.ai/press-release/apex.ai-chosen-as-strategic-middleware-software-partner-for-hl-klemove%E2%80%99s-next-generation-adas-controllers",
+    "date": "2026-01-27"
+   }
+  ]
  },
  {
   "id": "c1",
@@ -278,7 +285,14 @@
   "foundedYear": 2020,
   "fundingUSD": 375,
   "slug": "avride",
-  "status": "active"
+  "status": "active",
+  "sources": [
+   {
+    "title": "Uber and Avride launch robotaxi rides in Dallas",
+    "url": "https://investor.uber.com/news-events/news/press-release-details/2025/Uber-and-Avride-Launch-Robotaxi-Rides-in-Dallas/default.aspx",
+    "date": "2025-12-03"
+   }
+  ]
  },
  {
   "id": "c7",
@@ -449,7 +463,14 @@
   "foundedYear": 2024,
   "fundingUSD": 40,
   "slug": "bot-auto",
-  "status": "active"
+  "status": "active",
+  "sources": [
+   {
+    "title": "Driverless trucks take off in Texas: Bot Auto delivers first freight load",
+    "url": "https://www.axios.com/2026/04/30/bot-auto-delivers-first-freight-load-with-no-one-in-the-cab",
+    "date": "2026-04-30"
+   }
+  ]
  },
  {
   "id": "c11",
@@ -585,7 +606,7 @@
   "opMaturity": "Production",
   "deployment": "",
   "metrics": "",
-  "signal": "Tripled tugger orders YoY; $100M raise (Sep 2025)",
+  "signal": "Tripled DriveMod Tugger orders year over year in 2025; filed a $300M shelf registration in September 2025 and raised $32M",
   "confidence": "Confirmed",
   "mono": "CY",
   "exited": false,
@@ -597,7 +618,14 @@
   "foundedYear": 2013,
   "fundingUSD": 110,
   "slug": "cyngn",
-  "status": "active"
+  "status": "active",
+  "sources": [
+   {
+    "title": "Cyngn reports third quarter 2025 financial results",
+    "url": "https://www.prnewswire.com/news-releases/cyngn-reports-third-quarter-2025-financial-results-302619315.html",
+    "date": "2025-11-13"
+   }
+  ]
  },
  {
   "id": "c15",
@@ -823,7 +851,14 @@
   "fundingUSD": 329,
   "fleetSize": 10,
   "slug": "gatik",
-  "status": "active"
+  "status": "active",
+  "sources": [
+   {
+    "title": "Hundreds of Gatik robot delivery trucks headed for U.S. roads",
+    "url": "https://www.forbes.com/sites/alanohnsman/2026/01/28/hundreds-of-gatik-robot-delivery-trucks-headed-for-us-roads/",
+    "date": "2026-01-28"
+   }
+  ]
  },
  {
   "id": "c21",
@@ -1434,7 +1469,14 @@
   "foundedYear": 2014,
   "fundingUSD": 328,
   "slug": "oxa",
-  "status": "active"
+  "status": "active",
+  "sources": [
+   {
+    "title": "Oxa raises $103m in Series D first close, backed by National Wealth Fund and leading investors",
+    "url": "https://www.nationalwealthfund.org.uk/news-and-publications/news/oxa-raises-103m-in-series-d-first-close-backed-by-national-wealth-fund-and-leading-investors/",
+    "date": "2026-03-04"
+   }
+  ]
  },
  {
   "id": "c36",
@@ -1473,7 +1515,14 @@
   "fundingUSD": 300,
   "valuationUSD": 1200,
   "slug": "plus",
-  "status": "active"
+  "status": "active",
+  "sources": [
+   {
+    "title": "PlusAI and TRATON GROUP expand global partnership to accelerate autonomous on-highway truck commercialization",
+    "url": "https://www.plus.ai/news-and-insights/2026-01-26-traton-group-expand-global-partnership/",
+    "date": "2026-01-26"
+   }
+  ]
  },
  {
   "id": "c37",
@@ -1597,7 +1646,14 @@
   "foundedYear": 2019,
   "fundingUSD": 249,
   "slug": "qcraft",
-  "status": "active"
+  "status": "active",
+  "sources": [
+   {
+    "title": "QCraft raises $100 million in new financing round",
+    "url": "https://www.chinadaily.com.cn/a/202603/23/WS69c0c67ca310d6866eb3f4fd.html",
+    "date": "2026-03-23"
+   }
+  ]
  },
  {
   "id": "c40",
@@ -1796,7 +1852,14 @@
   "region": "North America",
   "foundedYear": 2003,
   "slug": "tesla-robotaxi-fsd",
-  "status": "active"
+  "status": "active",
+  "sources": [
+   {
+    "title": "Tesla robotaxi arrives in Miami: Florida's rain is the hardest test yet for camera-only FSD",
+    "url": "https://www.techtimes.com/articles/319711/20260704/tesla-robotaxi-arrives-miami-floridas-rain-hardest-test-yet-camera-only-fsd.htm",
+    "date": "2026-07-04"
+   }
+  ]
  },
  {
   "id": "c45",
@@ -1950,7 +2013,14 @@
   "foundedYear": 2021,
   "fundingUSD": 1280,
   "slug": "waabi",
-  "status": "active"
+  "status": "active",
+  "sources": [
+   {
+    "title": "Autonomous trucking startup Waabi raises $750 million to expand into robotaxis",
+    "url": "https://www.cnbc.com/2026/01/28/autonomous-startup-waabi-raises-750-million-to-expand-into-robotaxis.html",
+    "date": "2026-01-28"
+   }
+  ]
  },
  {
   "id": "c49",
@@ -3164,7 +3234,14 @@
   "region": "North America",
   "foundedYear": 2016,
   "slug": "seyond",
-  "status": "active"
+  "status": "active",
+  "sources": [
+   {
+    "title": "Nio supplier Seyond reaches 1 million LiDAR delivery milestone",
+    "url": "https://cnevpost.com/2026/04/10/nio-supplier-seyond-reaches-1-million-lidar-delivery-milestone/",
+    "date": "2026-04-10"
+   }
+  ]
  },
  {
   "id": "c80",
@@ -7943,7 +8020,14 @@
   "foundedYear": 2016,
   "fundingUSD": 713,
   "slug": "einride",
-  "status": "active"
+  "status": "active",
+  "sources": [
+   {
+    "title": "Autonomous EV freight trucking company Einride rises sharply in first trade on Nasdaq",
+    "url": "https://www.cnbc.com/2026/06/10/einride-autonomous-freight-truck-first-trade-nasdaq-spac.html",
+    "date": "2026-06-10"
+   }
+  ]
  },
  {
   "id": "c209",
@@ -10345,7 +10429,14 @@
   "foundedYear": 2020,
   "fundingUSD": 123,
   "slug": "coco-robotics",
-  "status": "active"
+  "status": "active",
+  "sources": [
+   {
+    "title": "Sam Altman-backed Coco Robotics raises $80M",
+    "url": "https://techcrunch.com/2025/06/11/sam-altman-backed-coco-robotics-raises-80m/",
+    "date": "2025-06-11"
+   }
+  ]
  },
  {
   "id": "c272",
@@ -11042,7 +11133,14 @@
   "region": "Middle East & Africa",
   "foundedYear": 2022,
   "slug": "mobileye-drive",
-  "status": "active"
+  "status": "active",
+  "sources": [
+   {
+    "title": "Mobileye to establish vertically integrated robotaxi business",
+    "url": "https://www.businesswire.com/news/home/20260615637093/en/Mobileye-To-Establish-Vertically-Integrated-Robotaxi-Business",
+    "date": "2026-06-15"
+   }
+  ]
  },
  {
   "id": "c291",
@@ -12369,7 +12467,14 @@
   "region": "North America",
   "foundedYear": 1946,
   "slug": "element-fleet-management",
-  "status": "active"
+  "status": "active",
+  "sources": [
+   {
+    "title": "Element partners with Waymo to enable the future of autonomous mobility at scale",
+    "url": "https://www.prnewswire.com/news-releases/element-partners-with-waymo-to-enable-the-future-of-autonomous-mobility-at-scale-302800256.html",
+    "date": "2026-06-15"
+   }
+  ]
  },
  {
   "id": "c327",
@@ -12477,7 +12582,14 @@
   "region": "North America",
   "foundedYear": 2010,
   "slug": "evgo",
-  "status": "active"
+  "status": "active",
+  "sources": [
+   {
+    "title": "Uber commits over $100 million to build out robotaxi charging network",
+    "url": "https://www.electrive.com/2026/02/19/uber-to-invest-100m-dollars-in-robotaxi-charging-stations-for-robotaxis/",
+    "date": "2026-02-19"
+   }
+  ]
  },
  {
   "id": "c330",
@@ -13673,7 +13785,14 @@
   "region": "Europe",
   "foundedYear": 2019,
   "slug": "rocsys",
-  "status": "active"
+  "status": "active",
+  "sources": [
+   {
+    "title": "Rocsys unveils multi-bay hands-free robotaxi charging system, raises $13M",
+    "url": "https://electrek.co/2026/04/29/rocsys-unveils-multi-bay-hands-free-robotaxi-charging-raises-13m/",
+    "date": "2026-04-29"
+   }
+  ]
  },
  {
   "id": "c363",

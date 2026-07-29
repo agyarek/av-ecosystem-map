@@ -283,6 +283,23 @@
     </div>`;
   }
 
+  // Where the table has its own scroll pane, an opened row is moved inside it:
+  // scrollIntoView would also scroll the page, dragging the pane past its sticky
+  // stop and taking the column headers off the top of the screen with it.
+  function scrollRowToTop(tr) {
+    const pane = $('lg-scroll');
+    const headH = ($('lg-head').offsetHeight || 0) + 4;
+    if (pane.scrollHeight > pane.clientHeight + 1) {
+      pane.scrollTop += tr.getBoundingClientRect().top - pane.getBoundingClientRect().top - headH;
+      const hdr = document.querySelector('header.site');
+      const anchor = pane.getBoundingClientRect().top + scrollY - (hdr ? hdr.offsetHeight : 0);
+      if (anchor > scrollY) scrollTo({ top: anchor, behavior: 'instant' });
+    } else {
+      // scroll-margin-top on tr.row keeps the row clear of the sticky chrome
+      tr.scrollIntoView({ block: 'start', behavior: 'instant' });
+    }
+  }
+
   function closeDetail() {
     document.querySelectorAll('tr.detail').forEach(t => t.remove());
     document.querySelectorAll('tr.row[aria-expanded="true"]').forEach(t => t.setAttribute('aria-expanded', 'false'));
@@ -300,8 +317,7 @@
     tr.after(dt);
     mountLogos(dt);
     fillDetailExtras(c, dt);
-    // scroll-margin-top on tr.row keeps the row clear of the sticky header
-    tr.scrollIntoView({ block: 'start', behavior: 'instant' });
+    scrollRowToTop(tr);
   }
 
   // ------------------------------------------------------------ export
@@ -455,6 +471,37 @@
       e.target.checked ? state.cols.add(v) : state.cols.delete(v);
       applyAll();
     });
+    // The table pane is sized against the space left under the site chrome,
+    // which is sticky and changes height as the nav wraps.
+    const siteHeader = document.querySelector('header.site');
+    const setStickTop = () => document.documentElement.style
+      .setProperty('--stick-top', (siteHeader ? siteHeader.offsetHeight : 0) + 'px');
+    setStickTop();
+    addEventListener('resize', setStickTop);
+
+    // On a phone the pane is not a scroller — the page is — so the jump buttons
+    // move whichever one is actually carrying the rows.
+    const scroller = $('lg-scroll');
+    const paneScrolls = () => scroller.scrollHeight > scroller.clientHeight + 1;
+    const jump = end => {
+      if (paneScrolls()) {
+        // pin the pane first, so both ends of the table land fully on screen
+        const anchor = scroller.getBoundingClientRect().top + scrollY
+          - (siteHeader ? siteHeader.offsetHeight : 0);
+        scrollTo({ top: Math.max(0, anchor), behavior: 'smooth' });
+        scroller.scrollTo({ top: end ? scroller.scrollHeight : 0, behavior: 'smooth' });
+      } else {
+        const r = scroller.getBoundingClientRect();
+        scrollTo({
+          top: Math.max(0, end ? r.bottom + scrollY - innerHeight + 12
+            : r.top + scrollY - (siteHeader ? siteHeader.offsetHeight : 0) - 8),
+          behavior: 'smooth'
+        });
+      }
+    };
+    $('lg-top').addEventListener('click', () => jump(false));
+    $('lg-bottom').addEventListener('click', () => jump(true));
+
     $('sheet-toggle').addEventListener('click', () => {
       const open = document.body.classList.toggle('sheet-open');
       $('sheet-toggle').setAttribute('aria-expanded', open);

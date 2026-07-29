@@ -3630,9 +3630,9 @@
 <text x="2338" y="2158" font-size="80" font-weight="900" text-anchor="middle" fill="#12130F">WA</text>
 <text x="2338" y="2272" font-size="42" font-weight="700" text-anchor="middle" fill="#FAFAF7">Waymo</text>
 <text x="2338" y="2318" font-size="25" text-anchor="middle" fill="#B9BCB2">The only fully driverless paid</text>
-<text x="2338" y="2352" font-size="25" text-anchor="middle" fill="#B9BCB2">service at scale: about half a</text>
-<text x="2338" y="2386" font-size="25" text-anchor="middle" fill="#B9BCB2">million rides a week across 11</text>
-<text x="2338" y="2420" font-size="25" text-anchor="middle" fill="#B9BCB2">US metros (mid-2026).</text>
+<text x="2338" y="2352" font-size="25" text-anchor="middle" fill="#B9BCB2">service at scale: about 500k</text>
+<text x="2338" y="2386" font-size="25" text-anchor="middle" fill="#B9BCB2">rides a week across 11 US metros</text>
+<text x="2338" y="2420" font-size="25" text-anchor="middle" fill="#B9BCB2">(mid-2026).</text>
 </g>
 <g class="op" data-slug="baidu-apollo-go">
 <rect x="3098" y="2022" width="200" height="200" rx="36" fill="#FAFAF7"/>

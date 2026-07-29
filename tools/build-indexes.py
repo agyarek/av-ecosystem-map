@@ -122,6 +122,9 @@ def maturity_bucket(c):
 
 domains = enrichment.get("domains", {})
 logo_domains = enrichment.get("logoDomains", {})
+wiki = enrichment.get("wiki", {})
+tickers = enrichment.get("tickers", {})
+passenger = set(enrichment.get("passengerOperators", []))
 search = [{"n": c["name"], "s": c["slug"], "c": c["cat"],
            "b": (c.get("sub") or "")[:80],
            "r": c.get("region", ""), "m": maturity_bucket(c),
@@ -131,6 +134,13 @@ search = [{"n": c["name"], "s": c["slug"], "c": c["cat"],
            # usable mark but its parent's does.
            **({"d": domains[c["name"]]} if c["name"] in domains else {}),
            **({"l": logo_domains[c["name"]]} if c["name"] in logo_domains else {}),
+           # "w" is a Wikipedia article title, used at runtime for a freely
+           # licensed picture; "t" an exchange-qualified ticker
+           **({"w": wiki[c["name"]]} if c["name"] in wiki else {}),
+           **({"t": tickers[c["name"]]} if c["name"] in tickers else {}),
+           # "p" marks the organisations that carry passengers, which is who
+           # a deployment footprint is a real question for
+           **({"p": 1} if c["name"] in passenger else {}),
            **({"x": 1} if c["status"] != "active" else {}),
            **({"g": 1} if c.get("spokenTo") else {})}
           for c in companies]

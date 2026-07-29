@@ -9,7 +9,8 @@
    Filtering dims; it never reflows. One company, one chip, always. */
 (function () {
   'use strict';
-  const { ROOT, esc, json, fmtM, reducedMotion } = window.AV;
+  const { ROOT, esc, json, fmtM, reducedMotion, LOGO_SOURCES, LOGO_MIN,
+          probeLogo, mountLogos, ICON, linkedinSearch } = window.AV;
 
   const svg = document.getElementById('poster');
   const viewport = document.getElementById('poster-viewport');
@@ -70,31 +71,24 @@
   const isOperator = slug => L.medallion.some(mo => mo.slug === slug);
   const logoDomain = slug => (bySlug[slug] && (bySlug[slug].l || bySlug[slug].d)) || '';
   const siteDomain = slug => (bySlug[slug] && bySlug[slug].d) || '';
+  // Deployment answers "where can I ride one", which is only a question for the
+  // organisations that carry passengers.
+  const carriesPassengers = rec => !!(bySlug[rec.slug] || {}).p;
+  // "Jane Doe, co-founder and CEO; John Roe, CTO" becomes linked names. The
+  // dataset holds no verified profile URLs, so each name links to a LinkedIn
+  // people search scoped by company rather than to a guessed profile.
+  const people = (str, company) => String(str).split(/;\s*/).map(part => {
+    const m = part.match(/^([^,(]+?)(\s*[,(].*)?$/);
+    if (!m || !/[A-Za-z]{2}/.test(m[1]) || /^(n\/a|none|unknown)/i.test(m[1])) return esc(part);
+    // co-leads are joined with "and" before the comma; any "and" after it is part
+    // of a title ("co-founder and CEO") and must not be split on
+    const names = m[1].split(/\s+(?:and|&)\s+/).map(n => n.trim()).filter(Boolean);
+    return names.map(n =>
+      `<a class="li" href="${esc(linkedinSearch(n, company))}" target="_blank" rel="noopener noreferrer">${ICON.linkedin}${esc(n)}</a>`
+    ).join(' and ') + esc(m[2] || '');
+  }).join('; ');
 
   // ------------------------------------------------------------ SVG build
-  // Remote logo sources, tried in order. These are what make marks appear with no
-  // build step: the browser fetches them directly, so the committed assets from
-  // tools/fetch-logos.py are an optional quality upgrade rather than a
-  // prerequisite. When those assets exist they take precedence below.
-  //
-  // Order is by resolution first and connection cost second. The aggregators live
-  // on one host each, so 442 companies share a handful of connections; a company's
-  // own touch icon is usually the sharpest mark available but costs a fresh DNS
-  // lookup and handshake per company, so it is only reached when the shared hosts
-  // return something too small to use. Clearbit's free logo API, the usual answer
-  // here, shut down in December 2025. Set LOGO_DEV_TOKEN to a logo.dev publishable
-  // token to put a real logo CDN in front; the keyless sources still apply without.
-  const LOGO_DEV_TOKEN = '';
-  const LOGO_SOURCES = [
-    d => LOGO_DEV_TOKEN && `https://img.logo.dev/${encodeURIComponent(d)}?token=${LOGO_DEV_TOKEN}&size=256&format=png&retina=true`,
-    d => `https://unavatar.io/${encodeURIComponent(d)}?fallback=false`,
-    d => `https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=${encodeURIComponent('https://' + d)}&size=256`,
-    d => `https://${d}/apple-touch-icon.png`,
-    d => `https://${d}/apple-touch-icon-precomposed.png`,
-    d => `https://www.google.com/s2/favicons?domain=${encodeURIComponent(d)}&sz=128`,
-    d => `https://icons.duckduckgo.com/ip3/${encodeURIComponent(d)}.ico`,
-  ];
-  const LOGO_MIN = 64;   // below this a mark is only used if nothing better exists
 
   function logoMarkup(slug, cx, cy, size, hue, mono, forExport) {
     const m = manifest && manifest[slug];
@@ -134,8 +128,7 @@
   // no source clears the bar the largest one seen is used anyway, so a company
   // with only a small icon still gets its logo rather than dropping to a monogram.
   function bindLogo(img) {
-    const domain = img.dataset.domain;
-    const finish = href => {
+    probeLogo(img.dataset.domain, href => {
       logoQueue.inflight--;
       if (href) {
         img.setAttribute('href', href);
@@ -144,24 +137,7 @@
         if (bg) bg.style.opacity = '1';
       }
       pump();
-    };
-    let best = null, bestPx = 0;
-    const probe = i => {
-      if (i >= LOGO_SOURCES.length) return finish(best);
-      const url = LOGO_SOURCES[i](domain);
-      if (!url) return probe(i + 1);
-      const test = new Image();
-      test.decoding = 'async';
-      test.onload = () => {
-        const px = Math.max(test.naturalWidth || 0, test.naturalHeight || 0);
-        if (px >= LOGO_MIN) return finish(url);
-        if (px > bestPx) { best = url; bestPx = px; }
-        probe(i + 1);
-      };
-      test.onerror = () => probe(i + 1);
-      test.src = url;
-    };
-    probe(0);
+    });
   }
   function pump() {
     while (logoQueue.inflight < logoQueue.MAX && logoQueue.pending.size) {
@@ -194,31 +170,8 @@
   // monogram is enough.
   const navLogo = slug => {
     const d = logoDomain(slug);
-    return d ? `<img alt="" data-htmlogo="${esc(d)}" decoding="async">` : '';
+    return d ? `<img alt="" data-logo-domain="${esc(d)}" decoding="async">` : '';
   };
-  function bindHtmlLogos(root) {
-    root.querySelectorAll('img[data-htmlogo]').forEach(el => {
-      const domain = el.dataset.htmlogo;
-      delete el.dataset.htmlogo;
-      let best = null, bestPx = 0;
-      const done = url => { if (url) { el.src = url; el.style.opacity = '1'; } else el.remove(); };
-      const probe = i => {
-        if (i >= LOGO_SOURCES.length) return done(best);
-        const url = LOGO_SOURCES[i](domain);
-        if (!url) return probe(i + 1);
-        const test = new Image();
-        test.onload = () => {
-          const px = Math.max(test.naturalWidth || 0, test.naturalHeight || 0);
-          if (px >= LOGO_MIN) return done(url);
-          if (px > bestPx) { best = url; bestPx = px; }
-          probe(i + 1);
-        };
-        test.onerror = () => probe(i + 1);
-        test.src = url;
-      };
-      probe(0);
-    });
-  }
 
   const poly = pts => pts.map(p => p.join(',')).join(' ');
 
@@ -616,26 +569,34 @@
     for (const p of partnerRows) (grouped[p.k] = grouped[p.k] || []).push(p);
     const facts = rec ? [
       ['HQ', rec.hq], ['Founded', rec.founded], ['Maturity', rec.opMaturity],
-      ['Deployment', rec.deployment], ['Fleet', rec.fleetSize],
+      // deployment answers "where can I ride one", so it only belongs on the
+      // companies that carry passengers
+      ...(carriesPassengers(rec) ? [['Deployment', rec.deployment]] : []),
+      ['Fleet', rec.fleetSize],
       ['Funding', rec.fundingUSD ? fmtM(rec.fundingUSD) : ''],
       ['Valuation', rec.valuationUSD ? fmtM(rec.valuationUSD) : ''],
       ['Investors', rec.investors],
       ['Status', rec.status === 'active' ? 'Active'
         : (rec.acquiredBy ? 'Acquired by ' + rec.acquiredBy : 'Exited')],
       ['Also in', (rec.all || []).filter(a => a !== rec.cat && window.AV.HUES[a]).join(' · ')],
-      ['Confidence', rec.confidence], ['Last verified', rec.lastVerified],
+      ['Last verified', rec.lastVerified],
     ].filter(([, v]) => v) : [];
     const sources = (rec && rec.sources) || [];
+    const site = siteDomain(slug);
     card.innerHTML = `
       <div class="cc-top">
         <span class="mono-tile cc-logo" aria-hidden="true" style="--tile:oklch(var(--layer-l) var(--layer-c) ${hue})">${esc((rec && rec.mono) || (meta.n || slug).slice(0, 2).toUpperCase())}${navLogo(slug)}</span>
         <div class="cc-id">
           <h2>${esc(meta.n || slug)}</h2>
-          <p class="cc-layer"><span class="dot" style="background:oklch(var(--layer-l) var(--layer-c) ${hue})"></span>${esc(meta.c || '')}${meta.r ? ' · ' + esc(meta.r) : ''}${meta.x ? ' · exited' : ''}${meta.g ? ' · <span class="gold-dot"></span> spoken with' : ''}</p>
+          <p class="cc-layer"><span class="dot" style="background:oklch(var(--layer-l) var(--layer-c) ${hue})"></span>${esc(meta.c || '')}${meta.r ? ' · ' + esc(meta.r) : ''}${meta.x ? ' · exited' : ''}</p>
         </div>
         <button class="cc-close" aria-label="Close details">×</button>
       </div>
+      ${meta.g ? '<p class="spoken-bar">SPOKEN WITH DIRECTLY</p>' : ''}
+      ${site ? `<p class="cc-site"><a href="https://${esc(site)}" target="_blank" rel="noopener noreferrer">${ICON.globe}${esc(site)}</a></p>` : ''}
+      <div class="cc-shot" hidden></div>
       ${(rec && (rec.about || rec.sub)) || meta.b ? `<p class="cc-sub">${esc((rec && (rec.about || rec.sub)) || meta.b)}</p>` : ''}
+      ${rec && rec.leadership && rec.leadership !== 'N/A (defunct)' ? `<p class="cc-lead"><span class="pk">LEADERSHIP</span> ${people(rec.leadership, rec.name)}</p>` : ''}
       ${facts.length ? `<dl class="cc-facts">${facts.map(([k, v]) =>
         `<dt>${esc(k)}</dt><dd>${esc(String(v))}</dd>`).join('')}</dl>` : ''}
       <div class="cc-partners"><span class="pk">PARTNERSHIPS</span> ${partnerRows.length
@@ -654,6 +615,16 @@
     card.querySelector('.cc-close').addEventListener('click', () => clearSel());
     card.querySelectorAll('[data-go]').forEach(b =>
       b.addEventListener('click', () => select(b.dataset.go, true)));
+    mountLogos(card);
+    if (meta.w) window.AV.wikiSummary(meta.w).then(w => {
+      const box = card.querySelector('.cc-shot');
+      if (!w || !box || state.sel !== slug) return;
+      box.innerHTML = `<a href="${esc(w.page)}" target="_blank" rel="noopener noreferrer">
+        <img src="${esc(w.thumb)}" alt="${esc(meta.n || slug)}" loading="lazy" decoding="async">
+        <span class="cc-credit">Wikipedia</span></a>`;
+      box.hidden = false;
+      positionCard();
+    });
     positionCard();
   }
 
@@ -920,7 +891,7 @@
               </button>`).join('')}
           </div>
         </details>`).join('')}`;
-    bindHtmlLogos(nav);
+    mountLogos(nav);
     nav.querySelectorAll('[data-navsel]').forEach(b =>
       b.addEventListener('click', () => {
         const slug = b.dataset.navsel;

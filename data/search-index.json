@@ -15,7 +15,8 @@
   "b": "Simulation & synthetic data; Testing, validation & safety assurance; AV middlewa",
   "r": "North America",
   "m": "Scaled",
-  "d": "appliedintuition.com"
+  "d": "appliedintuition.com",
+  "w": "Applied Intuition"
  },
  {
   "n": "Argo AI",
@@ -24,6 +25,7 @@
   "b": "Ford/VW-backed L4 developer whose alumni seeded Ford Latitude AI",
   "r": "North America",
   "m": "Historical",
+  "w": "Argo AI",
   "x": 1
  },
  {
@@ -34,6 +36,8 @@
   "r": "North America",
   "m": "Commercial",
   "d": "aurora.tech",
+  "w": "Aurora Innovation",
+  "t": "NASDAQ:AUR",
   "g": 1
  },
  {
@@ -43,7 +47,8 @@
   "b": "Early driverless robotaxi pilots across Shenzhen and Guangzhou",
   "r": "Greater China",
   "m": "Commercial",
-  "d": "autox.ai"
+  "d": "autox.ai",
+  "p": 1
  },
  {
   "n": "AutoX / Tensor",
@@ -52,6 +57,7 @@
   "b": "Tensor robocars aimed at personally owned L4 driving from 2026",
   "r": "North America",
   "m": "Historical",
+  "p": 1,
   "x": 1
  },
  {
@@ -70,7 +76,8 @@
   "b": "China's largest robotaxi operator with 3.2M rides in Q1 2026",
   "r": "Greater China",
   "m": "Scaled",
-  "d": "apollo.auto"
+  "d": "apollo.auto",
+  "p": 1
  },
  {
   "n": "Baidu Apollo Go",
@@ -80,7 +87,9 @@
   "r": "Greater China",
   "m": "Scaled",
   "d": "apollo.auto",
-  "l": "baidu.com"
+  "l": "baidu.com",
+  "w": "Apollo Go",
+  "p": 1
  },
  {
   "n": "BMW Personal Pilot / ADAS",
@@ -89,7 +98,8 @@
   "b": "Took Level 3 to German roads on the 7-Series flagship",
   "r": "Europe",
   "m": "Scaled",
-  "d": "bmw.com"
+  "d": "bmw.com",
+  "w": "BMW"
  },
  {
   "n": "Bot Auto",
@@ -125,6 +135,8 @@
   "b": "GM's robotaxi program, since folded into personal-vehicle ADAS",
   "r": "North America",
   "m": "Historical",
+  "w": "Cruise (autonomous vehicle)",
+  "p": 1,
   "x": 1,
   "g": 1
  },
@@ -134,7 +146,8 @@
   "c": "AV Driver / Autonomy Software",
   "b": "DriveMod autonomy for tuggers and forklifts, orders tripled YoY",
   "r": "North America",
-  "m": "Scaled"
+  "m": "Scaled",
+  "t": "NASDAQ:CYN"
  },
  {
   "n": "DeepRoute.ai",
@@ -152,7 +165,8 @@
   "b": "Robotaxi & passenger L4; Ridehail & demand aggregation",
   "r": "Greater China",
   "m": "Pilot",
-  "d": "didiglobal.com"
+  "d": "didiglobal.com",
+  "p": 1
  },
  {
   "n": "dSPACE",
@@ -188,7 +202,8 @@
   "b": "Autonomous trucking L4; Goods delivery autonomy",
   "r": "North America",
   "m": "Commercial",
-  "d": "gatik.ai"
+  "d": "gatik.ai",
+  "w": "Gatik"
  },
  {
   "n": "Ghost Autonomy",
@@ -206,7 +221,8 @@
   "b": "Compute / SoC / AI chips; L2+/L3 consumer ADAS stacks",
   "r": "Greater China",
   "m": "Scaled",
-  "d": "horizon.cc"
+  "d": "horizon.cc",
+  "t": "HKG:9660"
  },
  {
   "n": "Huawei IAS/ADS (Qiankun)",
@@ -260,7 +276,8 @@
   "b": "Driverless trucks hauling Permian Basin freight, revenue up 74%",
   "r": "North America",
   "m": "Commercial",
-  "d": "kodiak.ai"
+  "d": "kodiak.ai",
+  "w": "Kodiak Robotics"
  },
  {
   "n": "May Mobility",
@@ -269,7 +286,9 @@
   "b": "Robotaxi & passenger L4; AV middleware, dev platforms & tooling",
   "r": "North America",
   "m": "Commercial",
-  "d": "maymobility.com"
+  "d": "maymobility.com",
+  "w": "May Mobility",
+  "p": 1
  },
  {
   "n": "Mercedes-Benz Drive Pilot / MB.Drive",
@@ -278,7 +297,8 @@
   "b": "Certified Level 3 operation in Germany, Nevada and California",
   "r": "Europe",
   "m": "Scaled",
-  "d": "mercedes-benz.com"
+  "d": "mercedes-benz.com",
+  "w": "Mercedes-Benz Group"
  },
  {
   "n": "Momenta",
@@ -287,7 +307,8 @@
   "b": "OEM data flywheel across 680k+ Momenta-equipped vehicles",
   "r": "Greater China",
   "m": "Scaled",
-  "d": "momenta.cn"
+  "d": "momenta.cn",
+  "p": 1
  },
  {
   "n": "Motional",
@@ -297,6 +318,8 @@
   "r": "North America",
   "m": "Commercial",
   "d": "motional.com",
+  "w": "Motional",
+  "p": 1,
   "g": 1
  },
  {
@@ -306,7 +329,9 @@
   "b": "Banyan 3.3.0 world-model update rolled out to 460k+ vehicles",
   "r": "Greater China",
   "m": "Scaled",
-  "d": "nio.com"
+  "d": "nio.com",
+  "w": "Nio (company)",
+  "t": "NYSE:NIO"
  },
  {
   "n": "NVIDIA DRIVE",
@@ -333,7 +358,8 @@
   "b": "Autonomous trucking L4; L2+/L3 consumer ADAS stacks",
   "r": "North America",
   "m": "Scaled",
-  "d": "plus.ai"
+  "d": "plus.ai",
+  "w": "Plus (company)"
  },
  {
   "n": "Pony.ai",
@@ -343,6 +369,9 @@
   "r": "Greater China",
   "m": "Commercial",
   "d": "pony.ai",
+  "w": "Pony.ai",
+  "t": "NASDAQ:PONY",
+  "p": 1,
   "g": 1
  },
  {
@@ -360,7 +389,8 @@
   "c": "AV Driver / Autonomy Software",
   "b": "Robotaxi-rooted NOA maker with $100M raised for physical AI",
   "r": "Greater China",
-  "m": "Pilot"
+  "m": "Pilot",
+  "p": 1
  },
  {
   "n": "Refraction AI",
@@ -377,7 +407,9 @@
   "b": "Sidewalk fleet on Uber Eats, targeting 2,000 robots by 2026",
   "r": "North America",
   "m": "Commercial",
-  "d": "serverobotics.com"
+  "d": "serverobotics.com",
+  "w": "Serve Robotics",
+  "t": "NASDAQ:SERV"
  },
  {
   "n": "Stack AV",
@@ -404,7 +436,8 @@
   "b": "Robotaxi & passenger L4; L2+/L3 consumer ADAS stacks; Robotaxi consumer services",
   "r": "North America",
   "m": "Commercial",
-  "d": "tesla.com"
+  "d": "tesla.com",
+  "p": 1
  },
  {
   "n": "Tier IV / Autoware",
@@ -413,7 +446,8 @@
   "b": "AV middleware, dev platforms & tooling; Robotaxi & passenger L4",
   "r": "Asia-Pacific",
   "m": "Commercial",
-  "d": "tier4.jp"
+  "d": "tier4.jp",
+  "p": 1
  },
  {
   "n": "Torc Robotics",
@@ -432,6 +466,8 @@
   "r": "North America",
   "m": "Historical",
   "d": "tusimple.com",
+  "w": "TuSimple",
+  "t": "OTC:TSPH",
   "x": 1
  },
  {
@@ -451,6 +487,8 @@
   "r": "North America",
   "m": "Scaled",
   "d": "waymo.com",
+  "w": "Waymo",
+  "p": 1,
   "g": 1
  },
  {
@@ -461,6 +499,8 @@
   "r": "Europe",
   "m": "Pilot",
   "d": "wayve.ai",
+  "w": "Wayve",
+  "p": 1,
   "g": 1
  },
  {
@@ -470,7 +510,10 @@
   "b": "Robotaxi & passenger L4; Goods delivery autonomy; Robotaxi consumer services",
   "r": "Greater China",
   "m": "Commercial",
-  "d": "weride.ai"
+  "d": "weride.ai",
+  "w": "WeRide",
+  "t": "NASDAQ:WRD",
+  "p": 1
  },
  {
   "n": "XPeng",
@@ -479,7 +522,10 @@
   "b": "VW licenses its AD stack for China EVs starting 2026",
   "r": "Greater China",
   "m": "Scaled",
-  "d": "xpeng.com"
+  "d": "xpeng.com",
+  "w": "XPeng",
+  "t": "NYSE:XPEV",
+  "p": 1
  },
  {
   "n": "XPeng XNGP",
@@ -497,7 +543,8 @@
   "b": "FMCW 4D LiDAR chosen for the autonomous Freightliner Cascadia",
   "r": "North America",
   "m": "Commercial",
-  "d": "aeva.com"
+  "d": "aeva.com",
+  "t": "NASDAQ:AEVA"
  },
  {
   "n": "Ambarella",
@@ -506,7 +553,9 @@
   "b": "CVflow SoCs bringing edge-AI vision to lower-power ADAS",
   "r": "North America",
   "m": "Commercial",
-  "d": "ambarella.com"
+  "d": "ambarella.com",
+  "w": "Ambarella (company)",
+  "t": "NASDAQ:AMBA"
  },
  {
   "n": "Arbe Robotics",
@@ -531,7 +580,8 @@
   "c": "Sensing & Compute Hardware",
   "b": "HK-listed SoC maker in China's domestic ADAS compute push",
   "r": "Greater China",
-  "m": "Commercial"
+  "m": "Commercial",
+  "t": "HKG:2533"
  },
  {
   "n": "Cepton",
@@ -549,7 +599,9 @@
   "b": "EXT color-detecting LiDAR heading to 2026 mass production",
   "r": "Greater China",
   "m": "Scaled",
-  "d": "hesaitech.com"
+  "d": "hesaitech.com",
+  "w": "Hesai Technology",
+  "t": "NASDAQ:HSAI"
  },
  {
   "n": "Hexagon | NovAtel",
@@ -567,7 +619,9 @@
   "b": "Radar chips and safety MCUs inside zonal ADAS architectures",
   "r": "Europe",
   "m": "Scaled",
-  "d": "infineon.com"
+  "d": "infineon.com",
+  "w": "Infineon Technologies",
+  "t": "ETR:IFX"
  },
  {
   "n": "Innoviz",
@@ -576,7 +630,9 @@
   "b": "MEMS LiDAR carrying BMW and Volkswagen series nominations",
   "r": "Middle East & Africa",
   "m": "Commercial",
-  "d": "innoviz.tech"
+  "d": "innoviz.tech",
+  "w": "Innoviz Technologies",
+  "t": "NASDAQ:INVZ"
  },
  {
   "n": "LeddarTech",
@@ -604,6 +660,8 @@
   "r": "North America",
   "m": "Historical",
   "d": "luminartech.com",
+  "w": "Luminar Technologies",
+  "t": "NASDAQ:LAZR",
   "x": 1
  },
  {
@@ -613,7 +671,8 @@
   "b": "Consolidator holding Ibeo and Luminar LiDAR portfolios",
   "r": "North America",
   "m": "Commercial",
-  "d": "microvision.com"
+  "d": "microvision.com",
+  "t": "NASDAQ:MVIS"
  },
  {
   "n": "NXP Semiconductors",
@@ -622,7 +681,9 @@
   "b": "Radar processors plus secure in-vehicle networking silicon",
   "r": "Europe",
   "m": "Scaled",
-  "d": "nxp.com"
+  "d": "nxp.com",
+  "w": "NXP Semiconductors",
+  "t": "NASDAQ:NXPI"
  },
  {
   "n": "OmniVision",
@@ -640,7 +701,8 @@
   "b": "Cameras & vision sensors; Radar (incl. 4D imaging)",
   "r": "North America",
   "m": "Scaled",
-  "d": "onsemi.com"
+  "d": "onsemi.com",
+  "t": "NASDAQ:ON"
  },
  {
   "n": "Ouster",
@@ -649,7 +711,9 @@
   "b": "Digital LiDAR at $49M quarterly revenue, 12,600+ sensors shipped",
   "r": "North America",
   "m": "Scaled",
-  "d": "ouster.com"
+  "d": "ouster.com",
+  "w": "Ouster (company)",
+  "t": "NASDAQ:OUST"
  },
  {
   "n": "Point One Navigation",
@@ -676,7 +740,9 @@
   "b": "R-Car SoCs, the Japanese mainstay of ADAS and vehicle compute",
   "r": "Asia-Pacific",
   "m": "Scaled",
-  "d": "renesas.com"
+  "d": "renesas.com",
+  "w": "Renesas Electronics",
+  "t": "TYO:6723"
  },
  {
   "n": "Rivian Autonomy Platform",
@@ -694,7 +760,8 @@
   "b": "LiDAR design wins across 177 models from 36 OEMs",
   "r": "Greater China",
   "m": "Scaled",
-  "d": "robosense.ai"
+  "d": "robosense.ai",
+  "t": "HKG:2498"
  },
  {
   "n": "SBG Systems",
@@ -757,7 +824,9 @@
   "b": "Jacinto compute and mmWave radar for cost-down ADAS stacks",
   "r": "North America",
   "m": "Scaled",
-  "d": "ti.com"
+  "d": "ti.com",
+  "w": "Texas Instruments",
+  "t": "NASDAQ:TXN"
  },
  {
   "n": "Trimble Applanix",
@@ -794,6 +863,8 @@
   "r": "North America",
   "m": "Scaled",
   "d": "nvidia.com",
+  "w": "Nvidia",
+  "t": "NASDAQ:NVDA",
   "g": 1
  },
  {
@@ -821,6 +892,7 @@
   "b": "Spinning LiDAR pioneer whose line lives on inside Ouster",
   "r": "North America",
   "m": "Historical",
+  "w": "Velodyne Lidar",
   "x": 1
  },
  {
@@ -830,7 +902,8 @@
   "b": "Tier-1 ADAS portfolio moving to Harman in a EUR1.5B deal",
   "r": "Europe",
   "m": "Scaled",
-  "d": "zf.com"
+  "d": "zf.com",
+  "w": "ZF Friedrichshafen"
  },
  {
   "n": "aiMotive",
@@ -980,7 +1053,8 @@
   "b": "HD Live Map inside Mercedes-Benz DRIVE PILOT and Personal Pilot",
   "r": "Europe",
   "m": "Scaled",
-  "d": "here.com"
+  "d": "here.com",
+  "w": "HERE Technologies"
  },
  {
   "n": "Hexagon VIRES Virtual Test Drive",
@@ -1193,7 +1267,9 @@
   "b": "Independent map supplier advancing the Orbis Maps platform",
   "r": "Europe",
   "m": "Scaled",
-  "d": "tomtom.com"
+  "d": "tomtom.com",
+  "w": "TomTom",
+  "t": "AMS:TOM2"
  },
  {
   "n": "TÜV NORD",
@@ -1421,7 +1497,9 @@
   "b": "5GAA founding networks for teleoperation and cooperative driving",
   "r": "Europe",
   "m": "Scaled",
-  "d": "ericsson.com"
+  "d": "ericsson.com",
+  "w": "Ericsson",
+  "t": "NASDAQ:ERIC"
  },
  {
   "n": "ETAS / ESCRYPT",
@@ -1545,7 +1623,9 @@
   "b": "Private wireless and edge networks for depots and remote ops",
   "r": "Europe",
   "m": "Scaled",
-  "d": "nokia.com"
+  "d": "nokia.com",
+  "w": "Nokia",
+  "t": "NYSE:NOK"
  },
  {
   "n": "NoTraffic",
@@ -1617,7 +1697,9 @@
   "b": "Snapdragon Digital Chassis from modem to Ride SoC",
   "r": "North America",
   "m": "Scaled",
-  "d": "qualcomm.com"
+  "d": "qualcomm.com",
+  "w": "Qualcomm",
+  "t": "NASDAQ:QCOM"
  },
  {
   "n": "Quectel Wireless",
@@ -1749,7 +1831,9 @@
   "b": "Vehicle architecture supplier and Motional co-founder",
   "r": "Europe",
   "m": "Scaled",
-  "d": "aptiv.com"
+  "d": "aptiv.com",
+  "w": "Aptiv",
+  "t": "NYSE:APTV"
  },
  {
   "n": "BAIC Group",
@@ -1785,7 +1869,8 @@
   "b": "The largest Tier-1, from braking redundancy to ADAS sensors",
   "r": "Europe",
   "m": "Scaled",
-  "d": "bosch.com"
+  "d": "bosch.com",
+  "w": "Robert Bosch GmbH"
  },
  {
   "n": "BYD",
@@ -1794,7 +1879,9 @@
   "b": "EV scale champion with Momenta-linked autonomy programs",
   "r": "Greater China",
   "m": "Scaled",
-  "d": "byd.com"
+  "d": "byd.com",
+  "w": "BYD Company",
+  "t": "HKG:1211"
  },
  {
   "n": "Continental",
@@ -1803,7 +1890,9 @@
   "b": "Radar; Tier-1 integrators; Cybersecurity via Argus",
   "r": "Europe",
   "m": "Scaled",
-  "d": "continental.com"
+  "d": "continental.com",
+  "w": "Continental AG",
+  "t": "ETR:CON"
  },
  {
   "n": "Daimler Truck",
@@ -1830,7 +1919,9 @@
   "b": "Toyota-group electronics scaling automated driving parts",
   "r": "Asia-Pacific",
   "m": "Scaled",
-  "d": "denso.com"
+  "d": "denso.com",
+  "w": "Denso",
+  "t": "TYO:6902"
  },
  {
   "n": "Desay SV",
@@ -1864,7 +1955,8 @@
   "b": "Cabless electric freight pods with a Nasdaq listing (ENRD)",
   "r": "Europe",
   "m": "Commercial",
-  "d": "einride.tech"
+  "d": "einride.tech",
+  "w": "Einride"
  },
  {
   "n": "Ford",
@@ -1873,7 +1965,9 @@
   "b": "BlueCruise hands-free today, eyes-off teased for 2028",
   "r": "North America",
   "m": "Commercial",
-  "d": "ford.com"
+  "d": "ford.com",
+  "w": "Ford Motor Company",
+  "t": "NYSE:F"
  },
  {
   "n": "Forvia",
@@ -1907,7 +2001,8 @@
   "c": "Vehicle Platform & Manufacturing",
   "b": "Contract EV manufacturing for AV-ready platforms",
   "r": "Greater China",
-  "m": "Commercial"
+  "m": "Commercial",
+  "w": "Foxconn"
  },
  {
   "n": "GAC Group / GAC Toyota",
@@ -1925,7 +2020,9 @@
   "b": "OEM AV platform suppliers; Contract manufacturing & upfitting",
   "r": "Greater China",
   "m": "Scaled",
-  "d": "geely.com"
+  "d": "geely.com",
+  "w": "Geely",
+  "t": "HKG:0175"
  },
  {
   "n": "General Motors",
@@ -1935,6 +2032,8 @@
   "r": "North America",
   "m": "Historical",
   "d": "gm.com",
+  "w": "General Motors",
+  "t": "NYSE:GM",
   "x": 1
  },
  {
@@ -1960,7 +2059,8 @@
   "b": "IONIQ 5s for Motional and Waymo, 50,000 committed",
   "r": "Asia-Pacific",
   "m": "Commercial",
-  "d": "hyundai.com"
+  "d": "hyundai.com",
+  "w": "Hyundai Motor Group"
  },
  {
   "n": "Isuzu",
@@ -2032,7 +2132,9 @@
   "b": "$500M from Uber and 35,000 Gravity robotaxis committed",
   "r": "North America",
   "m": "R&D",
-  "d": "lucidmotors.com"
+  "d": "lucidmotors.com",
+  "w": "Lucid Motors",
+  "t": "NASDAQ:LCID"
  },
  {
   "n": "Magna",
@@ -2068,7 +2170,9 @@
   "b": "L2+/L3 consumer ADAS stacks; Compute / SoC / AI chips; Cameras & vision sensors",
   "r": "Middle East & Africa",
   "m": "Scaled",
-  "d": "mobileye.com"
+  "d": "mobileye.com",
+  "w": "Mobileye",
+  "t": "NASDAQ:MBLY"
  },
  {
   "n": "Navya / Gaussin-Macnica Mobility",
@@ -2094,7 +2198,8 @@
   "b": "ProPILOT next-gen on Wayve; Tokyo robotaxi pilot with Uber",
   "r": "Asia-Pacific",
   "m": "Other",
-  "d": "nissan-global.com"
+  "d": "nissan-global.com",
+  "w": "Nissan"
  },
  {
   "n": "Nuro",
@@ -2103,7 +2208,9 @@
   "b": "The Nuro Driver, licensed from delivery pods to Lucid SUVs",
   "r": "North America",
   "m": "Commercial",
-  "d": "nuro.ai"
+  "d": "nuro.ai",
+  "w": "Nuro",
+  "p": 1
  },
  {
   "n": "PACCAR",
@@ -2146,7 +2253,8 @@
   "b": "European L4 shuttle pathway with WeRide Robobus programs",
   "r": "Europe",
   "m": "Pilot",
-  "d": "renaultgroup.com"
+  "d": "renaultgroup.com",
+  "w": "Renault"
  },
  {
   "n": "Rivian",
@@ -2156,6 +2264,8 @@
   "r": "North America",
   "m": "R&D",
   "d": "rivian.com",
+  "w": "Rivian",
+  "t": "NASDAQ:RIVN",
   "g": 1
  },
  {
@@ -2191,7 +2301,9 @@
   "b": "Wayve-powered STLA AutoDrive path targeting 2028 launches",
   "r": "Europe",
   "m": "R&D",
-  "d": "stellantis.com"
+  "d": "stellantis.com",
+  "w": "Stellantis",
+  "t": "NYSE:STLA"
  },
  {
   "n": "Tesla",
@@ -2200,7 +2312,10 @@
   "b": "Consumer fleet plus in-house autonomy, the Waymo counter-model",
   "r": "North America",
   "m": "Scaled",
-  "d": "tesla.com"
+  "d": "tesla.com",
+  "w": "Tesla, Inc.",
+  "t": "NASDAQ:TSLA",
+  "p": 1
  },
  {
   "n": "Toyota",
@@ -2209,7 +2324,9 @@
   "b": "Capital and platforms behind Woven, May Mobility and Pony.ai",
   "r": "Asia-Pacific",
   "m": "Commercial",
-  "d": "toyota.com"
+  "d": "toyota.com",
+  "w": "Toyota",
+  "t": "NYSE:TM"
  },
  {
   "n": "Udelv",
@@ -2227,7 +2344,8 @@
   "b": "Production lidar history plus VW-Mobileye ADAS programs",
   "r": "Europe",
   "m": "Scaled",
-  "d": "valeo.com"
+  "d": "valeo.com",
+  "w": "Valeo"
  },
  {
   "n": "Elektrobit",
@@ -2263,7 +2381,8 @@
   "b": "ID.Buzz robotaxis on Uber in LA through MOIA",
   "r": "Europe",
   "m": "Commercial",
-  "d": "volkswagen-group.com"
+  "d": "volkswagen-group.com",
+  "w": "Volkswagen Group"
  },
  {
   "n": "Volvo Autonomous Solutions",
@@ -2281,7 +2400,8 @@
   "b": "Baidu JV EVs and NVIDIA DRIVE inside consumer Volvos",
   "r": "Europe",
   "m": "Other",
-  "d": "volvocars.com"
+  "d": "volvocars.com",
+  "w": "Volvo Cars"
  },
  {
   "n": "Volvo Group (Trucks)",
@@ -2317,7 +2437,8 @@
   "b": "Geely EVs carrying Waymo's sixth-generation Driver",
   "r": "Greater China",
   "m": "Commercial",
-  "d": "zeekrglobal.com"
+  "d": "zeekrglobal.com",
+  "w": "Zeekr"
  },
  {
   "n": "ZF",
@@ -2336,6 +2457,8 @@
   "r": "North America",
   "m": "Commercial",
   "d": "zoox.com",
+  "w": "Zoox (company)",
+  "p": 1,
   "g": 1
  },
  {
@@ -2345,7 +2468,8 @@
   "b": "China's most visible robotaxi brand, now driverless in Dubai",
   "r": "Greater China",
   "m": "Scaled",
-  "d": "apollo.auto"
+  "d": "apollo.auto",
+  "p": 1
  },
  {
   "n": "Aurora Horizon",
@@ -2363,7 +2487,8 @@
   "b": "Shenzhen robotaxi era that seeded today's Tensor",
   "r": "Greater China",
   "m": "Commercial",
-  "d": "autox.ai"
+  "d": "autox.ai",
+  "p": 1
  },
  {
   "n": "Avride Robotaxi",
@@ -2372,7 +2497,8 @@
   "b": "Dallas robotaxis and sidewalk bots on the Uber network",
   "r": "North America",
   "m": "Commercial",
-  "d": "avride.ai"
+  "d": "avride.ai",
+  "p": 1
  },
  {
   "n": "Beep",
@@ -2381,7 +2507,8 @@
   "b": "Managed autonomous shuttles for campuses and communities",
   "r": "North America",
   "m": "Commercial",
-  "d": "ridebeep.com"
+  "d": "ridebeep.com",
+  "p": 1
  },
  {
   "n": "Bolt",
@@ -2390,7 +2517,9 @@
   "b": "Europe-to-Africa ridehail watching for AV supply",
   "r": "Europe",
   "m": "Scaled",
-  "d": "bolt.eu"
+  "d": "bolt.eu",
+  "w": "Bolt (company)",
+  "p": 1
  },
  {
   "n": "CaoCao Mobility",
@@ -2399,7 +2528,8 @@
   "b": "Geely's ridehail arm with a robotaxi platform pitch",
   "r": "Greater China",
   "m": "Scaled",
-  "d": "caocaokeji.cn"
+  "d": "caocaokeji.cn",
+  "p": 1
  },
  {
   "n": "Careem",
@@ -2435,7 +2565,8 @@
   "b": "Singapore taxi incumbent tied to Pony.ai's Punggol shuttles",
   "r": "Asia-Pacific",
   "m": "Scaled",
-  "d": "comfortdelgro.com"
+  "d": "comfortdelgro.com",
+  "p": 1
  },
  {
   "n": "Curb",
@@ -2452,7 +2583,8 @@
   "b": "China ride-hailing leader with DiMA LLM assistant research",
   "r": "Greater China",
   "m": "Scaled",
-  "d": "didiglobal.com"
+  "d": "didiglobal.com",
+  "p": 1
  },
  {
   "n": "DoorDash",
@@ -2515,7 +2647,8 @@
   "b": "Japan taxi app partnering on Waymo's Tokyo preparatory tests",
   "r": "Asia-Pacific",
   "m": "Scaled",
-  "d": "goinc.jp"
+  "d": "goinc.jp",
+  "p": 1
  },
  {
   "n": "Grab",
@@ -2524,7 +2657,10 @@
   "b": "Southeast Asia superapp operating WeRide shuttles in Singapore",
   "r": "Asia-Pacific",
   "m": "Scaled",
-  "d": "grab.com"
+  "d": "grab.com",
+  "w": "Grab Holdings",
+  "t": "NASDAQ:GRAB",
+  "p": 1
  },
  {
   "n": "HERE Marketplace / Location Services",
@@ -2550,7 +2686,8 @@
   "c": "Demand & Commercial Platforms",
   "b": "South Korean mobility app and potential robotaxi channel",
   "r": "Asia-Pacific",
-  "m": "Scaled"
+  "m": "Scaled",
+  "p": 1
  },
  {
   "n": "Kodiak Commercial Network",
@@ -2569,6 +2706,9 @@
   "r": "North America",
   "m": "Scaled",
   "d": "lyft.com",
+  "w": "Lyft",
+  "t": "NASDAQ:LYFT",
+  "p": 1,
   "g": 1
  },
  {
@@ -2578,7 +2718,8 @@
   "b": "Driver-out shuttle service expanding to Lyft riders in Atlanta",
   "r": "North America",
   "m": "Commercial",
-  "d": "maymobility.com"
+  "d": "maymobility.com",
+  "p": 1
  },
  {
   "n": "McLane Company",
@@ -2632,7 +2773,8 @@
   "b": "Licensed autonomy anchoring Uber and Lucid's robotaxi plans",
   "r": "North America",
   "m": "Commercial",
-  "d": "nuro.ai"
+  "d": "nuro.ai",
+  "p": 1
  },
  {
   "n": "NVIDIA DRIVE / Halos",
@@ -2659,6 +2801,7 @@
   "r": "Greater China",
   "m": "Scaled",
   "d": "pony.ai",
+  "p": 1,
   "g": 1
  },
  {
@@ -2677,7 +2820,8 @@
   "b": "GAC-affiliated ridehail channel for Greater Bay Area robotaxis",
   "r": "Greater China",
   "m": "Commercial",
-  "d": "ruqimobility.com"
+  "d": "ruqimobility.com",
+  "p": 1
  },
  {
   "n": "Samsara",
@@ -2694,7 +2838,8 @@
   "c": "Demand & Commercial Platforms",
   "b": "Chinese ride-hailing platform backed by major automakers",
   "r": "Greater China",
-  "m": "Scaled"
+  "m": "Scaled",
+  "p": 1
  },
  {
   "n": "Tactile Mobility",
@@ -2730,6 +2875,9 @@
   "r": "North America",
   "m": "Scaled",
   "d": "uber.com",
+  "w": "Uber",
+  "t": "NYSE:UBER",
+  "p": 1,
   "g": 1
  },
  {
@@ -2766,7 +2914,8 @@
   "b": "Benchmark robotaxi with hundreds of thousands of paid weekly rides",
   "r": "North America",
   "m": "Scaled",
-  "d": "waymo.com"
+  "d": "waymo.com",
+  "p": 1
  },
  {
   "n": "Wayve AI Driver",
@@ -2775,7 +2924,8 @@
   "b": "$2.8B-funded map-light AV driver tied to Stellantis and Uber",
   "r": "Europe",
   "m": "Commercial",
-  "d": "wayve.ai"
+  "d": "wayve.ai",
+  "p": 1
  },
  {
   "n": "WeRide Go / WeRide Robotaxi",
@@ -2784,7 +2934,8 @@
   "b": "Driverless Uber rides in Abu Dhabi and 100+ Middle East robotaxis",
   "r": "Greater China",
   "m": "Scaled",
-  "d": "weride.ai"
+  "d": "weride.ai",
+  "p": 1
  },
  {
   "n": "Werner Enterprises",
@@ -3046,7 +3197,8 @@
   "b": "Global transit operator with autonomous shuttle deployments",
   "r": "Europe",
   "m": "Scaled",
-  "d": "keolis.com"
+  "d": "keolis.com",
+  "p": 1
  },
  {
   "n": "Lacuna Technologies",
@@ -3292,7 +3444,8 @@
   "b": "Waymo depot ops spanning Phoenix, SF, LA, Austin and Nashville",
   "r": "Europe",
   "m": "Scaled",
-  "d": "transdev.com"
+  "d": "transdev.com",
+  "p": 1
  },
  {
   "n": "Uber AV Infrastructure",
@@ -3321,6 +3474,8 @@
   "r": "North America",
   "m": "Scaled",
   "d": "ridewithvia.com",
+  "w": "Via Transportation",
+  "p": 1,
   "g": 1
  },
  {
@@ -4944,7 +5099,8 @@
   "b": "VW's autonomous ID.Buzz service arm, live on Uber in LA",
   "r": "Europe",
   "m": "Commercial",
-  "d": "moia.io"
+  "d": "moia.io",
+  "p": 1
  },
  {
   "n": "Aseon Labs",
@@ -4970,6 +5126,7 @@
   "b": "Retrofit autonomy stack running driverless fleets under remote supervision",
   "r": "Europe",
   "m": "Commercial",
-  "d": "bliq.ai"
+  "d": "bliq.ai",
+  "p": 1
  }
 ]

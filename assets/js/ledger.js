@@ -38,7 +38,9 @@
   // Column registry. `on` columns are the default view; the rest live in the picker.
   const COLS = [
     { k: 'name', l: 'Company', on: 1, cls: 'c-name', v: c => c.name,
-      h: c => `<span class="mono-tile row-logo" aria-hidden="true" style="--tile:${layerColor(c.cat)}">${esc((c.mono || c.name.slice(0, 2)).toUpperCase())}${logoDomainOf(c) ? `<img alt="" data-logo-domain="${esc(logoDomainOf(c))}" decoding="async">` : ''}</span><span class="nm">${esc(c.name)}</span>${c.spokenTo ? '<span class="spoken-tag">SPOKEN WITH DIRECTLY</span>' : ''}` },
+      // one flex wrapper inside the cell: a display value on the <td> itself would
+      // drop it out of the table layout and its border would stop meeting the row's
+      h: c => `<span class="nm-wrap"><span class="mono-tile row-logo" aria-hidden="true" style="--tile:${layerColor(c.cat)}">${esc((c.mono || c.name.slice(0, 2)).toUpperCase())}${logoDomainOf(c) ? `<img alt="" data-logo-domain="${esc(logoDomainOf(c))}" decoding="async">` : ''}</span><span class="nm">${esc(c.name)}</span>${c.spokenTo ? '<span class="spoken-tag">SPOKEN WITH DIRECTLY</span>' : ''}</span>` },
     { k: 'cat', l: 'Layer', on: 1, cls: 'c-cat', v: c => c.cat, h: c => layerTag(c.cat) },
     { k: 'sub', l: 'Sub-focus', on: 1, cls: 'c-sub', v: c => c.sub, h: c => `<span class="clamp">${esc(c.sub)}</span>` },
     { k: 'hq', l: 'HQ', on: 1, v: c => c.hq, h: c => esc(c.hq) },

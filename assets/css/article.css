@@ -376,3 +376,16 @@ input.eco-in:focus { border-color: var(--cyan); outline: none; }
   .rank-row { font-size: var(--fs-sm); }
   .calc-inputs input { font-size: var(--fs-md); padding: 8px 10px; }
 }
+
+/* ---------------------------------------------- the human-vs-autonomous table */
+/* Moved with its content from the home page to /overview/. */
+table.compare th[scope="row"] {
+  font-weight: 700; font-size: 13.5px; width: 190px;
+  font-family: var(--font-display); text-transform: none; letter-spacing: 0;
+  color: var(--ink); vertical-align: top; padding: 12px;
+  border-bottom: 1px solid var(--rule);
+}
+table.compare td { font-size: 14px; line-height: 1.5; max-width: 380px; }
+table.compare thead th {
+  font-family: var(--font-mono); font-size: 11px; letter-spacing: .08em;
+}

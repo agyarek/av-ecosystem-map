@@ -28,7 +28,7 @@
   "url":"https://agyarek.github.io/av-ecosystem-map/method/",
   "description":"561 organisations in the autonomous vehicle industry with layer taxonomy, partnerships, funding and status fields.",
   "creator":{"@type":"Person","name":"Kofi Agyare-Kwabi"},
-  "dateModified":"2026-07-25","license":"https://github.com/agyarek/av-ecosystem-map/blob/main/LICENSE",
+  "dateModified":"2026-07-31","license":"https://github.com/agyarek/av-ecosystem-map/blob/main/LICENSE",
   "distribution":[
    {"@type":"DataDownload","encodingFormat":"application/json","contentUrl":"https://agyarek.github.io/av-ecosystem-map/data/av-companies.json"},
    {"@type":"DataDownload","encodingFormat":"text/csv","contentUrl":"https://agyarek.github.io/av-ecosystem-map/data/av-companies.csv"}]}]}
@@ -41,12 +41,12 @@
   <div class="bar">
     <a class="wordmark" href="./"><span class="dash" aria-hidden="true"></span>AV&nbsp;ECOSYSTEM&nbsp;MAP</a>
     <nav class="primary" aria-label="Primary">
+      <a data-nav="overview" href="overview/">Overview</a>
       <a data-nav="map" href="map/">Map</a>
       <a data-nav="companies" href="companies/">Directory</a>
       <a data-nav="economics" href="economics/">Economics</a>
       <a data-nav="regulation" href="regulation/">Regulatory</a>
       <a data-nav="media" href="media/">Media</a>
-      <a data-nav="beyond-roads" href="beyond-roads/">Beyond Roads</a>
     </nav>
   </div>
 </header>
@@ -55,7 +55,7 @@
 <!-- ============================================================ the loop -->
 <section id="loop" class="container" aria-labelledby="loop-title">
   <p class="eyebrow"><span class="tick">■</span> ONE RIDE, FOUR STAGES, ENDLESSLY REPEATING</p>
-  <h1 id="loop-title" class="page-title">A driverless ride looks simple.<br>561 organisations make it work.</h1>
+  <h1 id="loop-title" class="page-title">A driverless ride is a loop,<br>and the loop is an industry.</h1>
   <p class="standfirst">Every driverless ride runs the same circuit: a request, a driver made of software,
     a vehicle built around it, and a pitlane that turns the car straight back out. Around that loop sit
     <strong>561 organisations</strong>. I have mapped all of them.</p>
@@ -157,88 +157,284 @@
   </ol>
 </section>
 
-<!-- ============================================================ primer -->
-<section class="container" aria-labelledby="primer-title">
-  <p class="eyebrow"><span class="tick">■</span> IN THE SIMPLEST POSSIBLE TERMS</p>
-  <h2 id="primer-title" class="section-head">What is actually driving the car?</h2>
-  <div class="prose" style="margin-top:24px">
-    <p>An autonomous vehicle is a car that drives itself from one point to the next without a human
-      operating it. Most people will meet one the way they meet a normal taxi: through an app, at a kerb.</p>
-    <p>Three technologies make it work. Hardware lets the vehicle see, using cameras and, in most designs,
-      lidar and radar. Software decides what the vehicle should do next, trained on millions of real and
-      simulated miles. And the vehicle itself is engineered so that its steering, throttle and brakes can
-      be moved by that software, with backups for each, because there is no longer a person to grab the wheel.</p>
-    <p>That is the essential mechanism, described in a paragraph. Beneath it sits an industry of <strong>561
-      organisations</strong> across eleven layers, from the companies that etch the chips to the regulators
-      who sign the permits. The rest of this map is that industry, drawn to scale.</p>
+<!-- ============================================================ map hero -->
+<section class="map-hero" aria-labelledby="hero-title">
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      <p class="eyebrow"><span class="tick">■</span> THE WALL CHART</p>
+      <h2 id="hero-title" class="section-head">The whole industry, on one map</h2>
+      <p class="standfirst">Browse <strong>561 companies</strong> across eleven industry layers. Click
+        any of them for its leadership, its funding, who it is partnered with, and its latest news —
+        and watch the partnerships draw themselves between the layers.</p>
+      <p class="hero-cta"><a class="btn primary hero-btn" href="map/">GO TO THE MAP&nbsp;→</a></p>
+    </div>
+    <a class="hero-stage" href="map/" tabindex="-1" aria-hidden="true">
+      <div class="hero-tilt">
+      <svg class="mini-map" viewBox="0 0 4408 4294" aria-hidden="true" preserveAspectRatio="xMidYMid meet">
+      <polygon points="200,200 1676,200 1676,818 200,818" fill="oklch(0.62 0.075 265)" fill-opacity=".14" stroke="oklch(0.62 0.075 265)" stroke-opacity=".5" stroke-width="6"/>
+      <polygon points="1676,200 2796,200 2796,818 1676,818" fill="oklch(0.62 0.075 200)" fill-opacity=".14" stroke="oklch(0.62 0.075 200)" stroke-opacity=".5" stroke-width="6"/>
+      <polygon points="2796,200 4208,200 4208,818 2796,818" fill="oklch(0.62 0.075 150)" fill-opacity=".14" stroke="oklch(0.62 0.075 150)" stroke-opacity=".5" stroke-width="6"/>
+      <polygon points="4208,818 4208,1886 3266,1886 3266,1544.4 2026.0,818" fill="oklch(0.62 0.075 230)" fill-opacity=".14" stroke="oklch(0.62 0.075 230)" stroke-opacity=".5" stroke-width="6"/>
+      <polygon points="4208,1886 4208,3298 2026.0,3298 3266,2571.6 3266,1886" fill="oklch(0.62 0.075 40)" fill-opacity=".14" stroke="oklch(0.62 0.075 40)" stroke-opacity=".5" stroke-width="6"/>
+      <polygon points="200,3298 1854,3298 1854,4094 200,4094" fill="oklch(0.62 0.075 290)" fill-opacity=".14" stroke="oklch(0.62 0.075 290)" stroke-opacity=".5" stroke-width="6"/>
+      <polygon points="1854,3298 2618,3298 2618,4094 1854,4094" fill="oklch(0.62 0.075 60)" fill-opacity=".14" stroke="oklch(0.62 0.075 60)" stroke-opacity=".5" stroke-width="6"/>
+      <polygon points="2618,3298 4208,3298 4208,4094 2618,4094" fill="oklch(0.62 0.075 320)" fill-opacity=".14" stroke="oklch(0.62 0.075 320)" stroke-opacity=".5" stroke-width="6"/>
+      <polygon points="200,818 2026.0,818 786,1544.4 786,2052 200,2052" fill="oklch(0.62 0.075 20)" fill-opacity=".14" stroke="oklch(0.62 0.075 20)" stroke-opacity=".5" stroke-width="6"/>
+      <polygon points="200,2052 786,2052 786,2571.6 2026.0,3298 200,3298" fill="oklch(0.62 0.075 340)" fill-opacity=".14" stroke="oklch(0.62 0.075 340)" stroke-opacity=".5" stroke-width="6"/>
+      <polygon points="1512.4,818 2539.6,818 3266,1544.4 3266,2571.6 2539.6,3298 1512.4,3298 786,2571.6 786,1544.4" fill="oklch(0.62 0.075 265)" fill-opacity=".10" stroke="oklch(0.62 0.075 265)" stroke-opacity=".6" stroke-width="8"/>
+      <rect x="240" y="450" width="132" height="132" rx="18" fill="oklch(0.62 0.075 265)" fill-opacity=".55"/>
+      <rect x="418" y="450" width="132" height="132" rx="18" fill="oklch(0.62 0.075 265)" fill-opacity=".55"/>
+      <rect x="596" y="450" width="132" height="132" rx="18" fill="oklch(0.62 0.075 265)" fill-opacity=".55"/>
+      <rect x="774" y="450" width="132" height="132" rx="18" fill="oklch(0.62 0.075 265)" fill-opacity=".55"/>
+      <rect x="952" y="450" width="132" height="132" rx="18" fill="oklch(0.62 0.075 265)" fill-opacity=".55"/>
+      <rect x="1130" y="450" width="132" height="132" rx="18" fill="oklch(0.62 0.075 265)" fill-opacity=".55"/>
+      <rect x="1308" y="450" width="132" height="132" rx="18" fill="oklch(0.62 0.075 265)" fill-opacity=".55"/>
+      <rect x="1486" y="450" width="132" height="132" rx="18" fill="oklch(0.62 0.075 265)" fill-opacity=".55"/>
+      <rect x="240" y="628" width="132" height="132" rx="18" fill="oklch(0.62 0.075 265)" fill-opacity=".55"/>
+      <rect x="418" y="628" width="132" height="132" rx="18" fill="oklch(0.62 0.075 265)" fill-opacity=".55"/>
+      <rect x="596" y="628" width="132" height="132" rx="18" fill="oklch(0.62 0.075 265)" fill-opacity=".55"/>
+      <rect x="774" y="628" width="132" height="132" rx="18" fill="oklch(0.62 0.075 265)" fill-opacity=".55"/>
+      <rect x="952" y="628" width="132" height="132" rx="18" fill="oklch(0.62 0.075 265)" fill-opacity=".55"/>
+      <rect x="1130" y="628" width="132" height="132" rx="18" fill="oklch(0.62 0.075 265)" fill-opacity=".55"/>
+      <rect x="1308" y="628" width="132" height="132" rx="18" fill="oklch(0.62 0.075 265)" fill-opacity=".55"/>
+      <rect x="1486" y="628" width="132" height="132" rx="18" fill="oklch(0.62 0.075 265)" fill-opacity=".55"/>
+      <rect x="1716" y="450" width="132" height="132" rx="18" fill="oklch(0.62 0.075 200)" fill-opacity=".55"/>
+      <rect x="1894" y="450" width="132" height="132" rx="18" fill="oklch(0.62 0.075 200)" fill-opacity=".55"/>
+      <rect x="2072" y="450" width="132" height="132" rx="18" fill="oklch(0.62 0.075 200)" fill-opacity=".55"/>
+      <rect x="2250" y="450" width="132" height="132" rx="18" fill="oklch(0.62 0.075 200)" fill-opacity=".55"/>
+      <rect x="2428" y="450" width="132" height="132" rx="18" fill="oklch(0.62 0.075 200)" fill-opacity=".55"/>
+      <rect x="2606" y="450" width="132" height="132" rx="18" fill="oklch(0.62 0.075 200)" fill-opacity=".55"/>
+      <rect x="1716" y="628" width="132" height="132" rx="18" fill="oklch(0.62 0.075 200)" fill-opacity=".55"/>
+      <rect x="1894" y="628" width="132" height="132" rx="18" fill="oklch(0.62 0.075 200)" fill-opacity=".55"/>
+      <rect x="2072" y="628" width="132" height="132" rx="18" fill="oklch(0.62 0.075 200)" fill-opacity=".55"/>
+      <rect x="2250" y="628" width="132" height="132" rx="18" fill="oklch(0.62 0.075 200)" fill-opacity=".55"/>
+      <rect x="2428" y="628" width="132" height="132" rx="18" fill="oklch(0.62 0.075 200)" fill-opacity=".55"/>
+      <rect x="2836" y="450" width="132" height="132" rx="18" fill="oklch(0.62 0.075 150)" fill-opacity=".55"/>
+      <rect x="3014" y="450" width="132" height="132" rx="18" fill="oklch(0.62 0.075 150)" fill-opacity=".55"/>
+      <rect x="3192" y="450" width="132" height="132" rx="18" fill="oklch(0.62 0.075 150)" fill-opacity=".55"/>
+      <rect x="3370" y="450" width="132" height="132" rx="18" fill="oklch(0.62 0.075 150)" fill-opacity=".55"/>
+      <rect x="3548" y="450" width="132" height="132" rx="18" fill="oklch(0.62 0.075 150)" fill-opacity=".55"/>
+      <rect x="3726" y="450" width="132" height="132" rx="18" fill="oklch(0.62 0.075 150)" fill-opacity=".55"/>
+      <rect x="3904" y="450" width="132" height="132" rx="18" fill="oklch(0.62 0.075 150)" fill-opacity=".55"/>
+      <rect x="2836" y="628" width="132" height="132" rx="18" fill="oklch(0.62 0.075 150)" fill-opacity=".55"/>
+      <rect x="3014" y="628" width="132" height="132" rx="18" fill="oklch(0.62 0.075 150)" fill-opacity=".55"/>
+      <rect x="3192" y="628" width="132" height="132" rx="18" fill="oklch(0.62 0.075 150)" fill-opacity=".55"/>
+      <rect x="3370" y="628" width="132" height="132" rx="18" fill="oklch(0.62 0.075 150)" fill-opacity=".55"/>
+      <rect x="3548" y="628" width="132" height="132" rx="18" fill="oklch(0.62 0.075 150)" fill-opacity=".55"/>
+      <rect x="3726" y="628" width="132" height="132" rx="18" fill="oklch(0.62 0.075 150)" fill-opacity=".55"/>
+      <rect x="3904" y="628" width="132" height="132" rx="18" fill="oklch(0.62 0.075 150)" fill-opacity=".55"/>
+      <rect x="3113.6" y="1068" width="132" height="132" rx="18" fill="oklch(0.62 0.075 230)" fill-opacity=".55"/>
+      <rect x="3291.6" y="1068" width="132" height="132" rx="18" fill="oklch(0.62 0.075 230)" fill-opacity=".55"/>
+      <rect x="3469.6" y="1068" width="132" height="132" rx="18" fill="oklch(0.62 0.075 230)" fill-opacity=".55"/>
+      <rect x="3647.6" y="1068" width="132" height="132" rx="18" fill="oklch(0.62 0.075 230)" fill-opacity=".55"/>
+      <rect x="3825.6" y="1068" width="132" height="132" rx="18" fill="oklch(0.62 0.075 230)" fill-opacity=".55"/>
+      <rect x="4003.6" y="1068" width="132" height="132" rx="18" fill="oklch(0.62 0.075 230)" fill-opacity=".55"/>
+      <rect x="3291.6" y="1246" width="132" height="132" rx="18" fill="oklch(0.62 0.075 230)" fill-opacity=".55"/>
+      <rect x="3469.6" y="1246" width="132" height="132" rx="18" fill="oklch(0.62 0.075 230)" fill-opacity=".55"/>
+      <rect x="3647.6" y="1246" width="132" height="132" rx="18" fill="oklch(0.62 0.075 230)" fill-opacity=".55"/>
+      <rect x="3825.6" y="1246" width="132" height="132" rx="18" fill="oklch(0.62 0.075 230)" fill-opacity=".55"/>
+      <rect x="4003.6" y="1246" width="132" height="132" rx="18" fill="oklch(0.62 0.075 230)" fill-opacity=".55"/>
+      <rect x="3469.6" y="1424" width="132" height="132" rx="18" fill="oklch(0.62 0.075 230)" fill-opacity=".55"/>
+      <rect x="3647.6" y="1424" width="132" height="132" rx="18" fill="oklch(0.62 0.075 230)" fill-opacity=".55"/>
+      <rect x="3825.6" y="1424" width="132" height="132" rx="18" fill="oklch(0.62 0.075 230)" fill-opacity=".55"/>
+      <rect x="4003.6" y="1424" width="132" height="132" rx="18" fill="oklch(0.62 0.075 230)" fill-opacity=".55"/>
+      <rect x="3469.6" y="1602" width="132" height="132" rx="18" fill="oklch(0.62 0.075 230)" fill-opacity=".55"/>
+      <rect x="3469.6" y="2136" width="132" height="132" rx="18" fill="oklch(0.62 0.075 40)" fill-opacity=".55"/>
+      <rect x="3647.6" y="2136" width="132" height="132" rx="18" fill="oklch(0.62 0.075 40)" fill-opacity=".55"/>
+      <rect x="3825.6" y="2136" width="132" height="132" rx="18" fill="oklch(0.62 0.075 40)" fill-opacity=".55"/>
+      <rect x="4003.6" y="2136" width="132" height="132" rx="18" fill="oklch(0.62 0.075 40)" fill-opacity=".55"/>
+      <rect x="3469.6" y="2314" width="132" height="132" rx="18" fill="oklch(0.62 0.075 40)" fill-opacity=".55"/>
+      <rect x="3647.6" y="2314" width="132" height="132" rx="18" fill="oklch(0.62 0.075 40)" fill-opacity=".55"/>
+      <rect x="3825.6" y="2314" width="132" height="132" rx="18" fill="oklch(0.62 0.075 40)" fill-opacity=".55"/>
+      <rect x="4003.6" y="2314" width="132" height="132" rx="18" fill="oklch(0.62 0.075 40)" fill-opacity=".55"/>
+      <rect x="3469.6" y="2492" width="132" height="132" rx="18" fill="oklch(0.62 0.075 40)" fill-opacity=".55"/>
+      <rect x="3647.6" y="2492" width="132" height="132" rx="18" fill="oklch(0.62 0.075 40)" fill-opacity=".55"/>
+      <rect x="3825.6" y="2492" width="132" height="132" rx="18" fill="oklch(0.62 0.075 40)" fill-opacity=".55"/>
+      <rect x="4003.6" y="2492" width="132" height="132" rx="18" fill="oklch(0.62 0.075 40)" fill-opacity=".55"/>
+      <rect x="3291.6" y="2670" width="132" height="132" rx="18" fill="oklch(0.62 0.075 40)" fill-opacity=".55"/>
+      <rect x="3469.6" y="2670" width="132" height="132" rx="18" fill="oklch(0.62 0.075 40)" fill-opacity=".55"/>
+      <rect x="3647.6" y="2670" width="132" height="132" rx="18" fill="oklch(0.62 0.075 40)" fill-opacity=".55"/>
+      <rect x="3825.6" y="2670" width="132" height="132" rx="18" fill="oklch(0.62 0.075 40)" fill-opacity=".55"/>
+      <rect x="4003.6" y="2670" width="132" height="132" rx="18" fill="oklch(0.62 0.075 40)" fill-opacity=".55"/>
+      <rect x="3113.6" y="2848" width="132" height="132" rx="18" fill="oklch(0.62 0.075 40)" fill-opacity=".55"/>
+      <rect x="3291.6" y="2848" width="132" height="132" rx="18" fill="oklch(0.62 0.075 40)" fill-opacity=".55"/>
+      <rect x="240" y="3548" width="132" height="132" rx="18" fill="oklch(0.62 0.075 290)" fill-opacity=".55"/>
+      <rect x="418" y="3548" width="132" height="132" rx="18" fill="oklch(0.62 0.075 290)" fill-opacity=".55"/>
+      <rect x="596" y="3548" width="132" height="132" rx="18" fill="oklch(0.62 0.075 290)" fill-opacity=".55"/>
+      <rect x="774" y="3548" width="132" height="132" rx="18" fill="oklch(0.62 0.075 290)" fill-opacity=".55"/>
+      <rect x="952" y="3548" width="132" height="132" rx="18" fill="oklch(0.62 0.075 290)" fill-opacity=".55"/>
+      <rect x="1130" y="3548" width="132" height="132" rx="18" fill="oklch(0.62 0.075 290)" fill-opacity=".55"/>
+      <rect x="1308" y="3548" width="132" height="132" rx="18" fill="oklch(0.62 0.075 290)" fill-opacity=".55"/>
+      <rect x="1486" y="3548" width="132" height="132" rx="18" fill="oklch(0.62 0.075 290)" fill-opacity=".55"/>
+      <rect x="1664" y="3548" width="132" height="132" rx="18" fill="oklch(0.62 0.075 290)" fill-opacity=".55"/>
+      <rect x="240" y="3726" width="132" height="132" rx="18" fill="oklch(0.62 0.075 290)" fill-opacity=".55"/>
+      <rect x="418" y="3726" width="132" height="132" rx="18" fill="oklch(0.62 0.075 290)" fill-opacity=".55"/>
+      <rect x="596" y="3726" width="132" height="132" rx="18" fill="oklch(0.62 0.075 290)" fill-opacity=".55"/>
+      <rect x="774" y="3726" width="132" height="132" rx="18" fill="oklch(0.62 0.075 290)" fill-opacity=".55"/>
+      <rect x="952" y="3726" width="132" height="132" rx="18" fill="oklch(0.62 0.075 290)" fill-opacity=".55"/>
+      <rect x="1130" y="3726" width="132" height="132" rx="18" fill="oklch(0.62 0.075 290)" fill-opacity=".55"/>
+      <rect x="1308" y="3726" width="132" height="132" rx="18" fill="oklch(0.62 0.075 290)" fill-opacity=".55"/>
+      <rect x="1486" y="3726" width="132" height="132" rx="18" fill="oklch(0.62 0.075 290)" fill-opacity=".55"/>
+      <rect x="1664" y="3726" width="132" height="132" rx="18" fill="oklch(0.62 0.075 290)" fill-opacity=".55"/>
+      <rect x="240" y="3904" width="132" height="132" rx="18" fill="oklch(0.62 0.075 290)" fill-opacity=".55"/>
+      <rect x="418" y="3904" width="132" height="132" rx="18" fill="oklch(0.62 0.075 290)" fill-opacity=".55"/>
+      <rect x="596" y="3904" width="132" height="132" rx="18" fill="oklch(0.62 0.075 290)" fill-opacity=".55"/>
+      <rect x="774" y="3904" width="132" height="132" rx="18" fill="oklch(0.62 0.075 290)" fill-opacity=".55"/>
+      <rect x="952" y="3904" width="132" height="132" rx="18" fill="oklch(0.62 0.075 290)" fill-opacity=".55"/>
+      <rect x="1894" y="3548" width="132" height="132" rx="18" fill="oklch(0.62 0.075 60)" fill-opacity=".55"/>
+      <rect x="2072" y="3548" width="132" height="132" rx="18" fill="oklch(0.62 0.075 60)" fill-opacity=".55"/>
+      <rect x="2250" y="3548" width="132" height="132" rx="18" fill="oklch(0.62 0.075 60)" fill-opacity=".55"/>
+      <rect x="2428" y="3548" width="132" height="132" rx="18" fill="oklch(0.62 0.075 60)" fill-opacity=".55"/>
+      <rect x="1894" y="3726" width="132" height="132" rx="18" fill="oklch(0.62 0.075 60)" fill-opacity=".55"/>
+      <rect x="2072" y="3726" width="132" height="132" rx="18" fill="oklch(0.62 0.075 60)" fill-opacity=".55"/>
+      <rect x="2250" y="3726" width="132" height="132" rx="18" fill="oklch(0.62 0.075 60)" fill-opacity=".55"/>
+      <rect x="2428" y="3726" width="132" height="132" rx="18" fill="oklch(0.62 0.075 60)" fill-opacity=".55"/>
+      <rect x="1894" y="3904" width="132" height="132" rx="18" fill="oklch(0.62 0.075 60)" fill-opacity=".55"/>
+      <rect x="2072" y="3904" width="132" height="132" rx="18" fill="oklch(0.62 0.075 60)" fill-opacity=".55"/>
+      <rect x="2250" y="3904" width="132" height="132" rx="18" fill="oklch(0.62 0.075 60)" fill-opacity=".55"/>
+      <rect x="2658" y="3548" width="132" height="132" rx="18" fill="oklch(0.62 0.075 320)" fill-opacity=".55"/>
+      <rect x="2836" y="3548" width="132" height="132" rx="18" fill="oklch(0.62 0.075 320)" fill-opacity=".55"/>
+      <rect x="3014" y="3548" width="132" height="132" rx="18" fill="oklch(0.62 0.075 320)" fill-opacity=".55"/>
+      <rect x="3192" y="3548" width="132" height="132" rx="18" fill="oklch(0.62 0.075 320)" fill-opacity=".55"/>
+      <rect x="3370" y="3548" width="132" height="132" rx="18" fill="oklch(0.62 0.075 320)" fill-opacity=".55"/>
+      <rect x="3548" y="3548" width="132" height="132" rx="18" fill="oklch(0.62 0.075 320)" fill-opacity=".55"/>
+      <rect x="3726" y="3548" width="132" height="132" rx="18" fill="oklch(0.62 0.075 320)" fill-opacity=".55"/>
+      <rect x="3904" y="3548" width="132" height="132" rx="18" fill="oklch(0.62 0.075 320)" fill-opacity=".55"/>
+      <rect x="2658" y="3726" width="132" height="132" rx="18" fill="oklch(0.62 0.075 320)" fill-opacity=".55"/>
+      <rect x="2836" y="3726" width="132" height="132" rx="18" fill="oklch(0.62 0.075 320)" fill-opacity=".55"/>
+      <rect x="3014" y="3726" width="132" height="132" rx="18" fill="oklch(0.62 0.075 320)" fill-opacity=".55"/>
+      <rect x="3192" y="3726" width="132" height="132" rx="18" fill="oklch(0.62 0.075 320)" fill-opacity=".55"/>
+      <rect x="3370" y="3726" width="132" height="132" rx="18" fill="oklch(0.62 0.075 320)" fill-opacity=".55"/>
+      <rect x="3548" y="3726" width="132" height="132" rx="18" fill="oklch(0.62 0.075 320)" fill-opacity=".55"/>
+      <rect x="3726" y="3726" width="132" height="132" rx="18" fill="oklch(0.62 0.075 320)" fill-opacity=".55"/>
+      <rect x="3904" y="3726" width="132" height="132" rx="18" fill="oklch(0.62 0.075 320)" fill-opacity=".55"/>
+      <rect x="2658" y="3904" width="132" height="132" rx="18" fill="oklch(0.62 0.075 320)" fill-opacity=".55"/>
+      <rect x="2836" y="3904" width="132" height="132" rx="18" fill="oklch(0.62 0.075 320)" fill-opacity=".55"/>
+      <rect x="3014" y="3904" width="132" height="132" rx="18" fill="oklch(0.62 0.075 320)" fill-opacity=".55"/>
+      <rect x="3192" y="3904" width="132" height="132" rx="18" fill="oklch(0.62 0.075 320)" fill-opacity=".55"/>
+      <rect x="3370" y="3904" width="132" height="132" rx="18" fill="oklch(0.62 0.075 320)" fill-opacity=".55"/>
+      <rect x="240" y="1068" width="132" height="132" rx="18" fill="oklch(0.62 0.075 20)" fill-opacity=".55"/>
+      <rect x="418" y="1068" width="132" height="132" rx="18" fill="oklch(0.62 0.075 20)" fill-opacity=".55"/>
+      <rect x="596" y="1068" width="132" height="132" rx="18" fill="oklch(0.62 0.075 20)" fill-opacity=".55"/>
+      <rect x="774" y="1068" width="132" height="132" rx="18" fill="oklch(0.62 0.075 20)" fill-opacity=".55"/>
+      <rect x="952" y="1068" width="132" height="132" rx="18" fill="oklch(0.62 0.075 20)" fill-opacity=".55"/>
+      <rect x="240" y="1246" width="132" height="132" rx="18" fill="oklch(0.62 0.075 20)" fill-opacity=".55"/>
+      <rect x="418" y="1246" width="132" height="132" rx="18" fill="oklch(0.62 0.075 20)" fill-opacity=".55"/>
+      <rect x="596" y="1246" width="132" height="132" rx="18" fill="oklch(0.62 0.075 20)" fill-opacity=".55"/>
+      <rect x="774" y="1246" width="132" height="132" rx="18" fill="oklch(0.62 0.075 20)" fill-opacity=".55"/>
+      <rect x="240" y="1424" width="132" height="132" rx="18" fill="oklch(0.62 0.075 20)" fill-opacity=".55"/>
+      <rect x="418" y="1424" width="132" height="132" rx="18" fill="oklch(0.62 0.075 20)" fill-opacity=".55"/>
+      <rect x="596" y="1424" width="132" height="132" rx="18" fill="oklch(0.62 0.075 20)" fill-opacity=".55"/>
+      <rect x="240" y="1602" width="132" height="132" rx="18" fill="oklch(0.62 0.075 20)" fill-opacity=".55"/>
+      <rect x="418" y="1602" width="132" height="132" rx="18" fill="oklch(0.62 0.075 20)" fill-opacity=".55"/>
+      <rect x="596" y="1602" width="132" height="132" rx="18" fill="oklch(0.62 0.075 20)" fill-opacity=".55"/>
+      <rect x="240" y="1780" width="132" height="132" rx="18" fill="oklch(0.62 0.075 20)" fill-opacity=".55"/>
+      <rect x="240" y="2302" width="132" height="132" rx="18" fill="oklch(0.62 0.075 340)" fill-opacity=".55"/>
+      <rect x="418" y="2302" width="132" height="132" rx="18" fill="oklch(0.62 0.075 340)" fill-opacity=".55"/>
+      <rect x="596" y="2302" width="132" height="132" rx="18" fill="oklch(0.62 0.075 340)" fill-opacity=".55"/>
+      <rect x="240" y="2480" width="132" height="132" rx="18" fill="oklch(0.62 0.075 340)" fill-opacity=".55"/>
+      <rect x="418" y="2480" width="132" height="132" rx="18" fill="oklch(0.62 0.075 340)" fill-opacity=".55"/>
+      <rect x="596" y="2480" width="132" height="132" rx="18" fill="oklch(0.62 0.075 340)" fill-opacity=".55"/>
+      <rect x="240" y="2658" width="132" height="132" rx="18" fill="oklch(0.62 0.075 340)" fill-opacity=".55"/>
+      <rect x="418" y="2658" width="132" height="132" rx="18" fill="oklch(0.62 0.075 340)" fill-opacity=".55"/>
+      <rect x="596" y="2658" width="132" height="132" rx="18" fill="oklch(0.62 0.075 340)" fill-opacity=".55"/>
+      <rect x="240" y="2836" width="132" height="132" rx="18" fill="oklch(0.62 0.075 340)" fill-opacity=".55"/>
+      <rect x="418" y="2836" width="132" height="132" rx="18" fill="oklch(0.62 0.075 340)" fill-opacity=".55"/>
+      <rect x="596" y="2836" width="132" height="132" rx="18" fill="oklch(0.62 0.075 340)" fill-opacity=".55"/>
+      <rect x="774" y="2836" width="132" height="132" rx="18" fill="oklch(0.62 0.075 340)" fill-opacity=".55"/>
+      <rect x="240" y="3014" width="132" height="132" rx="18" fill="oklch(0.62 0.075 340)" fill-opacity=".55"/>
+      <rect x="418" y="3014" width="132" height="132" rx="18" fill="oklch(0.62 0.075 340)" fill-opacity=".55"/>
+      <rect x="596" y="3014" width="132" height="132" rx="18" fill="oklch(0.62 0.075 340)" fill-opacity=".55"/>
+      <rect x="774" y="3014" width="132" height="132" rx="18" fill="oklch(0.62 0.075 340)" fill-opacity=".55"/>
+      <rect x="1097.0" y="1268" width="606" height="372" rx="24" fill="oklch(0.62 0.075 265)" fill-opacity=".62"/>
+      <rect x="1723.0" y="1268" width="606" height="372" rx="24" fill="oklch(0.62 0.075 265)" fill-opacity=".62"/>
+      <rect x="2349.0" y="1268" width="606" height="372" rx="24" fill="oklch(0.62 0.075 40)" fill-opacity=".62"/>
+      <rect x="872.0" y="1872" width="562" height="372" rx="24" fill="oklch(0.62 0.075 40)" fill-opacity=".62"/>
+      <rect x="1454.0" y="1872" width="562" height="372" rx="24" fill="oklch(0.62 0.075 265)" fill-opacity=".62"/>
+      <rect x="2036.0" y="1872" width="562" height="372" rx="24" fill="oklch(0.62 0.075 265)" fill-opacity=".62"/>
+      <rect x="2618.0" y="1872" width="562" height="372" rx="24" fill="oklch(0.62 0.075 265)" fill-opacity=".62"/>
+      <rect x="1097.0" y="2476" width="606" height="372" rx="24" fill="oklch(0.62 0.075 40)" fill-opacity=".62"/>
+      <rect x="1723.0" y="2476" width="606" height="372" rx="24" fill="oklch(0.62 0.075 265)" fill-opacity=".62"/>
+      <rect x="2349.0" y="2476" width="606" height="372" rx="24" fill="oklch(0.62 0.075 265)" fill-opacity=".62"/>
+      </svg>
+      </div>
+    </a>
   </div>
 </section>
 
-
-<!-- ============================================================ what changes -->
-<section class="container" aria-labelledby="wc-title">
-  <p class="eyebrow"><span class="tick">■</span> WHAT ACTUALLY CHANGES</p>
-  <h2 id="wc-title" class="section-head">How autonomous rideshare differs from human-driven</h2>
-  <p class="standfirst">A robotaxi is priced like a taxi and hailed like a taxi. Operationally, it differs from
-    human-driven ride-hail across most of the dimensions that carry cost.</p>
-  <div class="table-scroll" style="margin-top:32px">
-    <table class="data compare">
-      <thead><tr><th scope="col" class="q"></th><th scope="col">Human-driven rideshare</th><th scope="col">Autonomous rideshare</th></tr></thead>
-      <tbody>
-        <tr><th scope="row">Who is liable in a crash</th>
-          <td>The driver, through personal or commercial insurance, with the platform mostly arm's length.</td>
-          <td>The operator and increasingly the manufacturer, under a legal regime still being written. The UK's 2024 Act moves liability to the authorised self-driving entity.</td></tr>
-        <tr><th scope="row">What happens when it rains hard</th>
-          <td>The driver adjusts speed and continues, using their own judgement.</td>
-          <td>The operating domain may pause service. Waymo recalled about 3,800 vehicles in May 2026 for driving onto flooded roads, then imposed weather limits.</td></tr>
-        <tr><th scope="row">Who cleans the car</th>
-          <td>The driver, between shifts, judged by star rating.</td>
-          <td>Depot crews on a schedule: Transdev runs Waymo depots in five metros, and startups now sell robotic pitstops that inspect, clean and charge in a parking space.</td></tr>
-        <tr><th scope="row">The marginal cost of one ride</th>
-          <td>Mostly the driver's time, roughly 70 to 80 percent of the fare.</td>
-          <td>Mostly amortised hardware, energy, insurance and remote operations. Third-party estimates put Waymo near $1.98 per mile in 2025; no operator publishes the number.</td></tr>
-        <tr><th scope="row">Who you complain to</th>
-          <td>The driver first, then support.</td>
-          <td>An app, an SOS button and a remote operations team. Wuhan's outage in March 2026 showed what happens when that channel fails with passengers inside.</td></tr>
-        <tr><th scope="row">What a power cut does</th>
-          <td>Drivers treat dark signals as four-way stops and traffic keeps moving.</td>
-          <td>San Francisco, December 2025: robotaxis halted at dark signals and gridlocked streets. Fail-safes behave correctly per vehicle and badly per fleet.</td></tr>
-        <tr><th scope="row">Who decides where it can go</th>
-          <td>The driver, within the law.</td>
-          <td>A geofence agreed with regulators, city by city. Tesla's Austin map covers the whole metro while its unsupervised fleet there is about 17 cars (July 2026).</td></tr>
-        <tr><th scope="row">What it does between rides</th>
-          <td>The driver waits where experience says demand will be.</td>
-          <td>Fleet software repositions constantly; industry estimates put empty miles as high as 44 percent, which is why depot placement is a science.</td></tr>
-      </tbody>
-    </table>
+<!-- ============================================================ chapters -->
+<section class="bands-wrap" aria-labelledby="bands-title">
+  <div class="container">
+    <p class="eyebrow"><span class="tick">■</span> READ IT AS CHAPTERS</p>
+    <h2 id="bands-title" class="section-head">Six chapters, in reading order</h2>
   </div>
-  <p class="caption" style="margin-top:12px">Sourced from filings, recall notices and operator statements, July 2026. Details and dates on <a href="safety/">What Has Gone Wrong</a> and <a href="economics/">Economics</a>.</p>
-</section>
-
-<!-- ============================================================ doors -->
-<section class="container" aria-labelledby="doors-title">
-  <p class="eyebrow"><span class="tick">■</span> ELEVEN DOORS</p>
-  <h2 id="doors-title" class="section-head">Where to go next</h2>
-  <div class="doors">
-    <a class="door" href="map/"><span class="arrow" aria-hidden="true">→</span><span class="num">561</span><span class="dn">The Wall Chart</span><span class="dd">The whole industry on one plate, a readable slice of each layer at a time.</span></a>
-    <a class="door" href="companies/"><span class="arrow" aria-hidden="true">→</span><span class="num">33</span><span class="dn">Directory</span><span class="dd">Fields per company, sortable and filterable, every view shareable.</span></a>
-    <a class="door" href="companies/passenger-autonomy/"><span class="arrow" aria-hidden="true">→</span><span class="dn">Passenger Autonomy</span><span class="dd">The companies whose driver a passenger can actually meet.</span></a>
-    <a class="door" href="partnerships/"><span class="arrow" aria-hidden="true">→</span><span class="num">148</span><span class="dn">The Web</span><span class="dd">Mapped relationships, organised by function rather than press release.</span></a>
-    <a class="door" href="economics/"><span class="arrow" aria-hidden="true">→</span><span class="num">$41.8B</span><span class="dn">Economics</span><span class="dd">Who raised what, the cost per mile, and a calculator that lets you break the business.</span></a>
-    <a class="door" href="regulation/"><span class="arrow" aria-hidden="true">→</span><span class="num">6</span><span class="dn">The Permission</span><span class="dd">Regimes compared, and who is actually moving fastest.</span></a>
-    <a class="door" href="safety/"><span class="arrow" aria-hidden="true">→</span><span class="num">6</span><span class="dn">What Has Gone Wrong</span><span class="dd">Incidents, recalls and the fleet-wide failures nobody priced in.</span></a>
-    <a class="door" href="owning-one/"><span class="arrow" aria-hidden="true">→</span><span class="num">2028</span><span class="dn">Can I Buy One?</span><span class="dd">Why consumer autonomy went backwards while robotaxis scaled.</span></a>
-    <a class="door" href="beyond-roads/"><span class="arrow" aria-hidden="true">→</span><span class="num">2008</span><span class="dn">Beyond Roads</span><span class="dd">Mining got there first. Freight, sea, farm and sidewalk followed.</span></a>
-    <a class="door" href="method/"><span class="arrow" aria-hidden="true">→</span><span class="num">128/561</span><span class="dn">Method &amp; Gaps</span><span class="dd">How this is built, what is missing, and how to correct it.</span></a>
-  </div>
-</section>
-
-<!-- ============================================================ provenance -->
-<section class="container">
-  <div class="provenance">
-    <p><strong>Compiled by Kofi Agyare-Kwabi</strong> · ex-Uber Country Manager · GTM &amp; Partnerships · Wharton MBA</p>
-    <p class="caption">Built from public filings, permit registers, recall notices and company announcements ·
-      updated 25 July 2026 · <a href="method/">how this is built</a> · gold dots mark companies spoken with directly</p>
+  <div class="bands">
+    <a class="band" href="overview/">
+      <div class="band-art" aria-hidden="true"><svg viewBox="0 0 300 160" preserveAspectRatio="xMaxYMid meet"><g fill="oklch(0.62 0.075 265)"><rect x="20" y="20" width="120" height="14" rx="4" opacity=".35"/><rect x="160" y="20" width="120" height="14" rx="4" opacity=".7"/><rect x="20" y="46" width="120" height="14" rx="4" opacity=".35"/><rect x="160" y="46" width="120" height="14" rx="4" opacity=".7"/><rect x="20" y="72" width="120" height="14" rx="4" opacity=".35"/><rect x="160" y="72" width="120" height="14" rx="4" opacity=".7"/><rect x="20" y="98" width="120" height="14" rx="4" opacity=".35"/><rect x="160" y="98" width="120" height="14" rx="4" opacity=".7"/><rect x="20" y="124" width="120" height="14" rx="4" opacity=".35"/><rect x="160" y="124" width="120" height="14" rx="4" opacity=".7"/></g></svg></div>
+      <div class="container band-inner">
+        <p class="band-num">CHAPTER 01</p>
+        <h3 class="band-title">Overview of the industry</h3>
+        <div class="band-more">
+          <p class="band-desc">What is actually driving the car, how an autonomous ride differs from a human-driven one, and where autonomy already works beyond roads.</p>
+          <span class="btn band-btn">VISIT THIS CHAPTER →</span>
+        </div>
+      </div>
+    </a>
+    <a class="band" href="map/">
+      <div class="band-art" aria-hidden="true"><svg viewBox="0 0 300 160" preserveAspectRatio="xMaxYMid meet"><g stroke-width="3" fill="none"><polygon points="150,20 195,38 213,80 195,122 150,140 105,122 87,80 105,38" stroke="oklch(0.62 0.075 265)" fill="oklch(0.62 0.075 265)" fill-opacity=".18"/><rect x="20" y="30" width="52" height="40" rx="6" stroke="oklch(0.62 0.075 40)" fill="oklch(0.62 0.075 40)" fill-opacity=".18"/><rect x="20" y="86" width="52" height="46" rx="6" stroke="oklch(0.62 0.075 320)" fill="oklch(0.62 0.075 320)" fill-opacity=".18"/><rect x="228" y="30" width="52" height="46" rx="6" stroke="oklch(0.62 0.075 200)" fill="oklch(0.62 0.075 200)" fill-opacity=".18"/><rect x="228" y="90" width="52" height="42" rx="6" stroke="oklch(0.62 0.075 150)" fill="oklch(0.62 0.075 150)" fill-opacity=".18"/><path d="M72 55 L105 62 M72 105 L108 112 M228 55 L196 62" stroke="oklch(0.62 0.075 230)" stroke-dasharray="5 5"/></g></svg></div>
+      <div class="container band-inner">
+        <p class="band-num">CHAPTER 02</p>
+        <h3 class="band-title">The wall chart</h3>
+        <div class="band-more">
+          <p class="band-desc">561 organisations on one poster: passenger autonomy at the centre, eleven layers docked around it, and the partnerships drawn between them.</p>
+          <span class="btn band-btn">VISIT THIS CHAPTER →</span>
+        </div>
+      </div>
+    </a>
+    <a class="band" href="companies/">
+      <div class="band-art" aria-hidden="true"><svg viewBox="0 0 300 160" preserveAspectRatio="xMaxYMid meet"><g fill="oklch(0.62 0.075 200)"><rect x="20" y="18" width="18" height="18" rx="5" opacity=".8"/><rect x="46" y="21" width="100" height="12" rx="4" opacity=".45"/><rect x="170" y="21" width="60" height="12" rx="4" opacity=".25"/><rect x="20" y="48" width="18" height="18" rx="5" opacity=".8"/><rect x="46" y="51" width="120" height="12" rx="4" opacity=".45"/><rect x="190" y="51" width="60" height="12" rx="4" opacity=".25"/><rect x="20" y="78" width="18" height="18" rx="5" opacity=".8"/><rect x="46" y="81" width="90" height="12" rx="4" opacity=".45"/><rect x="160" y="81" width="70" height="12" rx="4" opacity=".25"/><rect x="20" y="108" width="18" height="18" rx="5" opacity=".8"/><rect x="46" y="111" width="110" height="12" rx="4" opacity=".45"/><rect x="180" y="111" width="60" height="12" rx="4" opacity=".25"/></g></svg></div>
+      <div class="container band-inner">
+        <p class="band-num">CHAPTER 03</p>
+        <h3 class="band-title">The directory</h3>
+        <div class="band-more">
+          <p class="band-desc">The full table: 561 rows, every field, sortable, filterable and exportable — with the ten passenger-autonomy companies on pages of their own.</p>
+          <span class="btn band-btn">VISIT THIS CHAPTER →</span>
+        </div>
+      </div>
+    </a>
+    <a class="band" href="economics/">
+      <div class="band-art" aria-hidden="true"><svg viewBox="0 0 300 160" preserveAspectRatio="xMaxYMid meet"><g fill="oklch(0.62 0.075 60)"><rect x="30" y="110" width="26" height="30" rx="4" opacity=".4"/><rect x="66" y="92" width="26" height="48" rx="4" opacity=".5"/><rect x="102" y="100" width="26" height="40" rx="4" opacity=".45"/><rect x="138" y="66" width="26" height="74" rx="4" opacity=".6"/><rect x="174" y="80" width="26" height="60" rx="4" opacity=".5"/><rect x="210" y="30" width="26" height="110" rx="4" opacity=".8"/><rect x="246" y="52" width="26" height="88" rx="4" opacity=".65"/></g></svg></div>
+      <div class="container band-inner">
+        <p class="band-num">CHAPTER 04</p>
+        <h3 class="band-title">Economics</h3>
+        <div class="band-more">
+          <p class="band-desc">$41.8B of disclosed funding, the cost per mile, a calculator you can break, and the major operators compared side by side.</p>
+          <span class="btn band-btn">VISIT THIS CHAPTER →</span>
+        </div>
+      </div>
+    </a>
+    <a class="band" href="regulation/">
+      <div class="band-art" aria-hidden="true"><svg viewBox="0 0 300 160" preserveAspectRatio="xMaxYMid meet"><g fill="oklch(0.62 0.075 290)"><circle cx="40" cy="40" r="12" opacity=".75"/><rect x="64" y="33" width="150" height="13" rx="4" opacity=".4"/><circle cx="40" cy="80" r="12" opacity=".55"/><rect x="64" y="73" width="180" height="13" rx="4" opacity=".4"/><circle cx="40" cy="120" r="12" opacity=".75"/><rect x="64" y="113" width="130" height="13" rx="4" opacity=".4"/></g></svg></div>
+      <div class="container band-inner">
+        <p class="band-num">CHAPTER 05</p>
+        <h3 class="band-title">Regulatory</h3>
+        <div class="band-more">
+          <p class="band-desc">Who is allowed to drive and who signs the permits — with the incidents, recalls and independent safety studies alongside.</p>
+          <span class="btn band-btn">VISIT THIS CHAPTER →</span>
+        </div>
+      </div>
+    </a>
+    <a class="band" href="media/">
+      <div class="band-art" aria-hidden="true"><svg viewBox="0 0 300 160" preserveAspectRatio="xMaxYMid meet"><g fill="oklch(0.62 0.075 340)"><rect x="24" y="24" width="76" height="52" rx="8" opacity=".55"/><rect x="112" y="24" width="76" height="52" rx="8" opacity=".7"/><rect x="200" y="24" width="76" height="52" rx="8" opacity=".45"/><rect x="24" y="86" width="76" height="52" rx="8" opacity=".7"/><rect x="112" y="86" width="76" height="52" rx="8" opacity=".45"/><rect x="200" y="86" width="76" height="52" rx="8" opacity=".6"/></g></svg></div>
+      <div class="container band-inner">
+        <p class="band-num">CHAPTER 06</p>
+        <h3 class="band-title">Media</h3>
+        <div class="band-more">
+          <p class="band-desc">The publications, podcasts and conferences covering autonomy — and a way to hear when this map changes.</p>
+          <span class="btn band-btn">VISIT THIS CHAPTER →</span>
+        </div>
+      </div>
+    </a>
   </div>
 </section>
 </main>

@@ -282,6 +282,9 @@
   // reading order; the top nav stays flat, and this is what makes economics/ and
   // safety/ reachable from anywhere.
   const CHAPTERS = [
+    ['Overview', [['overview', 'overview/', 'The industry in plain terms'],
+                  ['beyond-roads', 'beyond-roads/', 'Autonomy off the road'],
+                  ['owning-one', 'owning-one/', 'Buying one yourself']]],
     ['Map', [['map', 'map/', 'The wall chart']]],
     ['Directory', [['companies', 'companies/', 'Every organisation, every field'],
                    ['operators', 'companies/passenger-autonomy/', 'Passenger autonomy'],
@@ -292,8 +295,6 @@
     ['Regulatory', [['regulation', 'regulation/', 'Who decides'],
                     ['safety', 'safety/', 'Incidents and recalls']]],
     ['Media', [['media', 'media/', 'Who to read, listen to, and meet']]],
-    ['Overview', [['beyond-roads', 'beyond-roads/', 'Autonomy off the road'],
-                  ['owning-one', 'owning-one/', 'Buying one yourself']]],
   ];
   const pad2 = n => String(n).padStart(2, '0');
 

@@ -10,12 +10,14 @@ Compiled and maintained by Kofi Agyare-Kwabi, ex-Uber Country Manager, GTM & Par
 
 | Route | What it is |
 |---|---|
-| `/` | The loop: how a driverless ride works, and the industry underneath it |
+| `/` | The loop, a tilted preview of the wall chart, and the six chapters |
+| `/overview/` | The industry in plain terms: what drives the car, human vs autonomous rideshare |
+| `/media/` | Publications, podcasts and events covering autonomy |
 | `/map/` | The wall chart: all 561 on one plate with an octagonal centre; zoom, filter, full screen, export, print |
 | `/companies/` | The ledger: every field, sortable, filterable, URL-shareable, CSV/JSON export |
-| `/operators/` + 10 pages | The ten operators a passenger can actually meet, in depth |
+| `/companies/passenger-autonomy/` + 10 pages | The operators a passenger can actually meet, in depth (under `/companies/`) |
 | `/partnerships/` | 148 mapped relationships organised by function; the demand-layer story |
-| `/funding/` | $41.8B of $200M+ events with the dataset's own known gaps published |
+| `/economics/#funding` | $41.8B of $200M+ events with the dataset's own known gaps published |
 | `/economics/` `/regulation/` `/safety/` `/owning-one/` `/beyond-roads/` | The deep dives |
 | `/method/` | Sources, taxonomy, coverage gaps, corrections |
 

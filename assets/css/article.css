@@ -197,3 +197,135 @@ table.spec td { font-size: 14px; }
   .article section { margin-top: 34px; }
   .op-hero .mono-tile { width: 56px; height: 56px; font-size: 22px; }
 }
+
+/* ------------------------------------------------------------------ charts
+   The explorer on /funding/. Two charts stacked on one x-axis rather than one
+   chart with two y-scales: capital and deal count are different measures and a
+   shared axis would make one of them a lie. */
+.ch-controls { display: grid; gap: 10px; margin-top: 18px; }
+.ch-row { display: flex; gap: 10px; align-items: baseline; flex-wrap: wrap; }
+.ch-row > .lbl {
+  font-size: 11px; font-family: var(--font-mono); letter-spacing: .06em;
+  text-transform: uppercase; color: var(--muted); min-width: 74px;
+}
+.ch-row .chips { display: flex; gap: 6px; flex-wrap: wrap; }
+.ch-plot { margin-top: 20px; }
+.ch-plot svg { display: block; overflow: visible; }
+.ch-plot g[tabindex] { outline: none; }
+.ch-plot g[tabindex]:focus-visible rect:last-of-type {
+  fill: color-mix(in oklab, var(--cyan) 16%, transparent);
+}
+.ch-plot g[tabindex]:hover rect:last-of-type {
+  fill: color-mix(in oklab, var(--cyan) 8%, transparent);
+}
+.ch-axis { font-family: var(--font-mono); font-size: 10px; fill: var(--muted); }
+.ch-axis.ch-year { font-weight: 600; fill: var(--ink-2); }
+.ch-sub { font-size: 11px; font-family: var(--font-mono); color: var(--muted); margin-top: 14px; }
+.ch-legend { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 14px; }
+.ch-key { display: inline-flex; align-items: center; gap: 6px; font-size: 12.5px; color: var(--ink-2); }
+.ch-key .sw { width: 11px; height: 11px; border-radius: 3px; flex: none; }
+.ch-tip {
+  position: fixed; z-index: 60; pointer-events: none;
+  background: var(--ink); color: var(--paper);
+  font-size: 12px; line-height: 1.45; padding: 8px 10px;
+  border-radius: var(--r-chip); max-width: 260px;
+}
+:root[data-theme="dark"] .ch-tip { background: var(--paper-2); color: var(--ink); border: 1px solid var(--rule); }
+.ch-tip b { font-family: var(--font-mono); font-size: 11px; }
+.ch-fallback { margin-top: 18px; }
+.ch-fallback summary { font-size: 12.5px; color: var(--muted); cursor: pointer; }
+.ch-fallback table { margin-top: 12px; }
+.ch-fallback caption { text-align: left; font-size: 12px; color: var(--muted); padding-bottom: 8px; }
+
+/* ------------------------------------------------------- comparison tables
+   Companies in the columns, metrics in the rows, four columns maximum. */
+.cmp-wrap { display: grid; grid-template-columns: 210px minmax(0, 1fr); gap: 22px; margin-top: 20px; }
+/* grid children default to min-width:auto, which lets a wide table push the page
+   sideways instead of scrolling inside its own container */
+.cmp-wrap > * { min-width: 0; }
+@media (max-width: 860px) { .cmp-wrap { grid-template-columns: 1fr; } }
+
+.cmp-rail { display: grid; gap: 14px; align-content: start; }
+.rail-group { border: 0; }
+.rail-group legend {
+  font-size: 11px; font-family: var(--font-mono); letter-spacing: .06em;
+  text-transform: uppercase; color: var(--muted); padding-bottom: 6px;
+}
+.rail-row {
+  display: flex; align-items: baseline; gap: 8px;
+  font-size: 13px; color: var(--ink-2); padding: 3px 0; cursor: pointer;
+}
+.rail-row input { accent-color: var(--cyan); }
+.rail-row.pinned { color: var(--muted); cursor: default; }
+.rail-row .pin {
+  font-size: 9.5px; font-family: var(--font-mono); text-transform: uppercase;
+  letter-spacing: .05em; color: var(--muted); border: 1px solid var(--rule);
+  border-radius: var(--r-pill); padding: 1px 5px; margin-left: auto;
+}
+
+.cmp-slots { display: flex; gap: 10px; flex-wrap: wrap; align-items: flex-end; margin-bottom: 14px; }
+.cmp-slots .slot { display: grid; gap: 4px; position: relative; }
+.cmp-slots .lbl {
+  font-size: 10px; font-family: var(--font-mono); letter-spacing: .06em;
+  text-transform: uppercase; color: var(--muted);
+}
+.cmp-slots select {
+  font-family: var(--font-display); font-size: 13.5px; font-weight: 600;
+  background: var(--paper-2); color: var(--ink);
+  border: 1px solid var(--rule); border-radius: var(--r-chip);
+  padding: 7px 10px; max-width: 190px;
+}
+.cmp-slots select:focus { border-color: var(--cyan); outline: none; }
+.cmp-slots .drop {
+  position: absolute; top: 16px; right: -7px;
+  width: 18px; height: 18px; line-height: 1; border-radius: 50%;
+  border: 1px solid var(--rule); background: var(--paper); color: var(--muted);
+  font-size: 12px; cursor: pointer;
+}
+.cmp-slots .drop:hover { border-color: var(--alert); color: var(--alert); }
+.cmp-slots .cap-max { align-self: center; }
+
+table.cmp { table-layout: fixed; min-width: 560px; }
+/* table.data sets th{white-space:nowrap}, which is right for a ledger header and
+   wrong here: these headers are sentences. */
+table.cmp th { white-space: normal; overflow-wrap: anywhere; }
+table.cmp th.mlabel {
+  text-align: left; width: 27%; font-size: 12.5px; font-weight: 600;
+  line-height: 1.35; color: var(--ink-2);
+  background: var(--paper); position: sticky; left: 0; z-index: 1;
+}
+table.cmp thead th { vertical-align: bottom; font-size: 15px; }
+table.cmp thead th .th-sub {
+  display: block; font-size: 11px; font-weight: 400; color: var(--muted);
+  text-transform: none; letter-spacing: 0; margin-top: 3px; line-height: 1.35;
+}
+table.cmp td { font-size: 13px; }
+table.cmp .v-num { font-family: var(--font-mono); font-weight: 500; }
+table.cmp .v-num.strong { font-size: 15px; font-weight: 600; }
+table.cmp .v-text { line-height: 1.45; }
+table.cmp .v-sub { display: block; font-size: 11px; color: var(--muted); margin-top: 3px; }
+table.cmp .v-sub.basis { line-height: 1.5; }
+table.cmp .blank { color: var(--muted); font-size: 12px; font-style: italic; }
+table.cmp tbody.out tr { background: color-mix(in oklab, var(--cyan) 5%, transparent); }
+table.cmp tfoot th, table.cmp tfoot td { border-top: 2px solid var(--rule); vertical-align: top; }
+
+.cmark {
+  display: inline-block; margin-left: 5px; width: 14px; height: 14px;
+  line-height: 13px; text-align: center; border-radius: 3px;
+  font-family: var(--font-mono); font-size: 9px; font-weight: 600;
+  border: 1px solid var(--rule); color: var(--muted);
+  text-decoration: none; cursor: help;
+}
+.cmark.c-disclosed { color: var(--cyan); border-color: color-mix(in oklab, var(--cyan) 40%, var(--rule)); }
+.cmark.c-estimated, .cmark.c-unverified { color: var(--alert); border-color: color-mix(in oklab, var(--alert) 35%, var(--rule)); }
+.cite { font-size: 10.5px; font-family: var(--font-mono); color: var(--cyan); margin-left: 4px; }
+
+input.eco-in {
+  font-family: var(--font-mono); font-size: 13px; text-align: right;
+  background: var(--paper-2); border: 1px solid var(--rule);
+  border-radius: var(--r-chip); padding: 5px 8px; width: 100%; max-width: 120px;
+  color: var(--ink);
+}
+input.eco-in:focus { border-color: var(--cyan); outline: none; }
+
+.cmp-actions { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; margin-top: 16px; }

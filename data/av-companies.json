@@ -257,7 +257,7 @@
   "type": "Company",
   "cat": "AV Driver / Autonomy Software",
   "rawCat": "AV Driver / Autonomy Software",
-  "sub": "Autonomous goods delivery",
+  "sub": "Robotaxi & passenger L4; Autonomous goods delivery",
   "all": [
    "AV Driver / Autonomy Software"
   ],
@@ -271,7 +271,7 @@
   "financing": "Late-stage",
   "investors": "Uber, Nebius Group (ex-Yandex)",
   "opMaturity": "Commercial-limited",
-  "deployment": "",
+  "deployment": "Commercial robotaxi service on Uber in Dallas since December 2025, covering roughly nine square miles across Downtown, Uptown, Turtle Creek and Deep Ellum, with a safety specialist aboard and fully driverless operation stated as the intent rather than the practice. Delivery robots run on US campuses alongside it.",
   "metrics": "",
   "signal": "Uber/Avride robotaxi launch in Dallas (Dec 2025)",
   "confidence": "Confirmed",
@@ -292,7 +292,8 @@
     "url": "https://investor.uber.com/news-events/news/press-release-details/2025/Uber-and-Avride-Launch-Robotaxi-Rides-in-Dallas/default.aspx",
     "date": "2025-12-03"
    }
-  ]
+  ],
+  "lastVerified": "2026-07-31"
  },
  {
   "id": "c7",
@@ -685,7 +686,7 @@
   "financing": "Subsidiary / private-backed unit",
   "investors": "",
   "opMaturity": "Public pilot with safety driver",
-  "deployment": "China pilot cities including Shanghai / Guangzhou historically",
+  "deployment": "Public robotaxi service in Beijing, Shanghai and Guangzhou, matched inside the DiDi ride-hail app rather than sold as an AV-only service; safety drivers aboard in Beijing and Shanghai as of December 2025.",
   "metrics": "Less publicly visible than Baidu / Pony / WeRide in 2026",
   "signal": "Strategic China demand-platform adjacency; needs refreshed deployment verification",
   "confidence": "Reported",
@@ -698,7 +699,8 @@
   "region": "Greater China",
   "foundedYear": 2016,
   "slug": "didi-autonomous-driving",
-  "status": "active"
+  "status": "active",
+  "lastVerified": "2026-07-31"
  },
  {
   "id": "c17",
@@ -1191,7 +1193,7 @@
   "financing": "Late-stage private; Series D reported in 2023 led by NTT",
   "investors": "NTT, Toyota, BMW i Ventures, Uber",
   "opMaturity": "Commercial-limited",
-  "deployment": "Ann Arbor, Peachtree Corners, Sun City, Arlington and Japan demonstrations / deployments",
+  "deployment": "Ann Arbor, Peachtree Corners, Sun City, Arlington, Grand Rapids in Minnesota and Japan; on Lyft in Atlanta, where rides are matched through the Lyft app rather than sold as an AV-only service.",
   "metrics": "Driver-out commercial deployment reported in Peachtree Corners; Lyft partnership in Atlanta",
   "signal": "ECARX platform deal to scale fleet; in NVIDIA/Uber L4 ecosystem (May 2026)",
   "confidence": "Confirmed",
@@ -1213,7 +1215,7 @@
     "date": "2025-09-10"
    }
   ],
-  "lastVerified": "2026-07-25"
+  "lastVerified": "2026-07-31"
  },
  {
   "id": "c30",
@@ -2164,7 +2166,7 @@
   "financing": "Public (Nasdaq: WRD / HKEX: 0800); $440.5M US IPO and placements (Oct 2024) plus ~$308M Hong Kong dual-primary listing (Nov 2025)",
   "investors": "Renault-Nissan-Mitsubishi, Bosch, Grab, Uber",
   "opMaturity": "Commercial-limited",
-  "deployment": "China city services; fully driverless commercial operations in Abu Dhabi; Dubai and Riyadh scaling under a February 2026 plan with Uber for at least 1,200 robotaxis across the three cities by 2027; Spain's first commercial robotaxi pilot announced for Madrid with Uber and Avomo (June 2026); right-hand-drive GXR program with Geely Farizon and Hong Kong bus operator Kwoon Chung.",
+  "deployment": "China city services in Beijing, Suzhou, Guangzhou and Ordos; fully driverless commercial operations in Abu Dhabi, with Dubai and Riyadh scaling under a February 2026 plan with Uber for at least 1,200 robotaxis across the three cities by 2027; Spain's first commercial robotaxi pilot announced for Madrid with Uber and Avomo (June 2026).",
   "metrics": "AV fleet over 1,600 vehicles as of 31 October 2025, of which nearly 750 robotaxis; the global robotaxi fleet reached roughly 1,300 by the end of April 2026, about 1,000 of them in China, with average daily orders per vehicle above 17 in Q1. Licensed in eight countries, the broadest regulatory footprint of any operator. Q1 2026 revenue RMB 114.1M, up 57.6% year on year.",
   "signal": "Launched fully driverless, fare-charging robotaxi operations in Dubai with Uber and the RTA on 2 April 2026, following a supervised service from December 2025 and an RTA driverless trial permit in February 2026. Abu Dhabi coverage reached about 70% of core areas.",
   "confidence": "Confirmed",
@@ -2194,7 +2196,7 @@
     "date": "2026-04-02"
    }
   ],
-  "lastVerified": "2026-07-27",
+  "lastVerified": "2026-07-31",
   "linkedin": {
    "Tony Han": "https://www.linkedin.com/in/tony-han-940a916"
   }
@@ -9354,7 +9356,7 @@
   "financing": "Public / state-owned",
   "investors": "",
   "opMaturity": "Commercial-limited",
-  "deployment": "Momenta systems appear across SAIC-linked brands and robotaxi tests in Shanghai/Suzhou.",
+  "deployment": "Robotaxi services in Shanghai, Suzhou and Shenzhen under the Xiangdao brand, driven by Momenta's software rather than SAIC's own; Momenta systems also appear across SAIC-linked passenger brands.",
   "metrics": "Momenta's July 2026 IPO materials highlighted SAIC as a major vehicle/customer ecosystem partner.",
   "signal": "SAIC is one of the densest OEM-to-autonomy bridges in China because it spans domestic and JV brands.",
   "confidence": "Confirmed",
@@ -9367,7 +9369,8 @@
   "region": "Greater China",
   "foundedYear": 1955,
   "slug": "saic-motor",
-  "status": "active"
+  "status": "active",
+  "lastVerified": "2026-07-31"
  },
  {
   "id": "c244",
@@ -9472,7 +9475,7 @@
   "financing": "Public",
   "investors": "Public (NASDAQ: TSLA)",
   "opMaturity": "Commercial-limited in robotaxi; commercial-scaled in vehicles",
-  "deployment": "Robotaxi service launched limited Austin operations in 2025; broader expansion and fully driverless scale still requires verification.",
+  "deployment": "Robotaxi service in Austin since 2025 and the San Francisco Bay Area, the Bay Area fleet supervised; a small unsupervised fleet operates in Texas, with Dallas, Houston, Tampa and Orlando added through 2026.",
   "metrics": "Austin geofence covers the entire metro (~245 sq mi) since 3 June 2026, but about 17 active unsupervised vehicles as of 21 July 2026; roughly 21 unsupervised across Texas against 42 authorised. Tampa and Orlando added 21 July 2026. Bay Area fleet larger (500+) but runs with safety drivers under California rules.",
   "signal": "Added Tampa and Orlando on 21 July 2026; scaling gated on the FSD v15 rewrite (~1B to ~10B parameters), targeted late 2026 or early 2027.",
   "confidence": "Confirmed",
@@ -9487,7 +9490,7 @@
   "foundedYear": 2003,
   "slug": "tesla",
   "status": "active",
-  "lastVerified": "2026-07-25",
+  "lastVerified": "2026-07-31",
   "sources": [
    {
     "url": "https://electrek.co/2026/07/21/tesla-robotaxi-tampa-orlando-austin-fleet-stalls/",
@@ -20926,6 +20929,54 @@
     "url": "https://tech.eu/2026/05/22/bliqai-wins-approval-for-fully-driverless-road-operations-in-estonia/",
     "title": "Tech.eu: Bliq.ai wins approval for fully driverless road operations in Estonia",
     "date": "2026-05-22"
+   }
+  ]
+ },
+ {
+  "id": "c558",
+  "name": "SWM",
+  "type": "Company",
+  "cat": "AV Driver / Autonomy Software",
+  "rawCat": "AV Driver / Autonomy Software",
+  "sub": "Robotaxi & passenger L4; Robotaxi consumer services",
+  "all": [
+   "AV Driver / Autonomy Software"
+  ],
+  "hq": "Seoul, KR",
+  "country": "KR",
+  "regions": "",
+  "founded": "2005",
+  "leadership": "Kim Ki-hyuk, CEO",
+  "about": "Korean autonomy developer running the country's first driverless taxi service, in Seoul's Gangnam district, on KG Mobility vehicles and an NVIDIA DRIVE platform.",
+  "model": "",
+  "financing": "Private",
+  "investors": "",
+  "opMaturity": "Commercial-limited",
+  "deployment": "Driverless taxi service in Seoul's Gangnam district since September 2024, Korea's first; the operating area is expanding from parts of Gangnam-gu and Seocho-gu to the full 20.4 sq km Gangnam pilot zone. Rides are free of fares and run with a safety operator aboard.",
+  "metrics": "7,754 cumulative rides reported accident-free; a fleet target of up to 3,000 vehicles by the end of 2026.",
+  "signal": "Lenovo partnership to build a next-generation robotaxi on NVIDIA DRIVE AGX Thor; KG Mobility Torres EVX platform deal (2026)",
+  "confidence": "Reported",
+  "mono": "SW",
+  "exited": false,
+  "score": 8,
+  "hqCity": "Seoul",
+  "hqState": "",
+  "hqCountry": "KR",
+  "region": "Asia-Pacific",
+  "foundedYear": 2005,
+  "slug": "swm",
+  "status": "active",
+  "lastVerified": "2026-07-31",
+  "sources": [
+   {
+    "title": "Lenovo works with SWM to develop next-generation robotaxi on NVIDIA DRIVE AGX Thor",
+    "url": "https://news.lenovo.com/pressroom/press-releases/lenovo-works-with-swm-to-develop-next-generation-robotaxi-on-nvidia-drive-agx-thor/",
+    "date": "2026-01-06"
+   },
+   {
+    "title": "KGM Torres EVX strengthens cooperation with SWM in self-driving sector, expanding services to Gangnam, Seoul",
+    "url": "https://www.starnewskorea.com/en/business-life/2026/04/06/2026040610300065845",
+    "date": "2026-04-06"
    }
   ]
  }

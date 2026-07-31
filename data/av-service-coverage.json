@@ -1,0 +1,382 @@
+{
+ "meta": {
+  "compiled": "2026-07-31",
+  "asOf": "2025-12",
+  "title": "Autonomous vehicle service coverage, December 2025",
+  "note": "A point-in-time snapshot of every city where a company's own driver was carrying members of the public, and on what terms. It is dated deliberately: coverage moves monthly, and a list without a date is a list that quietly goes wrong. Where this map knows of later openings they are named in the prose beneath rather than folded into the snapshot.",
+  "source": {
+   "title": "Autonomous Vehicle Service Coverage, December 2025",
+   "credit": "Social Capital, from Driverless Digest and Axios",
+   "url": "https://www.thedriverlessdigest.com/"
+  }
+ },
+ "limitations": {
+  "safetyDriver": "Operating with a safety driver aboard",
+  "notDirectlyBookable": "Not directly bookable as an AV-only service",
+  "waitlist": "Waitlist, not yet open to the public",
+  "free": "Free: no fares charged"
+ },
+ "operators": [
+  {
+   "name": "Baidu Apollo Go",
+   "slug": "baidu-apollo-go",
+   "inRoster": true,
+   "cities": [
+    {
+     "city": "Beijing",
+     "cc": "CN",
+     "flags": []
+    },
+    {
+     "city": "Shanghai",
+     "cc": "CN",
+     "flags": []
+    },
+    {
+     "city": "Guangzhou",
+     "cc": "CN",
+     "flags": []
+    },
+    {
+     "city": "Shenzhen",
+     "cc": "CN",
+     "flags": []
+    },
+    {
+     "city": "Wuhan",
+     "cc": "CN",
+     "flags": []
+    },
+    {
+     "city": "Chongqing",
+     "cc": "CN",
+     "flags": []
+    },
+    {
+     "city": "Chengdu",
+     "cc": "CN",
+     "flags": []
+    },
+    {
+     "city": "Yangquan",
+     "cc": "CN",
+     "flags": []
+    },
+    {
+     "city": "Wuzhen",
+     "cc": "CN",
+     "flags": []
+    },
+    {
+     "city": "Sanya",
+     "cc": "CN",
+     "flags": []
+    },
+    {
+     "city": "Cangzhou",
+     "cc": "CN",
+     "flags": []
+    },
+    {
+     "city": "Hefei",
+     "cc": "CN",
+     "flags": []
+    },
+    {
+     "city": "Haikou",
+     "cc": "CN",
+     "flags": []
+    },
+    {
+     "city": "Changsha",
+     "cc": "CN",
+     "flags": []
+    }
+   ]
+  },
+  {
+   "name": "WeRide",
+   "slug": "weride",
+   "inRoster": true,
+   "cities": [
+    {
+     "city": "Beijing",
+     "cc": "CN",
+     "flags": []
+    },
+    {
+     "city": "Suzhou",
+     "cc": "CN",
+     "flags": []
+    },
+    {
+     "city": "Guangzhou",
+     "cc": "CN",
+     "flags": []
+    },
+    {
+     "city": "Ordos",
+     "cc": "CN",
+     "flags": []
+    },
+    {
+     "city": "Riyadh",
+     "cc": "SA",
+     "flags": [
+      "safetyDriver",
+      "notDirectlyBookable"
+     ]
+    },
+    {
+     "city": "Dubai",
+     "cc": "AE",
+     "flags": [
+      "safetyDriver",
+      "notDirectlyBookable"
+     ]
+    },
+    {
+     "city": "Abu Dhabi",
+     "cc": "AE",
+     "flags": []
+    }
+   ]
+  },
+  {
+   "name": "Waymo",
+   "slug": "waymo",
+   "inRoster": true,
+   "cities": [
+    {
+     "city": "SF Bay Area",
+     "cc": "US",
+     "flags": []
+    },
+    {
+     "city": "Austin",
+     "cc": "US",
+     "flags": [
+      "notDirectlyBookable"
+     ]
+    },
+    {
+     "city": "Phoenix",
+     "cc": "US",
+     "flags": []
+    },
+    {
+     "city": "Atlanta",
+     "cc": "US",
+     "flags": [
+      "notDirectlyBookable"
+     ]
+    },
+    {
+     "city": "Los Angeles",
+     "cc": "US",
+     "flags": []
+    },
+    {
+     "city": "Miami",
+     "cc": "US",
+     "flags": []
+    }
+   ]
+  },
+  {
+   "name": "Pony.ai",
+   "slug": "pony-ai",
+   "inRoster": true,
+   "cities": [
+    {
+     "city": "Beijing",
+     "cc": "CN",
+     "flags": []
+    },
+    {
+     "city": "Shanghai",
+     "cc": "CN",
+     "flags": [
+      "safetyDriver"
+     ]
+    },
+    {
+     "city": "Guangzhou",
+     "cc": "CN",
+     "flags": []
+    },
+    {
+     "city": "Shenzhen",
+     "cc": "CN",
+     "flags": []
+    }
+   ]
+  },
+  {
+   "name": "DiDi Autonomous Driving",
+   "slug": "didi-autonomous-driving",
+   "inRoster": false,
+   "cities": [
+    {
+     "city": "Beijing",
+     "cc": "CN",
+     "flags": [
+      "safetyDriver",
+      "notDirectlyBookable"
+     ]
+    },
+    {
+     "city": "Shanghai",
+     "cc": "CN",
+     "flags": [
+      "safetyDriver",
+      "notDirectlyBookable"
+     ]
+    },
+    {
+     "city": "Guangzhou",
+     "cc": "CN",
+     "flags": [
+      "notDirectlyBookable"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "SAIC Motor",
+   "slug": "saic-motor",
+   "inRoster": false,
+   "cities": [
+    {
+     "city": "Shanghai",
+     "cc": "CN",
+     "flags": [
+      "safetyDriver"
+     ]
+    },
+    {
+     "city": "Suzhou",
+     "cc": "CN",
+     "flags": []
+    },
+    {
+     "city": "Shenzhen",
+     "cc": "CN",
+     "flags": []
+    }
+   ]
+  },
+  {
+   "name": "May Mobility",
+   "slug": "may-mobility",
+   "inRoster": true,
+   "cities": [
+    {
+     "city": "Grand Rapids, MN",
+     "cc": "US",
+     "flags": [
+      "safetyDriver"
+     ]
+    },
+    {
+     "city": "Atlanta",
+     "cc": "US",
+     "flags": [
+      "safetyDriver",
+      "notDirectlyBookable"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Tesla",
+   "slug": "tesla",
+   "inRoster": true,
+   "cities": [
+    {
+     "city": "Austin",
+     "cc": "US",
+     "flags": [
+      "safetyDriver",
+      "waitlist"
+     ]
+    },
+    {
+     "city": "SF Bay Area",
+     "cc": "US",
+     "flags": [
+      "safetyDriver",
+      "waitlist"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Zoox",
+   "slug": "zoox",
+   "inRoster": true,
+   "cities": [
+    {
+     "city": "Las Vegas",
+     "cc": "US",
+     "flags": [
+      "free"
+     ]
+    },
+    {
+     "city": "SF Bay Area",
+     "cc": "US",
+     "flags": [
+      "waitlist",
+      "free"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Avride",
+   "slug": "avride",
+   "inRoster": false,
+   "cities": [
+    {
+     "city": "Dallas",
+     "cc": "US",
+     "flags": [
+      "safetyDriver",
+      "notDirectlyBookable"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "SWM",
+   "slug": "swm",
+   "inRoster": false,
+   "cities": [
+    {
+     "city": "Seoul",
+     "cc": "KR",
+     "flags": [
+      "safetyDriver",
+      "free"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "MOIA",
+   "slug": "moia",
+   "inRoster": false,
+   "cities": [
+    {
+     "city": "Hamburg",
+     "cc": "DE",
+     "flags": [
+      "safetyDriver",
+      "waitlist"
+     ]
+    }
+   ]
+  }
+ ]
+}

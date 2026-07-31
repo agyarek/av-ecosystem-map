@@ -2,7 +2,7 @@
 
 **Live: [agyarek.github.io/av-ecosystem-map](https://agyarek.github.io/av-ecosystem-map/)**
 
-An interactive field atlas of the autonomous vehicle industry: 561 organisations across eleven layers, the partnerships between them, the money behind them, the regulators who permit them, and the adjacent industries where autonomy shipped first.
+An interactive field atlas of the autonomous vehicle industry: 562 organisations across eleven layers, the partnerships between them, the money behind them, the regulators who permit them, and the adjacent industries where autonomy shipped first.
 
 Compiled and maintained by Kofi Agyare-Kwabi, ex-Uber Country Manager, GTM & Partnerships, Wharton MBA.
 
@@ -13,7 +13,7 @@ Compiled and maintained by Kofi Agyare-Kwabi, ex-Uber Country Manager, GTM & Par
 | `/` | The loop, a tilted preview of the wall chart, and the six chapters |
 | `/overview/` | The industry in plain terms: what drives the car, human vs autonomous rideshare |
 | `/media/` | Publications, podcasts and events covering autonomy |
-| `/map/` | The wall chart: all 561 on one plate with an octagonal centre; zoom, filter, full screen, export, print |
+| `/map/` | The wall chart: all 562 on one plate with an octagonal centre; zoom, filter, full screen, export, print |
 | `/companies/` | The ledger: every field, sortable, filterable, URL-shareable, CSV/JSON export |
 | `/companies/passenger-autonomy/` + 10 pages | The operators a passenger can actually meet, in depth (under `/companies/`) |
 | `/partnerships/` | 148 mapped relationships organised by function; the demand-layer story |
@@ -36,7 +36,7 @@ everything derivable into `data/` at build time; the browser renders and never r
     ├── validate-data.py        invariants; run before every commit, fail on error
     ├── build-poster-layout.py  freezes wall-chart geometry: an octagon of ten
     │                           operators, the ten remaining layers tiling the
-    │                           frame around it (561/561 placed, verified)
+    │                           frame around it (562/562 placed, verified)
     ├── build-indexes.py        partner index, derived counts, search index
     ├── fetch-logos.py          OPTIONAL logo upgrade: fetches, trims and commits
     │                           real marks. Logos already load at runtime, measured

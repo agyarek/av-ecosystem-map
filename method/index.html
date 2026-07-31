@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Method & Gaps · AV Ecosystem Map</title>
-<meta name="description" content="How this map is built: sources, taxonomy, confidence levels, the published coverage gaps (128 of 561 with mapped partnerships), the update cadence, the tools, and how to correct it.">
+<meta name="description" content="How this map is built: sources, taxonomy, confidence levels, the published coverage gaps (128 of 562 with mapped partnerships), the update cadence, the tools, and how to correct it.">
 <meta property="og:title" content="Method & Gaps · AV Ecosystem Map">
-<meta property="og:description" content="How this map is built: sources, taxonomy, confidence levels, the published coverage gaps (128 of 561 with mapped partnerships), the update cadence, the tools, and how to correct it.">
+<meta property="og:description" content="How this map is built: sources, taxonomy, confidence levels, the published coverage gaps (128 of 562 with mapped partnerships), the update cadence, the tools, and how to correct it.">
 <meta property="og:type" content="article">
 <meta property="og:image" content="https://agyarek.github.io/av-ecosystem-map/assets/cards/method.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -55,9 +55,9 @@
 <section>
   <h2 class="sec" id="the-gaps-up-front">The gaps, up front</h2>
   <div class="fact-grid">
-    <div class="fact"><span class="num">128 / 561</span><span class="lbl">organisations with mapped partnerships</span><span class="src">148 relationships in all; 433 organisations have none mapped</span></div>
-    <div class="fact"><span class="num">442 / 561</span><span class="lbl">with a resolvable web domain</span><span class="src">the other 119 render as monogram tiles by design</span></div>
-    <div class="fact"><span class="num">49 / 561</span><span class="lbl">with disclosed lifetime funding</span><span class="src">totalling $67.1B; blank is honest</span></div>
+    <div class="fact"><span class="num">128 / 562</span><span class="lbl">organisations with mapped partnerships</span><span class="src">148 relationships in all; 434 organisations have none mapped</span></div>
+    <div class="fact"><span class="num">442 / 562</span><span class="lbl">with a resolvable web domain</span><span class="src">the other 119 render as monogram tiles by design</span></div>
+    <div class="fact"><span class="num">49 / 562</span><span class="lbl">with disclosed lifetime funding</span><span class="src">totalling $67.1B; blank is honest</span></div>
     <div class="fact"><span class="num">18</span><span class="lbl">companies spoken with directly</span><span class="src">marked with a gold dot everywhere they appear</span></div>
   </div>
   <div class="prose" style="margin-top:20px">
@@ -151,7 +151,7 @@
     <p>Everything derived is frozen at build time by scripts in the repository's <code>tools/</code>
       directory: <code>validate-data.py</code> asserts the invariants every page depends on and fails
       the build otherwise; <code>build-poster-layout.py</code> freezes the wall chart's geometry and
-      verifies all 561 organisations placed; <code>build-indexes.py</code> derives partner lists,
+      verifies all 562 organisations placed; <code>build-indexes.py</code> derives partner lists,
       counts and the search index; <code>fetch-logos.py</code> is an optional upgrade that commits real logo assets for print and export, since the chart otherwise loads marks at runtime from a public favicon service and falls back to a monogram tile where none resolves;
       <code>make-csv.py</code> exports the flat file. The browser renders; it does not solve.</p>
     <p>Records carry a <code>lastVerified</code> date where a claim has been re-checked. The intended

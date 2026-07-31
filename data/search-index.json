@@ -64,7 +64,7 @@
   "n": "Avride",
   "s": "avride",
   "c": "AV Driver / Autonomy Software",
-  "b": "Autonomous goods delivery",
+  "b": "Robotaxi & passenger L4; Autonomous goods delivery",
   "r": "North America",
   "m": "Commercial",
   "d": "avride.ai"
@@ -5128,5 +5128,13 @@
   "m": "Commercial",
   "d": "bliq.ai",
   "p": 1
+ },
+ {
+  "n": "SWM",
+  "s": "swm",
+  "c": "AV Driver / Autonomy Software",
+  "b": "Robotaxi & passenger L4; Robotaxi consumer services",
+  "r": "Asia-Pacific",
+  "m": "Commercial"
  }
 ]

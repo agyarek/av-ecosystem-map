@@ -6,7 +6,7 @@
   "margin": 200,
   "headerH": 210,
   "octR": 1240,
-  "companyCount": 561,
+  "companyCount": 562,
   "medallionCount": 10,
   "medStyle": {
    "logo": 120,
@@ -79,7 +79,7 @@
   "footY": 3000,
   "title": "PASSENGER AUTONOMY",
   "sub": "AUTONOMOUS DRIVERS A PASSENGER CAN ACTUALLY MEET",
-  "foot": "10 OF 561 ORGANISATIONS ON THIS CHART"
+  "foot": "10 OF 562 ORGANISATIONS ON THIS CHART"
  },
  "districts": [
   {
@@ -87,7 +87,7 @@
    "layer": "AV Driver / Autonomy Software",
    "band": "top",
    "hue": 265,
-   "count": 52,
+   "count": 53,
    "shown": 16,
    "overflow": [
     {
@@ -199,6 +199,14 @@
      "slug": "inceptio-technology",
      "id": "c26",
      "mono": "IN",
+     "exited": false,
+     "spokenTo": false
+    },
+    {
+     "name": "SWM",
+     "slug": "swm",
+     "id": "c558",
+     "mono": "SW",
      "exited": false,
      "spokenTo": false
     },

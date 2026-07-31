@@ -3,7 +3,7 @@
   "generatedBy": "tools/build-indexes.py",
   "edgeCount": 148,
   "companiesWithPartners": 128,
-  "companiesWithout": 433,
+  "companiesWithout": 434,
   "kinds": {
    "Same family": 33,
    "Vehicle platform": 18,

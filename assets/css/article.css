@@ -389,3 +389,46 @@ table.compare td { font-size: 14px; line-height: 1.5; max-width: 380px; }
 table.compare thead th {
   font-family: var(--font-mono); font-size: 11px; letter-spacing: .08em;
 }
+
+/* ------------------------------------------------ service coverage snapshot */
+/* Where a driver is carrying passengers, and on what terms. Dated, because a
+   coverage list without a date goes quietly wrong. */
+.cv-summary { font-family: var(--font-mono); font-size: var(--fs-sm); color: var(--ink-2); margin-top: 6px; }
+.cv-summary .num { font-weight: 700; color: var(--ink); }
+.cv-grid {
+  display: grid; gap: 12px; margin-top: 18px;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+}
+.cv-op {
+  padding: 14px 16px; background: var(--paper-2);
+  border: 1px solid var(--rule); border-radius: var(--r-card);
+}
+.cv-op-h {
+  display: flex; align-items: baseline; justify-content: space-between; gap: 8px;
+  padding-bottom: 8px; margin-bottom: 8px; border-bottom: 1px solid var(--rule);
+}
+.cv-op-h a { font-weight: 800; font-size: var(--fs-md); text-decoration: none; }
+.cv-op-h a:hover { text-decoration: underline; }
+.cv-n { font-family: var(--font-mono); font-size: var(--fs-xs); color: var(--muted); flex: none; }
+.cv-list { list-style: none; display: flex; flex-direction: column; gap: 5px; }
+.cv-city { display: flex; align-items: center; gap: 7px; font-size: var(--fs-sm); }
+.cv-cc {
+  flex: none; font-family: var(--font-mono); font-size: var(--fs-micro); font-weight: 600;
+  letter-spacing: .06em; color: var(--ink-2);
+  background: color-mix(in oklab, var(--cyan) 14%, transparent);
+  border-radius: var(--r-chip); padding: 2px 6px; min-width: 28px; text-align: center;
+}
+.cv-name { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.cv-mark {
+  flex: none; width: 15px; height: 15px; border-radius: 50%;
+  display: inline-flex; align-items: center; justify-content: center;
+  font-family: var(--font-mono); font-size: 9.5px; font-weight: 600;
+  background: color-mix(in oklab, var(--ink) 12%, transparent); color: var(--ink-2);
+  cursor: help;
+}
+.cv-legend {
+  list-style: none; display: flex; flex-wrap: wrap; gap: 8px 20px; margin-top: 18px;
+  font-size: var(--fs-xs); color: var(--ink-2);
+}
+.cv-legend li { display: flex; align-items: center; gap: 6px; }
+.cv-src { margin-top: 14px; }

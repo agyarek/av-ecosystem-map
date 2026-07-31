@@ -77,14 +77,14 @@
   // "Jane Doe, co-founder and CEO; John Roe, CTO" becomes linked names. The
   // dataset holds no verified profile URLs, so each name links to a LinkedIn
   // people search scoped by company rather than to a guessed profile.
-  const people = (str, company) => String(str).split(/;\s*/).map(part => {
+  const people = (str, company, known) => String(str).split(/;\s*/).map(part => {
     const m = part.match(/^([^,(]+?)(\s*[,(].*)?$/);
     if (!m || !/[A-Za-z]{2}/.test(m[1]) || /^(n\/a|none|unknown)/i.test(m[1])) return esc(part);
     // co-leads are joined with "and" before the comma; any "and" after it is part
     // of a title ("co-founder and CEO") and must not be split on
     const names = m[1].split(/\s+(?:and|&)\s+/).map(n => n.trim()).filter(Boolean);
     return names.map(n =>
-      `<a class="li" href="${esc(linkedinSearch(n, company))}" target="_blank" rel="noopener noreferrer">${ICON.linkedin}${esc(n)}</a>`
+      `<a class="li" href="${esc((known && known[n]) || linkedinSearch(n, company))}" target="_blank" rel="noopener noreferrer">${ICON.linkedin}${esc(n)}</a>`
     ).join(' and ') + esc(m[2] || '');
   }).join('; ');
 
@@ -683,13 +683,13 @@
       ${site ? `<p class="cc-site"><a href="https://${esc(site)}" target="_blank" rel="noopener noreferrer">${ICON.globe}${esc(site)}</a></p>` : ''}
       <div class="cc-shot" hidden></div>
       ${(rec && (rec.about || rec.sub)) || meta.b ? `<p class="cc-sub">${esc((rec && (rec.about || rec.sub)) || meta.b)}</p>` : ''}
-      ${rec && rec.leadership && rec.leadership !== 'N/A (defunct)' ? `<p class="cc-lead"><span class="pk">LEADERSHIP</span> ${people(rec.leadership, rec.name)}</p>` : ''}
+      ${rec && rec.leadership && rec.leadership !== 'N/A (defunct)' ? `<p class="cc-lead"><span class="pk">LEADERSHIP</span> ${people(rec.leadership, rec.name, rec.linkedin)}</p>` : ''}
       ${facts.length ? `<dl class="cc-facts">${facts.map(([k, v]) =>
         `<dt>${esc(k)}</dt><dd>${esc(String(v))}</dd>`).join('')}</dl>` : ''}
       <div class="cc-partners"><span class="pk">PARTNERSHIPS</span> ${partnerRows.length
         ? Object.entries(grouped).map(([k, ps]) =>
           `<div><span class="pk">${esc(k.toUpperCase())}</span> ${ps.map(p =>
-            p.slug ? `<button data-go="${esc(p.slug)}">${esc(p.partner)}</button>` : esc(p.partner)
+            p.slug ? `<button class="co-link" data-go="${esc(p.slug)}">${esc(p.partner)}</button>` : esc(p.partner)
           ).join(' · ')}</div>`).join('')
         : '<span class="caption">None mapped yet. The footer takes corrections.</span>'}</div>
       ${sources.length ? `<div class="cc-src"><span class="pk">SOURCES</span>${sources.map(s =>

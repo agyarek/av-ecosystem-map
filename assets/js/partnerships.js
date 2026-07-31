@@ -30,7 +30,7 @@
     .then(([enr, slim]) => {
       const slugOf = Object.fromEntries(slim.map(c => [c.n, c.s]));
       const link = name => slugOf[name]
-        ? `<a href="${ROOT}map/#${esc(slugOf[name])}">${esc(name)}</a>`
+        ? `<a class="co-link" href="${ROOT}map/#${esc(slugOf[name])}">${esc(name)}</a>`
         : `<strong>${esc(name)}</strong>`;
       const norm = k => k.charAt(0).toUpperCase() + k.slice(1).toLowerCase();
 

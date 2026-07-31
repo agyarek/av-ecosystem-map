@@ -111,9 +111,11 @@
     linkedin: '<svg viewBox="0 0 16 16" width="13" height="13" fill="currentColor" aria-hidden="true"><path d="M3.2 5.8h2.2V13H3.2V5.8zM4.3 2.3a1.3 1.3 0 110 2.6 1.3 1.3 0 010-2.6zM7.1 5.8h2.1v1h.03c.3-.55 1-1.13 2.08-1.13 2.22 0 2.63 1.4 2.63 3.23V13h-2.2V9.35c0-.87-.02-2-1.24-2-1.24 0-1.43.94-1.43 1.93V13H7.1V5.8z"/></svg>',
     news: '<svg viewBox="0 0 16 16" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><rect x="1.8" y="3" width="12.4" height="10" rx="1.4"/><path d="M4.2 5.8h5M4.2 8.2h5M4.2 10.6h3.4"/></svg>',
   };
-  // A person's name, linked to a LinkedIn people search scoped by their company.
-  // This is a lookup, not a claimed profile URL: the dataset does not hold
-  // verified profile links, and inventing them would be worse than searching.
+  // The fallback when a person has no verified profile in the dataset: a LinkedIn
+  // people search scoped by their company. It is a lookup, not a claimed profile
+  // URL. Where av-companies.json does hold a checked profile the renderers use
+  // that instead; where two people share a name and employer, or the evidence is
+  // thin, the search stays, because a wrong profile is worse than a search.
   const linkedinSearch = (person, company) =>
     'https://www.linkedin.com/search/results/people/?keywords=' +
     encodeURIComponent([person, company].filter(Boolean).join(' '));
@@ -437,6 +439,10 @@
     heads.forEach(h => io.observe(h.el));
   }
   buildPageNav();
+
+  // Pages with their own renderer call mountLogos themselves; the static ones
+  // (the operator deep dives, for one) have nobody to do it for them.
+  mountLogos(document);
 
   // ------------------------------------------------------------- search
   const wrap = document.getElementById('site-search');

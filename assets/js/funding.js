@@ -383,7 +383,7 @@
         return `<div class="tl-event${ok ? '' : ' dim'}">
           <span class="d">${esc(e.date)}</span>
           <span class="amt">${fmtM(e.amountUSDm)}</span>
-          <span class="co">${e.slug ? `<a href="${ROOT}map/#${esc(e.slug)}" style="text-decoration:none;color:inherit">${esc(e.company)}</a>` : esc(e.company)}</span>
+          <span class="co">${e.slug ? `<a class="co-link" href="${ROOT}map/#${esc(e.slug)}">${esc(e.company)}</a>` : esc(e.company)}</span>
           <span class="form">${esc(e.form.toUpperCase())}</span>
           <span class="note">${esc(e.note || '')}</span>
           <span class="inv">${esc((e.investors || []).slice(0, 5).join(', '))}</span>

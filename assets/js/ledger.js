@@ -30,12 +30,12 @@
   // "Jane Doe and John Roe, co-CEOs" becomes linked names. The dataset holds no
   // verified profile URLs, so each links to a LinkedIn people search scoped by
   // company rather than to a guessed profile.
-  const people = (str, company) => String(str).split(/;\s*/).map(part => {
+  const people = (str, company, known) => String(str).split(/;\s*/).map(part => {
     const m = part.match(/^([^,(]+?)(\s*[,(].*)?$/);
     if (!m || !/[A-Za-z]{2}/.test(m[1]) || /^(n\/a|none|unknown)/i.test(m[1])) return esc(part);
     const names = m[1].split(/\s+(?:and|&)\s+/).map(n => n.trim()).filter(Boolean);
     return names.map(n =>
-      `<a class="li" href="${esc(linkedinSearch(n, company))}" target="_blank" rel="noopener noreferrer">${ICON.linkedin}${esc(n)}</a>`
+      `<a class="li" href="${esc((known && known[n]) || linkedinSearch(n, company))}" target="_blank" rel="noopener noreferrer">${ICON.linkedin}${esc(n)}</a>`
     ).join(' and ') + esc(m[2] || '');
   }).join('; ');
 
@@ -269,7 +269,7 @@
       <div class="d-shot" hidden></div>
       <p class="about">${esc(c.about || c.sub || '')}</p>
       ${c.leadership && c.leadership !== 'N/A (defunct)'
-        ? `<div class="d-block"><h4>Leadership</h4><p class="d-people">${people(c.leadership, c.name)}</p></div>` : ''}
+        ? `<div class="d-block"><h4>Leadership</h4><p class="d-people">${people(c.leadership, c.name, c.linkedin)}</p></div>` : ''}
       ${facts.length || caveats.length ? `<div class="d-block"><h4>Key metrics</h4>
         ${facts.length ? `<ul class="d-metrics">${facts.map(s => `<li>${esc(s)}</li>`).join('')}</ul>` : ''}
         ${caveats.map(s => `<p class="caption">${esc(s)}</p>`).join('')}</div>` : ''}
@@ -283,7 +283,7 @@
       <div class="d-block d-partners"><h4>Mapped partnerships${p ? ` · ${p.count}` : ''}</h4>
         ${p ? '<ul>' + p.partners.map(pp =>
           `<li><span class="pk">${esc(pp.k.toUpperCase())}</span>${pp.slug
-            ? `<a href="../companies/?open=${encodeURIComponent(pp.slug)}">${esc(pp.partner)}</a>`
+            ? `<a class="co-link" href="../companies/?open=${encodeURIComponent(pp.slug)}">${esc(pp.partner)}</a>`
             : esc(pp.partner)}${pp.n ? `<div class="caption">${esc(pp.n)}</div>` : ''}</li>`).join('') + '</ul>'
           : '<p class="caption">None mapped yet. If you know one, the button below emails me directly.</p>'}
       </div>

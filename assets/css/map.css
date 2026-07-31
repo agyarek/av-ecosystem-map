@@ -129,7 +129,7 @@
 #company-card .cc-sub { font-size: 13.5px; color: var(--ink-2); margin-top: 10px; line-height: 1.45; }
 #company-card .cc-site { margin-top: 9px; font-size: 12.5px; }
 #company-card .cc-site a, #company-card .cc-lead a.li {
-  display: inline-flex; align-items: center; gap: 5px; color: var(--cyan);
+  display: inline; color: var(--cyan);
 }
 #company-card .cc-lead { margin-top: 10px; font-size: 12.5px; line-height: 1.6; }
 #company-card .cc-shot { margin-top: 12px; }
@@ -145,12 +145,6 @@
 }
 /* Spoken with directly is the most expensive fact on this site to acquire, so
    it is stated, not hinted at with a dot. */
-.spoken-bar {
-  margin-top: 10px; padding: 5px 10px; border-radius: var(--r-pill);
-  background: var(--yellow); color: #12130F;
-  font-family: var(--font-mono); font-size: 10px; font-weight: 600;
-  letter-spacing: .12em; text-align: center;
-}
 #company-card .cc-facts {
   display: grid; grid-template-columns: auto 1fr; gap: 3px 10px;
   margin-top: 12px; padding-top: 10px; border-top: 1px solid var(--rule);
@@ -162,7 +156,7 @@
   margin-top: 12px; padding-top: 10px; border-top: 1px solid var(--rule); font-size: 12.5px;
 }
 #company-card .cc-partners button {
-  display: inline-block; padding: 1px 0; color: var(--cyan); font-size: 12.5px; text-align: left;
+  display: inline-block; padding: 1px 0; font-size: 12.5px; text-align: left;
 }
 #company-card .pk { color: var(--muted); font-family: var(--font-mono); font-size: 10px; letter-spacing: .06em; }
 #company-card .cc-src div { margin-top: 4px; }

@@ -20,7 +20,12 @@
   if (!path || !token || !wrap) return;
 
   const TOTAL = path.getTotalLength();
-  const AMBIENT_LAP_S = 18;
+  // A lap past four stations every 18 seconds gave each one about four seconds,
+  // which is not long enough to read a name in passing. The car now takes half
+  // again as long and, like the explicit ride, actually stops at each station
+  // instead of sailing through.
+  const AMBIENT_LAP_S = 34;
+  const AMBIENT_DWELL_MS = 2600;
   const stations = ['request', 'driver', 'vehicle', 'pitlane'];
   const stationEls = Object.fromEntries(stations.map(s =>
     [s, wrap.querySelector(`[data-station="${s}"]`)]));
@@ -53,11 +58,22 @@
   let parkTarget = null;
   let last = performance.now();
   let rideStep = -1, rideUntil = 0, rideMoveFrom = 0, rideMoveStart = 0;
+  let paused = false, dwellUntil = 0, dwelt = null;
 
   const lcDefault = document.getElementById('lc-default');
   const lcStation = document.getElementById('lc-station');
   const lcCaption = document.getElementById('lc-caption');
   const runBtn = document.getElementById('run-ride');
+
+  // The old version of this had a pause and the rewrite lost it. Motion you
+  // cannot stop is motion imposed on the reader.
+  const pauseBtn = document.getElementById('loop-pause');
+  if (pauseBtn) pauseBtn.addEventListener('click', () => {
+    paused = !paused;
+    pauseBtn.setAttribute('aria-pressed', paused);
+    pauseBtn.textContent = paused ? 'Resume the loop' : 'Pause the loop';
+    if (!paused) last = performance.now();   // do not bank the paused seconds
+  });
 
   function place(u) {
     const p = path.getPointAtLength(((u % 1) + 1) % 1 * TOTAL);
@@ -83,8 +99,23 @@
   function frame(now) {
     const dt = Math.min(0.1, (now - last) / 1000);
     last = now;
+    if (paused) { requestAnimationFrame(frame); return; }
     if (mode === 'ambient') {
-      t = (t + dt / AMBIENT_LAP_S) % 1;
+      if (dwellUntil) {
+        if (now >= dwellUntil) { dwellUntil = 0; showDefault(); }
+      } else {
+        const step = dt / AMBIENT_LAP_S;
+        // stop the moment the car reaches a station rather than gliding past it
+        const hit = stations.find(s =>
+          s !== dwelt && fwdDist(t, frac[s]) > 0 && fwdDist(t, frac[s]) <= step);
+        if (hit) {
+          t = frac[hit]; dwelt = hit;
+          dwellUntil = now + AMBIENT_DWELL_MS;
+          lightOnly(hit); showStation(hit);
+        } else {
+          t = (t + step) % 1;
+        }
+      }
       lightNearest();
     } else if (mode === 'parked' && parkTarget != null) {
       const d = fwdDist(t, parkTarget);

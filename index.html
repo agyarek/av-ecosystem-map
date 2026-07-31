@@ -63,9 +63,26 @@
 
   <div class="loop-wrap" id="loop-wrap">
     <svg id="track" viewBox="0 0 1100 620" aria-hidden="true" class="decor">
+      <path id="track-shoulder" d="M 90 310 L 90 180 Q 90 70 200 70 L 900 70 Q 1010 70 1010 180 L 1010 440 Q 1010 550 900 550 L 200 550 Q 90 550 90 440 Z"/>
       <path id="track-path" d="M 90 310 L 90 180 Q 90 70 200 70 L 900 70 Q 1010 70 1010 180 L 1010 440 Q 1010 550 900 550 L 200 550 Q 90 550 90 440 Z"/>
       <path id="track-dash" d="M 90 310 L 90 180 Q 90 70 200 70 L 900 70 Q 1010 70 1010 180 L 1010 440 Q 1010 550 900 550 L 200 550 Q 90 550 90 440 Z"/>
-      <g id="token" class="token"><rect x="-17" y="-10" width="34" height="20" rx="7"/><circle cx="-8" cy="12" r="3.6"/><circle cx="8" cy="12" r="3.6"/><rect x="-9" y="-6" width="11" height="5" rx="2" class="glass"/></g>
+      <g id="token" class="token">
+        <path class="beam" d="M 16 -6 L 42 -14 L 42 2 Z"/>
+        <path class="beam" d="M 16 6 L 42 14 L 42 -2 Z"/>
+        <rect class="wheel" x="-10" y="-11.5" width="7" height="3.6" rx="1.4"/>
+        <rect class="wheel" x="4" y="-11.5" width="7" height="3.6" rx="1.4"/>
+        <rect class="wheel" x="-10" y="7.9" width="7" height="3.6" rx="1.4"/>
+        <rect class="wheel" x="4" y="7.9" width="7" height="3.6" rx="1.4"/>
+        <rect class="body" x="-18" y="-9" width="36" height="18" rx="7"/>
+        <rect class="seam" x="-14" y="-6.5" width="5.5" height="13" rx="2"/>
+        <rect class="seam" x="9" y="-6.5" width="5.5" height="13" rx="2"/>
+        <rect class="glass" x="-6" y="-7" width="12" height="14" rx="3.4"/>
+        <circle class="lamp" cx="16" cy="-4.6" r="1.7"/>
+        <circle class="lamp" cx="16" cy="4.6" r="1.7"/>
+        <rect class="tail" x="-19" y="-5" width="1.8" height="10" rx="0.9"/>
+        <circle class="puck" cx="0.5" cy="0" r="3.4"/>
+        <circle class="lidar" cx="0.5" cy="0" r="1.6"/>
+      </g>
     </svg>
 
     <a class="station st-request" href="map/#request" data-station="request">
@@ -90,6 +107,7 @@
         <p class="lc-kicker">HOW A DRIVERLESS RIDE WORKS</p>
         <button class="btn primary" id="run-ride">RUN ONE RIDE</button>
         <p class="caption lc-hint">or rest on a station to open it</p>
+        <button class="lc-pause" id="loop-pause" aria-pressed="false">Pause the loop</button>
       </div>
       <div class="lc-station" id="lc-station" hidden></div>
       <div class="lc-caption" id="lc-caption" hidden aria-live="polite"></div>

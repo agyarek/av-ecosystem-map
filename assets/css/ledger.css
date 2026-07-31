@@ -252,3 +252,9 @@ tr.detail > td { padding: 0; border-bottom: 1px solid var(--ink); background: va
    column headers too. */
 #lg-table tr.row { scroll-margin-top: calc(var(--stick-top, 96px) + 44px); }
 @media (min-width: 681px) { #lg-table tr.row { scroll-margin-top: 44px; } }
+
+/* The floating table controls stand down once the table itself is off screen,
+   so they stop covering whatever is below it — the chapter list, in particular. */
+.scroll-nav, .sheet-toggle { transition: opacity 160ms ease, visibility 160ms; }
+body.lg-controls-off .scroll-nav,
+body.lg-controls-off .sheet-toggle { opacity: 0; visibility: hidden; pointer-events: none; }

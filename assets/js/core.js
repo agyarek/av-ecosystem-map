@@ -276,17 +276,27 @@
   //
   // The placeholders ship with a static wordmark and nav so the site still navigates
   // with JavaScript off; hydrating replaces that markup with the full chrome.
+  // ------------------------------------------------------------- chapters
+  // The site is eleven pages with no stated order, so a reader finishing one had
+  // no idea what came next or how much was left. These are the chapters, in
+  // reading order; the top nav stays flat, and this is what makes economics/ and
+  // safety/ reachable from anywhere.
+  const CHAPTERS = [
+    ['Map', [['map', 'map/', 'The wall chart']]],
+    ['Directory', [['companies', 'companies/', 'Every organisation, every field']]],
+    ['Money', [['funding', 'funding/', 'Who raised what'],
+               ['economics', 'economics/', 'Will any of this pay?']]],
+    ['Regulatory', [['regulation', 'regulation/', 'Who decides'],
+                    ['safety', 'safety/', 'Incidents and recalls']]],
+    ['The Field', [['operators', 'operators/', 'Passenger autonomy'],
+                   ['partnerships', 'partnerships/', 'Who works with whom'],
+                   ['beyond-roads', 'beyond-roads/', 'Autonomy off the road'],
+                   ['owning-one', 'owning-one/', 'Buying one yourself']]],
+  ];
+  const pad2 = n => String(n).padStart(2, '0');
+
   const UPDATED = fmtDate('2026-07-25');
   const CORRECTION = 'mailto:agyarek+avecosystemmap@gmail.com?subject=AV%20map%20correction';
-  const NAV = [
-    ['map', 'map/', 'Map'],
-    ['companies', 'companies/', 'Directory'],
-    ['operators', 'operators/', 'Passenger Autonomy'],
-    ['partnerships', 'partnerships/', 'Partnerships'],
-    ['funding', 'funding/', 'Funding'],
-    ['regulation', 'regulation/', 'Regulatory'],
-    ['beyond-roads', 'beyond-roads/', 'Beyond Roads'],
-  ];
 
   const SUN = '<svg class="sun" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="8" cy="8" r="3.2"/><path d="M8 .8v2M8 13.2v2M.8 8h2M13.2 8h2M2.9 2.9l1.4 1.4M11.7 11.7l1.4 1.4M13.1 2.9l-1.4 1.4M4.3 11.7l-1.4 1.4"/></svg>';
   const MOON = '<svg class="moon" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M13.5 9.5A5.8 5.8 0 0 1 6.5 2.5a5.8 5.8 0 1 0 7 7z"/></svg>';
@@ -301,9 +311,18 @@
   const headerHTML = current => `<div class="bar">
     <a class="wordmark" href="${ROOT || './'}"><span class="dash" aria-hidden="true"></span>AV&nbsp;ECOSYSTEM&nbsp;MAP</a>
     <nav class="primary" aria-label="Primary">
-      ${NAV.map(([key, href, label]) =>
-        `<a data-nav="${key}" href="${ROOT}${href}"${key === current ? ' aria-current="page"' : ''}>${label}</a>`
-      ).join('\n      ')}
+      ${CHAPTERS.map(([name, pages], i) => {
+        const here = pages.some(([key]) => key === current);
+        const solo = pages.length === 1;
+        return `<span class="np${here ? ' is-here' : ''}">
+          <a data-nav="${pages[0][0]}" href="${ROOT}${pages[0][1]}"${here ? ' aria-current="page"' : ''}>${esc(name)}</a>
+          ${solo ? '' : `<button class="np-more" aria-expanded="false" aria-label="Show the pages in ${esc(name)}"><span aria-hidden="true">▾</span></button>
+          <ul class="np-sub">
+            ${pages.map(([key, href, label]) =>
+              `<li><a href="${ROOT}${href}"${key === current ? ' aria-current="page"' : ''}>${esc(label)}</a></li>`).join('')}
+          </ul>`}
+        </span>`;
+      }).join('')}
     </nav>
     <div class="chrome-tools">
       <div id="site-search" role="search">
@@ -327,9 +346,32 @@
   </div>`;
   };
 
+  // The chapter menus in the bar. A real button with aria-expanded rather than a
+  // hover rule, so they open by tap and by keyboard as well as by pointer.
+  function bindNavMenus(root) {
+    const shut = except => root.querySelectorAll('.np-more[aria-expanded="true"]').forEach(b => {
+      if (b !== except) { b.setAttribute('aria-expanded', 'false'); b.closest('.np').classList.remove('open'); }
+    });
+    root.querySelectorAll('.np-more').forEach(btn => {
+      btn.addEventListener('click', e => {
+        e.preventDefault();
+        const open = btn.getAttribute('aria-expanded') !== 'true';
+        shut(btn);
+        btn.setAttribute('aria-expanded', open);
+        btn.closest('.np').classList.toggle('open', open);
+      });
+    });
+    document.addEventListener('click', e => { if (!e.target.closest('.np')) shut(null); });
+    document.addEventListener('keydown', e => {
+      if (e.key !== 'Escape') return;
+      const open = root.querySelector('.np-more[aria-expanded="true"]');
+      if (open) { shut(null); open.focus(); }
+    });
+  }
+
   const currentPage = (document.body && document.body.dataset.page) || '';
   const head = document.querySelector('header.site');
-  if (head) head.innerHTML = headerHTML(currentPage);
+  if (head) { head.innerHTML = headerHTML(currentPage); bindNavMenus(head); }
   const foot = document.querySelector('footer.site');
   if (foot) foot.innerHTML = footerHTML(foot);
 
@@ -346,24 +388,6 @@
   // Nav state is set by headerHTML above, so there is one source of truth for it.
   const page = currentPage;
 
-  // ------------------------------------------------------------- chapters
-  // The site is eleven pages with no stated order, so a reader finishing one had
-  // no idea what came next or how much was left. These are the chapters, in
-  // reading order; the top nav stays flat, and this is what makes economics/ and
-  // safety/ reachable from anywhere.
-  const CHAPTERS = [
-    ['Map', [['map', 'map/', 'The wall chart']]],
-    ['Directory', [['companies', 'companies/', 'Every organisation, every field']]],
-    ['Money', [['funding', 'funding/', 'Who raised what'],
-               ['economics', 'economics/', 'Will any of this pay?']]],
-    ['Regulatory', [['regulation', 'regulation/', 'Who decides'],
-                    ['safety', 'safety/', 'Incidents and recalls']]],
-    ['The Field', [['operators', 'operators/', 'Passenger autonomy'],
-                   ['partnerships', 'partnerships/', 'Who works with whom'],
-                   ['beyond-roads', 'beyond-roads/', 'Autonomy off the road'],
-                   ['owning-one', 'owning-one/', 'Buying one yourself']]],
-  ];
-  const pad2 = n => String(n).padStart(2, '0');
 
   function chaptersHTML() {
     return `<nav class="chapters" aria-label="Chapters">

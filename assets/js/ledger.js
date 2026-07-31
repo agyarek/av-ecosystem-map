@@ -566,6 +566,22 @@
     addEventListener('scroll', placeNav, { passive: true });
     addEventListener('resize', placeNav);
 
+    // These controls belong to the table, but they are position:fixed, so they
+    // stayed pinned to the corner of the window for the whole page — including
+    // over the chapter list at the foot of it. placeNav only moves them onto the
+    // table's own corner while the pane scrolls internally; on a phone, and on a
+    // desktop whenever a filter trims the rows, it does not, and they fell back
+    // to the window corner and sat on top of the chapters.
+    //
+    // So they retire when the table is not on screen. Nothing to jump within, and
+    // nothing of theirs to cover.
+    if ('IntersectionObserver' in window) {
+      const io = new IntersectionObserver(([e]) => {
+        document.body.classList.toggle('lg-controls-off', !e.isIntersecting);
+      }, { rootMargin: '-70px 0px -80px 0px' });
+      io.observe(scroller);
+    }
+
     $('lg-top').addEventListener('click', () => jump(false));
     $('lg-bottom').addEventListener('click', () => jump(true));
 

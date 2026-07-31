@@ -336,3 +336,69 @@ table.data tr:hover > td { background: color-mix(in oklab, var(--cyan) 5%, trans
   object-fit: contain; background: #fff; border-radius: inherit;
   opacity: 0; transition: opacity 220ms ease;
 }
+
+/* ------------------------------------------------------------- chapters */
+/* Sits after the content, where a reader who has finished looks for what is
+   next. The current chapter is marked and opened; the others stay one line each
+   so the whole shape of the site is visible without scrolling it. */
+.chapters-wrap { margin-top: clamp(48px, 8vh, 96px); padding-bottom: clamp(32px, 5vh, 56px); }
+.chapters { border-top: 1px solid var(--rule); padding-top: 28px; }
+.ch-list {
+  list-style: none; margin-top: 16px;
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 20px 24px;
+}
+.ch-head { display: flex; align-items: baseline; gap: 9px; text-decoration: none; }
+.ch-n { font-family: var(--font-mono); font-size: 12px; color: var(--muted); flex: none; }
+.ch-name { font-size: 17px; font-weight: 700; font-variation-settings: 'wdth' 112; }
+.ch.is-here .ch-name { box-shadow: inset 0 -2px 0 var(--yellow); }
+.ch.is-here .ch-n { color: var(--ink); }
+.ch-pages { list-style: none; margin-top: 8px; display: grid; gap: 4px; }
+.ch-pages a {
+  font-size: 13.5px; color: var(--muted); text-decoration: none;
+  display: inline-block; padding: 1px 0;
+}
+.ch-pages a:hover { color: var(--cyan); }
+.ch-pages a[aria-current="page"] { color: var(--ink); }
+.ch-pages a[aria-current="page"]::before { content: "▸ "; color: var(--yellow); }
+
+/* --------------------------------------------------- sections, floating */
+.secnav {
+  /* Parked bottom-right by default, where it sits clear of a centred column;
+     it only moves into the left margin when the window is genuinely wide enough
+     to have one to spare. */
+  position: fixed; z-index: 60; right: 16px; bottom: 16px;
+  max-width: min(260px, calc(100vw - 32px));
+  background: color-mix(in oklab, var(--paper-2) 92%, transparent);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--rule); border-radius: var(--r-card);
+  box-shadow: 0 10px 30px rgba(18, 19, 15, .12);
+  overflow: hidden;
+}
+.sn-toggle {
+  display: flex; align-items: center; gap: 8px; width: 100%;
+  padding: 9px 12px; font-family: var(--font-mono); font-size: 10.5px;
+  letter-spacing: .12em; text-transform: uppercase; color: var(--ink-2);
+}
+.sn-caret { margin-left: auto; transition: transform 180ms ease; }
+.secnav.open .sn-caret { transform: rotate(90deg); }
+.sn-body { list-style: none; display: none; padding: 0 12px 12px; max-height: 52vh; overflow: auto; }
+.secnav.open .sn-body { display: block; }
+.sn-body a {
+  display: flex; gap: 9px; align-items: baseline; padding: 4px 0;
+  font-size: 13px; color: var(--muted); text-decoration: none; line-height: 1.35;
+}
+.sn-body a:hover { color: var(--cyan); }
+.sn-body a[aria-current] { color: var(--ink); }
+.sn-n { font-family: var(--font-mono); font-size: 10.5px; flex: none; }
+.sn-body a[aria-current] .sn-n { color: var(--yellow); }
+
+/* Below this the centred column plus two clear margins does not fit, so the
+   panel would sit on top of the text it indexes. */
+@media (min-width: 1800px) {
+  .secnav { left: 24px; right: auto; bottom: 24px; }
+}
+@media (max-width: 720px) {
+  /* full width along the bottom edge, so it never covers the column it indexes */
+  .secnav { left: 8px; right: 8px; bottom: 8px; max-width: none; }
+}
+@media print { .secnav { display: none; } .chapters-wrap { display: none; } }

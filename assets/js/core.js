@@ -322,6 +322,122 @@
   // Nav state is set by headerHTML above, so there is one source of truth for it.
   const page = currentPage;
 
+  // ------------------------------------------------------------- chapters
+  // The site is eleven pages with no stated order, so a reader finishing one had
+  // no idea what came next or how much was left. These are the chapters, in
+  // reading order; the top nav stays flat, and this is what makes economics/ and
+  // safety/ reachable from anywhere.
+  const CHAPTERS = [
+    ['Map', [['map', 'map/', 'The wall chart']]],
+    ['Directory', [['companies', 'companies/', 'Every organisation, every field']]],
+    ['Money', [['funding', 'funding/', 'Who raised what'],
+               ['economics', 'economics/', 'Will any of this pay?']]],
+    ['Regulatory', [['regulation', 'regulation/', 'Who decides'],
+                    ['safety', 'safety/', 'Incidents and recalls']]],
+    ['The Field', [['operators', 'operators/', 'Passenger autonomy'],
+                   ['partnerships', 'partnerships/', 'Who works with whom'],
+                   ['beyond-roads', 'beyond-roads/', 'Autonomy off the road'],
+                   ['owning-one', 'owning-one/', 'Buying one yourself']]],
+  ];
+  const pad2 = n => String(n).padStart(2, '0');
+
+  function chaptersHTML() {
+    return `<nav class="chapters" aria-label="Chapters">
+      <p class="eyebrow">CHAPTERS</p>
+      <ol class="ch-list">
+        ${CHAPTERS.map(([name, pages], i) => {
+          const here = pages.some(([key]) => key === page);
+          return `<li class="ch${here ? ' is-here' : ''}">
+            <a class="ch-head" href="${ROOT}${pages[0][1]}"${here ? ' aria-current="step"' : ''}>
+              <span class="ch-n">${pad2(i + 1)}</span><span class="ch-name">${esc(name)}</span>
+            </a>
+            <ul class="ch-pages">
+              ${pages.map(([key, href, label]) =>
+                `<li><a href="${ROOT}${href}"${key === page ? ' aria-current="page"' : ''}>${esc(label)}</a></li>`
+              ).join('')}
+            </ul>
+          </li>`;
+        }).join('')}
+      </ol>
+    </nav>`;
+  }
+
+  // ------------------------------------------------- sections on this page
+  // A floating list of the page's own sections, so a long read can be entered
+  // part-way. It collapses to a button, and on a phone it opens as a sheet from
+  // the bottom edge rather than covering the column.
+  function sectionNavHTML(heads) {
+    return `<button class="sn-toggle" id="sn-toggle" aria-expanded="false" aria-controls="sn-body">
+        <span class="sn-label">On this page</span><span class="sn-caret" aria-hidden="true">▸</span>
+      </button>
+      <ol class="sn-body" id="sn-body">
+        ${heads.map((h, i) => `<li><a href="#${h.id}" data-sn="${h.id}">
+          <span class="sn-n">${h.mark || pad2(i + 1)}</span>${esc(h.text)}</a></li>`).join('')}
+      </ol>`;
+  }
+
+  function buildPageNav() {
+    const main = document.querySelector('main');
+    if (!main) return;
+
+    // chapters go after the content, which is where a reader who has finished
+    // actually looks for what is next
+    if (CHAPTERS.some(([, pages]) => pages.some(([key]) => key === page))) {
+      const wrap = document.createElement('div');
+      wrap.className = 'container chapters-wrap';
+      wrap.innerHTML = chaptersHTML();
+      main.appendChild(wrap);
+    }
+
+    const heads = [...document.querySelectorAll('.article h2.sec[id]')].map(h => ({
+      id: h.id,
+      mark: h.classList.contains('sec-mark') ? h.dataset.mark : '',
+      text: h.textContent.trim(),
+      el: h,
+    }));
+    if (heads.length < 2) return;
+
+    const aside = document.createElement('aside');
+    aside.className = 'secnav';
+    aside.setAttribute('aria-label', 'Sections on this page');
+    aside.innerHTML = sectionNavHTML(heads);
+    document.body.appendChild(aside);
+
+    const toggle = aside.querySelector('#sn-toggle');
+    toggle.addEventListener('click', () => {
+      const open = aside.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open);
+    });
+    // Only start open where there is a margin wide enough to hold it. Anywhere
+    // narrower it would sit on top of the column it indexes, so it waits to be
+    // asked.
+    if (matchMedia('(min-width: 1800px)').matches) {
+      aside.classList.add('open');
+      toggle.setAttribute('aria-expanded', 'true');
+    }
+    aside.querySelectorAll('a[data-sn]').forEach(a => a.addEventListener('click', () => {
+      if (!matchMedia('(min-width: 1800px)').matches) {
+        aside.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+      }
+    }));
+
+    // Highlight whichever section the reader is actually in. The band is the top
+    // third of the viewport so the mark moves when a heading reaches reading
+    // position, not when it first peeks in at the bottom.
+    if (!('IntersectionObserver' in window)) return;
+    const links = new Map([...aside.querySelectorAll('a[data-sn]')].map(a => [a.dataset.sn, a]));
+    let seen = new Set();
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => e.isIntersecting ? seen.add(e.target.id) : seen.delete(e.target.id));
+      const first = heads.find(h => seen.has(h.id));
+      links.forEach(a => a.removeAttribute('aria-current'));
+      if (first && links.get(first.id)) links.get(first.id).setAttribute('aria-current', 'true');
+    }, { rootMargin: '0px 0px -67% 0px' });
+    heads.forEach(h => io.observe(h.el));
+  }
+  buildPageNav();
+
   // ------------------------------------------------------------- search
   const wrap = document.getElementById('site-search');
   if (!wrap) return;

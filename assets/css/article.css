@@ -6,15 +6,26 @@
 .article-head .standfirst { margin-top: 18px; }
 
 .article section { margin-top: clamp(40px, 7vh, 72px); }
+/* Section numbers used to be typed into the markup, and had already drifted:
+   regulation/ ran 00, 01, 02 because a section was inserted above the rest and
+   nobody renumbered. A counter cannot drift, and inserting a section is now just
+   inserting a section. */
+.article { counter-reset: sec; }
 .article h2.sec {
   font-size: clamp(22px, min(2.6vw, 4vh), 32px); font-weight: 800;
   letter-spacing: -0.015em; font-variation-settings: 'wdth' 112;
   display: flex; align-items: baseline; gap: 12px;
+  counter-increment: sec;
 }
+.article h2.sec::before,
 .article h2.sec .n {
   font-family: var(--font-mono); font-size: 13px; font-weight: 600;
   color: var(--muted); flex: none;
 }
+.article h2.sec::before { content: counter(sec, decimal-leading-zero); }
+/* Sources carries a label rather than a number, and takes no place in the count. */
+.article h2.sec.sec-mark { counter-increment: none; }
+.article h2.sec.sec-mark::before { content: attr(data-mark); }
 .article h2.sec + * { margin-top: 16px; }
 .article .prose + .prose { margin-top: 16px; }
 

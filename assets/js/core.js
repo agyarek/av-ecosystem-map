@@ -284,8 +284,9 @@
   const CHAPTERS = [
     ['Map', [['map', 'map/', 'The wall chart']]],
     ['Directory', [['companies', 'companies/', 'Every organisation, every field']]],
-    ['Money', [['funding', 'funding/', 'Who raised what'],
-               ['economics', 'economics/', 'Will any of this pay?']]],
+    ['Economics', [['economics', 'economics/', 'Funding: who raised what'],
+                   ['economics-unit', 'economics/#unit-economics', 'Unit economics'],
+                   ['economics-compare', 'economics/#comparing-the-operators', 'Comparing the operators']]],
     ['Regulatory', [['regulation', 'regulation/', 'Who decides'],
                     ['safety', 'safety/', 'Incidents and recalls']]],
     ['The Field', [['operators', 'operators/', 'Passenger autonomy'],
@@ -295,7 +296,7 @@
   ];
   const pad2 = n => String(n).padStart(2, '0');
 
-  const UPDATED = fmtDate('2026-07-25');
+  const UPDATED = fmtDate('2026-07-31');
   const CORRECTION = 'mailto:agyarek+avecosystemmap@gmail.com?subject=AV%20map%20correction';
 
   const SUN = '<svg class="sun" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="8" cy="8" r="3.2"/><path d="M8 .8v2M8 13.2v2M.8 8h2M13.2 8h2M2.9 2.9l1.4 1.4M11.7 11.7l1.4 1.4M13.1 2.9l-1.4 1.4M4.3 11.7l-1.4 1.4"/></svg>';
@@ -358,10 +359,23 @@
         const open = btn.getAttribute('aria-expanded') !== 'true';
         shut(btn);
         btn.setAttribute('aria-expanded', open);
-        btn.closest('.np').classList.toggle('open', open);
+        const np = btn.closest('.np');
+        np.classList.toggle('open', open);
+        if (open) {
+          // The menu is viewport-fixed so the scrolling nav strip cannot clip
+          // it; place it under its chapter and keep it on screen.
+          const sub = np.querySelector('.np-sub');
+          const r = np.getBoundingClientRect();
+          sub.style.top = `${r.bottom + 4}px`;
+          sub.style.left = `${Math.max(8, Math.min(r.left, innerWidth - sub.offsetWidth - 8))}px`;
+        }
       });
     });
     document.addEventListener('click', e => { if (!e.target.closest('.np')) shut(null); });
+    addEventListener('scroll', () => shut(null), { passive: true });
+    addEventListener('resize', () => shut(null));
+    const strip = root.querySelector('nav.primary');
+    if (strip) strip.addEventListener('scroll', () => shut(null), { passive: true });
     document.addEventListener('keydown', e => {
       if (e.key !== 'Escape') return;
       const open = root.querySelector('.np-more[aria-expanded="true"]');

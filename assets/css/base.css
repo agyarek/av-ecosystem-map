@@ -455,12 +455,15 @@ a.li svg, .d-site a svg, .cc-site a svg { vertical-align: -2px; margin-right: 4p
 nav.primary .np { position: relative; display: inline-flex; align-items: center; }
 nav.primary .np.is-here > a { color: var(--ink); box-shadow: inset 0 -2px 0 var(--yellow); }
 nav.primary .np-more {
-  padding: 7px 4px; font-size: 9px; color: var(--muted); line-height: 1;
+  padding: 7px 5px; font-size: 11px; color: var(--muted); line-height: 1;
 }
 nav.primary .np-more:hover, nav.primary .np.open .np-more { color: var(--ink); }
+/* The nav strip scrolls horizontally, and a container that clips one axis clips
+   both — an absolutely-positioned menu inside it can never be seen. So the menu
+   is fixed to the viewport instead, and core.js places it under its button. */
 nav.primary .np-sub {
-  position: absolute; top: 100%; left: 0; z-index: 90; display: none;
-  min-width: 190px; margin-top: 4px; padding: 6px; list-style: none;
+  position: fixed; z-index: 200; display: none;
+  min-width: 190px; padding: 6px; list-style: none;
   background: var(--paper-2); border: 1px solid var(--rule);
   border-radius: var(--r-card); box-shadow: 0 12px 30px rgba(18, 19, 15, .14);
 }
@@ -473,7 +476,3 @@ nav.primary .np-sub a {
 nav.primary .np-sub a:hover { background: var(--paper); color: var(--ink); }
 nav.primary .np-sub a[aria-current="page"] { color: var(--ink); }
 nav.primary .np-sub a[aria-current="page"]::before { content: "▸ "; color: var(--yellow); }
-@media (max-width: 860px) {
-  /* the bar already wraps to its own row here; keep menus from running off it */
-  nav.primary .np-sub { left: auto; right: 0; }
-}

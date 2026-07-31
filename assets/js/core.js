@@ -12,6 +12,28 @@
     .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
   const fmtM = m => m >= 1000 ? '$' + (m / 1000).toFixed(m >= 10000 ? 0 : 1).replace(/\.0$/, '') + 'B'
     : '$' + Math.round(m) + 'M';
+  // One date format for the whole site. There were four: raw ISO on the funding
+  // timeline, "Jan 2026" and "31 Mar 2026" side by side in the same safety list,
+  // and "25 July 2026" in the footer.
+  //
+  // Precision is respected rather than invented: an event known only to a month
+  // prints as a month. Formatting happens at render, never on the value used for
+  // sorting, because "8th July" does not sort and "2026-07-08" does.
+  const MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July',
+                  'August', 'September', 'October', 'November', 'December'];
+  const ordinal = d => {
+    if (d % 100 >= 11 && d % 100 <= 13) return d + 'th';
+    return d + ({ 1: 'st', 2: 'nd', 3: 'rd' }[d % 10] || 'th');
+  };
+  const fmtDate = iso => {
+    const m = String(iso || '').match(/^(\d{4})(?:-(\d{2}))?(?:-(\d{2}))?/);
+    if (!m) return String(iso || '');
+    const [, y, mo, d] = m;
+    if (!mo) return y;
+    const month = MONTHS[+mo - 1] || '';
+    return d ? `${ordinal(+d)} ${month} ${y}` : `${month} ${y}`;
+  };
+
   const jsonCache = new Map();
   const json = url => {
     const u = ROOT + url;
@@ -240,7 +262,7 @@
     document.documentElement.dataset.theme === 'dark' ? CHART_DARK : CHART_LIGHT;
   const OTHER_SERIES = 'Other';
 
-  window.AV = { ROOT, esc, fmtM, json, HUES, layerColor, reducedMotion,
+  window.AV = { ROOT, esc, fmtM, fmtDate, json, HUES, layerColor, reducedMotion,
                 LOGO_SOURCES, LOGO_MIN, probeLogo, mountLogos, ICON, linkedinSearch,
                 wikiSummary, stockQuote, stockEnabled,
                 ECON_INPUTS, avEconomics, chartColors, OTHER_SERIES };
@@ -254,7 +276,7 @@
   //
   // The placeholders ship with a static wordmark and nav so the site still navigates
   // with JavaScript off; hydrating replaces that markup with the full chrome.
-  const UPDATED = '25 July 2026';
+  const UPDATED = fmtDate('2026-07-25');
   const CORRECTION = 'mailto:agyarek+avecosystemmap@gmail.com?subject=AV%20map%20correction';
   const NAV = [
     ['map', 'map/', 'Map'],

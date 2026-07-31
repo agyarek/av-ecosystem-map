@@ -340,3 +340,19 @@ input.eco-in {
 input.eco-in:focus { border-color: var(--cyan); outline: none; }
 
 .cmp-actions { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; margin-top: 16px; }
+
+/* ------------------------------------------------------------ ranked rows */
+/* The same row shape wherever something is ranked: label left, figure right,
+   and a bar carrying the proportion the figure states. It was pasted inline in
+   four places before, which is why it had drifted apart. */
+.rank-row {
+  position: relative; display: flex; align-items: baseline;
+  justify-content: space-between; gap: 10px;
+  font-size: 13px; padding: 4px 0 7px;
+}
+.rank-row .rr-k { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.rank-row .num { flex: none; }
+.rank-row .rr-bar {
+  position: absolute; left: 0; bottom: 0; height: 3px; width: var(--pct, 0%);
+  border-radius: 2px; background: color-mix(in oklab, var(--cyan) 55%, transparent);
+}

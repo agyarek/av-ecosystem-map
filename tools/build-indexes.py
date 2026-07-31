@@ -100,6 +100,9 @@ derived = {
         "mappedEdges": len(enrichment["edges"]),
         "withDomain": len(enrichment.get("domains", {})),
         "withDisclosedFunding": sum(1 for c in companies if c.get("fundingUSD")),
+        # the funding page prints this total; deriving it stops it drifting from
+        # the records it claims to summarise, which it already had
+        "disclosedFundingUSDm": round(sum(c.get("fundingUSD") or 0 for c in companies), 1),
         "spokenTo": sum(1 for c in companies if c.get("spokenTo")),
     },
 }

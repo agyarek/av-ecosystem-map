@@ -13,7 +13,7 @@
    because a thin bar in 2022 means "not yet catalogued", not "no money moved". */
 (function () {
   'use strict';
-  const { esc, json, fmtM, ROOT, chartColors, OTHER_SERIES } = window.AV;
+  const { esc, json, fmtM, fmtDate, ROOT, chartColors, OTHER_SERIES } = window.AV;
 
   const FORM_BUCKETS = [
     ['SPAC', /spac/i],
@@ -381,7 +381,7 @@
           && (!tlState.regions.size || tlState.regions.has(e.region));
         if (ok) shown++;
         return `<div class="tl-event${ok ? '' : ' dim'}">
-          <span class="d">${esc(e.date)}</span>
+          <span class="d">${esc(fmtDate(e.date))}</span>
           <span class="amt">${fmtM(e.amountUSDm)}</span>
           <span class="co">${e.slug ? `<a class="co-link" href="${ROOT}map/#${esc(e.slug)}">${esc(e.company)}</a>` : esc(e.company)}</span>
           <span class="form">${esc(e.form.toUpperCase())}</span>
@@ -394,26 +394,38 @@
     }
     draw();
 
-    const row = (k, v) => `<div style="display:flex;justify-content:space-between;gap:10px;font-size:13px;padding:3px 0"><span>${esc(k)}</span><span class="num">${v}</span></div>`;
+    // Ranked rows carried the size only as a number, so "who raised the most"
+    // took reading rather than looking. The bar is the same proportion the number
+    // states; every bar in a cut starts at the same left edge and is measured
+    // against the largest in that cut, so the shapes are comparable down a column.
+    const row = (k, v, pct) => `<div class="rank-row"><span class="rr-k">${esc(k)}</span>` +
+      `<span class="num">${v}</span>` +
+      (pct == null ? '' : `<span class="rr-bar" style="--pct:${Math.max(1, Math.round(pct))}%"></span>`) +
+      `</div>`;
 
     const sum = {};
     tlEvents.forEach(e => { sum[e.company] = (sum[e.company] || 0) + e.amountUSDm; });
-    $('cut-raised').innerHTML = Object.entries(sum).sort((a, b) => b[1] - a[1]).slice(0, 7)
-      .map(([c, v]) => row(c, fmtM(v))).join('');
+    const topRaised = Object.entries(sum).sort((a, b) => b[1] - a[1]).slice(0, 7);
+    const maxRaised = topRaised.length ? topRaised[0][1] : 1;
+    $('cut-raised').innerHTML = topRaised
+      .map(([c, v]) => row(c, fmtM(v), v / maxRaised * 100)).join('');
 
     const inv = {};
     tlEvents.forEach(e => (e.investors || []).forEach(i => {
       if (/public market|pipe/i.test(i)) return;
       inv[i] = (inv[i] || 0) + 1;
     }));
-    $('cut-investors').innerHTML = Object.entries(inv).filter(([, n]) => n >= 2)
-      .sort((a, b) => b[1] - a[1]).slice(0, 8).map(([i, n]) => row(i, n + ' events')).join('');
+    const topInv = Object.entries(inv).filter(([, n]) => n >= 2)
+      .sort((a, b) => b[1] - a[1]).slice(0, 8);
+    const maxInv = topInv.length ? topInv[0][1] : 1;
+    $('cut-investors').innerHTML = topInv
+      .map(([i, n]) => row(i, n + ' events', n / maxInv * 100)).join('');
 
     const segSum = {};
     tlEvents.forEach(e => { const s = SEG(e.company); segSum[s] = (segSum[s] || 0) + e.amountUSDm; });
     const total = Object.values(segSum).reduce((a, b) => a + b, 0);
     $('cut-split').innerHTML = Object.entries(segSum).sort((a, b) => b[1] - a[1])
-      .map(([s, v]) => row(s, `${fmtM(v)} · ${Math.round(v / total * 100)}%`)).join('');
+      .map(([s, v]) => row(s, `${fmtM(v)} · ${Math.round(v / total * 100)}%`, v / total * 100)).join('');
   }
 
   // ---------------------------------------------------------------- boot
@@ -421,6 +433,22 @@
   tip.className = 'ch-tip';
   tip.hidden = true;
   document.body.appendChild(tip);
+
+  // The disclosed-funding note used to be typed into the page, and had drifted from
+  // the records it summarises: it claimed 49 plus 511 of 561, which is 560, and a
+  // total $0.2B below what the records actually add up to. It is derived now.
+  json('data/derived-counts.json').then(d => {
+    const el = document.getElementById('disclosed-note');
+    if (!el) return;
+    const g = d.gaps, rest = g.companies - g.withDisclosedFunding;
+    // fmtM drops the decimal above $10B, which is right on a chart axis and wrong
+    // on a headline total, so this one keeps a digit.
+    const total = `$${(g.disclosedFundingUSDm / 1000).toFixed(1)}B`;
+    el.textContent = `Separately: ${g.withDisclosedFunding} of the ${g.companies} company records ` +
+      `carry disclosed lifetime funding, totalling ${total}. The other ${rest} ` +
+      `either raised privately without disclosure, are funded by parents, or are public bodies. ` +
+      `Blank is honest.`;
+  }).catch(() => {});
 
   Promise.all([
     json('data/av-funding-events.json'),

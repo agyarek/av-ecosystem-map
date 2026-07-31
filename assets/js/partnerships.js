@@ -34,7 +34,7 @@
         : `<strong>${esc(name)}</strong>`;
       const norm = k => k.charAt(0).toUpperCase() + k.slice(1).toLowerCase();
 
-      // ---------------- matrix: the ten operators x functions
+      // ---------------- matrix: passenger autonomy x functions
       const ops = enr.operators;
       const cell = (op, kinds) => {
         const names = new Set();

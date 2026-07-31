@@ -185,9 +185,9 @@
   const NAV = [
     ['map', 'map/', 'Map'],
     ['companies', 'companies/', 'Companies'],
-    ['operators', 'operators/', 'The Ten'],
+    ['operators', 'operators/', 'Passenger Autonomy'],
     ['partnerships', 'partnerships/', 'Partnerships'],
-    ['funding', 'funding/', 'Money'],
+    ['funding', 'funding/', 'Funding'],
     ['regulation', 'regulation/', 'Rules'],
     ['beyond-roads', 'beyond-roads/', 'Beyond Roads'],
   ];

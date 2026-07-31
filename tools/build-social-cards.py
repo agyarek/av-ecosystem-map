@@ -45,7 +45,7 @@ CARDS = [
     ("home", "The autonomous vehicle industry, drawn to scale", f"{L['meta']['companyCount']} ORGANISATIONS · 11 LAYERS", None),
     ("map", "The Wall Chart", f"ALL {L['meta']['companyCount']} ON ONE POSTER", None),
     ("companies", "The Ledger", f"{L['meta']['companyCount']} ROWS · EVERY FIELD · SHAREABLE VIEWS", None),
-    ("operators", "The Ten", "OPERATORS A PASSENGER CAN ACTUALLY MEET",
+    ("operators", "Passenger Autonomy", "AUTONOMOUS DRIVERS A PASSENGER CAN ACTUALLY MEET",
      crop_around(mb["x"] + mb["w"] / 2, mb["y"] + mb["h"] / 2, mb["w"] * 1.35)),
     ("partnerships", "The Web", "148 MAPPED RELATIONSHIPS BY FUNCTION", None),
     ("funding", "The Money", "$41.8B ACROSS 30 EVENTS", None),
@@ -57,7 +57,7 @@ CARDS = [
     ("method", "Method & Gaps", f"128 OF {L['meta']['companyCount']} MAPPED · CORRECTIONS WELCOME", None),
 ]
 for m_ in L["medallion"]:
-    CARDS.append((f'op-{m_["slug"]}', m_["name"], "THE TEN · OPERATOR DEEP DIVE",
+    CARDS.append((f'op-{m_["slug"]}', m_["name"], "PASSENGER AUTONOMY · OPERATOR DEEP DIVE",
                   crop_around(m_["x"] + m_["w"] / 2, m_["y"] + m_["h"] / 2, mb["w"] * 1.1)))
 
 # operator pages reference cards named op-waymo, op-baidu, op-tesla, op-zoox,

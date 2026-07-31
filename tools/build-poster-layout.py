@@ -11,8 +11,8 @@ here, checked into the repo, and rendered verbatim at runtime.
 
 The composition
 ---------------
-One rounded rectangle with an octagon cut out of the middle. The ten passenger
-operators live inside the octagon. The ten remaining layers tile the frame around it
+One rounded rectangle with an octagon cut out of the middle. The passenger-autonomy
+companies live inside the octagon. The ten remaining layers tile the frame around it
 and share their borders with their neighbours, so the chart reads as a single plate
 rather than as separate panels floating at angles:
 
@@ -20,8 +20,8 @@ rather than as separate panels floating at angles:
     |    top 1      |     top 2      |      top 3        |
     +--------+------+----------------+------+------------+
     | left 1 |          .-------.           |  right 1   |
-    |        |         /  THE    \          |            |
-    +--------+        |   TEN     |         +------------+
+    |        |         / PASSGR  \          |            |
+    +--------+        | AUTONOMY  |         +------------+
     | left 2 |         \         /          |  right 2   |
     |        |          '-------'           |            |
     +--------+------+----------------+------+------------+
@@ -58,8 +58,12 @@ CLEAR   = 14      # clearance between a tile and the octagon's edge
 MARGIN  = 200     # canvas margin outside the plate
 PLATE_R = 56      # corner radius of the plate
 
-# The ten passenger-AV operators that occupy the centre octagon.
-# See DECISION-LOG.md D-03 for why this list differs from v1's `operators` array.
+# The organisations that occupy the centre octagon. Membership is a test, not a
+# count: the company's driver — the software doing the driving — carries members of
+# the public today, or is verifiably about to. The test is about the driver, not the
+# fleet, so it takes in companies that own no vehicles and leaves out companies that
+# own many but buy their driving in. Add whoever meets it; nothing downstream
+# depends on how many names are in this list.
 MEDALLION = [
     "Waymo", "Baidu Apollo Go", "Tesla", "Zoox", "Pony.ai",
     "WeRide", "Wayve", "Nuro", "May Mobility", "Motional",
@@ -332,7 +336,7 @@ def main():
                     "spokenTo": bool(c.get("spokenTo")),
                 })
 
-    # ------------------------------------------------------ the ten, inside
+    # ------------------------------------- passenger autonomy, inside
     # Rows of 3, 4 and 3: the widest row sits on the octagon's waist, where the
     # full width is available, and the outer rows step in with the bevels.
     ROWS = [(3, 860, -1100), (4, 800, -270), (3, 860, 560)]
@@ -355,8 +359,9 @@ def main():
         "cx": 0, "cy": 0, "r": OCT_R, "side": round(SIDE, 1),
         "points": [[round(x, 1), round(y, 1)] for x, y in octagon_points(0, 0)],
         "titleY": -1330, "subY": -1245, "ruleY": 1220, "footY": 1292,
-        "title": "THE TEN", "sub": "OPERATORS A PASSENGER CAN ACTUALLY MEET",
-        "foot": f"10 OF {len(companies)} ORGANISATIONS ON THIS CHART",
+        "title": "PASSENGER AUTONOMY",
+        "sub": "AUTONOMOUS DRIVERS A PASSENGER CAN ACTUALLY MEET",
+        "foot": f"{len(MEDALLION)} OF {len(companies)} ORGANISATIONS ON THIS CHART",
     }
 
     # --------------------------------------------------------------- canvas

@@ -102,7 +102,7 @@ for c in L["chips"]:
         o.append(f'<circle cx="{c["x"]+c["w"]-22}" cy="{c["y"]+20}" r="6" fill="{YELLOW}"/>')
     o.append('</g>')
 
-# --- the octagon, and the ten inside it ----------------------------------
+# --- the octagon, and the companies inside it ----------------------------
 oc = L["oct"]
 o.append(f'<polygon points="{pts(oc["points"])}" fill="{INK}"/>')
 o.append(f'<polygon points="{pts(oc["points"])}" fill="none" stroke="{YELLOW}" stroke-width="14"/>')

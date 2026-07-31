@@ -3,7 +3,7 @@
    then adds camera, selection, filters, exports and keyboard navigation.
 
    The composition is one rounded plate with an octagon cut out of the middle:
-   the ten operators inside the octagon, the ten remaining layers tiling the
+   the passenger-autonomy companies inside the octagon, the ten remaining layers tiling the
    frame around it and sharing their borders.
 
    Filtering dims; it never reflows. One company, one chip, always. */
@@ -270,7 +270,7 @@
 
     // ------------------------------------------------------- the octagon
     const opts = poly(oc.points);
-    o.push(X ? `<g>` : `<g class="district" data-district="the-ten">`);
+    o.push(X ? `<g>` : `<g class="district" data-district="passenger-autonomy">`);
     o.push(`<g class="medallion-shell">`);
     o.push(`<polygon class="oct-fill" points="${opts}" fill="${C.med}"/>`);
     o.push(`<polygon class="oct-edge" points="${opts}" fill="none" stroke="${C.yellow}" stroke-width="14"/>`);
@@ -286,7 +286,7 @@
       if (!X) {
         o.push(`<g data-chip data-med data-slug="${esc(c.slug)}" data-cx="${cx}" data-cy="${c.y + MS.logoY + MS.logo / 2}" data-bx="${cx - MS.logo / 2}" data-by="${c.y + MS.logoY}" data-bw="${MS.logo}" data-bh="${MS.logo}" data-cat="${esc(SHORT[meta.c] || '')}" data-region="${esc(REGION_KEY(meta.r || ''))}" data-mat="${esc(meta.m || '')}" data-text="${esc((c.name + ' ' + (meta.b || '')).toLowerCase())}" ${meta.g ? 'data-spoken="1"' : ''} tabindex="-1" role="button" aria-label="${esc(c.name + '; operator; ' + (c.claim || ''))}">`);
       } else o.push(`<g>`);
-      // The operator marks sit on the dark hexagon, so they get a light plate
+      // The operator marks sit on the dark octagon, so they get a light plate
       // behind them rather than the layer-hue tile used on chips.
       const lm = manifest && manifest[c.slug];
       const dom = logoDomain(c.slug);
@@ -889,7 +889,7 @@
     const districtChips = id => L.chips.filter(c => c.district === id)
       .filter(c => { const g = chipEl(c.slug); return !g || !g.classList.contains('dimmed'); });
     nav.innerHTML = `
-      <div class="med-strip" role="list" aria-label="The ten operators">
+      <div class="med-strip" role="list" aria-label="Passenger autonomy">
         ${L.medallion.map(mo => `
           <button class="med-card" role="listitem" data-navsel="${esc(mo.slug)}">
             <span class="mono-tile" style="--tile:oklch(var(--layer-l) var(--layer-c) ${mo.hue})">${esc(mo.mono)}${navLogo(mo.slug)}</span>
@@ -953,20 +953,22 @@
     } catch (e) { manifest = null; }
 
     svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
-    // every layer lifts away from the same point, the centre of the hexagon
+    // every layer lifts away from the same point, the centre of the octagon
     svg.innerHTML = (spriteText ? `<defs>${spriteText.replace(/^[^>]*>/, '').replace(/<\/svg>\s*$/, '')}</defs>` : '') + buildSVG(false);
 
     document.getElementById('legend-layers').innerHTML = L.districts.map(d =>
       `<span class="lg"><span class="sw" style="background:oklch(var(--layer-l) var(--layer-c) ${d.hue})"></span>${esc(d.layer.replace('Governance: ', ''))} <span class="n">${d.count}</span></span>`
     ).join('') + `<span class="lg"><span class="sw" style="background:oklch(var(--layer-l) var(--layer-c) 105)"></span>Middleware &amp; Tooling renders inside the autonomy district <span class="n">3</span></span>
-      <span class="lg"><span class="sw" style="background:var(--ink)"></span>The Ten, inside the hexagon <span class="n">10</span></span>`;
+      <span class="lg"><span class="sw" style="background:var(--ink)"></span>Passenger autonomy, inside the octagon <span class="n">${L.medallion.length}</span></span>`;
 
     // capture the deep-link hash before syncURL can rewrite the address bar
     const initial = decodeURIComponent(location.hash.slice(1));
 
-    // stage anchors from the home-page loop: fly to a region, not a company
+    // stage anchors from the home-page loop: fly to a region, not a company.
+    // 'ten' is the old name for the passenger-autonomy stage; links carrying it
+    // are already in the wild, so it still resolves.
     const stageRect = id => {
-      if (id === 'ten') return L.meta.medallionBox;
+      if (id === 'passenger' || id === 'ten') return L.meta.medallionBox;
       const ids = STAGE_DISTRICTS[id];
       if (!ids) return null;
       const ds = L.districts.filter(d => ids.includes(d.id));
@@ -981,7 +983,8 @@
       if (!r) return false;
       flyTo(r.x + r.w / 2, r.y + r.h / 2,
         Math.max(r.w * 1.12, r.h * 1.12 * vpSize().vw / vpSize().vh));
-      const ids = id === 'ten' ? ['the-ten'] : (STAGE_DISTRICTS[id] || []);
+      const ids = (id === 'passenger' || id === 'ten')
+        ? ['passenger-autonomy'] : (STAGE_DISTRICTS[id] || []);
       setHot(svg.querySelector(`.district[data-district="${CSS.escape(ids[0] || '')}"]`));
       return true;
     };

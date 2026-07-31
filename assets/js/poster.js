@@ -166,6 +166,25 @@
     });
   }
 
+  // The viewport sweep only ever loads what the camera has visited, so marks kept
+  // appearing one patch at a time as you panned, and a chip you never scrolled to
+  // stayed a monogram forever. Once the on-screen marks are in flight, queue every
+  // remaining one so the chart finishes loading on its own. Still capped at MAX
+  // concurrent probes, so this fills in behind you rather than firing 561 requests
+  // at once — the stall the sweep was written to avoid.
+  //
+  // Skipped entirely when the committed logo assets are present: those render
+  // inline from the sprite and atlas, with no probing and nothing to stagger.
+  function backfillLogos() {
+    if (manifest) return;
+    svg.querySelectorAll('image.logo-img:not([data-queued])').forEach(img => {
+      img.dataset.queued = '1';
+      logoQueue.pending.add(img);
+    });
+    pump();
+  }
+  const scheduleBackfill = () => (window.requestIdleCallback || (fn => setTimeout(fn, 1200)))(backfillLogos);
+
   // Navigator tiles and the card header are HTML, so a plain lazy <img> over the
   // monogram is enough.
   const navLogo = slug => {
@@ -968,6 +987,7 @@
     };
 
     sweepLogos();
+    scheduleBackfill();
     buildRail(); readURL(); bindCamera(); bindKeys(); bindExport(); bindFullscreen();
     chooseMode();
     applyFilters();

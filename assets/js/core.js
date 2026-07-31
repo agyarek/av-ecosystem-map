@@ -63,17 +63,27 @@
   // the bar the largest one seen is used anyway, so a company with only a small
   // icon still gets its logo rather than dropping to a monogram. `apply` receives
   // the winning URL, or null when every source failed.
+  // Results are memoised per domain: renderCard calls mountLogos twice for a single
+  // click (once on the slim record, again once the full one arrives), and a company
+  // can appear on a card, in the navigator and in the table at the same time. Without
+  // this the same ladder of probes ran from scratch every time, and the mark visibly
+  // re-resolved on each render.
+  const logoCache = new Map();
   function probeLogo(domain, apply) {
+    if (logoCache.has(domain)) return logoCache.get(domain).then(apply);
+    let settle;
+    logoCache.set(domain, new Promise(res => { settle = res; }));
+    const done = url => { settle(url); apply(url); };
     let best = null, bestPx = 0;
     (function step(i) {
-      if (i >= LOGO_SOURCES.length) return apply(best);
+      if (i >= LOGO_SOURCES.length) return done(best);
       const url = LOGO_SOURCES[i](domain);
       if (!url) return step(i + 1);
       const test = new Image();
       test.decoding = 'async';
       test.onload = () => {
         const px = Math.max(test.naturalWidth || 0, test.naturalHeight || 0);
-        if (px >= LOGO_MIN) return apply(url);
+        if (px >= LOGO_MIN) return done(url);
         if (px > bestPx) { best = url; bestPx = px; }
         step(i + 1);
       };
@@ -161,6 +171,72 @@
                 LOGO_SOURCES, LOGO_MIN, probeLogo, mountLogos, ICON, linkedinSearch,
                 wikiSummary, stockQuote, stockEnabled };
 
+  // ------------------------------------------------------------- chrome
+  // The header and footer used to be copy-pasted into all 22 pages, so changing a
+  // nav label or the updated-on date meant editing 22 files and hoping none drifted.
+  // They did drift: the home page footer had lost the byline, the link to /method/
+  // and the date entirely. One definition here, rendered into the placeholders each
+  // page carries, using ROOT so a page's depth stops mattering.
+  //
+  // The placeholders ship with a static wordmark and nav so the site still navigates
+  // with JavaScript off; hydrating replaces that markup with the full chrome.
+  const UPDATED = '25 July 2026';
+  const CORRECTION = 'mailto:agyarek+avecosystemmap@gmail.com?subject=AV%20map%20correction';
+  const NAV = [
+    ['map', 'map/', 'Map'],
+    ['companies', 'companies/', 'Companies'],
+    ['operators', 'operators/', 'The Ten'],
+    ['partnerships', 'partnerships/', 'Partnerships'],
+    ['funding', 'funding/', 'Money'],
+    ['regulation', 'regulation/', 'Rules'],
+    ['beyond-roads', 'beyond-roads/', 'Beyond Roads'],
+  ];
+
+  const SUN = '<svg class="sun" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="8" cy="8" r="3.2"/><path d="M8 .8v2M8 13.2v2M.8 8h2M13.2 8h2M2.9 2.9l1.4 1.4M11.7 11.7l1.4 1.4M13.1 2.9l-1.4 1.4M4.3 11.7l-1.4 1.4"/></svg>';
+  const MOON = '<svg class="moon" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M13.5 9.5A5.8 5.8 0 0 1 6.5 2.5a5.8 5.8 0 1 0 7 7z"/></svg>';
+  const TRADEMARK =
+    'Third-party names and logos are reproduced nominatively to identify the ' +
+    'organisations discussed in this editorial industry map. All trademarks remain ' +
+    'the property of their owners; no endorsement is implied in either direction. ' +
+    'To request a change to how your organisation appears, write to ' +
+    '<a href="mailto:agyarek+avecosystemmap@gmail.com?subject=Trademark%20request">' +
+    'agyarek+avecosystemmap@gmail.com</a>.';
+
+  const headerHTML = current => `<div class="bar">
+    <a class="wordmark" href="${ROOT || './'}"><span class="dash" aria-hidden="true"></span>AV&nbsp;ECOSYSTEM&nbsp;MAP</a>
+    <nav class="primary" aria-label="Primary">
+      ${NAV.map(([key, href, label]) =>
+        `<a data-nav="${key}" href="${ROOT}${href}"${key === current ? ' aria-current="page"' : ''}>${label}</a>`
+      ).join('\n      ')}
+    </nav>
+    <div class="chrome-tools">
+      <div id="site-search" role="search">
+        <input type="search" placeholder="SEARCH 561" autocomplete="off" spellcheck="false" aria-label="Search companies">
+        <div id="search-results" role="listbox" aria-label="Search results"></div>
+      </div>
+      <button id="theme-toggle" aria-label="Toggle light and dark theme">${SUN}${MOON}</button>
+    </div>
+  </div>`;
+
+  const footerHTML = el => {
+    const opener = el.dataset.cta === 'chart'
+      ? 'A company that should be on this chart, a partnership not yet mapped, a detail that is wrong?'
+      : 'A company that should be listed, a partnership not yet mapped, a detail that is wrong?';
+    return `<div class="container">
+    <p class="cta">${opener}
+      <a href="${CORRECTION}">Send a correction</a>:
+      this map gets better through exactly those conversations.</p>
+    <p class="fine">Autonomous Vehicle Ecosystem Map · compiled by <a href="${ROOT}method/">Kofi Agyare-Kwabi</a> from public filings, permits and announcements · updated ${UPDATED}</p>
+    ${el.hasAttribute('data-trademark') ? `<p class="fine">${TRADEMARK}</p>` : ''}
+  </div>`;
+  };
+
+  const currentPage = (document.body && document.body.dataset.page) || '';
+  const head = document.querySelector('header.site');
+  if (head) head.innerHTML = headerHTML(currentPage);
+  const foot = document.querySelector('footer.site');
+  if (foot) foot.innerHTML = footerHTML(foot);
+
   // ------------------------------------------------------------- theme
   const applyTheme = t => {
     document.documentElement.dataset.theme = t;
@@ -171,11 +247,8 @@
     applyTheme(document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark');
   });
 
-  // ------------------------------------------------------------- nav state
-  const page = document.body.dataset.page || '';
-  document.querySelectorAll('nav.primary a').forEach(a => {
-    if (a.dataset.nav === page) a.setAttribute('aria-current', 'page');
-  });
+  // Nav state is set by headerHTML above, so there is one source of truth for it.
+  const page = currentPage;
 
   // ------------------------------------------------------------- search
   const wrap = document.getElementById('site-search');

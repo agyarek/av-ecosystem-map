@@ -29,6 +29,18 @@
 
   --col: 1240px;
   --measure: 68ch;
+
+  /* Type scale. There were ~50 hand-picked font-size literals across five
+     stylesheets and no tokens at all, so a one-step size change meant hunting.
+     These six cover most of the site; the fluid headline clamps stay as they
+     are. Each is a step up from where it was, which is the 1-2pt lift the
+     review asked for. */
+  --fs-micro: 11px;
+  --fs-xs:    12px;
+  --fs-sm:    13.5px;
+  --fs-base:  15.5px;
+  --fs-md:    16px;
+  --fs-lg:    19px;
   color-scheme: light;
 }
 :root[data-theme="dark"] {
@@ -60,7 +72,7 @@ html {
 body {
   background: var(--paper); color: var(--ink);
   font-family: var(--font-display);
-  font-size: 15px; line-height: 1.5;
+  font-size: var(--fs-base); line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
@@ -95,11 +107,11 @@ h2.section-head, .section-head {
   letter-spacing: -0.02em; font-variation-settings: 'wdth' 112;
 }
 .standfirst {
-  font-size: 18px; line-height: 1.55; color: var(--ink-2);
+  font-size: var(--fs-lg); line-height: 1.55; color: var(--ink-2);
   max-width: var(--measure); margin-top: 16px; text-wrap: pretty;
 }
 .prose {
-  font-family: var(--font-serif); font-size: 18px; line-height: 1.62;
+  font-family: var(--font-serif); font-size: var(--fs-lg); line-height: 1.62;
   max-width: var(--measure);
 }
 .prose p + p { margin-top: 16px; }
@@ -112,7 +124,7 @@ h2.section-head, .section-head {
   font-family: var(--font-mono); font-size: 14px; font-weight: 500;
   font-variant-numeric: tabular-nums;
 }
-.caption { font-size: 13px; color: var(--muted); }
+.caption { font-size: var(--fs-sm); color: var(--muted); }
 small { font-size: 13px; }
 
 /* ---------------------------------------------------------------- layout */

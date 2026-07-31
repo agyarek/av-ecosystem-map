@@ -356,3 +356,23 @@ input.eco-in:focus { border-color: var(--cyan); outline: none; }
   position: absolute; left: 0; bottom: 0; height: 3px; width: var(--pct, 0%);
   border-radius: 2px; background: color-mix(in oklab, var(--cyan) 55%, transparent);
 }
+
+/* ------------------------------------------------------------- narrow screens */
+/* The funding timeline had no responsive rule of any kind: a phone got 30 cards
+   at desktop width in a horizontal scroller, with a caption as the only hint.
+   It now stacks, which is readable without a sideways drag. */
+@media (max-width: 700px) {
+  .timeline-wrap { overflow-x: visible; }
+  .timeline {
+    grid-auto-flow: row; grid-auto-columns: auto;
+    grid-template-columns: 1fr; gap: 10px;
+  }
+  .tl-event .amt { font-size: 21px; }
+
+  /* the comparison tables keep their horizontal scroll, but say so rather than
+     silently clipping */
+  .compare-scroll, .cmp-wrap { -webkit-overflow-scrolling: touch; }
+
+  .rank-row { font-size: var(--fs-sm); }
+  .calc-inputs input { font-size: var(--fs-md); padding: 8px 10px; }
+}

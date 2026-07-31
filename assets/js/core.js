@@ -291,6 +291,7 @@
                    ['economics-compare', 'economics/#comparing-the-operators', 'Comparing the operators']]],
     ['Regulatory', [['regulation', 'regulation/', 'Who decides'],
                     ['safety', 'safety/', 'Incidents and recalls']]],
+    ['Media', [['media', 'media/', 'Who to read, listen to, and meet']]],
     ['Overview', [['beyond-roads', 'beyond-roads/', 'Autonomy off the road'],
                   ['owning-one', 'owning-one/', 'Buying one yourself']]],
   ];

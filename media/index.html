@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Media · AV Ecosystem Map</title>
+<meta name="description" content="Who to read, listen to and meet on autonomous vehicles: the publications and newsletters covering the industry, the podcasts worth your commute, and the conferences where autonomy actually gathers.">
+<meta property="og:title" content="Media · AV Ecosystem Map">
+<meta property="og:description" content="Who to read, listen to and meet on autonomous vehicles: publications and newsletters, podcasts, and the conferences where the industry gathers.">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://agyarek.github.io/av-ecosystem-map/assets/cards/home.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://agyarek.github.io/av-ecosystem-map/media/">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%2312130F'/><rect x='18' y='44' width='40' height='12' rx='6' fill='%23F2B705'/><circle cx='78' cy='50' r='9' fill='%2300A5B8'/></svg>">
+<script>try{const t=localStorage.getItem('avTheme')||(matchMedia('(prefers-color-scheme: light)').matches?'light':'dark');if(t==='dark')document.documentElement.dataset.theme='dark';}catch(e){}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,400..900&family=Source+Serif+4:opsz,wght@8..60,400..700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/base.css">
+<link rel="stylesheet" href="../assets/css/article.css">
+<link rel="stylesheet" href="../assets/css/media.css">
+</head>
+<body data-page="media">
+<a class="skip-link" href="#content">Skip to content</a>
+
+<header class="site">
+  <div class="bar">
+    <a class="wordmark" href="../"><span class="dash" aria-hidden="true"></span>AV&nbsp;ECOSYSTEM&nbsp;MAP</a>
+    <nav class="primary" aria-label="Primary">
+      <a data-nav="map" href="../map/">Map</a>
+      <a data-nav="companies" href="../companies/">Directory</a>
+      <a data-nav="economics" href="../economics/">Economics</a>
+      <a data-nav="regulation" href="../regulation/">Regulatory</a>
+      <a data-nav="media" href="../media/">Media</a>
+    </nav>
+  </div>
+</header>
+
+<main id="content" class="container article">
+<div class="article-head">
+  <p class="eyebrow"><span class="tick">■</span> MEDIA</p>
+  <h1 class="page-title">Who to read, listen to,<br>and meet</h1>
+  <p class="standfirst">The people covering this industry well, in three forms: the publications and
+    newsletters worth your inbox, the podcasts worth your commute, and the conferences where autonomy
+    actually gathers. Where an outlet states its audience publicly I show the figure and its date;
+    where it does not, I show nothing rather than guess.</p>
+</div>
+
+<section aria-labelledby="pubs-sec">
+  <h2 class="sec" id="pubs-sec">Publications and newsletters</h2>
+  <p class="prose">Ordered by stated audience where one is published, the rest after.</p>
+  <div class="md-grid" id="md-publications"></div>
+  <p class="md-recommend"><a class="btn" href="mailto:agyarek+avecosystemmap@gmail.com?subject=Media%20recommendation%20%E2%80%94%20publication">RECOMMEND A PUBLICATION</a>
+    <span class="caption" style="margin-left:10px">Know one I am missing? Tell me — it comes to me directly.</span></p>
+</section>
+
+<section aria-labelledby="pods-sec">
+  <h2 class="sec" id="pods-sec">Podcasts</h2>
+  <p class="prose">The established autonomy shows. The ones I have listened to and would hand you
+    myself carry a mark.</p>
+  <div class="md-grid" id="md-podcasts"></div>
+  <p class="md-recommend"><a class="btn" href="mailto:agyarek+avecosystemmap@gmail.com?subject=Media%20recommendation%20%E2%80%94%20podcast">RECOMMEND A PODCAST</a>
+    <span class="caption" style="margin-left:10px">Heard one that changed your mind? Tell me — it comes to me directly.</span></p>
+</section>
+
+<section aria-labelledby="events-sec">
+  <h2 class="sec" id="events-sec">Events and conferences</h2>
+  <p class="prose">Where this industry meets in person: autonomy-first events lead, the broader
+    mobility circuit follows.</p>
+  <div class="md-grid" id="md-events"></div>
+  <p class="md-recommend"><a class="btn" href="mailto:agyarek+avecosystemmap@gmail.com?subject=Media%20recommendation%20%E2%80%94%20event">RECOMMEND AN EVENT</a>
+    <span class="caption" style="margin-left:10px">Run one, or been to one worth the airfare? Tell me — it comes to me directly.</span></p>
+</section>
+
+<section class="sub-band" aria-labelledby="sub-sec">
+  <h2 class="sec" id="sub-sec">Hear about what changes here</h2>
+  <p class="prose">This map grows: new companies, new chapters, new features. If you want to know
+    when something substantial changes, leave me your email and I will write only when it does.</p>
+  <p style="margin-top:16px"><button class="btn primary" id="subscribe-open">KEEP ME POSTED</button></p>
+</section>
+
+<dialog class="sub-dialog" id="subscribe-dialog" aria-labelledby="sub-dlg-title">
+  <button class="sub-close" aria-label="Close">&times;</button>
+  <h2 id="sub-dlg-title">Keep me posted</h2>
+  <p>New features, new additions, substantial changes — that is all I will write about, and I am the
+    only one who will ever have your address.</p>
+  <form method="post" target="_blank">
+    <input type="email" name="email" required placeholder="you@example.com" aria-label="Your email address">
+    <button class="btn primary" type="submit">SUBSCRIBE</button>
+  </form>
+  <p class="sub-fallback" hidden>The subscribe list is being set up. Until it is live,
+    <a href="mailto:agyarek+avecosystemmap@gmail.com?subject=Keep%20me%20posted">email me</a> and I
+    will add you by hand when it opens.</p>
+</dialog>
+
+</main>
+
+<footer class="site"></footer>
+
+<script src="../assets/js/core.js"></script>
+<script src="../assets/js/media.js"></script>
+</body>
+</html>

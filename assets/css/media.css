@@ -1,0 +1,56 @@
+/* media.css :: the media page's tiles and subscribe dialog. Everything else
+   comes from base.css and article.css. */
+
+.md-grid {
+  display: grid; gap: 12px; margin-top: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+.md-tile {
+  display: flex; gap: 14px; align-items: flex-start;
+  padding: 18px; text-decoration: none;
+  background: var(--paper-2); border: 1px solid var(--rule);
+  border-radius: var(--r-card);
+  transition: border-color 120ms, transform 120ms;
+}
+.md-tile:hover { border-color: var(--cyan); transform: translateY(-2px); }
+@media (prefers-reduced-motion: reduce) { .md-tile:hover { transform: none; } }
+.md-logo { width: 52px; height: 52px; font-size: 19px; border-radius: 13px; flex: none; }
+.md-body { display: flex; flex-direction: column; gap: 5px; min-width: 0; }
+.md-name { font-weight: 800; font-size: var(--fs-md); letter-spacing: -0.01em; }
+.md-pick {
+  display: inline-flex; align-items: center; gap: 5px; margin-left: 10px;
+  font-family: var(--font-mono); font-size: var(--fs-micro); font-weight: 600;
+  letter-spacing: .08em; color: var(--ink-2); white-space: nowrap;
+}
+.md-who { font-family: var(--font-mono); font-size: var(--fs-xs); color: var(--muted); }
+.md-blurb { font-size: var(--fs-sm); color: var(--ink-2); line-height: 1.5; }
+.md-count { font-family: var(--font-mono); font-size: var(--fs-xs); color: var(--ink-2); margin-top: 2px; }
+.md-count .num { font-weight: 700; color: var(--ink); }
+
+.md-recommend { margin-top: 18px; }
+
+/* ------------------------------------------------------------ subscribe */
+.sub-band {
+  margin-top: 48px; padding: 28px; text-align: left;
+  background: var(--paper-2); border: 1px solid var(--rule); border-radius: var(--r-card);
+}
+dialog.sub-dialog {
+  border: 1px solid var(--rule); border-radius: var(--r-card);
+  background: var(--paper); color: var(--ink);
+  padding: 26px; max-width: 420px; width: calc(100vw - 40px);
+}
+dialog.sub-dialog::backdrop { background: rgba(18, 19, 15, .45); }
+.sub-dialog h2 { font-size: var(--fs-lg); font-weight: 800; letter-spacing: -0.01em; }
+.sub-dialog p { font-size: var(--fs-sm); color: var(--ink-2); margin-top: 8px; line-height: 1.5; }
+.sub-dialog form { display: flex; gap: 8px; margin-top: 16px; }
+.sub-dialog input[type="email"] {
+  flex: 1; font-family: var(--font-mono); font-size: var(--fs-sm);
+  background: var(--paper-2); border: 1px solid var(--rule); border-radius: var(--r-chip);
+  padding: 9px 12px; min-width: 0;
+}
+.sub-dialog input[type="email"]:focus { border-color: var(--cyan); }
+.sub-close {
+  position: absolute; top: 10px; right: 12px;
+  font-size: 20px; line-height: 1; padding: 6px; color: var(--muted);
+}
+.sub-close:hover { color: var(--ink); }

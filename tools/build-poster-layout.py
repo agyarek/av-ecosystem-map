@@ -51,7 +51,7 @@ OUT  = os.path.join(ROOT, "data", "poster-layout.json")
 # ---------------------------------------------------------------- constants
 M       = 160     # chip tile, px
 PITCH   = 178     # lattice pitch: tile plus the air between tiles
-OCT_R   = 1700    # octagon half-width (centre to a flat side)
+OCT_R   = 1240    # octagon half-width (centre to a flat side)
 HEADER  = 210     # district header band
 PAD     = 26      # inset between a district border and its tile grid
 CLEAR   = 14      # clearance between a tile and the octagon's edge
@@ -101,8 +101,8 @@ HUE = {
 
 # Type inside the octagon, shared with tools/render-poster.py and assets/js/poster.js
 # so the two renderers cannot drift apart.
-MED_STYLE = {"logo": 200, "logoY": 70, "nameY": 320, "nameSize": 42,
-             "claimY": 366, "claimStep": 34, "claimSize": 25, "claimChars": 32}
+MED_STYLE = {"logo": 120, "logoY": 52, "nameY": 232, "nameSize": 34,
+             "claimY": 270, "claimStep": 27, "claimSize": 20, "claimChars": 30}
 
 SIDE = OCT_R * 2 * (math.sqrt(2) - 1)      # octagon edge length
 HALF = SIDE / 2                            # half of a flat side
@@ -220,6 +220,27 @@ def main():
     for k in buckets:
         buckets[k].sort(key=lambda c: (-c.get("score", 0), c["name"].lower()))
 
+    # ------------------------------------------------- how many tiles to draw
+    # Drawing all 551 made the chart intimidating on arrival: eleven walls of
+    # near-identical tiles, none of them readable until you zoomed. So each
+    # district draws a slice of its companies and offers the rest on demand.
+    #
+    # The slice is proportional rather than a flat number on purpose. A district's
+    # size on the plate is a direct function of how many tiles it holds, so a flat
+    # cap would make every layer the same size and quietly delete the one thing
+    # that size currently tells you: that Governance really is twice Capital. A
+    # third of each keeps that shape while cutting the plate down hard.
+    #
+    # The floor and ceiling never bind at today's counts (the range lands 11-23);
+    # they are here so the rule still behaves if a layer grows or empties out.
+    SHOW_FRACTION, SHOW_MIN, SHOW_MAX = 0.30, 8, 24
+    shown, overflow = {}, {}
+    for k, v in buckets.items():
+        n = max(SHOW_MIN, min(SHOW_MAX, round(len(v) * SHOW_FRACTION)))
+        n = min(n, len(v))
+        shown[k], overflow[k] = v[:n], v[n:]
+        print(f"  show {n:3d} of {len(v):3d}  {k}")
+
     planned = [n for b in BANDS.values() for n in b]
     if sorted(planned) != sorted(buckets):
         sys.exit(f"FATAL: BANDS covers {sorted(planned)}, data has {sorted(buckets)}")
@@ -232,7 +253,7 @@ def main():
     sides = {}
     for side in ("left", "right"):
         names = BANDS[side]
-        counts = [len(buckets[n]) for n in names]
+        counts = [len(shown[n]) for n in names]
         h1 = solve_side_band(names, counts, span, HEADER)
         heights = [h1, span - h1]
         # left runs bottom to top, right runs top to bottom; both listed clockwise
@@ -247,7 +268,7 @@ def main():
                 else:
                     rect = (HALF, y, OCT_R + width, y + h)
                 cells = grid_cells(rect, side, HEADER)
-                if len(cells) < len(buckets[name]): ok = False
+                if len(cells) < len(shown[name]): ok = False
                 rects.append((name, rect, cells))
                 y += h
             if ok:
@@ -266,7 +287,7 @@ def main():
     horiz = {}
     for band in ("top", "bottom"):
         names = BANDS[band] if band == "top" else BANDS[band][::-1]
-        counts = [len(buckets[n]) for n in names]
+        counts = [len(shown[n]) for n in names]
         usable_cols = int((plate_w - 2 * PAD * len(names)) // PITCH)
         for rows in range(2, 20):
             need = [math.ceil(n / rows) for n in counts]
@@ -297,7 +318,7 @@ def main():
     for band in ("top", "right", "bottom", "left"):
         rects = (horiz if band in ("top", "bottom") else sides)[band][1]
         for name, rect, cells in rects:
-            items = buckets[name]
+            items = shown[name]
             if len(cells) < len(items):
                 sys.exit(f"FATAL: {name} has {len(items)} companies for {len(cells)} cells")
             x0, y0, x1, y1 = rect
@@ -308,11 +329,24 @@ def main():
             tx0, tx1 = x0, x1
             if band == "left":  tx1 = -OCT_R
             if band == "right": tx0 = OCT_R
+            # The header prints the district's true size, not how many tiles are
+            # drawn, so the label has to be measured against the number a reader
+            # actually sees.
+            total = len(buckets[name])
             size, lines = fit_label(name.replace("Governance: ", "").upper(),
-                                    len(items), tx1 - tx0)
+                                    total, tx1 - tx0)
             districts.append({
                 "id": slug(name), "layer": name, "band": band,
-                "hue": HUE.get(name, 220), "count": len(items),
+                "hue": HUE.get(name, 220), "count": total,
+                "shown": len(items),
+                # Everyone this district holds but does not draw. The chart offers
+                # them through the district's expand control rather than tiling
+                # them, so the roster travels with the geometry.
+                "overflow": [{"name": c["name"], "slug": slug_of(c), "id": c["id"],
+                              "mono": c.get("mono", c["name"][:2].upper()),
+                              "exited": bool(c.get("exited")),
+                              "spokenTo": bool(c.get("spokenTo"))}
+                             for c in overflow[name]],
                 "x": round(x0, 1), "y": round(y0, 1),
                 "w": round(x1 - x0, 1), "h": round(y1 - y0, 1),
                 "poly": [[round(px, 1), round(py, 1)] for px, py in district_poly(rect, band)],
@@ -339,8 +373,8 @@ def main():
     # ------------------------------------- passenger autonomy, inside
     # Rows of 3, 4 and 3: the widest row sits on the octagon's waist, where the
     # full width is available, and the outer rows step in with the bevels.
-    ROWS = [(3, 860, -1100), (4, 800, -270), (3, 860, 560)]
-    CELL_H = 540
+    ROWS = [(3, 626, -800), (4, 582, -196), (3, 626, 408)]
+    CELL_H = 392
     medallion, k = [], 0
     for n, cw, ry in ROWS:
         for i in range(n):
@@ -358,7 +392,7 @@ def main():
     octagon = {
         "cx": 0, "cy": 0, "r": OCT_R, "side": round(SIDE, 1),
         "points": [[round(x, 1), round(y, 1)] for x, y in octagon_points(0, 0)],
-        "titleY": -1330, "subY": -1245, "ruleY": 1220, "footY": 1292,
+        "titleY": -970, "subY": -908, "ruleY": 890, "footY": 942,
         "title": "PASSENGER AUTONOMY",
         "sub": "AUTONOMOUS DRIVERS A PASSENGER CAN ACTUALLY MEET",
         "foot": f"{len(MEDALLION)} OF {len(companies)} ORGANISATIONS ON THIS CHART",
@@ -400,18 +434,23 @@ def main():
         "oct": octagon, "districts": districts, "chips": chips, "medallion": medallion,
     }
 
-    placed = len(chips) + len(medallion)
-    if placed != len(companies):
-        sys.exit(f"FATAL: placed {placed} chips for {len(companies)} companies")
+    # Not every company gets a tile any more, but every company must still be
+    # reachable: drawn in a district, sitting in the octagon, or listed in some
+    # district's overflow. Losing one silently is the failure this guards against.
+    drawn = len(chips) + len(medallion)
+    held = drawn + sum(len(d["overflow"]) for d in districts)
+    if held != len(companies):
+        sys.exit(f"FATAL: {held} companies accounted for, data has {len(companies)}")
 
     os.makedirs(os.path.dirname(OUT), exist_ok=True)
     json.dump(layout, open(OUT, "w", encoding="utf-8"), indent=1)
     print(f"canvas   {W} x {H}  (aspect {W/H:.2f})")
     print(f"plate    {plate_w:.0f} x {plate_y1 - plate_y0:.0f}")
-    print(f"placed   {placed} of {len(companies)} companies "
-          f"({len(medallion)} in the octagon + {len(chips)} in districts)")
+    print(f"drawn    {drawn} of {len(companies)} companies "
+          f"({len(medallion)} in the octagon + {len(chips)} in districts); "
+          f"{held - drawn} more reachable through expand")
     for d in districts:
-        print(f"  {d['band']:<6} {d['count']:>3} in {d['capacity']:>3} cells "
+        print(f"  {d['band']:<6} {d['shown']:>3} of {d['count']:>3} in {d['capacity']:>3} cells "
               f"(slack {d['slack']:>2})  {d['layer']}")
     print(f"wrote    {os.path.relpath(OUT, ROOT)}")
 

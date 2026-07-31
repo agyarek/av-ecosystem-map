@@ -34,11 +34,12 @@
 /* --------------------------------------------------------------- stage */
 .poster-stage { position: relative; margin-top: 12px; }
 .poster-viewport {
-  /* The rosette is nearly square, so the viewport takes its shape rather than
-     letterboxing it inside a wide box that would only ever show grey. */
-  aspect-ratio: 6574 / 6282;
+  /* The plate is nearly square, so the viewport takes its shape rather than
+     letterboxing it inside a wide box that would only ever show grey. Keep these
+     in step with meta.width/height in data/poster-layout.json. */
+  aspect-ratio: 4408 / 4294;
   max-height: calc(100vh - 130px);
-  max-width: calc((100vh - 130px) * 6574 / 6282);
+  max-width: calc((100vh - 130px) * 4408 / 4294);
   width: 100%; margin: 0 auto;
   overflow: hidden; position: relative;
   /* the same ground the poster paints, so letterboxing round a near-square
@@ -53,7 +54,7 @@
 #poster { width: 100%; height: 100%; display: block; }
 
 /* SVG chip states. Filtering and selection dim, never reflow. */
-#poster [data-chip] { transition: opacity 160ms; cursor: pointer; }
+#poster [data-chip] { transition: opacity 160ms, transform 180ms ease; cursor: pointer; }
 #poster.has-sel [data-chip], #poster.has-sel .district-shell,
 #poster.has-sel .medallion-shell { opacity: .16; }
 #poster.has-sel [data-chip].lit { opacity: 1; }
@@ -62,12 +63,25 @@
 #poster [data-chip]:hover .chip-body,
 #poster [data-chip].kbd-focus .chip-body { stroke: var(--cyan); stroke-width: 2.5; }
 #poster [data-chip].sel .chip-body { stroke: var(--cyan); stroke-width: 5; }
+/* A tile leans forward when you rest on it or pick it. Each tile is inset inside
+   its own cell, so it has room to grow without touching its neighbours. */
+#poster [data-chip] { transform-box: fill-box; transform-origin: center; }
+#poster [data-chip]:hover, #poster [data-chip].kbd-focus { transform: scale(1.06); }
+#poster [data-chip].sel { transform: scale(1.06); }
 #poster [data-chip]:focus { outline: none; }
 
-/* A layer answers as one piece: its whole room takes the layer's own colour and
-   its border lights up. The rooms share their borders, so nothing here may move
-   or scale — the highlight is colour and weight, and the lit district is raised
-   above its neighbours so its outline is not half-covered by theirs. */
+/* A layer answers as one piece: its whole room takes the layer's own colour, its
+   border lights up, and the room itself leans forward a little.
+
+   The rooms share their borders, so a room that grows has nowhere to grow into
+   and would sit on top of its neighbours. Rather than push each neighbour away —
+   which needs an adjacency map and a direction per pair, and moves things by a
+   fixed distance that would look different at every zoom — the other rooms simply
+   give a little. Everything here is a relative scale, so the effect is the same
+   proportion of each shape whether the whole plate is in view or one tile is.
+
+   The lit district is also raised above its neighbours so its outline is not
+   half-covered by theirs. */
 /* Borders keep a constant weight on screen at every zoom, so a highlighted
    district reads the same whether the whole plate is in view or one tile is. */
 #poster .plate, #poster .d-edge, #poster .d-glow, #poster .oct-edge { vector-effect: non-scaling-stroke; }
@@ -79,8 +93,13 @@
 #poster .district.hot .d-glow { opacity: .95; }
 #poster .district.hot .d-tint { opacity: .32; }
 #poster .district.hot .d-wash { opacity: .13; }
-#poster .oct-edge { transition: stroke-width 200ms ease; }
-#poster .district.hot .oct-edge { stroke-width: 26; }
+/* The octagon used to answer hover by inflating its border from 3px to 26px, the
+   only district on the chart that moved its border at all. Now every room answers
+   the same way. */
+#poster .district { transform-box: fill-box; transform-origin: center; }
+#poster.hot-on .district { transition: transform 220ms ease; }
+#poster.hot-on .district.hot { transform: scale(1.02); }
+#poster.hot-on .district:not(.hot) { transform: scale(.988); }
 #poster .links path {
   fill: none; stroke: var(--cyan); opacity: .85;
   vector-effect: non-scaling-stroke; stroke-width: 2.2px;
@@ -274,3 +293,48 @@ body.fs-pseudo { overflow: hidden; }
 /* Remote logos fade in over their monogram tile, so a slow favicon never
    shows as a blank square. */
 #poster image.logo-img, #poster rect.logo-bg { transition: opacity 220ms ease; }
+
+/* The chart's other motion is gated in JS by reducedMotion(). The hover and
+   selection lifts are CSS, so they are gated here. Colour and weight still
+   answer, so nothing becomes unusable — it just stops moving. */
+@media (prefers-reduced-motion: reduce) {
+  #poster [data-chip], #poster.hot-on .district { transition: none; }
+  #poster [data-chip]:hover, #poster [data-chip].kbd-focus,
+  #poster [data-chip].sel,
+  #poster.hot-on .district.hot, #poster.hot-on .district:not(.hot) { transform: none; }
+}
+
+/* ------------------------------------------------------- the layer roster */
+/* Each district draws a slice of its layer, so the rest has to be reachable.
+   The roster is a list rather than more tiles: seventy names read fine as text
+   and would be another wall as a grid, which is the problem being solved. */
+.roster {
+  position: absolute; right: 16px; top: 16px; z-index: 40;
+  width: min(340px, calc(100vw - 32px));
+  max-height: calc(100% - 32px); display: flex; flex-direction: column;
+  background: var(--paper-2); border: 1px solid var(--rule);
+  border-radius: var(--r-card); padding: 14px;
+  box-shadow: 0 18px 48px rgba(18, 19, 15, .2);
+}
+.roster[hidden] { display: none; }
+.roster-head { display: flex; align-items: flex-start; gap: 10px; }
+.roster-head .eyebrow { margin: 0; }
+.roster-close { margin-left: auto; color: var(--muted); font-size: 18px; line-height: 1; padding: 2px 6px; }
+.roster-close:hover { color: var(--alert); }
+.roster #roster-q { width: 100%; margin-top: 10px; }
+.roster-list { list-style: none; margin-top: 8px; overflow: auto; overscroll-behavior: contain; }
+.roster-list li { border-top: 1px solid var(--rule); }
+.roster-list button {
+  display: flex; align-items: center; gap: 9px; width: 100%; text-align: left;
+  padding: 7px 4px; font-size: 13.5px; color: var(--ink);
+}
+.roster-list button:hover { color: var(--cyan); }
+.roster-list .mono-tile { width: 22px; height: 22px; font-size: 9.5px; border-radius: 6px; flex: none; }
+.roster-list .rk { margin-left: auto; font-family: var(--font-mono); font-size: 10px; color: var(--muted); }
+.roster-list s { color: var(--muted); }
+#poster .d-more { cursor: pointer; }
+#poster .d-more:hover text { fill: var(--cyan); }
+
+@media (max-width: 700px) {
+  .roster { right: 8px; left: 8px; top: 8px; width: auto; max-height: calc(100% - 16px); }
+}

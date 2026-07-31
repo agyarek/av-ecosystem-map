@@ -19,7 +19,7 @@
   --h-capital: 60; --h-regulators: 290; --h-standards: 340;
   --layer-l: 0.62; --layer-c: 0.075;
   --tile-l: 0.66; --tile-c: 0.06; --tile-ink: #FFFFFF;
-  --med-bg: #12130F; --med-ink: #FAFAF7; --med-sub: #B9BCB2;
+  --med-bg: #F4F2E9; --med-ink: #12130F; --med-sub: #6E7268;
 
   --r-chip: 8px; --r-card: 14px; --r-medallion: 20px; --r-pill: 999px;
 
@@ -43,7 +43,7 @@
   --alert:   #E0655B;
   --layer-l: 0.74; --layer-c: 0.09;
   --tile-l: 0.42; --tile-c: 0.055; --tile-ink: #E9EAE2;
-  --med-bg: #060704; --med-ink: #F2F2EC; --med-sub: #9DA095;
+  --med-bg: #24261D; --med-ink: #F2F2EC; --med-sub: #9DA095;
   color-scheme: dark;
 }
 [hidden] { display: none !important; }

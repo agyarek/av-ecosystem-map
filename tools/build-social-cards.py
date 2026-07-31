@@ -43,7 +43,7 @@ def crop_around(cx, cy, w):
 
 CARDS = [
     ("home", "The autonomous vehicle industry, drawn to scale", f"{L['meta']['companyCount']} ORGANISATIONS · 11 LAYERS", None),
-    ("map", "The Wall Chart", f"ALL {L['meta']['companyCount']} ON ONE POSTER", None),
+    ("map", "The Wall Chart", f"{L['meta']['companyCount']} ORGANISATIONS · ELEVEN LAYERS", None),
     ("companies", "Directory", f"{L['meta']['companyCount']} ROWS · EVERY FIELD · SHAREABLE VIEWS", None),
     ("operators", "Passenger Autonomy", "AUTONOMOUS DRIVERS A PASSENGER CAN ACTUALLY MEET",
      crop_around(mb["x"] + mb["w"] / 2, mb["y"] + mb["h"] / 2, mb["w"] * 1.35)),

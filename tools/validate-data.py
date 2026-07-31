@@ -117,12 +117,22 @@ for i, ev in enumerate(funding.get("events", [])):
 layout_path = os.path.join(ROOT, "data", "poster-layout.json")
 if os.path.exists(layout_path):
     layout = json.load(open(layout_path, encoding="utf-8"))
-    placed = len(layout.get("chips", [])) + len(layout.get("medallion", []))
-    if placed != len(companies):
-        err(f"poster-layout places {placed} chips for {len(companies)} companies; re-run build-poster-layout.py")
-    lslugs = {ch["slug"] for ch in layout.get("chips", [])} | {mo["slug"] for mo in layout.get("medallion", [])}
-    if lslugs != slugs:
-        err(f"poster-layout slugs diverge from company slugs by {len(lslugs ^ slugs)}; re-run build-poster-layout.py")
+    # A district draws a slice of its layer and offers the rest through its expand
+    # control, so not every company has a tile. What must still hold is that every
+    # company is reachable: drawn in a district, inside the octagon, or listed in
+    # some district's overflow. A company falling out of all three would vanish
+    # from the chart silently, which is the failure worth catching.
+    over = [c for d in layout.get("districts", []) for c in d.get("overflow", [])]
+    reachable = ({ch["slug"] for ch in layout.get("chips", [])}
+                 | {mo["slug"] for mo in layout.get("medallion", [])}
+                 | {c["slug"] for c in over})
+    if reachable != slugs:
+        err(f"poster-layout reaches {len(reachable)} companies, data has {len(slugs)} "
+            f"(differ by {len(reachable ^ slugs)}); re-run build-poster-layout.py")
+    for d in layout.get("districts", []):
+        if d.get("shown", 0) + len(d.get("overflow", [])) != d.get("count", 0):
+            err(f"district {d['id']}: shown {d.get('shown')} + overflow "
+                f"{len(d.get('overflow', []))} != count {d.get('count')}")
 
 if errors:
     print(f"FAIL: {len(errors)} error(s)")

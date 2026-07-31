@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>The Wall Chart · Autonomous Vehicle Ecosystem Map</title>
-<meta name="description" content="All 561 organisations of the autonomous vehicle industry on one wall chart: passenger autonomy inside an octagon, the eleven layers docked on its borders, and the partnerships between them. Zoom, filter, full screen, export, print.">
+<meta name="description" content="The 561 organisations of the autonomous vehicle industry on one wall chart: passenger autonomy inside an octagon, the eleven layers docked on its borders, and the partnerships between them. Each layer shows a readable slice, with the rest one click away. Zoom, filter, full screen, export, print.">
 <meta property="og:title" content="The Wall Chart · AV Ecosystem Map">
-<meta property="og:description" content="561 organisations, eleven layers, one poster. The whole autonomous vehicle industry on a single wall chart.">
+<meta property="og:description" content="561 organisations across eleven layers on a single wall chart, each layer showing a readable slice with the rest one click away.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://agyarek.github.io/av-ecosystem-map/assets/cards/map.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -43,7 +43,7 @@
       <p class="eyebrow"><span class="tick">■</span> THE WALL CHART</p>
       <h1 class="chart-title">561 organisations. One poster.</h1>
     </div>
-    <p class="chart-honesty caption">The passenger-autonomy companies sit inside the octagon; the eleven layers dock on its borders, each as deep as its count needs. Partnerships are mapped for <span class="num">128</span> of <span class="num">561</span> organisations, 148 relationships in all. The remainder are gaps in coverage, not evidence of absence. <a href="../method/">What that means</a></p>
+    <p class="chart-honesty caption">The passenger-autonomy companies sit inside the octagon; the eleven layers dock on its borders, each as deep as its count needs. Each layer shows about a third of itself so the chart stays readable; the rest is one click away on any layer. Partnerships are mapped for <span class="num">128</span> of <span class="num">561</span> organisations, 148 relationships in all. The remainder are gaps in coverage, not evidence of absence. <a href="../method/">What that means</a></p>
   </div>
 
   <div id="map-shell">
@@ -84,6 +84,15 @@
       <svg id="poster" aria-label="Autonomous vehicle ecosystem wall chart"></svg>
     </div>
     <aside id="company-card" hidden></aside>
+    <div id="roster" class="roster" hidden role="dialog" aria-modal="true" aria-labelledby="roster-title">
+      <div class="roster-head">
+        <p class="eyebrow" id="roster-title"></p>
+        <button class="roster-close" id="roster-close" aria-label="Close">&times;</button>
+      </div>
+      <input type="search" id="roster-q" class="rail-text" placeholder="Filter by name" autocomplete="off" spellcheck="false" aria-label="Filter this layer by name">
+      <p class="caption" id="roster-state" aria-live="polite"></p>
+      <ul id="roster-list" class="roster-list"></ul>
+    </div>
   </div>
   </div>
 
@@ -101,9 +110,10 @@
       <span><span class="gold-dot" aria-hidden="true"></span> spoken with directly</span>
       <span><s>struck</s> exited: acquired, wound down or bankrupt</span>
       <span><span class="pip-demo" aria-hidden="true"></span> pips mark membership of further layers</span>
-      <span>one company, one chip, always</span>
+      <span>a company in several layers still gets one chip, never two</span>
+      <span>each layer shows a slice of itself; <strong>+N more</strong> opens the rest</span>
       <span>panel depth tracks how many organisations a layer holds</span>
-      <span>hover a layer to light it; click a company to pin it and open its record</span>
+      <span>hover a layer to light it; click a company to pin it and <strong>draw who it works with</strong></span>
     </p>
   </div>
 </main>

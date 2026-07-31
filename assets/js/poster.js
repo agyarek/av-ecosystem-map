@@ -201,8 +201,8 @@
       paper: X ? '#FAFAF7' : 'var(--paper)', ink: X ? '#12130F' : 'var(--ink)',
       card: X ? '#FFFFFF' : 'var(--paper-2)', rule: X ? '#DEDFD8' : 'var(--rule)',
       muted: X ? '#6E7268' : 'var(--muted)', yellow: X ? '#F2B705' : 'var(--yellow)',
-      med: X ? '#12130F' : 'var(--med-bg)', medtx: X ? '#FAFAF7' : 'var(--med-ink)',
-      medsub: X ? '#B9BCB2' : 'var(--med-sub)'
+      med: X ? '#F4F2E9' : 'var(--med-bg)', medtx: X ? '#12130F' : 'var(--med-ink)',
+      medsub: X ? '#6E7268' : 'var(--med-sub)'
     };
     const hueFill = h => X ? oklch(h, 0.62, 0.075) : `oklch(var(--layer-l) var(--layer-c) ${h})`;
     const o = [];
@@ -236,6 +236,16 @@
         o.push(`<text x="${hd.tx + 30}" y="${base + i * sz * 1.06}" font-size="${sz}" font-weight="700" fill="${C.ink}" font-family="Archivo, sans-serif">${esc(line)}</text>`);
       });
       o.push(`<text x="${hd.tx + hd.tw - 30}" y="${hd.y + hd.h / 2 + sz * 0.36}" font-size="${sz}" font-weight="600" text-anchor="end" font-family="IBM Plex Mono, monospace" fill="${hueFill(d.hue)}">${d.count}</text>`);
+      // Each room draws a slice of its layer, so it has to say so. The control
+      // names what is not on the wall and opens the full roster; in an export it
+      // is still worth printing, because the chart should not look complete when
+      // it is not.
+      const hidden = (d.overflow || []).length;
+      if (hidden) {
+        o.push(X ? `<g>` : `<g class="d-more" data-expand="${esc(d.id)}" role="button" tabindex="-1" aria-label="Show all ${d.count} organisations in ${esc(d.layer)}">`);
+        o.push(`<text x="${hd.tx + hd.tw - 30}" y="${hd.y + hd.h - 26}" text-anchor="end" font-size="27" font-family="IBM Plex Mono, monospace" fill="${C.muted}">+${hidden} more</text>`);
+        o.push(`</g>`);
+      }
       o.push(`<polygon class="d-edge" points="${poly(d.poly)}" fill="none" stroke="${C.rule}" stroke-width="3"/>`);
       if (!X) o.push(`<polygon class="d-glow" points="${poly(d.poly)}" fill="none" stroke="${hueFill(d.hue)}" stroke-width="9" opacity="0"/>`);
       o.push(`</g>`);
@@ -275,7 +285,7 @@
     o.push(`<polygon class="oct-fill" points="${opts}" fill="${C.med}"/>`);
     o.push(`<polygon class="oct-edge" points="${opts}" fill="none" stroke="${C.yellow}" stroke-width="14"/>`);
     o.push(`<text x="${oc.cx}" y="${oc.titleY}" font-size="86" font-weight="900" letter-spacing="18" text-anchor="middle" fill="${C.medtx}" font-family="Archivo, sans-serif">${esc(oc.title)}</text>`);
-    o.push(`<text x="${oc.cx}" y="${oc.subY}" font-size="28" text-anchor="middle" fill="${C.yellow}" font-family="IBM Plex Mono, monospace" letter-spacing="4">${esc(oc.sub)}</text>`);
+    o.push(`<text x="${oc.cx}" y="${oc.subY}" font-size="28" text-anchor="middle" fill="${C.medsub}" font-family="IBM Plex Mono, monospace" letter-spacing="4">${esc(oc.sub)}</text>`);
     o.push(`<line x1="${oc.cx - 440}" y1="${oc.ruleY}" x2="${oc.cx + 440}" y2="${oc.ruleY}" stroke="${C.medsub}" stroke-width="2" opacity=".4"/>`);
     o.push(`<text x="${oc.cx}" y="${oc.footY}" font-size="24" text-anchor="middle" fill="${C.medsub}" font-family="IBM Plex Mono, monospace" letter-spacing="3">${esc(oc.foot)}</text>`);
     o.push(`</g>`);
@@ -286,22 +296,14 @@
       if (!X) {
         o.push(`<g data-chip data-med data-slug="${esc(c.slug)}" data-cx="${cx}" data-cy="${c.y + MS.logoY + MS.logo / 2}" data-bx="${cx - MS.logo / 2}" data-by="${c.y + MS.logoY}" data-bw="${MS.logo}" data-bh="${MS.logo}" data-cat="${esc(SHORT[meta.c] || '')}" data-region="${esc(REGION_KEY(meta.r || ''))}" data-mat="${esc(meta.m || '')}" data-text="${esc((c.name + ' ' + (meta.b || '')).toLowerCase())}" ${meta.g ? 'data-spoken="1"' : ''} tabindex="-1" role="button" aria-label="${esc(c.name + '; operator; ' + (c.claim || ''))}">`);
       } else o.push(`<g>`);
-      // The operator marks sit on the dark octagon, so they get a light plate
-      // behind them rather than the layer-hue tile used on chips.
-      const lm = manifest && manifest[c.slug];
-      const dom = logoDomain(c.slug);
+      // These used to be a bare mark on a dark slab, with no tile of their own,
+      // which is much of why they read as a different species from the other 551.
+      // They now get the same bounded tile every district chip has, so they
+      // inherit the same hover and selection states and the same logo pipeline.
       const half = MS.logo / 2;
-      if (lm) {
-        o.push(logoMarkup(c.slug, cx, c.y + MS.logoY, MS.logo, c.hue, c.mono, X));
-      } else {
-        o.push(`<rect class="chip-body" x="${cx - half}" y="${c.y + MS.logoY}" width="${MS.logo}" height="${MS.logo}" rx="36" fill="${C.medtx}"/>`);
-        o.push(`<text x="${cx}" y="${c.y + MS.logoY + MS.logo * 0.68}" font-size="${MS.logo * 0.44}" font-weight="900" text-anchor="middle" fill="${C.med}" font-family="Archivo, sans-serif">${esc(c.mono)}</text>`);
-        if (!X && dom) {
-          o.push(`<rect class="logo-bg" data-logo-bg="${esc(c.slug)}" x="${cx - half}" y="${c.y + MS.logoY}" width="${MS.logo}" height="${MS.logo}" rx="36" fill="#FFFFFF" opacity="0"/>`);
-          o.push(`<image class="logo-img" data-logo="${esc(c.slug)}" data-domain="${esc(dom)}" data-try="0" ` +
-            `x="${cx - half + 12}" y="${c.y + MS.logoY + 12}" width="${MS.logo - 24}" height="${MS.logo - 24}" preserveAspectRatio="xMidYMid meet" opacity="0"/>`);
-        }
-      }
+      const pad = MS.logo * 0.14;
+      o.push(`<rect class="chip-body" x="${cx - half - pad}" y="${c.y + MS.logoY - pad}" width="${MS.logo + pad * 2}" height="${MS.logo + pad * 2}" rx="18" fill="${C.paper}" stroke="${C.rule}"/>`);
+      o.push(logoMarkup(c.slug, cx, c.y + MS.logoY, MS.logo, c.hue, c.mono, X));
       o.push(`<text x="${cx}" y="${c.y + MS.nameY}" font-size="${MS.nameSize}" font-weight="700" text-anchor="middle" fill="${C.medtx}" font-family="Archivo, sans-serif">${esc(c.name)}</text>`);
       wrapText(c.claim || '', MS.claimChars, 4).forEach((ln, j) => {
         o.push(`<text x="${cx}" y="${c.y + MS.claimY + j * MS.claimStep}" font-size="${MS.claimSize}" text-anchor="middle" fill="${C.medsub}" font-family="Archivo, sans-serif">${esc(ln)}</text>`);
@@ -315,6 +317,67 @@
     if (!X) o.push(`<g class="links" aria-hidden="true"></g>`);
     o.push(`</g>`);
     return o.join('');
+  }
+
+  // ------------------------------------------------------ the layer roster
+  // A district draws a slice of its layer; this is where the rest lives. Drawn
+  // and undrawn companies are listed together, because to a reader they are all
+  // just "the companies in this layer" — which of them happened to get a tile is
+  // an artefact of the chart, not a fact about the industry.
+  let rosterLayer = null;
+  const rosterEl = () => document.getElementById('roster');
+
+  function rosterRows(d) {
+    const drawn = L.chips.filter(c => c.district === d.id)
+      .map(c => ({ name: c.name, slug: c.slug, mono: c.mono, exited: c.exited, on: true }));
+    const rest = (d.overflow || [])
+      .map(c => ({ name: c.name, slug: c.slug, mono: c.mono, exited: c.exited, on: false }));
+    return drawn.concat(rest).sort((a, b) => a.name.localeCompare(b.name));
+  }
+
+  function paintRoster(q) {
+    const d = rosterLayer;
+    if (!d) return;
+    const rows = rosterRows(d);
+    const needle = (q || '').trim().toLowerCase();
+    const hits = needle ? rows.filter(r => r.name.toLowerCase().includes(needle)) : rows;
+    document.getElementById('roster-state').textContent =
+      needle ? `${hits.length} of ${rows.length} match` : `${rows.length} organisations`;
+    document.getElementById('roster-list').innerHTML = hits.map(r =>
+      `<li><button data-go="${esc(r.slug)}">
+        <span class="mono-tile" style="--tile:oklch(var(--tile-l) var(--tile-c) ${d.hue})">${esc(r.mono)}</span>
+        <span>${esc(r.name)}${r.exited ? ' <s class="caption">exited</s>' : ''}</span>
+        ${r.on ? '<span class="rk">on chart</span>' : ''}
+      </button></li>`).join('') ||
+      '<li><p class="caption" style="padding:8px 4px">No match in this layer.</p></li>';
+    document.getElementById('roster-list').querySelectorAll('button[data-go]').forEach(b =>
+      b.addEventListener('click', () => { closeRoster(); select(b.dataset.go, true); }));
+  }
+
+  function openRoster(id) {
+    const d = L.districts.find(x => x.id === id);
+    if (!d) return;
+    rosterLayer = d;
+    document.getElementById('roster-title').textContent =
+      `${d.layer.replace('Governance: ', '')} · ${d.shown} of ${d.count} on the chart`;
+    const q = document.getElementById('roster-q');
+    q.value = '';
+    paintRoster('');
+    rosterEl().hidden = false;
+    q.focus();
+  }
+  function closeRoster() {
+    rosterEl().hidden = true;
+    rosterLayer = null;
+  }
+
+  function bindRoster() {
+    if (!rosterEl()) return;
+    document.getElementById('roster-close').addEventListener('click', closeRoster);
+    document.getElementById('roster-q').addEventListener('input', e => paintRoster(e.target.value));
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && !rosterEl().hidden) { closeRoster(); viewport.focus(); }
+    });
   }
 
   // ------------------------------------------------------------ camera
@@ -433,8 +496,10 @@
       if (pts.size < 2) pinch0 = null;
       if (tap) {
         const t = downOn && downOn.closest ? downOn : document.elementFromPoint(e.clientX, e.clientY);
+        const ex = t && t.closest ? t.closest('[data-expand]') : null;
         const g = t && t.closest ? t.closest('[data-chip]') : null;
-        if (g) select(g.dataset.slug, true);
+        if (ex) openRoster(ex.dataset.expand);
+        else if (g) select(g.dataset.slug, true);
         else clearSel();
       }
       downOn = null;
@@ -458,6 +523,9 @@
     if (el === hotEl) return;
     if (hotEl) hotEl.classList.remove('hot');
     hotEl = el || null;
+    // The rooms only lean while one of them is lit; without this every district
+    // would carry a transform at rest and the plate would never sit flat.
+    svg.classList.toggle('hot-on', !!hotEl);
     if (!hotEl) return;
     hotEl.classList.add('hot');
     // Districts share their borders, so a highlighted edge would be half-covered
@@ -670,8 +738,11 @@
     const fl = document.getElementById('f-layers');
     fl.innerHTML = '<span class="rail-label">Layer</span>' + L.districts.map(d => {
       const key = SHORT[d.layer];
+      // The count is already in the district header and the legend; carrying it on
+      // the filter too means you can see how big a layer is before you commit to
+      // looking at it.
       return `<button class="chip" data-flayer="${key}" aria-pressed="false">
-        <span class="dot" style="background:oklch(var(--layer-l) var(--layer-c) ${d.hue})"></span>${esc(d.layer.replace('Governance: ', ''))}</button>`;
+        <span class="dot" style="background:oklch(var(--layer-l) var(--layer-c) ${d.hue})"></span>${esc(d.layer.replace('Governance: ', ''))} <span class="n">${d.count}</span></button>`;
     }).join('') + `<button class="chip" data-flayer="middleware" aria-pressed="false">
         <span class="dot" style="background:oklch(var(--layer-l) var(--layer-c) 105)"></span>Middleware &amp; Tooling</button>`;
     const regions = [...new Set(slim.map(c => c.r).filter(Boolean))];
@@ -991,7 +1062,7 @@
 
     sweepLogos();
     scheduleBackfill();
-    buildRail(); readURL(); bindCamera(); bindKeys(); bindExport(); bindFullscreen();
+    buildRail(); readURL(); bindCamera(); bindKeys(); bindExport(); bindFullscreen(); bindRoster();
     chooseMode();
     applyFilters();
     matchMedia('(max-width: 859px)').addEventListener('change', chooseMode);

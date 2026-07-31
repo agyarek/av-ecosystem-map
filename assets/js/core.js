@@ -184,11 +184,11 @@
   const CORRECTION = 'mailto:agyarek+avecosystemmap@gmail.com?subject=AV%20map%20correction';
   const NAV = [
     ['map', 'map/', 'Map'],
-    ['companies', 'companies/', 'Companies'],
+    ['companies', 'companies/', 'Directory'],
     ['operators', 'operators/', 'Passenger Autonomy'],
     ['partnerships', 'partnerships/', 'Partnerships'],
     ['funding', 'funding/', 'Funding'],
-    ['regulation', 'regulation/', 'Rules'],
+    ['regulation', 'regulation/', 'Regulatory'],
     ['beyond-roads', 'beyond-roads/', 'Beyond Roads'],
   ];
 

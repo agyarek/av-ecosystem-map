@@ -1,4 +1,4 @@
-/* loop.js :: the home circuit, the waterline, and live counts.
+/* loop.js :: the home circuit and its live counts.
    Motion earns its place here and nowhere else; reduced-motion renders the
    same information with none of the travel. */
 (function () {
@@ -11,46 +11,7 @@
       const n = d.stations[el.dataset.count];
       if (n) el.textContent = `${n} orgs`;
     });
-    buildWaterline(d);
-  }).catch(() => { buildWaterline(null); });
-
-  // ---------------------------------------------------------- waterline
-  const HUES = window.AV.HUES;
-  const ORDER = [
-    'Demand & Commercial Platforms', 'AV Driver / Autonomy Software',
-    'Sensing & Compute Hardware', 'Data, Maps & Simulation',
-    'AV Middleware & Tooling', 'Connectivity & Infrastructure',
-    'Vehicle Platform & Manufacturing', 'Fleet Operations & Depot',
-    'Capital, Insurance & Risk', 'Governance: Regulators & Government',
-    'Governance: Standards, Safety & Advocacy'
-  ];
-  function buildWaterline(d) {
-    const stack = document.getElementById('wl-stack');
-    if (!stack) return;
-    const counts = d ? d.layers : {};
-    const max = Math.max(...ORDER.map(l => counts[l] || 1), 1);
-    stack.innerHTML = ORDER.map((l, i) => {
-      const n = counts[l] || 0;
-      return `<div class="wl-band" role="listitem" style="--d:${i * 70}ms">
-        <span class="nm">${esc(l.replace('Governance: ', ''))}</span>
-        <span class="bar-track">
-          <span class="bar" style="width:${Math.max(4, (n / max) * 100)}%;background:oklch(var(--layer-l) var(--layer-c) ${HUES[l] ?? 220})"></span>
-          <span class="ct">${n || ''}</span>
-        </span>
-      </div>`;
-    }).join('');
-    if (reducedMotion() || !('IntersectionObserver' in window)) {
-      stack.classList.add('revealed');
-      return;
-    }
-    const io = new IntersectionObserver(entries => {
-      if (entries.some(e => e.isIntersecting)) {
-        stack.classList.add('revealed');
-        io.disconnect();
-      }
-    }, { threshold: 0.25 });
-    io.observe(stack);
-  }
+  }).catch(() => { /* the markup ships with counts already in it */ });
 
   // ---------------------------------------------------------- the circuit
   const path = document.getElementById('track-path');

@@ -10,7 +10,7 @@ Compiled and maintained by Kofi Agyare-Kwabi, ex-Uber Country Manager, GTM & Par
 
 | Route | What it is |
 |---|---|
-| `/` | The loop: how a driverless ride works, and the waterline beneath it |
+| `/` | The loop: how a driverless ride works, and the industry underneath it |
 | `/map/` | The wall chart: all 561 on one plate with an octagonal centre; zoom, filter, full screen, export, print |
 | `/companies/` | The ledger: every field, sortable, filterable, URL-shareable, CSV/JSON export |
 | `/operators/` + 10 pages | The ten operators a passenger can actually meet, in depth |

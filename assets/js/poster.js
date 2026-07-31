@@ -695,7 +695,7 @@
       ${sources.length ? `<div class="cc-src"><span class="pk">SOURCES</span>${sources.map(s =>
         `<div><a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${esc(s.title)}</a>${s.date ? ` <span class="caption">${esc(s.date)}</span>` : ''}</div>`).join('')}</div>` : ''}
       <div class="cc-actions">
-        ${op ? `<a class="btn" href="${ROOT}operators/${esc(slug)}/">OPERATOR PAGE</a>` : ''}
+        ${op ? `<a class="btn" href="${ROOT}companies/${esc(slug)}/">OPERATOR PAGE</a>` : ''}
         <a class="btn" href="${ROOT}companies/?open=${encodeURIComponent(slug)}">${op ? 'LEDGER ROW' : 'OPEN IN THE LEDGER'}</a>
       </div>`;
     card.hidden = false;

@@ -258,3 +258,34 @@ tr.detail > td { padding: 0; border-bottom: 1px solid var(--ink); background: va
 .scroll-nav, .sheet-toggle { transition: opacity 160ms ease, visibility 160ms; }
 body.lg-controls-off .scroll-nav,
 body.lg-controls-off .sheet-toggle { opacity: 0; visibility: hidden; pointer-events: none; }
+
+/* ------------------------------------------------ passenger-autonomy strip */
+/* One compact row above the table: the drivers a passenger can meet, each
+   linking to its page under this directory. Deliberately shallow, so the full
+   table is still on screen when the page loads. */
+.pa-strip { margin: 4px 0 18px; }
+.pa-head { display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap; }
+.pa-title {
+  font-size: var(--fs-sm); font-weight: 700; letter-spacing: .02em;
+  text-transform: uppercase; font-family: var(--font-mono); color: var(--ink-2);
+}
+.pa-more { font-size: var(--fs-xs); font-family: var(--font-mono); white-space: nowrap; }
+.pa-row {
+  display: flex; gap: 8px; margin-top: 10px;
+  overflow-x: auto; scrollbar-width: thin; padding-bottom: 4px;
+}
+.pa-card {
+  flex: 0 0 auto; display: flex; align-items: center; gap: 9px;
+  padding: 8px 12px 8px 8px; text-decoration: none;
+  background: var(--paper-2); border: 1px solid var(--rule);
+  border-radius: var(--r-card); max-width: 250px;
+  transition: border-color 120ms, background 120ms;
+}
+.pa-card:hover { border-color: var(--cyan); }
+.pa-logo { width: 34px; height: 34px; font-size: 13px; border-radius: 9px; flex: none; }
+.pa-name { font-weight: 700; font-size: var(--fs-sm); white-space: nowrap; }
+.pa-tag {
+  font-size: var(--fs-micro); color: var(--muted); line-height: 1.25;
+  max-width: 130px; display: none;
+}
+@media (min-width: 900px) { .pa-tag { display: block; } }

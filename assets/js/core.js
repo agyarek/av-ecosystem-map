@@ -283,16 +283,16 @@
   // safety/ reachable from anywhere.
   const CHAPTERS = [
     ['Map', [['map', 'map/', 'The wall chart']]],
-    ['Directory', [['companies', 'companies/', 'Every organisation, every field']]],
+    ['Directory', [['companies', 'companies/', 'Every organisation, every field'],
+                   ['operators', 'companies/passenger-autonomy/', 'Passenger autonomy'],
+                   ['partnerships', 'partnerships/', 'Who works with whom']]],
     ['Economics', [['economics', 'economics/', 'Funding: who raised what'],
                    ['economics-unit', 'economics/#unit-economics', 'Unit economics'],
                    ['economics-compare', 'economics/#comparing-the-operators', 'Comparing the operators']]],
     ['Regulatory', [['regulation', 'regulation/', 'Who decides'],
                     ['safety', 'safety/', 'Incidents and recalls']]],
-    ['The Field', [['operators', 'operators/', 'Passenger autonomy'],
-                   ['partnerships', 'partnerships/', 'Who works with whom'],
-                   ['beyond-roads', 'beyond-roads/', 'Autonomy off the road'],
-                   ['owning-one', 'owning-one/', 'Buying one yourself']]],
+    ['Overview', [['beyond-roads', 'beyond-roads/', 'Autonomy off the road'],
+                  ['owning-one', 'owning-one/', 'Buying one yourself']]],
   ];
   const pad2 = n => String(n).padStart(2, '0');
 

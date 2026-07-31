@@ -374,10 +374,9 @@ table.data tr:hover > td { background: color-mix(in oklab, var(--cyan) 5%, trans
 
 /* --------------------------------------------------- sections, floating */
 .secnav {
-  /* Parked bottom-right by default, where it sits clear of a centred column;
-     it only moves into the left margin when the window is genuinely wide enough
-     to have one to spare. */
-  position: fixed; z-index: 60; right: 16px; bottom: 16px;
+  /* Parked bottom-left at every width — the reading eye starts on the left, so
+     that is where the index lives. */
+  position: fixed; z-index: 60; left: 16px; bottom: 16px;
   max-width: min(260px, calc(100vw - 32px));
   background: color-mix(in oklab, var(--paper-2) 92%, transparent);
   backdrop-filter: blur(8px);
@@ -403,10 +402,8 @@ table.data tr:hover > td { background: color-mix(in oklab, var(--cyan) 5%, trans
 .sn-n { font-family: var(--font-mono); font-size: 10.5px; flex: none; }
 .sn-body a[aria-current] .sn-n { color: var(--yellow); }
 
-/* Below this the centred column plus two clear margins does not fit, so the
-   panel would sit on top of the text it indexes. */
 @media (min-width: 1800px) {
-  .secnav { left: 24px; right: auto; bottom: 24px; }
+  .secnav { left: 24px; bottom: 24px; }
 }
 @media (max-width: 720px) {
   /* full width along the bottom edge, so it never covers the column it indexes */
@@ -454,10 +451,15 @@ a.li svg, .d-site a svg, .cc-site a svg { vertical-align: -2px; margin-right: 4p
    economics/, safety/ and owning-one/ became reachable from anywhere. */
 nav.primary .np { position: relative; display: inline-flex; align-items: center; }
 nav.primary .np.is-here > a { color: var(--ink); box-shadow: inset 0 -2px 0 var(--yellow); }
-nav.primary .np-more {
-  padding: 7px 5px; font-size: 11px; color: var(--muted); line-height: 1;
-}
-nav.primary .np-more:hover, nav.primary .np.open .np-more { color: var(--ink); }
+nav.primary .np-more { padding: 7px 6px; color: var(--muted); line-height: 1; }
+nav.primary .np-more svg { display: block; transition: transform 160ms ease; }
+nav.primary .np.open .np-more svg { transform: rotate(180deg); }
+/* Resting on the chapter is what opens its menu, so the whole item — name and
+   caret together — answers the hover in the accent colour. */
+nav.primary .np:hover > a,
+nav.primary .np.open > a { color: var(--cyan); background: var(--paper-2); }
+nav.primary .np:hover .np-more,
+nav.primary .np.open .np-more { color: var(--cyan); }
 /* The nav strip scrolls horizontally, and a container that clips one axis clips
    both — an absolutely-positioned menu inside it can never be seen. So the menu
    is fixed to the viewport instead, and core.js places it under its button. */

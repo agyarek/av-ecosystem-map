@@ -311,19 +311,33 @@
     '<a href="mailto:agyarek+avecosystemmap@gmail.com?subject=Trademark%20request">' +
     'agyarek+avecosystemmap@gmail.com</a>.';
 
+  // Menus for the single-page chapters, so every item in the bar carries the
+  // same caret and opens something useful. Kept out of CHAPTERS so the foot
+  // navigator's page lists stay page lists.
+  const SOLO_MENUS = {
+    map: [['map/', 'The whole chart'],
+          ['map/#passenger', 'Passenger autonomy at the centre']],
+    media: [['media/#pubs-sec', 'Publications and newsletters'],
+            ['media/#pods-sec', 'Podcasts'],
+            ['media/#events-sec', 'Events and conferences']],
+  };
+  const CARET = '<svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.4 6 8 10.6 12.6 6"/></svg>';
+
   const headerHTML = current => `<div class="bar">
     <a class="wordmark" href="${ROOT || './'}"><span class="dash" aria-hidden="true"></span>AV&nbsp;ECOSYSTEM&nbsp;MAP</a>
     <nav class="primary" aria-label="Primary">
-      ${CHAPTERS.map(([name, pages], i) => {
+      ${CHAPTERS.map(([name, pages]) => {
         const here = pages.some(([key]) => key === current);
-        const solo = pages.length === 1;
+        const items = pages.length > 1
+          ? pages.map(([key, href, label]) => [href, label, key === current])
+          : (SOLO_MENUS[pages[0][0]] || [[pages[0][1], pages[0][2]]]).map(([href, label]) => [href, label, false]);
         return `<span class="np${here ? ' is-here' : ''}">
           <a data-nav="${pages[0][0]}" href="${ROOT}${pages[0][1]}"${here ? ' aria-current="page"' : ''}>${esc(name)}</a>
-          ${solo ? '' : `<button class="np-more" aria-expanded="false" aria-label="Show the pages in ${esc(name)}"><span aria-hidden="true">▾</span></button>
+          <button class="np-more" aria-expanded="false" aria-label="Show the pages in ${esc(name)}">${CARET}</button>
           <ul class="np-sub">
-            ${pages.map(([key, href, label]) =>
-              `<li><a href="${ROOT}${href}"${key === current ? ' aria-current="page"' : ''}>${esc(label)}</a></li>`).join('')}
-          </ul>`}
+            ${items.map(([href, label, cur]) =>
+              `<li><a href="${ROOT}${href}"${cur ? ' aria-current="page"' : ''}>${esc(label)}</a></li>`).join('')}
+          </ul>
         </span>`;
       }).join('')}
     </nav>
@@ -349,28 +363,41 @@
   </div>`;
   };
 
-  // The chapter menus in the bar. A real button with aria-expanded rather than a
-  // hover rule, so they open by tap and by keyboard as well as by pointer.
+  // The chapter menus in the bar. A real button with aria-expanded for tap and
+  // keyboard, plus hover-open on pointer devices: resting the cursor on the
+  // chapter's name is enough, and the caret and name light cyan together.
   function bindNavMenus(root) {
-    const shut = except => root.querySelectorAll('.np-more[aria-expanded="true"]').forEach(b => {
-      if (b !== except) { b.setAttribute('aria-expanded', 'false'); b.closest('.np').classList.remove('open'); }
+    const shut = except => root.querySelectorAll('.np.open').forEach(np => {
+      if (np === except) return;
+      np.classList.remove('open');
+      np.querySelector('.np-more').setAttribute('aria-expanded', 'false');
     });
-    root.querySelectorAll('.np-more').forEach(btn => {
+    const show = np => {
+      shut(np);
+      np.classList.add('open');
+      np.querySelector('.np-more').setAttribute('aria-expanded', 'true');
+      // The menu is viewport-fixed so the scrolling nav strip cannot clip it;
+      // place it under its chapter and keep it on screen.
+      const sub = np.querySelector('.np-sub');
+      const r = np.getBoundingClientRect();
+      sub.style.top = `${r.bottom + 4}px`;
+      sub.style.left = `${Math.max(8, Math.min(r.left, innerWidth - sub.offsetWidth - 8))}px`;
+    };
+    const hoverable = matchMedia('(hover: hover) and (pointer: fine)').matches;
+    root.querySelectorAll('.np').forEach(np => {
+      const btn = np.querySelector('.np-more');
       btn.addEventListener('click', e => {
         e.preventDefault();
-        const open = btn.getAttribute('aria-expanded') !== 'true';
-        shut(btn);
-        btn.setAttribute('aria-expanded', open);
-        const np = btn.closest('.np');
-        np.classList.toggle('open', open);
-        if (open) {
-          // The menu is viewport-fixed so the scrolling nav strip cannot clip
-          // it; place it under its chapter and keep it on screen.
-          const sub = np.querySelector('.np-sub');
-          const r = np.getBoundingClientRect();
-          sub.style.top = `${r.bottom + 4}px`;
-          sub.style.left = `${Math.max(8, Math.min(r.left, innerWidth - sub.offsetWidth - 8))}px`;
-        }
+        np.classList.contains('open') ? shut(null) : show(np);
+      });
+      if (!hoverable) return;
+      // The menu is fixed a few pixels below the item, so leaving must forgive
+      // the gap: a short grace timer, cancelled the moment the pointer arrives
+      // in the menu (a DOM child of .np, so mouseenter re-fires here).
+      let grace = 0;
+      np.addEventListener('mouseenter', () => { clearTimeout(grace); show(np); });
+      np.addEventListener('mouseleave', () => {
+        grace = setTimeout(() => { if (np.classList.contains('open')) shut(null); }, 220);
       });
     });
     document.addEventListener('click', e => { if (!e.target.closest('.np')) shut(null); });
@@ -380,7 +407,7 @@
     if (strip) strip.addEventListener('scroll', () => shut(null), { passive: true });
     document.addEventListener('keydown', e => {
       if (e.key !== 'Escape') return;
-      const open = root.querySelector('.np-more[aria-expanded="true"]');
+      const open = root.querySelector('.np.open .np-more');
       if (open) { shut(null); open.focus(); }
     });
   }

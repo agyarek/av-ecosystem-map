@@ -14,7 +14,7 @@
       if (!sources.length) {
         srcSlot.innerHTML = '<p class="caption">Claims on this page are drawn from the record in '
           + `<a href="${ROOT}companies/?open=${esc(srcSlot.dataset.sources)}">the ledger</a>, `
-          + 'which carries no filed sources yet. Corrections reach a human via the footer.</p>';
+          + 'which carries no filed sources yet. If you can point me at one, my email is in the footer.</p>';
         return;
       }
       srcSlot.innerHTML = '<ul class="src-list">' + sources.map(s =>
@@ -35,7 +35,7 @@
     slots.forEach(slot => {
       const rec = pidx.bySlug[slot.dataset.partners];
       if (!rec || !rec.partners.length) {
-        slot.innerHTML = '<p class="caption">No partnerships mapped yet for this record. Corrections reach a human via the footer.</p>';
+        slot.innerHTML = '<p class="caption">No partnerships mapped yet for this record. If you know of one, my email is in the footer.</p>';
         return;
       }
       const grouped = {};

@@ -285,7 +285,7 @@
           `<li><span class="pk">${esc(pp.k.toUpperCase())}</span>${pp.slug
             ? `<a href="../companies/?open=${encodeURIComponent(pp.slug)}">${esc(pp.partner)}</a>`
             : esc(pp.partner)}${pp.n ? `<div class="caption">${esc(pp.n)}</div>` : ''}</li>`).join('') + '</ul>'
-          : '<p class="caption">None mapped yet. If you know one, the button below reaches a human.</p>'}
+          : '<p class="caption">None mapped yet. If you know one, the button below emails me directly.</p>'}
       </div>
       <div class="d-actions">
         <a class="btn" href="../map/#${esc(c.slug)}">SHOW ON THE WALL CHART</a>

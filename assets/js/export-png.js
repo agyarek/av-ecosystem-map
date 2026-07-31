@@ -5,7 +5,7 @@
    exactly the case where the download silently fails. Hand-drawing costs a
    measuring pass and buys a file that always saves.
 
-   Every export carries the site and the compiler, because these tables travel
+   Every export carries the site and the byline, because these tables travel
    without their page. */
 (function () {
   'use strict';

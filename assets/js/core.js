@@ -292,12 +292,12 @@
 
   const footerHTML = el => {
     const opener = el.dataset.cta === 'chart'
-      ? 'A company that should be on this chart, a partnership not yet mapped, a detail that is wrong?'
-      : 'A company that should be listed, a partnership not yet mapped, a detail that is wrong?';
+      ? 'A company that should be on this chart, a partnership I have not mapped, a detail that is wrong?'
+      : 'A company that should be listed, a partnership I have not mapped, a detail that is wrong?';
     return `<div class="container">
     <p class="cta">${opener}
-      <a href="${CORRECTION}">Send a correction</a>:
-      this map gets better through exactly those conversations.</p>
+      <a href="${CORRECTION}">Tell me</a> — it comes to me directly, and it is
+      how this map gets better.</p>
     <p class="fine">Autonomous Vehicle Ecosystem Map · compiled by <a href="${ROOT}method/">Kofi Agyare-Kwabi</a> from public filings, permits and announcements · updated ${UPDATED}</p>
     ${el.hasAttribute('data-trademark') ? `<p class="fine">${TRADEMARK}</p>` : ''}
   </div>`;

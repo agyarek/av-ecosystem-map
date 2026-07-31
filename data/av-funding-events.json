@@ -5,20 +5,20 @@
   "windowEnd": "2026-07-21",
   "thresholdUSDm": 50,
   "compiled": "2026-07-29",
-  "method": "Superset of av-funding-timeline.json. Every event verified via web search; every URL appeared in actual search results, primary source or major outlet preferred. Events at or above $200M between 2023-08-01 and 2026-07-21 are carried unchanged from the timeline file and reconcile to its 30 events and $41.8B total. Pure secondaries and stake sales are excluded by design.",
+  "method": "Superset of av-funding-timeline.json. I verified every event via web search; every URL appeared in actual search results, primary source or major outlet preferred. Events at or above $200M between 2023-08-01 and 2026-07-21 are carried unchanged from the timeline file and reconcile to its 30 events and $41.8B total. Pure secondaries and stake sales are excluded by design.",
   "coverage": {
    "completeFrom": "2023-08-01",
    "completeAbove": 200,
    "partialNote": "At or above $200M from August 2023 the record is intended to be complete. Below that threshold, and before that date, coverage is partial: the events carried here are the ones this pass could verify, not the whole market. Read the shaded region of any chart as 'not yet catalogued', never as 'no capital raised'."
   },
   "knownGaps": [
-   "Aurora Innovation's reported ~$331M July 2025 follow-on is not yet verified against Aurora's investor-relations disclosures, so it is not included in the timeline totals.",
-   "Motional's reported ~$550M August 2025 round is carried by trade press and private-market data providers; no company announcement located, so it is not included in the timeline totals.",
-   "Hong Kong placements above $200M in lidar and AV chips during the first half of 2026 may not be fully swept; additions welcome.",
-   "2021 and 2022 are thinly covered. Only rounds this pass could tie to a primary source or major outlet are included, so quarterly totals before August 2023 understate the market by an unknown margin.",
-   "Wayve's ~$200M Series B of January 2022 is well reported but no announcement URL surfaced in this pass, so it is omitted rather than carried on secondary sourcing.",
+   "Aurora Innovation's reported ~$331M July 2025 follow-on is one I have not been able to verify against Aurora's investor-relations disclosures, so I leave it out of the timeline totals.",
+   "Motional's reported ~$550M August 2025 round is carried by trade press and private-market data providers; I could not find a company announcement, so I leave it out of the timeline totals.",
+   "Hong Kong placements above $200M in lidar and AV chips during the first half of 2026 may not be fully swept; tell me if you know of one.",
+   "2021 and 2022 are thinly covered. I include only rounds I could tie to a primary source or major outlet, so quarterly totals before August 2023 understate the market by an unknown margin.",
+   "Wayve's ~$200M Series B of January 2022 is well reported but no announcement URL surfaced for me, so I omit it rather than carry it on secondary sourcing.",
    "Starship Technologies' $90M Series C (January 2024) and $50M round (October 2025), Serve Robotics' $86M financing (December 2024), Pony.ai's $100M NEOM investment (October 2023) and Kodiak's reported $100M (May 2026) are all credible but rest on aggregator data only, so they are excluded.",
-   "Company-level funding totals in av-companies.json disagree with several aggregators — Kodiak is one clear case. Where the two conflict, the per-event record here is the auditable one."
+   "Company-level funding totals in av-companies.json disagree with several aggregators — Kodiak is one clear case. Where the two conflict, I treat the per-event record here as the auditable one."
   ]
  },
  "events": [

@@ -21,10 +21,10 @@
   const CONF = {
     disclosed: ['D', 'Stated by the company or in a filing'],
     reported: ['R', 'Carried by a major outlet, not company-confirmed'],
-    estimated: ['E', 'Derived or modelled on this site, not observed'],
+    estimated: ['E', 'Derived or modelled by me, not observed'],
     'not-disclosed': ['—', 'The company has never published this figure'],
     'parent-funded': ['P', 'Wholly owned; the figure does not exist separately'],
-    unverified: ['?', 'Figures circulate but none could be sourced in this pass'],
+    unverified: ['?', 'Figures circulate but I could not source any of them'],
     carried: ['C', 'Carried from the site dataset'],
   };
 
@@ -411,7 +411,7 @@
         subtitle: 'Unit economics, modelled · AV Ecosystem Map · compiled 29 July 2026',
         columns: cols.map(c => ({ label: c.meta.name })),
         rows,
-        note: 'Modelled, not reported. No operator publishes fully-loaded cost per mile; every assumption above is an estimate assembled on this site and is meant to be argued with.',
+        note: 'Modelled, not reported. No operator publishes fully-loaded cost per mile; every assumption above is an estimate I assembled, and it is meant to be argued with.',
         filename: 'av-economics-' + pick.join('-'),
       });
     });

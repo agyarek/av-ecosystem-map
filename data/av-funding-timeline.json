@@ -5,11 +5,11 @@
   "windowEnd": "2026-07-21",
   "thresholdUSDm": 200,
   "compiled": "2026-07-21",
-  "method": "Each event verified via web search; every URL appeared in actual search results (primary source or major outlet preferred). Sub-$200M events and pure secondaries/stake sales excluded.",
+  "method": "I verified each event via web search; every URL appeared in actual search results (primary source or major outlet preferred). I leave out sub-$200M events and pure secondaries or stake sales.",
   "knownGaps": [
-   "Aurora Innovation's reported ~$331M July 2025 follow-on is not yet verified against Aurora's investor-relations disclosures, so it is not included in the timeline totals.",
-   "Motional's reported ~$550M August 2025 round is carried by trade press and private-market data providers; no company announcement located, so it is not included in the timeline totals.",
-   "Hong Kong placements above $200M in lidar and AV chips during the first half of 2026 may not be fully swept; additions welcome."
+   "Aurora Innovation's reported ~$331M July 2025 follow-on is one I have not been able to verify against Aurora's investor-relations disclosures, so I leave it out of the timeline totals.",
+   "Motional's reported ~$550M August 2025 round is carried by trade press and private-market data providers; I could not find a company announcement, so I leave it out of the timeline totals.",
+   "Hong Kong placements above $200M in lidar and AV chips during the first half of 2026 may not be fully swept; tell me if you know of one."
   ]
  },
  "events": [

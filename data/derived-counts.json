@@ -1,6 +1,7 @@
 {
  "meta": {
   "generatedBy": "tools/build-indexes.py",
+  "generatedAt": "2026-07-31",
   "companyCount": 562,
   "medallion": [
    "Baidu Apollo Go",

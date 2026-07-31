@@ -87,6 +87,9 @@ def stage_count(layers):
 
 derived = {
     "meta": {"generatedBy": "tools/build-indexes.py",
+             # the one date the footers trust: stamped when the data was last
+             # rebuilt, so "updated ..." can never drift from the data again
+             "generatedAt": __import__("datetime").date.today().isoformat(),
              "companyCount": len(companies), "medallion": sorted(MEDALLION)},
     "layers": dict(layer_counts.most_common()),
     "regions": dict(region_counts.most_common()),

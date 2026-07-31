@@ -53,20 +53,44 @@
    directions, with the column headers pinned to its top edge for as long as
    there are rows beneath them. Below the mobile breakpoint the header is hidden
    and the rows are cards, so the box goes back to growing with the page. */
+/* positioned at every width, so the jump buttons anchor to it */
+.lg-pane { position: relative; }
 @media (min-width: 681px) {
+  /* The pane sits in normal flow — deliberately not sticky. The old sticky pane
+     kept riding down the page after the reader scrolled past it, which is
+     exactly how the table ended up painted over the chapter block. In flow, the
+     wheel scrolls the table while the pointer is over it, chains to the page at
+     either end (no overscroll containment), and the page carries the table away
+     like any other block. */
   #lg-scroll {
-    overflow: auto; overscroll-behavior-y: contain;
+    overflow: auto;
     /* dvh, so the pane does not resize under the row you are reading every time
        a phone's address bar slides away. The floor keeps it usable on a phone
        held sideways, where there is very little height to divide up. */
     max-height: max(260px, calc(100vh - var(--stick-top, 56px) - 16px));
     max-height: max(260px, calc(100dvh - var(--stick-top, 56px) - 16px));
-    /* The pane is a viewport tall, so it pins under the chrome once the page has
-       scrolled the introduction away: the page scroll gets you to the table, and
-       from there the table scrolls itself, always fully on screen. */
-    position: sticky; top: var(--stick-top, 56px);
   }
+  /* The buried-columns hint that was promised and never shipped: a right-edge
+     fade saying there is more table to the right, gone once you get there. */
+  .lg-pane::after {
+    content: ""; position: absolute; top: 0; bottom: 0; right: 0; width: 64px;
+    pointer-events: none; border-radius: 0 var(--r-card) var(--r-card) 0;
+    background: linear-gradient(to right, transparent,
+      color-mix(in oklab, var(--paper) 88%, transparent) 55%, var(--paper));
+    opacity: 1; transition: opacity 200ms;
+  }
+  .lg-pane.x-end::after { opacity: 0; }
+  /* The company column holds while the rest of the table pans, so a row never
+     loses its name. Solid backgrounds, because the other columns slide beneath. */
+  #lg-table td.c-name, #lg-table thead th.c-name {
+    position: sticky; left: 0; background: var(--paper); z-index: 3;
+    box-shadow: inset -1px 0 var(--rule);
+  }
+  #lg-table thead th.c-name { z-index: 7; box-shadow: inset -1px 0 var(--rule), inset 0 -1px var(--rule); }
+  #lg-table tbody tr:hover td.c-name { background: color-mix(in oklab, var(--cyan) 5%, var(--paper)); }
 }
+#lg-stats { margin-top: 10px; }
+#lg-stats .num { font-weight: 700; color: var(--ink); }
 #lg-table thead th {
   position: sticky; top: 0; background: var(--paper); z-index: 5;
   /* the cell's own border scrolls away with the table; this rule does not */
@@ -216,8 +240,10 @@ tr.detail > td { padding: 0; border-bottom: 1px solid var(--ink); background: va
 #lg-table tr.row[aria-expanded="true"] .spoken-tag { display: none; }
 
 /* ------------------------------------------------------------- scroll nav */
+/* Anchored inside the pane, not fixed to the window: the buttons ride the
+   table's own corner and physically cannot float over the chapters below. */
 .scroll-nav {
-  position: fixed; right: 14px; bottom: 14px; z-index: 125;
+  position: absolute; right: 14px; bottom: 14px; z-index: 8;
   display: flex; flex-direction: column; gap: 8px; align-items: flex-end;
 }
 /* Inverted, like .btn.primary: a paper-coloured pill on the page's own dark
@@ -256,8 +282,9 @@ tr.detail > td { padding: 0; border-bottom: 1px solid var(--ink); background: va
 /* The floating table controls stand down once the table itself is off screen,
    so they stop covering whatever is below it — the chapter list, in particular. */
 .scroll-nav, .sheet-toggle { transition: opacity 160ms ease, visibility 160ms; }
-body.lg-controls-off .scroll-nav,
-body.lg-controls-off .sheet-toggle { opacity: 0; visibility: hidden; pointer-events: none; }
+/* The mobile filters button steps aside while the chapter block is on screen,
+   so it never covers the links at the foot of the page. */
+body.at-chapters .sheet-toggle { opacity: 0; visibility: hidden; pointer-events: none; }
 
 /* ------------------------------------------------ passenger-autonomy strip */
 /* One compact row above the table: the drivers a passenger can meet, each

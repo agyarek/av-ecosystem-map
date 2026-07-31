@@ -108,6 +108,7 @@
     <p id="lg-state" class="caption" aria-live="polite"></p>
   </div>
 
+  <div class="lg-pane" id="lg-pane">
   <div class="table-scroll" id="lg-scroll">
     <table class="data" id="lg-table">
       <thead id="lg-head"></thead>
@@ -115,7 +116,6 @@
     </table>
     <div id="lg-empty" class="lg-empty" hidden></div>
   </div>
-  <button class="btn sheet-toggle" id="sheet-toggle" aria-expanded="false">FILTERS</button>
   <div class="scroll-nav" id="lg-scroll-nav">
     <button type="button" id="lg-top" title="Go to the top of the table">
       <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 10.5 8 6l4.5 4.5"/></svg>
@@ -126,6 +126,9 @@
       <span>BOTTOM OF PAGE</span>
     </button>
   </div>
+  </div>
+  <p class="caption" id="lg-stats" aria-hidden="false"></p>
+  <button class="btn sheet-toggle" id="sheet-toggle" aria-expanded="false">FILTERS</button>
 </main>
 
 <footer class="site"></footer>

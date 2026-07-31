@@ -522,7 +522,6 @@
       if (passes > 0) requestAnimationFrame(() => restore(passes - 1));
     };
     const relayout = () => {
-      placeNav();
       restore(3);
       clearTimeout(settle);
       settle = setTimeout(() => restore(3), 260);
@@ -551,36 +550,27 @@
         });
       }
     };
-    // The buttons belong to the table, so they ride its bottom-right corner
-    // rather than the window's: on a wide screen the table stops short of the
-    // window edge, and where it scrolls in its own pane its bottom edge is not
-    // the bottom of the screen either.
-    const nav = $('lg-scroll-nav');
-    const placeNav = () => {
-      if (!paneScrolls()) { nav.style.right = nav.style.bottom = ''; return; }
-      const r = scroller.getBoundingClientRect();
-      nav.style.right = Math.max(14, innerWidth - r.right + 16) + 'px';
-      nav.style.bottom = Math.max(14, innerHeight - r.bottom + 16) + 'px';
-    };
-    placeNav();
-    addEventListener('scroll', placeNav, { passive: true });
-    addEventListener('resize', placeNav);
-
-    // These controls belong to the table, but they are position:fixed, so they
-    // stayed pinned to the corner of the window for the whole page — including
-    // over the chapter list at the foot of it. placeNav only moves them onto the
-    // table's own corner while the pane scrolls internally; on a phone, and on a
-    // desktop whenever a filter trims the rows, it does not, and they fell back
-    // to the window corner and sat on top of the chapters.
-    //
-    // So they retire when the table is not on screen. Nothing to jump within, and
-    // nothing of theirs to cover.
+    // The jump buttons are position:absolute inside .lg-pane now, so they ride
+    // the table's own corner by construction and no placement code is needed.
+    // The mobile filters button is still fixed for reachability, so it hides
+    // itself while the chapter block is on screen instead of covering it.
     if ('IntersectionObserver' in window) {
-      const io = new IntersectionObserver(([e]) => {
-        document.body.classList.toggle('lg-controls-off', !e.isIntersecting);
-      }, { rootMargin: '-70px 0px -80px 0px' });
-      io.observe(scroller);
+      const chap = document.querySelector('.chapters-wrap');
+      if (chap) new IntersectionObserver(([e]) => {
+        document.body.classList.toggle('at-chapters', e.isIntersecting);
+      }).observe(chap);
     }
+
+    // The right-edge fade says there are more columns to the right; it stands
+    // down once the reader has panned all the way over (or nothing overflows).
+    const pane = $('lg-pane');
+    const hintEdge = () => pane.classList.toggle('x-end',
+      scroller.scrollLeft >= scroller.scrollWidth - scroller.clientWidth - 2);
+    scroller.addEventListener('scroll', hintEdge, { passive: true });
+    addEventListener('resize', hintEdge);
+    // rows render after this binds, so watch the table's size, not just events
+    if (window.ResizeObserver) new ResizeObserver(hintEdge).observe($('lg-table'));
+    hintEdge();
 
     $('lg-top').addEventListener('click', () => jump(false));
     $('lg-bottom').addEventListener('click', () => jump(true));
@@ -646,6 +636,22 @@
         if (tr) { openDetail(tr, slug, true); syncURL(); }
       }
     };
+
+    // The stats strip under the table: the dataset's own headline figures,
+    // computed from the rows actually loaded so it can never disagree with them.
+    const statsEl = $('lg-stats');
+    if (statsEl) {
+      const countries = new Set(rows.map(c => c.hqCountry || c.country).filter(Boolean));
+      const funded = rows.filter(c => c.fundingUSD > 0);
+      const fundedTotal = funded.reduce((n, c) => n + c.fundingUSD, 0);
+      const spoken = rows.filter(c => c.spokenTo).length;
+      statsEl.innerHTML =
+        `<span class="num">${rows.length}</span> organisations · ` +
+        `<span class="num">${countries.size}</span> countries · ` +
+        `<span class="num">${funded.length}</span> with disclosed funding, ` +
+        `<span class="num">$${(fundedTotal / 1000).toFixed(1)}B</span> between them · ` +
+        `<span class="num">${spoken}</span> spoken with directly`;
+    }
   }
   boot().catch(err => {
     $('lg-body').innerHTML = `<tr><td colspan="10" class="caption" style="padding:24px">The ledger data failed to load (${esc(err.message)}). Reload, or download the <a href="${ROOT}data/av-companies.csv">raw CSV</a>.</td></tr>`;

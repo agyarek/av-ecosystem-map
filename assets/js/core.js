@@ -358,7 +358,7 @@
     <p class="cta">${opener}
       <a href="${CORRECTION}">Tell me</a> — it comes to me directly, and it is
       how this map gets better.</p>
-    <p class="fine">Autonomous Vehicle Ecosystem Map · compiled by <a href="${ROOT}method/">Kofi Agyare-Kwabi</a> from public filings, permits and announcements · updated ${UPDATED}</p>
+    <p class="fine">Autonomous Vehicle Ecosystem Map · compiled by <a href="${ROOT}method/">Kofi Agyare-Kwabi</a> from public filings, permits and announcements · updated <span data-updated>${UPDATED}</span></p>
     ${el.hasAttribute('data-trademark') ? `<p class="fine">${TRADEMARK}</p>` : ''}
   </div>`;
   };
@@ -416,7 +416,17 @@
   const head = document.querySelector('header.site');
   if (head) { head.innerHTML = headerHTML(currentPage); bindNavMenus(head); }
   const foot = document.querySelector('footer.site');
-  if (foot) foot.innerHTML = footerHTML(foot);
+  if (foot) {
+    foot.innerHTML = footerHTML(foot);
+    // The date the data was last rebuilt, stamped by build-indexes.py. The
+    // hardcoded constant above is only the no-fetch fallback; this is what
+    // stops "updated ..." drifting from the data it describes.
+    json('data/derived-counts.json').then(d => {
+      const g = d.meta && d.meta.generatedAt;
+      if (!g) return;
+      foot.querySelectorAll('[data-updated]').forEach(el => { el.textContent = fmtDate(g); });
+    }).catch(() => { /* fallback date stands */ });
+  }
 
   // ------------------------------------------------------------- theme
   const applyTheme = t => {

@@ -735,29 +735,49 @@
 
   // ------------------------------------------------------------ filters
   function buildRail() {
+    // Checkbox dropdowns rather than chip rows: each group is one labelled
+    // button opening a list you tick, with the count of each option beside it
+    // so you can see how big a slice is before you commit to looking at it.
+    const check = (attr, val, label) =>
+      `<label><input type="checkbox" ${attr}="${esc(val)}"> ${label}</label>`;
     const fl = document.getElementById('f-layers');
-    fl.innerHTML = '<span class="rail-label">Layer</span>' + L.districts.map(d => {
-      const key = SHORT[d.layer];
-      // The count is already in the district header and the legend; carrying it on
-      // the filter too means you can see how big a layer is before you commit to
-      // looking at it.
-      return `<button class="chip" data-flayer="${key}" aria-pressed="false">
-        <span class="dot" style="background:oklch(var(--layer-l) var(--layer-c) ${d.hue})"></span>${esc(d.layer.replace('Governance: ', ''))} <span class="n">${d.count}</span></button>`;
-    }).join('') + `<button class="chip" data-flayer="middleware" aria-pressed="false">
-        <span class="dot" style="background:oklch(var(--layer-l) var(--layer-c) 105)"></span>Middleware &amp; Tooling</button>`;
+    fl.innerHTML = L.districts.map(d =>
+      check('data-flayer', SHORT[d.layer],
+        `<span class="dot" style="background:oklch(var(--layer-l) var(--layer-c) ${d.hue})"></span>${esc(d.layer.replace('Governance: ', ''))} <span class="n">${d.count} orgs</span>`)
+    ).join('') + check('data-flayer', 'middleware',
+      `<span class="dot" style="background:oklch(var(--layer-l) var(--layer-c) 105)"></span>Middleware &amp; Tooling <span class="n">${slim.filter(c => SHORT[c.c] === 'middleware').length} orgs</span>`);
     const regions = [...new Set(slim.map(c => c.r).filter(Boolean))];
     document.getElementById('f-regions').innerHTML = regions.map(r =>
-      `<button class="chip" data-fregion="${REGION_KEY(r)}" aria-pressed="false">${esc(r)}</button>`).join('');
+      check('data-fregion', REGION_KEY(r),
+        `${esc(r)} <span class="n">${slim.filter(c => c.r === r).length} orgs</span>`)).join('');
     document.getElementById('f-mats').innerHTML = MATS.map(mt =>
-      `<button class="chip" data-fmat="${mt}" aria-pressed="false">${mt}</button>`).join('');
+      check('data-fmat', mt,
+        `${esc(mt)} <span class="n">${slim.filter(c => c.m === mt).length} orgs</span>`)).join('');
+
+    rail.addEventListener('change', e => {
+      const i = e.target;
+      if (!i.matches('input[type="checkbox"]')) return;
+      const put = (set, v, on) => on ? set.add(v) : set.delete(v);
+      if (i.dataset.flayer) put(state.layers, i.dataset.flayer, i.checked);
+      else if (i.dataset.fregion) put(state.regions, i.dataset.fregion, i.checked);
+      else if (i.dataset.fmat) put(state.mats, i.dataset.fmat, i.checked);
+      else return;
+      applyFilters();
+    });
+    // one open menu at a time, and outside clicks close it
+    rail.querySelectorAll('details.picker').forEach(d => {
+      d.addEventListener('toggle', () => {
+        if (d.open) rail.querySelectorAll('details.picker[open]').forEach(o => { if (o !== d) o.open = false; });
+      });
+    });
+    document.addEventListener('click', e => {
+      if (!e.target.closest('details.picker'))
+        rail.querySelectorAll('details.picker[open]').forEach(o => { o.open = false; });
+    });
 
     rail.addEventListener('click', e => {
       const b = e.target.closest('button.chip'); if (!b) return;
-      const tog = (set, v) => set.has(v) ? set.delete(v) : set.add(v);
-      if (b.dataset.flayer) tog(state.layers, b.dataset.flayer);
-      else if (b.dataset.fregion) tog(state.regions, b.dataset.fregion);
-      else if (b.dataset.fmat) tog(state.mats, b.dataset.fmat);
-      else if (b.id === 'f-spoken') state.spoken = !state.spoken;
+      if (b.id === 'f-spoken') state.spoken = !state.spoken;
       else if (b.id === 'f-exited') state.exited = !state.exited;
       else if (b.id === 'f-clear') {
         state.layers.clear(); state.regions.clear(); state.mats.clear();
@@ -792,9 +812,14 @@
       g.classList.toggle('dimmed', any && !ok);
       if (ok) n++;
     });
-    rail.querySelectorAll('[data-flayer]').forEach(b => b.setAttribute('aria-pressed', state.layers.has(b.dataset.flayer)));
-    rail.querySelectorAll('[data-fregion]').forEach(b => b.setAttribute('aria-pressed', state.regions.has(b.dataset.fregion)));
-    rail.querySelectorAll('[data-fmat]').forEach(b => b.setAttribute('aria-pressed', state.mats.has(b.dataset.fmat)));
+    rail.querySelectorAll('input[data-flayer]').forEach(b => { b.checked = state.layers.has(b.dataset.flayer); });
+    rail.querySelectorAll('input[data-fregion]').forEach(b => { b.checked = state.regions.has(b.dataset.fregion); });
+    rail.querySelectorAll('input[data-fmat]').forEach(b => { b.checked = state.mats.has(b.dataset.fmat); });
+    // ticked-count badge on each dropdown button
+    [['p-layers', state.layers], ['p-regions', state.regions], ['p-mats', state.mats]].forEach(([id, set]) => {
+      const el = document.querySelector(`#${id} .pk-n`);
+      if (el) { el.hidden = !set.size; el.textContent = set.size; }
+    });
     document.getElementById('f-spoken').setAttribute('aria-pressed', state.spoken);
     document.getElementById('f-exited').setAttribute('aria-pressed', state.exited);
     document.getElementById('f-clear').hidden = !any;

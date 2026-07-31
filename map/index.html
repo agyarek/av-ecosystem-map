@@ -48,12 +48,19 @@
 
   <div id="map-shell">
   <div class="map-rail container" id="map-rail">
-    <div class="rail-row" role="group" aria-label="Layer filters" id="f-layers"></div>
-    <div class="rail-row">
-      <span class="rail-label" id="lbl-region">Region</span>
-      <span role="group" aria-labelledby="lbl-region" id="f-regions" class="rail-group"></span>
-      <span class="rail-label" id="lbl-mat">Maturity</span>
-      <span role="group" aria-labelledby="lbl-mat" id="f-mats" class="rail-group"></span>
+    <div class="rail-row" role="group" aria-label="Filters">
+      <details class="picker" id="p-layers">
+        <summary class="chip">LAYERS <span class="pk-n" hidden></span><span class="pk-caret" aria-hidden="true">▾</span></summary>
+        <div class="pop" id="f-layers" role="group" aria-label="Layer filters"></div>
+      </details>
+      <details class="picker" id="p-regions">
+        <summary class="chip">REGION <span class="pk-n" hidden></span><span class="pk-caret" aria-hidden="true">▾</span></summary>
+        <div class="pop" id="f-regions" role="group" aria-label="Region filters"></div>
+      </details>
+      <details class="picker" id="p-mats">
+        <summary class="chip">MATURITY <span class="pk-n" hidden></span><span class="pk-caret" aria-hidden="true">▾</span></summary>
+        <div class="pop" id="f-mats" role="group" aria-label="Maturity filters"></div>
+      </details>
     </div>
     <div class="rail-row">
       <button class="chip" id="f-spoken" aria-pressed="false"><span class="gold-dot" aria-hidden="true"></span> Spoken with</button>

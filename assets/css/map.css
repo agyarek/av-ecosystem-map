@@ -332,3 +332,30 @@ body.fs-pseudo { overflow: hidden; }
 @media (max-width: 700px) {
   .roster { right: 8px; left: 8px; top: 8px; width: auto; max-height: calc(100% - 16px); }
 }
+
+/* ------------------------------------------------ filter dropdowns */
+/* Layers / Region / Maturity as checkbox menus, the ledger's picker idiom. */
+.map-rail .picker { position: relative; }
+.map-rail .picker summary { list-style: none; display: inline-flex; align-items: center; gap: 6px; }
+.map-rail .picker summary::-webkit-details-marker { display: none; }
+.map-rail .picker[open] summary { border-color: var(--cyan); color: var(--ink); }
+.map-rail .pk-caret { font-size: 9px; transition: transform 140ms ease; }
+.map-rail .picker[open] .pk-caret { transform: rotate(180deg); }
+.map-rail .pk-n {
+  min-width: 16px; padding: 1px 5px; border-radius: var(--r-pill);
+  background: var(--cyan); color: #12130F; font-weight: 700; font-size: 10px;
+  text-align: center;
+}
+.map-rail .pop {
+  position: absolute; top: calc(100% + 6px); left: 0; z-index: 140;
+  background: var(--paper-2); border: 1px solid var(--rule); border-radius: 10px;
+  box-shadow: 0 14px 40px rgba(18, 19, 15, .16);
+  padding: 10px 12px; min-width: 250px; max-height: 340px; overflow: auto;
+}
+.map-rail .pop label {
+  display: flex; align-items: center; gap: 8px; padding: 5px 0;
+  font-size: 13px; cursor: pointer; white-space: nowrap;
+}
+.map-rail .pop label .dot { width: 9px; height: 9px; border-radius: 3px; flex: none; }
+.map-rail .pop label .n { margin-left: auto; font-family: var(--font-mono); font-size: 10.5px; color: var(--muted); }
+.map-rail .pop input { accent-color: var(--cyan); }

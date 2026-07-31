@@ -40,12 +40,11 @@
 <div class="article-head">
   <p class="eyebrow"><span class="tick">■</span> ECONOMICS</p>
   <h1 class="page-title">$41.8B went in.<br>Will any of it pay?</h1>
-  <p class="standfirst">The money side of this industry, on one page, in three parts.
-    <a href="#funding">Funding</a>: thirty disclosed events of $200M or more since August 2023, and
-    Waymo alone accounts for $26.6B of them. <a href="#unit-economics">Unit economics</a>: what one
-    robotaxi actually costs to run per mile, with a calculator whose every assumption you can
-    overwrite. <a href="#comparing-the-operators">Comparing the operators</a>: the major companies
-    side by side, on the money they raised and the arithmetic they are betting on.</p>
+  <p class="standfirst">Three parts. <a href="#funding">Funding</a>: thirty disclosed events of
+    $200M or more, $26.6B of them Waymo's. <a href="#unit-economics">Unit economics</a>: what a
+    robotaxi costs per mile, with every assumption yours to overwrite.
+    <a href="#comparing-the-operators">Comparing the operators</a>: the major companies side by
+    side.</p>
 </div>
 
 <div id="funding">
@@ -117,8 +116,7 @@
 
 <section aria-labelledby="gaps-sec">
   <h2 class="sec" id="gaps-sec">What is missing from this dataset</h2>
-  <p class="prose">A funding tracker that publishes its own gaps is more trustworthy than one that
-    pretends completeness. These are carried in the data file itself, as content rather than metadata.</p>
+  <p class="prose">Carried in the data file itself, as content rather than metadata.</p>
   <div id="gaps-slot" style="margin-top:16px"></div>
   <p class="caption" style="margin-top:12px" id="disclosed-note"></p>
 </section>
@@ -213,15 +211,11 @@
       </div>
     </div>
   </div>
-</section>
 
-<section aria-labelledby="eco-sec">
-  <h2 class="sec" id="eco-sec">Whose arithmetic works</h2>
-  <div class="prose">
-    <p>The calculator above models one hypothetical operator. This runs real ones through the same
-      arithmetic at once, so a $110,000 purpose-built vehicle at seventy paid miles a day can be set
-      against a $28,000 platform at Chinese fare levels and the difference read off a single row. Every
-      assumption is editable per company; change one and watch only that column move.</p>
+  <div class="prose" style="margin-top:34px" id="eco-sec">
+    <p><strong>And whose arithmetic works:</strong> the same modelled economics for real operators at
+      once, every assumption editable per company. A $110,000 purpose-built vehicle at seventy paid
+      miles a day against a $28,000 platform at Chinese fare levels, read off a single row.</p>
   </div>
 
   <div class="note" style="margin-top:18px"><p id="eco-warning"></p></div>
@@ -238,35 +232,20 @@
       </div>
     </div>
   </div>
-</section>
-
-<section>
-  <h2 class="sec" id="four-operators-four-different-bets">Four operators, four different bets</h2>
-  <div class="prose">
-    <p><strong>Waymo</strong> carries the reference cost structure: the most vehicles, the most cities,
-      and a $126B February 2026 valuation against roughly $355M of annualised revenue, which is about
-      355 times revenue. The sixth-generation hardware at a reported sub-$20,000 kit cost is its answer
-      to the arithmetic. <strong>Tesla</strong> prices a five-mile ride near $8 against Waymo's $15 to
-      17, betting that cameras-only hardware and no mapping bill halve the cost line; the claim is partly
-      testable now through Austin's losses and partly a 2027 question about Cybercab production. That its
-      base fare tripled in March 2026 suggests the first data arrived and argued back.</p>
-    <p><strong>Baidu</strong> has the cheaper vehicle and the denser anchor city, and a reasonable
-      inference is that Apollo Go reaches company-level profitability before Waymo does. Its unit
-      breakeven claims in Wuhan, like <strong>Pony.ai's</strong> in Shenzhen and Guangzhou, are
-      vehicle-level in single cities, and the distinction between that and company profitability should
-      stay visible whenever either is quoted.</p>
-    <p><strong>Aurora</strong> offers the cleanest comparison in the industry because its benchmark is a
-      freight rate rather than a subsidised fare. A 2026 target of 200-plus driverless trucks against an
-      $80M revenue run rate implies about $400,000 per truck per year, against $300,000 to $450,000 for
-      a conventional Class 8 truck with a driver, where removing the driver saves roughly $70,000 to
-      $90,000 a year. The headroom is thinner than the robotaxi story suggests, which is why Aurora
-      sells reliability and insurance economics as hard as it sells the driver.</p>
+  <div class="prose" style="margin-top:30px" id="four-operators-four-different-bets">
+    <p><strong>Four operators, four different bets.</strong> The tables above carry the detail; the
+      bets are simple to state. <strong>Waymo</strong> bets
+      that scale plus a sub-$20,000 sixth-generation kit beats everyone to the cost line, carrying a
+      $126B valuation on roughly $355M of revenue while it tries. <strong>Tesla</strong> bets that
+      cameras-only hardware and no mapping bill halve the cost line — an $8 five-mile ride against
+      Waymo's $15-17, though its Austin base fare tripling in March 2026 suggests the first data
+      argued back. <strong>Baidu</strong> and <strong>Pony.ai</strong> bet on cheaper vehicles in
+      denser cities, with breakeven claims that are vehicle-level in single cities, not company
+      profitability; <strong>Aurora</strong> bets on freight, where the benchmark is a real rate
+      rather than a subsidised fare and the headroom is thinner than the robotaxi story suggests.</p>
   </div>
-</section>
 
-<section>
-  <h2 class="sec" id="where-the-arithmetic-actually-stands">Where the arithmetic actually stands</h2>
-  <div class="hard-part">
+  <div class="hard-part" id="where-the-arithmetic-actually-stands" style="margin-top:30px">
     <p class="hp-label">Where the arithmetic actually stands</p>
     <p>Uber's CFO said plainly, on the record, in August 2025: autonomous vehicles today are not
       profitable. Alphabet's Other Bets, which contains Waymo, lost $2.1B in Q1 2026. Every published

@@ -60,101 +60,103 @@
     a vehicle built around it, and a pitlane that turns the car straight back out. Around that loop sit
     <strong>562 organisations</strong>. I have mapped all of them.</p>
 
+  <h2 class="visually-hidden">The four stages, in order</h2>
   <div class="loop-wrap" id="loop-wrap">
-    <svg id="track" viewBox="0 0 1100 620" aria-hidden="true" class="decor">
-      <path id="track-shoulder" d="M 90 310 L 90 180 Q 90 70 200 70 L 900 70 Q 1010 70 1010 180 L 1010 440 Q 1010 550 900 550 L 200 550 Q 90 550 90 440 Z"/>
-      <path id="track-path" d="M 90 310 L 90 180 Q 90 70 200 70 L 900 70 Q 1010 70 1010 180 L 1010 440 Q 1010 550 900 550 L 200 550 Q 90 550 90 440 Z"/>
-      <path id="track-dash" d="M 90 310 L 90 180 Q 90 70 200 70 L 900 70 Q 1010 70 1010 180 L 1010 440 Q 1010 550 900 550 L 200 550 Q 90 550 90 440 Z"/>
+    <svg id="track" viewBox="0 0 1100 780" aria-hidden="true" class="decor">
+      <path id="track-shoulder" d="M 90 400 L 90 180 Q 90 70 200 70 L 900 70 Q 1010 70 1010 180 L 1010 600 Q 1010 710 900 710 L 200 710 Q 90 710 90 600 Z"/>
+      <path id="track-path" d="M 90 400 L 90 180 Q 90 70 200 70 L 900 70 Q 1010 70 1010 180 L 1010 600 Q 1010 710 900 710 L 200 710 Q 90 710 90 600 Z"/>
+      <path id="track-dash" d="M 90 400 L 90 180 Q 90 70 200 70 L 900 70 Q 1010 70 1010 180 L 1010 600 Q 1010 710 900 710 L 200 710 Q 90 710 90 600 Z"/>
+      <!-- A robotaxi seen from above: no driver's side, a symmetric cabin, sensor
+           blisters at all four corners and a lidar mast standing proud of the roof.
+           Headlamps, beams and tail bar are carried over unchanged. -->
       <g id="token" class="token">
-        <path class="beam" d="M 16 -6 L 42 -14 L 42 2 Z"/>
-        <path class="beam" d="M 16 6 L 42 14 L 42 -2 Z"/>
-        <rect class="wheel" x="-10" y="-11.5" width="7" height="3.6" rx="1.4"/>
-        <rect class="wheel" x="4" y="-11.5" width="7" height="3.6" rx="1.4"/>
-        <rect class="wheel" x="-10" y="7.9" width="7" height="3.6" rx="1.4"/>
-        <rect class="wheel" x="4" y="7.9" width="7" height="3.6" rx="1.4"/>
-        <rect class="body" x="-18" y="-9" width="36" height="18" rx="7"/>
-        <rect class="seam" x="-14" y="-6.5" width="5.5" height="13" rx="2"/>
-        <rect class="seam" x="9" y="-6.5" width="5.5" height="13" rx="2"/>
-        <rect class="glass" x="-6" y="-7" width="12" height="14" rx="3.4"/>
-        <circle class="lamp" cx="16" cy="-4.6" r="1.7"/>
-        <circle class="lamp" cx="16" cy="4.6" r="1.7"/>
-        <rect class="tail" x="-19" y="-5" width="1.8" height="10" rx="0.9"/>
-        <circle class="puck" cx="0.5" cy="0" r="3.4"/>
-        <circle class="lidar" cx="0.5" cy="0" r="1.6"/>
+        <path class="beam" d="M 30 -10 L 78 -26 L 78 4 Z"/>
+        <path class="beam" d="M 30 10 L 78 26 L 78 -4 Z"/>
+        <rect class="wheel" x="11" y="-20" width="15" height="7" rx="2.6"/>
+        <rect class="wheel" x="11" y="13" width="15" height="7" rx="2.6"/>
+        <rect class="wheel" x="-26" y="-20" width="15" height="7" rx="2.6"/>
+        <rect class="wheel" x="-26" y="13" width="15" height="7" rx="2.6"/>
+        <rect class="body" x="-32" y="-15" width="64" height="30" rx="11"/>
+        <rect class="livery" x="-27" y="-15.5" width="54" height="4" rx="2"/>
+        <rect class="livery" x="-27" y="11.5" width="54" height="4" rx="2"/>
+        <rect class="seam" x="-15" y="-12" width="4" height="24" rx="1.6"/>
+        <rect class="seam" x="11" y="-12" width="4" height="24" rx="1.6"/>
+        <rect class="glass" x="-11" y="-11.5" width="24" height="23" rx="6"/>
+        <circle class="blister" cx="-25" cy="-11" r="2.6"/>
+        <circle class="blister" cx="25" cy="-11" r="2.6"/>
+        <circle class="blister" cx="-25" cy="11" r="2.6"/>
+        <circle class="blister" cx="25" cy="11" r="2.6"/>
+        <circle class="lamp" cx="29" cy="-8" r="3"/>
+        <circle class="lamp" cx="29" cy="8" r="3"/>
+        <rect class="tail" x="-34" y="-9" width="3.2" height="18" rx="1.6"/>
+        <rect class="reverse" x="-34" y="-9" width="3.2" height="18" rx="1.6"/>
+        <circle class="mast" cx="0" cy="0" r="8.5"/>
+        <circle class="puck" cx="0" cy="0" r="6"/>
+        <circle class="lidar" cx="0" cy="0" r="2.8"/>
       </g>
     </svg>
 
-    <a class="station st-request" href="map/#request" data-station="request">
-      <span class="st-name">The Request</span>
-      <span class="st-count num" data-count="request">53 orgs</span>
-    </a>
-    <a class="station st-driver" href="map/#driver" data-station="driver">
-      <span class="st-name">The Driver</span>
-      <span class="st-count num" data-count="driver">192 orgs</span>
-    </a>
-    <a class="station st-vehicle" href="map/#vehicle" data-station="vehicle">
-      <span class="st-name">The Vehicle</span>
-      <span class="st-count num" data-count="vehicle">64 orgs</span>
-    </a>
-    <a class="station st-pitlane" href="map/#pitlane" data-station="pitlane">
-      <span class="st-name">The Pitlane</span>
-      <span class="st-count num" data-count="pitlane">70 orgs</span>
-    </a>
-
-    <div class="loop-center" id="loop-center">
-      <div class="lc-default" id="lc-default">
-        <p class="lc-kicker">HOW A DRIVERLESS RIDE WORKS</p>
-        <button class="btn primary" id="run-ride">RUN ONE RIDE</button>
-        <p class="caption lc-hint">or rest on a station to open it</p>
-        <button class="lc-pause" id="loop-pause" aria-pressed="false">Pause the loop</button>
+    <div class="loop-inner">
+      <div class="station st-request" data-station="request">
+        <svg class="st-ring" aria-hidden="true"><rect/></svg>
+        <h3 class="st-name">The Request <span class="st-count num" data-count="request">53 orgs</span></h3>
+        <p class="desc">A rider taps a button and a marketplace prices the trip, picks a car and dispatches it.
+          The platforms that own that moment own the customer.</p>
+        <p class="layers"><span class="chip"><span class="dot" style="background:oklch(var(--layer-l) var(--layer-c) 20)"></span>Demand &amp; Commercial Platforms</span></p>
+        <p class="ex">Uber alone carries 20 or more AV partnerships, yet autonomous vehicles are still about 0.1 percent of rideshare trips (late 2025).</p>
       </div>
-      <div class="lc-station" id="lc-station" hidden></div>
-      <div class="lc-caption" id="lc-caption" hidden aria-live="polite"></div>
+
+      <div class="station st-driver" data-station="driver">
+        <svg class="st-ring" aria-hidden="true"><rect/></svg>
+        <h3 class="st-name">The Driver <span class="st-count num" data-count="driver">193 orgs</span></h3>
+        <p class="desc">Software perceives, predicts and drives, built on sensors, silicon, data, maps,
+          simulation and connectivity. This is where most of the industry lives.</p>
+        <p class="layers">
+          <span class="chip"><span class="dot" style="background:oklch(var(--layer-l) var(--layer-c) 265)"></span>Autonomy Software</span>
+          <span class="chip"><span class="dot" style="background:oklch(var(--layer-l) var(--layer-c) 200)"></span>Sensing &amp; Compute</span>
+          <span class="chip"><span class="dot" style="background:oklch(var(--layer-l) var(--layer-c) 150)"></span>Data, Maps &amp; Simulation</span>
+          <span class="chip"><span class="dot" style="background:oklch(var(--layer-l) var(--layer-c) 230)"></span>Connectivity</span>
+        </p>
+        <p class="ex">Waymo's sixth-generation driver carries 42 percent fewer sensors at a reported unit cost below $20,000, less than half the prior generation.</p>
+      </div>
+
+      <div class="station st-pitlane" data-station="pitlane">
+        <svg class="st-ring" aria-hidden="true"><rect/></svg>
+        <h3 class="st-name">The Pitlane <span class="st-count num" data-count="pitlane">70 orgs</span></h3>
+        <p class="desc">Depots charge, clean, inspect and service the fleet, then send it straight back out.
+          How fast that handoff happens decides whether the economics work.</p>
+        <p class="layers"><span class="chip"><span class="dot" style="background:oklch(var(--layer-l) var(--layer-c) 320)"></span>Fleet Operations &amp; Depot</span></p>
+        <p class="ex">Transdev runs Waymo depot operations across Phoenix, San Francisco, Los Angeles, Austin and Nashville. The depot layer is almost entirely outsourced.</p>
+      </div>
+
+      <div class="station st-vehicle" data-station="vehicle">
+        <svg class="st-ring" aria-hidden="true"><rect/></svg>
+        <h3 class="st-name">The Vehicle <span class="st-count num" data-count="vehicle">64 orgs</span></h3>
+        <p class="desc">A production-grade platform engineered around a driver that never gets tired:
+          redundant steering, braking and power, because nobody is left to grab the wheel.</p>
+        <p class="layers"><span class="chip"><span class="dot" style="background:oklch(var(--layer-l) var(--layer-c) 40)"></span>Vehicle Platform &amp; Manufacturing</span></p>
+        <p class="ex">Waymo's vehicle supply chain now runs four deep: Jaguar Land Rover, Zeekr, Hyundai, and a preliminary Toyota alliance for personally owned cars.</p>
+      </div>
+    </div>
+
+    <div class="loop-controls" role="group" aria-label="Loop playback">
+      <button type="button" id="loop-back" aria-label="Previous stage">
+        <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 3.2 5.2 8l4.8 4.8"/></svg>
+      </button>
+      <button type="button" id="loop-play" aria-pressed="false" aria-label="Pause the loop">
+        <svg class="ic-pause" width="15" height="15" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><rect x="3.6" y="2.8" width="3.2" height="10.4" rx="1"/><rect x="9.2" y="2.8" width="3.2" height="10.4" rx="1"/></svg>
+        <svg class="ic-play" width="15" height="15" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M4.6 2.9 12.8 8l-8.2 5.1z"/></svg>
+        <span class="lp-label">PAUSE</span>
+      </button>
+      <button type="button" id="loop-fwd" aria-label="Next stage">
+        <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3.2 10.8 8 6 12.8"/></svg>
+      </button>
     </div>
   </div>
 
-  <h2 class="visually-hidden">The four stages, in order</h2>
-  <ol class="loop-list" id="loop-list" aria-label="The four stages, in order">
-    <li data-station="request">
-      <h3>The Request <span class="num" data-count="request">53 orgs</span></h3>
-      <p class="desc">A rider taps a button and a marketplace prices the trip, picks a car and dispatches it.
-        The platforms that own that moment own the customer.</p>
-      <p class="layers"><span class="chip"><span class="dot" style="background:oklch(var(--layer-l) var(--layer-c) 20)"></span>Demand &amp; Commercial Platforms</span></p>
-      <p class="ex">Uber alone carries 20 or more AV partnerships, yet autonomous vehicles are still about 0.1 percent of rideshare trips (late 2025).</p>
-      <a class="go" href="map/#request">See this stage on the wall chart</a>
-    </li>
-    <li data-station="driver">
-      <h3>The Driver <span class="num" data-count="driver">192 orgs</span></h3>
-      <p class="desc">Software perceives, predicts and drives, built on sensors, silicon, data, maps,
-        simulation and connectivity. This is where most of the industry lives.</p>
-      <p class="layers">
-        <span class="chip"><span class="dot" style="background:oklch(var(--layer-l) var(--layer-c) 265)"></span>Autonomy Software</span>
-        <span class="chip"><span class="dot" style="background:oklch(var(--layer-l) var(--layer-c) 200)"></span>Sensing &amp; Compute</span>
-        <span class="chip"><span class="dot" style="background:oklch(var(--layer-l) var(--layer-c) 150)"></span>Data, Maps &amp; Simulation</span>
-        <span class="chip"><span class="dot" style="background:oklch(var(--layer-l) var(--layer-c) 105)"></span>Middleware</span>
-        <span class="chip"><span class="dot" style="background:oklch(var(--layer-l) var(--layer-c) 230)"></span>Connectivity</span>
-      </p>
-      <p class="ex">Waymo's sixth-generation driver carries 42 percent fewer sensors at a reported unit cost below $20,000, less than half the prior generation.</p>
-      <a class="go" href="map/#driver">See this stage on the wall chart</a>
-    </li>
-    <li data-station="vehicle">
-      <h3>The Vehicle <span class="num" data-count="vehicle">64 orgs</span></h3>
-      <p class="desc">A production-grade platform engineered around a driver that never gets tired:
-        redundant steering, braking and power, because nobody is left to grab the wheel.</p>
-      <p class="layers"><span class="chip"><span class="dot" style="background:oklch(var(--layer-l) var(--layer-c) 40)"></span>Vehicle Platform &amp; Manufacturing</span></p>
-      <p class="ex">Waymo's vehicle supply chain now runs four deep: Jaguar Land Rover, Zeekr, Hyundai, and a preliminary Toyota alliance for personally owned cars.</p>
-      <a class="go" href="map/#vehicle">See this stage on the wall chart</a>
-    </li>
-    <li data-station="pitlane">
-      <h3>The Pitlane <span class="num" data-count="pitlane">70 orgs</span></h3>
-      <p class="desc">Depots charge, clean, inspect and service the fleet, then send it straight back out.
-        How fast that handoff happens decides whether the economics work.</p>
-      <p class="layers"><span class="chip"><span class="dot" style="background:oklch(var(--layer-l) var(--layer-c) 320)"></span>Fleet Operations &amp; Depot</span></p>
-      <p class="ex">Transdev runs Waymo depot operations across Phoenix, San Francisco, Los Angeles, Austin and Nashville. The depot layer is almost entirely outsourced.</p>
-      <a class="go" href="map/#pitlane">See this stage on the wall chart</a>
-    </li>
-    <li class="loop-back" aria-hidden="true">↻ and back to the request, thousands of times a day</li>
-  </ol>
+  <p class="loop-foot caption">The car stops at each stage for a few seconds; the ring around the card
+    shows how long is left. Step through it yourself with the arrows, or
+    <a href="map/">see all four stages on the wall chart</a>.</p>
 </section>
 
 <!-- ============================================================ map hero -->

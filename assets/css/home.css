@@ -5,7 +5,7 @@
 /* ------------------------------------------------------------- the loop */
 .loop-wrap {
   position: relative; margin-top: clamp(32px, 6vh, 56px);
-  aspect-ratio: 1100 / 620; width: 100%;
+  aspect-ratio: 1100 / 780; width: 100%;
 }
 #track { position: absolute; inset: 0; width: 100%; height: 100%; }
 /* Three strokes rather than one: a soft shoulder, the asphalt, and a centre
@@ -22,104 +22,124 @@
   stroke-dasharray: 22 18; opacity: .85;
 }
 
-/* Seen from above, and detailed enough to be a vehicle rather than a token: the
-   glass roof and the sensor puck on top of it are the whole hidden-complexity
-   point, so they are the two things drawn most deliberately. */
-.token .body { fill: var(--cyan); stroke: var(--ink); stroke-width: 1.1; }
-.token .seam { fill: var(--ink); opacity: .22; }
-.token .glass { fill: var(--paper); opacity: .82; }
-.token .wheel { fill: var(--ink); }
+/* The robotaxi. Tyres are a fixed near-black, never a theme token: --ink flips
+   to off-white in dark mode, which is how the tyres once rendered white. The
+   headlamps, beams and tail bar were called out as working; unchanged. */
+.token .body { fill: var(--cyan); stroke: #171813; stroke-width: 1.4; }
+.token .livery { fill: #FFFFFF; opacity: .55; }
+.token .seam { fill: #171813; opacity: .28; }
+.token .glass { fill: var(--paper); opacity: .85; }
+.token .wheel { fill: #171813; }
+.token .blister { fill: #171813; opacity: .8; }
 .token .lamp { fill: var(--yellow); }
 .token .beam { fill: var(--yellow); opacity: .16; }
 .token .tail { fill: var(--alert); }
-.token .puck { fill: var(--ink); }
+.token .reverse { fill: #FFFFFF; opacity: 0; }
+.token.reversing .reverse { opacity: .95; }
+.token.reversing .beam { opacity: 0; }
+.token .mast { fill: #171813; }
+.token .puck { fill: #2E3028; }
 .token .lidar { fill: var(--yellow); }
 
-.station {
-  position: absolute; transform: translate(-50%, -50%);
-  display: flex; flex-direction: column; align-items: center; gap: 3px;
-  background: var(--paper-2); border: 1px solid var(--rule);
-  border-radius: var(--r-card); padding: 12px 20px;
-  text-decoration: none; text-align: center;
-  transition: border-color 120ms, box-shadow 120ms, transform 120ms;
-  z-index: 4;
+/* --------------------------------------------- quadrant cards inside the track */
+/* Four rounded rectangles in the road's courtyard: Request top left, Driver top
+   right, Vehicle bottom right, Pitlane bottom left — the clockwise ride order.
+   Each card's outward corner takes a large radius that echoes the track's own
+   corner; the inner corners stay tight. */
+.loop-inner {
+  position: absolute; inset: 12.5% 10.4%;
+  display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr;
+  gap: 18px; padding: 20px;
 }
-.station:hover { color: inherit; border-color: var(--cyan); transform: translate(-50%, -50%) scale(1.03); }
+.station {
+  position: relative; min-width: 0;
+  background: var(--paper-2); border: 1px solid var(--rule);
+  padding: 16px 18px;
+  transition: border-color 160ms, box-shadow 160ms;
+}
+.st-request { grid-area: 1 / 1; border-radius: 44px 16px 16px 16px; }
+.st-driver  { grid-area: 1 / 2; border-radius: 16px 44px 16px 16px; }
+.st-pitlane { grid-area: 2 / 1; border-radius: 16px 16px 16px 44px; }
+.st-vehicle { grid-area: 2 / 2; border-radius: 16px 16px 44px 16px; }
 .station.active {
   border-color: var(--cyan);
-  box-shadow: 0 0 0 4px color-mix(in oklab, var(--cyan) 22%, transparent);
+  box-shadow: 0 0 0 3px color-mix(in oklab, var(--cyan) 20%, transparent);
 }
-.station .st-name { font-weight: 800; font-size: 17px; font-variation-settings: 'wdth' 114; white-space: nowrap; }
-.station .st-count { font-size: 12px; color: var(--muted); }
-.st-request { left: 8.2%; top: 50%; }
-.st-driver { left: 50%; top: 11.3%; }
-.st-vehicle { left: 91.8%; top: 50%; }
-.st-pitlane { left: 50%; top: 88.7%; }
+.station .st-name {
+  font-weight: 800; font-size: clamp(15px, 1.5vw, 19px);
+  font-variation-settings: 'wdth' 114;
+  display: flex; align-items: baseline; justify-content: space-between; gap: 8px;
+}
+.station .st-count { font-size: var(--fs-xs); color: var(--muted); font-weight: 500; white-space: nowrap; }
+.station .desc { font-size: clamp(12px, 1.15vw, 14.5px); color: var(--ink-2); margin-top: 7px; line-height: 1.45; }
+.station .layers { display: flex; gap: 5px; flex-wrap: wrap; margin-top: 9px; }
+.station .layers .chip { cursor: default; font-size: 10px; padding: 3px 8px; }
+.station .ex {
+  font-size: clamp(11px, 1vw, 12.5px); color: var(--muted); margin-top: 9px;
+  line-height: 1.45; border-top: 1px solid var(--rule); padding-top: 8px;
+}
 
-.loop-center {
+/* The depleting ring: a rounded rect stroked around the active card, dashed to
+   its own perimeter (pathLength=100) and drained by stroke-dashoffset. It is in
+   addition to the highlight border, not instead of it. */
+.st-ring {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  pointer-events: none; overflow: visible;
+}
+.st-ring rect {
+  fill: none; stroke: var(--cyan); stroke-width: 3;
+  stroke-dasharray: 100; stroke-dashoffset: 100;
+  opacity: 0; transition: opacity 200ms;
+}
+.station.active .st-ring rect { opacity: .9; }
+
+/* ------------------------------------------------------------- controls */
+/* Where the four cards meet: back, play/pause, forward. Always visible. */
+.loop-controls {
   position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
-  width: min(480px, 58%); text-align: center; z-index: 3;
+  display: flex; align-items: center; gap: 6px; z-index: 5;
+  background: var(--paper); border: 1px solid var(--rule);
+  border-radius: var(--r-pill); padding: 6px;
+  box-shadow: 0 10px 30px rgba(18, 19, 15, .16);
 }
-.lc-kicker {
-  font-family: var(--font-mono); font-size: 11px; font-weight: 600;
-  letter-spacing: .14em; color: var(--muted); margin-bottom: 14px;
+.loop-controls button {
+  display: inline-flex; align-items: center; justify-content: center; gap: 7px;
+  min-width: 40px; height: 40px; padding: 0 12px;
+  border-radius: var(--r-pill); color: var(--ink-2);
+  transition: background 120ms, color 120ms;
 }
-.lc-hint { margin-top: 12px; }
-.lc-station h3 { font-size: 20px; font-weight: 800; font-variation-settings: 'wdth' 114; }
-.lc-station .desc { font-size: 14.5px; color: var(--ink-2); margin-top: 8px; line-height: 1.5; }
-.lc-station .layers { display: flex; gap: 6px; flex-wrap: wrap; justify-content: center; margin-top: 12px; }
-.lc-station .layers .chip { cursor: default; font-size: 10.5px; }
-.lc-station .ex {
-  font-size: 13px; color: var(--muted); margin-top: 12px; line-height: 1.5;
-  border-top: 1px solid var(--rule); padding-top: 10px;
+.loop-controls button:hover { background: var(--paper-2); color: var(--ink); }
+#loop-play {
+  background: var(--ink); color: var(--paper);
+  font-family: var(--font-mono); font-size: 11px; font-weight: 600; letter-spacing: .1em;
+  padding: 0 16px;
 }
-.lc-caption { font-size: 15.5px; line-height: 1.55; color: var(--ink); }
-.lc-caption .lc-kicker { margin-bottom: 8px; color: var(--cyan); }
-.lc-caption .cap-text { max-width: 40ch; margin-inline: auto; }
+#loop-play:hover { background: var(--cyan); color: #12130F; }
+#loop-play .ic-play { display: none; }
+#loop-play.is-paused .ic-play { display: block; }
+#loop-play.is-paused .ic-pause { display: none; }
 
-/* stage list: the loop's content in document order; interface on small screens */
-.loop-list { display: none; list-style: none; margin-top: 24px; }
-.loop-list li {
-  border: 1px solid var(--rule); border-radius: var(--r-card);
-  background: var(--paper-2); padding: 16px; margin-top: 12px;
-}
-.loop-list h3 { font-size: 17px; font-weight: 800; font-variation-settings: 'wdth' 114; display: flex; justify-content: space-between; align-items: baseline; }
-.loop-list h3 .num { font-size: 12.5px; color: var(--muted); font-weight: 500; }
-.loop-list .desc { font-size: 14px; color: var(--ink-2); margin-top: 6px; }
-.loop-list .layers { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 10px; }
-.loop-list .layers .chip { cursor: default; font-size: 10.5px; }
-.loop-list .ex { font-size: 12.5px; color: var(--muted); margin-top: 10px; }
-.loop-list .go { display: inline-block; margin-top: 10px; font-size: 13px; color: var(--cyan); font-weight: 600; }
-.loop-list .loop-back {
-  border: 0; background: none; padding: 8px 0 0; text-align: center;
-  font-family: var(--font-mono); font-size: 11.5px; color: var(--muted);
-}
+.loop-foot { margin-top: 14px; text-align: center; }
 
-@media (max-width: 680px) {
-  .loop-wrap { display: none; }
-  .loop-list { display: block; }
+/* --------------------------------------------------------------- small screens */
+/* Below the two-column threshold the track hides and the four cards stack in
+   ride order, controls between title and cards. Same content, no motion. */
+@media (max-width: 680px), (orientation: landscape) and (max-height: 560px) {
+  .loop-wrap { aspect-ratio: auto; }
+  #track { display: none; }
+  .loop-inner { position: static; display: flex; flex-direction: column; gap: 12px; padding: 0; }
+  .station { border-radius: var(--r-card) !important; }
+  .station.active { border-color: var(--rule); box-shadow: none; }
+  .st-ring { display: none; }
+  .loop-controls { display: none; }
+  .loop-foot { text-align: left; }
 }
-@media (min-width: 681px) and (max-width: 900px) {
-  .station { padding: 8px 12px; }
-  .station .st-name { font-size: 14px; }
-  .loop-center { width: 52%; }
-  .lc-station .ex { display: none; }
+@media (min-width: 681px) and (max-width: 980px) {
+  .loop-inner { gap: 12px; padding: 12px; }
+  .station { padding: 11px 13px; }
+  .station .ex { display: none; }
+  .station .layers { display: none; }
 }
-
-/* The circuit needs vertical room: at 844px wide it is 476px tall, taller than
-   a landscape phone viewport. Serve the same four stages as the list instead. */
-@media (orientation: landscape) and (max-height: 560px) {
-  .loop-wrap { display: none; }
-  .loop-list { display: block; }
-}
-
-.lc-pause {
-  margin-top: 10px; font-family: var(--font-mono); font-size: 10.5px;
-  letter-spacing: .1em; text-transform: uppercase; color: var(--muted);
-  text-decoration: underline; text-underline-offset: 3px;
-  text-decoration-color: var(--rule);
-}
-.lc-pause:hover { color: var(--ink); text-decoration-color: var(--muted); }
 
 /* ------------------------------------------------------------- map hero */
 /* A full-width preview of the wall chart at an angle: the real frozen

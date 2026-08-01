@@ -140,22 +140,31 @@
 .loop-foot { margin-top: 14px; text-align: center; }
 
 /* --------------------------------------------------------------- small screens */
-/* Below the two-column threshold the track hides and the four cards stack in
-   ride order, controls between title and cards. Same content, no motion. */
+/* Below the two-column threshold the loop turns on its side: the cards stack in
+   markup order and the track becomes a narrow two-lane road down their left —
+   the car drives down the near lane, turns at the bottom, and comes back up
+   past the pitlane. Same ride, same ring, same controls; loop.js rebuilds the
+   road to match the column's height. */
 @media (max-width: 680px), (orientation: landscape) and (max-height: 560px) {
-  .loop-wrap { aspect-ratio: auto; }
-  #track { display: none; }
-  .loop-inner { position: static; display: flex; flex-direction: column; gap: 12px; padding: 0; }
+  .loop-wrap { aspect-ratio: auto; display: flex; flex-direction: column; }
+  #track { width: 64px; height: 100%; left: 0; right: auto; }
+  #track-shoulder { stroke-width: 34; }
+  #track-path { stroke-width: 27; }
+  #track-dash { stroke-width: 1.8; stroke-dasharray: 11 9; }
+  .loop-inner {
+    position: static; display: flex; flex-direction: column;
+    gap: 14px; padding: 0 0 0 74px;
+  }
   .station { border-radius: var(--r-card) !important; }
-  .station.active { border-color: var(--rule); box-shadow: none; }
-  .st-ring { display: none; }
-  .loop-controls { display: none; }
+  .loop-controls {
+    position: static; transform: none; order: -1;
+    align-self: center; margin-bottom: 14px;
+  }
   .loop-foot { text-align: left; }
 }
 @media (min-width: 681px) and (max-width: 980px) {
   .loop-inner { gap: 36px 12px; padding: 12px; }
   .station { padding: 11px 13px; }
-  .station .layers { display: none; }
 }
 
 /* ------------------------------------------------------------- map hero */
@@ -259,4 +268,10 @@
 @media (max-width: 680px), (hover: none) {
   .band-btn { opacity: 1; transform: none; }
   .band-art { opacity: .3; transform: none; }
+}
+/* On a phone the art was as tall as the whole band and sat underneath the
+   words. Smaller and parked at the top right, it reads as a margin note. */
+@media (max-width: 680px) {
+  .band-art { align-items: flex-start; padding-top: 20px; }
+  .band-art svg { max-height: 84px; }
 }

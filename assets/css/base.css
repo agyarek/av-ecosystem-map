@@ -389,12 +389,19 @@ table.data tr:hover > td { background: color-mix(in oklab, var(--cyan) 5%, trans
 }
 .ch:first-child { border-left: 0; }
 .ch:hover, .ch:focus-within { background: var(--paper-2); }
-/* Two equal columns, three rows, when six abreast would not fit: the divider
-   between the pair stays, and nothing is ever left on a row of its own. */
+/* Two equal columns, three rows, when six abreast would not fit. The grid
+   fills column-first so the chapters read 01-02-03 down the left and 04-05-06
+   down the right, and every cell keeps a rule on each shared edge — one
+   divider down the middle, one between every stacked pair. */
 @media (max-width: 960px) {
-  .ch-list { grid-template-columns: repeat(2, 1fr); }
-  .ch { border-left: 0; }
-  .ch:nth-child(even) { border-left: 1px solid var(--rule); }
+  .ch-list {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, auto);
+    grid-auto-flow: column;
+  }
+  .ch { border-left: 0; border-top: 1px solid var(--rule); }
+  .ch:nth-child(1), .ch:nth-child(4) { border-top: 0; }
+  .ch:nth-child(n+4) { border-left: 1px solid var(--rule); }
 }
 .ch-head { display: flex; align-items: baseline; gap: 9px; text-decoration: none; }
 .ch-n { font-family: var(--font-mono); font-size: 12px; color: var(--muted); flex: none; }

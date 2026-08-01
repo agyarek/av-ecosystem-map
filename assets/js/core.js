@@ -350,11 +350,26 @@
     </div>
   </div>`;
 
+  // The bio renders only where a footer opts in with data-bio (the homepage),
+  // so the page ends on a person rather than a dataset.
+  const BIO = `<div class="bio">
+    <p class="bio-name">KOFI AGYARE-KWABI</p>
+    <p class="bio-text">I am an ex-Uber Country Manager with a decade of go-to-market and
+      partnerships work across mobility, and a Wharton MBA. I built this map partly because
+      I wanted it to exist and partly as evidence of how I think about the sector: every
+      company, partnership and figure here is compiled by hand from public filings, permits
+      and announcements — <a href="{ROOT}method/">the method is documented</a>.</p>
+    <p class="bio-text">If any of it is useful to you professionally, or you simply want to
+      talk autonomy, the inbox is open.</p>
+    <p class="bio-cta"><a class="btn" href="mailto:agyarek+avecosystemmap@gmail.com?subject=AV%20ecosystem%20map">EMAIL ME</a></p>
+  </div>`;
+
   const footerHTML = el => {
     const opener = el.dataset.cta === 'chart'
       ? 'A company that should be on this chart, a partnership I have not mapped, a detail that is wrong?'
       : 'A company that should be listed, a partnership I have not mapped, a detail that is wrong?';
     return `<div class="container">
+    ${el.hasAttribute('data-bio') ? BIO.replace('{ROOT}', ROOT) : ''}
     <p class="cta">${opener}
       <a href="${CORRECTION}">Tell me</a> — it comes to me directly, and it is
       how this map gets better.</p>

@@ -207,6 +207,16 @@ footer.site .cta { max-width: var(--measure); }
 footer.site .cta a { color: var(--cyan); font-weight: 600; }
 footer.site .fine { margin-top: 24px; font-size: 12.5px; color: var(--muted); max-width: 82ch; }
 footer.site .fine + .fine { margin-top: 8px; }
+footer.site .bio {
+  margin-bottom: 36px; padding-bottom: 32px; border-bottom: 1px solid var(--rule);
+}
+footer.site .bio-name {
+  font-family: var(--font-mono); font-size: var(--fs-xs); font-weight: 600;
+  letter-spacing: .12em; color: var(--muted);
+}
+footer.site .bio-text { margin-top: 10px; max-width: var(--measure); line-height: 1.55; }
+footer.site .bio-text a { color: var(--cyan); }
+footer.site .bio-cta { margin-top: 16px; }
 
 /* ---------------------------------------------------------------- pieces */
 .btn {

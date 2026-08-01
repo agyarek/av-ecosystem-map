@@ -360,13 +360,29 @@ table.data tr:hover > td { background: color-mix(in oklab, var(--cyan) 5%, trans
 
 /* ------------------------------------------------------------- chapters */
 /* Sits after the content, where a reader who has finished looks for what is
-   next. The current chapter is marked and opened; the others stay one line each
-   so the whole shape of the site is visible without scrolling it. */
+   next. One deliberate band: six equal columns with a rule between each, so no
+   chapter ever wraps alone, and the whole block answers hover — the auto-fit
+   grid this replaces fit five columns and orphaned Media on its own row. */
 .chapters-wrap { margin-top: clamp(48px, 8vh, 96px); padding-bottom: clamp(32px, 5vh, 56px); }
-.chapters { border-top: 1px solid var(--rule); padding-top: 28px; }
+.chapters { border-top: 1px solid var(--rule); padding-top: 24px; }
 .ch-list {
-  list-style: none; margin-top: 16px;
-  display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 20px 24px;
+  list-style: none; margin-top: 14px;
+  display: grid; grid-template-columns: repeat(6, 1fr);
+  border-block: 1px solid var(--rule);
+}
+.ch {
+  min-width: 0; padding: 18px 18px 22px;
+  border-left: 1px solid var(--rule);
+  transition: background 140ms ease;
+}
+.ch:first-child { border-left: 0; }
+.ch:hover, .ch:focus-within { background: var(--paper-2); }
+/* Two equal columns, three rows, when six abreast would not fit: the divider
+   between the pair stays, and nothing is ever left on a row of its own. */
+@media (max-width: 960px) {
+  .ch-list { grid-template-columns: repeat(2, 1fr); }
+  .ch { border-left: 0; }
+  .ch:nth-child(even) { border-left: 1px solid var(--rule); }
 }
 .ch-head { display: flex; align-items: baseline; gap: 9px; text-decoration: none; }
 .ch-n { font-family: var(--font-mono); font-size: 12px; color: var(--muted); flex: none; }

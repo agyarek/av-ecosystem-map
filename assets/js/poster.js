@@ -231,19 +231,31 @@
       o.push(`<rect x="${hd.x}" y="${hd.y + hd.h - 9}" width="${hd.w}" height="9" fill="${hueFill(d.hue)}"/>`);
       o.push(`</g>`);
       const sz = d.labelSize, n = d.labelLines.length;
-      const base = hd.y + hd.h / 2 + sz * 0.36 - (sz * 0.62 * (n - 1)) / 2;
+      // Narrow side districts stack the count under the name instead of racing
+      // it across the same line; wide ones keep name left, count right.
+      const narrow = hd.tw < 1100 && n > 1;
+      const block = n + (narrow ? 1 : 0);
+      const base = hd.y + hd.h / 2 + sz * 0.36 - (sz * 0.62 * (block - 1)) / 2;
       d.labelLines.forEach((line, i) => {
         o.push(`<text x="${hd.tx + 30}" y="${base + i * sz * 1.06}" font-size="${sz}" font-weight="700" fill="${C.ink}" font-family="Archivo, sans-serif">${esc(line)}</text>`);
       });
-      o.push(`<text x="${hd.tx + hd.tw - 30}" y="${hd.y + hd.h / 2 + sz * 0.36}" font-size="${sz}" font-weight="600" text-anchor="end" font-family="IBM Plex Mono, monospace" fill="${hueFill(d.hue)}">${d.count}</text>`);
+      if (narrow) {
+        o.push(`<text x="${hd.tx + 30}" y="${base + n * sz * 1.06}" font-size="${sz * 0.8}" font-weight="600" font-family="IBM Plex Mono, monospace" fill="${hueFill(d.hue)}">${d.count} orgs</text>`);
+      } else {
+        o.push(`<text x="${hd.tx + hd.tw - 30}" y="${hd.y + hd.h / 2 + sz * 0.36}" font-size="${sz}" font-weight="600" text-anchor="end" font-family="IBM Plex Mono, monospace" fill="${hueFill(d.hue)}">${d.count} orgs</text>`);
+      }
       // Each room draws a slice of its layer, so it has to say so. The control
       // names what is not on the wall and opens the full roster; in an export it
       // is still worth printing, because the chart should not look complete when
       // it is not.
       const hidden = (d.overflow || []).length;
-      if (hidden) {
+      if (hidden && d.bar) {
+        // The door, not a whisper: a bar the full width of the district that
+        // says plainly how much of the layer is not on the wall.
+        const b = d.bar;
         o.push(X ? `<g>` : `<g class="d-more" data-expand="${esc(d.id)}" role="button" tabindex="-1" aria-label="Show all ${d.count} organisations in ${esc(d.layer)}">`);
-        o.push(`<text x="${hd.tx + hd.tw - 30}" y="${hd.y + hd.h - 26}" text-anchor="end" font-size="27" font-family="IBM Plex Mono, monospace" fill="${C.muted}">+${hidden} more</text>`);
+        o.push(`<rect class="d-bar" x="${b.x}" y="${b.y}" width="${b.w}" height="${b.h}" rx="18" fill="${hueFill(d.hue)}" fill-opacity=".16" stroke="${hueFill(d.hue)}" stroke-width="3"/>`);
+        o.push(`<text x="${b.x + b.w / 2}" y="${b.y + b.h / 2 + 13}" text-anchor="middle" font-size="36" font-weight="600" font-family="IBM Plex Mono, monospace" fill="${C.ink}">SHOW ALL ${d.count} ORGS  ▾</text>`);
         o.push(`</g>`);
       }
       o.push(`<polygon class="d-edge" points="${poly(d.poly)}" fill="none" stroke="${C.rule}" stroke-width="3"/>`);
@@ -261,16 +273,16 @@
         } else {
           o.push(`<g>`);
         }
-        o.push(`<rect class="chip-body" x="${c.x + 8}" y="${c.y + 6}" width="${c.w - 16}" height="${c.h - 12}" rx="12" fill="${C.paper}" stroke="${C.rule}"/>`);
-        o.push(logoMarkup(c.slug, cx, cy + 14, 84, c.hue, c.mono, X));
+        o.push(`<rect class="chip-body" x="${c.x + 8}" y="${c.y + 6}" width="${c.w - 16}" height="${c.h - 12}" rx="16" fill="${C.paper}" stroke="${C.rule}"/>`);
+        o.push(logoMarkup(c.slug, cx, cy + 18, 172, c.hue, c.mono, X));
         wrapText(c.name).forEach((ln, i) => {
-          o.push(`<text x="${cx}" y="${cy + 112 + i * 20}" font-size="17" text-anchor="middle" fill="${C.ink}" font-family="Archivo, sans-serif">${esc(ln)}</text>`);
+          o.push(`<text x="${cx}" y="${cy + 216 + i * 21}" font-size="19" text-anchor="middle" fill="${C.ink}" font-family="Archivo, sans-serif">${esc(ln)}</text>`);
         });
         (c.pips || []).forEach((hue, i) => {
-          o.push(`<circle cx="${c.x + 22 + i * 16}" cy="${c.y + 20}" r="5.5" fill="${hueFill(hue)}"/>`);
+          o.push(`<circle cx="${c.x + 28 + i * 20}" cy="${c.y + 26}" r="7" fill="${hueFill(hue)}"/>`);
         });
-        if (c.exited) o.push(`<line x1="${c.x + 14}" y1="${c.y + 12}" x2="${c.x + c.w - 14}" y2="${c.y + c.h - 18}" stroke="${C.muted}" stroke-width="2" opacity=".5"/>`);
-        if (c.spokenTo) o.push(`<circle cx="${c.x + c.w - 22}" cy="${c.y + 20}" r="6" fill="${C.yellow}"/>`);
+        if (c.exited) o.push(`<line x1="${c.x + 18}" y1="${c.y + 14}" x2="${c.x + c.w - 18}" y2="${c.y + c.h - 20}" stroke="${C.muted}" stroke-width="2.5" opacity=".5"/>`);
+        if (c.spokenTo) o.push(`<circle cx="${c.x + c.w - 28}" cy="${c.y + 26}" r="7.5" fill="${C.yellow}"/>`);
         o.push(`</g>`);
       }
       o.push(`</g>`);
@@ -278,31 +290,29 @@
 
     o.push(`</g>`);   // end plate clip
 
-    // ------------------------------------------------------- the octagon
+    // ------------------------------------------------------- the centre
+    // A rectangle now, not an octagon: a centred heading, one line saying what
+    // the category is, and a grid of real tiles beneath it.
     const opts = poly(oc.points);
     o.push(X ? `<g>` : `<g class="district" data-district="passenger-autonomy">`);
     o.push(`<g class="medallion-shell">`);
     o.push(`<polygon class="oct-fill" points="${opts}" fill="${C.med}"/>`);
-    o.push(`<polygon class="oct-edge" points="${opts}" fill="none" stroke="${C.yellow}" stroke-width="14"/>`);
-    o.push(`<text x="${oc.cx}" y="${oc.titleY}" font-size="86" font-weight="900" letter-spacing="18" text-anchor="middle" fill="${C.medtx}" font-family="Archivo, sans-serif">${esc(oc.title)}</text>`);
-    o.push(`<text x="${oc.cx}" y="${oc.subY}" font-size="28" text-anchor="middle" fill="${C.medsub}" font-family="IBM Plex Mono, monospace" letter-spacing="4">${esc(oc.sub)}</text>`);
-    o.push(`<line x1="${oc.cx - 440}" y1="${oc.ruleY}" x2="${oc.cx + 440}" y2="${oc.ruleY}" stroke="${C.medsub}" stroke-width="2" opacity=".4"/>`);
-    o.push(`<text x="${oc.cx}" y="${oc.footY}" font-size="24" text-anchor="middle" fill="${C.medsub}" font-family="IBM Plex Mono, monospace" letter-spacing="3">${esc(oc.foot)}</text>`);
+    o.push(`<polygon class="oct-edge" points="${opts}" fill="none" stroke="${C.yellow}" stroke-width="10"/>`);
+    o.push(`<text x="${oc.cx}" y="${oc.titleY}" font-size="82" font-weight="900" letter-spacing="16" text-anchor="middle" fill="${C.medtx}" font-family="Archivo, sans-serif">${esc(oc.title)}</text>`);
+    o.push(`<text x="${oc.cx}" y="${oc.subY}" font-size="27" text-anchor="middle" fill="${C.medsub}" font-family="IBM Plex Mono, monospace" letter-spacing="4">${esc(oc.sub)} · ${esc(oc.foot)}</text>`);
     o.push(`</g>`);
 
     for (const c of L.medallion) {
       const cx = c.x + c.w / 2;
       const meta = bySlug[c.slug] || {};
       if (!X) {
-        o.push(`<g data-chip data-med data-slug="${esc(c.slug)}" data-cx="${cx}" data-cy="${c.y + MS.logoY + MS.logo / 2}" data-bx="${cx - MS.logo / 2}" data-by="${c.y + MS.logoY}" data-bw="${MS.logo}" data-bh="${MS.logo}" data-cat="${esc(SHORT[meta.c] || '')}" data-region="${esc(REGION_KEY(meta.r || ''))}" data-mat="${esc(meta.m || '')}" data-text="${esc((c.name + ' ' + (meta.b || '')).toLowerCase())}" ${meta.g ? 'data-spoken="1"' : ''} tabindex="-1" role="button" aria-label="${esc(c.name + '; operator; ' + (c.claim || ''))}">`);
+        o.push(`<g data-chip data-med data-slug="${esc(c.slug)}" data-cx="${cx}" data-cy="${c.y + c.h / 2}" data-bx="${c.x + 12}" data-by="${c.y + 8}" data-bw="${c.w - 24}" data-bh="${c.h - 16}" data-cat="${esc(SHORT[meta.c] || '')}" data-region="${esc(REGION_KEY(meta.r || ''))}" data-mat="${esc(meta.m || '')}" data-text="${esc((c.name + ' ' + (meta.b || '')).toLowerCase())}" ${meta.g ? 'data-spoken="1"' : ''} tabindex="-1" role="button" aria-label="${esc(c.name + '; operator; ' + (c.claim || ''))}">`);
       } else o.push(`<g>`);
       // These used to be a bare mark on a dark slab, with no tile of their own,
       // which is much of why they read as a different species from the other 551.
       // They now get the same bounded tile every district chip has, so they
       // inherit the same hover and selection states and the same logo pipeline.
-      const half = MS.logo / 2;
-      const pad = MS.logo * 0.14;
-      o.push(`<rect class="chip-body" x="${cx - half - pad}" y="${c.y + MS.logoY - pad}" width="${MS.logo + pad * 2}" height="${MS.logo + pad * 2}" rx="18" fill="${C.paper}" stroke="${C.rule}"/>`);
+      o.push(`<rect class="chip-body" x="${c.x + 12}" y="${c.y + 8}" width="${c.w - 24}" height="${c.h - 16}" rx="22" fill="${C.paper}" stroke="${C.rule}"/>`);
       o.push(logoMarkup(c.slug, cx, c.y + MS.logoY, MS.logo, c.hue, c.mono, X));
       o.push(`<text x="${cx}" y="${c.y + MS.nameY}" font-size="${MS.nameSize}" font-weight="700" text-anchor="middle" fill="${C.medtx}" font-family="Archivo, sans-serif">${esc(c.name)}</text>`);
       wrapText(c.claim || '', MS.claimChars, 4).forEach((ln, j) => {

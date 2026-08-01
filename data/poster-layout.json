@@ -1,85 +1,69 @@
 {
  "meta": {
   "generatedBy": "tools/build-poster-layout.py",
-  "module": 160,
-  "pitch": 178,
+  "module": 240,
+  "pitch": 264,
   "margin": 200,
-  "headerH": 210,
-  "octR": 1240,
+  "headerH": 280,
   "companyCount": 562,
-  "medallionCount": 10,
+  "medallionCount": 12,
   "medStyle": {
-   "logo": 120,
-   "logoY": 52,
-   "nameY": 232,
-   "nameSize": 34,
-   "claimY": 270,
-   "claimStep": 27,
-   "claimSize": 20,
-   "claimChars": 30
+   "logo": 240,
+   "logoY": 40,
+   "nameY": 336,
+   "nameSize": 40,
+   "claimY": 384,
+   "claimStep": 30,
+   "claimSize": 22,
+   "claimChars": 40
   },
-  "width": 4408,
-  "height": 4294,
+  "width": 5224,
+  "height": 3904,
   "plate": {
    "x": 200,
    "y": 200,
-   "w": 4008,
-   "h": 3894,
+   "w": 4824,
+   "h": 3504,
    "rx": 56
   },
   "medallionBox": {
-   "x": 786,
-   "y": 818,
-   "w": 2480,
-   "h": 2480
+   "x": 792,
+   "y": 1192,
+   "w": 3640,
+   "h": 1520
   }
  },
  "oct": {
-  "cx": 2026,
-  "cy": 2058,
-  "r": 1240,
-  "side": 1027.2,
+  "cx": 2612,
+  "cy": 1952,
+  "r": 760,
+  "hw": 1820,
+  "hh": 760,
   "points": [
    [
-    1512.4,
-    818
+    792,
+    1192
    ],
    [
-    2539.6,
-    818
+    4432,
+    1192
    ],
    [
-    3266,
-    1544.4
+    4432,
+    2712
    ],
    [
-    3266,
-    2571.6
-   ],
-   [
-    2539.6,
-    3298
-   ],
-   [
-    1512.4,
-    3298
-   ],
-   [
-    786,
-    2571.6
-   ],
-   [
-    786,
-    1544.4
+    792,
+    2712
    ]
   ],
-  "titleY": 1088,
-  "subY": 1150,
-  "ruleY": 2948,
-  "footY": 3000,
+  "titleY": 1322,
+  "subY": 1388,
+  "ruleY": 2582,
+  "footY": 2636,
   "title": "PASSENGER AUTONOMY",
   "sub": "AUTONOMOUS DRIVERS A PASSENGER CAN ACTUALLY MEET",
-  "foot": "10 OF 562 ORGANISATIONS ON THIS CHART"
+  "foot": "12 OF 562 ORGANISATIONS ON THIS CHART"
  },
  "districts": [
   {
@@ -87,9 +71,81 @@
    "layer": "AV Driver / Autonomy Software",
    "band": "top",
    "hue": 265,
-   "count": 53,
-   "shown": 16,
+   "count": 51,
+   "shown": 7,
    "overflow": [
+    {
+     "name": "Apex.AI",
+     "slug": "apex-ai",
+     "id": "c0",
+     "mono": "AA",
+     "exited": false,
+     "spokenTo": false
+    },
+    {
+     "name": "Aurora Innovation",
+     "slug": "aurora-innovation",
+     "id": "c3",
+     "mono": "AI",
+     "exited": false,
+     "spokenTo": true
+    },
+    {
+     "name": "DeepRoute.ai",
+     "slug": "deeproute-ai",
+     "id": "c15",
+     "mono": "DA",
+     "exited": false,
+     "spokenTo": false
+    },
+    {
+     "name": "dSPACE",
+     "slug": "dspace",
+     "id": "c17",
+     "mono": "DS",
+     "exited": false,
+     "spokenTo": false
+    },
+    {
+     "name": "Foretellix",
+     "slug": "foretellix",
+     "id": "c19",
+     "mono": "FO",
+     "exited": false,
+     "spokenTo": false
+    },
+    {
+     "name": "Huawei Intelligent Automotive Solution / Yinwang",
+     "slug": "huawei-intelligent-automotive-solution-yinwang",
+     "id": "c24",
+     "mono": "HI",
+     "exited": false,
+     "spokenTo": false
+    },
+    {
+     "name": "Huawei Intelligent Automotive Solutions",
+     "slug": "huawei-intelligent-automotive-solutions",
+     "id": "c25",
+     "mono": "HI",
+     "exited": false,
+     "spokenTo": false
+    },
+    {
+     "name": "Kodiak AI",
+     "slug": "kodiak-ai",
+     "id": "c28",
+     "mono": "KA",
+     "exited": false,
+     "spokenTo": false
+    },
+    {
+     "name": "Plus",
+     "slug": "plus",
+     "id": "c36",
+     "mono": "PL",
+     "exited": false,
+     "spokenTo": false
+    },
     {
      "name": "Serve Robotics",
      "slug": "serve-robotics",
@@ -203,26 +259,10 @@
      "spokenTo": false
     },
     {
-     "name": "SWM",
-     "slug": "swm",
-     "id": "c558",
-     "mono": "SW",
-     "exited": false,
-     "spokenTo": false
-    },
-    {
      "name": "Torc Robotics",
      "slug": "torc-robotics",
      "id": "c46",
      "mono": "TR",
-     "exited": false,
-     "spokenTo": false
-    },
-    {
-     "name": "Avride",
-     "slug": "avride",
-     "id": "c6",
-     "mono": "AV",
      "exited": false,
      "spokenTo": false
     },
@@ -389,40 +429,46 @@
    ],
    "x": 200,
    "y": 200,
-   "w": 1476,
-   "h": 618,
+   "w": 1384,
+   "h": 992,
    "poly": [
     [
      200,
      200
     ],
     [
-     1676,
+     1584,
      200
     ],
     [
-     1676,
-     818
+     1584,
+     1192
     ],
     [
      200,
-     818
+     1192
     ]
    ],
    "header": {
     "x": 200,
     "y": 200,
-    "w": 1476,
-    "h": 210,
+    "w": 1384,
+    "h": 280,
     "tx": 200,
-    "tw": 1476
+    "tw": 1384
    },
-   "labelSize": 40,
+   "labelSize": 44,
    "labelLines": [
     "AV DRIVER / AUTONOMY SOFTWARE"
    ],
-   "capacity": 16,
-   "slack": 0
+   "bar": {
+    "x": 232,
+    "y": 1060,
+    "w": 1320,
+    "h": 100
+   },
+   "capacity": 10,
+   "slack": 3
   },
   {
    "id": "sensing-compute-hardware",
@@ -430,8 +476,48 @@
    "band": "top",
    "hue": 200,
    "count": 38,
-   "shown": 11,
+   "shown": 6,
    "overflow": [
+    {
+     "name": "Hesai",
+     "slug": "hesai",
+     "id": "c60",
+     "mono": "HE",
+     "exited": false,
+     "spokenTo": false
+    },
+    {
+     "name": "Onsemi",
+     "slug": "onsemi",
+     "id": "c70",
+     "mono": "ON",
+     "exited": false,
+     "spokenTo": false
+    },
+    {
+     "name": "Qualcomm Snapdragon Ride",
+     "slug": "qualcomm-snapdragon-ride",
+     "id": "c88",
+     "mono": "QS",
+     "exited": false,
+     "spokenTo": false
+    },
+    {
+     "name": "Renesas Electronics",
+     "slug": "renesas-electronics",
+     "id": "c74",
+     "mono": "RE",
+     "exited": false,
+     "spokenTo": false
+    },
+    {
+     "name": "Texas Instruments",
+     "slug": "texas-instruments",
+     "id": "c83",
+     "mono": "TI",
+     "exited": false,
+     "spokenTo": false
+    },
     {
      "name": "Hexagon | NovAtel",
      "slug": "hexagon-novatel",
@@ -649,42 +735,48 @@
      "spokenTo": false
     }
    ],
-   "x": 1676,
+   "x": 1584,
    "y": 200,
    "w": 1120,
-   "h": 618,
+   "h": 992,
    "poly": [
     [
-     1676,
+     1584,
      200
     ],
     [
-     2796,
+     2704,
      200
     ],
     [
-     2796,
-     818
+     2704,
+     1192
     ],
     [
-     1676,
-     818
+     1584,
+     1192
     ]
    ],
    "header": {
-    "x": 1676,
+    "x": 1584,
     "y": 200,
     "w": 1120,
-    "h": 210,
-    "tx": 1676,
+    "h": 280,
+    "tx": 1584,
     "tw": 1120
    },
-   "labelSize": 40,
+   "labelSize": 44,
    "labelLines": [
     "SENSING & COMPUTE HARDWARE"
    ],
-   "capacity": 12,
-   "slack": 1
+   "bar": {
+    "x": 1616,
+    "y": 1060,
+    "w": 1056,
+    "h": 100
+   },
+   "capacity": 8,
+   "slack": 2
   },
   {
    "id": "data-maps-simulation",
@@ -692,8 +784,72 @@
    "band": "top",
    "hue": 150,
    "count": 47,
-   "shown": 14,
+   "shown": 6,
    "overflow": [
+    {
+     "name": "NVIDIA DRIVE Sim / Omniverse / Cosmos",
+     "slug": "nvidia-drive-sim-omniverse-cosmos",
+     "id": "c123",
+     "mono": "ND",
+     "exited": false,
+     "spokenTo": false
+    },
+    {
+     "name": "Scale AI",
+     "slug": "scale-ai",
+     "id": "c128",
+     "mono": "SA",
+     "exited": false,
+     "spokenTo": false
+    },
+    {
+     "name": "TomTom",
+     "slug": "tomtom",
+     "id": "c132",
+     "mono": "TO",
+     "exited": false,
+     "spokenTo": false
+    },
+    {
+     "name": "DEKRA",
+     "slug": "dekra",
+     "id": "c104",
+     "mono": "DE",
+     "exited": false,
+     "spokenTo": false
+    },
+    {
+     "name": "dSPACE ASM / AURELION",
+     "slug": "dspace-asm-aurelion",
+     "id": "c105",
+     "mono": "DA",
+     "exited": false,
+     "spokenTo": false
+    },
+    {
+     "name": "HERE Technologies",
+     "slug": "here-technologies",
+     "id": "c108",
+     "mono": "HE",
+     "exited": false,
+     "spokenTo": false
+    },
+    {
+     "name": "Hexagon VIRES Virtual Test Drive",
+     "slug": "hexagon-vires-virtual-test-drive",
+     "id": "c109",
+     "mono": "HV",
+     "exited": false,
+     "spokenTo": false
+    },
+    {
+     "name": "iMerit",
+     "slug": "imerit",
+     "id": "c112",
+     "mono": "IM",
+     "exited": false,
+     "spokenTo": false
+    },
     {
      "name": "IPG Automotive",
      "slug": "ipg-automotive",
@@ -959,51 +1115,129 @@
      "spokenTo": false
     }
    ],
-   "x": 2796,
+   "x": 2704,
    "y": 200,
-   "w": 1412,
-   "h": 618,
+   "w": 1120,
+   "h": 992,
    "poly": [
     [
-     2796,
+     2704,
      200
     ],
     [
-     4208,
+     3824,
      200
     ],
     [
-     4208,
-     818
+     3824,
+     1192
     ],
     [
-     2796,
-     818
+     2704,
+     1192
     ]
    ],
    "header": {
-    "x": 2796,
+    "x": 2704,
     "y": 200,
-    "w": 1412,
-    "h": 210,
-    "tx": 2796,
-    "tw": 1412
+    "w": 1120,
+    "h": 280,
+    "tx": 2704,
+    "tw": 1120
    },
-   "labelSize": 40,
+   "labelSize": 44,
    "labelLines": [
     "DATA, MAPS & SIMULATION"
    ],
-   "capacity": 14,
-   "slack": 0
+   "bar": {
+    "x": 2736,
+    "y": 1060,
+    "w": 1056,
+    "h": 100
+   },
+   "capacity": 8,
+   "slack": 2
   },
   {
    "id": "connectivity-infrastructure",
    "layer": "Connectivity & Infrastructure",
-   "band": "right",
+   "band": "top",
    "hue": 230,
    "count": 55,
-   "shown": 16,
+   "shown": 7,
    "overflow": [
+    {
+     "name": "Autotalks",
+     "slug": "autotalks",
+     "id": "c142",
+     "mono": "AU",
+     "exited": false,
+     "spokenTo": false
+    },
+    {
+     "name": "Baidu Apollo ACE / Vehicle-Road-Cloud",
+     "slug": "baidu-apollo-ace-vehicle-road-cloud",
+     "id": "c144",
+     "mono": "BA",
+     "exited": false,
+     "spokenTo": false
+    },
+    {
+     "name": "C2A Security",
+     "slug": "c2a-security",
+     "id": "c146",
+     "mono": "CS",
+     "exited": false,
+     "spokenTo": false
+    },
+    {
+     "name": "Cybellum",
+     "slug": "cybellum",
+     "id": "c153",
+     "mono": "CY",
+     "exited": false,
+     "spokenTo": false
+    },
+    {
+     "name": "ETAS / ESCRYPT",
+     "slug": "etas-escrypt",
+     "id": "c159",
+     "mono": "EE",
+     "exited": false,
+     "spokenTo": false
+    },
+    {
+     "name": "Harman",
+     "slug": "harman",
+     "id": "c164",
+     "mono": "HA",
+     "exited": false,
+     "spokenTo": false
+    },
+    {
+     "name": "Huawei",
+     "slug": "huawei",
+     "id": "c166",
+     "mono": "HU",
+     "exited": false,
+     "spokenTo": false
+    },
+    {
+     "name": "Miovision",
+     "slug": "miovision",
+     "id": "c171",
+     "mono": "MI",
+     "exited": false,
+     "spokenTo": false
+    },
+    {
+     "name": "Ouster BlueCity",
+     "slug": "ouster-bluecity",
+     "id": "c175",
+     "mono": "OB",
+     "exited": false,
+     "spokenTo": false
+    },
     {
      "name": "PlaxidityX / Argus Cyber Security",
      "slug": "plaxidityx-argus-cyber-security",
@@ -1317,46 +1551,48 @@
      "spokenTo": false
     }
    ],
-   "x": 2539.6,
-   "y": 818,
-   "w": 1668.4,
-   "h": 1068,
+   "x": 3824,
+   "y": 200,
+   "w": 1200,
+   "h": 992,
    "poly": [
     [
-     4208,
-     818
+     3824,
+     200
     ],
     [
-     4208,
-     1886
+     5024,
+     200
     ],
     [
-     3266,
-     1886
+     5024,
+     1192
     ],
     [
-     3266,
-     1544.4
-    ],
-    [
-     2026.0,
-     818
+     3824,
+     1192
     ]
    ],
    "header": {
-    "x": 2539.6,
-    "y": 818,
-    "w": 1668.4,
-    "h": 210,
-    "tx": 3266,
-    "tw": 942
+    "x": 3824,
+    "y": 200,
+    "w": 1200,
+    "h": 280,
+    "tx": 3824,
+    "tw": 1200
    },
-   "labelSize": 40,
+   "labelSize": 44,
    "labelLines": [
     "CONNECTIVITY & INFRASTRUCTURE"
    ],
-   "capacity": 19,
-   "slack": 3
+   "bar": {
+    "x": 3856,
+    "y": 1060,
+    "w": 1136,
+    "h": 100
+   },
+   "capacity": 8,
+   "slack": 1
   },
   {
    "id": "vehicle-platform-manufacturing",
@@ -1364,8 +1600,96 @@
    "band": "right",
    "hue": 40,
    "count": 64,
-   "shown": 19,
+   "shown": 8,
    "overflow": [
+    {
+     "name": "ZF",
+     "slug": "zf",
+     "id": "c260",
+     "mono": "ZF",
+     "exited": false,
+     "spokenTo": false
+    },
+    {
+     "name": "Bosch",
+     "slug": "bosch",
+     "id": "c199",
+     "mono": "BO",
+     "exited": false,
+     "spokenTo": false
+    },
+    {
+     "name": "GAC Group / GAC Toyota",
+     "slug": "gac-group-gac-toyota",
+     "id": "c214",
+     "mono": "GG",
+     "exited": false,
+     "spokenTo": false
+    },
+    {
+     "name": "General Motors",
+     "slug": "general-motors",
+     "id": "c216",
+     "mono": "GE",
+     "exited": true,
+     "spokenTo": false
+    },
+    {
+     "name": "Hyundai Motor Group",
+     "slug": "hyundai-motor-group",
+     "id": "c219",
+     "mono": "HY",
+     "exited": false,
+     "spokenTo": false
+    },
+    {
+     "name": "SAIC Motor",
+     "slug": "saic-motor",
+     "id": "c243",
+     "mono": "SA",
+     "exited": false,
+     "spokenTo": false
+    },
+    {
+     "name": "Toyota",
+     "slug": "toyota",
+     "id": "c247",
+     "mono": "TO",
+     "exited": false,
+     "spokenTo": false
+    },
+    {
+     "name": "Baidu Apollo RT6",
+     "slug": "baidu-apollo-rt6",
+     "id": "c197",
+     "mono": "BA",
+     "exited": false,
+     "spokenTo": false
+    },
+    {
+     "name": "Daimler Truck",
+     "slug": "daimler-truck",
+     "id": "c202",
+     "mono": "DT",
+     "exited": false,
+     "spokenTo": false
+    },
+    {
+     "name": "Daimler Truck / Freightliner",
+     "slug": "daimler-truck-freightliner",
+     "id": "c203",
+     "mono": "DT",
+     "exited": false,
+     "spokenTo": false
+    },
+    {
+     "name": "Desay SV",
+     "slug": "desay-sv",
+     "id": "c205",
+     "mono": "DS",
+     "exited": false,
+     "spokenTo": false
+    },
     {
      "name": "Forvia / Hella",
      "slug": "forvia-hella",
@@ -1727,46 +2051,501 @@
      "spokenTo": false
     }
    ],
-   "x": 2539.6,
-   "y": 1886,
-   "w": 1668.4,
-   "h": 1412,
+   "x": 4432,
+   "y": 1192,
+   "w": 592,
+   "h": 1520,
    "poly": [
     [
-     4208,
-     1886
+     4432,
+     1192
     ],
     [
-     4208,
-     3298
+     5024,
+     1192
     ],
     [
-     2026.0,
-     3298
+     5024,
+     2712
     ],
     [
-     3266,
-     2571.6
-    ],
-    [
-     3266,
-     1886
+     4432,
+     2712
     ]
    ],
    "header": {
-    "x": 2539.6,
-    "y": 1886,
-    "w": 1668.4,
-    "h": 210,
-    "tx": 3266,
-    "tw": 942
+    "x": 4432,
+    "y": 1192,
+    "w": 592,
+    "h": 280,
+    "tx": 4432,
+    "tw": 592
    },
-   "labelSize": 40,
+   "labelSize": 44,
    "labelLines": [
-    "VEHICLE PLATFORM & MANUFACTURING"
+    "VEHICLE PLATFORM",
+    "& MANUFACTURING"
    ],
-   "capacity": 30,
-   "slack": 11
+   "bar": {
+    "x": 4464,
+    "y": 2580,
+    "w": 528,
+    "h": 100
+   },
+   "capacity": 8,
+   "slack": 0
+  },
+  {
+   "id": "governance-standards-safety-advocacy",
+   "layer": "Governance: Standards, Safety & Advocacy",
+   "band": "bottom",
+   "hue": 340,
+   "count": 58,
+   "shown": 8,
+   "overflow": [
+    {
+     "name": "AUVSI",
+     "slug": "auvsi",
+     "id": "c508",
+     "mono": "AU",
+     "exited": false,
+     "spokenTo": false
+    },
+    {
+     "name": "AVIA",
+     "slug": "avia",
+     "id": "c509",
+     "mono": "AV",
+     "exited": false,
+     "spokenTo": false
+    },
+    {
+     "name": "Consumer Reports",
+     "slug": "consumer-reports",
+     "id": "c512",
+     "mono": "CR",
+     "exited": false,
+     "spokenTo": false
+    },
+    {
+     "name": "Euro NCAP",
+     "slug": "euro-ncap",
+     "id": "c514",
+     "mono": "EN",
+     "exited": false,
+     "spokenTo": false
+    },
+    {
+     "name": "Highway Loss Data Institute (HLDI)",
+     "slug": "highway-loss-data-institute-hldi",
+     "id": "c515",
+     "mono": "HL",
+     "exited": false,
+     "spokenTo": false
+    },
+    {
+     "name": "IEEE 2846",
+     "slug": "ieee-2846",
+     "id": "c517",
+     "mono": "I2",
+     "exited": false,
+     "spokenTo": false
+    },
+    {
+     "name": "IEEE Standards Association",
+     "slug": "ieee-standards-association",
+     "id": "c519",
+     "mono": "IS",
+     "exited": false,
+     "spokenTo": false
+    },
+    {
+     "name": "Insurance Institute for Highway Safety (IIHS)",
+     "slug": "insurance-institute-for-highway-safety-iihs",
+     "id": "c520",
+     "mono": "II",
+     "exited": false,
+     "spokenTo": false
+    },
+    {
+     "name": "International Brotherhood of Teamsters",
+     "slug": "international-brotherhood-of-teamsters",
+     "id": "c521",
+     "mono": "IB",
+     "exited": false,
+     "spokenTo": false
+    },
+    {
+     "name": "International Organization for Standardization (ISO)",
+     "slug": "international-organization-for-standardization-iso",
+     "id": "c522",
+     "mono": "IO",
+     "exited": false,
+     "spokenTo": false
+    },
+    {
+     "name": "ISO / TC 204",
+     "slug": "iso-tc-204",
+     "id": "c524",
+     "mono": "IT",
+     "exited": false,
+     "spokenTo": false
+    },
+    {
+     "name": "ISO 21448 SOTIF",
+     "slug": "iso-21448-sotif",
+     "id": "c525",
+     "mono": "I2",
+     "exited": false,
+     "spokenTo": false
+    },
+    {
+     "name": "ISO 26262",
+     "slug": "iso-26262",
+     "id": "c526",
+     "mono": "I2",
+     "exited": false,
+     "spokenTo": false
+    },
+    {
+     "name": "ISO 34501",
+     "slug": "iso-34501",
+     "id": "c527",
+     "mono": "I3",
+     "exited": false,
+     "spokenTo": false
+    },
+    {
+     "name": "ISO 34502",
+     "slug": "iso-34502",
+     "id": "c528",
+     "mono": "I3",
+     "exited": false,
+     "spokenTo": false
+    },
+    {
+     "name": "ISO 34503",
+     "slug": "iso-34503",
+     "id": "c529",
+     "mono": "I3",
+     "exited": false,
+     "spokenTo": false
+    },
+    {
+     "name": "ISO 34504",
+     "slug": "iso-34504",
+     "id": "c530",
+     "mono": "I3",
+     "exited": false,
+     "spokenTo": false
+    },
+    {
+     "name": "ISO/TC 204 Intelligent Transport Systems",
+     "slug": "iso-tc-204-intelligent-transport-systems",
+     "id": "c531",
+     "mono": "IT",
+     "exited": false,
+     "spokenTo": false
+    },
+    {
+     "name": "ISO/TC 22 Road Vehicles",
+     "slug": "iso-tc-22-road-vehicles",
+     "id": "c532",
+     "mono": "IT",
+     "exited": false,
+     "spokenTo": false
+    },
+    {
+     "name": "ITS America",
+     "slug": "its-america",
+     "id": "c534",
+     "mono": "IA",
+     "exited": false,
+     "spokenTo": false
+    },
+    {
+     "name": "Mcity",
+     "slug": "mcity",
+     "id": "c535",
+     "mono": "MC",
+     "exited": false,
+     "spokenTo": false
+    },
+    {
+     "name": "Mobileye Responsibility-Sensitive Safety (RSS)",
+     "slug": "mobileye-responsibility-sensitive-safety-rss",
+     "id": "c536",
+     "mono": "MR",
+     "exited": false,
+     "spokenTo": false
+    },
+    {
+     "name": "National Safety Council",
+     "slug": "national-safety-council",
+     "id": "c537",
+     "mono": "NS",
+     "exited": false,
+     "spokenTo": false
+    },
+    {
+     "name": "Open Mobility Foundation",
+     "slug": "open-mobility-foundation",
+     "id": "c539",
+     "mono": "OM",
+     "exited": false,
+     "spokenTo": false
+    },
+    {
+     "name": "Partners for Automated Vehicle Education (PAVE)",
+     "slug": "partners-for-automated-vehicle-education-pave",
+     "id": "c540",
+     "mono": "PF",
+     "exited": false,
+     "spokenTo": false
+    },
+    {
+     "name": "SAE Industry Technologies Consortia",
+     "slug": "sae-industry-technologies-consortia",
+     "id": "c542",
+     "mono": "SI",
+     "exited": false,
+     "spokenTo": false
+    },
+    {
+     "name": "SAE International",
+     "slug": "sae-international",
+     "id": "c543",
+     "mono": "SI",
+     "exited": false,
+     "spokenTo": false
+    },
+    {
+     "name": "SAE J3016",
+     "slug": "sae-j3016",
+     "id": "c544",
+     "mono": "SJ",
+     "exited": false,
+     "spokenTo": false
+    },
+    {
+     "name": "UL Standards & Engagement",
+     "slug": "ul-standards-engagement",
+     "id": "c549",
+     "mono": "US",
+     "exited": false,
+     "spokenTo": false
+    },
+    {
+     "name": "ASAM OpenLABEL",
+     "slug": "asam-openlabel",
+     "id": "c501",
+     "mono": "AO",
+     "exited": false,
+     "spokenTo": false
+    },
+    {
+     "name": "ASAM OpenODD",
+     "slug": "asam-openodd",
+     "id": "c502",
+     "mono": "AO",
+     "exited": false,
+     "spokenTo": false
+    },
+    {
+     "name": "ASAM OpenSCENARIO DSL",
+     "slug": "asam-openscenario-dsl",
+     "id": "c503",
+     "mono": "AO",
+     "exited": false,
+     "spokenTo": false
+    },
+    {
+     "name": "ASAM OpenSCENARIO XML",
+     "slug": "asam-openscenario-xml",
+     "id": "c504",
+     "mono": "AO",
+     "exited": false,
+     "spokenTo": false
+    },
+    {
+     "name": "ASAM OSI",
+     "slug": "asam-osi",
+     "id": "c505",
+     "mono": "AO",
+     "exited": false,
+     "spokenTo": false
+    },
+    {
+     "name": "Automated Vehicle Safety Consortium (AVSC)",
+     "slug": "automated-vehicle-safety-consortium-avsc",
+     "id": "c506",
+     "mono": "AV",
+     "exited": false,
+     "spokenTo": false
+    },
+    {
+     "name": "AVSC",
+     "slug": "avsc",
+     "id": "c510",
+     "mono": "AV",
+     "exited": false,
+     "spokenTo": false
+    },
+    {
+     "name": "CEN/TC 278 Intelligent Transport Systems",
+     "slug": "cen-tc-278-intelligent-transport-systems",
+     "id": "c511",
+     "mono": "CT",
+     "exited": false,
+     "spokenTo": false
+    },
+    {
+     "name": "ETSI TC ITS",
+     "slug": "etsi-tc-its",
+     "id": "c513",
+     "mono": "ET",
+     "exited": false,
+     "spokenTo": false
+    },
+    {
+     "name": "Safety First for Automated Driving",
+     "slug": "safety-first-for-automated-driving",
+     "id": "c546",
+     "mono": "SF",
+     "exited": false,
+     "spokenTo": false
+    },
+    {
+     "name": "UL 4600",
+     "slug": "ul-4600",
+     "id": "c548",
+     "mono": "U4",
+     "exited": false,
+     "spokenTo": false
+    },
+    {
+     "name": "W3C Automotive Working Group",
+     "slug": "w3c-automotive-working-group",
+     "id": "c551",
+     "mono": "WA",
+     "exited": false,
+     "spokenTo": false
+    },
+    {
+     "name": "Waymo Safety Framework",
+     "slug": "waymo-safety-framework",
+     "id": "c552",
+     "mono": "WS",
+     "exited": false,
+     "spokenTo": false
+    },
+    {
+     "name": "IEEE P2851",
+     "slug": "ieee-p2851",
+     "id": "c518",
+     "mono": "IP",
+     "exited": false,
+     "spokenTo": false
+    },
+    {
+     "name": "ISO/TR 4804",
+     "slug": "iso-tr-4804",
+     "id": "c533",
+     "mono": "IT",
+     "exited": false,
+     "spokenTo": false
+    },
+    {
+     "name": "Open Autonomy Safety Case Framework",
+     "slug": "open-autonomy-safety-case-framework",
+     "id": "c538",
+     "mono": "OA",
+     "exited": false,
+     "spokenTo": false
+    },
+    {
+     "name": "SAE J3134 ADS Marker Lamps",
+     "slug": "sae-j3134-ads-marker-lamps",
+     "id": "c545",
+     "mono": "SJ",
+     "exited": false,
+     "spokenTo": false
+    },
+    {
+     "name": "Teamsters",
+     "slug": "teamsters",
+     "id": "c547",
+     "mono": "TE",
+     "exited": false,
+     "spokenTo": false
+    },
+    {
+     "name": "IEEE",
+     "slug": "ieee",
+     "id": "c516",
+     "mono": "IE",
+     "exited": false,
+     "spokenTo": false
+    },
+    {
+     "name": "ISO",
+     "slug": "iso",
+     "id": "c523",
+     "mono": "IS",
+     "exited": false,
+     "spokenTo": false
+    },
+    {
+     "name": "UL Standards (UL 4600)",
+     "slug": "ul-standards-ul-4600",
+     "id": "c550",
+     "mono": "US",
+     "exited": false,
+     "spokenTo": false
+    }
+   ],
+   "x": 200,
+   "y": 2712,
+   "w": 1120,
+   "h": 992,
+   "poly": [
+    [
+     200,
+     2712
+    ],
+    [
+     1320,
+     2712
+    ],
+    [
+     1320,
+     3704
+    ],
+    [
+     200,
+     3704
+    ]
+   ],
+   "header": {
+    "x": 200,
+    "y": 2712,
+    "w": 1120,
+    "h": 280,
+    "tx": 200,
+    "tw": 1120
+   },
+   "labelSize": 44,
+   "labelLines": [
+    "STANDARDS, SAFETY & ADVOCACY"
+   ],
+   "bar": {
+    "x": 232,
+    "y": 3572,
+    "w": 1056,
+    "h": 100
+   },
+   "capacity": 8,
+   "slack": 0
   },
   {
    "id": "governance-regulators-government",
@@ -1774,8 +2553,112 @@
    "band": "bottom",
    "hue": 290,
    "count": 76,
-   "shown": 23,
+   "shown": 10,
    "overflow": [
+    {
+     "name": "Federal Trade Commission (FTC)",
+     "slug": "federal-trade-commission-ftc",
+     "id": "c437",
+     "mono": "FT",
+     "exited": false,
+     "spokenTo": false
+    },
+    {
+     "name": "Florida Department of Highway Safety and Motor Vehicles (FLHSMV)",
+     "slug": "florida-department-of-highway-safety-and-motor-vehicles-flhsmv",
+     "id": "c438",
+     "mono": "FD",
+     "exited": false,
+     "spokenTo": false
+    },
+    {
+     "name": "Germany Federal Ministry for Digital and Transport (BMDV)",
+     "slug": "germany-federal-ministry-for-digital-and-transport-bmdv",
+     "id": "c441",
+     "mono": "GF",
+     "exited": false,
+     "spokenTo": false
+    },
+    {
+     "name": "Hong Kong Transport Department",
+     "slug": "hong-kong-transport-department",
+     "id": "c444",
+     "mono": "HK",
+     "exited": false,
+     "spokenTo": false
+    },
+    {
+     "name": "Japan Ministry of Economy, Trade and Industry (METI)",
+     "slug": "japan-ministry-of-economy-trade-and-industry-meti",
+     "id": "c445",
+     "mono": "JM",
+     "exited": false,
+     "spokenTo": false
+    },
+    {
+     "name": "Japan Ministry of Land, Infrastructure, Transport and Tourism (MLIT)",
+     "slug": "japan-ministry-of-land-infrastructure-transport-and-tourism-mlit",
+     "id": "c446",
+     "mono": "JM",
+     "exited": false,
+     "spokenTo": false
+    },
+    {
+     "name": "Japan National Police Agency (NPA)",
+     "slug": "japan-national-police-agency-npa",
+     "id": "c448",
+     "mono": "JN",
+     "exited": false,
+     "spokenTo": false
+    },
+    {
+     "name": "Kraftfahrt-Bundesamt (KBA)",
+     "slug": "kraftfahrt-bundesamt-kba",
+     "id": "c449",
+     "mono": "KB",
+     "exited": false,
+     "spokenTo": false
+    },
+    {
+     "name": "Ministry of Industry and Information Technology (MIIT)",
+     "slug": "ministry-of-industry-and-information-technology-miit",
+     "id": "c453",
+     "mono": "MO",
+     "exited": false,
+     "spokenTo": false
+    },
+    {
+     "name": "National Transportation Safety Board (NTSB)",
+     "slug": "national-transportation-safety-board-ntsb",
+     "id": "c457",
+     "mono": "NT",
+     "exited": false,
+     "spokenTo": false
+    },
+    {
+     "name": "Netherlands RDW",
+     "slug": "netherlands-rdw",
+     "id": "c458",
+     "mono": "NR",
+     "exited": false,
+     "spokenTo": false
+    },
+    {
+     "name": "New York State Department of Motor Vehicles",
+     "slug": "new-york-state-department-of-motor-vehicles",
+     "id": "c461",
+     "mono": "NY",
+     "exited": false,
+     "spokenTo": false
+    },
+    {
+     "name": "NHTSA",
+     "slug": "nhtsa",
+     "id": "c462",
+     "mono": "NH",
+     "exited": false,
+     "spokenTo": false
+    },
     {
      "name": "San Francisco Municipal Transportation Agency (SFMTA)",
      "slug": "san-francisco-municipal-transportation-agency-sfmta",
@@ -2201,42 +3084,48 @@
      "spokenTo": false
     }
    ],
-   "x": 200,
-   "y": 3298,
-   "w": 1654,
-   "h": 796,
+   "x": 1320,
+   "y": 2712,
+   "w": 1384,
+   "h": 992,
    "poly": [
     [
-     200,
-     3298
+     1320,
+     2712
     ],
     [
-     1854,
-     3298
+     2704,
+     2712
     ],
     [
-     1854,
-     4094
+     2704,
+     3704
     ],
     [
-     200,
-     4094
+     1320,
+     3704
     ]
    ],
    "header": {
-    "x": 200,
-    "y": 3298,
-    "w": 1654,
-    "h": 210,
-    "tx": 200,
-    "tw": 1654
+    "x": 1320,
+    "y": 2712,
+    "w": 1384,
+    "h": 280,
+    "tx": 1320,
+    "tw": 1384
    },
-   "labelSize": 40,
+   "labelSize": 44,
    "labelLines": [
     "REGULATORS & GOVERNMENT"
    ],
-   "capacity": 27,
-   "slack": 4
+   "bar": {
+    "x": 1352,
+    "y": 3572,
+    "w": 1320,
+    "h": 100
+   },
+   "capacity": 10,
+   "slack": 0
   },
   {
    "id": "capital-insurance-risk",
@@ -2244,8 +3133,48 @@
    "band": "bottom",
    "hue": 60,
    "count": 38,
-   "shown": 11,
+   "shown": 6,
    "overflow": [
+    {
+     "name": "Cambridge Mobile Telematics",
+     "slug": "cambridge-mobile-telematics",
+     "id": "c391",
+     "mono": "CM",
+     "exited": false,
+     "spokenTo": false
+    },
+    {
+     "name": "CCC Intelligent Solutions",
+     "slug": "ccc-intelligent-solutions",
+     "id": "c392",
+     "mono": "CI",
+     "exited": false,
+     "spokenTo": false
+    },
+    {
+     "name": "Chubb",
+     "slug": "chubb",
+     "id": "c395",
+     "mono": "CH",
+     "exited": false,
+     "spokenTo": false
+    },
+    {
+     "name": "Gallagher",
+     "slug": "gallagher",
+     "id": "c399",
+     "mono": "GA",
+     "exited": false,
+     "spokenTo": false
+    },
+    {
+     "name": "HDI Global",
+     "slug": "hdi-global",
+     "id": "c400",
+     "mono": "HG",
+     "exited": false,
+     "spokenTo": false
+    },
     {
      "name": "LexisNexis Risk Solutions",
      "slug": "lexisnexis-risk-solutions",
@@ -2463,42 +3392,49 @@
      "spokenTo": false
     }
    ],
-   "x": 1854,
-   "y": 3298,
-   "w": 764,
-   "h": 796,
+   "x": 2704,
+   "y": 2712,
+   "w": 856,
+   "h": 992,
    "poly": [
     [
-     1854,
-     3298
+     2704,
+     2712
     ],
     [
-     2618,
-     3298
+     3560,
+     2712
     ],
     [
-     2618,
-     4094
+     3560,
+     3704
     ],
     [
-     1854,
-     4094
+     2704,
+     3704
     ]
    ],
    "header": {
-    "x": 1854,
-    "y": 3298,
-    "w": 764,
-    "h": 210,
-    "tx": 1854,
-    "tw": 764
+    "x": 2704,
+    "y": 2712,
+    "w": 856,
+    "h": 280,
+    "tx": 2704,
+    "tw": 856
    },
-   "labelSize": 40,
+   "labelSize": 44,
    "labelLines": [
-    "CAPITAL, INSURANCE & RISK"
+    "CAPITAL,",
+    "INSURANCE & RISK"
    ],
-   "capacity": 12,
-   "slack": 1
+   "bar": {
+    "x": 2736,
+    "y": 3572,
+    "w": 792,
+    "h": 100
+   },
+   "capacity": 6,
+   "slack": 0
   },
   {
    "id": "fleet-operations-depot",
@@ -2506,8 +3442,104 @@
    "band": "bottom",
    "hue": 320,
    "count": 70,
-   "shown": 21,
+   "shown": 9,
    "overflow": [
+    {
+     "name": "EVgo",
+     "slug": "evgo",
+     "id": "c329",
+     "mono": "EV",
+     "exited": false,
+     "spokenTo": false
+    },
+    {
+     "name": "Fleetio",
+     "slug": "fleetio",
+     "id": "c330",
+     "mono": "FL",
+     "exited": false,
+     "spokenTo": false
+    },
+    {
+     "name": "Hertz",
+     "slug": "hertz",
+     "id": "c336",
+     "mono": "HE",
+     "exited": false,
+     "spokenTo": false
+    },
+    {
+     "name": "Ionity",
+     "slug": "ionity",
+     "id": "c339",
+     "mono": "IO",
+     "exited": false,
+     "spokenTo": false
+    },
+    {
+     "name": "Kempower",
+     "slug": "kempower",
+     "id": "c340",
+     "mono": "KE",
+     "exited": false,
+     "spokenTo": false
+    },
+    {
+     "name": "Keolis",
+     "slug": "keolis",
+     "id": "c341",
+     "mono": "KE",
+     "exited": false,
+     "spokenTo": false
+    },
+    {
+     "name": "Moove",
+     "slug": "moove",
+     "id": "c346",
+     "mono": "MO",
+     "exited": false,
+     "spokenTo": false
+    },
+    {
+     "name": "Moove AV / Moove",
+     "slug": "moove-av-moove",
+     "id": "c347",
+     "mono": "MA",
+     "exited": false,
+     "spokenTo": true
+    },
+    {
+     "name": "Motive",
+     "slug": "motive",
+     "id": "c348",
+     "mono": "MO",
+     "exited": false,
+     "spokenTo": false
+    },
+    {
+     "name": "Optibus",
+     "slug": "optibus",
+     "id": "c350",
+     "mono": "OP",
+     "exited": false,
+     "spokenTo": false
+    },
+    {
+     "name": "Parkopedia",
+     "slug": "parkopedia",
+     "id": "c352",
+     "mono": "PA",
+     "exited": false,
+     "spokenTo": false
+    },
+    {
+     "name": "Populus",
+     "slug": "populus",
+     "id": "c356",
+     "mono": "PO",
+     "exited": false,
+     "spokenTo": false
+    },
     {
      "name": "PowerFlex",
      "slug": "powerflex",
@@ -2901,42 +3933,48 @@
      "spokenTo": false
     }
    ],
-   "x": 2618,
-   "y": 3298,
-   "w": 1590,
-   "h": 796,
+   "x": 3560,
+   "y": 2712,
+   "w": 1464,
+   "h": 992,
    "poly": [
     [
-     2618,
-     3298
+     3560,
+     2712
     ],
     [
-     4208,
-     3298
+     5024,
+     2712
     ],
     [
-     4208,
-     4094
+     5024,
+     3704
     ],
     [
-     2618,
-     4094
+     3560,
+     3704
     ]
    ],
    "header": {
-    "x": 2618,
-    "y": 3298,
-    "w": 1590,
-    "h": 210,
-    "tx": 2618,
-    "tw": 1590
+    "x": 3560,
+    "y": 2712,
+    "w": 1464,
+    "h": 280,
+    "tx": 3560,
+    "tw": 1464
    },
-   "labelSize": 40,
+   "labelSize": 44,
    "labelLines": [
     "FLEET OPERATIONS & DEPOT"
    ],
-   "capacity": 24,
-   "slack": 3
+   "bar": {
+    "x": 3592,
+    "y": 3572,
+    "w": 1400,
+    "h": 100
+   },
+   "capacity": 10,
+   "slack": 1
   },
   {
    "id": "demand-commercial-platforms",
@@ -2944,8 +3982,80 @@
    "band": "left",
    "hue": 20,
    "count": 53,
-   "shown": 16,
+   "shown": 7,
    "overflow": [
+    {
+     "name": "Bolt",
+     "slug": "bolt",
+     "id": "c267",
+     "mono": "BO",
+     "exited": false,
+     "spokenTo": false
+    },
+    {
+     "name": "Careem",
+     "slug": "careem",
+     "id": "c269",
+     "mono": "CA",
+     "exited": false,
+     "spokenTo": false
+    },
+    {
+     "name": "ComfortDelGro Zig",
+     "slug": "comfortdelgro-zig",
+     "id": "c272",
+     "mono": "CZ",
+     "exited": false,
+     "spokenTo": false
+    },
+    {
+     "name": "DoorDash",
+     "slug": "doordash",
+     "id": "c275",
+     "mono": "DO",
+     "exited": false,
+     "spokenTo": false
+    },
+    {
+     "name": "Flexport",
+     "slug": "flexport",
+     "id": "c277",
+     "mono": "FL",
+     "exited": false,
+     "spokenTo": false
+    },
+    {
+     "name": "FREE NOW",
+     "slug": "free-now",
+     "id": "c278",
+     "mono": "FN",
+     "exited": false,
+     "spokenTo": false
+    },
+    {
+     "name": "HERE Marketplace / Location Services",
+     "slug": "here-marketplace-location-services",
+     "id": "c283",
+     "mono": "HM",
+     "exited": false,
+     "spokenTo": false
+    },
+    {
+     "name": "Instacart",
+     "slug": "instacart",
+     "id": "c284",
+     "mono": "IN",
+     "exited": false,
+     "spokenTo": false
+    },
+    {
+     "name": "Nexar",
+     "slug": "nexar",
+     "id": "c292",
+     "mono": "NE",
+     "exited": false,
+     "spokenTo": false
+    },
     {
      "name": "NVIDIA DRIVE / Halos",
      "slug": "nvidia-drive-halos",
@@ -3244,422 +4354,47 @@
     }
    ],
    "x": 200,
-   "y": 818,
-   "w": 1312.4,
-   "h": 1234,
+   "y": 1192,
+   "w": 592,
+   "h": 1520,
    "poly": [
     [
      200,
-     818
+     1192
     ],
     [
-     2026.0,
-     818
+     792,
+     1192
     ],
     [
-     786,
-     1544.4
-    ],
-    [
-     786,
-     2052
+     792,
+     2712
     ],
     [
      200,
-     2052
+     2712
     ]
    ],
    "header": {
     "x": 200,
-    "y": 818,
-    "w": 1312.4,
-    "h": 210,
+    "y": 1192,
+    "w": 592,
+    "h": 280,
     "tx": 200,
-    "tw": 586
+    "tw": 592
    },
-   "labelSize": 26,
+   "labelSize": 44,
    "labelLines": [
-    "DEMAND & COMMERCIAL PLATFORMS"
+    "DEMAND & COMMERCIAL",
+    "PLATFORMS"
    ],
-   "capacity": 18,
-   "slack": 2
-  },
-  {
-   "id": "governance-standards-safety-advocacy",
-   "layer": "Governance: Standards, Safety & Advocacy",
-   "band": "left",
-   "hue": 340,
-   "count": 58,
-   "shown": 17,
-   "overflow": [
-    {
-     "name": "International Organization for Standardization (ISO)",
-     "slug": "international-organization-for-standardization-iso",
-     "id": "c522",
-     "mono": "IO",
-     "exited": false,
-     "spokenTo": false
-    },
-    {
-     "name": "ISO / TC 204",
-     "slug": "iso-tc-204",
-     "id": "c524",
-     "mono": "IT",
-     "exited": false,
-     "spokenTo": false
-    },
-    {
-     "name": "ISO 21448 SOTIF",
-     "slug": "iso-21448-sotif",
-     "id": "c525",
-     "mono": "I2",
-     "exited": false,
-     "spokenTo": false
-    },
-    {
-     "name": "ISO 26262",
-     "slug": "iso-26262",
-     "id": "c526",
-     "mono": "I2",
-     "exited": false,
-     "spokenTo": false
-    },
-    {
-     "name": "ISO 34501",
-     "slug": "iso-34501",
-     "id": "c527",
-     "mono": "I3",
-     "exited": false,
-     "spokenTo": false
-    },
-    {
-     "name": "ISO 34502",
-     "slug": "iso-34502",
-     "id": "c528",
-     "mono": "I3",
-     "exited": false,
-     "spokenTo": false
-    },
-    {
-     "name": "ISO 34503",
-     "slug": "iso-34503",
-     "id": "c529",
-     "mono": "I3",
-     "exited": false,
-     "spokenTo": false
-    },
-    {
-     "name": "ISO 34504",
-     "slug": "iso-34504",
-     "id": "c530",
-     "mono": "I3",
-     "exited": false,
-     "spokenTo": false
-    },
-    {
-     "name": "ISO/TC 204 Intelligent Transport Systems",
-     "slug": "iso-tc-204-intelligent-transport-systems",
-     "id": "c531",
-     "mono": "IT",
-     "exited": false,
-     "spokenTo": false
-    },
-    {
-     "name": "ISO/TC 22 Road Vehicles",
-     "slug": "iso-tc-22-road-vehicles",
-     "id": "c532",
-     "mono": "IT",
-     "exited": false,
-     "spokenTo": false
-    },
-    {
-     "name": "ITS America",
-     "slug": "its-america",
-     "id": "c534",
-     "mono": "IA",
-     "exited": false,
-     "spokenTo": false
-    },
-    {
-     "name": "Mcity",
-     "slug": "mcity",
-     "id": "c535",
-     "mono": "MC",
-     "exited": false,
-     "spokenTo": false
-    },
-    {
-     "name": "Mobileye Responsibility-Sensitive Safety (RSS)",
-     "slug": "mobileye-responsibility-sensitive-safety-rss",
-     "id": "c536",
-     "mono": "MR",
-     "exited": false,
-     "spokenTo": false
-    },
-    {
-     "name": "National Safety Council",
-     "slug": "national-safety-council",
-     "id": "c537",
-     "mono": "NS",
-     "exited": false,
-     "spokenTo": false
-    },
-    {
-     "name": "Open Mobility Foundation",
-     "slug": "open-mobility-foundation",
-     "id": "c539",
-     "mono": "OM",
-     "exited": false,
-     "spokenTo": false
-    },
-    {
-     "name": "Partners for Automated Vehicle Education (PAVE)",
-     "slug": "partners-for-automated-vehicle-education-pave",
-     "id": "c540",
-     "mono": "PF",
-     "exited": false,
-     "spokenTo": false
-    },
-    {
-     "name": "SAE Industry Technologies Consortia",
-     "slug": "sae-industry-technologies-consortia",
-     "id": "c542",
-     "mono": "SI",
-     "exited": false,
-     "spokenTo": false
-    },
-    {
-     "name": "SAE International",
-     "slug": "sae-international",
-     "id": "c543",
-     "mono": "SI",
-     "exited": false,
-     "spokenTo": false
-    },
-    {
-     "name": "SAE J3016",
-     "slug": "sae-j3016",
-     "id": "c544",
-     "mono": "SJ",
-     "exited": false,
-     "spokenTo": false
-    },
-    {
-     "name": "UL Standards & Engagement",
-     "slug": "ul-standards-engagement",
-     "id": "c549",
-     "mono": "US",
-     "exited": false,
-     "spokenTo": false
-    },
-    {
-     "name": "ASAM OpenLABEL",
-     "slug": "asam-openlabel",
-     "id": "c501",
-     "mono": "AO",
-     "exited": false,
-     "spokenTo": false
-    },
-    {
-     "name": "ASAM OpenODD",
-     "slug": "asam-openodd",
-     "id": "c502",
-     "mono": "AO",
-     "exited": false,
-     "spokenTo": false
-    },
-    {
-     "name": "ASAM OpenSCENARIO DSL",
-     "slug": "asam-openscenario-dsl",
-     "id": "c503",
-     "mono": "AO",
-     "exited": false,
-     "spokenTo": false
-    },
-    {
-     "name": "ASAM OpenSCENARIO XML",
-     "slug": "asam-openscenario-xml",
-     "id": "c504",
-     "mono": "AO",
-     "exited": false,
-     "spokenTo": false
-    },
-    {
-     "name": "ASAM OSI",
-     "slug": "asam-osi",
-     "id": "c505",
-     "mono": "AO",
-     "exited": false,
-     "spokenTo": false
-    },
-    {
-     "name": "Automated Vehicle Safety Consortium (AVSC)",
-     "slug": "automated-vehicle-safety-consortium-avsc",
-     "id": "c506",
-     "mono": "AV",
-     "exited": false,
-     "spokenTo": false
-    },
-    {
-     "name": "AVSC",
-     "slug": "avsc",
-     "id": "c510",
-     "mono": "AV",
-     "exited": false,
-     "spokenTo": false
-    },
-    {
-     "name": "CEN/TC 278 Intelligent Transport Systems",
-     "slug": "cen-tc-278-intelligent-transport-systems",
-     "id": "c511",
-     "mono": "CT",
-     "exited": false,
-     "spokenTo": false
-    },
-    {
-     "name": "ETSI TC ITS",
-     "slug": "etsi-tc-its",
-     "id": "c513",
-     "mono": "ET",
-     "exited": false,
-     "spokenTo": false
-    },
-    {
-     "name": "Safety First for Automated Driving",
-     "slug": "safety-first-for-automated-driving",
-     "id": "c546",
-     "mono": "SF",
-     "exited": false,
-     "spokenTo": false
-    },
-    {
-     "name": "UL 4600",
-     "slug": "ul-4600",
-     "id": "c548",
-     "mono": "U4",
-     "exited": false,
-     "spokenTo": false
-    },
-    {
-     "name": "W3C Automotive Working Group",
-     "slug": "w3c-automotive-working-group",
-     "id": "c551",
-     "mono": "WA",
-     "exited": false,
-     "spokenTo": false
-    },
-    {
-     "name": "Waymo Safety Framework",
-     "slug": "waymo-safety-framework",
-     "id": "c552",
-     "mono": "WS",
-     "exited": false,
-     "spokenTo": false
-    },
-    {
-     "name": "IEEE P2851",
-     "slug": "ieee-p2851",
-     "id": "c518",
-     "mono": "IP",
-     "exited": false,
-     "spokenTo": false
-    },
-    {
-     "name": "ISO/TR 4804",
-     "slug": "iso-tr-4804",
-     "id": "c533",
-     "mono": "IT",
-     "exited": false,
-     "spokenTo": false
-    },
-    {
-     "name": "Open Autonomy Safety Case Framework",
-     "slug": "open-autonomy-safety-case-framework",
-     "id": "c538",
-     "mono": "OA",
-     "exited": false,
-     "spokenTo": false
-    },
-    {
-     "name": "SAE J3134 ADS Marker Lamps",
-     "slug": "sae-j3134-ads-marker-lamps",
-     "id": "c545",
-     "mono": "SJ",
-     "exited": false,
-     "spokenTo": false
-    },
-    {
-     "name": "Teamsters",
-     "slug": "teamsters",
-     "id": "c547",
-     "mono": "TE",
-     "exited": false,
-     "spokenTo": false
-    },
-    {
-     "name": "IEEE",
-     "slug": "ieee",
-     "id": "c516",
-     "mono": "IE",
-     "exited": false,
-     "spokenTo": false
-    },
-    {
-     "name": "ISO",
-     "slug": "iso",
-     "id": "c523",
-     "mono": "IS",
-     "exited": false,
-     "spokenTo": false
-    },
-    {
-     "name": "UL Standards (UL 4600)",
-     "slug": "ul-standards-ul-4600",
-     "id": "c550",
-     "mono": "US",
-     "exited": false,
-     "spokenTo": false
-    }
-   ],
-   "x": 200,
-   "y": 2052,
-   "w": 1312.4,
-   "h": 1246,
-   "poly": [
-    [
-     200,
-     2052
-    ],
-    [
-     786,
-     2052
-    ],
-    [
-     786,
-     2571.6
-    ],
-    [
-     2026.0,
-     3298
-    ],
-    [
-     200,
-     3298
-    ]
-   ],
-   "header": {
-    "x": 200,
-    "y": 2052,
-    "w": 1312.4,
-    "h": 210,
-    "tx": 200,
-    "tw": 586
+   "bar": {
+    "x": 232,
+    "y": 2580,
+    "w": 528,
+    "h": 100
    },
-   "labelSize": 26,
-   "labelLines": [
-    "STANDARDS, SAFETY & ADVOCACY"
-   ],
-   "capacity": 18,
+   "capacity": 8,
    "slack": 1
   }
  ],
@@ -3669,10 +4404,10 @@
    "slug": "applied-intuition",
    "id": "c1",
    "district": "av-driver-autonomy-software",
-   "x": 226,
-   "y": 436,
-   "w": 160,
-   "h": 160,
+   "x": 232,
+   "y": 512,
+   "w": 240,
+   "h": 240,
    "mono": "AI",
    "hue": 265,
    "layers": 6,
@@ -3688,10 +4423,10 @@
    "slug": "horizon-robotics",
    "id": "c22",
    "district": "av-driver-autonomy-software",
-   "x": 404,
-   "y": 436,
-   "w": 160,
-   "h": 160,
+   "x": 496,
+   "y": 512,
+   "w": 240,
+   "h": 240,
    "mono": "HR",
    "hue": 265,
    "layers": 3,
@@ -3706,10 +4441,10 @@
    "slug": "mercedes-benz-drive-pilot-mb-drive",
    "id": "c30",
    "district": "av-driver-autonomy-software",
-   "x": 582,
-   "y": 436,
-   "w": 160,
-   "h": 160,
+   "x": 760,
+   "y": 512,
+   "w": 240,
+   "h": 240,
    "mono": "MB",
    "hue": 265,
    "layers": 2,
@@ -3724,10 +4459,10 @@
    "slug": "momenta",
    "id": "c31",
    "district": "av-driver-autonomy-software",
-   "x": 760,
-   "y": 436,
-   "w": 160,
-   "h": 160,
+   "x": 1024,
+   "y": 512,
+   "w": 240,
+   "h": 240,
    "mono": "MO",
    "hue": 265,
    "layers": 4,
@@ -3742,10 +4477,10 @@
    "slug": "nio",
    "id": "c33",
    "district": "av-driver-autonomy-software",
-   "x": 938,
-   "y": 436,
-   "w": 160,
-   "h": 160,
+   "x": 1288,
+   "y": 512,
+   "w": 240,
+   "h": 240,
    "mono": "NI",
    "hue": 265,
    "layers": 4,
@@ -3761,10 +4496,10 @@
    "slug": "nvidia-drive",
    "id": "c34",
    "district": "av-driver-autonomy-software",
-   "x": 1116,
-   "y": 436,
-   "w": 160,
-   "h": 160,
+   "x": 232,
+   "y": 776,
+   "w": 240,
+   "h": 240,
    "mono": "ND",
    "hue": 265,
    "layers": 3,
@@ -3780,176 +4515,13 @@
    "slug": "xpeng",
    "id": "c52",
    "district": "av-driver-autonomy-software",
-   "x": 1294,
-   "y": 436,
-   "w": 160,
-   "h": 160,
+   "x": 496,
+   "y": 776,
+   "w": 240,
+   "h": 240,
    "mono": "XP",
    "hue": 265,
    "layers": 4,
-   "pips": [
-    40
-   ],
-   "exited": false,
-   "spokenTo": false
-  },
-  {
-   "name": "Apex.AI",
-   "slug": "apex-ai",
-   "id": "c0",
-   "district": "av-driver-autonomy-software",
-   "x": 1472,
-   "y": 436,
-   "w": 160,
-   "h": 160,
-   "mono": "AA",
-   "hue": 265,
-   "layers": 4,
-   "pips": [],
-   "exited": false,
-   "spokenTo": false
-  },
-  {
-   "name": "Aurora Innovation",
-   "slug": "aurora-innovation",
-   "id": "c3",
-   "district": "av-driver-autonomy-software",
-   "x": 226,
-   "y": 614,
-   "w": 160,
-   "h": 160,
-   "mono": "AI",
-   "hue": 265,
-   "layers": 4,
-   "pips": [
-    150,
-    200
-   ],
-   "exited": false,
-   "spokenTo": true
-  },
-  {
-   "name": "DeepRoute.ai",
-   "slug": "deeproute-ai",
-   "id": "c15",
-   "district": "av-driver-autonomy-software",
-   "x": 404,
-   "y": 614,
-   "w": 160,
-   "h": 160,
-   "mono": "DA",
-   "hue": 265,
-   "layers": 2,
-   "pips": [
-    150
-   ],
-   "exited": false,
-   "spokenTo": false
-  },
-  {
-   "name": "dSPACE",
-   "slug": "dspace",
-   "id": "c17",
-   "district": "av-driver-autonomy-software",
-   "x": 582,
-   "y": 614,
-   "w": 160,
-   "h": 160,
-   "mono": "DS",
-   "hue": 265,
-   "layers": 4,
-   "pips": [
-    150
-   ],
-   "exited": false,
-   "spokenTo": false
-  },
-  {
-   "name": "Foretellix",
-   "slug": "foretellix",
-   "id": "c19",
-   "district": "av-driver-autonomy-software",
-   "x": 760,
-   "y": 614,
-   "w": 160,
-   "h": 160,
-   "mono": "FO",
-   "hue": 265,
-   "layers": 3,
-   "pips": [
-    150
-   ],
-   "exited": false,
-   "spokenTo": false
-  },
-  {
-   "name": "Huawei Intelligent Automotive Solution / Yinwang",
-   "slug": "huawei-intelligent-automotive-solution-yinwang",
-   "id": "c24",
-   "district": "av-driver-autonomy-software",
-   "x": 938,
-   "y": 614,
-   "w": 160,
-   "h": 160,
-   "mono": "HI",
-   "hue": 265,
-   "layers": 3,
-   "pips": [
-    200,
-    40
-   ],
-   "exited": false,
-   "spokenTo": false
-  },
-  {
-   "name": "Huawei Intelligent Automotive Solutions",
-   "slug": "huawei-intelligent-automotive-solutions",
-   "id": "c25",
-   "district": "av-driver-autonomy-software",
-   "x": 1116,
-   "y": 614,
-   "w": 160,
-   "h": 160,
-   "mono": "HI",
-   "hue": 265,
-   "layers": 3,
-   "pips": [
-    200,
-    40
-   ],
-   "exited": false,
-   "spokenTo": false
-  },
-  {
-   "name": "Kodiak AI",
-   "slug": "kodiak-ai",
-   "id": "c28",
-   "district": "av-driver-autonomy-software",
-   "x": 1294,
-   "y": 614,
-   "w": 160,
-   "h": 160,
-   "mono": "KA",
-   "hue": 265,
-   "layers": 3,
-   "pips": [
-    200
-   ],
-   "exited": false,
-   "spokenTo": false
-  },
-  {
-   "name": "Plus",
-   "slug": "plus",
-   "id": "c36",
-   "district": "av-driver-autonomy-software",
-   "x": 1472,
-   "y": 614,
-   "w": 160,
-   "h": 160,
-   "mono": "PL",
-   "hue": 265,
-   "layers": 2,
    "pips": [
     40
    ],
@@ -3961,10 +4533,10 @@
    "slug": "infineon-technologies",
    "id": "c62",
    "district": "sensing-compute-hardware",
-   "x": 1702,
-   "y": 436,
-   "w": 160,
-   "h": 160,
+   "x": 1616,
+   "y": 512,
+   "w": 240,
+   "h": 240,
    "mono": "IN",
    "hue": 200,
    "layers": 2,
@@ -3980,9 +4552,9 @@
    "id": "c68",
    "district": "sensing-compute-hardware",
    "x": 1880,
-   "y": 436,
-   "w": 160,
-   "h": 160,
+   "y": 512,
+   "w": 240,
+   "h": 240,
    "mono": "NS",
    "hue": 200,
    "layers": 4,
@@ -3997,10 +4569,10 @@
    "slug": "ouster",
    "id": "c71",
    "district": "sensing-compute-hardware",
-   "x": 2058,
-   "y": 436,
-   "w": 160,
-   "h": 160,
+   "x": 2144,
+   "y": 512,
+   "w": 240,
+   "h": 240,
    "mono": "OU",
    "hue": 200,
    "layers": 3,
@@ -4016,10 +4588,10 @@
    "slug": "qualcomm-automotive",
    "id": "c73",
    "district": "sensing-compute-hardware",
-   "x": 2236,
-   "y": 436,
-   "w": 160,
-   "h": 160,
+   "x": 2408,
+   "y": 512,
+   "w": 240,
+   "h": 240,
    "mono": "QA",
    "hue": 200,
    "layers": 3,
@@ -4035,10 +4607,10 @@
    "slug": "robosense",
    "id": "c76",
    "district": "sensing-compute-hardware",
-   "x": 2414,
-   "y": 436,
-   "w": 160,
-   "h": 160,
+   "x": 1616,
+   "y": 776,
+   "w": 240,
+   "h": 240,
    "mono": "RO",
    "hue": 200,
    "layers": 2,
@@ -4053,10 +4625,10 @@
    "slug": "tesla-ai-hardware",
    "id": "c82",
    "district": "sensing-compute-hardware",
-   "x": 2592,
-   "y": 436,
-   "w": 160,
-   "h": 160,
+   "x": 1880,
+   "y": 776,
+   "w": 240,
+   "h": 240,
    "mono": "TA",
    "hue": 200,
    "layers": 3,
@@ -4068,105 +4640,14 @@
    "spokenTo": false
   },
   {
-   "name": "Hesai",
-   "slug": "hesai",
-   "id": "c60",
-   "district": "sensing-compute-hardware",
-   "x": 1702,
-   "y": 614,
-   "w": 160,
-   "h": 160,
-   "mono": "HE",
-   "hue": 200,
-   "layers": 3,
-   "pips": [
-    265,
-    40
-   ],
-   "exited": false,
-   "spokenTo": false
-  },
-  {
-   "name": "Onsemi",
-   "slug": "onsemi",
-   "id": "c70",
-   "district": "sensing-compute-hardware",
-   "x": 1880,
-   "y": 614,
-   "w": 160,
-   "h": 160,
-   "mono": "ON",
-   "hue": 200,
-   "layers": 2,
-   "pips": [
-    40
-   ],
-   "exited": false,
-   "spokenTo": false
-  },
-  {
-   "name": "Qualcomm Snapdragon Ride",
-   "slug": "qualcomm-snapdragon-ride",
-   "id": "c88",
-   "district": "sensing-compute-hardware",
-   "x": 2058,
-   "y": 614,
-   "w": 160,
-   "h": 160,
-   "mono": "QS",
-   "hue": 200,
-   "layers": 2,
-   "pips": [
-    230
-   ],
-   "exited": false,
-   "spokenTo": false
-  },
-  {
-   "name": "Renesas Electronics",
-   "slug": "renesas-electronics",
-   "id": "c74",
-   "district": "sensing-compute-hardware",
-   "x": 2236,
-   "y": 614,
-   "w": 160,
-   "h": 160,
-   "mono": "RE",
-   "hue": 200,
-   "layers": 2,
-   "pips": [
-    40
-   ],
-   "exited": false,
-   "spokenTo": false
-  },
-  {
-   "name": "Texas Instruments",
-   "slug": "texas-instruments",
-   "id": "c83",
-   "district": "sensing-compute-hardware",
-   "x": 2414,
-   "y": 614,
-   "w": 160,
-   "h": 160,
-   "mono": "TI",
-   "hue": 200,
-   "layers": 3,
-   "pips": [
-    40
-   ],
-   "exited": false,
-   "spokenTo": false
-  },
-  {
    "name": "Ansys AVxcelerate / AV Simulation",
    "slug": "ansys-avxcelerate-av-simulation",
    "id": "c94",
    "district": "data-maps-simulation",
-   "x": 2822,
-   "y": 436,
-   "w": 160,
-   "h": 160,
+   "x": 2736,
+   "y": 512,
+   "w": 240,
+   "h": 240,
    "mono": "AA",
    "hue": 150,
    "layers": 2,
@@ -4180,9 +4661,9 @@
    "id": "c95",
    "district": "data-maps-simulation",
    "x": 3000,
-   "y": 436,
-   "w": 160,
-   "h": 160,
+   "y": 512,
+   "w": 240,
+   "h": 240,
    "mono": "AP",
    "hue": 150,
    "layers": 2,
@@ -4195,10 +4676,10 @@
    "slug": "baidu-apollo-hd-map-baidu-maps",
    "id": "c97",
    "district": "data-maps-simulation",
-   "x": 3178,
-   "y": 436,
-   "w": 160,
-   "h": 160,
+   "x": 3264,
+   "y": 512,
+   "w": 240,
+   "h": 240,
    "mono": "BA",
    "hue": 150,
    "layers": 3,
@@ -4213,10 +4694,10 @@
    "slug": "intertek",
    "id": "c113",
    "district": "data-maps-simulation",
-   "x": 3356,
-   "y": 436,
-   "w": 160,
-   "h": 160,
+   "x": 3528,
+   "y": 512,
+   "w": 240,
+   "h": 240,
    "mono": "IN",
    "hue": 150,
    "layers": 2,
@@ -4231,10 +4712,10 @@
    "slug": "mobileye-rem-roadbook",
    "id": "c119",
    "district": "data-maps-simulation",
-   "x": 3534,
-   "y": 436,
-   "w": 160,
-   "h": 160,
+   "x": 2736,
+   "y": 776,
+   "w": 240,
+   "h": 240,
    "mono": "MR",
    "hue": 150,
    "layers": 3,
@@ -4249,10 +4730,10 @@
    "slug": "navinfo",
    "id": "c121",
    "district": "data-maps-simulation",
-   "x": 3712,
-   "y": 436,
-   "w": 160,
-   "h": 160,
+   "x": 3000,
+   "y": 776,
+   "w": 240,
+   "h": 240,
    "mono": "NA",
    "hue": 150,
    "layers": 3,
@@ -4264,154 +4745,14 @@
    "spokenTo": false
   },
   {
-   "name": "NVIDIA DRIVE Sim / Omniverse / Cosmos",
-   "slug": "nvidia-drive-sim-omniverse-cosmos",
-   "id": "c123",
-   "district": "data-maps-simulation",
-   "x": 3890,
-   "y": 436,
-   "w": 160,
-   "h": 160,
-   "mono": "ND",
-   "hue": 150,
-   "layers": 3,
-   "pips": [
-    200
-   ],
-   "exited": false,
-   "spokenTo": false
-  },
-  {
-   "name": "Scale AI",
-   "slug": "scale-ai",
-   "id": "c128",
-   "district": "data-maps-simulation",
-   "x": 2822,
-   "y": 614,
-   "w": 160,
-   "h": 160,
-   "mono": "SA",
-   "hue": 150,
-   "layers": 4,
-   "pips": [
-    265
-   ],
-   "exited": false,
-   "spokenTo": false
-  },
-  {
-   "name": "TomTom",
-   "slug": "tomtom",
-   "id": "c132",
-   "district": "data-maps-simulation",
-   "x": 3000,
-   "y": 614,
-   "w": 160,
-   "h": 160,
-   "mono": "TO",
-   "hue": 150,
-   "layers": 3,
-   "pips": [
-    230,
-    20
-   ],
-   "exited": false,
-   "spokenTo": false
-  },
-  {
-   "name": "DEKRA",
-   "slug": "dekra",
-   "id": "c104",
-   "district": "data-maps-simulation",
-   "x": 3178,
-   "y": 614,
-   "w": 160,
-   "h": 160,
-   "mono": "DE",
-   "hue": 150,
-   "layers": 2,
-   "pips": [
-    340
-   ],
-   "exited": false,
-   "spokenTo": false
-  },
-  {
-   "name": "dSPACE ASM / AURELION",
-   "slug": "dspace-asm-aurelion",
-   "id": "c105",
-   "district": "data-maps-simulation",
-   "x": 3356,
-   "y": 614,
-   "w": 160,
-   "h": 160,
-   "mono": "DA",
-   "hue": 150,
-   "layers": 3,
-   "pips": [],
-   "exited": false,
-   "spokenTo": false
-  },
-  {
-   "name": "HERE Technologies",
-   "slug": "here-technologies",
-   "id": "c108",
-   "district": "data-maps-simulation",
-   "x": 3534,
-   "y": 614,
-   "w": 160,
-   "h": 160,
-   "mono": "HE",
-   "hue": 150,
-   "layers": 3,
-   "pips": [
-    230,
-    40
-   ],
-   "exited": false,
-   "spokenTo": false
-  },
-  {
-   "name": "Hexagon VIRES Virtual Test Drive",
-   "slug": "hexagon-vires-virtual-test-drive",
-   "id": "c109",
-   "district": "data-maps-simulation",
-   "x": 3712,
-   "y": 614,
-   "w": 160,
-   "h": 160,
-   "mono": "HV",
-   "hue": 150,
-   "layers": 2,
-   "pips": [],
-   "exited": false,
-   "spokenTo": false
-  },
-  {
-   "name": "iMerit",
-   "slug": "imerit",
-   "id": "c112",
-   "district": "data-maps-simulation",
-   "x": 3890,
-   "y": 614,
-   "w": 160,
-   "h": 160,
-   "mono": "IM",
-   "hue": 150,
-   "layers": 2,
-   "pips": [],
-   "exited": false,
-   "spokenTo": false
-  },
-  {
    "name": "Ericsson",
    "slug": "ericsson",
    "id": "c158",
    "district": "connectivity-infrastructure",
-   "x": 3099.6,
-   "y": 1054,
-   "w": 160,
-   "h": 160,
+   "x": 3856,
+   "y": 512,
+   "w": 240,
+   "h": 240,
    "mono": "ER",
    "hue": 230,
    "layers": 3,
@@ -4424,10 +4765,10 @@
    "slug": "iteris",
    "id": "c168",
    "district": "connectivity-infrastructure",
-   "x": 3277.6,
-   "y": 1054,
-   "w": 160,
-   "h": 160,
+   "x": 4120,
+   "y": 512,
+   "w": 240,
+   "h": 240,
    "mono": "IT",
    "hue": 230,
    "layers": 3,
@@ -4440,10 +4781,10 @@
    "slug": "nokia",
    "id": "c172",
    "district": "connectivity-infrastructure",
-   "x": 3455.6,
-   "y": 1054,
-   "w": 160,
-   "h": 160,
+   "x": 4384,
+   "y": 512,
+   "w": 240,
+   "h": 240,
    "mono": "NO",
    "hue": 230,
    "layers": 3,
@@ -4456,10 +4797,10 @@
    "slug": "qualcomm",
    "id": "c180",
    "district": "connectivity-infrastructure",
-   "x": 3633.6,
-   "y": 1054,
-   "w": 160,
-   "h": 160,
+   "x": 4648,
+   "y": 512,
+   "w": 240,
+   "h": 240,
    "mono": "QU",
    "hue": 230,
    "layers": 3,
@@ -4474,10 +4815,10 @@
    "slug": "ul-solutions",
    "id": "c187",
    "district": "connectivity-infrastructure",
-   "x": 3811.6,
-   "y": 1054,
-   "w": 160,
-   "h": 160,
+   "x": 3856,
+   "y": 776,
+   "w": 240,
+   "h": 240,
    "mono": "US",
    "hue": 230,
    "layers": 5,
@@ -4494,10 +4835,10 @@
    "slug": "kapsch-trafficcom",
    "id": "c169",
    "district": "connectivity-infrastructure",
-   "x": 3989.6,
-   "y": 1054,
-   "w": 160,
-   "h": 160,
+   "x": 4120,
+   "y": 776,
+   "w": 240,
+   "h": 240,
    "mono": "KT",
    "hue": 230,
    "layers": 3,
@@ -4510,157 +4851,13 @@
    "slug": "5g-automotive-association",
    "id": "c139",
    "district": "connectivity-infrastructure",
-   "x": 3277.6,
-   "y": 1232,
-   "w": 160,
-   "h": 160,
+   "x": 4384,
+   "y": 776,
+   "w": 240,
+   "h": 240,
    "mono": "5A",
    "hue": 230,
    "layers": 2,
-   "pips": [],
-   "exited": false,
-   "spokenTo": false
-  },
-  {
-   "name": "Autotalks",
-   "slug": "autotalks",
-   "id": "c142",
-   "district": "connectivity-infrastructure",
-   "x": 3455.6,
-   "y": 1232,
-   "w": 160,
-   "h": 160,
-   "mono": "AU",
-   "hue": 230,
-   "layers": 2,
-   "pips": [],
-   "exited": false,
-   "spokenTo": false
-  },
-  {
-   "name": "Baidu Apollo ACE / Vehicle-Road-Cloud",
-   "slug": "baidu-apollo-ace-vehicle-road-cloud",
-   "id": "c144",
-   "district": "connectivity-infrastructure",
-   "x": 3633.6,
-   "y": 1232,
-   "w": 160,
-   "h": 160,
-   "mono": "BA",
-   "hue": 230,
-   "layers": 3,
-   "pips": [],
-   "exited": false,
-   "spokenTo": false
-  },
-  {
-   "name": "C2A Security",
-   "slug": "c2a-security",
-   "id": "c146",
-   "district": "connectivity-infrastructure",
-   "x": 3811.6,
-   "y": 1232,
-   "w": 160,
-   "h": 160,
-   "mono": "CS",
-   "hue": 230,
-   "layers": 2,
-   "pips": [],
-   "exited": false,
-   "spokenTo": false
-  },
-  {
-   "name": "Cybellum",
-   "slug": "cybellum",
-   "id": "c153",
-   "district": "connectivity-infrastructure",
-   "x": 3989.6,
-   "y": 1232,
-   "w": 160,
-   "h": 160,
-   "mono": "CY",
-   "hue": 230,
-   "layers": 3,
-   "pips": [],
-   "exited": false,
-   "spokenTo": false
-  },
-  {
-   "name": "ETAS / ESCRYPT",
-   "slug": "etas-escrypt",
-   "id": "c159",
-   "district": "connectivity-infrastructure",
-   "x": 3455.6,
-   "y": 1410,
-   "w": 160,
-   "h": 160,
-   "mono": "EE",
-   "hue": 230,
-   "layers": 3,
-   "pips": [],
-   "exited": false,
-   "spokenTo": false
-  },
-  {
-   "name": "Harman",
-   "slug": "harman",
-   "id": "c164",
-   "district": "connectivity-infrastructure",
-   "x": 3633.6,
-   "y": 1410,
-   "w": 160,
-   "h": 160,
-   "mono": "HA",
-   "hue": 230,
-   "layers": 3,
-   "pips": [],
-   "exited": false,
-   "spokenTo": false
-  },
-  {
-   "name": "Huawei",
-   "slug": "huawei",
-   "id": "c166",
-   "district": "connectivity-infrastructure",
-   "x": 3811.6,
-   "y": 1410,
-   "w": 160,
-   "h": 160,
-   "mono": "HU",
-   "hue": 230,
-   "layers": 3,
-   "pips": [],
-   "exited": false,
-   "spokenTo": false
-  },
-  {
-   "name": "Miovision",
-   "slug": "miovision",
-   "id": "c171",
-   "district": "connectivity-infrastructure",
-   "x": 3989.6,
-   "y": 1410,
-   "w": 160,
-   "h": 160,
-   "mono": "MI",
-   "hue": 230,
-   "layers": 3,
-   "pips": [],
-   "exited": false,
-   "spokenTo": false
-  },
-  {
-   "name": "Ouster BlueCity",
-   "slug": "ouster-bluecity",
-   "id": "c175",
-   "district": "connectivity-infrastructure",
-   "x": 3455.6,
-   "y": 1588,
-   "w": 160,
-   "h": 160,
-   "mono": "OB",
-   "hue": 230,
-   "layers": 3,
    "pips": [],
    "exited": false,
    "spokenTo": false
@@ -4670,10 +4867,10 @@
    "slug": "aptiv",
    "id": "c195",
    "district": "vehicle-platform-manufacturing",
-   "x": 3455.6,
-   "y": 2122,
-   "w": 160,
-   "h": 160,
+   "x": 4464,
+   "y": 1504,
+   "w": 240,
+   "h": 240,
    "mono": "AP",
    "hue": 40,
    "layers": 5,
@@ -4689,10 +4886,10 @@
    "slug": "byd",
    "id": "c200",
    "district": "vehicle-platform-manufacturing",
-   "x": 3633.6,
-   "y": 2122,
-   "w": 160,
-   "h": 160,
+   "x": 4728,
+   "y": 1504,
+   "w": 240,
+   "h": 240,
    "mono": "BY",
    "hue": 40,
    "layers": 3,
@@ -4707,10 +4904,10 @@
    "slug": "geely",
    "id": "c215",
    "district": "vehicle-platform-manufacturing",
-   "x": 3811.6,
-   "y": 2122,
-   "w": 160,
-   "h": 160,
+   "x": 4464,
+   "y": 1768,
+   "w": 240,
+   "h": 240,
    "mono": "GE",
    "hue": 40,
    "layers": 3,
@@ -4726,10 +4923,10 @@
    "slug": "magna",
    "id": "c228",
    "district": "vehicle-platform-manufacturing",
-   "x": 3989.6,
-   "y": 2122,
-   "w": 160,
-   "h": 160,
+   "x": 4728,
+   "y": 1768,
+   "w": 240,
+   "h": 240,
    "mono": "MA",
    "hue": 40,
    "layers": 3,
@@ -4744,10 +4941,10 @@
    "slug": "mobileye",
    "id": "c231",
    "district": "vehicle-platform-manufacturing",
-   "x": 3455.6,
-   "y": 2300,
-   "w": 160,
-   "h": 160,
+   "x": 4464,
+   "y": 2032,
+   "w": 240,
+   "h": 240,
    "mono": "MO",
    "hue": 40,
    "layers": 6,
@@ -4765,10 +4962,10 @@
    "slug": "valeo",
    "id": "c249",
    "district": "vehicle-platform-manufacturing",
-   "x": 3633.6,
-   "y": 2300,
-   "w": 160,
-   "h": 160,
+   "x": 4728,
+   "y": 2032,
+   "w": 240,
+   "h": 240,
    "mono": "VA",
    "hue": 40,
    "layers": 5,
@@ -4784,10 +4981,10 @@
    "slug": "continental",
    "id": "c201",
    "district": "vehicle-platform-manufacturing",
-   "x": 3811.6,
-   "y": 2300,
-   "w": 160,
-   "h": 160,
+   "x": 4464,
+   "y": 2296,
+   "w": 240,
+   "h": 240,
    "mono": "CO",
    "hue": 40,
    "layers": 4,
@@ -4802,10 +4999,10 @@
    "slug": "denso",
    "id": "c204",
    "district": "vehicle-platform-manufacturing",
-   "x": 3989.6,
-   "y": 2300,
-   "w": 160,
-   "h": 160,
+   "x": 4728,
+   "y": 2296,
+   "w": 240,
+   "h": 240,
    "mono": "DE",
    "hue": 40,
    "layers": 3,
@@ -4816,196 +5013,133 @@
    "spokenTo": false
   },
   {
-   "name": "ZF",
-   "slug": "zf",
-   "id": "c260",
-   "district": "vehicle-platform-manufacturing",
-   "x": 3455.6,
-   "y": 2478,
-   "w": 160,
-   "h": 160,
-   "mono": "ZF",
-   "hue": 40,
+   "name": "PAVE",
+   "slug": "pave",
+   "id": "c541",
+   "district": "governance-standards-safety-advocacy",
+   "x": 232,
+   "y": 3024,
+   "w": 240,
+   "h": 240,
+   "mono": "PA",
+   "hue": 340,
    "layers": 3,
    "pips": [
-    200
+    150,
+    320
    ],
    "exited": false,
    "spokenTo": false
   },
   {
-   "name": "Bosch",
-   "slug": "bosch",
-   "id": "c199",
-   "district": "vehicle-platform-manufacturing",
-   "x": 3633.6,
-   "y": 2478,
-   "w": 160,
-   "h": 160,
-   "mono": "BO",
-   "hue": 40,
-   "layers": 5,
-   "pips": [
-    265,
-    230,
-    200
-   ],
-   "exited": false,
-   "spokenTo": false
-  },
-  {
-   "name": "GAC Group / GAC Toyota",
-   "slug": "gac-group-gac-toyota",
-   "id": "c214",
-   "district": "vehicle-platform-manufacturing",
-   "x": 3811.6,
-   "y": 2478,
-   "w": 160,
-   "h": 160,
-   "mono": "GG",
-   "hue": 40,
-   "layers": 3,
+   "name": "3GPP",
+   "slug": "3gpp",
+   "id": "c495",
+   "district": "governance-standards-safety-advocacy",
+   "x": 496,
+   "y": 3024,
+   "w": 240,
+   "h": 240,
+   "mono": "3G",
+   "hue": 340,
+   "layers": 1,
    "pips": [],
    "exited": false,
    "spokenTo": false
   },
   {
-   "name": "General Motors",
-   "slug": "general-motors",
-   "id": "c216",
-   "district": "vehicle-platform-manufacturing",
-   "x": 3989.6,
-   "y": 2478,
-   "w": 160,
-   "h": 160,
-   "mono": "GE",
-   "hue": 40,
-   "layers": 2,
-   "pips": [],
-   "exited": true,
-   "spokenTo": false
-  },
-  {
-   "name": "Hyundai Motor Group",
-   "slug": "hyundai-motor-group",
-   "id": "c219",
-   "district": "vehicle-platform-manufacturing",
-   "x": 3277.6,
-   "y": 2656,
-   "w": 160,
-   "h": 160,
-   "mono": "HY",
-   "hue": 40,
-   "layers": 3,
-   "pips": [
-    265
-   ],
-   "exited": false,
-   "spokenTo": false
-  },
-  {
-   "name": "SAIC Motor",
-   "slug": "saic-motor",
-   "id": "c243",
-   "district": "vehicle-platform-manufacturing",
-   "x": 3455.6,
-   "y": 2656,
-   "w": 160,
-   "h": 160,
-   "mono": "SA",
-   "hue": 40,
-   "layers": 3,
+   "name": "AAA Foundation for Traffic Safety",
+   "slug": "aaa-foundation-for-traffic-safety",
+   "id": "c496",
+   "district": "governance-standards-safety-advocacy",
+   "x": 760,
+   "y": 3024,
+   "w": 240,
+   "h": 240,
+   "mono": "AF",
+   "hue": 340,
+   "layers": 1,
    "pips": [],
    "exited": false,
    "spokenTo": false
   },
   {
-   "name": "Toyota",
-   "slug": "toyota",
-   "id": "c247",
-   "district": "vehicle-platform-manufacturing",
-   "x": 3633.6,
-   "y": 2656,
-   "w": 160,
-   "h": 160,
-   "mono": "TO",
-   "hue": 40,
-   "layers": 6,
-   "pips": [
-    265,
-    150
-   ],
-   "exited": false,
-   "spokenTo": false
-  },
-  {
-   "name": "Baidu Apollo RT6",
-   "slug": "baidu-apollo-rt6",
-   "id": "c197",
-   "district": "vehicle-platform-manufacturing",
-   "x": 3811.6,
-   "y": 2656,
-   "w": 160,
-   "h": 160,
-   "mono": "BA",
-   "hue": 40,
-   "layers": 3,
-   "pips": [
-    265,
-    20
-   ],
-   "exited": false,
-   "spokenTo": false
-  },
-  {
-   "name": "Daimler Truck",
-   "slug": "daimler-truck",
-   "id": "c202",
-   "district": "vehicle-platform-manufacturing",
-   "x": 3989.6,
-   "y": 2656,
-   "w": 160,
-   "h": 160,
-   "mono": "DT",
-   "hue": 40,
-   "layers": 2,
-   "pips": [
-    265
-   ],
-   "exited": false,
-   "spokenTo": false
-  },
-  {
-   "name": "Daimler Truck / Freightliner",
-   "slug": "daimler-truck-freightliner",
-   "id": "c203",
-   "district": "vehicle-platform-manufacturing",
-   "x": 3099.6,
-   "y": 2834,
-   "w": 160,
-   "h": 160,
-   "mono": "DT",
-   "hue": 40,
-   "layers": 2,
+   "name": "Advocates for Highway and Auto Safety",
+   "slug": "advocates-for-highway-and-auto-safety",
+   "id": "c497",
+   "district": "governance-standards-safety-advocacy",
+   "x": 1024,
+   "y": 3024,
+   "w": 240,
+   "h": 240,
+   "mono": "AF",
+   "hue": 340,
+   "layers": 1,
    "pips": [],
    "exited": false,
    "spokenTo": false
   },
   {
-   "name": "Desay SV",
-   "slug": "desay-sv",
-   "id": "c205",
-   "district": "vehicle-platform-manufacturing",
-   "x": 3277.6,
-   "y": 2834,
-   "w": 160,
-   "h": 160,
-   "mono": "DS",
-   "hue": 40,
-   "layers": 3,
-   "pips": [
-    200
-   ],
+   "name": "Alliance for Automotive Innovation",
+   "slug": "alliance-for-automotive-innovation",
+   "id": "c498",
+   "district": "governance-standards-safety-advocacy",
+   "x": 232,
+   "y": 3288,
+   "w": 240,
+   "h": 240,
+   "mono": "AF",
+   "hue": 340,
+   "layers": 1,
+   "pips": [],
+   "exited": false,
+   "spokenTo": false
+  },
+  {
+   "name": "ASAM e.V.",
+   "slug": "asam-e-v",
+   "id": "c499",
+   "district": "governance-standards-safety-advocacy",
+   "x": 496,
+   "y": 3288,
+   "w": 240,
+   "h": 240,
+   "mono": "AE",
+   "hue": 340,
+   "layers": 1,
+   "pips": [],
+   "exited": false,
+   "spokenTo": false
+  },
+  {
+   "name": "ASAM OpenDRIVE",
+   "slug": "asam-opendrive",
+   "id": "c500",
+   "district": "governance-standards-safety-advocacy",
+   "x": 760,
+   "y": 3288,
+   "w": 240,
+   "h": 240,
+   "mono": "AO",
+   "hue": 340,
+   "layers": 1,
+   "pips": [],
+   "exited": false,
+   "spokenTo": false
+  },
+  {
+   "name": "Autonomous Vehicle Industry Association (AVIA)",
+   "slug": "autonomous-vehicle-industry-association-avia",
+   "id": "c507",
+   "district": "governance-standards-safety-advocacy",
+   "x": 1024,
+   "y": 3288,
+   "w": 240,
+   "h": 240,
+   "mono": "AV",
+   "hue": 340,
+   "layers": 1,
+   "pips": [],
    "exited": false,
    "spokenTo": false
   },
@@ -5014,10 +5148,10 @@
    "slug": "abu-dhabi-itc",
    "id": "c419",
    "district": "governance-regulators-government",
-   "x": 226,
-   "y": 3534,
-   "w": 160,
-   "h": 160,
+   "x": 1352,
+   "y": 3024,
+   "w": 240,
+   "h": 240,
    "mono": "AD",
    "hue": 290,
    "layers": 7,
@@ -5034,10 +5168,10 @@
    "slug": "dubai-rta",
    "id": "c432",
    "district": "governance-regulators-government",
-   "x": 404,
-   "y": 3534,
-   "w": 160,
-   "h": 160,
+   "x": 1616,
+   "y": 3024,
+   "w": 240,
+   "h": 240,
    "mono": "DR",
    "hue": 290,
    "layers": 7,
@@ -5054,10 +5188,10 @@
    "slug": "arizona-department-of-transportation-adot",
    "id": "c420",
    "district": "governance-regulators-government",
-   "x": 582,
-   "y": 3534,
-   "w": 160,
-   "h": 160,
+   "x": 1880,
+   "y": 3024,
+   "w": 240,
+   "h": 240,
    "mono": "AD",
    "hue": 290,
    "layers": 2,
@@ -5072,10 +5206,10 @@
    "slug": "california-cpuc",
    "id": "c423",
    "district": "governance-regulators-government",
-   "x": 760,
-   "y": 3534,
-   "w": 160,
-   "h": 160,
+   "x": 2144,
+   "y": 3024,
+   "w": 240,
+   "h": 240,
    "mono": "CC",
    "hue": 290,
    "layers": 2,
@@ -5090,10 +5224,10 @@
    "slug": "california-department-of-motor-vehicles-california-dmv",
    "id": "c424",
    "district": "governance-regulators-government",
-   "x": 938,
-   "y": 3534,
-   "w": 160,
-   "h": 160,
+   "x": 2408,
+   "y": 3024,
+   "w": 240,
+   "h": 240,
    "mono": "CD",
    "hue": 290,
    "layers": 2,
@@ -5108,10 +5242,10 @@
    "slug": "california-dmv",
    "id": "c425",
    "district": "governance-regulators-government",
-   "x": 1116,
-   "y": 3534,
-   "w": 160,
-   "h": 160,
+   "x": 1352,
+   "y": 3288,
+   "w": 240,
+   "h": 240,
    "mono": "CD",
    "hue": 290,
    "layers": 3,
@@ -5126,10 +5260,10 @@
    "slug": "california-public-utilities-commission-cpuc",
    "id": "c426",
    "district": "governance-regulators-government",
-   "x": 1294,
-   "y": 3534,
-   "w": 160,
-   "h": 160,
+   "x": 1616,
+   "y": 3288,
+   "w": 240,
+   "h": 240,
    "mono": "CP",
    "hue": 290,
    "layers": 3,
@@ -5144,10 +5278,10 @@
    "slug": "china-miit",
    "id": "c428",
    "district": "governance-regulators-government",
-   "x": 1472,
-   "y": 3534,
-   "w": 160,
-   "h": 160,
+   "x": 1880,
+   "y": 3288,
+   "w": 240,
+   "h": 240,
    "mono": "CM",
    "hue": 290,
    "layers": 2,
@@ -5162,10 +5296,10 @@
    "slug": "federal-highway-administration-fhwa",
    "id": "c435",
    "district": "governance-regulators-government",
-   "x": 1650,
-   "y": 3534,
-   "w": 160,
-   "h": 160,
+   "x": 2144,
+   "y": 3288,
+   "w": 240,
+   "h": 240,
    "mono": "FH",
    "hue": 290,
    "layers": 2,
@@ -5180,245 +5314,11 @@
    "slug": "federal-motor-carrier-safety-administration-fmcsa",
    "id": "c436",
    "district": "governance-regulators-government",
-   "x": 226,
-   "y": 3712,
-   "w": 160,
-   "h": 160,
+   "x": 2408,
+   "y": 3288,
+   "w": 240,
+   "h": 240,
    "mono": "FE",
-   "hue": 290,
-   "layers": 3,
-   "pips": [
-    340
-   ],
-   "exited": false,
-   "spokenTo": false
-  },
-  {
-   "name": "Federal Trade Commission (FTC)",
-   "slug": "federal-trade-commission-ftc",
-   "id": "c437",
-   "district": "governance-regulators-government",
-   "x": 404,
-   "y": 3712,
-   "w": 160,
-   "h": 160,
-   "mono": "FT",
-   "hue": 290,
-   "layers": 3,
-   "pips": [
-    340
-   ],
-   "exited": false,
-   "spokenTo": false
-  },
-  {
-   "name": "Florida Department of Highway Safety and Motor Vehicles (FLHSMV)",
-   "slug": "florida-department-of-highway-safety-and-motor-vehicles-flhsmv",
-   "id": "c438",
-   "district": "governance-regulators-government",
-   "x": 582,
-   "y": 3712,
-   "w": 160,
-   "h": 160,
-   "mono": "FD",
-   "hue": 290,
-   "layers": 2,
-   "pips": [
-    340
-   ],
-   "exited": false,
-   "spokenTo": false
-  },
-  {
-   "name": "Germany Federal Ministry for Digital and Transport (BMDV)",
-   "slug": "germany-federal-ministry-for-digital-and-transport-bmdv",
-   "id": "c441",
-   "district": "governance-regulators-government",
-   "x": 760,
-   "y": 3712,
-   "w": 160,
-   "h": 160,
-   "mono": "GF",
-   "hue": 290,
-   "layers": 2,
-   "pips": [
-    340
-   ],
-   "exited": false,
-   "spokenTo": false
-  },
-  {
-   "name": "Hong Kong Transport Department",
-   "slug": "hong-kong-transport-department",
-   "id": "c444",
-   "district": "governance-regulators-government",
-   "x": 938,
-   "y": 3712,
-   "w": 160,
-   "h": 160,
-   "mono": "HK",
-   "hue": 290,
-   "layers": 2,
-   "pips": [
-    340
-   ],
-   "exited": false,
-   "spokenTo": false
-  },
-  {
-   "name": "Japan Ministry of Economy, Trade and Industry (METI)",
-   "slug": "japan-ministry-of-economy-trade-and-industry-meti",
-   "id": "c445",
-   "district": "governance-regulators-government",
-   "x": 1116,
-   "y": 3712,
-   "w": 160,
-   "h": 160,
-   "mono": "JM",
-   "hue": 290,
-   "layers": 2,
-   "pips": [
-    340
-   ],
-   "exited": false,
-   "spokenTo": false
-  },
-  {
-   "name": "Japan Ministry of Land, Infrastructure, Transport and Tourism (MLIT)",
-   "slug": "japan-ministry-of-land-infrastructure-transport-and-tourism-mlit",
-   "id": "c446",
-   "district": "governance-regulators-government",
-   "x": 1294,
-   "y": 3712,
-   "w": 160,
-   "h": 160,
-   "mono": "JM",
-   "hue": 290,
-   "layers": 2,
-   "pips": [
-    340
-   ],
-   "exited": false,
-   "spokenTo": false
-  },
-  {
-   "name": "Japan National Police Agency (NPA)",
-   "slug": "japan-national-police-agency-npa",
-   "id": "c448",
-   "district": "governance-regulators-government",
-   "x": 1472,
-   "y": 3712,
-   "w": 160,
-   "h": 160,
-   "mono": "JN",
-   "hue": 290,
-   "layers": 2,
-   "pips": [
-    340
-   ],
-   "exited": false,
-   "spokenTo": false
-  },
-  {
-   "name": "Kraftfahrt-Bundesamt (KBA)",
-   "slug": "kraftfahrt-bundesamt-kba",
-   "id": "c449",
-   "district": "governance-regulators-government",
-   "x": 1650,
-   "y": 3712,
-   "w": 160,
-   "h": 160,
-   "mono": "KB",
-   "hue": 290,
-   "layers": 2,
-   "pips": [
-    340
-   ],
-   "exited": false,
-   "spokenTo": false
-  },
-  {
-   "name": "Ministry of Industry and Information Technology (MIIT)",
-   "slug": "ministry-of-industry-and-information-technology-miit",
-   "id": "c453",
-   "district": "governance-regulators-government",
-   "x": 226,
-   "y": 3890,
-   "w": 160,
-   "h": 160,
-   "mono": "MO",
-   "hue": 290,
-   "layers": 2,
-   "pips": [
-    340
-   ],
-   "exited": false,
-   "spokenTo": false
-  },
-  {
-   "name": "National Transportation Safety Board (NTSB)",
-   "slug": "national-transportation-safety-board-ntsb",
-   "id": "c457",
-   "district": "governance-regulators-government",
-   "x": 404,
-   "y": 3890,
-   "w": 160,
-   "h": 160,
-   "mono": "NT",
-   "hue": 290,
-   "layers": 2,
-   "pips": [
-    340
-   ],
-   "exited": false,
-   "spokenTo": false
-  },
-  {
-   "name": "Netherlands RDW",
-   "slug": "netherlands-rdw",
-   "id": "c458",
-   "district": "governance-regulators-government",
-   "x": 582,
-   "y": 3890,
-   "w": 160,
-   "h": 160,
-   "mono": "NR",
-   "hue": 290,
-   "layers": 2,
-   "pips": [
-    340
-   ],
-   "exited": false,
-   "spokenTo": false
-  },
-  {
-   "name": "New York State Department of Motor Vehicles",
-   "slug": "new-york-state-department-of-motor-vehicles",
-   "id": "c461",
-   "district": "governance-regulators-government",
-   "x": 760,
-   "y": 3890,
-   "w": 160,
-   "h": 160,
-   "mono": "NY",
-   "hue": 290,
-   "layers": 2,
-   "pips": [
-    340
-   ],
-   "exited": false,
-   "spokenTo": false
-  },
-  {
-   "name": "NHTSA",
-   "slug": "nhtsa",
-   "id": "c462",
-   "district": "governance-regulators-government",
-   "x": 938,
-   "y": 3890,
-   "w": 160,
-   "h": 160,
-   "mono": "NH",
    "hue": 290,
    "layers": 3,
    "pips": [
@@ -5432,10 +5332,10 @@
    "slug": "admiral-group",
    "id": "c381",
    "district": "capital-insurance-risk",
-   "x": 1880,
-   "y": 3534,
-   "w": 160,
-   "h": 160,
+   "x": 2736,
+   "y": 3024,
+   "w": 240,
+   "h": 240,
    "mono": "AD",
    "hue": 60,
    "layers": 2,
@@ -5448,10 +5348,10 @@
    "slug": "aig",
    "id": "c382",
    "district": "capital-insurance-risk",
-   "x": 2058,
-   "y": 3534,
-   "w": 160,
-   "h": 160,
+   "x": 3000,
+   "y": 3024,
+   "w": 240,
+   "h": 240,
    "mono": "AI",
    "hue": 60,
    "layers": 2,
@@ -5464,10 +5364,10 @@
    "slug": "allianz-commercial",
    "id": "c383",
    "district": "capital-insurance-risk",
-   "x": 2236,
-   "y": 3534,
-   "w": 160,
-   "h": 160,
+   "x": 3264,
+   "y": 3024,
+   "w": 240,
+   "h": 240,
    "mono": "AC",
    "hue": 60,
    "layers": 2,
@@ -5480,10 +5380,10 @@
    "slug": "aon",
    "id": "c384",
    "district": "capital-insurance-risk",
-   "x": 2414,
-   "y": 3534,
-   "w": 160,
-   "h": 160,
+   "x": 2736,
+   "y": 3288,
+   "w": 240,
+   "h": 240,
    "mono": "AO",
    "hue": 60,
    "layers": 2,
@@ -5496,10 +5396,10 @@
    "slug": "aviva",
    "id": "c388",
    "district": "capital-insurance-risk",
-   "x": 1880,
-   "y": 3712,
-   "w": 160,
-   "h": 160,
+   "x": 3000,
+   "y": 3288,
+   "w": 240,
+   "h": 240,
    "mono": "AV",
    "hue": 60,
    "layers": 2,
@@ -5512,91 +5412,11 @@
    "slug": "beazley",
    "id": "c390",
    "district": "capital-insurance-risk",
-   "x": 2058,
-   "y": 3712,
-   "w": 160,
-   "h": 160,
+   "x": 3264,
+   "y": 3288,
+   "w": 240,
+   "h": 240,
    "mono": "BE",
-   "hue": 60,
-   "layers": 2,
-   "pips": [],
-   "exited": false,
-   "spokenTo": false
-  },
-  {
-   "name": "Cambridge Mobile Telematics",
-   "slug": "cambridge-mobile-telematics",
-   "id": "c391",
-   "district": "capital-insurance-risk",
-   "x": 2236,
-   "y": 3712,
-   "w": 160,
-   "h": 160,
-   "mono": "CM",
-   "hue": 60,
-   "layers": 2,
-   "pips": [],
-   "exited": false,
-   "spokenTo": false
-  },
-  {
-   "name": "CCC Intelligent Solutions",
-   "slug": "ccc-intelligent-solutions",
-   "id": "c392",
-   "district": "capital-insurance-risk",
-   "x": 2414,
-   "y": 3712,
-   "w": 160,
-   "h": 160,
-   "mono": "CI",
-   "hue": 60,
-   "layers": 2,
-   "pips": [],
-   "exited": false,
-   "spokenTo": false
-  },
-  {
-   "name": "Chubb",
-   "slug": "chubb",
-   "id": "c395",
-   "district": "capital-insurance-risk",
-   "x": 1880,
-   "y": 3890,
-   "w": 160,
-   "h": 160,
-   "mono": "CH",
-   "hue": 60,
-   "layers": 2,
-   "pips": [],
-   "exited": false,
-   "spokenTo": false
-  },
-  {
-   "name": "Gallagher",
-   "slug": "gallagher",
-   "id": "c399",
-   "district": "capital-insurance-risk",
-   "x": 2058,
-   "y": 3890,
-   "w": 160,
-   "h": 160,
-   "mono": "GA",
-   "hue": 60,
-   "layers": 3,
-   "pips": [],
-   "exited": false,
-   "spokenTo": false
-  },
-  {
-   "name": "HDI Global",
-   "slug": "hdi-global",
-   "id": "c400",
-   "district": "capital-insurance-risk",
-   "x": 2236,
-   "y": 3890,
-   "w": 160,
-   "h": 160,
-   "mono": "HG",
    "hue": 60,
    "layers": 2,
    "pips": [],
@@ -5608,10 +5428,10 @@
    "slug": "ampcontrol",
    "id": "c313",
    "district": "fleet-operations-depot",
-   "x": 2644,
-   "y": 3534,
-   "w": 160,
-   "h": 160,
+   "x": 3592,
+   "y": 3024,
+   "w": 240,
+   "h": 240,
    "mono": "AM",
    "hue": 320,
    "layers": 2,
@@ -5626,10 +5446,10 @@
    "slug": "anyline",
    "id": "c314",
    "district": "fleet-operations-depot",
-   "x": 2822,
-   "y": 3534,
-   "w": 160,
-   "h": 160,
+   "x": 3856,
+   "y": 3024,
+   "w": 240,
+   "h": 240,
    "mono": "AN",
    "hue": 320,
    "layers": 2,
@@ -5644,10 +5464,10 @@
    "slug": "autofleet",
    "id": "c315",
    "district": "fleet-operations-depot",
-   "x": 3000,
-   "y": 3534,
-   "w": 160,
-   "h": 160,
+   "x": 4120,
+   "y": 3024,
+   "w": 240,
+   "h": 240,
    "mono": "AU",
    "hue": 320,
    "layers": 2,
@@ -5662,10 +5482,10 @@
    "slug": "bp-pulse",
    "id": "c320",
    "district": "fleet-operations-depot",
-   "x": 3178,
-   "y": 3534,
-   "w": 160,
-   "h": 160,
+   "x": 4384,
+   "y": 3024,
+   "w": 240,
+   "h": 240,
    "mono": "BP",
    "hue": 320,
    "layers": 2,
@@ -5680,10 +5500,10 @@
    "slug": "chargepoint",
    "id": "c321",
    "district": "fleet-operations-depot",
-   "x": 3356,
-   "y": 3534,
-   "w": 160,
-   "h": 160,
+   "x": 4648,
+   "y": 3024,
+   "w": 240,
+   "h": 240,
    "mono": "CH",
    "hue": 320,
    "layers": 2,
@@ -5698,10 +5518,10 @@
    "slug": "cox-automotive",
    "id": "c323",
    "district": "fleet-operations-depot",
-   "x": 3534,
-   "y": 3534,
-   "w": 160,
-   "h": 160,
+   "x": 3592,
+   "y": 3288,
+   "w": 240,
+   "h": 240,
    "mono": "CA",
    "hue": 320,
    "layers": 2,
@@ -5716,10 +5536,10 @@
    "slug": "electrify-america",
    "id": "c325",
    "district": "fleet-operations-depot",
-   "x": 3712,
-   "y": 3534,
-   "w": 160,
-   "h": 160,
+   "x": 3856,
+   "y": 3288,
+   "w": 240,
+   "h": 240,
    "mono": "EA",
    "hue": 320,
    "layers": 2,
@@ -5734,10 +5554,10 @@
    "slug": "element-fleet-management",
    "id": "c326",
    "district": "fleet-operations-depot",
-   "x": 3890,
-   "y": 3534,
-   "w": 160,
-   "h": 160,
+   "x": 4120,
+   "y": 3288,
+   "w": 240,
+   "h": 240,
    "mono": "EF",
    "hue": 320,
    "layers": 2,
@@ -5752,10 +5572,10 @@
    "slug": "enterprise-fleet-management",
    "id": "c327",
    "district": "fleet-operations-depot",
-   "x": 2644,
-   "y": 3712,
-   "w": 160,
-   "h": 160,
+   "x": 4384,
+   "y": 3288,
+   "w": 240,
+   "h": 240,
    "mono": "EF",
    "hue": 320,
    "layers": 2,
@@ -5766,233 +5586,14 @@
    "spokenTo": false
   },
   {
-   "name": "EVgo",
-   "slug": "evgo",
-   "id": "c329",
-   "district": "fleet-operations-depot",
-   "x": 2822,
-   "y": 3712,
-   "w": 160,
-   "h": 160,
-   "mono": "EV",
-   "hue": 320,
-   "layers": 2,
-   "pips": [
-    230
-   ],
-   "exited": false,
-   "spokenTo": false
-  },
-  {
-   "name": "Fleetio",
-   "slug": "fleetio",
-   "id": "c330",
-   "district": "fleet-operations-depot",
-   "x": 3000,
-   "y": 3712,
-   "w": 160,
-   "h": 160,
-   "mono": "FL",
-   "hue": 320,
-   "layers": 2,
-   "pips": [
-    150
-   ],
-   "exited": false,
-   "spokenTo": false
-  },
-  {
-   "name": "Hertz",
-   "slug": "hertz",
-   "id": "c336",
-   "district": "fleet-operations-depot",
-   "x": 3178,
-   "y": 3712,
-   "w": 160,
-   "h": 160,
-   "mono": "HE",
-   "hue": 320,
-   "layers": 2,
-   "pips": [
-    20
-   ],
-   "exited": false,
-   "spokenTo": false
-  },
-  {
-   "name": "Ionity",
-   "slug": "ionity",
-   "id": "c339",
-   "district": "fleet-operations-depot",
-   "x": 3356,
-   "y": 3712,
-   "w": 160,
-   "h": 160,
-   "mono": "IO",
-   "hue": 320,
-   "layers": 2,
-   "pips": [
-    230
-   ],
-   "exited": false,
-   "spokenTo": false
-  },
-  {
-   "name": "Kempower",
-   "slug": "kempower",
-   "id": "c340",
-   "district": "fleet-operations-depot",
-   "x": 3534,
-   "y": 3712,
-   "w": 160,
-   "h": 160,
-   "mono": "KE",
-   "hue": 320,
-   "layers": 2,
-   "pips": [
-    230
-   ],
-   "exited": false,
-   "spokenTo": false
-  },
-  {
-   "name": "Keolis",
-   "slug": "keolis",
-   "id": "c341",
-   "district": "fleet-operations-depot",
-   "x": 3712,
-   "y": 3712,
-   "w": 160,
-   "h": 160,
-   "mono": "KE",
-   "hue": 320,
-   "layers": 2,
-   "pips": [
-    20
-   ],
-   "exited": false,
-   "spokenTo": false
-  },
-  {
-   "name": "Moove",
-   "slug": "moove",
-   "id": "c346",
-   "district": "fleet-operations-depot",
-   "x": 3890,
-   "y": 3712,
-   "w": 160,
-   "h": 160,
-   "mono": "MO",
-   "hue": 320,
-   "layers": 2,
-   "pips": [
-    20
-   ],
-   "exited": false,
-   "spokenTo": false
-  },
-  {
-   "name": "Moove AV / Moove",
-   "slug": "moove-av-moove",
-   "id": "c347",
-   "district": "fleet-operations-depot",
-   "x": 2644,
-   "y": 3890,
-   "w": 160,
-   "h": 160,
-   "mono": "MA",
-   "hue": 320,
-   "layers": 3,
-   "pips": [
-    60,
-    20
-   ],
-   "exited": false,
-   "spokenTo": true
-  },
-  {
-   "name": "Motive",
-   "slug": "motive",
-   "id": "c348",
-   "district": "fleet-operations-depot",
-   "x": 2822,
-   "y": 3890,
-   "w": 160,
-   "h": 160,
-   "mono": "MO",
-   "hue": 320,
-   "layers": 2,
-   "pips": [
-    230
-   ],
-   "exited": false,
-   "spokenTo": false
-  },
-  {
-   "name": "Optibus",
-   "slug": "optibus",
-   "id": "c350",
-   "district": "fleet-operations-depot",
-   "x": 3000,
-   "y": 3890,
-   "w": 160,
-   "h": 160,
-   "mono": "OP",
-   "hue": 320,
-   "layers": 3,
-   "pips": [
-    150,
-    20
-   ],
-   "exited": false,
-   "spokenTo": false
-  },
-  {
-   "name": "Parkopedia",
-   "slug": "parkopedia",
-   "id": "c352",
-   "district": "fleet-operations-depot",
-   "x": 3178,
-   "y": 3890,
-   "w": 160,
-   "h": 160,
-   "mono": "PA",
-   "hue": 320,
-   "layers": 2,
-   "pips": [
-    150
-   ],
-   "exited": false,
-   "spokenTo": false
-  },
-  {
-   "name": "Populus",
-   "slug": "populus",
-   "id": "c356",
-   "district": "fleet-operations-depot",
-   "x": 3356,
-   "y": 3890,
-   "w": 160,
-   "h": 160,
-   "mono": "PO",
-   "hue": 320,
-   "layers": 3,
-   "pips": [
-    230,
-    150
-   ],
-   "exited": false,
-   "spokenTo": false
-  },
-  {
    "name": "DiDi",
    "slug": "didi",
    "id": "c274",
    "district": "demand-commercial-platforms",
-   "x": 226,
-   "y": 1054,
-   "w": 160,
-   "h": 160,
+   "x": 232,
+   "y": 1504,
+   "w": 240,
+   "h": 240,
    "mono": "DI",
    "hue": 20,
    "layers": 3,
@@ -6007,10 +5608,10 @@
    "slug": "geotab",
    "id": "c280",
    "district": "demand-commercial-platforms",
-   "x": 404,
-   "y": 1054,
-   "w": 160,
-   "h": 160,
+   "x": 496,
+   "y": 1504,
+   "w": 240,
+   "h": 240,
    "mono": "GE",
    "hue": 20,
    "layers": 6,
@@ -6028,10 +5629,10 @@
    "slug": "grab",
    "id": "c282",
    "district": "demand-commercial-platforms",
-   "x": 582,
-   "y": 1054,
-   "w": 160,
-   "h": 160,
+   "x": 232,
+   "y": 1768,
+   "w": 240,
+   "h": 240,
    "mono": "GR",
    "hue": 20,
    "layers": 3,
@@ -6046,10 +5647,10 @@
    "slug": "lyft",
    "id": "c287",
    "district": "demand-commercial-platforms",
-   "x": 760,
-   "y": 1054,
-   "w": 160,
-   "h": 160,
+   "x": 496,
+   "y": 1768,
+   "w": 240,
+   "h": 240,
    "mono": "LY",
    "hue": 20,
    "layers": 2,
@@ -6064,10 +5665,10 @@
    "slug": "samsara",
    "id": "c300",
    "district": "demand-commercial-platforms",
-   "x": 938,
-   "y": 1054,
-   "w": 160,
-   "h": 160,
+   "x": 232,
+   "y": 2032,
+   "w": 240,
+   "h": 240,
    "mono": "SA",
    "hue": 20,
    "layers": 5,
@@ -6084,10 +5685,10 @@
    "slug": "uber",
    "id": "c305",
    "district": "demand-commercial-platforms",
-   "x": 226,
-   "y": 1232,
-   "w": 160,
-   "h": 160,
+   "x": 496,
+   "y": 2032,
+   "w": 240,
+   "h": 240,
    "mono": "UB",
    "hue": 20,
    "layers": 3,
@@ -6102,443 +5703,16 @@
    "slug": "apollo-go",
    "id": "c262",
    "district": "demand-commercial-platforms",
-   "x": 404,
-   "y": 1232,
-   "w": 160,
-   "h": 160,
+   "x": 232,
+   "y": 2296,
+   "w": 240,
+   "h": 240,
    "mono": "AG",
    "hue": 20,
    "layers": 2,
    "pips": [
     265
    ],
-   "exited": false,
-   "spokenTo": false
-  },
-  {
-   "name": "Bolt",
-   "slug": "bolt",
-   "id": "c267",
-   "district": "demand-commercial-platforms",
-   "x": 582,
-   "y": 1232,
-   "w": 160,
-   "h": 160,
-   "mono": "BO",
-   "hue": 20,
-   "layers": 1,
-   "pips": [],
-   "exited": false,
-   "spokenTo": false
-  },
-  {
-   "name": "Careem",
-   "slug": "careem",
-   "id": "c269",
-   "district": "demand-commercial-platforms",
-   "x": 760,
-   "y": 1232,
-   "w": 160,
-   "h": 160,
-   "mono": "CA",
-   "hue": 20,
-   "layers": 2,
-   "pips": [
-    320
-   ],
-   "exited": false,
-   "spokenTo": false
-  },
-  {
-   "name": "ComfortDelGro Zig",
-   "slug": "comfortdelgro-zig",
-   "id": "c272",
-   "district": "demand-commercial-platforms",
-   "x": 226,
-   "y": 1410,
-   "w": 160,
-   "h": 160,
-   "mono": "CZ",
-   "hue": 20,
-   "layers": 2,
-   "pips": [
-    320
-   ],
-   "exited": false,
-   "spokenTo": false
-  },
-  {
-   "name": "DoorDash",
-   "slug": "doordash",
-   "id": "c275",
-   "district": "demand-commercial-platforms",
-   "x": 404,
-   "y": 1410,
-   "w": 160,
-   "h": 160,
-   "mono": "DO",
-   "hue": 20,
-   "layers": 2,
-   "pips": [],
-   "exited": false,
-   "spokenTo": false
-  },
-  {
-   "name": "Flexport",
-   "slug": "flexport",
-   "id": "c277",
-   "district": "demand-commercial-platforms",
-   "x": 582,
-   "y": 1410,
-   "w": 160,
-   "h": 160,
-   "mono": "FL",
-   "hue": 20,
-   "layers": 1,
-   "pips": [],
-   "exited": false,
-   "spokenTo": false
-  },
-  {
-   "name": "FREE NOW",
-   "slug": "free-now",
-   "id": "c278",
-   "district": "demand-commercial-platforms",
-   "x": 226,
-   "y": 1588,
-   "w": 160,
-   "h": 160,
-   "mono": "FN",
-   "hue": 20,
-   "layers": 2,
-   "pips": [
-    320
-   ],
-   "exited": false,
-   "spokenTo": false
-  },
-  {
-   "name": "HERE Marketplace / Location Services",
-   "slug": "here-marketplace-location-services",
-   "id": "c283",
-   "district": "demand-commercial-platforms",
-   "x": 404,
-   "y": 1588,
-   "w": 160,
-   "h": 160,
-   "mono": "HM",
-   "hue": 20,
-   "layers": 2,
-   "pips": [],
-   "exited": false,
-   "spokenTo": false
-  },
-  {
-   "name": "Instacart",
-   "slug": "instacart",
-   "id": "c284",
-   "district": "demand-commercial-platforms",
-   "x": 582,
-   "y": 1588,
-   "w": 160,
-   "h": 160,
-   "mono": "IN",
-   "hue": 20,
-   "layers": 2,
-   "pips": [],
-   "exited": false,
-   "spokenTo": false
-  },
-  {
-   "name": "Nexar",
-   "slug": "nexar",
-   "id": "c292",
-   "district": "demand-commercial-platforms",
-   "x": 226,
-   "y": 1766,
-   "w": 160,
-   "h": 160,
-   "mono": "NE",
-   "hue": 20,
-   "layers": 3,
-   "pips": [],
-   "exited": false,
-   "spokenTo": false
-  },
-  {
-   "name": "PAVE",
-   "slug": "pave",
-   "id": "c541",
-   "district": "governance-standards-safety-advocacy",
-   "x": 226,
-   "y": 2288,
-   "w": 160,
-   "h": 160,
-   "mono": "PA",
-   "hue": 340,
-   "layers": 3,
-   "pips": [
-    150,
-    320
-   ],
-   "exited": false,
-   "spokenTo": false
-  },
-  {
-   "name": "3GPP",
-   "slug": "3gpp",
-   "id": "c495",
-   "district": "governance-standards-safety-advocacy",
-   "x": 404,
-   "y": 2288,
-   "w": 160,
-   "h": 160,
-   "mono": "3G",
-   "hue": 340,
-   "layers": 1,
-   "pips": [],
-   "exited": false,
-   "spokenTo": false
-  },
-  {
-   "name": "AAA Foundation for Traffic Safety",
-   "slug": "aaa-foundation-for-traffic-safety",
-   "id": "c496",
-   "district": "governance-standards-safety-advocacy",
-   "x": 582,
-   "y": 2288,
-   "w": 160,
-   "h": 160,
-   "mono": "AF",
-   "hue": 340,
-   "layers": 1,
-   "pips": [],
-   "exited": false,
-   "spokenTo": false
-  },
-  {
-   "name": "Advocates for Highway and Auto Safety",
-   "slug": "advocates-for-highway-and-auto-safety",
-   "id": "c497",
-   "district": "governance-standards-safety-advocacy",
-   "x": 226,
-   "y": 2466,
-   "w": 160,
-   "h": 160,
-   "mono": "AF",
-   "hue": 340,
-   "layers": 1,
-   "pips": [],
-   "exited": false,
-   "spokenTo": false
-  },
-  {
-   "name": "Alliance for Automotive Innovation",
-   "slug": "alliance-for-automotive-innovation",
-   "id": "c498",
-   "district": "governance-standards-safety-advocacy",
-   "x": 404,
-   "y": 2466,
-   "w": 160,
-   "h": 160,
-   "mono": "AF",
-   "hue": 340,
-   "layers": 1,
-   "pips": [],
-   "exited": false,
-   "spokenTo": false
-  },
-  {
-   "name": "ASAM e.V.",
-   "slug": "asam-e-v",
-   "id": "c499",
-   "district": "governance-standards-safety-advocacy",
-   "x": 582,
-   "y": 2466,
-   "w": 160,
-   "h": 160,
-   "mono": "AE",
-   "hue": 340,
-   "layers": 1,
-   "pips": [],
-   "exited": false,
-   "spokenTo": false
-  },
-  {
-   "name": "ASAM OpenDRIVE",
-   "slug": "asam-opendrive",
-   "id": "c500",
-   "district": "governance-standards-safety-advocacy",
-   "x": 226,
-   "y": 2644,
-   "w": 160,
-   "h": 160,
-   "mono": "AO",
-   "hue": 340,
-   "layers": 1,
-   "pips": [],
-   "exited": false,
-   "spokenTo": false
-  },
-  {
-   "name": "Autonomous Vehicle Industry Association (AVIA)",
-   "slug": "autonomous-vehicle-industry-association-avia",
-   "id": "c507",
-   "district": "governance-standards-safety-advocacy",
-   "x": 404,
-   "y": 2644,
-   "w": 160,
-   "h": 160,
-   "mono": "AV",
-   "hue": 340,
-   "layers": 1,
-   "pips": [],
-   "exited": false,
-   "spokenTo": false
-  },
-  {
-   "name": "AUVSI",
-   "slug": "auvsi",
-   "id": "c508",
-   "district": "governance-standards-safety-advocacy",
-   "x": 582,
-   "y": 2644,
-   "w": 160,
-   "h": 160,
-   "mono": "AU",
-   "hue": 340,
-   "layers": 1,
-   "pips": [],
-   "exited": false,
-   "spokenTo": false
-  },
-  {
-   "name": "AVIA",
-   "slug": "avia",
-   "id": "c509",
-   "district": "governance-standards-safety-advocacy",
-   "x": 226,
-   "y": 2822,
-   "w": 160,
-   "h": 160,
-   "mono": "AV",
-   "hue": 340,
-   "layers": 3,
-   "pips": [
-    290
-   ],
-   "exited": false,
-   "spokenTo": false
-  },
-  {
-   "name": "Consumer Reports",
-   "slug": "consumer-reports",
-   "id": "c512",
-   "district": "governance-standards-safety-advocacy",
-   "x": 404,
-   "y": 2822,
-   "w": 160,
-   "h": 160,
-   "mono": "CR",
-   "hue": 340,
-   "layers": 2,
-   "pips": [],
-   "exited": false,
-   "spokenTo": false
-  },
-  {
-   "name": "Euro NCAP",
-   "slug": "euro-ncap",
-   "id": "c514",
-   "district": "governance-standards-safety-advocacy",
-   "x": 582,
-   "y": 2822,
-   "w": 160,
-   "h": 160,
-   "mono": "EN",
-   "hue": 340,
-   "layers": 1,
-   "pips": [],
-   "exited": false,
-   "spokenTo": false
-  },
-  {
-   "name": "Highway Loss Data Institute (HLDI)",
-   "slug": "highway-loss-data-institute-hldi",
-   "id": "c515",
-   "district": "governance-standards-safety-advocacy",
-   "x": 760,
-   "y": 2822,
-   "w": 160,
-   "h": 160,
-   "mono": "HL",
-   "hue": 340,
-   "layers": 1,
-   "pips": [],
-   "exited": false,
-   "spokenTo": false
-  },
-  {
-   "name": "IEEE 2846",
-   "slug": "ieee-2846",
-   "id": "c517",
-   "district": "governance-standards-safety-advocacy",
-   "x": 226,
-   "y": 3000,
-   "w": 160,
-   "h": 160,
-   "mono": "I2",
-   "hue": 340,
-   "layers": 1,
-   "pips": [],
-   "exited": false,
-   "spokenTo": false
-  },
-  {
-   "name": "IEEE Standards Association",
-   "slug": "ieee-standards-association",
-   "id": "c519",
-   "district": "governance-standards-safety-advocacy",
-   "x": 404,
-   "y": 3000,
-   "w": 160,
-   "h": 160,
-   "mono": "IS",
-   "hue": 340,
-   "layers": 1,
-   "pips": [],
-   "exited": false,
-   "spokenTo": false
-  },
-  {
-   "name": "Insurance Institute for Highway Safety (IIHS)",
-   "slug": "insurance-institute-for-highway-safety-iihs",
-   "id": "c520",
-   "district": "governance-standards-safety-advocacy",
-   "x": 582,
-   "y": 3000,
-   "w": 160,
-   "h": 160,
-   "mono": "II",
-   "hue": 340,
-   "layers": 1,
-   "pips": [],
-   "exited": false,
-   "spokenTo": false
-  },
-  {
-   "name": "International Brotherhood of Teamsters",
-   "slug": "international-brotherhood-of-teamsters",
-   "id": "c521",
-   "district": "governance-standards-safety-advocacy",
-   "x": 760,
-   "y": 3000,
-   "w": 160,
-   "h": 160,
-   "mono": "IB",
-   "hue": 340,
-   "layers": 1,
-   "pips": [],
    "exited": false,
    "spokenTo": false
   }
@@ -6548,10 +5722,10 @@
    "name": "Waymo",
    "slug": "waymo",
    "id": "c49",
-   "x": 1087.0,
-   "y": 1258,
-   "w": 626,
-   "h": 392,
+   "x": 932.0,
+   "y": 1492,
+   "w": 560,
+   "h": 500,
    "cat": "AV Driver / Autonomy Software",
    "hue": 265,
    "mono": "WA",
@@ -6561,10 +5735,10 @@
    "name": "Baidu Apollo Go",
    "slug": "baidu-apollo-go",
    "id": "c8",
-   "x": 1713.0,
-   "y": 1258,
-   "w": 626,
-   "h": 392,
+   "x": 1492.0,
+   "y": 1492,
+   "w": 560,
+   "h": 500,
    "cat": "AV Driver / Autonomy Software",
    "hue": 265,
    "mono": "BA",
@@ -6574,10 +5748,10 @@
    "name": "Tesla",
    "slug": "tesla",
    "id": "c246",
-   "x": 2339.0,
-   "y": 1258,
-   "w": 626,
-   "h": 392,
+   "x": 2052.0,
+   "y": 1492,
+   "w": 560,
+   "h": 500,
    "cat": "Vehicle Platform & Manufacturing",
    "hue": 40,
    "mono": "TE",
@@ -6587,10 +5761,10 @@
    "name": "Zoox",
    "slug": "zoox",
    "id": "c261",
-   "x": 862.0,
-   "y": 1862,
-   "w": 582,
-   "h": 392,
+   "x": 2612.0,
+   "y": 1492,
+   "w": 560,
+   "h": 500,
    "cat": "Vehicle Platform & Manufacturing",
    "hue": 40,
    "mono": "ZO",
@@ -6600,10 +5774,10 @@
    "name": "Pony.ai",
    "slug": "pony-ai",
    "id": "c37",
-   "x": 1444.0,
-   "y": 1862,
-   "w": 582,
-   "h": 392,
+   "x": 3172.0,
+   "y": 1492,
+   "w": 560,
+   "h": 500,
    "cat": "AV Driver / Autonomy Software",
    "hue": 265,
    "mono": "PA",
@@ -6613,10 +5787,10 @@
    "name": "WeRide",
    "slug": "weride",
    "id": "c51",
-   "x": 2026.0,
-   "y": 1862,
-   "w": 582,
-   "h": 392,
+   "x": 3732.0,
+   "y": 1492,
+   "w": 560,
+   "h": 500,
    "cat": "AV Driver / Autonomy Software",
    "hue": 265,
    "mono": "WE",
@@ -6626,10 +5800,10 @@
    "name": "Wayve",
    "slug": "wayve",
    "id": "c50",
-   "x": 2608.0,
-   "y": 1862,
-   "w": 582,
-   "h": 392,
+   "x": 932.0,
+   "y": 1992,
+   "w": 560,
+   "h": 500,
    "cat": "AV Driver / Autonomy Software",
    "hue": 265,
    "mono": "WA",
@@ -6639,10 +5813,10 @@
    "name": "Nuro",
    "slug": "nuro",
    "id": "c235",
-   "x": 1087.0,
-   "y": 2466,
-   "w": 626,
-   "h": 392,
+   "x": 1492.0,
+   "y": 1992,
+   "w": 560,
+   "h": 500,
    "cat": "Vehicle Platform & Manufacturing",
    "hue": 40,
    "mono": "NU",
@@ -6652,10 +5826,10 @@
    "name": "May Mobility",
    "slug": "may-mobility",
    "id": "c29",
-   "x": 1713.0,
-   "y": 2466,
-   "w": 626,
-   "h": 392,
+   "x": 2052.0,
+   "y": 1992,
+   "w": 560,
+   "h": 500,
    "cat": "AV Driver / Autonomy Software",
    "hue": 265,
    "mono": "MM",
@@ -6665,14 +5839,40 @@
    "name": "Motional",
    "slug": "motional",
    "id": "c32",
-   "x": 2339.0,
-   "y": 2466,
-   "w": 626,
-   "h": 392,
+   "x": 2612.0,
+   "y": 1992,
+   "w": 560,
+   "h": 500,
    "cat": "AV Driver / Autonomy Software",
    "hue": 265,
    "mono": "MO",
    "claim": "Hyundai-backed and factory-integrated; IONIQ 5 robotaxis relaunched on Uber in Las Vegas, March 2026."
+  },
+  {
+   "name": "Avride",
+   "slug": "avride",
+   "id": "c6",
+   "x": 3172.0,
+   "y": 1992,
+   "w": 560,
+   "h": 500,
+   "cat": "AV Driver / Autonomy Software",
+   "hue": 265,
+   "mono": "AV",
+   "claim": "Yandex-lineage driver now carrying Uber riders in Dallas; $375M from Uber and Nebius behind it."
+  },
+  {
+   "name": "SWM",
+   "slug": "swm",
+   "id": "c558",
+   "x": 3732.0,
+   "y": 1992,
+   "w": 560,
+   "h": 500,
+   "cat": "AV Driver / Autonomy Software",
+   "hue": 265,
+   "mono": "SW",
+   "claim": "Korea's first driverless taxi, running Seoul's Gangnam district on KG Mobility cars since 2024."
   }
  ]
 }

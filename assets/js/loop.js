@@ -7,7 +7,9 @@
    Three rules this rewrite exists to enforce:
      1. Nothing moves faster because a pointer passed over it. The old build sped
         the car up on hover, which read as losing information you were reading.
-     2. Nothing in a card is a link. Cards used to navigate away mid-read.
+     2. Nothing in a card navigates by surprise. The layer pills are the one
+        deliberate exit — each links to the directory filtered to its layer,
+        and says so in a tooltip before anyone clicks.
      3. The reader sets the pace: pause is always visible, the arrows step in
         either direction from anywhere in the loop, and a depleting ring on the
         active card says how long is left before the car moves on. */

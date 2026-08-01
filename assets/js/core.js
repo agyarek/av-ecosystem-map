@@ -353,33 +353,28 @@
     </div>
   </div>`;
 
-  // The bio renders only where a footer opts in with data-bio (the homepage),
-  // so the page ends on a person rather than a dataset.
+  // Every page ends on a person, not a dataset: the bio renders in every
+  // footer, followed by one line of provenance.
   const BIO = `<div class="bio">
     <p class="bio-name">KOFI AGYARE-KWABI</p>
-    <p class="bio-text">I am an ex-Uber Country Manager with a decade of go-to-market and
-      partnerships work across mobility, and a Wharton MBA. I built this map partly because
-      I wanted it to exist and partly as evidence of how I think about the sector: every
-      company, partnership and figure here is compiled by hand from public filings, permits
-      and announcements — <a href="{ROOT}method/">the method is documented</a>.</p>
-    <p class="bio-text">If any of it is useful to you professionally, or you simply want to
-      talk autonomy, the inbox is open.</p>
+    <p class="bio-text">Hi! I'm a former Uber Country Manager and Wharton MBA with over a
+      decade of go-to-market and partnerships work, and I'm passionate about the autonomous
+      vehicle industry.</p>
+    <p class="bio-text">This website is a living, breathing public repository of what I'm
+      discovering about the industry through my research, conversations with experts in my
+      network, and reviews of publicly available information. In case you're curious,
+      <a href="{ROOT}method/">here's my process</a>.</p>
+    <p class="bio-text">If you'd like to chat — you'd like some information updated, want to
+      issue a correction, or you simply want to talk autonomy — simply reach out. I'd love
+      to hear from you.</p>
     <p class="bio-cta"><a class="btn" href="mailto:agyarek+avecosystemmap@gmail.com?subject=AV%20ecosystem%20map">EMAIL ME</a></p>
   </div>`;
 
-  const footerHTML = el => {
-    const opener = el.dataset.cta === 'chart'
-      ? 'A company that should be on this chart, a partnership I have not mapped, a detail that is wrong?'
-      : 'A company that should be listed, a partnership I have not mapped, a detail that is wrong?';
-    return `<div class="container">
-    ${el.hasAttribute('data-bio') ? BIO.replace('{ROOT}', ROOT) : ''}
-    <p class="cta">${opener}
-      <a href="${CORRECTION}">Tell me</a> — it comes to me directly, and it is
-      how this map gets better.</p>
-    <p class="fine">Autonomous Vehicle Ecosystem Map · compiled by <a href="${ROOT}method/">Kofi Agyare-Kwabi</a> from public filings, permits and announcements · updated <span data-updated>${UPDATED}</span></p>
+  const footerHTML = el => `<div class="container">
+    ${BIO.replace('{ROOT}', ROOT)}
+    <p class="fine">Autonomous Vehicle Ecosystem Map · built by <a href="${ROOT}method/">Kofi Agyare-Kwabi</a> · updated <span data-updated>${UPDATED}</span></p>
     ${el.hasAttribute('data-trademark') ? `<p class="fine">${TRADEMARK}</p>` : ''}
   </div>`;
-  };
 
   // The chapter menus in the bar. A real button with aria-expanded for tap and
   // keyboard, plus hover-open on pointer devices: resting the cursor on the

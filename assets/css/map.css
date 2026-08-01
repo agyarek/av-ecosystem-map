@@ -41,11 +41,13 @@
      capped at three quarters of the window. */
   width: 100%; height: auto; aspect-ratio: 1.4;
   max-height: 75vh; max-height: 75dvh; min-height: 420px;
-  /* Inline, the chart is a fixed picture: the page scrolls and pinches over it
-     like any other content. Full screen flips this to none so JS gets the raw
-     gestures (see the fullscreen rules below). */
+  /* Inline, touch scrolls and pinches over the chart like any other content;
+     full screen flips this to none so JS gets the raw gestures (see the
+     fullscreen rules below). A mouse can always drag-pan, hence the grab. */
   touch-action: pan-y pinch-zoom; contain: layout paint;
+  cursor: grab;
 }
+.poster-viewport:active { cursor: grabbing; }
 /* The chart sits in the same column as everything else. The full-bleed breakout
    went: it left no margin to scroll past, so every wheel gesture over the page
    became a zoom. The gutters give the page back its scroll lane. */
@@ -75,6 +77,11 @@
 }
 #poster [data-chip].sel .chip-body {
   stroke: var(--cyan); stroke-width: 3px; vector-effect: non-scaling-stroke;
+}
+/* A selected company's partners answer with a ring of their own, so the other
+   end of every tether is findable at the default zoom, not just less dim. */
+#poster.has-sel [data-chip].lit:not(.sel) .chip-body {
+  stroke: var(--cyan); stroke-width: 2px; vector-effect: non-scaling-stroke;
 }
 /* A tile leans forward when you rest on it or pick it — a lean, not a bounce.
    Each tile is inset inside its own cell, so it has room to grow without
@@ -186,6 +193,10 @@
   transition: border-color 120ms;
 }
 #company-card .cc-partner:hover { border-color: var(--cyan); }
+/* A resolvable partner is a link into the chart, and reads like one. */
+#company-card .cc-partner:hover span:last-child {
+  color: var(--cyan); text-decoration: underline; text-underline-offset: 2px;
+}
 #company-card .cc-partner .cp-logo { width: 26px; height: 26px; font-size: 10px; border-radius: 7px; flex: none; }
 #company-card .cc-partner.is-plain { border-style: dashed; color: var(--ink-2); }
 #company-card .cc-mail { margin-top: 10px; }
@@ -291,7 +302,9 @@ body.fs-pseudo #map-shell .fs-overlay { display: inline-flex; }
 
 /* --------------------------------------------------------------- print */
 @media print {
-  @page { size: A0 landscape; margin: 0; }
+  /* the full-roster chart is more than twice as tall as it is wide, so the
+     sheet stands upright and the chart fills its width */
+  @page { size: A0 portrait; margin: 0; }
   body.print-a1 { }
   .map-head, .map-rail, .map-legend, #company-card, .fs-overlay { display: none !important; }
   .poster-viewport {
@@ -317,41 +330,6 @@ body.fs-pseudo #map-shell .fs-overlay { display: inline-flex; }
   #poster [data-chip]:hover, #poster [data-chip].kbd-focus,
   #poster [data-chip].sel,
   #poster.hot-on .district.hot, #poster.hot-on .district:not(.hot) { transform: none; }
-}
-
-/* ------------------------------------------------------- the layer roster */
-/* Each district draws a slice of its layer, so the rest has to be reachable.
-   The roster is a list rather than more tiles: seventy names read fine as text
-   and would be another wall as a grid, which is the problem being solved. */
-.roster {
-  position: absolute; right: 16px; top: 16px; z-index: 40;
-  width: min(340px, calc(100vw - 32px));
-  max-height: calc(100% - 32px); display: flex; flex-direction: column;
-  background: var(--paper-2); border: 1px solid var(--rule);
-  border-radius: var(--r-card); padding: 14px;
-  box-shadow: 0 18px 48px rgba(18, 19, 15, .2);
-}
-.roster[hidden] { display: none; }
-.roster-head { display: flex; align-items: flex-start; gap: 10px; }
-.roster-head .eyebrow { margin: 0; }
-.roster-close { margin-left: auto; color: var(--muted); font-size: 18px; line-height: 1; padding: 2px 6px; }
-.roster-close:hover { color: var(--alert); }
-.roster #roster-q { width: 100%; margin-top: 10px; }
-.roster-list { list-style: none; margin-top: 8px; overflow: auto; overscroll-behavior: contain; }
-.roster-list li { border-top: 1px solid var(--rule); }
-.roster-list button {
-  display: flex; align-items: center; gap: 9px; width: 100%; text-align: left;
-  padding: 7px 4px; font-size: 13.5px; color: var(--ink);
-}
-.roster-list button:hover { color: var(--cyan); }
-.roster-list .mono-tile { width: 22px; height: 22px; font-size: 9.5px; border-radius: 6px; flex: none; }
-.roster-list .rk { margin-left: auto; font-family: var(--font-mono); font-size: 10px; color: var(--muted); }
-.roster-list s { color: var(--muted); }
-#poster .d-more { cursor: pointer; }
-#poster .d-more:hover text { fill: var(--cyan); }
-
-@media (max-width: 700px) {
-  .roster { right: 8px; left: 8px; top: 8px; width: auto; max-height: calc(100% - 16px); }
 }
 
 /* ------------------------------------------------ filter dropdowns */

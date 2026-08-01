@@ -1,5 +1,5 @@
 /* media.js :: the media page. Renders publications, podcasts and events from
-   data/av-media.json, and runs the subscribe dialog.
+   data/av-media.json.
 
    No reader counts render: a tile earns its place editorially, not by
    audience size. Each tile carries a small mark for what kind of thing it is
@@ -7,11 +7,6 @@
 (function () {
   'use strict';
   const { json, esc, mountLogos } = window.AV;
-
-  // Buttondown username for the subscribe form. Until it is set, the dialog
-  // offers the mailto fallback instead of a dead form.
-  const BUTTONDOWN = '';
-  const RECOMMEND = 'mailto:agyarek+avecosystemmap@gmail.com';
 
   const KIND_ICON = {
     read: '<svg viewBox="0 0 16 16" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11.2 2.2 13.8 4.8 5.6 13 2.2 13.8 3 10.4 Z"/></svg>',
@@ -40,20 +35,4 @@
     mountLogos(document.getElementById('content'));
   }).catch(e => console.error(e));
 
-  // ------------------------------------------------------------- subscribe
-  const dlg = document.getElementById('subscribe-dialog');
-  const openBtn = document.getElementById('subscribe-open');
-  if (dlg && openBtn) {
-    const form = dlg.querySelector('form');
-    if (BUTTONDOWN) {
-      form.action = `https://buttondown.com/api/emails/embed-subscribe/${BUTTONDOWN}`;
-    } else {
-      // No list yet: keep the promise honest and route the email to me instead.
-      form.hidden = true;
-      dlg.querySelector('.sub-fallback').hidden = false;
-    }
-    openBtn.addEventListener('click', () => dlg.showModal());
-    dlg.querySelector('.sub-close').addEventListener('click', () => dlg.close());
-    dlg.addEventListener('click', e => { if (e.target === dlg) dlg.close(); });
-  }
 })();

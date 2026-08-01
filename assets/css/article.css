@@ -120,24 +120,6 @@ table.spec td { font-size: 14px; }
 .compare-scroll table { min-width: 980px; }
 .compare-scroll th.op-col { white-space: nowrap; }
 
-/* The event list reads down the page now, one row per announcement — the
-   sideways conveyor belt is gone. */
-.timeline-wrap { margin-top: 16px; }
-.timeline { display: grid; gap: 8px; }
-.tl-event {
-  background: var(--paper-2); border: 1px solid var(--rule);
-  border-radius: var(--r-card); padding: 10px 16px;
-  display: grid; grid-template-columns: 96px 92px 1fr auto;
-  gap: 2px 16px; align-items: baseline;
-}
-.tl-event .d { font-family: var(--font-mono); font-size: 11px; color: var(--muted); }
-.tl-event .amt { font-size: 17px; font-weight: 600; font-family: var(--font-mono); }
-.tl-event .co { font-weight: 800; font-size: 15px; }
-.tl-event .form { font-size: 11px; font-family: var(--font-mono); color: var(--cyan); justify-self: end; }
-.tl-event .note { font-size: 12.5px; color: var(--ink-2); line-height: 1.45; grid-column: 3 / -1; }
-.tl-event .inv { font-size: 11.5px; color: var(--muted); grid-column: 3 / -1; }
-.tl-event.dim { opacity: .25; }
-
 .sub-sec {
   margin-top: 34px; font-size: 17px; font-weight: 800;
   font-variation-settings: 'wdth' 112;
@@ -154,6 +136,64 @@ table.spec td { font-size: 14px; }
 .gap-list li { font-size: 13.5px; color: var(--ink-2); line-height: 1.5; }
 
 .rank-table td .why { font-size: 12.5px; color: var(--muted); }
+
+/* ---------------------------------------------------- expandable cut lists */
+/* Every catalogued raise lives inside these rows now: the list scrolls in
+   place instead of running the page, and each row opens the events behind
+   its number. */
+.cut-scroll {
+  max-height: 380px; overflow-y: auto; overscroll-behavior: contain;
+  margin-top: 8px; scrollbar-width: thin; scrollbar-color: var(--rule) transparent;
+  background:
+    linear-gradient(var(--paper-2) 30%, transparent) top / 100% 24px,
+    linear-gradient(transparent, var(--paper-2) 70%) bottom / 100% 24px,
+    radial-gradient(farthest-side at top, color-mix(in oklab, var(--ink) 16%, transparent), transparent) top / 100% 10px,
+    radial-gradient(farthest-side at bottom, color-mix(in oklab, var(--ink) 16%, transparent), transparent) bottom / 100% 10px;
+  background-repeat: no-repeat;
+  background-attachment: local, local, scroll, scroll;
+}
+.cut > summary { list-style: none; cursor: pointer; }
+.cut > summary::-webkit-details-marker { display: none; }
+/* the caret is a third flex child, so space-between would drift the figure —
+   anchor it right explicitly instead */
+.cut > summary.rank-row { justify-content: flex-start; }
+.cut > summary.rank-row .rr-k { margin-right: auto; }
+.rr-caret { flex: none; width: 12px; font-size: 9px; color: var(--muted); }
+.rr-caret::before { content: '▸'; }
+.cut[open] > summary .rr-caret::before { content: '▾'; }
+.cut-detail { padding: 2px 0 8px 17px; }
+.cut-detail p { margin: 0; padding: 7px 0; font-size: 12.5px; line-height: 1.5; color: var(--ink-2); }
+.cut-detail p + p { border-top: 1px solid var(--rule); }
+.cut-detail .cite { font-size: 11px; }
+
+/* ------------------------------------------------- table tooltips */
+/* Formula and honesty tooltips: CSS-only, keyboard-reachable, styled like the
+   chart tip but attached to their element. */
+.ftip { position: relative; cursor: help; }
+th .ftip { text-decoration: underline dotted; text-underline-offset: 3px; text-decoration-color: var(--muted); }
+.ftip::after {
+  content: attr(data-tip);
+  position: absolute; left: 0; top: calc(100% + 6px); z-index: 60;
+  width: max-content; max-width: 300px; white-space: normal;
+  background: var(--ink); color: var(--paper);
+  font-family: var(--font-display); font-size: 12px; line-height: 1.45; font-weight: 400;
+  text-transform: none; letter-spacing: 0; text-align: left;
+  padding: 8px 10px; border-radius: var(--r-chip);
+  opacity: 0; visibility: hidden; pointer-events: none; transition: opacity 120ms;
+}
+.ftip:hover::after, .ftip:focus-visible::after { opacity: 1; visibility: visible; }
+:root[data-theme="dark"] .ftip::after {
+  background: var(--paper-2); color: var(--ink); border: 1px solid var(--rule);
+}
+.omark {
+  margin-left: 5px; font-family: var(--font-mono); font-weight: 700;
+  color: var(--cyan); cursor: help;
+}
+.omark::after { left: auto; right: 0; }
+/* the eco table cannot actually overflow above 700px (fixed layout, four
+   columns max), so let its tooltips escape instead of being clipped by the
+   scroll container; below 700px the scroll stays and clipping is accepted */
+@media (min-width: 700px) { #eco-table.table-scroll { overflow: visible; } }
 
 /* Six regions down the left, each behind its own mark; the selected mark takes
    the accent and keeps it. The Q&A for the selected region reads on the right. */
@@ -214,47 +254,6 @@ table.spec td { font-size: 14px; }
 .world-card dt { font-family: var(--font-mono); font-size: 10.5px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); padding-top: 2px; }
 .world-card dd { color: var(--ink-2); line-height: 1.5; }
 @media (max-width: 560px) { .world-card dl { grid-template-columns: 1fr; gap: 2px; } .world-card dd { margin-bottom: 8px; } }
-
-.calc { display: grid; grid-template-columns: minmax(280px, 420px) 1fr; gap: 28px; margin-top: 24px; }
-@media (max-width: 860px) { .calc { grid-template-columns: 1fr; } }
-.calc-inputs { display: grid; gap: 10px; align-content: start; }
-.calc-inputs .ci { display: grid; grid-template-columns: 1fr 110px; align-items: center; gap: 10px; }
-.calc-inputs label { font-size: 13px; color: var(--ink-2); }
-.calc-inputs input {
-  font-family: var(--font-mono); font-size: 13px; text-align: right;
-  background: var(--paper-2); border: 1px solid var(--rule);
-  border-radius: var(--r-chip); padding: 6px 10px; width: 100%;
-}
-.calc-inputs input:focus { border-color: var(--cyan); }
-.calc-out { display: grid; gap: 12px; align-content: start; }
-.calc-out .co-big {
-  background: var(--ink); color: var(--paper); border-radius: var(--r-card);
-  padding: 20px 24px;
-}
-:root[data-theme="dark"] .calc-out .co-big { background: var(--paper-2); color: var(--ink); border: 1px solid var(--rule); }
-.calc-out .co-big .num { font-size: 40px; font-weight: 600; }
-.calc-out .co-row { display: flex; gap: 12px; flex-wrap: wrap; }
-.calc-out .fact { flex: 1 1 150px; }
-.calc-note { margin-top: 18px; }
-
-.src-list { list-style: none; margin-top: 4px; max-width: var(--measure); }
-.src-list li {
-  padding: 10px 0; border-bottom: 1px solid var(--rule);
-  display: flex; gap: 12px; align-items: baseline; justify-content: space-between;
-}
-.src-list li a { color: var(--cyan); font-weight: 600; }
-.src-list li .caption { font-family: var(--font-mono); white-space: nowrap; }
-
-/* Operator page title: smaller than a section hero, and like every fluid size
-   on this site it tracks the shorter viewport dimension so a landscape phone
-   never gets larger type than the same phone held upright. */
-.op-title { font-size: clamp(22px, min(4.5vw, 7vh), 60px); }
-
-@media (orientation: landscape) and (max-height: 560px) {
-  .article-head { padding: 24px 0 14px; }
-  .article section { margin-top: 34px; }
-  .op-hero .mono-tile { width: 56px; height: 56px; font-size: 22px; }
-}
 
 /* ------------------------------------------------------------------ charts
    The explorer on /funding/. Two charts stacked on one x-axis rather than one
@@ -419,18 +418,13 @@ input.eco-in:focus { border-color: var(--cyan); outline: none; }
 }
 
 /* ------------------------------------------------------------- narrow screens */
-/* The event rows drop their four-column ruling and stack their fields. */
 @media (max-width: 700px) {
-  .tl-event { grid-template-columns: 96px 1fr; }
-  .tl-event .co, .tl-event .form { grid-column: 1 / -1; justify-self: start; }
-  .tl-event .note, .tl-event .inv { grid-column: 1 / -1; }
 
   /* the comparison tables keep their horizontal scroll, but say so rather than
      silently clipping */
   .compare-scroll, .cmp-wrap { -webkit-overflow-scrolling: touch; }
 
   .rank-row { font-size: var(--fs-sm); }
-  .calc-inputs input { font-size: var(--fs-md); padding: 8px 10px; }
 }
 
 /* ---------------------------------------------- the human-vs-autonomous table */

@@ -389,83 +389,64 @@
     });
   }
 
-  // ---------------------------------------------------------------- timeline
-  // The original narrative view and its three cuts, unchanged in behaviour.
-  function buildTimeline(F, regionOf, byName) {
-    const tlState = { forms: new Set(), regions: new Set() };
-    const tlEvents = F.events.map(e => ({
-      ...e, bucket: bucketOf(e.form), region: regionOf(e.company),
-      slug: (byName[e.company.toLowerCase()] || {}).s || null,
-    })).sort((a, b) => b.date.localeCompare(a.date));
-
-    const fWrap = $('fund-filters');
-    fWrap.innerHTML = [...new Set(tlEvents.map(e => e.bucket))]
-      .map(f => `<button class="chip" data-form="${esc(f)}" aria-pressed="false">${esc(f)}</button>`).join('')
-      + '<span style="flex-basis:100%"></span>'
-      + [...new Set(tlEvents.map(e => e.region))]
-        .map(r => `<button class="chip" data-region="${esc(r)}" aria-pressed="false">${esc(r)}</button>`).join('');
-    fWrap.addEventListener('click', e => {
-      const b = e.target.closest('button.chip'); if (!b) return;
-      const tog = (set, v) => set.has(v) ? set.delete(v) : set.add(v);
-      if (b.dataset.form) tog(tlState.forms, b.dataset.form);
-      if (b.dataset.region) tog(tlState.regions, b.dataset.region);
-      b.setAttribute('aria-pressed', b.getAttribute('aria-pressed') !== 'true');
-      draw();
-    });
-
-    const tl = $('timeline');
-    function draw() {
-      let shown = 0;
-      tl.innerHTML = tlEvents.map(e => {
-        const ok = (!tlState.forms.size || tlState.forms.has(e.bucket))
-          && (!tlState.regions.size || tlState.regions.has(e.region));
-        if (ok) shown++;
-        return `<div class="tl-event${ok ? '' : ' dim'}">
-          <span class="d">${esc(fmtDate(e.date))}</span>
-          <span class="amt">${fmtM(e.amountUSDm)}</span>
-          <span class="co">${e.slug ? `<a class="co-link" href="${ROOT}map/#${esc(e.slug)}">${esc(e.company)}</a>` : esc(e.company)}</span>
-          <span class="form">${esc(e.form.toUpperCase())}</span>
-          <span class="note">${esc(e.note || '')}</span>
-          <span class="inv">${esc((e.investors || []).slice(0, 5).join(', '))}</span>
-        </div>`;
-      }).join('');
-      $('fund-state').textContent = (tlState.forms.size || tlState.regions.size)
-        ? `${shown} of ${tlEvents.length} events match; the rest stay dimmed in place.` : '';
-    }
-    draw();
+  // ---------------------------------------------------------------- the cuts
+  // Three ranked lists over every catalogued event, each row a disclosure that
+  // opens the raises behind the number. The event list this section used to
+  // carry separately lives inside these rows now.
+  function buildCuts() {
+    const evs = [...events].sort((a, b) => b.date.localeCompare(a.date));
 
     // Ranked rows carried the size only as a number, so "who raised the most"
     // took reading rather than looking. The bar is the same proportion the number
     // states; every bar in a cut starts at the same left edge and is measured
     // against the largest in that cut, so the shapes are comparable down a column.
-    const row = (k, v, pct) => `<div class="rank-row"><span class="rr-k">${esc(k)}</span>` +
-      `<span class="num">${v}</span>` +
+    const row = (k, v, pct, detail) => `<details class="cut">
+      <summary class="rank-row"><span class="rr-caret" aria-hidden="true"></span>` +
+      `<span class="rr-k">${esc(k)}</span><span class="num">${v}</span>` +
       (pct == null ? '' : `<span class="rr-bar" style="--pct:${Math.max(1, Math.round(pct))}%"></span>`) +
-      `</div>`;
+      `</summary><div class="cut-detail">${detail}</div></details>`;
+
+    const monthYear = e => fmtDate(e.date.slice(0, 7));
+    const cite = e => e.url
+      ? ` <a class="cite" href="${esc(e.url)}" target="_blank" rel="noopener noreferrer">source</a>` : '';
+    const backers = e => (e.investors || []).length
+      ? ` Backed by ${esc(e.investors.slice(0, 6).join(', '))}${e.investors.length > 6 ? ' and others' : ''}.` : '';
+    const period = t => /[.!?]$/.test(t) ? t : t + '.';
+
+    // one paragraph per event: what, when, who — headed by the raise itself
+    const companyPara = e =>
+      `<p><strong>${fmtM(e.amountUSDm)} · ${esc(e.form)} · ${esc(monthYear(e))}.</strong> ` +
+      `${e.note ? esc(period(e.note)) : ''}${backers(e)}${cite(e)}</p>`;
+    const investorPara = e =>
+      `<p><strong>${esc(e.company)} — ${fmtM(e.amountUSDm)} (${esc(monthYear(e))}).</strong> ` +
+      `${e.note ? esc(period(e.note)) : ''}${cite(e)}</p>`;
 
     const sum = {};
-    tlEvents.forEach(e => { sum[e.company] = (sum[e.company] || 0) + e.amountUSDm; });
-    const topRaised = Object.entries(sum).sort((a, b) => b[1] - a[1]).slice(0, 7);
-    const maxRaised = topRaised.length ? topRaised[0][1] : 1;
-    $('cut-raised').innerHTML = topRaised
-      .map(([c, v]) => row(c, fmtM(v), v / maxRaised * 100)).join('');
+    evs.forEach(e => { sum[e.company] = (sum[e.company] || 0) + e.amountUSDm; });
+    const raised = Object.entries(sum).sort((a, b) => b[1] - a[1]);
+    const maxRaised = raised.length ? raised[0][1] : 1;
+    $('cut-raised').innerHTML = raised.map(([c, v]) =>
+      row(c, fmtM(v), v / maxRaised * 100,
+        evs.filter(e => e.company === c).map(companyPara).join(''))).join('');
 
     const inv = {};
-    tlEvents.forEach(e => (e.investors || []).forEach(i => {
+    evs.forEach(e => (e.investors || []).forEach(i => {
       if (/public market|pipe/i.test(i)) return;
       inv[i] = (inv[i] || 0) + 1;
     }));
-    const topInv = Object.entries(inv).filter(([, n]) => n >= 2)
-      .sort((a, b) => b[1] - a[1]).slice(0, 8);
-    const maxInv = topInv.length ? topInv[0][1] : 1;
-    $('cut-investors').innerHTML = topInv
-      .map(([i, n]) => row(i, n + ' events', n / maxInv * 100)).join('');
+    const repeat = Object.entries(inv).filter(([, n]) => n >= 2)
+      .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]));
+    const maxInv = repeat.length ? repeat[0][1] : 1;
+    $('cut-investors').innerHTML = repeat.map(([i, n]) =>
+      row(i, n + ' events', n / maxInv * 100,
+        evs.filter(e => (e.investors || []).includes(i)).map(investorPara).join(''))).join('');
 
     const segSum = {};
-    tlEvents.forEach(e => { const s = SEG(e.company); segSum[s] = (segSum[s] || 0) + e.amountUSDm; });
+    evs.forEach(e => { segSum[e.segment] = (segSum[e.segment] || 0) + e.amountUSDm; });
     const total = Object.values(segSum).reduce((a, b) => a + b, 0);
     $('cut-split').innerHTML = Object.entries(segSum).sort((a, b) => b[1] - a[1])
-      .map(([s, v]) => row(s, `${fmtM(v)} · ${Math.round(v / total * 100)}%`, v / total * 100)).join('');
+      .map(([sg, v]) => row(sg, `${fmtM(v)} · ${Math.round(v / total * 100)}%`, v / total * 100,
+        evs.filter(e => e.segment === sg).map(investorPara).join(''))).join('');
   }
 
   // ---------------------------------------------------------------- boot
@@ -503,9 +484,8 @@
 
   Promise.all([
     json('data/av-funding-events.json'),
-    json('data/av-funding-timeline.json'),
     json('data/search-index.json'),
-  ]).then(([E, F, slim]) => {
+  ]).then(([E, slim]) => {
     const byName = Object.fromEntries(slim.map(c => [c.n.toLowerCase(), c]));
     const regionOf = company => {
       const lc = company.toLowerCase();
@@ -525,7 +505,7 @@
     render();
     $('ch-coverage').textContent = E.meta.coverage.partialNote;
 
-    buildTimeline(F, regionOf, byName);
+    buildCuts();
 
     // Themed groups, bold names, one-line reasons: a list a reader can scan
     // for a company they care about, rather than seven paragraphs to re-read.
@@ -543,7 +523,7 @@
     const themeBtn = $('theme-toggle');
     if (themeBtn) themeBtn.addEventListener('click', () => setTimeout(render, 0));
   }).catch(() => {
-    ['ch-capital', 'timeline'].forEach(id => {
+    ['ch-capital', 'cut-raised'].forEach(id => {
       const h = $(id);
       if (h) h.innerHTML = '<p class="caption">The funding data failed to load.</p>';
     });

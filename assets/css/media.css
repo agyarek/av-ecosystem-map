@@ -42,23 +42,3 @@
   margin-top: 48px; padding: 28px; text-align: left;
   background: var(--paper-2); border: 1px solid var(--rule); border-radius: var(--r-card);
 }
-dialog.sub-dialog {
-  border: 1px solid var(--rule); border-radius: var(--r-card);
-  background: var(--paper); color: var(--ink);
-  padding: 26px; max-width: 420px; width: calc(100vw - 40px);
-}
-dialog.sub-dialog::backdrop { background: rgba(18, 19, 15, .45); }
-.sub-dialog h2 { font-size: var(--fs-lg); font-weight: 800; letter-spacing: -0.01em; }
-.sub-dialog p { font-size: var(--fs-sm); color: var(--ink-2); margin-top: 8px; line-height: 1.5; }
-.sub-dialog form { display: flex; gap: 8px; margin-top: 16px; }
-.sub-dialog input[type="email"] {
-  flex: 1; font-family: var(--font-mono); font-size: var(--fs-sm);
-  background: var(--paper-2); border: 1px solid var(--rule); border-radius: var(--r-chip);
-  padding: 9px 12px; min-width: 0;
-}
-.sub-dialog input[type="email"]:focus { border-color: var(--cyan); }
-.sub-close {
-  position: absolute; top: 10px; right: 12px;
-  font-size: 20px; line-height: 1; padding: 6px; color: var(--muted);
-}
-.sub-close:hover { color: var(--ink); }

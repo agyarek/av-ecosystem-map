@@ -35,7 +35,7 @@
   if (!path || !token || !wrap) return;
 
   const TOTAL = path.getTotalLength();
-  const DWELL_MS = 7000;      // long enough to read a card; the ring shows it
+  const DWELL_MS = 11000;     // long enough to read a whole card; the ring shows it
   const LEG_MS = 3600;        // travel time between neighbouring stations
   const TURN_MS = 1150;       // the three-point turn
 
@@ -136,6 +136,26 @@
       ring.setAttribute('d', d);
       ring.setAttribute('pathLength', 100);
     });
+    positionControls();
+  }
+
+  // The controls pill parks on the seam between the card rows. 50%/50% of the
+  // wrap is not that seam: a card's text can run past its 1fr grid row, and the
+  // pill would sit on it. So measure the real content bottom of the top pair
+  // and the top of the bottom pair, and centre the pill between them.
+  const controls = wrap.querySelector('.loop-controls');
+  function positionControls() {
+    if (!controls || getComputedStyle(controls).display === 'none') return;
+    const wb = wrap.getBoundingClientRect();
+    const bottomOf = c => {
+      const r = c.getBoundingClientRect();
+      return Math.max(r.bottom, r.top + c.scrollHeight);
+    };
+    const lo = Math.max(bottomOf(cards.request), bottomOf(cards.driver));
+    const hi = Math.min(cards.pitlane.getBoundingClientRect().top,
+                        cards.vehicle.getBoundingClientRect().top);
+    controls.style.top =
+      (hi > lo ? (lo + hi) / 2 - wb.top : wb.height / 2) + 'px';
   }
   if (window.ResizeObserver) {
     const ro = new ResizeObserver(sizeRings);

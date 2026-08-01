@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>The Wall Chart · Autonomous Vehicle Ecosystem Map</title>
-<meta name="description" content="The 562 organisations of the autonomous vehicle industry on one wall chart: passenger autonomy at the centre, the eleven layers around it, and the partnerships between them. Each layer shows a readable slice, with the rest behind one bar. Filter, full screen, export, print.">
+<meta name="description" content="The 562 organisations of the autonomous vehicle industry on one wall chart: passenger autonomy at the centre, every layer drawn in full — every organisation gets its own tile — and the partnerships between them. Filter, full screen, export, print.">
 <meta property="og:title" content="The Wall Chart · AV Ecosystem Map">
-<meta property="og:description" content="562 organisations across eleven layers on a single wall chart, each layer showing a readable slice with the rest one bar-press away.">
+<meta property="og:description" content="562 organisations across eleven layers on a single wall chart, every one of them with its own tile.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://agyarek.github.io/av-ecosystem-map/assets/cards/map.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -43,7 +43,7 @@
       <p class="eyebrow"><span class="tick">■</span> THE WALL CHART</p>
       <h1 class="chart-title">562 organisations. One poster.</h1>
     </div>
-    <p class="chart-honesty caption">The passenger-autonomy companies hold the centre; the eleven layers surround them. Each layer shows its most prominent names at a size you can actually read, and the bar at its foot opens the full roster. Partnerships are mapped for <span class="num">129</span> of <span class="num">562</span> organisations, 151 relationships in all. The remainder are gaps in coverage, not evidence of absence. <a href="../method/">What that means</a></p>
+    <p class="chart-honesty caption">The passenger-autonomy companies hold the centre; the eleven layers stack around them. Every one of the <span class="num">562</span> organisations is on the chart, each with its own tile — drag to explore, zoom to read. Partnerships are mapped for <span class="num">129</span> of <span class="num">562</span> organisations, 151 relationships in all. The remainder are gaps in coverage, not evidence of absence. <a href="../method/">What that means</a></p>
   </div>
 
   <div id="map-shell">
@@ -71,8 +71,8 @@
       <span class="rail-export" role="group" aria-label="Export">
         <button class="chip" id="x-full" aria-pressed="false">FULL SCREEN</button>
         <button class="chip" id="x-svg">SVG</button>
-        <button class="chip" id="x-png2">PNG 2×</button>
-        <button class="chip" id="x-png4">PNG 4×</button>
+        <button class="chip" id="x-png1">PNG 1×</button>
+        <button class="chip" id="x-png15">PNG 1.5×</button>
         <button class="chip" id="x-print">PRINT A0</button>
       </span>
     </div>
@@ -82,7 +82,7 @@
   <div class="poster-stage" id="poster-stage">
     <div class="poster-viewport" id="poster-viewport" tabindex="0" role="application"
          aria-roledescription="wall chart"
-         aria-label="Wall chart of 562 organisations. Use arrow keys to move between companies, Enter to select, F for full screen.">
+         aria-label="Wall chart of 562 organisations. Use arrow keys to move between companies, Enter to select, plus and minus to zoom, drag to pan, F for full screen.">
       <svg id="poster" aria-label="Autonomous vehicle ecosystem wall chart"></svg>
     </div>
     <!-- Persistent fullscreen chrome: always-reachable exits, shown by CSS only
@@ -91,15 +91,6 @@
     <button class="chip fs-overlay" id="fs-exit" aria-label="Exit full screen">✕ EXIT</button>
     <button class="chip fs-overlay" id="fs-fit">SEE FULL MAP</button>
     <aside id="company-card" hidden></aside>
-    <div id="roster" class="roster" hidden role="dialog" aria-modal="true" aria-labelledby="roster-title">
-      <div class="roster-head">
-        <p class="eyebrow" id="roster-title"></p>
-        <button class="roster-close" id="roster-close" aria-label="Close">&times;</button>
-      </div>
-      <input type="search" id="roster-q" class="rail-text" placeholder="Filter by name" autocomplete="off" spellcheck="false" aria-label="Filter this layer by name">
-      <p class="caption" id="roster-state" aria-live="polite"></p>
-      <ul id="roster-list" class="roster-list"></ul>
-    </div>
   </div>
   </div>
 
@@ -112,8 +103,7 @@
         <span><s>struck</s> exited: acquired, wound down or bankrupt</span>
         <span><span class="pip-demo" aria-hidden="true"></span> pips mark membership of further layers</span>
         <span>a company in several layers still gets one chip, never two</span>
-        <span>each layer shows a slice of itself; the <strong>SHOW ALL</strong> bar opens the rest</span>
-        <span>panel depth tracks how many organisations a layer holds</span>
+        <span>every organisation is on the chart — a layer's height tracks how many it holds</span>
         <span>hover a layer to light it; click a company to pin it and <strong>draw who it works with</strong></span>
         <span>on a phone, tap the chart to open it full screen; pinch to read</span>
       </p>
@@ -121,7 +111,7 @@
   </div>
 </main>
 
-<footer class="site" data-cta="chart" data-trademark></footer>
+<footer class="site" data-trademark></footer>
 
 <script src="../assets/js/core.js"></script>
 <script src="../assets/js/poster.js"></script>

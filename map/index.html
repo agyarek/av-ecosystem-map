@@ -47,7 +47,7 @@
   </div>
 
   <div id="map-shell">
-  <div class="map-rail container" id="map-rail">
+  <div class="map-rail" id="map-rail">
     <div class="rail-row" role="group" aria-label="Filters">
       <details class="picker" id="p-layers">
         <summary class="chip">LAYERS <span class="pk-n" hidden></span><span class="pk-caret" aria-hidden="true">▾</span></summary>
@@ -110,18 +110,20 @@
       <a id="force-chart" href="?chart=1#chart">View the full wall chart in this page instead</a></p>
   </div>
 
-  <div class="container map-legend" aria-label="Legend">
-    <h2 class="visually-hidden">Legend</h2>
-    <div id="legend-layers"></div>
-    <p class="caption legend-marks">
-      <span><span class="gold-dot" aria-hidden="true"></span> spoken with directly</span>
-      <span><s>struck</s> exited: acquired, wound down or bankrupt</span>
-      <span><span class="pip-demo" aria-hidden="true"></span> pips mark membership of further layers</span>
-      <span>a company in several layers still gets one chip, never two</span>
-      <span>each layer shows a slice of itself; the <strong>SHOW ALL</strong> bar opens the rest</span>
-      <span>panel depth tracks how many organisations a layer holds</span>
-      <span>hover a layer to light it; click a company to pin it and <strong>draw who it works with</strong></span>
-    </p>
+  <div class="container map-legend">
+    <details class="map-key">
+      <summary><span class="pk-caret" aria-hidden="true">▾</span> Key</summary>
+      <div id="legend-layers"></div>
+      <p class="caption legend-marks">
+        <span><span class="gold-dot" aria-hidden="true"></span> spoken with directly</span>
+        <span><s>struck</s> exited: acquired, wound down or bankrupt</span>
+        <span><span class="pip-demo" aria-hidden="true"></span> pips mark membership of further layers</span>
+        <span>a company in several layers still gets one chip, never two</span>
+        <span>each layer shows a slice of itself; the <strong>SHOW ALL</strong> bar opens the rest</span>
+        <span>panel depth tracks how many organisations a layer holds</span>
+        <span>hover a layer to light it; click a company to pin it and <strong>draw who it works with</strong></span>
+      </p>
+    </details>
   </div>
 </main>
 

@@ -1,668 +1,808 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5224 3904" width="5224" height="3904" font-family="Archivo, Helvetica, Arial, sans-serif">
-<defs><clipPath id="plate"><rect x="200" y="200" width="4824" height="3504" rx="56"/></clipPath></defs>
-<rect width="5224" height="3904" fill="#FAFAF7"/>
-<rect x="200" y="200" width="4824" height="3504" rx="56" fill="#FFFFFF"/>
-<defs><clipPath id="d-av-driver-autonomy-software"><polygon points="200,200 1584,200 1584,1192 200,1192"/></clipPath><clipPath id="d-sensing-compute-hardware"><polygon points="1584,200 2704,200 2704,1192 1584,1192"/></clipPath><clipPath id="d-data-maps-simulation"><polygon points="2704,200 3824,200 3824,1192 2704,1192"/></clipPath><clipPath id="d-connectivity-infrastructure"><polygon points="3824,200 5024,200 5024,1192 3824,1192"/></clipPath><clipPath id="d-vehicle-platform-manufacturing"><polygon points="4432,1192 5024,1192 5024,2712 4432,2712"/></clipPath><clipPath id="d-governance-standards-safety-advocacy"><polygon points="200,2712 1320,2712 1320,3704 200,3704"/></clipPath><clipPath id="d-governance-regulators-government"><polygon points="1320,2712 2704,2712 2704,3704 1320,3704"/></clipPath><clipPath id="d-capital-insurance-risk"><polygon points="2704,2712 3560,2712 3560,3704 2704,3704"/></clipPath><clipPath id="d-fleet-operations-depot"><polygon points="3560,2712 5024,2712 5024,3704 3560,3704"/></clipPath><clipPath id="d-demand-commercial-platforms"><polygon points="200,1192 792,1192 792,2712 200,2712"/></clipPath></defs>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5752 4096" width="5752" height="4096" font-family="Archivo, Helvetica, Arial, sans-serif">
+<defs><clipPath id="plate"><rect x="200" y="200" width="5352" height="3696" rx="56"/></clipPath></defs>
+<rect width="5752" height="4096" fill="#FAFAF7"/>
+<rect x="200" y="200" width="5352" height="3696" rx="56" fill="#FFFFFF"/>
+<defs><clipPath id="d-av-driver-autonomy-software"><polygon points="200,200 1584,200 1584,1288 200,1288"/></clipPath><clipPath id="d-sensing-compute-hardware"><polygon points="1584,200 2968,200 2968,1288 1584,1288"/></clipPath><clipPath id="d-data-maps-simulation"><polygon points="2968,200 4088,200 4088,1288 2968,1288"/></clipPath><clipPath id="d-connectivity-infrastructure"><polygon points="4088,200 5552,200 5552,1288 4088,1288"/></clipPath><clipPath id="d-vehicle-platform-manufacturing"><polygon points="4696,1288 5552,1288 5552,2808 4696,2808"/></clipPath><clipPath id="d-governance-standards-safety-advocacy"><polygon points="200,2808 1584,2808 1584,3896 200,3896"/></clipPath><clipPath id="d-governance-regulators-government"><polygon points="1584,2808 3232,2808 3232,3896 1584,3896"/></clipPath><clipPath id="d-capital-insurance-risk"><polygon points="3232,2808 4088,2808 4088,3896 3232,3896"/></clipPath><clipPath id="d-fleet-operations-depot"><polygon points="4088,2808 5552,2808 5552,3896 4088,3896"/></clipPath><clipPath id="d-demand-commercial-platforms"><polygon points="200,1288 1056,1288 1056,2808 200,2808"/></clipPath></defs>
 <g clip-path="url(#plate)">
-<polygon points="200,200 1584,200 1584,1192 200,1192" fill="oklch(0.62 0.075 265)" opacity=".05"/>
+<polygon points="200,200 1584,200 1584,1288 200,1288" fill="oklch(0.62 0.075 265)" opacity=".05"/>
 <g clip-path="url(#d-av-driver-autonomy-software)">
-<rect x="200" y="200" width="1384" height="280" fill="oklch(0.62 0.075 265)" opacity=".13"/>
 <rect x="200" y="471" width="1384" height="9" fill="oklch(0.62 0.075 265)"/>
 </g>
-<text x="230" y="356" font-size="44" font-weight="700" fill="#12130F">AV DRIVER / AUTONOMY SOFTWARE</text>
-<text x="1554" y="356" font-size="44" font-weight="600" text-anchor="end" font-family="IBM Plex Mono, monospace" fill="oklch(0.62 0.075 265)">51</text>
-<polygon points="200,200 1584,200 1584,1192 200,1192" fill="none" stroke="#DEDFD8" stroke-width="3"/>
-<polygon points="1584,200 2704,200 2704,1192 1584,1192" fill="oklch(0.62 0.075 200)" opacity=".05"/>
+<text x="230" y="300" font-size="44" font-weight="700" fill="#12130F">AV DRIVER / AUTONOMY SOFTWARE</text>
+<text x="1554" y="300" font-size="44" font-weight="600" text-anchor="end" font-family="IBM Plex Mono, monospace" fill="oklch(0.62 0.075 265)">51 orgs</text>
+<text x="230" y="347" font-size="24" font-family="IBM Plex Mono, monospace" letter-spacing="2" fill="#6E7268">THE 51 ORGS WRITING AND PROVING THE DRIVING SOFTWARE</text>
+<polygon points="200,200 1584,200 1584,1288 200,1288" fill="none" stroke="#DEDFD8" stroke-width="3"/>
+<polygon points="1584,200 2968,200 2968,1288 1584,1288" fill="oklch(0.62 0.075 200)" opacity=".05"/>
 <g clip-path="url(#d-sensing-compute-hardware)">
-<rect x="1584" y="200" width="1120" height="280" fill="oklch(0.62 0.075 200)" opacity=".13"/>
-<rect x="1584" y="471" width="1120" height="9" fill="oklch(0.62 0.075 200)"/>
+<rect x="1584" y="471" width="1384" height="9" fill="oklch(0.62 0.075 200)"/>
 </g>
-<text x="1614" y="356" font-size="44" font-weight="700" fill="#12130F">SENSING &amp; COMPUTE HARDWARE</text>
-<text x="2674" y="356" font-size="44" font-weight="600" text-anchor="end" font-family="IBM Plex Mono, monospace" fill="oklch(0.62 0.075 200)">38</text>
-<polygon points="1584,200 2704,200 2704,1192 1584,1192" fill="none" stroke="#DEDFD8" stroke-width="3"/>
-<polygon points="2704,200 3824,200 3824,1192 2704,1192" fill="oklch(0.62 0.075 150)" opacity=".05"/>
+<text x="1614" y="300" font-size="44" font-weight="700" fill="#12130F">SENSING &amp; COMPUTE HARDWARE</text>
+<text x="2938" y="300" font-size="44" font-weight="600" text-anchor="end" font-family="IBM Plex Mono, monospace" fill="oklch(0.62 0.075 200)">38 orgs</text>
+<text x="1614" y="347" font-size="24" font-family="IBM Plex Mono, monospace" letter-spacing="2" fill="#6E7268">THE 38 ORGS BUILDING THE SENSORS AND SILICON IT RUNS ON</text>
+<polygon points="1584,200 2968,200 2968,1288 1584,1288" fill="none" stroke="#DEDFD8" stroke-width="3"/>
+<polygon points="2968,200 4088,200 4088,1288 2968,1288" fill="oklch(0.62 0.075 150)" opacity=".05"/>
 <g clip-path="url(#d-data-maps-simulation)">
-<rect x="2704" y="200" width="1120" height="280" fill="oklch(0.62 0.075 150)" opacity=".13"/>
-<rect x="2704" y="471" width="1120" height="9" fill="oklch(0.62 0.075 150)"/>
+<rect x="2968" y="471" width="1120" height="9" fill="oklch(0.62 0.075 150)"/>
 </g>
-<text x="2734" y="356" font-size="44" font-weight="700" fill="#12130F">DATA, MAPS &amp; SIMULATION</text>
-<text x="3794" y="356" font-size="44" font-weight="600" text-anchor="end" font-family="IBM Plex Mono, monospace" fill="oklch(0.62 0.075 150)">47</text>
-<polygon points="2704,200 3824,200 3824,1192 2704,1192" fill="none" stroke="#DEDFD8" stroke-width="3"/>
-<polygon points="3824,200 5024,200 5024,1192 3824,1192" fill="oklch(0.62 0.075 230)" opacity=".05"/>
+<text x="2998" y="300" font-size="44" font-weight="700" fill="#12130F">DATA, MAPS &amp; SIMULATION</text>
+<text x="4058" y="300" font-size="44" font-weight="600" text-anchor="end" font-family="IBM Plex Mono, monospace" fill="oklch(0.62 0.075 150)">47 orgs</text>
+<text x="2998" y="347" font-size="24" font-family="IBM Plex Mono, monospace" letter-spacing="2" fill="#6E7268">THE 47 ORGS SUPPLYING ITS DATA, MAPS AND PRACTICE MILES</text>
+<polygon points="2968,200 4088,200 4088,1288 2968,1288" fill="none" stroke="#DEDFD8" stroke-width="3"/>
+<polygon points="4088,200 5552,200 5552,1288 4088,1288" fill="oklch(0.62 0.075 230)" opacity=".05"/>
 <g clip-path="url(#d-connectivity-infrastructure)">
-<rect x="3824" y="200" width="1200" height="280" fill="oklch(0.62 0.075 230)" opacity=".13"/>
-<rect x="3824" y="471" width="1200" height="9" fill="oklch(0.62 0.075 230)"/>
+<rect x="4088" y="471" width="1464" height="9" fill="oklch(0.62 0.075 230)"/>
 </g>
-<text x="3854" y="356" font-size="44" font-weight="700" fill="#12130F">CONNECTIVITY &amp; INFRASTRUCTURE</text>
-<text x="4994" y="356" font-size="44" font-weight="600" text-anchor="end" font-family="IBM Plex Mono, monospace" fill="oklch(0.62 0.075 230)">55</text>
-<polygon points="3824,200 5024,200 5024,1192 3824,1192" fill="none" stroke="#DEDFD8" stroke-width="3"/>
-<polygon points="4432,1192 5024,1192 5024,2712 4432,2712" fill="oklch(0.62 0.075 40)" opacity=".05"/>
+<text x="4118" y="300" font-size="44" font-weight="700" fill="#12130F">CONNECTIVITY &amp; INFRASTRUCTURE</text>
+<text x="5522" y="300" font-size="44" font-weight="600" text-anchor="end" font-family="IBM Plex Mono, monospace" fill="oklch(0.62 0.075 230)">55 orgs</text>
+<text x="4118" y="347" font-size="24" font-family="IBM Plex Mono, monospace" letter-spacing="2" fill="#6E7268">THE 55 ORGS KEEPING FLEETS CONNECTED TO ROAD AND CLOUD</text>
+<polygon points="4088,200 5552,200 5552,1288 4088,1288" fill="none" stroke="#DEDFD8" stroke-width="3"/>
+<polygon points="4696,1288 5552,1288 5552,2808 4696,2808" fill="oklch(0.62 0.075 40)" opacity=".05"/>
 <g clip-path="url(#d-vehicle-platform-manufacturing)">
-<rect x="4432" y="1192" width="592" height="280" fill="oklch(0.62 0.075 40)" opacity=".13"/>
-<rect x="4432" y="1463" width="592" height="9" fill="oklch(0.62 0.075 40)"/>
+<rect x="4696" y="1559" width="856" height="9" fill="oklch(0.62 0.075 40)"/>
 </g>
-<text x="4462" y="1334" font-size="44" font-weight="700" fill="#12130F">VEHICLE PLATFORM</text>
-<text x="4462" y="1381" font-size="44" font-weight="700" fill="#12130F">&amp; MANUFACTURING</text>
-<text x="4994" y="1348" font-size="44" font-weight="600" text-anchor="end" font-family="IBM Plex Mono, monospace" fill="oklch(0.62 0.075 40)">64</text>
-<polygon points="4432,1192 5024,1192 5024,2712 4432,2712" fill="none" stroke="#DEDFD8" stroke-width="3"/>
-<polygon points="200,2712 1320,2712 1320,3704 200,3704" fill="oklch(0.62 0.075 340)" opacity=".05"/>
+<text x="4726" y="1388" font-size="44" font-weight="700" fill="#12130F">VEHICLE PLATFORM</text>
+<text x="4726" y="1435" font-size="44" font-weight="700" fill="#12130F">&amp; MANUFACTURING</text>
+<text x="4726" y="1481" font-size="35" font-weight="600" font-family="IBM Plex Mono, monospace" fill="oklch(0.62 0.075 40)">64 orgs</text>
+<text x="4726" y="1521" font-size="24" font-family="IBM Plex Mono, monospace" letter-spacing="2" fill="#6E7268">THE 64 ORGS BUILDING THE VEHICLES AROUND THE DRIVER</text>
+<polygon points="4696,1288 5552,1288 5552,2808 4696,2808" fill="none" stroke="#DEDFD8" stroke-width="3"/>
+<polygon points="200,2808 1584,2808 1584,3896 200,3896" fill="oklch(0.62 0.075 340)" opacity=".05"/>
 <g clip-path="url(#d-governance-standards-safety-advocacy)">
-<rect x="200" y="2712" width="1120" height="280" fill="oklch(0.62 0.075 340)" opacity=".13"/>
-<rect x="200" y="2983" width="1120" height="9" fill="oklch(0.62 0.075 340)"/>
+<rect x="200" y="3079" width="1384" height="9" fill="oklch(0.62 0.075 340)"/>
 </g>
-<text x="230" y="2868" font-size="44" font-weight="700" fill="#12130F">STANDARDS, SAFETY &amp; ADVOCACY</text>
-<text x="1290" y="2868" font-size="44" font-weight="600" text-anchor="end" font-family="IBM Plex Mono, monospace" fill="oklch(0.62 0.075 340)">58</text>
-<polygon points="200,2712 1320,2712 1320,3704 200,3704" fill="none" stroke="#DEDFD8" stroke-width="3"/>
-<polygon points="1320,2712 2704,2712 2704,3704 1320,3704" fill="oklch(0.62 0.075 290)" opacity=".05"/>
+<text x="230" y="2908" font-size="44" font-weight="700" fill="#12130F">STANDARDS, SAFETY &amp; ADVOCACY</text>
+<text x="1554" y="2908" font-size="44" font-weight="600" text-anchor="end" font-family="IBM Plex Mono, monospace" fill="oklch(0.62 0.075 340)">58 orgs</text>
+<text x="230" y="2955" font-size="24" font-family="IBM Plex Mono, monospace" letter-spacing="2" fill="#6E7268">THE 58 BODIES WRITING ITS STANDARDS AND MAKING ITS CASE</text>
+<polygon points="200,2808 1584,2808 1584,3896 200,3896" fill="none" stroke="#DEDFD8" stroke-width="3"/>
+<polygon points="1584,2808 3232,2808 3232,3896 1584,3896" fill="oklch(0.62 0.075 290)" opacity=".05"/>
 <g clip-path="url(#d-governance-regulators-government)">
-<rect x="1320" y="2712" width="1384" height="280" fill="oklch(0.62 0.075 290)" opacity=".13"/>
-<rect x="1320" y="2983" width="1384" height="9" fill="oklch(0.62 0.075 290)"/>
+<rect x="1584" y="3079" width="1648" height="9" fill="oklch(0.62 0.075 290)"/>
 </g>
-<text x="1350" y="2868" font-size="44" font-weight="700" fill="#12130F">REGULATORS &amp; GOVERNMENT</text>
-<text x="2674" y="2868" font-size="44" font-weight="600" text-anchor="end" font-family="IBM Plex Mono, monospace" fill="oklch(0.62 0.075 290)">76</text>
-<polygon points="1320,2712 2704,2712 2704,3704 1320,3704" fill="none" stroke="#DEDFD8" stroke-width="3"/>
-<polygon points="2704,2712 3560,2712 3560,3704 2704,3704" fill="oklch(0.62 0.075 60)" opacity=".05"/>
+<text x="1614" y="2908" font-size="44" font-weight="700" fill="#12130F">REGULATORS &amp; GOVERNMENT</text>
+<text x="3202" y="2908" font-size="44" font-weight="600" text-anchor="end" font-family="IBM Plex Mono, monospace" fill="oklch(0.62 0.075 290)">76 orgs</text>
+<text x="1614" y="2955" font-size="24" font-family="IBM Plex Mono, monospace" letter-spacing="2" fill="#6E7268">THE 76 BODIES THAT PERMIT, LICENSE AND POLICE IT</text>
+<polygon points="1584,2808 3232,2808 3232,3896 1584,3896" fill="none" stroke="#DEDFD8" stroke-width="3"/>
+<polygon points="3232,2808 4088,2808 4088,3896 3232,3896" fill="oklch(0.62 0.075 60)" opacity=".05"/>
 <g clip-path="url(#d-capital-insurance-risk)">
-<rect x="2704" y="2712" width="856" height="280" fill="oklch(0.62 0.075 60)" opacity=".13"/>
-<rect x="2704" y="2983" width="856" height="9" fill="oklch(0.62 0.075 60)"/>
+<rect x="3232" y="3079" width="856" height="9" fill="oklch(0.62 0.075 60)"/>
 </g>
-<text x="2734" y="2854" font-size="44" font-weight="700" fill="#12130F">CAPITAL,</text>
-<text x="2734" y="2901" font-size="44" font-weight="700" fill="#12130F">INSURANCE &amp; RISK</text>
-<text x="3530" y="2868" font-size="44" font-weight="600" text-anchor="end" font-family="IBM Plex Mono, monospace" fill="oklch(0.62 0.075 60)">38</text>
-<polygon points="2704,2712 3560,2712 3560,3704 2704,3704" fill="none" stroke="#DEDFD8" stroke-width="3"/>
-<polygon points="3560,2712 5024,2712 5024,3704 3560,3704" fill="oklch(0.62 0.075 320)" opacity=".05"/>
+<text x="3262" y="2908" font-size="44" font-weight="700" fill="#12130F">CAPITAL,</text>
+<text x="3262" y="2955" font-size="44" font-weight="700" fill="#12130F">INSURANCE &amp; RISK</text>
+<text x="3262" y="3001" font-size="35" font-weight="600" font-family="IBM Plex Mono, monospace" fill="oklch(0.62 0.075 60)">38 orgs</text>
+<text x="3262" y="3041" font-size="24" font-family="IBM Plex Mono, monospace" letter-spacing="2" fill="#6E7268">THE 38 ORGS FUNDING AND INSURING THE INDUSTRY</text>
+<polygon points="3232,2808 4088,2808 4088,3896 3232,3896" fill="none" stroke="#DEDFD8" stroke-width="3"/>
+<polygon points="4088,2808 5552,2808 5552,3896 4088,3896" fill="oklch(0.62 0.075 320)" opacity=".05"/>
 <g clip-path="url(#d-fleet-operations-depot)">
-<rect x="3560" y="2712" width="1464" height="280" fill="oklch(0.62 0.075 320)" opacity=".13"/>
-<rect x="3560" y="2983" width="1464" height="9" fill="oklch(0.62 0.075 320)"/>
+<rect x="4088" y="3079" width="1464" height="9" fill="oklch(0.62 0.075 320)"/>
 </g>
-<text x="3590" y="2868" font-size="44" font-weight="700" fill="#12130F">FLEET OPERATIONS &amp; DEPOT</text>
-<text x="4994" y="2868" font-size="44" font-weight="600" text-anchor="end" font-family="IBM Plex Mono, monospace" fill="oklch(0.62 0.075 320)">70</text>
-<polygon points="3560,2712 5024,2712 5024,3704 3560,3704" fill="none" stroke="#DEDFD8" stroke-width="3"/>
-<polygon points="200,1192 792,1192 792,2712 200,2712" fill="oklch(0.62 0.075 20)" opacity=".05"/>
+<text x="4118" y="2908" font-size="44" font-weight="700" fill="#12130F">FLEET OPERATIONS &amp; DEPOT</text>
+<text x="5522" y="2908" font-size="44" font-weight="600" text-anchor="end" font-family="IBM Plex Mono, monospace" fill="oklch(0.62 0.075 320)">70 orgs</text>
+<text x="4118" y="2955" font-size="24" font-family="IBM Plex Mono, monospace" letter-spacing="2" fill="#6E7268">THE 70 ORGS CHARGING, CLEANING AND TURNING FLEETS AROUND</text>
+<polygon points="4088,2808 5552,2808 5552,3896 4088,3896" fill="none" stroke="#DEDFD8" stroke-width="3"/>
+<polygon points="200,1288 1056,1288 1056,2808 200,2808" fill="oklch(0.62 0.075 20)" opacity=".05"/>
 <g clip-path="url(#d-demand-commercial-platforms)">
-<rect x="200" y="1192" width="592" height="280" fill="oklch(0.62 0.075 20)" opacity=".13"/>
-<rect x="200" y="1463" width="592" height="9" fill="oklch(0.62 0.075 20)"/>
+<rect x="200" y="1559" width="856" height="9" fill="oklch(0.62 0.075 20)"/>
 </g>
-<text x="230" y="1334" font-size="44" font-weight="700" fill="#12130F">DEMAND &amp; COMMERCIAL</text>
-<text x="230" y="1381" font-size="44" font-weight="700" fill="#12130F">PLATFORMS</text>
-<text x="762" y="1348" font-size="44" font-weight="600" text-anchor="end" font-family="IBM Plex Mono, monospace" fill="oklch(0.62 0.075 20)">53</text>
-<polygon points="200,1192 792,1192 792,2712 200,2712" fill="none" stroke="#DEDFD8" stroke-width="3"/>
+<text x="230" y="1388" font-size="44" font-weight="700" fill="#12130F">DEMAND &amp; COMMERCIAL</text>
+<text x="230" y="1435" font-size="44" font-weight="700" fill="#12130F">PLATFORMS</text>
+<text x="230" y="1481" font-size="35" font-weight="600" font-family="IBM Plex Mono, monospace" fill="oklch(0.62 0.075 20)">53 orgs</text>
+<text x="230" y="1521" font-size="24" font-family="IBM Plex Mono, monospace" letter-spacing="2" fill="#6E7268">THE 53 ORGS THAT BRING IT RIDERS AND FREIGHT</text>
+<polygon points="200,1288 1056,1288 1056,2808 200,2808" fill="none" stroke="#DEDFD8" stroke-width="3"/>
 </g>
 <g class="chip" data-slug="applied-intuition">
-<rect x="240" y="518" width="224" height="228" rx="12" fill="#FAFAF7" stroke="#DEDFD8"/>
-<rect x="316" y="530" width="72" height="72" rx="16" fill="oklch(0.66 0.06 265)"/>
-<text x="352" y="580" font-size="34" font-weight="800" text-anchor="middle" fill="#FFFFFF">AI</text>
-<text x="352" y="624" font-size="17" text-anchor="middle" fill="#12130F">Applied</text>
-<text x="352" y="644" font-size="17" text-anchor="middle" fill="#12130F">Intuition</text>
+<rect x="240" y="518" width="224" height="276" rx="16" fill="#FAFAF7"/>
+<rect x="266" y="528" width="172" height="172" rx="38" fill="oklch(0.66 0.06 265)"/>
+<text x="352" y="647" font-size="81" font-weight="800" text-anchor="middle" fill="#FFFFFF">AI</text>
+<text x="352" y="720" font-size="13" font-weight="700" text-anchor="middle" fill="#12130F">Applied Intuition</text>
+<text x="352" y="756" font-size="11.5" text-anchor="middle" fill="#6E7268">Simulation &amp; synthetic data</text>
 </g>
 <g class="chip" data-slug="horizon-robotics">
-<rect x="504" y="518" width="224" height="228" rx="12" fill="#FAFAF7" stroke="#DEDFD8"/>
-<rect x="580" y="530" width="72" height="72" rx="16" fill="oklch(0.66 0.06 265)"/>
-<text x="616" y="580" font-size="34" font-weight="800" text-anchor="middle" fill="#FFFFFF">HR</text>
-<text x="616" y="624" font-size="17" text-anchor="middle" fill="#12130F">Horizon</text>
-<text x="616" y="644" font-size="17" text-anchor="middle" fill="#12130F">Robotics</text>
+<rect x="504" y="518" width="224" height="276" rx="16" fill="#FAFAF7"/>
+<rect x="530" y="528" width="172" height="172" rx="38" fill="oklch(0.66 0.06 265)"/>
+<text x="616" y="647" font-size="81" font-weight="800" text-anchor="middle" fill="#FFFFFF">HR</text>
+<text x="616" y="720" font-size="13" font-weight="700" text-anchor="middle" fill="#12130F">Horizon Robotics</text>
+<text x="616" y="756" font-size="11.5" text-anchor="middle" fill="#6E7268">Compute / SoC / AI chips</text>
 </g>
 <g class="chip" data-slug="mercedes-benz-drive-pilot-mb-drive">
-<rect x="768" y="518" width="224" height="228" rx="12" fill="#FAFAF7" stroke="#DEDFD8"/>
-<rect x="844" y="530" width="72" height="72" rx="16" fill="oklch(0.66 0.06 265)"/>
-<text x="880" y="580" font-size="34" font-weight="800" text-anchor="middle" fill="#FFFFFF">MB</text>
-<text x="880" y="624" font-size="17" text-anchor="middle" fill="#12130F">Mercedes-Benz</text>
-<text x="880" y="644" font-size="17" text-anchor="middle" fill="#12130F">Drive Pilot /…</text>
+<rect x="768" y="518" width="224" height="276" rx="16" fill="#FAFAF7"/>
+<rect x="794" y="528" width="172" height="172" rx="38" fill="oklch(0.66 0.06 265)"/>
+<text x="880" y="647" font-size="81" font-weight="800" text-anchor="middle" fill="#FFFFFF">MB</text>
+<text x="880" y="720" font-size="13" font-weight="700" text-anchor="middle" fill="#12130F">Mercedes-Benz Drive</text>
+<text x="880" y="736" font-size="13" font-weight="700" text-anchor="middle" fill="#12130F">Pilot / MB.Drive</text>
+<text x="880" y="756" font-size="11.5" text-anchor="middle" fill="#6E7268">Certified Level 3 operation in</text>
+<text x="880" y="770" font-size="11.5" text-anchor="middle" fill="#6E7268">Germany, Nevada and California</text>
 </g>
 <g class="chip" data-slug="momenta">
-<rect x="1032" y="518" width="224" height="228" rx="12" fill="#FAFAF7" stroke="#DEDFD8"/>
-<rect x="1108" y="530" width="72" height="72" rx="16" fill="oklch(0.66 0.06 265)"/>
-<text x="1144" y="580" font-size="34" font-weight="800" text-anchor="middle" fill="#FFFFFF">MO</text>
-<text x="1144" y="624" font-size="17" text-anchor="middle" fill="#12130F">Momenta</text>
+<rect x="1032" y="518" width="224" height="276" rx="16" fill="#FAFAF7"/>
+<rect x="1058" y="528" width="172" height="172" rx="38" fill="oklch(0.66 0.06 265)"/>
+<text x="1144" y="647" font-size="81" font-weight="800" text-anchor="middle" fill="#FFFFFF">MO</text>
+<text x="1144" y="720" font-size="13" font-weight="700" text-anchor="middle" fill="#12130F">Momenta</text>
+<text x="1144" y="756" font-size="11.5" text-anchor="middle" fill="#6E7268">OEM data flywheel across 680k+</text>
+<text x="1144" y="770" font-size="11.5" text-anchor="middle" fill="#6E7268">Momenta-equipped vehicles</text>
 </g>
 <g class="chip" data-slug="nio">
-<rect x="1296" y="518" width="224" height="228" rx="12" fill="#FAFAF7" stroke="#DEDFD8"/>
-<rect x="1372" y="530" width="72" height="72" rx="16" fill="oklch(0.66 0.06 265)"/>
-<text x="1408" y="580" font-size="34" font-weight="800" text-anchor="middle" fill="#FFFFFF">NI</text>
-<text x="1408" y="624" font-size="17" text-anchor="middle" fill="#12130F">Nio</text>
+<rect x="1296" y="518" width="224" height="276" rx="16" fill="#FAFAF7"/>
+<rect x="1322" y="528" width="172" height="172" rx="38" fill="oklch(0.66 0.06 265)"/>
+<text x="1408" y="647" font-size="81" font-weight="800" text-anchor="middle" fill="#FFFFFF">NI</text>
+<text x="1408" y="720" font-size="13" font-weight="700" text-anchor="middle" fill="#12130F">Nio</text>
+<text x="1408" y="756" font-size="11.5" text-anchor="middle" fill="#6E7268">Banyan 3.3.0 world-model update</text>
+<text x="1408" y="770" font-size="11.5" text-anchor="middle" fill="#6E7268">rolled out to 460k+ vehicles</text>
 </g>
 <g class="chip" data-slug="nvidia-drive">
-<rect x="240" y="782" width="224" height="228" rx="12" fill="#FAFAF7" stroke="#DEDFD8"/>
-<rect x="316" y="794" width="72" height="72" rx="16" fill="oklch(0.66 0.06 265)"/>
-<text x="352" y="844" font-size="34" font-weight="800" text-anchor="middle" fill="#FFFFFF">ND</text>
-<text x="352" y="888" font-size="17" text-anchor="middle" fill="#12130F">NVIDIA DRIVE</text>
+<rect x="240" y="830" width="224" height="276" rx="16" fill="#FAFAF7"/>
+<rect x="266" y="840" width="172" height="172" rx="38" fill="oklch(0.66 0.06 265)"/>
+<text x="352" y="959" font-size="81" font-weight="800" text-anchor="middle" fill="#FFFFFF">ND</text>
+<text x="352" y="1032" font-size="13" font-weight="700" text-anchor="middle" fill="#12130F">NVIDIA DRIVE</text>
+<text x="352" y="1068" font-size="11.5" text-anchor="middle" fill="#6E7268">Compute / SoC / AI chips</text>
 </g>
 <g class="chip" data-slug="xpeng">
-<rect x="504" y="782" width="224" height="228" rx="12" fill="#FAFAF7" stroke="#DEDFD8"/>
-<rect x="580" y="794" width="72" height="72" rx="16" fill="oklch(0.66 0.06 265)"/>
-<text x="616" y="844" font-size="34" font-weight="800" text-anchor="middle" fill="#FFFFFF">XP</text>
-<text x="616" y="888" font-size="17" text-anchor="middle" fill="#12130F">XPeng</text>
+<rect x="504" y="830" width="224" height="276" rx="16" fill="#FAFAF7"/>
+<rect x="530" y="840" width="172" height="172" rx="38" fill="oklch(0.66 0.06 265)"/>
+<text x="616" y="959" font-size="81" font-weight="800" text-anchor="middle" fill="#FFFFFF">XP</text>
+<text x="616" y="1032" font-size="13" font-weight="700" text-anchor="middle" fill="#12130F">XPeng</text>
+<text x="616" y="1068" font-size="11.5" text-anchor="middle" fill="#6E7268">VW licenses its AD stack for China</text>
+<text x="616" y="1082" font-size="11.5" text-anchor="middle" fill="#6E7268">EVs starting 2026</text>
 </g>
 <g class="chip" data-slug="infineon-technologies">
-<rect x="1624" y="518" width="224" height="228" rx="12" fill="#FAFAF7" stroke="#DEDFD8"/>
-<rect x="1700" y="530" width="72" height="72" rx="16" fill="oklch(0.66 0.06 200)"/>
-<text x="1736" y="580" font-size="34" font-weight="800" text-anchor="middle" fill="#FFFFFF">IN</text>
-<text x="1736" y="624" font-size="17" text-anchor="middle" fill="#12130F">Infineon</text>
-<text x="1736" y="644" font-size="17" text-anchor="middle" fill="#12130F">Technologies</text>
+<rect x="1624" y="518" width="224" height="276" rx="16" fill="#FAFAF7"/>
+<rect x="1650" y="528" width="172" height="172" rx="38" fill="oklch(0.66 0.06 200)"/>
+<text x="1736" y="647" font-size="81" font-weight="800" text-anchor="middle" fill="#FFFFFF">IN</text>
+<text x="1736" y="720" font-size="13" font-weight="700" text-anchor="middle" fill="#12130F">Infineon Technologies</text>
+<text x="1736" y="756" font-size="11.5" text-anchor="middle" fill="#6E7268">Radar chips and safety MCUs inside</text>
+<text x="1736" y="770" font-size="11.5" text-anchor="middle" fill="#6E7268">zonal ADAS architectures</text>
 </g>
 <g class="chip" data-slug="nxp-semiconductors">
-<rect x="1888" y="518" width="224" height="228" rx="12" fill="#FAFAF7" stroke="#DEDFD8"/>
-<rect x="1964" y="530" width="72" height="72" rx="16" fill="oklch(0.66 0.06 200)"/>
-<text x="2000" y="580" font-size="34" font-weight="800" text-anchor="middle" fill="#FFFFFF">NS</text>
-<text x="2000" y="624" font-size="17" text-anchor="middle" fill="#12130F">NXP</text>
-<text x="2000" y="644" font-size="17" text-anchor="middle" fill="#12130F">Semiconductors</text>
+<rect x="1888" y="518" width="224" height="276" rx="16" fill="#FAFAF7"/>
+<rect x="1914" y="528" width="172" height="172" rx="38" fill="oklch(0.66 0.06 200)"/>
+<text x="2000" y="647" font-size="81" font-weight="800" text-anchor="middle" fill="#FFFFFF">NS</text>
+<text x="2000" y="720" font-size="13" font-weight="700" text-anchor="middle" fill="#12130F">NXP Semiconductors</text>
+<text x="2000" y="756" font-size="11.5" text-anchor="middle" fill="#6E7268">Radar processors plus secure</text>
+<text x="2000" y="770" font-size="11.5" text-anchor="middle" fill="#6E7268">in-vehicle networking silicon</text>
 </g>
 <g class="chip" data-slug="ouster">
-<rect x="2152" y="518" width="224" height="228" rx="12" fill="#FAFAF7" stroke="#DEDFD8"/>
-<rect x="2228" y="530" width="72" height="72" rx="16" fill="oklch(0.66 0.06 200)"/>
-<text x="2264" y="580" font-size="34" font-weight="800" text-anchor="middle" fill="#FFFFFF">OU</text>
-<text x="2264" y="624" font-size="17" text-anchor="middle" fill="#12130F">Ouster</text>
+<rect x="2152" y="518" width="224" height="276" rx="16" fill="#FAFAF7"/>
+<rect x="2178" y="528" width="172" height="172" rx="38" fill="oklch(0.66 0.06 200)"/>
+<text x="2264" y="647" font-size="81" font-weight="800" text-anchor="middle" fill="#FFFFFF">OU</text>
+<text x="2264" y="720" font-size="13" font-weight="700" text-anchor="middle" fill="#12130F">Ouster</text>
+<text x="2264" y="756" font-size="11.5" text-anchor="middle" fill="#6E7268">Digital LiDAR at $49M quarterly</text>
+<text x="2264" y="770" font-size="11.5" text-anchor="middle" fill="#6E7268">revenue, 12,600+ sensors shipped</text>
 </g>
 <g class="chip" data-slug="qualcomm-automotive">
-<rect x="2416" y="518" width="224" height="228" rx="12" fill="#FAFAF7" stroke="#DEDFD8"/>
-<rect x="2492" y="530" width="72" height="72" rx="16" fill="oklch(0.66 0.06 200)"/>
-<text x="2528" y="580" font-size="34" font-weight="800" text-anchor="middle" fill="#FFFFFF">QA</text>
-<text x="2528" y="624" font-size="17" text-anchor="middle" fill="#12130F">Qualcomm</text>
-<text x="2528" y="644" font-size="17" text-anchor="middle" fill="#12130F">Automotive</text>
+<rect x="2416" y="518" width="224" height="276" rx="16" fill="#FAFAF7"/>
+<rect x="2442" y="528" width="172" height="172" rx="38" fill="oklch(0.66 0.06 200)"/>
+<text x="2528" y="647" font-size="81" font-weight="800" text-anchor="middle" fill="#FFFFFF">QA</text>
+<text x="2528" y="720" font-size="13" font-weight="700" text-anchor="middle" fill="#12130F">Qualcomm Automotive</text>
+<text x="2528" y="756" font-size="11.5" text-anchor="middle" fill="#6E7268">Snapdragon Ride uniting cockpit,</text>
+<text x="2528" y="770" font-size="11.5" text-anchor="middle" fill="#6E7268">connectivity and ADAS compute</text>
 </g>
 <g class="chip" data-slug="robosense">
-<rect x="1624" y="782" width="224" height="228" rx="12" fill="#FAFAF7" stroke="#DEDFD8"/>
-<rect x="1700" y="794" width="72" height="72" rx="16" fill="oklch(0.66 0.06 200)"/>
-<text x="1736" y="844" font-size="34" font-weight="800" text-anchor="middle" fill="#FFFFFF">RO</text>
-<text x="1736" y="888" font-size="17" text-anchor="middle" fill="#12130F">RoboSense</text>
+<rect x="2680" y="518" width="224" height="276" rx="16" fill="#FAFAF7"/>
+<rect x="2706" y="528" width="172" height="172" rx="38" fill="oklch(0.66 0.06 200)"/>
+<text x="2792" y="647" font-size="81" font-weight="800" text-anchor="middle" fill="#FFFFFF">RO</text>
+<text x="2792" y="720" font-size="13" font-weight="700" text-anchor="middle" fill="#12130F">RoboSense</text>
+<text x="2792" y="756" font-size="11.5" text-anchor="middle" fill="#6E7268">LiDAR design wins across 177</text>
+<text x="2792" y="770" font-size="11.5" text-anchor="middle" fill="#6E7268">models from 36 OEMs</text>
 </g>
 <g class="chip" data-slug="tesla-ai-hardware">
-<rect x="1888" y="782" width="224" height="228" rx="12" fill="#FAFAF7" stroke="#DEDFD8"/>
-<rect x="1964" y="794" width="72" height="72" rx="16" fill="oklch(0.66 0.06 200)"/>
-<text x="2000" y="844" font-size="34" font-weight="800" text-anchor="middle" fill="#FFFFFF">TA</text>
-<text x="2000" y="888" font-size="17" text-anchor="middle" fill="#12130F">Tesla AI</text>
-<text x="2000" y="908" font-size="17" text-anchor="middle" fill="#12130F">Hardware</text>
+<rect x="1624" y="830" width="224" height="276" rx="16" fill="#FAFAF7"/>
+<rect x="1650" y="840" width="172" height="172" rx="38" fill="oklch(0.66 0.06 200)"/>
+<text x="1736" y="959" font-size="81" font-weight="800" text-anchor="middle" fill="#FFFFFF">TA</text>
+<text x="1736" y="1032" font-size="13" font-weight="700" text-anchor="middle" fill="#12130F">Tesla AI Hardware</text>
+<text x="1736" y="1068" font-size="11.5" text-anchor="middle" fill="#6E7268">In-house FSD computers behind a</text>
+<text x="1736" y="1082" font-size="11.5" text-anchor="middle" fill="#6E7268">camera-first autonomy path</text>
 </g>
 <g class="chip" data-slug="ansys-avxcelerate-av-simulation">
-<rect x="2744" y="518" width="224" height="228" rx="12" fill="#FAFAF7" stroke="#DEDFD8"/>
-<rect x="2820" y="530" width="72" height="72" rx="16" fill="oklch(0.66 0.06 150)"/>
-<text x="2856" y="580" font-size="34" font-weight="800" text-anchor="middle" fill="#FFFFFF">AA</text>
-<text x="2856" y="624" font-size="17" text-anchor="middle" fill="#12130F">Ansys</text>
-<text x="2856" y="644" font-size="17" text-anchor="middle" fill="#12130F">AVxcelerate /…</text>
+<rect x="3008" y="518" width="224" height="276" rx="16" fill="#FAFAF7"/>
+<rect x="3034" y="528" width="172" height="172" rx="38" fill="oklch(0.66 0.06 150)"/>
+<text x="3120" y="647" font-size="81" font-weight="800" text-anchor="middle" fill="#FFFFFF">AA</text>
+<text x="3120" y="720" font-size="13" font-weight="700" text-anchor="middle" fill="#12130F">Ansys AVxcelerate / AV</text>
+<text x="3120" y="736" font-size="13" font-weight="700" text-anchor="middle" fill="#12130F">Simulation</text>
+<text x="3120" y="756" font-size="11.5" text-anchor="middle" fill="#6E7268">Physics-grade sensor simulation</text>
+<text x="3120" y="770" font-size="11.5" text-anchor="middle" fill="#6E7268">for virtual safety validation</text>
 </g>
 <g class="chip" data-slug="appen">
-<rect x="3008" y="518" width="224" height="228" rx="12" fill="#FAFAF7" stroke="#DEDFD8"/>
-<rect x="3084" y="530" width="72" height="72" rx="16" fill="oklch(0.66 0.06 150)"/>
-<text x="3120" y="580" font-size="34" font-weight="800" text-anchor="middle" fill="#FFFFFF">AP</text>
-<text x="3120" y="624" font-size="17" text-anchor="middle" fill="#12130F">Appen</text>
+<rect x="3272" y="518" width="224" height="276" rx="16" fill="#FAFAF7"/>
+<rect x="3298" y="528" width="172" height="172" rx="38" fill="oklch(0.66 0.06 150)"/>
+<text x="3384" y="647" font-size="81" font-weight="800" text-anchor="middle" fill="#FFFFFF">AP</text>
+<text x="3384" y="720" font-size="13" font-weight="700" text-anchor="middle" fill="#12130F">Appen</text>
+<text x="3384" y="756" font-size="11.5" text-anchor="middle" fill="#6E7268">Crowd-powered annotation spanning</text>
+<text x="3384" y="770" font-size="11.5" text-anchor="middle" fill="#6E7268">speech, text and vision</text>
 </g>
 <g class="chip" data-slug="baidu-apollo-hd-map-baidu-maps">
-<rect x="3272" y="518" width="224" height="228" rx="12" fill="#FAFAF7" stroke="#DEDFD8"/>
-<rect x="3348" y="530" width="72" height="72" rx="16" fill="oklch(0.66 0.06 150)"/>
-<text x="3384" y="580" font-size="34" font-weight="800" text-anchor="middle" fill="#FFFFFF">BA</text>
-<text x="3384" y="624" font-size="17" text-anchor="middle" fill="#12130F">Baidu Apollo HD</text>
-<text x="3384" y="644" font-size="17" text-anchor="middle" fill="#12130F">Map / Baidu…</text>
+<rect x="3536" y="518" width="224" height="276" rx="16" fill="#FAFAF7"/>
+<rect x="3562" y="528" width="172" height="172" rx="38" fill="oklch(0.66 0.06 150)"/>
+<text x="3648" y="647" font-size="81" font-weight="800" text-anchor="middle" fill="#FFFFFF">BA</text>
+<text x="3648" y="720" font-size="13" font-weight="700" text-anchor="middle" fill="#12130F">Baidu Apollo HD Map /</text>
+<text x="3648" y="736" font-size="13" font-weight="700" text-anchor="middle" fill="#12130F">Baidu Maps</text>
+<text x="3648" y="756" font-size="11.5" text-anchor="middle" fill="#6E7268">HD map backbone feeding Apollo</text>
+<text x="3648" y="770" font-size="11.5" text-anchor="middle" fill="#6E7268">Go&#x27;s operating cities</text>
 </g>
 <g class="chip" data-slug="intertek">
-<rect x="3536" y="518" width="224" height="228" rx="12" fill="#FAFAF7" stroke="#DEDFD8"/>
-<rect x="3612" y="530" width="72" height="72" rx="16" fill="oklch(0.66 0.06 150)"/>
-<text x="3648" y="580" font-size="34" font-weight="800" text-anchor="middle" fill="#FFFFFF">IN</text>
-<text x="3648" y="624" font-size="17" text-anchor="middle" fill="#12130F">Intertek</text>
+<rect x="3800" y="518" width="224" height="276" rx="16" fill="#FAFAF7"/>
+<rect x="3826" y="528" width="172" height="172" rx="38" fill="oklch(0.66 0.06 150)"/>
+<text x="3912" y="647" font-size="81" font-weight="800" text-anchor="middle" fill="#FFFFFF">IN</text>
+<text x="3912" y="720" font-size="13" font-weight="700" text-anchor="middle" fill="#12130F">Intertek</text>
+<text x="3912" y="756" font-size="11.5" text-anchor="middle" fill="#6E7268">Global TIC network for AV hardware</text>
+<text x="3912" y="770" font-size="11.5" text-anchor="middle" fill="#6E7268">and vehicle compliance</text>
 </g>
 <g class="chip" data-slug="mobileye-rem-roadbook">
-<rect x="2744" y="782" width="224" height="228" rx="12" fill="#FAFAF7" stroke="#DEDFD8"/>
-<rect x="2820" y="794" width="72" height="72" rx="16" fill="oklch(0.66 0.06 150)"/>
-<text x="2856" y="844" font-size="34" font-weight="800" text-anchor="middle" fill="#FFFFFF">MR</text>
-<text x="2856" y="888" font-size="17" text-anchor="middle" fill="#12130F">Mobileye REM /</text>
-<text x="2856" y="908" font-size="17" text-anchor="middle" fill="#12130F">RoadBook</text>
+<rect x="3008" y="830" width="224" height="276" rx="16" fill="#FAFAF7"/>
+<rect x="3034" y="840" width="172" height="172" rx="38" fill="oklch(0.66 0.06 150)"/>
+<text x="3120" y="959" font-size="81" font-weight="800" text-anchor="middle" fill="#FFFFFF">MR</text>
+<text x="3120" y="1032" font-size="13" font-weight="700" text-anchor="middle" fill="#12130F">Mobileye REM / RoadBook</text>
+<text x="3120" y="1068" font-size="11.5" text-anchor="middle" fill="#6E7268">Crowdsourced RoadBook maps drawn</text>
+<text x="3120" y="1082" font-size="11.5" text-anchor="middle" fill="#6E7268">from production ADAS cars</text>
 </g>
 <g class="chip" data-slug="navinfo">
-<rect x="3008" y="782" width="224" height="228" rx="12" fill="#FAFAF7" stroke="#DEDFD8"/>
-<rect x="3084" y="794" width="72" height="72" rx="16" fill="oklch(0.66 0.06 150)"/>
-<text x="3120" y="844" font-size="34" font-weight="800" text-anchor="middle" fill="#FFFFFF">NA</text>
-<text x="3120" y="888" font-size="17" text-anchor="middle" fill="#12130F">NavInfo</text>
+<rect x="3272" y="830" width="224" height="276" rx="16" fill="#FAFAF7"/>
+<rect x="3298" y="840" width="172" height="172" rx="38" fill="oklch(0.66 0.06 150)"/>
+<text x="3384" y="959" font-size="81" font-weight="800" text-anchor="middle" fill="#FFFFFF">NA</text>
+<text x="3384" y="1032" font-size="13" font-weight="700" text-anchor="middle" fill="#12130F">NavInfo</text>
+<text x="3384" y="1068" font-size="11.5" text-anchor="middle" fill="#6E7268">Official-grade HD map licenses</text>
+<text x="3384" y="1082" font-size="11.5" text-anchor="middle" fill="#6E7268">inside China&#x27;s geodata regime</text>
 </g>
 <g class="chip" data-slug="ericsson">
-<rect x="3864" y="518" width="224" height="228" rx="12" fill="#FAFAF7" stroke="#DEDFD8"/>
-<rect x="3940" y="530" width="72" height="72" rx="16" fill="oklch(0.66 0.06 230)"/>
-<text x="3976" y="580" font-size="34" font-weight="800" text-anchor="middle" fill="#FFFFFF">ER</text>
-<text x="3976" y="624" font-size="17" text-anchor="middle" fill="#12130F">Ericsson</text>
+<rect x="4128" y="518" width="224" height="276" rx="16" fill="#FAFAF7"/>
+<rect x="4154" y="528" width="172" height="172" rx="38" fill="oklch(0.66 0.06 230)"/>
+<text x="4240" y="647" font-size="81" font-weight="800" text-anchor="middle" fill="#FFFFFF">ER</text>
+<text x="4240" y="720" font-size="13" font-weight="700" text-anchor="middle" fill="#12130F">Ericsson</text>
+<text x="4240" y="756" font-size="11.5" text-anchor="middle" fill="#6E7268">5GAA founding networks for</text>
+<text x="4240" y="770" font-size="11.5" text-anchor="middle" fill="#6E7268">teleoperation and cooperative</text>
+<text x="4240" y="784" font-size="11.5" text-anchor="middle" fill="#6E7268">driving</text>
 </g>
 <g class="chip" data-slug="iteris">
-<rect x="4128" y="518" width="224" height="228" rx="12" fill="#FAFAF7" stroke="#DEDFD8"/>
-<rect x="4204" y="530" width="72" height="72" rx="16" fill="oklch(0.66 0.06 230)"/>
-<text x="4240" y="580" font-size="34" font-weight="800" text-anchor="middle" fill="#FFFFFF">IT</text>
-<text x="4240" y="624" font-size="17" text-anchor="middle" fill="#12130F">Iteris</text>
+<rect x="4392" y="518" width="224" height="276" rx="16" fill="#FAFAF7"/>
+<rect x="4418" y="528" width="172" height="172" rx="38" fill="oklch(0.66 0.06 230)"/>
+<text x="4504" y="647" font-size="81" font-weight="800" text-anchor="middle" fill="#FFFFFF">IT</text>
+<text x="4504" y="720" font-size="13" font-weight="700" text-anchor="middle" fill="#12130F">Iteris</text>
+<text x="4504" y="756" font-size="11.5" text-anchor="middle" fill="#6E7268">Traffic detection and road-agency</text>
+<text x="4504" y="770" font-size="11.5" text-anchor="middle" fill="#6E7268">software, now under Almaviva</text>
 </g>
 <g class="chip" data-slug="nokia">
-<rect x="4392" y="518" width="224" height="228" rx="12" fill="#FAFAF7" stroke="#DEDFD8"/>
-<rect x="4468" y="530" width="72" height="72" rx="16" fill="oklch(0.66 0.06 230)"/>
-<text x="4504" y="580" font-size="34" font-weight="800" text-anchor="middle" fill="#FFFFFF">NO</text>
-<text x="4504" y="624" font-size="17" text-anchor="middle" fill="#12130F">Nokia</text>
+<rect x="4656" y="518" width="224" height="276" rx="16" fill="#FAFAF7"/>
+<rect x="4682" y="528" width="172" height="172" rx="38" fill="oklch(0.66 0.06 230)"/>
+<text x="4768" y="647" font-size="81" font-weight="800" text-anchor="middle" fill="#FFFFFF">NO</text>
+<text x="4768" y="720" font-size="13" font-weight="700" text-anchor="middle" fill="#12130F">Nokia</text>
+<text x="4768" y="756" font-size="11.5" text-anchor="middle" fill="#6E7268">Private wireless and edge networks</text>
+<text x="4768" y="770" font-size="11.5" text-anchor="middle" fill="#6E7268">for depots and remote ops</text>
 </g>
 <g class="chip" data-slug="qualcomm">
-<rect x="4656" y="518" width="224" height="228" rx="12" fill="#FAFAF7" stroke="#DEDFD8"/>
-<rect x="4732" y="530" width="72" height="72" rx="16" fill="oklch(0.66 0.06 230)"/>
-<text x="4768" y="580" font-size="34" font-weight="800" text-anchor="middle" fill="#FFFFFF">QU</text>
-<text x="4768" y="624" font-size="17" text-anchor="middle" fill="#12130F">Qualcomm</text>
+<rect x="4920" y="518" width="224" height="276" rx="16" fill="#FAFAF7"/>
+<rect x="4946" y="528" width="172" height="172" rx="38" fill="oklch(0.66 0.06 230)"/>
+<text x="5032" y="647" font-size="81" font-weight="800" text-anchor="middle" fill="#FFFFFF">QU</text>
+<text x="5032" y="720" font-size="13" font-weight="700" text-anchor="middle" fill="#12130F">Qualcomm</text>
+<text x="5032" y="756" font-size="11.5" text-anchor="middle" fill="#6E7268">Snapdragon Digital Chassis from</text>
+<text x="5032" y="770" font-size="11.5" text-anchor="middle" fill="#6E7268">modem to Ride SoC</text>
 </g>
 <g class="chip" data-slug="ul-solutions">
-<rect x="3864" y="782" width="224" height="228" rx="12" fill="#FAFAF7" stroke="#DEDFD8"/>
-<rect x="3940" y="794" width="72" height="72" rx="16" fill="oklch(0.66 0.06 230)"/>
-<text x="3976" y="844" font-size="34" font-weight="800" text-anchor="middle" fill="#FFFFFF">US</text>
-<text x="3976" y="888" font-size="17" text-anchor="middle" fill="#12130F">UL Solutions</text>
+<rect x="5184" y="518" width="224" height="276" rx="16" fill="#FAFAF7"/>
+<rect x="5210" y="528" width="172" height="172" rx="38" fill="oklch(0.66 0.06 230)"/>
+<text x="5296" y="647" font-size="81" font-weight="800" text-anchor="middle" fill="#FFFFFF">US</text>
+<text x="5296" y="720" font-size="13" font-weight="700" text-anchor="middle" fill="#12130F">UL Solutions</text>
+<text x="5296" y="756" font-size="11.5" text-anchor="middle" fill="#6E7268">UL 4600 certification anchoring AV</text>
+<text x="5296" y="770" font-size="11.5" text-anchor="middle" fill="#6E7268">safety cases</text>
 </g>
 <g class="chip" data-slug="kapsch-trafficcom">
-<rect x="4128" y="782" width="224" height="228" rx="12" fill="#FAFAF7" stroke="#DEDFD8"/>
-<rect x="4204" y="794" width="72" height="72" rx="16" fill="oklch(0.66 0.06 230)"/>
-<text x="4240" y="844" font-size="34" font-weight="800" text-anchor="middle" fill="#FFFFFF">KT</text>
-<text x="4240" y="888" font-size="17" text-anchor="middle" fill="#12130F">Kapsch</text>
-<text x="4240" y="908" font-size="17" text-anchor="middle" fill="#12130F">TrafficCom</text>
+<rect x="4128" y="830" width="224" height="276" rx="16" fill="#FAFAF7"/>
+<rect x="4154" y="840" width="172" height="172" rx="38" fill="oklch(0.66 0.06 230)"/>
+<text x="4240" y="959" font-size="81" font-weight="800" text-anchor="middle" fill="#FFFFFF">KT</text>
+<text x="4240" y="1032" font-size="13" font-weight="700" text-anchor="middle" fill="#12130F">Kapsch TrafficCom</text>
+<text x="4240" y="1068" font-size="11.5" text-anchor="middle" fill="#6E7268">Tolling and traffic management</text>
+<text x="4240" y="1082" font-size="11.5" text-anchor="middle" fill="#6E7268">converging with V2X corridors</text>
 </g>
 <g class="chip" data-slug="5g-automotive-association">
-<rect x="4392" y="782" width="224" height="228" rx="12" fill="#FAFAF7" stroke="#DEDFD8"/>
-<rect x="4468" y="794" width="72" height="72" rx="16" fill="oklch(0.66 0.06 230)"/>
-<text x="4504" y="844" font-size="34" font-weight="800" text-anchor="middle" fill="#FFFFFF">5A</text>
-<text x="4504" y="888" font-size="17" text-anchor="middle" fill="#12130F">5G Automotive</text>
-<text x="4504" y="908" font-size="17" text-anchor="middle" fill="#12130F">Association</text>
+<rect x="4392" y="830" width="224" height="276" rx="16" fill="#FAFAF7"/>
+<rect x="4418" y="840" width="172" height="172" rx="38" fill="oklch(0.66 0.06 230)"/>
+<text x="4504" y="959" font-size="81" font-weight="800" text-anchor="middle" fill="#FFFFFF">5A</text>
+<text x="4504" y="1032" font-size="13" font-weight="700" text-anchor="middle" fill="#12130F">5G Automotive</text>
+<text x="4504" y="1048" font-size="13" font-weight="700" text-anchor="middle" fill="#12130F">Association</text>
+<text x="4504" y="1068" font-size="11.5" text-anchor="middle" fill="#6E7268">Automaker-telecom alliance</text>
+<text x="4504" y="1082" font-size="11.5" text-anchor="middle" fill="#6E7268">steering the C-V2X 2030 roadmap</text>
 </g>
 <g class="chip" data-slug="aptiv">
-<rect x="4472" y="1510" width="224" height="228" rx="12" fill="#FAFAF7" stroke="#DEDFD8"/>
-<rect x="4548" y="1522" width="72" height="72" rx="16" fill="oklch(0.66 0.06 40)"/>
-<text x="4584" y="1572" font-size="34" font-weight="800" text-anchor="middle" fill="#FFFFFF">AP</text>
-<text x="4584" y="1616" font-size="17" text-anchor="middle" fill="#12130F">Aptiv</text>
+<rect x="4736" y="1606" width="224" height="276" rx="16" fill="#FAFAF7"/>
+<rect x="4762" y="1616" width="172" height="172" rx="38" fill="oklch(0.66 0.06 40)"/>
+<text x="4848" y="1735" font-size="81" font-weight="800" text-anchor="middle" fill="#FFFFFF">AP</text>
+<text x="4848" y="1808" font-size="13" font-weight="700" text-anchor="middle" fill="#12130F">Aptiv</text>
+<text x="4848" y="1844" font-size="11.5" text-anchor="middle" fill="#6E7268">Vehicle architecture supplier and</text>
+<text x="4848" y="1858" font-size="11.5" text-anchor="middle" fill="#6E7268">Motional co-founder</text>
 </g>
 <g class="chip" data-slug="byd">
-<rect x="4736" y="1510" width="224" height="228" rx="12" fill="#FAFAF7" stroke="#DEDFD8"/>
-<rect x="4812" y="1522" width="72" height="72" rx="16" fill="oklch(0.66 0.06 40)"/>
-<text x="4848" y="1572" font-size="34" font-weight="800" text-anchor="middle" fill="#FFFFFF">BY</text>
-<text x="4848" y="1616" font-size="17" text-anchor="middle" fill="#12130F">BYD</text>
+<rect x="5000" y="1606" width="224" height="276" rx="16" fill="#FAFAF7"/>
+<rect x="5026" y="1616" width="172" height="172" rx="38" fill="oklch(0.66 0.06 40)"/>
+<text x="5112" y="1735" font-size="81" font-weight="800" text-anchor="middle" fill="#FFFFFF">BY</text>
+<text x="5112" y="1808" font-size="13" font-weight="700" text-anchor="middle" fill="#12130F">BYD</text>
+<text x="5112" y="1844" font-size="11.5" text-anchor="middle" fill="#6E7268">EV scale champion with</text>
+<text x="5112" y="1858" font-size="11.5" text-anchor="middle" fill="#6E7268">Momenta-linked autonomy programs</text>
 </g>
 <g class="chip" data-slug="geely">
-<rect x="4472" y="1774" width="224" height="228" rx="12" fill="#FAFAF7" stroke="#DEDFD8"/>
-<rect x="4548" y="1786" width="72" height="72" rx="16" fill="oklch(0.66 0.06 40)"/>
-<text x="4584" y="1836" font-size="34" font-weight="800" text-anchor="middle" fill="#FFFFFF">GE</text>
-<text x="4584" y="1880" font-size="17" text-anchor="middle" fill="#12130F">Geely</text>
+<rect x="5264" y="1606" width="224" height="276" rx="16" fill="#FAFAF7"/>
+<rect x="5290" y="1616" width="172" height="172" rx="38" fill="oklch(0.66 0.06 40)"/>
+<text x="5376" y="1735" font-size="81" font-weight="800" text-anchor="middle" fill="#FFFFFF">GE</text>
+<text x="5376" y="1808" font-size="13" font-weight="700" text-anchor="middle" fill="#12130F">Geely</text>
+<text x="5376" y="1844" font-size="11.5" text-anchor="middle" fill="#6E7268">OEM AV platform suppliers</text>
 </g>
 <g class="chip" data-slug="magna">
-<rect x="4736" y="1774" width="224" height="228" rx="12" fill="#FAFAF7" stroke="#DEDFD8"/>
-<rect x="4812" y="1786" width="72" height="72" rx="16" fill="oklch(0.66 0.06 40)"/>
-<text x="4848" y="1836" font-size="34" font-weight="800" text-anchor="middle" fill="#FFFFFF">MA</text>
-<text x="4848" y="1880" font-size="17" text-anchor="middle" fill="#12130F">Magna</text>
+<rect x="4736" y="1918" width="224" height="276" rx="16" fill="#FAFAF7"/>
+<rect x="4762" y="1928" width="172" height="172" rx="38" fill="oklch(0.66 0.06 40)"/>
+<text x="4848" y="2047" font-size="81" font-weight="800" text-anchor="middle" fill="#FFFFFF">MA</text>
+<text x="4848" y="2120" font-size="13" font-weight="700" text-anchor="middle" fill="#12130F">Magna</text>
+<text x="4848" y="2156" font-size="11.5" text-anchor="middle" fill="#6E7268">Tier-1 integrators</text>
 </g>
 <g class="chip" data-slug="mobileye">
-<rect x="4472" y="2038" width="224" height="228" rx="12" fill="#FAFAF7" stroke="#DEDFD8"/>
-<rect x="4548" y="2050" width="72" height="72" rx="16" fill="oklch(0.66 0.06 40)"/>
-<text x="4584" y="2100" font-size="34" font-weight="800" text-anchor="middle" fill="#FFFFFF">MO</text>
-<text x="4584" y="2144" font-size="17" text-anchor="middle" fill="#12130F">Mobileye</text>
+<rect x="5000" y="1918" width="224" height="276" rx="16" fill="#FAFAF7"/>
+<rect x="5026" y="1928" width="172" height="172" rx="38" fill="oklch(0.66 0.06 40)"/>
+<text x="5112" y="2047" font-size="81" font-weight="800" text-anchor="middle" fill="#FFFFFF">MO</text>
+<text x="5112" y="2120" font-size="13" font-weight="700" text-anchor="middle" fill="#12130F">Mobileye</text>
+<text x="5112" y="2156" font-size="11.5" text-anchor="middle" fill="#6E7268">L2+/L3 consumer ADAS stacks</text>
 </g>
 <g class="chip" data-slug="valeo">
-<rect x="4736" y="2038" width="224" height="228" rx="12" fill="#FAFAF7" stroke="#DEDFD8"/>
-<rect x="4812" y="2050" width="72" height="72" rx="16" fill="oklch(0.66 0.06 40)"/>
-<text x="4848" y="2100" font-size="34" font-weight="800" text-anchor="middle" fill="#FFFFFF">VA</text>
-<text x="4848" y="2144" font-size="17" text-anchor="middle" fill="#12130F">Valeo</text>
+<rect x="5264" y="1918" width="224" height="276" rx="16" fill="#FAFAF7"/>
+<rect x="5290" y="1928" width="172" height="172" rx="38" fill="oklch(0.66 0.06 40)"/>
+<text x="5376" y="2047" font-size="81" font-weight="800" text-anchor="middle" fill="#FFFFFF">VA</text>
+<text x="5376" y="2120" font-size="13" font-weight="700" text-anchor="middle" fill="#12130F">Valeo</text>
+<text x="5376" y="2156" font-size="11.5" text-anchor="middle" fill="#6E7268">Production lidar history plus</text>
+<text x="5376" y="2170" font-size="11.5" text-anchor="middle" fill="#6E7268">VW-Mobileye ADAS programs</text>
 </g>
 <g class="chip" data-slug="continental">
-<rect x="4472" y="2302" width="224" height="228" rx="12" fill="#FAFAF7" stroke="#DEDFD8"/>
-<rect x="4548" y="2314" width="72" height="72" rx="16" fill="oklch(0.66 0.06 40)"/>
-<text x="4584" y="2364" font-size="34" font-weight="800" text-anchor="middle" fill="#FFFFFF">CO</text>
-<text x="4584" y="2408" font-size="17" text-anchor="middle" fill="#12130F">Continental</text>
+<rect x="4736" y="2230" width="224" height="276" rx="16" fill="#FAFAF7"/>
+<rect x="4762" y="2240" width="172" height="172" rx="38" fill="oklch(0.66 0.06 40)"/>
+<text x="4848" y="2359" font-size="81" font-weight="800" text-anchor="middle" fill="#FFFFFF">CO</text>
+<text x="4848" y="2432" font-size="13" font-weight="700" text-anchor="middle" fill="#12130F">Continental</text>
+<text x="4848" y="2468" font-size="11.5" text-anchor="middle" fill="#6E7268">Radar</text>
 </g>
 <g class="chip" data-slug="denso">
-<rect x="4736" y="2302" width="224" height="228" rx="12" fill="#FAFAF7" stroke="#DEDFD8"/>
-<rect x="4812" y="2314" width="72" height="72" rx="16" fill="oklch(0.66 0.06 40)"/>
-<text x="4848" y="2364" font-size="34" font-weight="800" text-anchor="middle" fill="#FFFFFF">DE</text>
-<text x="4848" y="2408" font-size="17" text-anchor="middle" fill="#12130F">Denso</text>
+<rect x="5000" y="2230" width="224" height="276" rx="16" fill="#FAFAF7"/>
+<rect x="5026" y="2240" width="172" height="172" rx="38" fill="oklch(0.66 0.06 40)"/>
+<text x="5112" y="2359" font-size="81" font-weight="800" text-anchor="middle" fill="#FFFFFF">DE</text>
+<text x="5112" y="2432" font-size="13" font-weight="700" text-anchor="middle" fill="#12130F">Denso</text>
+<text x="5112" y="2468" font-size="11.5" text-anchor="middle" fill="#6E7268">Toyota-group electronics scaling</text>
+<text x="5112" y="2482" font-size="11.5" text-anchor="middle" fill="#6E7268">automated driving parts</text>
 </g>
 <g class="chip" data-slug="pave">
-<rect x="240" y="3030" width="224" height="228" rx="12" fill="#FAFAF7" stroke="#DEDFD8"/>
-<rect x="316" y="3042" width="72" height="72" rx="16" fill="oklch(0.66 0.06 340)"/>
-<text x="352" y="3092" font-size="34" font-weight="800" text-anchor="middle" fill="#FFFFFF">PA</text>
-<text x="352" y="3136" font-size="17" text-anchor="middle" fill="#12130F">PAVE</text>
+<rect x="240" y="3126" width="224" height="276" rx="16" fill="#FAFAF7"/>
+<rect x="266" y="3136" width="172" height="172" rx="38" fill="oklch(0.66 0.06 340)"/>
+<text x="352" y="3255" font-size="81" font-weight="800" text-anchor="middle" fill="#FFFFFF">PA</text>
+<text x="352" y="3328" font-size="13" font-weight="700" text-anchor="middle" fill="#12130F">PAVE</text>
+<text x="352" y="3364" font-size="11.5" text-anchor="middle" fill="#6E7268">AI condition reports for rental,</text>
+<text x="352" y="3378" font-size="11.5" text-anchor="middle" fill="#6E7268">remarketing and fleet vehicles</text>
 </g>
 <g class="chip" data-slug="3gpp">
-<rect x="504" y="3030" width="224" height="228" rx="12" fill="#FAFAF7" stroke="#DEDFD8"/>
-<rect x="580" y="3042" width="72" height="72" rx="16" fill="oklch(0.66 0.06 340)"/>
-<text x="616" y="3092" font-size="34" font-weight="800" text-anchor="middle" fill="#FFFFFF">3G</text>
-<text x="616" y="3136" font-size="17" text-anchor="middle" fill="#12130F">3GPP</text>
+<rect x="504" y="3126" width="224" height="276" rx="16" fill="#FAFAF7"/>
+<rect x="530" y="3136" width="172" height="172" rx="38" fill="oklch(0.66 0.06 340)"/>
+<text x="616" y="3255" font-size="81" font-weight="800" text-anchor="middle" fill="#FFFFFF">3G</text>
+<text x="616" y="3328" font-size="13" font-weight="700" text-anchor="middle" fill="#12130F">3GPP</text>
+<text x="616" y="3364" font-size="11.5" text-anchor="middle" fill="#6E7268">Cellular standards body defining</text>
+<text x="616" y="3378" font-size="11.5" text-anchor="middle" fill="#6E7268">C-V2X and 5G for smart roads</text>
 </g>
 <g class="chip" data-slug="aaa-foundation-for-traffic-safety">
-<rect x="768" y="3030" width="224" height="228" rx="12" fill="#FAFAF7" stroke="#DEDFD8"/>
-<rect x="844" y="3042" width="72" height="72" rx="16" fill="oklch(0.66 0.06 340)"/>
-<text x="880" y="3092" font-size="34" font-weight="800" text-anchor="middle" fill="#FFFFFF">AF</text>
-<text x="880" y="3136" font-size="17" text-anchor="middle" fill="#12130F">AAA Foundation</text>
-<text x="880" y="3156" font-size="17" text-anchor="middle" fill="#12130F">for Traffic…</text>
+<rect x="768" y="3126" width="224" height="276" rx="16" fill="#FAFAF7"/>
+<rect x="794" y="3136" width="172" height="172" rx="38" fill="oklch(0.66 0.06 340)"/>
+<text x="880" y="3255" font-size="81" font-weight="800" text-anchor="middle" fill="#FFFFFF">AF</text>
+<text x="880" y="3328" font-size="13" font-weight="700" text-anchor="middle" fill="#12130F">AAA Foundation for</text>
+<text x="880" y="3344" font-size="13" font-weight="700" text-anchor="middle" fill="#12130F">Traffic Safety</text>
+<text x="880" y="3364" font-size="11.5" text-anchor="middle" fill="#6E7268">Research on driver understanding</text>
+<text x="880" y="3378" font-size="11.5" text-anchor="middle" fill="#6E7268">and misuse of automation</text>
 </g>
 <g class="chip" data-slug="advocates-for-highway-and-auto-safety">
-<rect x="1032" y="3030" width="224" height="228" rx="12" fill="#FAFAF7" stroke="#DEDFD8"/>
-<rect x="1108" y="3042" width="72" height="72" rx="16" fill="oklch(0.66 0.06 340)"/>
-<text x="1144" y="3092" font-size="34" font-weight="800" text-anchor="middle" fill="#FFFFFF">AF</text>
-<text x="1144" y="3136" font-size="17" text-anchor="middle" fill="#12130F">Advocates for</text>
-<text x="1144" y="3156" font-size="17" text-anchor="middle" fill="#12130F">Highway and…</text>
+<rect x="1032" y="3126" width="224" height="276" rx="16" fill="#FAFAF7"/>
+<rect x="1058" y="3136" width="172" height="172" rx="38" fill="oklch(0.66 0.06 340)"/>
+<text x="1144" y="3255" font-size="81" font-weight="800" text-anchor="middle" fill="#FFFFFF">AF</text>
+<text x="1144" y="3328" font-size="13" font-weight="700" text-anchor="middle" fill="#12130F">Advocates for Highway</text>
+<text x="1144" y="3344" font-size="13" font-weight="700" text-anchor="middle" fill="#12130F">and Auto Safety</text>
+<text x="1144" y="3364" font-size="11.5" text-anchor="middle" fill="#6E7268">Coalition pushing stronger vehicle</text>
+<text x="1144" y="3378" font-size="11.5" text-anchor="middle" fill="#6E7268">and highway safety rules</text>
 </g>
 <g class="chip" data-slug="alliance-for-automotive-innovation">
-<rect x="240" y="3294" width="224" height="228" rx="12" fill="#FAFAF7" stroke="#DEDFD8"/>
-<rect x="316" y="3306" width="72" height="72" rx="16" fill="oklch(0.66 0.06 340)"/>
-<text x="352" y="3356" font-size="34" font-weight="800" text-anchor="middle" fill="#FFFFFF">AF</text>
-<text x="352" y="3400" font-size="17" text-anchor="middle" fill="#12130F">Alliance for</text>
-<text x="352" y="3420" font-size="17" text-anchor="middle" fill="#12130F">Automotive…</text>
+<rect x="1296" y="3126" width="224" height="276" rx="16" fill="#FAFAF7"/>
+<rect x="1322" y="3136" width="172" height="172" rx="38" fill="oklch(0.66 0.06 340)"/>
+<text x="1408" y="3255" font-size="81" font-weight="800" text-anchor="middle" fill="#FFFFFF">AF</text>
+<text x="1408" y="3328" font-size="13" font-weight="700" text-anchor="middle" fill="#12130F">Alliance for Automotive</text>
+<text x="1408" y="3344" font-size="13" font-weight="700" text-anchor="middle" fill="#12130F">Innovation</text>
+<text x="1408" y="3364" font-size="11.5" text-anchor="middle" fill="#6E7268">Light-duty OEM trade voice on</text>
+<text x="1408" y="3378" font-size="11.5" text-anchor="middle" fill="#6E7268">FMVSS and ADAS policy</text>
 </g>
 <g class="chip" data-slug="asam-e-v">
-<rect x="504" y="3294" width="224" height="228" rx="12" fill="#FAFAF7" stroke="#DEDFD8"/>
-<rect x="580" y="3306" width="72" height="72" rx="16" fill="oklch(0.66 0.06 340)"/>
-<text x="616" y="3356" font-size="34" font-weight="800" text-anchor="middle" fill="#FFFFFF">AE</text>
-<text x="616" y="3400" font-size="17" text-anchor="middle" fill="#12130F">ASAM e.V.</text>
+<rect x="240" y="3438" width="224" height="276" rx="16" fill="#FAFAF7"/>
+<rect x="266" y="3448" width="172" height="172" rx="38" fill="oklch(0.66 0.06 340)"/>
+<text x="352" y="3567" font-size="81" font-weight="800" text-anchor="middle" fill="#FFFFFF">AE</text>
+<text x="352" y="3640" font-size="13" font-weight="700" text-anchor="middle" fill="#12130F">ASAM e.V.</text>
+<text x="352" y="3676" font-size="11.5" text-anchor="middle" fill="#6E7268">Keeper of the OpenX file formats</text>
+<text x="352" y="3690" font-size="11.5" text-anchor="middle" fill="#6E7268">behind AV simulation</text>
 </g>
 <g class="chip" data-slug="asam-opendrive">
-<rect x="768" y="3294" width="224" height="228" rx="12" fill="#FAFAF7" stroke="#DEDFD8"/>
-<rect x="844" y="3306" width="72" height="72" rx="16" fill="oklch(0.66 0.06 340)"/>
-<text x="880" y="3356" font-size="34" font-weight="800" text-anchor="middle" fill="#FFFFFF">AO</text>
-<text x="880" y="3400" font-size="17" text-anchor="middle" fill="#12130F">ASAM OpenDRIVE</text>
+<rect x="504" y="3438" width="224" height="276" rx="16" fill="#FAFAF7"/>
+<rect x="530" y="3448" width="172" height="172" rx="38" fill="oklch(0.66 0.06 340)"/>
+<text x="616" y="3567" font-size="81" font-weight="800" text-anchor="middle" fill="#FFFFFF">AO</text>
+<text x="616" y="3640" font-size="13" font-weight="700" text-anchor="middle" fill="#12130F">ASAM OpenDRIVE</text>
+<text x="616" y="3676" font-size="11.5" text-anchor="middle" fill="#6E7268">Road-network exchange format,</text>
+<text x="616" y="3690" font-size="11.5" text-anchor="middle" fill="#6E7268">version 1.9.0 shipped May 2026</text>
 </g>
 <g class="chip" data-slug="autonomous-vehicle-industry-association-avia">
-<rect x="1032" y="3294" width="224" height="228" rx="12" fill="#FAFAF7" stroke="#DEDFD8"/>
-<rect x="1108" y="3306" width="72" height="72" rx="16" fill="oklch(0.66 0.06 340)"/>
-<text x="1144" y="3356" font-size="34" font-weight="800" text-anchor="middle" fill="#FFFFFF">AV</text>
-<text x="1144" y="3400" font-size="17" text-anchor="middle" fill="#12130F">Autonomous</text>
-<text x="1144" y="3420" font-size="17" text-anchor="middle" fill="#12130F">Vehicle…</text>
+<rect x="768" y="3438" width="224" height="276" rx="16" fill="#FAFAF7"/>
+<rect x="794" y="3448" width="172" height="172" rx="38" fill="oklch(0.66 0.06 340)"/>
+<text x="880" y="3567" font-size="81" font-weight="800" text-anchor="middle" fill="#FFFFFF">AV</text>
+<text x="880" y="3640" font-size="13" font-weight="700" text-anchor="middle" fill="#12130F">Autonomous Vehicle</text>
+<text x="880" y="3656" font-size="13" font-weight="700" text-anchor="middle" fill="#12130F">Industry Association…</text>
+<text x="880" y="3676" font-size="11.5" text-anchor="middle" fill="#6E7268">Washington policy voice for</text>
+<text x="880" y="3690" font-size="11.5" text-anchor="middle" fill="#6E7268">robotaxi and AV trucking</text>
+<text x="880" y="3704" font-size="11.5" text-anchor="middle" fill="#6E7268">developers</text>
 </g>
 <g class="chip" data-slug="abu-dhabi-itc">
-<rect x="1360" y="3030" width="224" height="228" rx="12" fill="#FAFAF7" stroke="#DEDFD8"/>
-<rect x="1436" y="3042" width="72" height="72" rx="16" fill="oklch(0.66 0.06 290)"/>
-<text x="1472" y="3092" font-size="34" font-weight="800" text-anchor="middle" fill="#FFFFFF">AD</text>
-<text x="1472" y="3136" font-size="17" text-anchor="middle" fill="#12130F">Abu Dhabi ITC</text>
+<rect x="1624" y="3126" width="224" height="276" rx="16" fill="#FAFAF7"/>
+<rect x="1650" y="3136" width="172" height="172" rx="38" fill="oklch(0.66 0.06 290)"/>
+<text x="1736" y="3255" font-size="81" font-weight="800" text-anchor="middle" fill="#FFFFFF">AD</text>
+<text x="1736" y="3328" font-size="13" font-weight="700" text-anchor="middle" fill="#12130F">Abu Dhabi ITC</text>
+<text x="1736" y="3364" font-size="11.5" text-anchor="middle" fill="#6E7268">Transport regulator for Yas Island</text>
+<text x="1736" y="3378" font-size="11.5" text-anchor="middle" fill="#6E7268">and the emirate&#x27;s robotaxis</text>
 </g>
 <g class="chip" data-slug="dubai-rta">
-<rect x="1624" y="3030" width="224" height="228" rx="12" fill="#FAFAF7" stroke="#DEDFD8"/>
-<rect x="1700" y="3042" width="72" height="72" rx="16" fill="oklch(0.66 0.06 290)"/>
-<text x="1736" y="3092" font-size="34" font-weight="800" text-anchor="middle" fill="#FFFFFF">DR</text>
-<text x="1736" y="3136" font-size="17" text-anchor="middle" fill="#12130F">Dubai RTA</text>
+<rect x="1888" y="3126" width="224" height="276" rx="16" fill="#FAFAF7"/>
+<rect x="1914" y="3136" width="172" height="172" rx="38" fill="oklch(0.66 0.06 290)"/>
+<text x="2000" y="3255" font-size="81" font-weight="800" text-anchor="middle" fill="#FFFFFF">DR</text>
+<text x="2000" y="3328" font-size="13" font-weight="700" text-anchor="middle" fill="#12130F">Dubai RTA</text>
+<text x="2000" y="3364" font-size="11.5" text-anchor="middle" fill="#6E7268">Hosts Apollo Go, WeRide and</text>
+<text x="2000" y="3378" font-size="11.5" text-anchor="middle" fill="#6E7268">Pony.ai trials under Dubai&#x27;s AV</text>
+<text x="2000" y="3392" font-size="11.5" text-anchor="middle" fill="#6E7268">strategy</text>
 </g>
 <g class="chip" data-slug="arizona-department-of-transportation-adot">
-<rect x="1888" y="3030" width="224" height="228" rx="12" fill="#FAFAF7" stroke="#DEDFD8"/>
-<rect x="1964" y="3042" width="72" height="72" rx="16" fill="oklch(0.66 0.06 290)"/>
-<text x="2000" y="3092" font-size="34" font-weight="800" text-anchor="middle" fill="#FFFFFF">AD</text>
-<text x="2000" y="3136" font-size="17" text-anchor="middle" fill="#12130F">Arizona</text>
-<text x="2000" y="3156" font-size="17" text-anchor="middle" fill="#12130F">Department of…</text>
+<rect x="2152" y="3126" width="224" height="276" rx="16" fill="#FAFAF7"/>
+<rect x="2178" y="3136" width="172" height="172" rx="38" fill="oklch(0.66 0.06 290)"/>
+<text x="2264" y="3255" font-size="81" font-weight="800" text-anchor="middle" fill="#FFFFFF">AD</text>
+<text x="2264" y="3328" font-size="13" font-weight="700" text-anchor="middle" fill="#12130F">Arizona Department of</text>
+<text x="2264" y="3344" font-size="13" font-weight="700" text-anchor="middle" fill="#12130F">Transportation (ADOT)</text>
+<text x="2264" y="3364" font-size="11.5" text-anchor="middle" fill="#6E7268">Permissive Arizona roads hosting</text>
+<text x="2264" y="3378" font-size="11.5" text-anchor="middle" fill="#6E7268">Waymo, Nuro and Zoox pilots</text>
 </g>
 <g class="chip" data-slug="california-cpuc">
-<rect x="2152" y="3030" width="224" height="228" rx="12" fill="#FAFAF7" stroke="#DEDFD8"/>
-<rect x="2228" y="3042" width="72" height="72" rx="16" fill="oklch(0.66 0.06 290)"/>
-<text x="2264" y="3092" font-size="34" font-weight="800" text-anchor="middle" fill="#FFFFFF">CC</text>
-<text x="2264" y="3136" font-size="17" text-anchor="middle" fill="#12130F">California CPUC</text>
+<rect x="2416" y="3126" width="224" height="276" rx="16" fill="#FAFAF7"/>
+<rect x="2442" y="3136" width="172" height="172" rx="38" fill="oklch(0.66 0.06 290)"/>
+<text x="2528" y="3255" font-size="81" font-weight="800" text-anchor="middle" fill="#FFFFFF">CC</text>
+<text x="2528" y="3328" font-size="13" font-weight="700" text-anchor="middle" fill="#12130F">California CPUC</text>
+<text x="2528" y="3364" font-size="11.5" text-anchor="middle" fill="#6E7268">Authorized Waymo&#x27;s 2024</text>
+<text x="2528" y="3378" font-size="11.5" text-anchor="middle" fill="#6E7268">paid-service expansion to LA and</text>
+<text x="2528" y="3392" font-size="11.5" text-anchor="middle" fill="#6E7268">SF peninsula</text>
 </g>
 <g class="chip" data-slug="california-department-of-motor-vehicles-california-dmv">
-<rect x="2416" y="3030" width="224" height="228" rx="12" fill="#FAFAF7" stroke="#DEDFD8"/>
-<rect x="2492" y="3042" width="72" height="72" rx="16" fill="oklch(0.66 0.06 290)"/>
-<text x="2528" y="3092" font-size="34" font-weight="800" text-anchor="middle" fill="#FFFFFF">CD</text>
-<text x="2528" y="3136" font-size="17" text-anchor="middle" fill="#12130F">California</text>
-<text x="2528" y="3156" font-size="17" text-anchor="middle" fill="#12130F">Department of…</text>
+<rect x="2680" y="3126" width="224" height="276" rx="16" fill="#FAFAF7"/>
+<rect x="2706" y="3136" width="172" height="172" rx="38" fill="oklch(0.66 0.06 290)"/>
+<text x="2792" y="3255" font-size="81" font-weight="800" text-anchor="middle" fill="#FFFFFF">CD</text>
+<text x="2792" y="3328" font-size="13" font-weight="700" text-anchor="middle" fill="#12130F">California Department of</text>
+<text x="2792" y="3344" font-size="13" font-weight="700" text-anchor="middle" fill="#12130F">Motor Vehicles…</text>
+<text x="2792" y="3364" font-size="11.5" text-anchor="middle" fill="#6E7268">Issues California AV permits and</text>
+<text x="2792" y="3378" font-size="11.5" text-anchor="middle" fill="#6E7268">collects disengagement reports</text>
 </g>
 <g class="chip" data-slug="california-dmv">
-<rect x="1360" y="3294" width="224" height="228" rx="12" fill="#FAFAF7" stroke="#DEDFD8"/>
-<rect x="1436" y="3306" width="72" height="72" rx="16" fill="oklch(0.66 0.06 290)"/>
-<text x="1472" y="3356" font-size="34" font-weight="800" text-anchor="middle" fill="#FFFFFF">CD</text>
-<text x="1472" y="3400" font-size="17" text-anchor="middle" fill="#12130F">California DMV</text>
+<rect x="2944" y="3126" width="224" height="276" rx="16" fill="#FAFAF7"/>
+<rect x="2970" y="3136" width="172" height="172" rx="38" fill="oklch(0.66 0.06 290)"/>
+<text x="3056" y="3255" font-size="81" font-weight="800" text-anchor="middle" fill="#FFFFFF">CD</text>
+<text x="3056" y="3328" font-size="13" font-weight="700" text-anchor="middle" fill="#12130F">California DMV</text>
+<text x="3056" y="3364" font-size="11.5" text-anchor="middle" fill="#6E7268">New rules open AV trucking and</text>
+<text x="3056" y="3378" font-size="11.5" text-anchor="middle" fill="#6E7268">transit in California from Jul</text>
+<text x="3056" y="3392" font-size="11.5" text-anchor="middle" fill="#6E7268">2026</text>
 </g>
 <g class="chip" data-slug="california-public-utilities-commission-cpuc">
-<rect x="1624" y="3294" width="224" height="228" rx="12" fill="#FAFAF7" stroke="#DEDFD8"/>
-<rect x="1700" y="3306" width="72" height="72" rx="16" fill="oklch(0.66 0.06 290)"/>
-<text x="1736" y="3356" font-size="34" font-weight="800" text-anchor="middle" fill="#FFFFFF">CP</text>
-<text x="1736" y="3400" font-size="17" text-anchor="middle" fill="#12130F">California</text>
-<text x="1736" y="3420" font-size="17" text-anchor="middle" fill="#12130F">Public…</text>
+<rect x="1624" y="3438" width="224" height="276" rx="16" fill="#FAFAF7"/>
+<rect x="1650" y="3448" width="172" height="172" rx="38" fill="oklch(0.66 0.06 290)"/>
+<text x="1736" y="3567" font-size="81" font-weight="800" text-anchor="middle" fill="#FFFFFF">CP</text>
+<text x="1736" y="3640" font-size="13" font-weight="700" text-anchor="middle" fill="#12130F">California Public</text>
+<text x="1736" y="3656" font-size="13" font-weight="700" text-anchor="middle" fill="#12130F">Utilities Commission…</text>
+<text x="1736" y="3676" font-size="11.5" text-anchor="middle" fill="#6E7268">Gatekeeper for paid robotaxi fares</text>
+<text x="1736" y="3690" font-size="11.5" text-anchor="middle" fill="#6E7268">after California DMV sign-off</text>
 </g>
 <g class="chip" data-slug="china-miit">
-<rect x="1888" y="3294" width="224" height="228" rx="12" fill="#FAFAF7" stroke="#DEDFD8"/>
-<rect x="1964" y="3306" width="72" height="72" rx="16" fill="oklch(0.66 0.06 290)"/>
-<text x="2000" y="3356" font-size="34" font-weight="800" text-anchor="middle" fill="#FFFFFF">CM</text>
-<text x="2000" y="3400" font-size="17" text-anchor="middle" fill="#12130F">China MIIT</text>
+<rect x="1888" y="3438" width="224" height="276" rx="16" fill="#FAFAF7"/>
+<rect x="1914" y="3448" width="172" height="172" rx="38" fill="oklch(0.66 0.06 290)"/>
+<text x="2000" y="3567" font-size="81" font-weight="800" text-anchor="middle" fill="#FFFFFF">CM</text>
+<text x="2000" y="3640" font-size="13" font-weight="700" text-anchor="middle" fill="#12130F">China MIIT</text>
+<text x="2000" y="3676" font-size="11.5" text-anchor="middle" fill="#6E7268">Paused new China AV licenses</text>
+<text x="2000" y="3690" font-size="11.5" text-anchor="middle" fill="#6E7268">during a national safety review</text>
 </g>
 <g class="chip" data-slug="federal-highway-administration-fhwa">
-<rect x="2152" y="3294" width="224" height="228" rx="12" fill="#FAFAF7" stroke="#DEDFD8"/>
-<rect x="2228" y="3306" width="72" height="72" rx="16" fill="oklch(0.66 0.06 290)"/>
-<text x="2264" y="3356" font-size="34" font-weight="800" text-anchor="middle" fill="#FFFFFF">FH</text>
-<text x="2264" y="3400" font-size="17" text-anchor="middle" fill="#12130F">Federal Highway</text>
-<text x="2264" y="3420" font-size="17" text-anchor="middle" fill="#12130F">Administration…</text>
+<rect x="2152" y="3438" width="224" height="276" rx="16" fill="#FAFAF7"/>
+<rect x="2178" y="3448" width="172" height="172" rx="38" fill="oklch(0.66 0.06 290)"/>
+<text x="2264" y="3567" font-size="81" font-weight="800" text-anchor="middle" fill="#FFFFFF">FH</text>
+<text x="2264" y="3640" font-size="13" font-weight="700" text-anchor="middle" fill="#12130F">Federal Highway</text>
+<text x="2264" y="3656" font-size="13" font-weight="700" text-anchor="middle" fill="#12130F">Administration (FHWA)</text>
+<text x="2264" y="3676" font-size="11.5" text-anchor="middle" fill="#6E7268">US federal</text>
 </g>
 <g class="chip" data-slug="federal-motor-carrier-safety-administration-fmcsa">
-<rect x="2416" y="3294" width="224" height="228" rx="12" fill="#FAFAF7" stroke="#DEDFD8"/>
-<rect x="2492" y="3306" width="72" height="72" rx="16" fill="oklch(0.66 0.06 290)"/>
-<text x="2528" y="3356" font-size="34" font-weight="800" text-anchor="middle" fill="#FFFFFF">FE</text>
-<text x="2528" y="3400" font-size="17" text-anchor="middle" fill="#12130F">Federal Motor</text>
-<text x="2528" y="3420" font-size="17" text-anchor="middle" fill="#12130F">Carrier Safety…</text>
+<rect x="2416" y="3438" width="224" height="276" rx="16" fill="#FAFAF7"/>
+<rect x="2442" y="3448" width="172" height="172" rx="38" fill="oklch(0.66 0.06 290)"/>
+<text x="2528" y="3567" font-size="81" font-weight="800" text-anchor="middle" fill="#FFFFFF">FE</text>
+<text x="2528" y="3640" font-size="13" font-weight="700" text-anchor="middle" fill="#12130F">Federal Motor Carrier</text>
+<text x="2528" y="3656" font-size="13" font-weight="700" text-anchor="middle" fill="#12130F">Safety Administration…</text>
+<text x="2528" y="3676" font-size="11.5" text-anchor="middle" fill="#6E7268">US federal</text>
 </g>
 <g class="chip" data-slug="admiral-group">
-<rect x="2744" y="3030" width="224" height="228" rx="12" fill="#FAFAF7" stroke="#DEDFD8"/>
-<rect x="2820" y="3042" width="72" height="72" rx="16" fill="oklch(0.66 0.06 60)"/>
-<text x="2856" y="3092" font-size="34" font-weight="800" text-anchor="middle" fill="#FFFFFF">AD</text>
-<text x="2856" y="3136" font-size="17" text-anchor="middle" fill="#12130F">Admiral Group</text>
+<rect x="3272" y="3126" width="224" height="276" rx="16" fill="#FAFAF7"/>
+<rect x="3298" y="3136" width="172" height="172" rx="38" fill="oklch(0.66 0.06 60)"/>
+<text x="3384" y="3255" font-size="81" font-weight="800" text-anchor="middle" fill="#FFFFFF">AD</text>
+<text x="3384" y="3328" font-size="13" font-weight="700" text-anchor="middle" fill="#12130F">Admiral Group</text>
+<text x="3384" y="3364" font-size="11.5" text-anchor="middle" fill="#6E7268">Personal motor insurance</text>
 </g>
 <g class="chip" data-slug="aig">
-<rect x="3008" y="3030" width="224" height="228" rx="12" fill="#FAFAF7" stroke="#DEDFD8"/>
-<rect x="3084" y="3042" width="72" height="72" rx="16" fill="oklch(0.66 0.06 60)"/>
-<text x="3120" y="3092" font-size="34" font-weight="800" text-anchor="middle" fill="#FFFFFF">AI</text>
-<text x="3120" y="3136" font-size="17" text-anchor="middle" fill="#12130F">AIG</text>
+<rect x="3536" y="3126" width="224" height="276" rx="16" fill="#FAFAF7"/>
+<rect x="3562" y="3136" width="172" height="172" rx="38" fill="oklch(0.66 0.06 60)"/>
+<text x="3648" y="3255" font-size="81" font-weight="800" text-anchor="middle" fill="#FFFFFF">AI</text>
+<text x="3648" y="3328" font-size="13" font-weight="700" text-anchor="middle" fill="#12130F">AIG</text>
+<text x="3648" y="3364" font-size="11.5" text-anchor="middle" fill="#6E7268">AV insurance &amp; underwriting</text>
 </g>
 <g class="chip" data-slug="allianz-commercial">
-<rect x="3272" y="3030" width="224" height="228" rx="12" fill="#FAFAF7" stroke="#DEDFD8"/>
-<rect x="3348" y="3042" width="72" height="72" rx="16" fill="oklch(0.66 0.06 60)"/>
-<text x="3384" y="3092" font-size="34" font-weight="800" text-anchor="middle" fill="#FFFFFF">AC</text>
-<text x="3384" y="3136" font-size="17" text-anchor="middle" fill="#12130F">Allianz</text>
-<text x="3384" y="3156" font-size="17" text-anchor="middle" fill="#12130F">Commercial</text>
+<rect x="3800" y="3126" width="224" height="276" rx="16" fill="#FAFAF7"/>
+<rect x="3826" y="3136" width="172" height="172" rx="38" fill="oklch(0.66 0.06 60)"/>
+<text x="3912" y="3255" font-size="81" font-weight="800" text-anchor="middle" fill="#FFFFFF">AC</text>
+<text x="3912" y="3328" font-size="13" font-weight="700" text-anchor="middle" fill="#12130F">Allianz Commercial</text>
+<text x="3912" y="3364" font-size="11.5" text-anchor="middle" fill="#6E7268">Munich carrier sizing</text>
+<text x="3912" y="3378" font-size="11.5" text-anchor="middle" fill="#6E7268">product-liability cover for AV</text>
+<text x="3912" y="3392" font-size="11.5" text-anchor="middle" fill="#6E7268">fleets</text>
 </g>
 <g class="chip" data-slug="aon">
-<rect x="2744" y="3294" width="224" height="228" rx="12" fill="#FAFAF7" stroke="#DEDFD8"/>
-<rect x="2820" y="3306" width="72" height="72" rx="16" fill="oklch(0.66 0.06 60)"/>
-<text x="2856" y="3356" font-size="34" font-weight="800" text-anchor="middle" fill="#FFFFFF">AO</text>
-<text x="2856" y="3400" font-size="17" text-anchor="middle" fill="#12130F">Aon</text>
+<rect x="3272" y="3438" width="224" height="276" rx="16" fill="#FAFAF7"/>
+<rect x="3298" y="3448" width="172" height="172" rx="38" fill="oklch(0.66 0.06 60)"/>
+<text x="3384" y="3567" font-size="81" font-weight="800" text-anchor="middle" fill="#FFFFFF">AO</text>
+<text x="3384" y="3640" font-size="13" font-weight="700" text-anchor="middle" fill="#12130F">Aon</text>
+<text x="3384" y="3676" font-size="11.5" text-anchor="middle" fill="#6E7268">Risk Capital segment brokering AV</text>
+<text x="3384" y="3690" font-size="11.5" text-anchor="middle" fill="#6E7268">programs before they standardize</text>
 </g>
 <g class="chip" data-slug="aviva">
-<rect x="3008" y="3294" width="224" height="228" rx="12" fill="#FAFAF7" stroke="#DEDFD8"/>
-<rect x="3084" y="3306" width="72" height="72" rx="16" fill="oklch(0.66 0.06 60)"/>
-<text x="3120" y="3356" font-size="34" font-weight="800" text-anchor="middle" fill="#FFFFFF">AV</text>
-<text x="3120" y="3400" font-size="17" text-anchor="middle" fill="#12130F">Aviva</text>
+<rect x="3536" y="3438" width="224" height="276" rx="16" fill="#FAFAF7"/>
+<rect x="3562" y="3448" width="172" height="172" rx="38" fill="oklch(0.66 0.06 60)"/>
+<text x="3648" y="3567" font-size="81" font-weight="800" text-anchor="middle" fill="#FFFFFF">AV</text>
+<text x="3648" y="3640" font-size="13" font-weight="700" text-anchor="middle" fill="#12130F">Aviva</text>
+<text x="3648" y="3676" font-size="11.5" text-anchor="middle" fill="#6E7268">Personal and commercial motor</text>
+<text x="3648" y="3690" font-size="11.5" text-anchor="middle" fill="#6E7268">insurance</text>
 </g>
 <g class="chip" data-slug="beazley">
-<rect x="3272" y="3294" width="224" height="228" rx="12" fill="#FAFAF7" stroke="#DEDFD8"/>
-<rect x="3348" y="3306" width="72" height="72" rx="16" fill="oklch(0.66 0.06 60)"/>
-<text x="3384" y="3356" font-size="34" font-weight="800" text-anchor="middle" fill="#FFFFFF">BE</text>
-<text x="3384" y="3400" font-size="17" text-anchor="middle" fill="#12130F">Beazley</text>
+<rect x="3800" y="3438" width="224" height="276" rx="16" fill="#FAFAF7"/>
+<rect x="3826" y="3448" width="172" height="172" rx="38" fill="oklch(0.66 0.06 60)"/>
+<text x="3912" y="3567" font-size="81" font-weight="800" text-anchor="middle" fill="#FFFFFF">BE</text>
+<text x="3912" y="3640" font-size="13" font-weight="700" text-anchor="middle" fill="#12130F">Beazley</text>
+<text x="3912" y="3676" font-size="11.5" text-anchor="middle" fill="#6E7268">Cyber and specialty liability</text>
 </g>
 <g class="chip" data-slug="ampcontrol">
-<rect x="3600" y="3030" width="224" height="228" rx="12" fill="#FAFAF7" stroke="#DEDFD8"/>
-<rect x="3676" y="3042" width="72" height="72" rx="16" fill="oklch(0.66 0.06 320)"/>
-<text x="3712" y="3092" font-size="34" font-weight="800" text-anchor="middle" fill="#FFFFFF">AM</text>
-<text x="3712" y="3136" font-size="17" text-anchor="middle" fill="#12130F">Ampcontrol</text>
+<rect x="4128" y="3126" width="224" height="276" rx="16" fill="#FAFAF7"/>
+<rect x="4154" y="3136" width="172" height="172" rx="38" fill="oklch(0.66 0.06 320)"/>
+<text x="4240" y="3255" font-size="81" font-weight="800" text-anchor="middle" fill="#FFFFFF">AM</text>
+<text x="4240" y="3328" font-size="13" font-weight="700" text-anchor="middle" fill="#12130F">Ampcontrol</text>
+<text x="4240" y="3364" font-size="11.5" text-anchor="middle" fill="#6E7268">Charge-scheduling software that</text>
+<text x="4240" y="3378" font-size="11.5" text-anchor="middle" fill="#6E7268">minimizes depot downtime</text>
 </g>
 <g class="chip" data-slug="anyline">
-<rect x="3864" y="3030" width="224" height="228" rx="12" fill="#FAFAF7" stroke="#DEDFD8"/>
-<rect x="3940" y="3042" width="72" height="72" rx="16" fill="oklch(0.66 0.06 320)"/>
-<text x="3976" y="3092" font-size="34" font-weight="800" text-anchor="middle" fill="#FFFFFF">AN</text>
-<text x="3976" y="3136" font-size="17" text-anchor="middle" fill="#12130F">Anyline</text>
+<rect x="4392" y="3126" width="224" height="276" rx="16" fill="#FAFAF7"/>
+<rect x="4418" y="3136" width="172" height="172" rx="38" fill="oklch(0.66 0.06 320)"/>
+<text x="4504" y="3255" font-size="81" font-weight="800" text-anchor="middle" fill="#FFFFFF">AN</text>
+<text x="4504" y="3328" font-size="13" font-weight="700" text-anchor="middle" fill="#12130F">Anyline</text>
+<text x="4504" y="3364" font-size="11.5" text-anchor="middle" fill="#6E7268">Vienna data-capture scanning tire</text>
+<text x="4504" y="3378" font-size="11.5" text-anchor="middle" fill="#6E7268">sidewalls for fleet checks</text>
 </g>
 <g class="chip" data-slug="autofleet">
-<rect x="4128" y="3030" width="224" height="228" rx="12" fill="#FAFAF7" stroke="#DEDFD8"/>
-<rect x="4204" y="3042" width="72" height="72" rx="16" fill="oklch(0.66 0.06 320)"/>
-<text x="4240" y="3092" font-size="34" font-weight="800" text-anchor="middle" fill="#FFFFFF">AU</text>
-<text x="4240" y="3136" font-size="17" text-anchor="middle" fill="#12130F">Autofleet</text>
+<rect x="4656" y="3126" width="224" height="276" rx="16" fill="#FAFAF7"/>
+<rect x="4682" y="3136" width="172" height="172" rx="38" fill="oklch(0.66 0.06 320)"/>
+<text x="4768" y="3255" font-size="81" font-weight="800" text-anchor="middle" fill="#FFFFFF">AU</text>
+<text x="4768" y="3328" font-size="13" font-weight="700" text-anchor="middle" fill="#12130F">Autofleet</text>
+<text x="4768" y="3364" font-size="11.5" text-anchor="middle" fill="#6E7268">Tel Aviv rebalancing and</text>
+<text x="4768" y="3378" font-size="11.5" text-anchor="middle" fill="#6E7268">utilization engine for shared</text>
+<text x="4768" y="3392" font-size="11.5" text-anchor="middle" fill="#6E7268">fleets</text>
 </g>
 <g class="chip" data-slug="bp-pulse">
-<rect x="4392" y="3030" width="224" height="228" rx="12" fill="#FAFAF7" stroke="#DEDFD8"/>
-<rect x="4468" y="3042" width="72" height="72" rx="16" fill="oklch(0.66 0.06 320)"/>
-<text x="4504" y="3092" font-size="34" font-weight="800" text-anchor="middle" fill="#FFFFFF">BP</text>
-<text x="4504" y="3136" font-size="17" text-anchor="middle" fill="#12130F">bp pulse</text>
+<rect x="4920" y="3126" width="224" height="276" rx="16" fill="#FAFAF7"/>
+<rect x="4946" y="3136" width="172" height="172" rx="38" fill="oklch(0.66 0.06 320)"/>
+<text x="5032" y="3255" font-size="81" font-weight="800" text-anchor="middle" fill="#FFFFFF">BP</text>
+<text x="5032" y="3328" font-size="13" font-weight="700" text-anchor="middle" fill="#12130F">bp pulse</text>
+<text x="5032" y="3364" font-size="11.5" text-anchor="middle" fill="#6E7268">Energy major&#x27;s charging arm built</text>
+<text x="5032" y="3378" font-size="11.5" text-anchor="middle" fill="#6E7268">for high-utilization fleets</text>
 </g>
 <g class="chip" data-slug="chargepoint">
-<rect x="4656" y="3030" width="224" height="228" rx="12" fill="#FAFAF7" stroke="#DEDFD8"/>
-<rect x="4732" y="3042" width="72" height="72" rx="16" fill="oklch(0.66 0.06 320)"/>
-<text x="4768" y="3092" font-size="34" font-weight="800" text-anchor="middle" fill="#FFFFFF">CH</text>
-<text x="4768" y="3136" font-size="17" text-anchor="middle" fill="#12130F">ChargePoint</text>
+<rect x="5184" y="3126" width="224" height="276" rx="16" fill="#FAFAF7"/>
+<rect x="5210" y="3136" width="172" height="172" rx="38" fill="oklch(0.66 0.06 320)"/>
+<text x="5296" y="3255" font-size="81" font-weight="800" text-anchor="middle" fill="#FFFFFF">CH</text>
+<text x="5296" y="3328" font-size="13" font-weight="700" text-anchor="middle" fill="#12130F">ChargePoint</text>
+<text x="5296" y="3364" font-size="11.5" text-anchor="middle" fill="#6E7268">Installed charging base</text>
+<text x="5296" y="3378" font-size="11.5" text-anchor="middle" fill="#6E7268">repositioned as AV depot</text>
+<text x="5296" y="3392" font-size="11.5" text-anchor="middle" fill="#6E7268">infrastructure</text>
 </g>
 <g class="chip" data-slug="cox-automotive">
-<rect x="3600" y="3294" width="224" height="228" rx="12" fill="#FAFAF7" stroke="#DEDFD8"/>
-<rect x="3676" y="3306" width="72" height="72" rx="16" fill="oklch(0.66 0.06 320)"/>
-<text x="3712" y="3356" font-size="34" font-weight="800" text-anchor="middle" fill="#FFFFFF">CA</text>
-<text x="3712" y="3400" font-size="17" text-anchor="middle" fill="#12130F">Cox Automotive</text>
+<rect x="4128" y="3438" width="224" height="276" rx="16" fill="#FAFAF7"/>
+<rect x="4154" y="3448" width="172" height="172" rx="38" fill="oklch(0.66 0.06 320)"/>
+<text x="4240" y="3567" font-size="81" font-weight="800" text-anchor="middle" fill="#FFFFFF">CA</text>
+<text x="4240" y="3640" font-size="13" font-weight="700" text-anchor="middle" fill="#12130F">Cox Automotive</text>
+<text x="4240" y="3676" font-size="11.5" text-anchor="middle" fill="#6E7268">Cleaning, maintenance &amp; inspection</text>
 </g>
 <g class="chip" data-slug="electrify-america">
-<rect x="3864" y="3294" width="224" height="228" rx="12" fill="#FAFAF7" stroke="#DEDFD8"/>
-<rect x="3940" y="3306" width="72" height="72" rx="16" fill="oklch(0.66 0.06 320)"/>
-<text x="3976" y="3356" font-size="34" font-weight="800" text-anchor="middle" fill="#FFFFFF">EA</text>
-<text x="3976" y="3400" font-size="17" text-anchor="middle" fill="#12130F">Electrify</text>
-<text x="3976" y="3420" font-size="17" text-anchor="middle" fill="#12130F">America</text>
+<rect x="4392" y="3438" width="224" height="276" rx="16" fill="#FAFAF7"/>
+<rect x="4418" y="3448" width="172" height="172" rx="38" fill="oklch(0.66 0.06 320)"/>
+<text x="4504" y="3567" font-size="81" font-weight="800" text-anchor="middle" fill="#FFFFFF">EA</text>
+<text x="4504" y="3640" font-size="13" font-weight="700" text-anchor="middle" fill="#12130F">Electrify America</text>
+<text x="4504" y="3676" font-size="11.5" text-anchor="middle" fill="#6E7268">National fast-charging backbone</text>
+<text x="4504" y="3690" font-size="11.5" text-anchor="middle" fill="#6E7268">across US and Canadian sites</text>
 </g>
 <g class="chip" data-slug="element-fleet-management">
-<rect x="4128" y="3294" width="224" height="228" rx="12" fill="#FAFAF7" stroke="#DEDFD8"/>
-<rect x="4204" y="3306" width="72" height="72" rx="16" fill="oklch(0.66 0.06 320)"/>
-<text x="4240" y="3356" font-size="34" font-weight="800" text-anchor="middle" fill="#FFFFFF">EF</text>
-<text x="4240" y="3400" font-size="17" text-anchor="middle" fill="#12130F">Element Fleet</text>
-<text x="4240" y="3420" font-size="17" text-anchor="middle" fill="#12130F">Management</text>
+<rect x="4656" y="3438" width="224" height="276" rx="16" fill="#FAFAF7"/>
+<rect x="4682" y="3448" width="172" height="172" rx="38" fill="oklch(0.66 0.06 320)"/>
+<text x="4768" y="3567" font-size="81" font-weight="800" text-anchor="middle" fill="#FFFFFF">EF</text>
+<text x="4768" y="3640" font-size="13" font-weight="700" text-anchor="middle" fill="#12130F">Element Fleet Management</text>
+<text x="4768" y="3676" font-size="11.5" text-anchor="middle" fill="#6E7268">Toronto lessor announcing a Waymo</text>
+<text x="4768" y="3690" font-size="11.5" text-anchor="middle" fill="#6E7268">San Diego pact in June 2026</text>
 </g>
 <g class="chip" data-slug="enterprise-fleet-management">
-<rect x="4392" y="3294" width="224" height="228" rx="12" fill="#FAFAF7" stroke="#DEDFD8"/>
-<rect x="4468" y="3306" width="72" height="72" rx="16" fill="oklch(0.66 0.06 320)"/>
-<text x="4504" y="3356" font-size="34" font-weight="800" text-anchor="middle" fill="#FFFFFF">EF</text>
-<text x="4504" y="3400" font-size="17" text-anchor="middle" fill="#12130F">Enterprise</text>
-<text x="4504" y="3420" font-size="17" text-anchor="middle" fill="#12130F">Fleet…</text>
+<rect x="4920" y="3438" width="224" height="276" rx="16" fill="#FAFAF7"/>
+<rect x="4946" y="3448" width="172" height="172" rx="38" fill="oklch(0.66 0.06 320)"/>
+<text x="5032" y="3567" font-size="81" font-weight="800" text-anchor="middle" fill="#FFFFFF">EF</text>
+<text x="5032" y="3640" font-size="13" font-weight="700" text-anchor="middle" fill="#12130F">Enterprise Fleet</text>
+<text x="5032" y="3656" font-size="13" font-weight="700" text-anchor="middle" fill="#12130F">Management</text>
+<text x="5032" y="3676" font-size="11.5" text-anchor="middle" fill="#6E7268">St. Louis fleet group whose branch</text>
+<text x="5032" y="3690" font-size="11.5" text-anchor="middle" fill="#6E7268">density suits AV servicing</text>
 </g>
 <g class="chip" data-slug="didi">
-<rect x="240" y="1510" width="224" height="228" rx="12" fill="#FAFAF7" stroke="#DEDFD8"/>
-<rect x="316" y="1522" width="72" height="72" rx="16" fill="oklch(0.66 0.06 20)"/>
-<text x="352" y="1572" font-size="34" font-weight="800" text-anchor="middle" fill="#FFFFFF">DI</text>
-<text x="352" y="1616" font-size="17" text-anchor="middle" fill="#12130F">DiDi</text>
+<rect x="240" y="1606" width="224" height="276" rx="16" fill="#FAFAF7"/>
+<rect x="266" y="1616" width="172" height="172" rx="38" fill="oklch(0.66 0.06 20)"/>
+<text x="352" y="1735" font-size="81" font-weight="800" text-anchor="middle" fill="#FFFFFF">DI</text>
+<text x="352" y="1808" font-size="13" font-weight="700" text-anchor="middle" fill="#12130F">DiDi</text>
+<text x="352" y="1844" font-size="11.5" text-anchor="middle" fill="#6E7268">China ride-hailing leader with</text>
+<text x="352" y="1858" font-size="11.5" text-anchor="middle" fill="#6E7268">DiMA LLM assistant research</text>
 </g>
 <g class="chip" data-slug="geotab">
-<rect x="504" y="1510" width="224" height="228" rx="12" fill="#FAFAF7" stroke="#DEDFD8"/>
-<rect x="580" y="1522" width="72" height="72" rx="16" fill="oklch(0.66 0.06 20)"/>
-<text x="616" y="1572" font-size="34" font-weight="800" text-anchor="middle" fill="#FFFFFF">GE</text>
-<text x="616" y="1616" font-size="17" text-anchor="middle" fill="#12130F">Geotab</text>
+<rect x="504" y="1606" width="224" height="276" rx="16" fill="#FAFAF7"/>
+<rect x="530" y="1616" width="172" height="172" rx="38" fill="oklch(0.66 0.06 20)"/>
+<text x="616" y="1735" font-size="81" font-weight="800" text-anchor="middle" fill="#FFFFFF">GE</text>
+<text x="616" y="1808" font-size="13" font-weight="700" text-anchor="middle" fill="#12130F">Geotab</text>
+<text x="616" y="1844" font-size="11.5" text-anchor="middle" fill="#6E7268">Oakville telematics at scale for</text>
+<text x="616" y="1858" font-size="11.5" text-anchor="middle" fill="#6E7268">mixed human-AV fleet data</text>
 </g>
 <g class="chip" data-slug="grab">
-<rect x="240" y="1774" width="224" height="228" rx="12" fill="#FAFAF7" stroke="#DEDFD8"/>
-<rect x="316" y="1786" width="72" height="72" rx="16" fill="oklch(0.66 0.06 20)"/>
-<text x="352" y="1836" font-size="34" font-weight="800" text-anchor="middle" fill="#FFFFFF">GR</text>
-<text x="352" y="1880" font-size="17" text-anchor="middle" fill="#12130F">Grab</text>
+<rect x="768" y="1606" width="224" height="276" rx="16" fill="#FAFAF7"/>
+<rect x="794" y="1616" width="172" height="172" rx="38" fill="oklch(0.66 0.06 20)"/>
+<text x="880" y="1735" font-size="81" font-weight="800" text-anchor="middle" fill="#FFFFFF">GR</text>
+<text x="880" y="1808" font-size="13" font-weight="700" text-anchor="middle" fill="#12130F">Grab</text>
+<text x="880" y="1844" font-size="11.5" text-anchor="middle" fill="#6E7268">Southeast Asia superapp operating</text>
+<text x="880" y="1858" font-size="11.5" text-anchor="middle" fill="#6E7268">WeRide shuttles in Singapore</text>
 </g>
 <g class="chip" data-slug="lyft">
-<rect x="504" y="1774" width="224" height="228" rx="12" fill="#FAFAF7" stroke="#DEDFD8"/>
-<rect x="580" y="1786" width="72" height="72" rx="16" fill="oklch(0.66 0.06 20)"/>
-<text x="616" y="1836" font-size="34" font-weight="800" text-anchor="middle" fill="#FFFFFF">LY</text>
-<text x="616" y="1880" font-size="17" text-anchor="middle" fill="#12130F">Lyft</text>
-<circle cx="714" cy="1788" r="6" fill="#F2B705"/>
+<rect x="240" y="1918" width="224" height="276" rx="16" fill="#FAFAF7"/>
+<rect x="266" y="1928" width="172" height="172" rx="38" fill="oklch(0.66 0.06 20)"/>
+<text x="352" y="2047" font-size="81" font-weight="800" text-anchor="middle" fill="#FFFFFF">LY</text>
+<text x="352" y="2120" font-size="13" font-weight="700" text-anchor="middle" fill="#12130F">Lyft</text>
+<text x="352" y="2156" font-size="11.5" text-anchor="middle" fill="#6E7268">Ridehail &amp; demand aggregation</text>
+<circle cx="450" cy="1932" r="6" fill="#F2B705"/>
 </g>
 <g class="chip" data-slug="samsara">
-<rect x="240" y="2038" width="224" height="228" rx="12" fill="#FAFAF7" stroke="#DEDFD8"/>
-<rect x="316" y="2050" width="72" height="72" rx="16" fill="oklch(0.66 0.06 20)"/>
-<text x="352" y="2100" font-size="34" font-weight="800" text-anchor="middle" fill="#FFFFFF">SA</text>
-<text x="352" y="2144" font-size="17" text-anchor="middle" fill="#12130F">Samsara</text>
+<rect x="504" y="1918" width="224" height="276" rx="16" fill="#FAFAF7"/>
+<rect x="530" y="1928" width="172" height="172" rx="38" fill="oklch(0.66 0.06 20)"/>
+<text x="616" y="2047" font-size="81" font-weight="800" text-anchor="middle" fill="#FFFFFF">SA</text>
+<text x="616" y="2120" font-size="13" font-weight="700" text-anchor="middle" fill="#12130F">Samsara</text>
+<text x="616" y="2156" font-size="11.5" text-anchor="middle" fill="#6E7268">Connected-ops telemetry feeding</text>
+<text x="616" y="2170" font-size="11.5" text-anchor="middle" fill="#6E7268">underwriting for hybrid fleets</text>
 </g>
 <g class="chip" data-slug="uber">
-<rect x="504" y="2038" width="224" height="228" rx="12" fill="#FAFAF7" stroke="#DEDFD8"/>
-<rect x="580" y="2050" width="72" height="72" rx="16" fill="oklch(0.66 0.06 20)"/>
-<text x="616" y="2100" font-size="34" font-weight="800" text-anchor="middle" fill="#FFFFFF">UB</text>
-<text x="616" y="2144" font-size="17" text-anchor="middle" fill="#12130F">Uber</text>
-<circle cx="714" cy="2052" r="6" fill="#F2B705"/>
+<rect x="768" y="1918" width="224" height="276" rx="16" fill="#FAFAF7"/>
+<rect x="794" y="1928" width="172" height="172" rx="38" fill="oklch(0.66 0.06 20)"/>
+<text x="880" y="2047" font-size="81" font-weight="800" text-anchor="middle" fill="#FFFFFF">UB</text>
+<text x="880" y="2120" font-size="13" font-weight="700" text-anchor="middle" fill="#12130F">Uber</text>
+<text x="880" y="2156" font-size="11.5" text-anchor="middle" fill="#6E7268">Ridehail &amp; demand aggregation</text>
+<circle cx="978" cy="1932" r="6" fill="#F2B705"/>
 </g>
 <g class="chip" data-slug="apollo-go">
-<rect x="240" y="2302" width="224" height="228" rx="12" fill="#FAFAF7" stroke="#DEDFD8"/>
-<rect x="316" y="2314" width="72" height="72" rx="16" fill="oklch(0.66 0.06 20)"/>
-<text x="352" y="2364" font-size="34" font-weight="800" text-anchor="middle" fill="#FFFFFF">AG</text>
-<text x="352" y="2408" font-size="17" text-anchor="middle" fill="#12130F">Apollo Go</text>
+<rect x="240" y="2230" width="224" height="276" rx="16" fill="#FAFAF7"/>
+<rect x="266" y="2240" width="172" height="172" rx="38" fill="oklch(0.66 0.06 20)"/>
+<text x="352" y="2359" font-size="81" font-weight="800" text-anchor="middle" fill="#FFFFFF">AG</text>
+<text x="352" y="2432" font-size="13" font-weight="700" text-anchor="middle" fill="#12130F">Apollo Go</text>
+<text x="352" y="2468" font-size="11.5" text-anchor="middle" fill="#6E7268">China&#x27;s most visible robotaxi</text>
+<text x="352" y="2482" font-size="11.5" text-anchor="middle" fill="#6E7268">brand, now driverless in Dubai</text>
 </g>
-<polygon points="792,1192 4432,1192 4432,2712 792,2712" fill="#12130F"/>
-<polygon points="792,1192 4432,1192 4432,2712 792,2712" fill="none" stroke="#F2B705" stroke-width="14"/>
-<text x="2612" y="1322" font-size="86" font-weight="900" letter-spacing="18" text-anchor="middle" fill="#FAFAF7">PASSENGER AUTONOMY</text>
-<text x="2612" y="1388" font-size="28" text-anchor="middle" fill="#F2B705" font-family="IBM Plex Mono, monospace" letter-spacing="4">AUTONOMOUS DRIVERS A PASSENGER CAN ACTUALLY MEET</text>
+<polygon points="1056,1288 4696,1288 4696,2808 1056,2808" fill="#F4F2E9"/>
+<polygon points="1056,1288 4696,1288 4696,2808 1056,2808" fill="none" stroke="#F2B705" stroke-width="10"/>
+<text x="2876" y="1418" font-size="82" font-weight="900" letter-spacing="16" text-anchor="middle" fill="#12130F">PASSENGER AUTONOMY</text>
+<text x="2876" y="1484" font-size="27" text-anchor="middle" fill="#6E7268" font-family="IBM Plex Mono, monospace" letter-spacing="4">AUTONOMOUS DRIVERS A PASSENGER CAN ACTUALLY MEET · 12 OF 562 ORGANISATIONS ON THIS CHART</text>
 <g class="op" data-slug="waymo">
-<rect x="1092" y="1532" width="240" height="240" rx="36" fill="#FAFAF7"/>
-<text x="1212" y="1695" font-size="80" font-weight="900" text-anchor="middle" fill="#12130F">WA</text>
-<text x="1212" y="1828" font-size="40" font-weight="700" text-anchor="middle" fill="#FAFAF7">Waymo</text>
-<text x="1212" y="1876" font-size="22" text-anchor="middle" fill="#B9BCB2">The only fully driverless paid service</text>
-<text x="1212" y="1906" font-size="22" text-anchor="middle" fill="#B9BCB2">at scale: about 500k rides a week across</text>
-<text x="1212" y="1936" font-size="22" text-anchor="middle" fill="#B9BCB2">11 US metros (mid-2026).</text>
+<rect x="1208.0" y="1596" width="536" height="484" rx="22" fill="#FAFAF7"/>
+<rect x="1356" y="1628" width="240" height="240" rx="53" fill="oklch(0.66 0.06 265)"/>
+<text x="1476" y="1794" font-size="113" font-weight="800" text-anchor="middle" fill="#FFFFFF">WA</text>
+<text x="1476" y="1924" font-size="40" font-weight="700" text-anchor="middle" fill="#12130F">Waymo</text>
+<text x="1476" y="1972" font-size="22" text-anchor="middle" fill="#6E7268">The only fully driverless paid service</text>
+<text x="1476" y="2002" font-size="22" text-anchor="middle" fill="#6E7268">at scale: about 500k rides a week across</text>
+<text x="1476" y="2032" font-size="22" text-anchor="middle" fill="#6E7268">11 US metros (mid-2026).</text>
 </g>
 <g class="op" data-slug="baidu-apollo-go">
-<rect x="1652" y="1532" width="240" height="240" rx="36" fill="#FAFAF7"/>
-<text x="1772" y="1695" font-size="80" font-weight="900" text-anchor="middle" fill="#12130F">BA</text>
-<text x="1772" y="1828" font-size="40" font-weight="700" text-anchor="middle" fill="#FAFAF7">Baidu Apollo Go</text>
-<text x="1772" y="1876" font-size="22" text-anchor="middle" fill="#B9BCB2">Largest robotaxi operation on earth by</text>
-<text x="1772" y="1906" font-size="22" text-anchor="middle" fill="#B9BCB2">cumulative rides: 22M+ across 27 cities,</text>
-<text x="1772" y="1936" font-size="22" text-anchor="middle" fill="#B9BCB2">and the most international (Apr 2026).</text>
+<rect x="1768.0" y="1596" width="536" height="484" rx="22" fill="#FAFAF7"/>
+<rect x="1916" y="1628" width="240" height="240" rx="53" fill="oklch(0.66 0.06 265)"/>
+<text x="2036" y="1794" font-size="113" font-weight="800" text-anchor="middle" fill="#FFFFFF">BA</text>
+<text x="2036" y="1924" font-size="40" font-weight="700" text-anchor="middle" fill="#12130F">Baidu Apollo Go</text>
+<text x="2036" y="1972" font-size="22" text-anchor="middle" fill="#6E7268">Largest robotaxi operation on earth by</text>
+<text x="2036" y="2002" font-size="22" text-anchor="middle" fill="#6E7268">cumulative rides: 22M+ across 27 cities,</text>
+<text x="2036" y="2032" font-size="22" text-anchor="middle" fill="#6E7268">and the most international (Apr 2026).</text>
 </g>
 <g class="op" data-slug="tesla">
-<rect x="2212" y="1532" width="240" height="240" rx="36" fill="#FAFAF7"/>
-<text x="2332" y="1695" font-size="80" font-weight="900" text-anchor="middle" fill="#12130F">TE</text>
-<text x="2332" y="1828" font-size="40" font-weight="700" text-anchor="middle" fill="#FAFAF7">Tesla</text>
-<text x="2332" y="1876" font-size="22" text-anchor="middle" fill="#B9BCB2">Largest vision-only fleet feeding one</text>
-<text x="2332" y="1906" font-size="22" text-anchor="middle" fill="#B9BCB2">training loop; a metro-wide Austin map</text>
-<text x="2332" y="1936" font-size="22" text-anchor="middle" fill="#B9BCB2">served by about 20 unsupervised cars</text>
-<text x="2332" y="1966" font-size="22" text-anchor="middle" fill="#B9BCB2">(Jul 2026).</text>
+<rect x="2328.0" y="1596" width="536" height="484" rx="22" fill="#FAFAF7"/>
+<rect x="2476" y="1628" width="240" height="240" rx="53" fill="oklch(0.66 0.06 40)"/>
+<text x="2596" y="1794" font-size="113" font-weight="800" text-anchor="middle" fill="#FFFFFF">TE</text>
+<text x="2596" y="1924" font-size="40" font-weight="700" text-anchor="middle" fill="#12130F">Tesla</text>
+<text x="2596" y="1972" font-size="22" text-anchor="middle" fill="#6E7268">Largest vision-only fleet feeding one</text>
+<text x="2596" y="2002" font-size="22" text-anchor="middle" fill="#6E7268">training loop; a metro-wide Austin map</text>
+<text x="2596" y="2032" font-size="22" text-anchor="middle" fill="#6E7268">served by about 20 unsupervised cars</text>
+<text x="2596" y="2062" font-size="22" text-anchor="middle" fill="#6E7268">(Jul 2026).</text>
 </g>
 <g class="op" data-slug="zoox">
-<rect x="2772" y="1532" width="240" height="240" rx="36" fill="#FAFAF7"/>
-<text x="2892" y="1695" font-size="80" font-weight="900" text-anchor="middle" fill="#12130F">ZO</text>
-<text x="2892" y="1828" font-size="40" font-weight="700" text-anchor="middle" fill="#FAFAF7">Zoox</text>
-<text x="2892" y="1876" font-size="22" text-anchor="middle" fill="#B9BCB2">First purpose-built robotaxi with no</text>
-<text x="2892" y="1906" font-size="22" text-anchor="middle" fill="#B9BCB2">controls to carry public riders; free</text>
-<text x="2892" y="1936" font-size="22" text-anchor="middle" fill="#B9BCB2">everywhere pending a federal exemption.</text>
+<rect x="2888.0" y="1596" width="536" height="484" rx="22" fill="#FAFAF7"/>
+<rect x="3036" y="1628" width="240" height="240" rx="53" fill="oklch(0.66 0.06 40)"/>
+<text x="3156" y="1794" font-size="113" font-weight="800" text-anchor="middle" fill="#FFFFFF">ZO</text>
+<text x="3156" y="1924" font-size="40" font-weight="700" text-anchor="middle" fill="#12130F">Zoox</text>
+<text x="3156" y="1972" font-size="22" text-anchor="middle" fill="#6E7268">First purpose-built robotaxi with no</text>
+<text x="3156" y="2002" font-size="22" text-anchor="middle" fill="#6E7268">controls to carry public riders; free</text>
+<text x="3156" y="2032" font-size="22" text-anchor="middle" fill="#6E7268">everywhere pending a federal exemption.</text>
 </g>
 <g class="op" data-slug="pony-ai">
-<rect x="3332" y="1532" width="240" height="240" rx="36" fill="#FAFAF7"/>
-<text x="3452" y="1695" font-size="80" font-weight="900" text-anchor="middle" fill="#12130F">PA</text>
-<text x="3452" y="1828" font-size="40" font-weight="700" text-anchor="middle" fill="#FAFAF7">Pony.ai</text>
-<text x="3452" y="1876" font-size="22" text-anchor="middle" fill="#B9BCB2">First to claim city-level unit-economics</text>
-<text x="3452" y="1906" font-size="22" text-anchor="middle" fill="#B9BCB2">breakeven, in Shenzhen and Guangzhou;</text>
-<text x="3452" y="1936" font-size="22" text-anchor="middle" fill="#B9BCB2">1,700+ robotaxis (May 2026).</text>
+<rect x="3448.0" y="1596" width="536" height="484" rx="22" fill="#FAFAF7"/>
+<rect x="3596" y="1628" width="240" height="240" rx="53" fill="oklch(0.66 0.06 265)"/>
+<text x="3716" y="1794" font-size="113" font-weight="800" text-anchor="middle" fill="#FFFFFF">PA</text>
+<text x="3716" y="1924" font-size="40" font-weight="700" text-anchor="middle" fill="#12130F">Pony.ai</text>
+<text x="3716" y="1972" font-size="22" text-anchor="middle" fill="#6E7268">First to claim city-level unit-economics</text>
+<text x="3716" y="2002" font-size="22" text-anchor="middle" fill="#6E7268">breakeven, in Shenzhen and Guangzhou;</text>
+<text x="3716" y="2032" font-size="22" text-anchor="middle" fill="#6E7268">1,700+ robotaxis (May 2026).</text>
 </g>
 <g class="op" data-slug="weride">
-<rect x="3892" y="1532" width="240" height="240" rx="36" fill="#FAFAF7"/>
-<text x="4012" y="1695" font-size="80" font-weight="900" text-anchor="middle" fill="#12130F">WE</text>
-<text x="4012" y="1828" font-size="40" font-weight="700" text-anchor="middle" fill="#FAFAF7">WeRide</text>
-<text x="4012" y="1876" font-size="22" text-anchor="middle" fill="#B9BCB2">Licensed in eight countries, the</text>
-<text x="4012" y="1906" font-size="22" text-anchor="middle" fill="#B9BCB2">broadest regulatory footprint of any</text>
-<text x="4012" y="1936" font-size="22" text-anchor="middle" fill="#B9BCB2">operator, and the Gulf&#x27;s driverless</text>
-<text x="4012" y="1966" font-size="22" text-anchor="middle" fill="#B9BCB2">leader.</text>
+<rect x="4008.0" y="1596" width="536" height="484" rx="22" fill="#FAFAF7"/>
+<rect x="4156" y="1628" width="240" height="240" rx="53" fill="oklch(0.66 0.06 265)"/>
+<text x="4276" y="1794" font-size="113" font-weight="800" text-anchor="middle" fill="#FFFFFF">WE</text>
+<text x="4276" y="1924" font-size="40" font-weight="700" text-anchor="middle" fill="#12130F">WeRide</text>
+<text x="4276" y="1972" font-size="22" text-anchor="middle" fill="#6E7268">Licensed in eight countries, the</text>
+<text x="4276" y="2002" font-size="22" text-anchor="middle" fill="#6E7268">broadest regulatory footprint of any</text>
+<text x="4276" y="2032" font-size="22" text-anchor="middle" fill="#6E7268">operator, and the Gulf&#x27;s driverless</text>
+<text x="4276" y="2062" font-size="22" text-anchor="middle" fill="#6E7268">leader.</text>
 </g>
 <g class="op" data-slug="wayve">
-<rect x="1092" y="2032" width="240" height="240" rx="36" fill="#FAFAF7"/>
-<text x="1212" y="2195" font-size="80" font-weight="900" text-anchor="middle" fill="#12130F">WA</text>
-<text x="1212" y="2328" font-size="40" font-weight="700" text-anchor="middle" fill="#FAFAF7">Wayve</text>
-<text x="1212" y="2376" font-size="22" text-anchor="middle" fill="#B9BCB2">Map-light end-to-end driving licensed to</text>
-<text x="1212" y="2406" font-size="22" text-anchor="middle" fill="#B9BCB2">OEMs and fleets; $1.2B Series D, London</text>
-<text x="1212" y="2436" font-size="22" text-anchor="middle" fill="#B9BCB2">trials with Uber during 2026.</text>
+<rect x="1208.0" y="2096" width="536" height="484" rx="22" fill="#FAFAF7"/>
+<rect x="1356" y="2128" width="240" height="240" rx="53" fill="oklch(0.66 0.06 265)"/>
+<text x="1476" y="2294" font-size="113" font-weight="800" text-anchor="middle" fill="#FFFFFF">WA</text>
+<text x="1476" y="2424" font-size="40" font-weight="700" text-anchor="middle" fill="#12130F">Wayve</text>
+<text x="1476" y="2472" font-size="22" text-anchor="middle" fill="#6E7268">Map-light end-to-end driving licensed to</text>
+<text x="1476" y="2502" font-size="22" text-anchor="middle" fill="#6E7268">OEMs and fleets; $1.2B Series D, London</text>
+<text x="1476" y="2532" font-size="22" text-anchor="middle" fill="#6E7268">trials with Uber during 2026.</text>
 </g>
 <g class="op" data-slug="nuro">
-<rect x="1652" y="2032" width="240" height="240" rx="36" fill="#FAFAF7"/>
-<text x="1772" y="2195" font-size="80" font-weight="900" text-anchor="middle" fill="#12130F">NU</text>
-<text x="1772" y="2328" font-size="40" font-weight="700" text-anchor="middle" fill="#FAFAF7">Nuro</text>
-<text x="1772" y="2376" font-size="22" text-anchor="middle" fill="#B9BCB2">Pivoted from delivery pods to licensing</text>
-<text x="1772" y="2406" font-size="22" text-anchor="middle" fill="#B9BCB2">its driver; now powering Uber&#x27;s</text>
-<text x="1772" y="2436" font-size="22" text-anchor="middle" fill="#B9BCB2">35,000-vehicle Lucid robotaxi programme.</text>
+<rect x="1768.0" y="2096" width="536" height="484" rx="22" fill="#FAFAF7"/>
+<rect x="1916" y="2128" width="240" height="240" rx="53" fill="oklch(0.66 0.06 40)"/>
+<text x="2036" y="2294" font-size="113" font-weight="800" text-anchor="middle" fill="#FFFFFF">NU</text>
+<text x="2036" y="2424" font-size="40" font-weight="700" text-anchor="middle" fill="#12130F">Nuro</text>
+<text x="2036" y="2472" font-size="22" text-anchor="middle" fill="#6E7268">Pivoted from delivery pods to licensing</text>
+<text x="2036" y="2502" font-size="22" text-anchor="middle" fill="#6E7268">its driver; now powering Uber&#x27;s</text>
+<text x="2036" y="2532" font-size="22" text-anchor="middle" fill="#6E7268">35,000-vehicle Lucid robotaxi programme.</text>
 </g>
 <g class="op" data-slug="may-mobility">
-<rect x="2212" y="2032" width="240" height="240" rx="36" fill="#FAFAF7"/>
-<text x="2332" y="2195" font-size="80" font-weight="900" text-anchor="middle" fill="#12130F">MM</text>
-<text x="2332" y="2328" font-size="40" font-weight="700" text-anchor="middle" fill="#FAFAF7">May Mobility</text>
-<text x="2332" y="2376" font-size="22" text-anchor="middle" fill="#B9BCB2">Constrained-ODD transit and campus</text>
-<text x="2332" y="2406" font-size="22" text-anchor="middle" fill="#B9BCB2">autonomy: 3.5M+ rides across the US and</text>
-<text x="2332" y="2436" font-size="22" text-anchor="middle" fill="#B9BCB2">Japan, live on Lyft in Atlanta.</text>
+<rect x="2328.0" y="2096" width="536" height="484" rx="22" fill="#FAFAF7"/>
+<rect x="2476" y="2128" width="240" height="240" rx="53" fill="oklch(0.66 0.06 265)"/>
+<text x="2596" y="2294" font-size="113" font-weight="800" text-anchor="middle" fill="#FFFFFF">MM</text>
+<text x="2596" y="2424" font-size="40" font-weight="700" text-anchor="middle" fill="#12130F">May Mobility</text>
+<text x="2596" y="2472" font-size="22" text-anchor="middle" fill="#6E7268">Constrained-ODD transit and campus</text>
+<text x="2596" y="2502" font-size="22" text-anchor="middle" fill="#6E7268">autonomy: 3.5M+ rides across the US and</text>
+<text x="2596" y="2532" font-size="22" text-anchor="middle" fill="#6E7268">Japan, live on Lyft in Atlanta.</text>
 </g>
 <g class="op" data-slug="motional">
-<rect x="2772" y="2032" width="240" height="240" rx="36" fill="#FAFAF7"/>
-<text x="2892" y="2195" font-size="80" font-weight="900" text-anchor="middle" fill="#12130F">MO</text>
-<text x="2892" y="2328" font-size="40" font-weight="700" text-anchor="middle" fill="#FAFAF7">Motional</text>
-<text x="2892" y="2376" font-size="22" text-anchor="middle" fill="#B9BCB2">Hyundai-backed and factory-integrated;</text>
-<text x="2892" y="2406" font-size="22" text-anchor="middle" fill="#B9BCB2">IONIQ 5 robotaxis relaunched on Uber in</text>
-<text x="2892" y="2436" font-size="22" text-anchor="middle" fill="#B9BCB2">Las Vegas, March 2026.</text>
+<rect x="2888.0" y="2096" width="536" height="484" rx="22" fill="#FAFAF7"/>
+<rect x="3036" y="2128" width="240" height="240" rx="53" fill="oklch(0.66 0.06 265)"/>
+<text x="3156" y="2294" font-size="113" font-weight="800" text-anchor="middle" fill="#FFFFFF">MO</text>
+<text x="3156" y="2424" font-size="40" font-weight="700" text-anchor="middle" fill="#12130F">Motional</text>
+<text x="3156" y="2472" font-size="22" text-anchor="middle" fill="#6E7268">Hyundai-backed and factory-integrated;</text>
+<text x="3156" y="2502" font-size="22" text-anchor="middle" fill="#6E7268">IONIQ 5 robotaxis relaunched on Uber in</text>
+<text x="3156" y="2532" font-size="22" text-anchor="middle" fill="#6E7268">Las Vegas, March 2026.</text>
 </g>
 <g class="op" data-slug="avride">
-<rect x="3332" y="2032" width="240" height="240" rx="36" fill="#FAFAF7"/>
-<text x="3452" y="2195" font-size="80" font-weight="900" text-anchor="middle" fill="#12130F">AV</text>
-<text x="3452" y="2328" font-size="40" font-weight="700" text-anchor="middle" fill="#FAFAF7">Avride</text>
-<text x="3452" y="2376" font-size="22" text-anchor="middle" fill="#B9BCB2">Yandex-lineage driver now carrying Uber</text>
-<text x="3452" y="2406" font-size="22" text-anchor="middle" fill="#B9BCB2">riders in Dallas; $375M from Uber and</text>
-<text x="3452" y="2436" font-size="22" text-anchor="middle" fill="#B9BCB2">Nebius behind it.</text>
+<rect x="3448.0" y="2096" width="536" height="484" rx="22" fill="#FAFAF7"/>
+<rect x="3596" y="2128" width="240" height="240" rx="53" fill="oklch(0.66 0.06 265)"/>
+<text x="3716" y="2294" font-size="113" font-weight="800" text-anchor="middle" fill="#FFFFFF">AV</text>
+<text x="3716" y="2424" font-size="40" font-weight="700" text-anchor="middle" fill="#12130F">Avride</text>
+<text x="3716" y="2472" font-size="22" text-anchor="middle" fill="#6E7268">Yandex-lineage driver now carrying Uber</text>
+<text x="3716" y="2502" font-size="22" text-anchor="middle" fill="#6E7268">riders in Dallas; $375M from Uber and</text>
+<text x="3716" y="2532" font-size="22" text-anchor="middle" fill="#6E7268">Nebius behind it.</text>
 </g>
 <g class="op" data-slug="swm">
-<rect x="3892" y="2032" width="240" height="240" rx="36" fill="#FAFAF7"/>
-<text x="4012" y="2195" font-size="80" font-weight="900" text-anchor="middle" fill="#12130F">SW</text>
-<text x="4012" y="2328" font-size="40" font-weight="700" text-anchor="middle" fill="#FAFAF7">SWM</text>
-<text x="4012" y="2376" font-size="22" text-anchor="middle" fill="#B9BCB2">Korea&#x27;s first driverless taxi, running</text>
-<text x="4012" y="2406" font-size="22" text-anchor="middle" fill="#B9BCB2">Seoul&#x27;s Gangnam district on KG Mobility</text>
-<text x="4012" y="2436" font-size="22" text-anchor="middle" fill="#B9BCB2">cars since 2024.</text>
+<rect x="4008.0" y="2096" width="536" height="484" rx="22" fill="#FAFAF7"/>
+<rect x="4156" y="2128" width="240" height="240" rx="53" fill="oklch(0.66 0.06 265)"/>
+<text x="4276" y="2294" font-size="113" font-weight="800" text-anchor="middle" fill="#FFFFFF">SW</text>
+<text x="4276" y="2424" font-size="40" font-weight="700" text-anchor="middle" fill="#12130F">SWM</text>
+<text x="4276" y="2472" font-size="22" text-anchor="middle" fill="#6E7268">Korea&#x27;s first driverless taxi, running</text>
+<text x="4276" y="2502" font-size="22" text-anchor="middle" fill="#6E7268">Seoul&#x27;s Gangnam district on KG Mobility</text>
+<text x="4276" y="2532" font-size="22" text-anchor="middle" fill="#6E7268">cars since 2024.</text>
 </g>
-<line x1="2092" y1="2582" x2="3132" y2="2582" stroke="#B9BCB2" stroke-width="2" opacity=".4"/>
-<text x="2612" y="2636" font-size="24" text-anchor="middle" fill="#B9BCB2" font-family="IBM Plex Mono, monospace" letter-spacing="3">12 OF 562 ORGANISATIONS ON THIS CHART</text>
-<text x="200" y="3834" font-size="30" font-weight="700" fill="#12130F">AUTONOMOUS VEHICLE ECOSYSTEM MAP</text>
-<text x="5024" y="3834" font-size="26" text-anchor="end" font-family="IBM Plex Mono, monospace" fill="#6E7268">562 ORGANISATIONS · 11 LAYERS · COMPILED BY KOFI AGYARE-KWABI</text>
+<text x="200" y="4026" font-size="30" font-weight="700" fill="#12130F">AUTONOMOUS VEHICLE ECOSYSTEM MAP</text>
+<text x="5552" y="4026" font-size="26" text-anchor="end" font-family="IBM Plex Mono, monospace" fill="#6E7268">562 ORGANISATIONS · 11 LAYERS · COMPILED BY KOFI AGYARE-KWABI</text>
 </svg>

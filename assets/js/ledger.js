@@ -278,14 +278,14 @@
       <div class="d-block d-src"><h4>In the news</h4>
         ${(c.sources || []).length ? c.sources.map(s =>
           `<div>${ICON.news} <a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${esc(s.title)}</a> <span class="caption">${esc(s.date)}</span></div>`).join('')
-          : `<p class="caption">No article filed against this record yet. <a href="https://news.google.com/search?q=${encodeURIComponent('"' + c.name + '" autonomous')}" target="_blank" rel="noopener noreferrer">Search the news</a>, and the footer takes corrections.</p>`}
+          : `<p class="caption">No article filed against this record yet. <a href="https://news.google.com/search?q=${encodeURIComponent('"' + c.name + '" autonomous')}" target="_blank" rel="noopener noreferrer">Search the news</a>, and if you spot something worth adding, please reach out to me.</p>`}
       </div>
       <div class="d-block d-partners"><h4>Mapped partnerships${p ? ` · ${p.count}` : ''}</h4>
         ${p ? '<ul>' + p.partners.map(pp =>
           `<li><span class="pk">${esc(pp.k.toUpperCase())}</span>${pp.slug
             ? `<a class="co-link" href="../companies/?open=${encodeURIComponent(pp.slug)}">${esc(pp.partner)}</a>`
             : esc(pp.partner)}${pp.n ? `<div class="caption">${esc(pp.n)}</div>` : ''}</li>`).join('') + '</ul>'
-          : '<p class="caption">None mapped yet. If you know one, the button below emails me directly.</p>'}
+          : '<p class="caption">If you know of any partnerships, please reach out to me — the button below emails me directly.</p>'}
       </div>
       <div class="d-actions">
         <a class="btn" href="../map/#${esc(c.slug)}">SHOW ON THE WALL CHART</a>

@@ -36,15 +36,19 @@
 .poster-viewport {
   position: relative; overflow: hidden; cursor: grab;
   background: var(--paper);
-  border-block: 1px solid var(--rule);
-  /* Full width of the page and three quarters of its height: a wall chart,
-     not a plaque in a column. */
-  width: 100%; height: 75vh; height: 75dvh; min-height: 420px;
+  border: 1px solid var(--rule); border-radius: var(--r-card);
+  /* The frame takes the chart's own aspect so fit-zoom fills it edge to edge,
+     capped at three quarters of the window. */
+  width: 100%; height: auto; aspect-ratio: 1.4;
+  max-height: 75vh; max-height: 75dvh; min-height: 420px;
   touch-action: none; contain: layout paint;
 }
-/* the shell breaks out of the centred column to use the whole window */
+/* The chart sits in the same column as everything else. The full-bleed breakout
+   went: it left no margin to scroll past, so every wheel gesture over the page
+   became a zoom. The gutters give the page back its scroll lane. */
 #map-shell {
-  width: 100vw; margin-inline: calc(50% - 50vw);
+  max-width: var(--col); margin-inline: auto;
+  padding-inline: clamp(16px, 4vw, 32px);
 }
 .poster-viewport:active { cursor: grabbing; }
 .poster-viewport:focus-visible { outline-offset: -3px; }
@@ -60,11 +64,12 @@
 #poster [data-chip]:hover .chip-body,
 #poster [data-chip].kbd-focus .chip-body { stroke: var(--cyan); stroke-width: 2.5; }
 #poster [data-chip].sel .chip-body { stroke: var(--cyan); stroke-width: 5; }
-/* A tile leans forward when you rest on it or pick it. Each tile is inset inside
-   its own cell, so it has room to grow without touching its neighbours. */
+/* A tile leans forward when you rest on it or pick it — a lean, not a bounce.
+   Each tile is inset inside its own cell, so it has room to grow without
+   touching its neighbours. */
 #poster [data-chip] { transform-box: fill-box; transform-origin: center; }
-#poster [data-chip]:hover, #poster [data-chip].kbd-focus { transform: scale(1.06); }
-#poster [data-chip].sel { transform: scale(1.06); }
+#poster [data-chip]:hover, #poster [data-chip].kbd-focus { transform: scale(1.02); }
+#poster [data-chip].sel { transform: scale(1.03); }
 #poster [data-chip]:focus { outline: none; }
 
 /* A layer answers as one piece: its whole room takes the layer's own colour, its
@@ -86,27 +91,23 @@
 #poster .d-edge { stroke-width: 1.2px; }
 #poster .d-glow { stroke-width: 3px; }
 #poster .oct-edge { stroke-width: 3px; }
-#poster .d-glow, #poster .d-tint, #poster .d-wash { transition: opacity 200ms ease; }
+#poster .d-glow, #poster .d-wash { transition: opacity 200ms ease; }
 #poster .district.hot .d-glow { opacity: .95; }
-#poster .district.hot .d-tint { opacity: .32; }
 #poster .district.hot .d-wash { opacity: .13; }
 /* The octagon used to answer hover by inflating its border from 3px to 26px, the
    only district on the chart that moved its border at all. Now every room answers
    the same way. */
 #poster .district { transform-box: fill-box; transform-origin: center; }
 #poster.hot-on .district { transition: transform 220ms ease; }
-#poster.hot-on .district.hot { transform: scale(1.02); }
-#poster.hot-on .district:not(.hot) { transform: scale(.988); }
-/* Tethers, not wiring: the partner list is read on the card now, so the lines
-   only say WHERE a partner sits — thin, dashed, and quiet enough that no logo
-   is ever painted over. */
+#poster.hot-on .district.hot { transform: scale(1.01); }
+#poster.hot-on .district:not(.hot) { transform: scale(.994); }
+/* The tethers went quiet once and nobody could find them again, so they are
+   back at full voice: solid, bright, and heavy enough to follow across the
+   plate at a glance. */
 #poster .links path {
-  fill: none; stroke: var(--cyan); opacity: .3;
-  vector-effect: non-scaling-stroke; stroke-width: 1.6px;
-  stroke-dasharray: 7 7;
+  fill: none; stroke: var(--cyan); opacity: .85;
+  vector-effect: non-scaling-stroke; stroke-width: 2.2px;
 }
-#poster .pulse { animation: chip-pulse 900ms ease-out 2; transform-box: fill-box; transform-origin: center; }
-@keyframes chip-pulse { 0% { transform: scale(1); } 35% { transform: scale(1.12); } 100% { transform: scale(1); } }
 
 /* --------------------------------------------------------------- card */
 /* The card opens beside the company it belongs to and follows it while the
@@ -174,6 +175,7 @@
 #company-card .cc-partner:hover { border-color: var(--cyan); }
 #company-card .cc-partner .cp-logo { width: 26px; height: 26px; font-size: 10px; border-radius: 7px; flex: none; }
 #company-card .cc-partner.is-plain { border-style: dashed; color: var(--ink-2); }
+#company-card .cc-mail { margin-top: 10px; }
 #company-card .pk { color: var(--muted); font-family: var(--font-mono); font-size: 12px; letter-spacing: .06em; }
 #company-card .cc-src div { margin-top: 6px; }
 #company-card .cc-actions { display: flex; gap: 8px; margin-top: 16px; flex-wrap: wrap; }
@@ -193,7 +195,7 @@ body.fs-pseudo #company-card.sheet { max-height: 44vh; }
    so filters and zoom stay reachable. */
 #map-shell:fullscreen, #map-shell:-webkit-full-screen, body.fs-pseudo #map-shell {
   display: flex; flex-direction: column; background: var(--paper);
-  padding: 8px 0 0;
+  padding: 8px 0 0; max-width: none;
 }
 body.fs-pseudo #map-shell { position: fixed; inset: 0; z-index: 300; }
 body.fs-pseudo { overflow: hidden; }
@@ -267,7 +269,21 @@ body.fs-pseudo { overflow: hidden; }
 #navigator .dchip.exited { opacity: .55; text-decoration: line-through; }
 
 /* --------------------------------------------------------------- legend */
+/* The key folds away by default: the chart explains most of itself, and the
+   reader who wants the fine print opens it once. */
 .map-legend { margin-top: 24px; padding-bottom: 8px; }
+.map-key > summary {
+  display: inline-flex; align-items: center; gap: 7px; cursor: pointer;
+  list-style: none; font-family: var(--font-mono); font-size: 12px;
+  font-weight: 600; letter-spacing: .08em; text-transform: uppercase;
+  border: 1px solid var(--rule); border-radius: var(--r-chip);
+  padding: 7px 13px; background: var(--paper-2); user-select: none;
+}
+.map-key > summary::-webkit-details-marker { display: none; }
+.map-key > summary:hover { border-color: var(--cyan); }
+.map-key .pk-caret { font-size: 10px; transition: transform 160ms ease; }
+.map-key[open] .pk-caret { transform: rotate(180deg); }
+.map-key[open] > summary { margin-bottom: 16px; }
 #legend-layers { display: flex; gap: 8px 16px; flex-wrap: wrap; }
 #legend-layers .lg {
   display: inline-flex; align-items: center; gap: 7px;
@@ -302,7 +318,7 @@ body.fs-pseudo { overflow: hidden; }
 
 /* Remote logos fade in over their monogram tile, so a slow favicon never
    shows as a blank square. */
-#poster image.logo-img, #poster rect.logo-bg { transition: opacity 220ms ease; }
+#poster image.logo-img, #poster .mono-fallback { transition: opacity 220ms ease; }
 
 /* The chart's other motion is gated in JS by reducedMotion(). The hover and
    selection lifts are CSS, so they are gated here. Colour and weight still

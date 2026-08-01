@@ -292,8 +292,8 @@
     ['Economics', [['economics', 'economics/', 'Funding: who raised what'],
                    ['economics-unit', 'economics/#unit-economics', 'Unit economics'],
                    ['economics-compare', 'economics/#comparing-the-operators', 'Comparing the operators']]],
-    ['Regulatory', [['regulation', 'regulation/', 'Who decides'],
-                    ['safety', 'safety/', 'Incidents and recalls']]],
+    ['Regulatory', [['regulation', 'regulation/', 'Who decides, and every incident'],
+                    ['safety', 'safety/', 'The safety evidence']]],
     ['Media', [['media', 'media/', 'Who to read, listen to, and meet']]],
   ];
   const pad2 = n => String(n).padStart(2, '0');

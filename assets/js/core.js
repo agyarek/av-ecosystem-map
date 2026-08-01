@@ -301,7 +301,7 @@
   const UPDATED = fmtDate('2026-07-31');
   // fallback until derived-counts.json answers; every rendered count reads this
   let companyCount = 562;
-  const CORRECTION = 'mailto:agyarek+avecosystemmap@gmail.com?subject=AV%20map%20correction';
+  const CORRECTION = 'mailto:hello@kofiagyare.com?subject=AV%20map%20correction';
   window.AV.CORRECTION = CORRECTION;   // the one mailto, shared with the map card and ledger
 
   const SUN = '<svg class="sun" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="8" cy="8" r="3.2"/><path d="M8 .8v2M8 13.2v2M.8 8h2M13.2 8h2M2.9 2.9l1.4 1.4M11.7 11.7l1.4 1.4M13.1 2.9l-1.4 1.4M4.3 11.7l-1.4 1.4"/></svg>';
@@ -311,8 +311,8 @@
     'organisations discussed in this editorial industry map. All trademarks remain ' +
     'the property of their owners; no endorsement is implied in either direction. ' +
     'To request a change to how your organisation appears, write to ' +
-    '<a href="mailto:agyarek+avecosystemmap@gmail.com?subject=Trademark%20request">' +
-    'agyarek+avecosystemmap@gmail.com</a>.';
+    '<a href="mailto:hello@kofiagyare.com?subject=Trademark%20request">' +
+    'hello@kofiagyare.com</a>.';
 
   // Menus for the single-page chapters, so every item in the bar carries the
   // same caret and opens something useful. Kept out of CHAPTERS so the foot
@@ -368,7 +368,7 @@
     <p class="bio-text">If you'd like to chat — you'd like some information updated, want to
       issue a correction, or you simply want to talk autonomy — simply reach out. I'd love
       to hear from you.</p>
-    <p class="bio-cta"><a class="btn" href="mailto:agyarek+avecosystemmap@gmail.com?subject=AV%20ecosystem%20map">EMAIL ME</a></p>
+    <p class="bio-cta"><a class="btn" href="mailto:hello@kofiagyare.com?subject=AV%20ecosystem%20map">EMAIL ME</a></p>
   </div>`;
 
   const footerHTML = el => `<div class="container">

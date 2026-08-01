@@ -514,6 +514,20 @@
     const setStickTop = () => document.documentElement.style
       .setProperty('--stick-top', (siteHeader ? siteHeader.offsetHeight : 0) + 'px');
     setStickTop();
+    // The column headers stick to the pane's top edge, but the page can carry
+    // that edge up underneath the site chrome while the rows keep scrolling.
+    // Measure the overlap and push the sticky offset down by exactly that
+    // much, so the headers stay visible below the chrome for as long as there
+    // are rows beneath them — and leave with the table once its end arrives
+    // (sticky positioning can never escape the table, so no clamp is needed).
+    const setTheadTop = () => {
+      const pane = $('lg-scroll');
+      if (!pane) return;
+      const d = Math.max(0, (siteHeader ? siteHeader.offsetHeight : 0)
+        - pane.getBoundingClientRect().top);
+      pane.style.setProperty('--th-top', d.toFixed(1) + 'px');
+    };
+    setTheadTop();
     // Turning a phone sideways changes the header's height, swaps the table
     // between its two layouts and moves the scrolling from the pane to the page
     // or back. Re-measure and put the open row back where it was, twice: iOS
@@ -523,6 +537,7 @@
     let anchor = null, ticking = false;
     const trackAnchor = () => {
       ticking = false;
+      setTheadTop();
       const pane = $('lg-scroll').getBoundingClientRect();
       const y = Math.max(pane.top, siteHeader ? siteHeader.offsetHeight : 0) + 46;
       if (y < 0 || y > innerHeight - 2) return;
@@ -540,6 +555,7 @@
     let settle;
     const restore = (passes) => {
       setStickTop();
+      setTheadTop();
       const tr = $('r-' + (state.open || anchor));
       if (!tr) return;
       scrollRowToTop(tr);

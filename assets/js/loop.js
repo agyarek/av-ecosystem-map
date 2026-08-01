@@ -34,9 +34,10 @@
   const path = document.getElementById('track-path');
   const token = document.getElementById('token');
   const wrap = document.getElementById('loop-wrap');
+  const track = document.getElementById('track');
   if (!path || !token || !wrap) return;
 
-  const TOTAL = path.getTotalLength();
+  let TOTAL = 0;
   const DWELL_MS = 11000;     // long enough to read a whole card; the ring shows it
   const LEG_MS = 3600;        // travel time between neighbouring stations
   const TURN_MS = 1150;       // the three-point turn
@@ -44,15 +45,36 @@
   // Clockwise, each stop on a straight run beside its own card, so the car is
   // always level when parked rather than frozen mid-corner.
   const stations = ['request', 'driver', 'vehicle', 'pitlane'];
-  const anchor = {
+  const GRID_ANCHOR = {
     request: [300, 70], driver: [800, 70], vehicle: [800, 710], pitlane: [300, 710]
   };
   const cards = Object.fromEntries(stations.map(s =>
     [s, wrap.querySelector(`[data-station="${s}"]`)]));
 
-  // locate each station along the path once
+  // ------------------------------------------------------------ two layouts
+  // Wide screens get the circuit as authored: the 1100x780 track with the four
+  // cards in its quadrants. Narrow screens stack the cards and the track
+  // becomes a two-lane road down their left edge — the car drives down the
+  // near lane past each card, turns at the bottom, and comes back up past the
+  // pitlane, which is the return leg anyway. Same machinery either way; only
+  // the path and the anchors change.
+  const colQ = matchMedia('(max-width: 680px), (orientation: landscape) and (max-height: 560px)');
+  const GRID_VB = track ? track.getAttribute('viewBox') : '0 0 1100 780';
+  const GRID_D = path.getAttribute('d');
+  let colMode = false, tokenScale = 1, trackKey = '';
   const frac = {};
-  {
+
+  function computeStops() {
+    TOTAL = path.getTotalLength();
+    const anchor = {};
+    if (colMode) {
+      const wb = wrap.getBoundingClientRect();
+      for (const s of stations) {
+        const r = cards[s].getBoundingClientRect();
+        // pitlane is served on the way back up, from the far lane
+        anchor[s] = [s === 'pitlane' ? 44 : 20, r.top - wb.top + r.height / 2];
+      }
+    } else Object.assign(anchor, GRID_ANCHOR);
     const N = 1200;
     for (const s of stations) {
       let best = 0, bd = Infinity;
@@ -65,12 +87,46 @@
     }
   }
 
+  function layoutTrack() {
+    if (!track) return;
+    colMode = colQ.matches;
+    const H = Math.max(300, Math.round(wrap.offsetHeight));
+    const key = colMode ? `col:${H}` : 'grid';
+    if (key === trackKey) return;
+    trackKey = key;
+    if (colMode) {
+      const d = `M 20 38 L 20 ${H - 38} Q 20 ${H - 24} 32 ${H - 24} ` +
+        `Q 44 ${H - 24} 44 ${H - 38} L 44 38 Q 44 24 32 24 Q 20 24 20 38 Z`;
+      track.setAttribute('viewBox', `0 0 64 ${H}`);
+      tokenScale = 0.42;
+      ['track-shoulder', 'track-path', 'track-dash'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.setAttribute('d', d);
+      });
+    } else {
+      track.setAttribute('viewBox', GRID_VB);
+      tokenScale = 1;
+      ['track-shoulder', 'track-path', 'track-dash'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.setAttribute('d', GRID_D);
+      });
+    }
+    computeStops();
+    // park at the current station rather than mid-manoeuvre on the old road
+    turn = null; heading = 1;
+    t = frac[stations[idx]];
+    atStation = true;
+    dwellStart = performance.now(); dwellDone = 0;
+    paintActive();
+    place(t, 0, 0, 0);
+  }
+
   // ------------------------------------------------------------- state
   let idx = 0;              // the station we are at, or travelling toward
   let atStation = false;    // true while dwelling
   let heading = 1;          // +1 clockwise; -1 after a three-point turn
   let paused = false;
-  let t = frac[stations[0]];
+  let t = 0;                // set once layoutTrack has built the road
   let dwellStart = 0, dwellDone = 0;           // dwellDone banks time across pauses
   let legStart = 0, legFrom = 0, legDone = 0;  // legDone banks travel across pauses
   let turn = null;                              // {start, dir, then}
@@ -90,7 +146,8 @@
     const ca = Math.cos(ang), sa = Math.sin(ang);
     const x = p.x + ca * (offAlong || 0) - sa * (offSide || 0);
     const y = p.y + sa * (offAlong || 0) + ca * (offSide || 0);
-    token.setAttribute('transform', `translate(${x} ${y}) rotate(${base + (extraRot || 0)})`);
+    token.setAttribute('transform',
+      `translate(${x} ${y}) rotate(${base + (extraRot || 0)}) scale(${tokenScale})`);
   }
 
   function paintActive() {
@@ -139,6 +196,7 @@
       ring.setAttribute('pathLength', 100);
     });
     positionControls();
+    layoutTrack();     // card heights move the stops in the column layout
   }
 
   // The controls pill parks on the seam between the card rows. 50%/50% of the
@@ -147,7 +205,10 @@
   // and the top of the bottom pair, and centre the pill between them.
   const controls = wrap.querySelector('.loop-controls');
   function positionControls() {
-    if (!controls || getComputedStyle(controls).display === 'none') return;
+    if (!controls) return;
+    // in the stacked column the pill sits in flow above the cards; only the
+    // grid layout parks it on the seam
+    if (getComputedStyle(controls).position !== 'absolute') { controls.style.top = ''; return; }
     const wb = wrap.getBoundingClientRect();
     const bottomOf = c => {
       const r = c.getBoundingClientRect();
@@ -272,6 +333,8 @@
   backBtn.addEventListener('click', () => step(-1));
 
   // ------------------------------------------------------------- start
+  layoutTrack();
+  colQ.addEventListener('change', layoutTrack);
   sizeRings();
   atStation = true;
   dwellStart = performance.now(); dwellDone = 0;

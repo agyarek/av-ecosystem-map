@@ -53,11 +53,11 @@
 
   // ------------------------------------------------------------ two layouts
   // Wide screens get the circuit as authored: the 1100x780 track with the four
-  // cards in its quadrants. Narrow screens stack the cards and the track
-  // becomes a two-lane road down their left edge — the car drives down the
-  // near lane past each card, turns at the bottom, and comes back up past the
-  // pitlane, which is the return leg anyway. Same machinery either way; only
-  // the path and the anchors change.
+  // cards in its quadrants. Narrow screens stack the cards in ride order and
+  // the track becomes a tall ring around the whole column — the car drives
+  // down the left side, stopping beside each card in turn, rounds the bottom
+  // and returns up the right. Same machinery either way; only the path and
+  // the anchors change.
   const colQ = matchMedia('(max-width: 680px), (orientation: landscape) and (max-height: 560px)');
   const GRID_VB = track ? track.getAttribute('viewBox') : '0 0 1100 780';
   const GRID_D = path.getAttribute('d');
@@ -71,8 +71,8 @@
       const wb = wrap.getBoundingClientRect();
       for (const s of stations) {
         const r = cards[s].getBoundingClientRect();
-        // pitlane is served on the way back up, from the far lane
-        anchor[s] = [s === 'pitlane' ? 44 : 20, r.top - wb.top + r.height / 2];
+        // every stop is on the left side of the ring, in ride order down
+        anchor[s] = [22, r.top - wb.top + r.height / 2];
       }
     } else Object.assign(anchor, GRID_ANCHOR);
     const N = 1200;
@@ -91,13 +91,21 @@
     if (!track) return;
     colMode = colQ.matches;
     const H = Math.max(300, Math.round(wrap.offsetHeight));
-    const key = colMode ? `col:${H}` : 'grid';
+    const W = Math.max(200, Math.round(wrap.clientWidth));
+    const key = colMode ? `col:${W}x${H}` : 'grid';
     if (key === trackKey) return;
     trackKey = key;
     if (colMode) {
-      const d = `M 20 38 L 20 ${H - 38} Q 20 ${H - 24} 32 ${H - 24} ` +
-        `Q 44 ${H - 24} 44 ${H - 38} L 44 38 Q 44 24 32 24 Q 20 24 20 38 Z`;
-      track.setAttribute('viewBox', `0 0 64 ${H}`);
+      // ring the card column: the lanes run inside .loop-inner's padding, so
+      // the road hugs the cards without ever running underneath them
+      const inner = wrap.querySelector('.loop-inner') || wrap;
+      const y0 = Math.round(inner.offsetTop) + 12;
+      const y1 = Math.round(inner.offsetTop + inner.offsetHeight) - 12;
+      const x0 = 22, x1 = W - 22, r = 26;
+      const d = `M ${x0} ${y0 + r} L ${x0} ${y1 - r} Q ${x0} ${y1} ${x0 + r} ${y1} ` +
+        `L ${x1 - r} ${y1} Q ${x1} ${y1} ${x1} ${y1 - r} L ${x1} ${y0 + r} ` +
+        `Q ${x1} ${y0} ${x1 - r} ${y0} L ${x0 + r} ${y0} Q ${x0} ${y0} ${x0} ${y0 + r} Z`;
+      track.setAttribute('viewBox', `0 0 ${W} ${H}`);
       tokenScale = 0.42;
       ['track-shoulder', 'track-path', 'track-dash'].forEach(id => {
         const el = document.getElementById(id);

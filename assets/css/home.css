@@ -140,21 +140,24 @@
 .loop-foot { margin-top: 14px; text-align: center; }
 
 /* --------------------------------------------------------------- small screens */
-/* Below the two-column threshold the loop turns on its side: the cards stack in
-   markup order and the track becomes a narrow two-lane road down their left —
-   the car drives down the near lane, turns at the bottom, and comes back up
-   past the pitlane. Same ride, same ring, same controls; loop.js rebuilds the
-   road to match the column's height. */
+/* Below the two-column threshold the loop stands upright: the cards stack in
+   ride order and the track becomes a tall ring around them — the car drives
+   down the left side stopping beside each card, rounds the bottom, and comes
+   back up the right. Same ride, same ring, same controls; loop.js rebuilds
+   the road to match the column's size. */
 @media (max-width: 680px), (orientation: landscape) and (max-height: 560px) {
   .loop-wrap { aspect-ratio: auto; display: flex; flex-direction: column; }
-  #track { width: 64px; height: 100%; left: 0; right: auto; }
   #track-shoulder { stroke-width: 34; }
   #track-path { stroke-width: 27; }
   #track-dash { stroke-width: 1.8; stroke-dasharray: 11 9; }
   .loop-inner {
     position: static; display: flex; flex-direction: column;
-    gap: 14px; padding: 0 0 0 74px;
+    gap: 14px; padding: 40px 50px;
   }
+  /* stack in the order the ride happens — the grid quadrants put the pitlane
+     before the vehicle in the markup */
+  .st-request { order: 1; } .st-driver { order: 2; }
+  .st-vehicle { order: 3; } .st-pitlane { order: 4; }
   .station { border-radius: var(--r-card) !important; }
   .loop-controls {
     position: static; transform: none; order: -1;

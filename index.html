@@ -68,7 +68,7 @@
       <path id="track-dash" d="M 90 400 L 90 180 Q 90 70 200 70 L 900 70 Q 1010 70 1010 180 L 1010 600 Q 1010 710 900 710 L 200 710 Q 90 710 90 600 Z"/>
       <!-- A robotaxi seen from above: no driver's side, a symmetric cabin, sensor
            blisters at all four corners and a lidar mast standing proud of the roof.
-           Headlamps, beams and tail bar are carried over unchanged. -->
+           The beams and tail bar carry the lighting; the lamp dots are gone. -->
       <g id="token" class="token">
         <path class="beam" d="M 30 -10 L 78 -26 L 78 4 Z"/>
         <path class="beam" d="M 30 10 L 78 26 L 78 -4 Z"/>
@@ -86,8 +86,6 @@
         <circle class="blister" cx="25" cy="-11" r="2.6"/>
         <circle class="blister" cx="-25" cy="11" r="2.6"/>
         <circle class="blister" cx="25" cy="11" r="2.6"/>
-        <circle class="lamp" cx="29" cy="-8" r="3"/>
-        <circle class="lamp" cx="29" cy="8" r="3"/>
         <rect class="tail" x="-34" y="-9" width="3.2" height="18" rx="1.6"/>
         <rect class="reverse" x="-34" y="-9" width="3.2" height="18" rx="1.6"/>
         <circle class="mast" cx="0" cy="0" r="8.5"/>
@@ -98,43 +96,43 @@
 
     <div class="loop-inner">
       <div class="station st-request" data-station="request">
-        <svg class="st-ring" aria-hidden="true"><rect/></svg>
+        <svg class="st-ring" aria-hidden="true"><path/></svg>
         <h3 class="st-name">The Request <span class="st-count num" data-count="request">53 orgs</span></h3>
         <p class="desc">A rider taps a button and a marketplace prices the trip, picks a car and dispatches it.
           The platforms that own that moment own the customer.</p>
-        <p class="layers"><span class="chip"><span class="dot" style="background:oklch(var(--layer-l) var(--layer-c) 20)"></span>Demand &amp; Commercial Platforms</span></p>
+        <p class="layers"><span class="chip"><span class="dot" style="background:oklch(var(--layer-l) var(--layer-c) 20)"></span>Demand &amp; Commercial Platforms<span class="chip-count num" data-layer="Demand &amp; Commercial Platforms">53 orgs</span></span></p>
         <p class="ex">Uber alone carries 20 or more AV partnerships, yet autonomous vehicles are still about 0.1 percent of rideshare trips (late 2025).</p>
       </div>
 
       <div class="station st-driver" data-station="driver">
-        <svg class="st-ring" aria-hidden="true"><rect/></svg>
+        <svg class="st-ring" aria-hidden="true"><path/></svg>
         <h3 class="st-name">The Driver <span class="st-count num" data-count="driver">193 orgs</span></h3>
         <p class="desc">Software perceives, predicts and drives, built on sensors, silicon, data, maps,
           simulation and connectivity. This is where most of the industry lives.</p>
         <p class="layers">
-          <span class="chip"><span class="dot" style="background:oklch(var(--layer-l) var(--layer-c) 265)"></span>Autonomy Software</span>
-          <span class="chip"><span class="dot" style="background:oklch(var(--layer-l) var(--layer-c) 200)"></span>Sensing &amp; Compute</span>
-          <span class="chip"><span class="dot" style="background:oklch(var(--layer-l) var(--layer-c) 150)"></span>Data, Maps &amp; Simulation</span>
-          <span class="chip"><span class="dot" style="background:oklch(var(--layer-l) var(--layer-c) 230)"></span>Connectivity</span>
+          <span class="chip"><span class="dot" style="background:oklch(var(--layer-l) var(--layer-c) 265)"></span>Autonomy Software<span class="chip-count num" data-layer="AV Driver / Autonomy Software">57 orgs</span></span>
+          <span class="chip"><span class="dot" style="background:oklch(var(--layer-l) var(--layer-c) 200)"></span>Sensing &amp; Compute<span class="chip-count num" data-layer="Sensing &amp; Compute Hardware">38 orgs</span></span>
+          <span class="chip"><span class="dot" style="background:oklch(var(--layer-l) var(--layer-c) 150)"></span>Data, Maps &amp; Simulation<span class="chip-count num" data-layer="Data, Maps &amp; Simulation">47 orgs</span></span>
+          <span class="chip"><span class="dot" style="background:oklch(var(--layer-l) var(--layer-c) 230)"></span>Connectivity<span class="chip-count num" data-layer="Connectivity &amp; Infrastructure">55 orgs</span></span>
         </p>
         <p class="ex">Waymo's sixth-generation driver carries 42 percent fewer sensors at a reported unit cost below $20,000, less than half the prior generation.</p>
       </div>
 
       <div class="station st-pitlane" data-station="pitlane">
-        <svg class="st-ring" aria-hidden="true"><rect/></svg>
+        <svg class="st-ring" aria-hidden="true"><path/></svg>
         <h3 class="st-name">The Pitlane <span class="st-count num" data-count="pitlane">70 orgs</span></h3>
         <p class="desc">Depots charge, clean, inspect and service the fleet, then send it straight back out.
           How fast that handoff happens decides whether the economics work.</p>
-        <p class="layers"><span class="chip"><span class="dot" style="background:oklch(var(--layer-l) var(--layer-c) 320)"></span>Fleet Operations &amp; Depot</span></p>
+        <p class="layers"><span class="chip"><span class="dot" style="background:oklch(var(--layer-l) var(--layer-c) 320)"></span>Fleet Operations &amp; Depot<span class="chip-count num" data-layer="Fleet Operations &amp; Depot">70 orgs</span></span></p>
         <p class="ex">Transdev runs Waymo depot operations across Phoenix, San Francisco, Los Angeles, Austin and Nashville. The depot layer is almost entirely outsourced.</p>
       </div>
 
       <div class="station st-vehicle" data-station="vehicle">
-        <svg class="st-ring" aria-hidden="true"><rect/></svg>
+        <svg class="st-ring" aria-hidden="true"><path/></svg>
         <h3 class="st-name">The Vehicle <span class="st-count num" data-count="vehicle">64 orgs</span></h3>
         <p class="desc">A production-grade platform engineered around a driver that never gets tired:
           redundant steering, braking and power, because nobody is left to grab the wheel.</p>
-        <p class="layers"><span class="chip"><span class="dot" style="background:oklch(var(--layer-l) var(--layer-c) 40)"></span>Vehicle Platform &amp; Manufacturing</span></p>
+        <p class="layers"><span class="chip"><span class="dot" style="background:oklch(var(--layer-l) var(--layer-c) 40)"></span>Vehicle Platform &amp; Manufacturing<span class="chip-count num" data-layer="Vehicle Platform &amp; Manufacturing">67 orgs</span></span></p>
         <p class="ex">Waymo's vehicle supply chain now runs four deep: Jaguar Land Rover, Zeekr, Hyundai, and a preliminary Toyota alliance for personally owned cars.</p>
       </div>
     </div>

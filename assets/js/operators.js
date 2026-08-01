@@ -13,7 +13,7 @@
       const sources = (rec && rec.sources) || [];
       if (!sources.length) {
         srcSlot.innerHTML = '<p class="caption">Claims on this page are drawn from the record in '
-          + `<a href="${ROOT}companies/?open=${esc(srcSlot.dataset.sources)}">the ledger</a>, `
+          + `<a href="${ROOT}companies/?open=${esc(srcSlot.dataset.sources)}">the directory</a>, `
           + 'which carries no filed sources yet. If you can point me at one, my email is in the footer.</p>';
         return;
       }

@@ -17,7 +17,6 @@
   const stage = document.getElementById('poster-stage');
   const shell = document.getElementById('map-shell');
   const rail = document.getElementById('map-rail');
-  const navWrap = document.getElementById('navigator-wrap');
   const card = document.getElementById('company-card');
   const liveState = document.getElementById('filter-state');
 
@@ -180,7 +179,7 @@
   // appearing one patch at a time as you panned, and a chip you never scrolled to
   // stayed a monogram forever. Once the on-screen marks are in flight, queue every
   // remaining one so the chart finishes loading on its own. Still capped at MAX
-  // concurrent probes, so this fills in behind you rather than firing 561 requests
+  // concurrent probes, so this fills in behind you rather than firing 562 requests
   // at once — the stall the sweep was written to avoid.
   //
   // Skipped entirely when the committed logo assets are present: those render
@@ -236,11 +235,9 @@
       // a whisper of the layer's own colour, so the plate reads as ten layers from
       // across the room and not as ten identical white rectangles
       o.push(`<polygon class="d-wash" points="${poly(d.poly)}" fill="${hueFill(d.hue)}" opacity=".05"/>`);
-      // The header sits on the same ground as the tiles — the way the centre
-      // always has — with the hue bar alone marking where it ends.
-      o.push(`<g clip-path="url(#dc-${esc(d.id)})">`);
-      o.push(`<rect x="${hd.x}" y="${hd.y + hd.h - 9}" width="${hd.w}" height="9" fill="${hueFill(d.hue)}"/>`);
-      o.push(`</g>`);
+      // The header sits on the same ground as the tiles with nothing ruled
+      // between them — the same language as the centre. The hue lives in the
+      // count and descriptor text.
       const sz = d.labelSize, n = d.labelLines.length;
       // Top-anchored: name, then (in narrow side districts) the count, then the
       // one-line descriptor saying what the layer is.
@@ -379,7 +376,7 @@
       </button></li>`).join('') ||
       '<li><p class="caption" style="padding:8px 4px">No match in this layer.</p></li>';
     document.getElementById('roster-list').querySelectorAll('button[data-go]').forEach(b =>
-      b.addEventListener('click', () => { closeRoster(); select(b.dataset.go, true); }));
+      b.addEventListener('click', () => { closeRoster(); select(b.dataset.go); }));
   }
 
   function openRoster(id) {
@@ -473,13 +470,11 @@
     })(t0);
   }
 
+  // The chart no longer zooms on its own: no wheel capture, no zoom buttons,
+  // no fly-in on selection. On a desktop it is a fixed poster that the page
+  // scrolls past like any other content. Pinch and drag survive only inside
+  // full screen — the one place a phone needs them to make 15px tiles tappable.
   function bindCamera() {
-    viewport.addEventListener('wheel', e => {
-      e.preventDefault();
-      const p = toPoster(e.clientX, e.clientY);
-      zoomAt(p.x, p.y, Math.pow(1.0015, -e.deltaY));
-    }, { passive: false });
-
     const pts = new Map();
     let pinch0 = null, moved = false, downOn = null;
     viewport.addEventListener('pointerdown', e => {
@@ -496,11 +491,14 @@
       if (!pts.has(e.pointerId)) return;
       const prev = pts.get(e.pointerId);
       pts.set(e.pointerId, { x: e.clientX, y: e.clientY });
+      // a finger can wobble a few px and still mean "tap"
+      const slop = e.pointerType === 'touch' ? 6 : 2;
+      if (Math.abs(e.clientX - prev.x) + Math.abs(e.clientY - prev.y) > slop) moved = true;
+      if (!fsOn()) return;                        // camera only moves in full screen
       if (pts.size === 1) {
         const r = viewport.getBoundingClientRect();
         const dx = (e.clientX - prev.x) / r.width * cam.w;
         const dy = (e.clientY - prev.y) / r.height * cam.h;
-        if (Math.abs(e.clientX - prev.x) + Math.abs(e.clientY - prev.y) > 2) moved = true;
         cam.x -= dx; cam.y -= dy; clampCam(); applyCam();
       } else if (pts.size === 2 && pinch0) {
         const [a, b] = [...pts.values()];
@@ -508,7 +506,6 @@
         const mid = toPoster((a.x + b.x) / 2, (a.y + b.y) / 2);
         const targetW = pinch0.w * pinch0.d / Math.max(20, d);
         zoomAt(mid.x, mid.y, cam.w / targetW);
-        moved = true;
       }
     });
     // Selection happens on pointerup, not click: the viewport captures the
@@ -523,11 +520,18 @@
       pts.delete(e.pointerId);
       if (pts.size < 2) pinch0 = null;
       if (tap) {
+        // On a phone the inline chart is a doorway: the first tap opens it full
+        // screen, and only inside full screen do taps reach the tiles.
+        if (!fsOn() && e.pointerType === 'touch' && matchMedia('(max-width: 859px)').matches) {
+          toggleFullscreen();
+          downOn = null;
+          return;
+        }
         const t = downOn && downOn.closest ? downOn : document.elementFromPoint(e.clientX, e.clientY);
         const ex = t && t.closest ? t.closest('[data-expand]') : null;
         const g = t && t.closest ? t.closest('[data-chip]') : null;
         if (ex) openRoster(ex.dataset.expand);
-        else if (g) select(g.dataset.slug, true);
+        else if (g) select(g.dataset.slug);
         else clearSel();
       }
       downOn = null;
@@ -539,10 +543,10 @@
     svg.addEventListener('pointerover', e => setHot(e.target.closest('.district')));
     svg.addEventListener('pointerleave', () => setHot(null));
 
-    document.getElementById('z-in').addEventListener('click', () => zoomAt(cam.x + cam.w / 2, cam.y + cam.h / 2, 1.45));
-    document.getElementById('z-out').addEventListener('click', () => zoomAt(cam.x + cam.w / 2, cam.y + cam.h / 2, 1 / 1.45));
-    document.getElementById('z-fit').addEventListener('click', fit);
-    addEventListener('resize', () => { fit(); });
+    // an iOS URL-bar or keyboard resize must not reset a pinched camera mid-use
+    addEventListener('resize', () => {
+      if (fsOn()) { clampCam(); applyCam(); } else fit();
+    });
   }
 
   // ------------------------------------------------------------ hover
@@ -590,8 +594,12 @@
   function bindFullscreen() {
     const btn = document.getElementById('x-full');
     if (btn) btn.addEventListener('click', toggleFullscreen);
-    const nb = document.getElementById('nav-full');
-    if (nb) nb.addEventListener('click', e => { e.preventDefault(); toggleFullscreen(); });
+    // the persistent overlay chrome: an exit that is always in the corner, and
+    // a way back to the whole chart from any pinched-in view
+    const ex = document.getElementById('fs-exit');
+    if (ex) ex.addEventListener('click', toggleFullscreen);
+    const ff = document.getElementById('fs-fit');
+    if (ff) ff.addEventListener('click', fit);
     document.addEventListener('fullscreenchange', afterFS);
     document.addEventListener('webkitfullscreenchange', afterFS);
     addEventListener('keydown', e => { if (e.key === 'Escape' && pseudoFS) toggleFullscreen(); });
@@ -611,7 +619,7 @@
       : { x: cx, y: dy >= 0 ? y + h : y };
   }
 
-  function select(slug, fly) {
+  function select(slug) {
     const g = chipEl(slug);
     if (!g) return;
     clearSel(true);
@@ -636,11 +644,15 @@
       links.appendChild(path);
     }
     renderCard(slug, partnerRows);
-    if (fly) {
-      // A gentle move, not a dive: about two thirds of the chart stays in
-      // frame, so the reader keeps their bearings while the card opens. The
-      // width scales with the canvas so a regeneration cannot re-tighten it.
-      flyTo(from.x, from.y, Math.min(fitW, W * 0.62), 0.3, 0.32);
+    // Selection never zooms. The one camera concession: in full screen, if the
+    // chosen chip sits outside the pinched view (a search hit, a roster row),
+    // pan it into frame at the reader's own zoom level.
+    if (fsOn()) {
+      const px = cam.w * 0.06, py = cam.h * 0.06;
+      if (from.x < cam.x + px || from.x > cam.x + cam.w - px ||
+          from.y < cam.y + py || from.y > cam.y + cam.h - py) {
+        flyTo(from.x, from.y, cam.w);
+      }
     }
     ensureFull().then(() => { if (state.sel === slug) renderCard(slug, partnerRows); });
     history.replaceState(null, '', location.pathname + location.search + '#' + slug);
@@ -720,12 +732,12 @@
         `<div><a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${esc(s.title)}</a>${s.date ? ` <span class="caption">${esc(s.date)}</span>` : ''}</div>`).join('')}</div>` : ''}
       <div class="cc-actions">
         ${op ? `<a class="btn" href="${ROOT}companies/${esc(slug)}/">OPERATOR PAGE</a>` : ''}
-        <a class="btn" href="${ROOT}companies/?open=${encodeURIComponent(slug)}">${op ? 'LEDGER ROW' : 'OPEN IN THE LEDGER'}</a>
+        <a class="btn" href="${ROOT}companies/?open=${encodeURIComponent(slug)}">${op ? 'DIRECTORY ROW' : 'OPEN IN THE DIRECTORY'}</a>
       </div>`;
     card.hidden = false;
     card.querySelector('.cc-close').addEventListener('click', () => clearSel());
     card.querySelectorAll('[data-go]').forEach(b =>
-      b.addEventListener('click', () => select(b.dataset.go, true)));
+      b.addEventListener('click', () => select(b.dataset.go)));
     mountLogos(card);
     if (meta.w) window.AV.wikiSummary(meta.w).then(w => {
       const box = card.querySelector('.cc-shot');
@@ -851,7 +863,6 @@
     liveState.textContent = any
       ? `${n} of ${L.meta.companyCount} organisations match. Non-matching chips are dimmed in place, never removed.` : '';
     syncURL();
-    if (navWrap && !navWrap.hidden) buildNavigator();
   }
 
   function syncURL() {
@@ -881,13 +892,11 @@
   function bindKeys() {
     viewport.addEventListener('keydown', e => {
       const DIR = { ArrowRight: [1, 0], ArrowLeft: [-1, 0], ArrowDown: [0, 1], ArrowUp: [0, -1] };
-      if (e.key === '+' || e.key === '=') { zoomAt(cam.x + cam.w / 2, cam.y + cam.h / 2, 1.45); e.preventDefault(); }
-      else if (e.key === '-') { zoomAt(cam.x + cam.w / 2, cam.y + cam.h / 2, 1 / 1.45); e.preventDefault(); }
-      else if (e.key === 'Home') { fit(); e.preventDefault(); }
+      if (e.key === 'Home') { fit(); e.preventDefault(); }
       else if (e.key === 'f' || e.key === 'F') { toggleFullscreen(); e.preventDefault(); }
       else if (e.key === 'Escape') { clearSel(); setKbd(null); }
       else if (e.key === 'Enter' || e.key === ' ') {
-        if (kbd) { select(kbd.dataset.slug, true); e.preventDefault(); }
+        if (kbd) { select(kbd.dataset.slug); e.preventDefault(); }
       } else if (DIR[e.key]) {
         e.preventDefault();
         moveKbd(DIR[e.key]);
@@ -999,62 +1008,18 @@
     document.getElementById('x-svg').addEventListener('click', exportSVG);
     document.getElementById('x-png2').addEventListener('click', () => exportPNG(2));
     document.getElementById('x-png4').addEventListener('click', () => exportPNG(4));
-    document.getElementById('x-print').addEventListener('click', () => window.print());
+    // print reads the live viewBox, so square the camera up first
+    document.getElementById('x-print').addEventListener('click', () => { fit(); window.print(); });
   }
 
-  // ------------------------------------------------------------ navigator (mobile)
-  const isNarrow = () => matchMedia('(max-width: 859px)').matches
-    && !new URLSearchParams(location.search).has('chart') && !fsOn();
-  function buildNavigator() {
-    const nav = document.getElementById('navigator');
-    const districtChips = id => L.chips.filter(c => c.district === id)
-      .filter(c => { const g = chipEl(c.slug); return !g || !g.classList.contains('dimmed'); });
-    nav.innerHTML = `
-      <div class="med-strip" role="list" aria-label="Passenger autonomy">
-        ${L.medallion.map(mo => `
-          <button class="med-card" role="listitem" data-navsel="${esc(mo.slug)}">
-            <span class="mono-tile" style="--tile:oklch(var(--layer-l) var(--layer-c) ${mo.hue})">${esc(mo.mono)}${navLogo(mo.slug)}</span>
-            <span class="mc-name">${esc(mo.name)}</span>
-            <span class="mc-claim">${esc(mo.claim || '')}</span>
-          </button>`).join('')}
-      </div>
-      ${L.districts.map(d => `
-        <details>
-          <summary><span class="bar" style="background:oklch(var(--layer-l) var(--layer-c) ${d.hue})"></span>
-            ${esc(d.layer.replace('Governance: ', ''))}<span class="cnt">${d.count}</span></summary>
-          <div class="dgrid">
-            ${districtChips(d.id).map(c => `
-              <button class="dchip${c.exited ? ' exited' : ''}" data-navsel="${esc(c.slug)}">
-                ${c.spokenTo ? '<span class="gd gold-dot" aria-hidden="true"></span>' : ''}
-                <span class="mono-tile" style="--tile:oklch(var(--layer-l) var(--layer-c) ${c.hue})">${esc(c.mono)}${navLogo(c.slug)}</span>
-                <span>${esc(c.name)}</span>
-              </button>`).join('')}
-          </div>
-        </details>`).join('')}`;
-    mountLogos(nav);
-    nav.querySelectorAll('[data-navsel]').forEach(b =>
-      b.addEventListener('click', () => {
-        const slug = b.dataset.navsel;
-        state.sel = slug;
-        const rows = (partners.bySlug[slug] || { partners: [] }).partners;
-        renderCard(slug, rows);
-        ensureFull().then(() => { if (state.sel === slug) renderCard(slug, rows); });
-        history.replaceState(null, '', location.pathname + location.search + '#' + slug);
-      }));
-  }
+  // ------------------------------------------------------------ layout mode
+  // The chart itself renders at every width now — a phone gets the real thing
+  // inline, tap-to-fullscreen to read it. The only mode left to choose is how
+  // the card presents: parked beside a chip, or a bottom sheet on a phone.
   function chooseMode() {
-    const narrow = isNarrow();
-    // On a phone there is no room to park a card beside a chip, so it becomes a
-    // sheet even in full screen. It still has to live inside the element that
-    // went full screen, or the browser would not paint it at all.
     const sheet = matchMedia('(max-width: 759px)').matches;
-    stage.hidden = narrow;
-    rail.hidden = narrow;
-    navWrap.hidden = !narrow;
     card.classList.toggle('sheet', sheet);
     if (sheet) { card.style.left = card.style.top = ''; }
-    ((narrow && !fsOn()) ? document.body : stage).appendChild(card);
-    if (narrow) buildNavigator(); else fit();
   }
 
   // ------------------------------------------------------------ boot
@@ -1074,7 +1039,7 @@
     } catch (e) { manifest = null; }
 
     svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
-    // every layer lifts away from the same point, the centre of the octagon
+    // every layer lifts away from the same point, the centre of the plate
     svg.innerHTML = (spriteText ? `<defs>${spriteText.replace(/^[^>]*>/, '').replace(/<\/svg>\s*$/, '')}</defs>` : '') + buildSVG(false);
 
     document.getElementById('legend-layers').innerHTML = L.districts.map(d =>
@@ -1085,27 +1050,14 @@
     // capture the deep-link hash before syncURL can rewrite the address bar
     const initial = decodeURIComponent(location.hash.slice(1));
 
-    // stage anchors from the home-page loop: fly to a region, not a company.
+    // stage anchors from the home-page loop: light the region up rather than
+    // flying the camera at it — the whole chart is always in frame now.
     // 'ten' is the old name for the passenger-autonomy stage; links carrying it
     // are already in the wild, so it still resolves.
-    const stageRect = id => {
-      if (id === 'passenger' || id === 'ten') return L.meta.medallionBox;
-      const ids = STAGE_DISTRICTS[id];
-      if (!ids) return null;
-      const ds = L.districts.filter(d => ids.includes(d.id));
-      if (!ds.length) return null;
-      const x0 = Math.min(...ds.map(d => d.x)), y0 = Math.min(...ds.map(d => d.y));
-      const x1 = Math.max(...ds.map(d => d.x + d.w));
-      const y1 = Math.max(...ds.map(d => d.y + d.h));
-      return { x: x0, y: y0, w: x1 - x0, h: y1 - y0 };
-    };
-    const flyToStage = id => {
-      const r = stageRect(id);
-      if (!r) return false;
-      flyTo(r.x + r.w / 2, r.y + r.h / 2,
-        Math.max(r.w * 1.12, r.h * 1.12 * vpSize().vw / vpSize().vh));
+    const highlightStage = id => {
       const ids = (id === 'passenger' || id === 'ten')
         ? ['passenger-autonomy'] : (STAGE_DISTRICTS[id] || []);
+      if (!ids.length) return false;
       setHot(svg.querySelector(`.district[data-district="${CSS.escape(ids[0] || '')}"]`));
       return true;
     };
@@ -1114,19 +1066,20 @@
     scheduleBackfill();
     buildRail(); readURL(); bindCamera(); bindKeys(); bindExport(); bindFullscreen(); bindRoster();
     chooseMode();
+    fit();
     applyFilters();
-    matchMedia('(max-width: 859px)').addEventListener('change', chooseMode);
+    matchMedia('(max-width: 759px)').addEventListener('change', chooseMode);
     if (initial) {
-      // let first paint land, then fly (company slug or stage anchor)
+      // let first paint land, then resolve (company slug or stage anchor)
       requestAnimationFrame(() => setTimeout(() => {
-        if (chipEl(initial)) select(initial, true);
-        else flyToStage(initial);
+        if (chipEl(initial)) select(initial);
+        else highlightStage(initial);
       }, 60));
     }
     addEventListener('hashchange', () => {
       const s = decodeURIComponent(location.hash.slice(1));
-      if (s && chipEl(s) && s !== state.sel) select(s, true);
-      else if (s && !chipEl(s)) flyToStage(s);
+      if (s && chipEl(s) && s !== state.sel) select(s);
+      else if (s && !chipEl(s)) highlightStage(s);
       else if (!s) clearSel(true);
     });
 

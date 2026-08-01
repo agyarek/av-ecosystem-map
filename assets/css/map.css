@@ -5,7 +5,7 @@
   gap: 24px; flex-wrap: wrap; padding-top: 28px;
 }
 .chart-title {
-  font-size: clamp(24px, min(3vw, 4.6vh), 38px); font-weight: 800;
+  font-size: clamp(20px, min(3vw, 4.6vh), 38px); font-weight: 800;
   letter-spacing: -0.02em; font-variation-settings: 'wdth' 116; margin-top: 6px;
 }
 .chart-honesty { max-width: 44ch; text-align: right; }
@@ -28,20 +28,23 @@
 }
 .rail-text:focus { border-color: var(--cyan); }
 .rail-spacer { flex: 1; }
-.rail-zoom .chip, .rail-export .chip { border-radius: var(--r-chip); }
+.rail-export .chip { border-radius: var(--r-chip); }
 #filter-state { min-height: 18px; }
 
 /* --------------------------------------------------------------- stage */
 .poster-stage { position: relative; margin-top: 12px; }
 .poster-viewport {
-  position: relative; overflow: hidden; cursor: grab;
+  position: relative; overflow: hidden;
   background: var(--paper);
   border: 1px solid var(--rule); border-radius: var(--r-card);
   /* The frame takes the chart's own aspect so fit-zoom fills it edge to edge,
      capped at three quarters of the window. */
   width: 100%; height: auto; aspect-ratio: 1.4;
   max-height: 75vh; max-height: 75dvh; min-height: 420px;
-  touch-action: none; contain: layout paint;
+  /* Inline, the chart is a fixed picture: the page scrolls and pinches over it
+     like any other content. Full screen flips this to none so JS gets the raw
+     gestures (see the fullscreen rules below). */
+  touch-action: pan-y pinch-zoom; contain: layout paint;
 }
 /* The chart sits in the same column as everything else. The full-bleed breakout
    went: it left no margin to scroll past, so every wheel gesture over the page
@@ -50,8 +53,11 @@
   max-width: var(--col); margin-inline: auto;
   padding-inline: clamp(16px, 4vw, 32px);
 }
-.poster-viewport:active { cursor: grabbing; }
 .poster-viewport:focus-visible { outline-offset: -3px; }
+@media (max-width: 859px) {
+  /* the phone frame hugs the chart's aspect instead of letterboxing it */
+  .poster-viewport { min-height: 0; }
+}
 #poster { width: 100%; height: 100%; display: block; }
 
 /* SVG chip states. Filtering and selection dim, never reflow. */
@@ -61,9 +67,15 @@
 #poster.has-sel [data-chip].lit { opacity: 1; }
 #poster [data-chip].dimmed { opacity: .38; }
 #poster.has-sel [data-chip].dimmed:not(.lit) { opacity: .28; }
+/* State strokes are screen-pixel, not poster-unit: at full-chart view a scaled
+   stroke would be a fraction of a pixel and hover/selection would be invisible. */
 #poster [data-chip]:hover .chip-body,
-#poster [data-chip].kbd-focus .chip-body { stroke: var(--cyan); stroke-width: 2.5; }
-#poster [data-chip].sel .chip-body { stroke: var(--cyan); stroke-width: 5; }
+#poster [data-chip].kbd-focus .chip-body {
+  stroke: var(--cyan); stroke-width: 2px; vector-effect: non-scaling-stroke;
+}
+#poster [data-chip].sel .chip-body {
+  stroke: var(--cyan); stroke-width: 3px; vector-effect: non-scaling-stroke;
+}
 /* A tile leans forward when you rest on it or pick it — a lean, not a bounce.
    Each tile is inset inside its own cell, so it has room to grow without
    touching its neighbours. */
@@ -124,19 +136,20 @@
   --cc-label: 96px;
 }
 #company-card .cc-top { display: flex; align-items: flex-start; gap: 12px; }
-#company-card .cc-logo { width: 52px; height: 52px; flex: none; font-size: 19px; border-radius: 11px; }
+#company-card .cc-logo { width: 44px; height: 44px; flex: none; font-size: 16px; border-radius: 9px; }
 #company-card .cc-id { min-width: 0; }
-#company-card h2 { font-size: 24px; font-weight: 800; font-variation-settings: 'wdth' 112; line-height: 1.12; }
+/* Body-copy scale throughout: the card is a reading surface, not a headline. */
+#company-card h2 { font-size: 17px; font-weight: 800; font-variation-settings: 'wdth' 112; line-height: 1.2; }
 #company-card .cc-close { margin-left: auto; color: var(--muted); font-size: 20px; line-height: 1; padding: 2px 6px; }
 #company-card .cc-close:hover { color: var(--alert); }
-#company-card .cc-layer { font-family: var(--font-mono); font-size: 13px; line-height: 1.5; color: var(--muted); margin-top: 6px; }
+#company-card .cc-layer { font-family: var(--font-mono); font-size: 12px; line-height: 1.5; color: var(--muted); margin-top: 6px; }
 #company-card .cc-layer .dot { display: inline-block; vertical-align: -1px; width: 10px; height: 10px; border-radius: 3px; margin-right: 6px; }
-#company-card .cc-sub { font-size: 17px; color: var(--ink-2); margin-top: 12px; line-height: 1.5; }
-#company-card .cc-site { margin-top: 11px; font-size: 15px; }
+#company-card .cc-sub { font-size: var(--fs-base); color: var(--ink-2); margin-top: 12px; line-height: 1.5; }
+#company-card .cc-site { margin-top: 11px; font-size: var(--fs-sm); }
 #company-card .cc-site a, #company-card .cc-lead a.li {
   display: inline; color: var(--cyan);
 }
-#company-card .cc-lead { margin-top: 12px; font-size: 15px; line-height: 1.6; }
+#company-card .cc-lead { margin-top: 12px; font-size: var(--fs-sm); line-height: 1.6; }
 #company-card .cc-lead .pk { display: inline-block; min-width: var(--cc-label); }
 #company-card .cc-shot { margin-top: 14px; }
 #company-card .cc-shot a { display: block; position: relative; }
@@ -154,12 +167,12 @@
 #company-card .cc-facts {
   display: grid; grid-template-columns: var(--cc-label) 1fr; gap: 5px 12px;
   margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--rule);
-  font-size: 15px; line-height: 1.45;
+  font-size: var(--fs-sm); line-height: 1.45;
 }
 #company-card .cc-facts dt { font-family: var(--font-mono); font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); padding-top: 2px; }
 #company-card .cc-facts dd { color: var(--ink-2); }
 #company-card .cc-partners, #company-card .cc-src {
-  margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--rule); font-size: 15px;
+  margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--rule); font-size: var(--fs-sm);
 }
 /* Partners are read HERE now, not off the chart: each one a labelled logo
    chip on the same label rail as the facts above it. */
@@ -168,7 +181,7 @@
 #company-card .pg-chips { display: flex; flex-wrap: wrap; gap: 6px; }
 #company-card .cc-partner {
   display: inline-flex; align-items: center; gap: 8px;
-  padding: 5px 11px 5px 6px; font-size: 14px; text-align: left;
+  padding: 5px 11px 5px 6px; font-size: 13px; text-align: left;
   background: var(--paper); border: 1px solid var(--rule); border-radius: var(--r-pill);
   transition: border-color 120ms;
 }
@@ -192,7 +205,7 @@ body.fs-pseudo #company-card.sheet { max-height: 44vh; }
 /* ---------------------------------------------------------- full screen */
 /* Native full screen where the browser allows a div; a fixed overlay where it
    does not, which is every iPhone. The rail travels with the chart either way,
-   so filters and zoom stay reachable. */
+   so the filters stay reachable; the overlay buttons carry exit and fit. */
 #map-shell:fullscreen, #map-shell:-webkit-full-screen, body.fs-pseudo #map-shell {
   display: flex; flex-direction: column; background: var(--paper);
   padding: 8px 0 0; max-width: none;
@@ -223,51 +236,27 @@ body.fs-pseudo { overflow: hidden; }
 }
 #map-shell:fullscreen .poster-viewport, body.fs-pseudo #map-shell .poster-viewport {
   aspect-ratio: auto; max-height: none; max-width: none; height: 100%; border: 0;
+  min-height: 0;
+  /* full screen owns the gestures: pinch zooms the chart, drag pans it */
+  touch-action: none; cursor: grab;
 }
-.nav-fs { margin-bottom: 14px; }
-.nav-fs .btn { width: 100%; text-align: center; }
+#map-shell:fullscreen .poster-viewport:active,
+body.fs-pseudo #map-shell .poster-viewport:active { cursor: grabbing; }
+body.fs-pseudo { overscroll-behavior: none; }
 
-/* --------------------------------------------------------------- navigator (mobile) */
-#navigator .med-strip {
-  display: grid; grid-auto-flow: column; grid-auto-columns: minmax(200px, 1fr);
-  gap: 10px; overflow-x: auto; padding: 4px 0 12px;
-  scroll-snap-type: x mandatory;
+/* The persistent full-screen chrome: an exit that never leaves the top-left
+   corner and a way back to the whole chart top-right. CSS-only visibility —
+   they exist in the markup at all times and appear with the mode. */
+.fs-overlay {
+  display: none; position: absolute; top: 10px; z-index: 60;
+  min-height: 40px; align-items: center;
+  box-shadow: 0 6px 20px rgba(18, 19, 15, .22);
 }
-#navigator .med-card {
-  scroll-snap-align: start;
-  background: var(--ink); color: var(--paper);
-  border-radius: var(--r-medallion); padding: 16px; min-height: 128px;
-  display: flex; flex-direction: column; gap: 6px; text-align: left;
-}
-:root[data-theme="dark"] #navigator .med-card { background: var(--paper-2); color: var(--ink); border: 1px solid var(--rule); }
-#navigator .med-card .mono-tile { font-size: 15px; font-weight: 800; }
-#navigator .med-card .mc-name { font-weight: 800; font-size: 16px; }
-#navigator .med-card .mc-claim { font-size: 12px; opacity: .75; line-height: 1.4; }
-#navigator details {
-  border: 1px solid var(--rule); border-radius: var(--r-card);
-  background: var(--paper-2); margin-top: 10px; overflow: hidden;
-}
-#navigator summary {
-  display: flex; align-items: center; gap: 10px; padding: 14px 16px;
-  cursor: pointer; list-style: none; font-weight: 700;
-}
-#navigator summary::-webkit-details-marker { display: none; }
-#navigator summary .bar { width: 6px; height: 22px; border-radius: 3px; flex: none; }
-#navigator summary .cnt { margin-left: auto; font-family: var(--font-mono); font-size: 13px; color: var(--muted); }
-#navigator .dgrid {
-  display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; padding: 0 16px 16px;
-}
-@media (max-width: 420px) { #navigator .dgrid { grid-template-columns: repeat(2, 1fr); } }
-#navigator .dchip {
-  border: 1px solid var(--rule); border-radius: var(--r-chip);
-  background: var(--paper); padding: 10px 8px; text-align: center;
-  display: flex; flex-direction: column; align-items: center; gap: 6px;
-  position: relative; font-size: 12px; line-height: 1.25;
-}
-#navigator .dchip .mono-tile { width: 40px; height: 40px; font-size: 16px; }
-#navigator .dchip .gd { position: absolute; top: 6px; right: 6px; }
-#navigator .dchip.exited { opacity: .55; text-decoration: line-through; }
-
+#fs-exit { left: 10px; }
+#fs-fit { right: 10px; }
+#map-shell:fullscreen .fs-overlay,
+#map-shell:-webkit-full-screen .fs-overlay,
+body.fs-pseudo #map-shell .fs-overlay { display: inline-flex; }
 /* --------------------------------------------------------------- legend */
 /* The key folds away by default: the chart explains most of itself, and the
    reader who wants the fine print opens it once. */
@@ -304,7 +293,7 @@ body.fs-pseudo { overflow: hidden; }
 @media print {
   @page { size: A0 landscape; margin: 0; }
   body.print-a1 { }
-  .map-head, .map-rail, .map-legend, #company-card, #navigator-wrap { display: none !important; }
+  .map-head, .map-rail, .map-legend, #company-card, .fs-overlay { display: none !important; }
   .poster-viewport {
     aspect-ratio: auto; max-height: none; overflow: visible;
     border: 0; width: 100%; height: auto;

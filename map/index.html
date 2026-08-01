@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>The Wall Chart · Autonomous Vehicle Ecosystem Map</title>
-<meta name="description" content="The 562 organisations of the autonomous vehicle industry on one wall chart: passenger autonomy at the centre, the eleven layers around it, and the partnerships between them. Each layer shows a readable slice, with the rest behind one bar. Zoom, filter, full screen, export, print.">
+<meta name="description" content="The 562 organisations of the autonomous vehicle industry on one wall chart: passenger autonomy at the centre, the eleven layers around it, and the partnerships between them. Each layer shows a readable slice, with the rest behind one bar. Filter, full screen, export, print.">
 <meta property="og:title" content="The Wall Chart · AV Ecosystem Map">
 <meta property="og:description" content="562 organisations across eleven layers on a single wall chart, each layer showing a readable slice with the rest one bar-press away.">
 <meta property="og:type" content="website">
@@ -68,11 +68,6 @@
       <input type="search" id="f-text" class="rail-text" placeholder="Filter by text" aria-label="Filter companies by text">
       <button class="chip" id="f-clear" hidden>Clear filters</button>
       <span class="rail-spacer" aria-hidden="true"></span>
-      <span class="rail-zoom" role="group" aria-label="Zoom">
-        <button class="chip" id="z-out" aria-label="Zoom out">−</button>
-        <button class="chip" id="z-fit" aria-label="Fit to screen">FIT</button>
-        <button class="chip" id="z-in" aria-label="Zoom in">+</button>
-      </span>
       <span class="rail-export" role="group" aria-label="Export">
         <button class="chip" id="x-full" aria-pressed="false">FULL SCREEN</button>
         <button class="chip" id="x-svg">SVG</button>
@@ -86,10 +81,15 @@
 
   <div class="poster-stage" id="poster-stage">
     <div class="poster-viewport" id="poster-viewport" tabindex="0" role="application"
-         aria-roledescription="zoomable wall chart"
-         aria-label="Wall chart of 562 organisations. Use arrow keys to move between companies, Enter to select, plus and minus to zoom.">
+         aria-roledescription="wall chart"
+         aria-label="Wall chart of 562 organisations. Use arrow keys to move between companies, Enter to select, F for full screen.">
       <svg id="poster" aria-label="Autonomous vehicle ecosystem wall chart"></svg>
     </div>
+    <!-- Persistent fullscreen chrome: always-reachable exits, shown by CSS only
+         while the shell is (pseudo-)fullscreen. Must live inside #map-shell or
+         native fullscreen will not paint them. -->
+    <button class="chip fs-overlay" id="fs-exit" aria-label="Exit full screen">✕ EXIT</button>
+    <button class="chip fs-overlay" id="fs-fit">SEE FULL MAP</button>
     <aside id="company-card" hidden></aside>
     <div id="roster" class="roster" hidden role="dialog" aria-modal="true" aria-labelledby="roster-title">
       <div class="roster-head">
@@ -101,13 +101,6 @@
       <ul id="roster-list" class="roster-list"></ul>
     </div>
   </div>
-  </div>
-
-  <div class="container" id="navigator-wrap" hidden>
-    <p class="nav-fs"><button class="btn" id="nav-full">OPEN THE CHART FULL SCREEN</button></p>
-    <div id="navigator"></div>
-    <p class="caption" style="margin-top:16px">Small screen detected, so the chart is served as districts.
-      <a id="force-chart" href="?chart=1#chart">View the full wall chart in this page instead</a></p>
   </div>
 
   <div class="container map-legend">
@@ -122,6 +115,7 @@
         <span>each layer shows a slice of itself; the <strong>SHOW ALL</strong> bar opens the rest</span>
         <span>panel depth tracks how many organisations a layer holds</span>
         <span>hover a layer to light it; click a company to pin it and <strong>draw who it works with</strong></span>
+        <span>on a phone, tap the chart to open it full screen; pinch to read</span>
       </p>
     </details>
   </div>

@@ -1,4 +1,4 @@
-/* ledger.js :: 560 rows, every field, sortable, filterable, exportable.
+/* ledger.js :: 562 rows, every field, sortable, filterable, exportable.
    All state serialises into the URL so any view is shareable. */
 (function () {
   'use strict';
@@ -190,7 +190,7 @@
         const others = activeFilters().filter(o => o !== k);
         return rows.some(c => others.every(o => FILTERS[o](c)));
       });
-      empty.innerHTML = `<p>Nothing matches. ${blocking ? `The <strong>${FILTER_NAMES[blocking]}</strong> filter is doing the excluding.` : 'The combination of filters excludes all 560.'}</p>
+      empty.innerHTML = `<p>Nothing matches. ${blocking ? `The <strong>${FILTER_NAMES[blocking]}</strong> filter is doing the excluding.` : `The combination of filters excludes all ${rows.length}.`}</p>
         <button class="btn" id="empty-clear">CLEAR ALL FILTERS</button>`;
       empty.hidden = false;
       $('empty-clear').addEventListener('click', clearAll);
@@ -681,6 +681,6 @@
     }
   }
   boot().catch(err => {
-    $('lg-body').innerHTML = `<tr><td colspan="10" class="caption" style="padding:24px">The ledger data failed to load (${esc(err.message)}). Reload, or download the <a href="${ROOT}data/av-companies.csv">raw CSV</a>.</td></tr>`;
+    $('lg-body').innerHTML = `<tr><td colspan="10" class="caption" style="padding:24px">The directory data failed to load (${esc(err.message)}). Reload, or download the <a href="${ROOT}data/av-companies.csv">raw CSV</a>.</td></tr>`;
   });
 })();

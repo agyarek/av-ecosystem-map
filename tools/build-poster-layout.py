@@ -108,11 +108,11 @@ MED_STYLE = {"logo": 240, "logoY": 40, "nameY": 336, "nameSize": 40,
 
 # Type inside a district chip, same contract as MED_STYLE: both renderers read
 # these offsets from meta.chipStyle rather than hardcoding their own. The name
-# went bold and dropped to ~68% of its old size; the claim line is new — every
-# chip now carries a one-liner, the way the centre tiles always have.
-CHIP_STYLE = {"logo": 172, "logoY": 16, "nameY": 208, "nameSize": 13,
-              "nameStep": 16, "nameChars": 24,
-              "descY": 244, "descStep": 14, "descSize": 11.5, "descChars": 34}
+# is the chip's dominant text now — the logo gave up ground so the company can
+# be read without zooming — with the one-line claim beneath it.
+CHIP_STYLE = {"logo": 120, "logoY": 16, "nameY": 172, "nameSize": 32,
+              "nameStep": 36, "nameChars": 12,
+              "descY": 240, "descStep": 14, "descSize": 11.5, "descChars": 34}
 
 # One line under each district's name saying what the layer is, sized against
 # the count so the header answers "what is this and how big is it" in a glance.
@@ -388,7 +388,7 @@ def main():
         })
 
     centre = {
-        "cx": 0, "cy": 0, "r": CEN_HH, "hw": CEN_HW, "hh": CEN_HH,
+        "cx": 0, "cy": 0,
         "points": [[-CEN_HW, -CEN_HH], [CEN_HW, -CEN_HH],
                    [CEN_HW, CEN_HH], [-CEN_HW, CEN_HH]],
         "titleY": -CEN_HH + 130, "subY": -CEN_HH + 196,
@@ -433,6 +433,8 @@ def main():
             "medallionBox": {"x": round(ox - CEN_HW, 1), "y": round(oy - CEN_HH, 1),
                              "w": 2 * CEN_HW, "h": 2 * CEN_HH},
         },
+        # the centre travels under its old key name so every renderer keeps
+        # working without knowing the shape changed; the geometry is a rectangle
         "oct": centre, "districts": districts, "chips": chips, "medallion": medallion,
     }
 

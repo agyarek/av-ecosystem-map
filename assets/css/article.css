@@ -12,7 +12,7 @@
    inserting a section. */
 .article { counter-reset: sec; }
 .article h2.sec {
-  font-size: clamp(22px, min(2.6vw, 4vh), 32px); font-weight: 800;
+  font-size: clamp(18.5px, min(2.6vw, 4vh), 32px); font-weight: 800;
   letter-spacing: -0.015em; font-variation-settings: 'wdth' 112;
   display: flex; align-items: baseline; gap: 12px;
   counter-increment: sec;
@@ -248,7 +248,7 @@ table.spec td { font-size: 14px; }
 /* Operator page title: smaller than a section hero, and like every fluid size
    on this site it tracks the shorter viewport dimension so a landscape phone
    never gets larger type than the same phone held upright. */
-.op-title { font-size: clamp(30px, min(4.5vw, 7vh), 60px); }
+.op-title { font-size: clamp(22px, min(4.5vw, 7vh), 60px); }
 
 @media (orientation: landscape) and (max-height: 560px) {
   .article-head { padding: 24px 0 14px; }

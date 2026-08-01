@@ -299,6 +299,8 @@
   const pad2 = n => String(n).padStart(2, '0');
 
   const UPDATED = fmtDate('2026-07-31');
+  // fallback until derived-counts.json answers; every rendered count reads this
+  let companyCount = 562;
   const CORRECTION = 'mailto:agyarek+avecosystemmap@gmail.com?subject=AV%20map%20correction';
   window.AV.CORRECTION = CORRECTION;   // the one mailto, shared with the map card and ledger
 
@@ -322,7 +324,7 @@
             ['media/#pods-sec', 'Podcasts'],
             ['media/#events-sec', 'Events and conferences']],
   };
-  const CARET = '<svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.4 6 8 10.6 12.6 6"/></svg>';
+  const CARET = '<svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.4 6 8 10.6 12.6 6"/></svg>';
 
   const headerHTML = current => `<div class="bar">
     <a class="wordmark" href="${ROOT || './'}"><span class="dash" aria-hidden="true"></span>AV&nbsp;ECOSYSTEM&nbsp;MAP</a>
@@ -344,7 +346,7 @@
     </nav>
     <div class="chrome-tools">
       <div id="site-search" role="search">
-        <input type="search" placeholder="SEARCH 561" autocomplete="off" spellcheck="false" aria-label="Search companies">
+        <input type="search" placeholder="SEARCH ${companyCount}" autocomplete="off" spellcheck="false" aria-label="Search companies">
         <div id="search-results" role="listbox" aria-label="Search results"></div>
       </div>
       <button id="theme-toggle" aria-label="Toggle light and dark theme">${SUN}${MOON}</button>
@@ -432,17 +434,20 @@
   const head = document.querySelector('header.site');
   if (head) { head.innerHTML = headerHTML(currentPage); bindNavMenus(head); }
   const foot = document.querySelector('footer.site');
-  if (foot) {
-    foot.innerHTML = footerHTML(foot);
-    // The date the data was last rebuilt, stamped by build-indexes.py. The
-    // hardcoded constant above is only the no-fetch fallback; this is what
-    // stops "updated ..." drifting from the data it describes.
-    json('data/derived-counts.json').then(d => {
-      const g = d.meta && d.meta.generatedAt;
-      if (!g) return;
-      foot.querySelectorAll('[data-updated]').forEach(el => { el.textContent = fmtDate(g); });
-    }).catch(() => { /* fallback date stands */ });
-  }
+  if (foot) foot.innerHTML = footerHTML(foot);
+  // One fetch feeds everything that must track the data rather than the markup:
+  // the "updated ..." date in the footer and the company count in the search
+  // box. The hardcoded values are only the no-fetch fallbacks.
+  json('data/derived-counts.json').then(d => {
+    const g = d.meta && d.meta.generatedAt;
+    if (g && foot) foot.querySelectorAll('[data-updated]').forEach(el => { el.textContent = fmtDate(g); });
+    const n = d.meta && d.meta.companyCount;
+    if (n) {
+      companyCount = n;
+      const box = document.querySelector('#site-search input');
+      if (box) box.placeholder = `SEARCH ${n}`;
+    }
+  }).catch(() => { /* fallbacks stand */ });
 
   // ------------------------------------------------------------- theme
   const applyTheme = t => {
@@ -589,7 +594,7 @@
   const go = c => {
     close();
     input.value = '';
-    if (page === 'map' && window.AVposter) { window.AVposter.select(c.s, true); return; }
+    if (page === 'map' && window.AVposter) { window.AVposter.select(c.s); return; }
     if (page === 'companies' && window.AVledger) { window.AVledger.open(c.s); return; }
     location.href = page === 'map'
       ? ROOT + 'map/#' + c.s
@@ -600,7 +605,7 @@
       `<button class="hit${i === active ? ' active' : ''}" role="option" aria-selected="${i === active}">
         <span class="hn">${esc(c.n)}${c.x ? ' <s class="caption">exited</s>' : ''}</span>
         <span class="hc">${esc((c.c || '').replace('Governance: ', ''))}</span>
-      </button>`).join('') || '<div class="hit"><span class="caption">No matches in 560 organisations</span></div>';
+      </button>`).join('') || `<div class="hit"><span class="caption">No matches in ${companyCount} organisations</span></div>`;
     drop.classList.toggle('open', true);
     [...drop.querySelectorAll('button.hit')].forEach((b, i) =>
       b.addEventListener('click', () => go(hits[i])));

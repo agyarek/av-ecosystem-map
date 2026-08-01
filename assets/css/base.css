@@ -99,13 +99,16 @@ input, select { font: inherit; color: inherit; }
   letter-spacing: .14em; text-transform: uppercase; color: var(--muted);
 }
 .eyebrow .tick { color: var(--yellow); }
+/* Clamp floors are the phone sizes: the fluid middle term dies below ~690px,
+   so the floor must itself be a deliberate mobile step — nothing here should
+   dwarf the 15px wordmark in the bar. */
 h1.page-title {
-  font-size: clamp(38px, min(5.5vw, 9vh), 76px); font-weight: 800; line-height: 1.02;
+  font-size: clamp(26px, min(5.5vw, 9vh), 76px); font-weight: 800; line-height: 1.06;
   letter-spacing: -0.03em; font-variation-settings: 'wdth' 118;
   margin: 10px 0 0; text-wrap: balance;
 }
 h2.section-head, .section-head {
-  font-size: clamp(24px, min(3vw, 4.6vh), 38px); font-weight: 800; line-height: 1.1;
+  font-size: clamp(20px, min(3vw, 4.6vh), 38px); font-weight: 800; line-height: 1.1;
   letter-spacing: -0.02em; font-variation-settings: 'wdth' 112;
 }
 .standfirst {
@@ -117,7 +120,8 @@ h2.section-head, .section-head {
   max-width: var(--measure);
 }
 .prose p + p { margin-top: 16px; }
-.prose h3 { font-family: var(--font-display); font-weight: 800; font-size: 22px;
+.prose h3 { font-family: var(--font-display); font-weight: 800;
+  font-size: clamp(18px, min(2.6vw, 4vh), 22px);
   letter-spacing: -0.01em; font-variation-settings: 'wdth' 112; margin: 40px 0 12px; }
 .prose ul, .prose ol { padding-left: 22px; margin: 14px 0; }
 .prose li + li { margin-top: 8px; }
@@ -300,8 +304,18 @@ table.data tr:hover > td { background: color-mix(in oklab, var(--cyan) 5%, trans
 
 @media (max-width: 860px) {
   header.site .bar { gap: 10px; }
-  nav.primary { order: 3; flex-basis: 100%; margin: 0 -16px; padding: 0 16px 4px; }
+  /* The nav wraps into visible rows instead of scrolling off-screen: every
+     chapter and its caret is always on the glass, no blind horizontal swipe. */
+  nav.primary {
+    order: 3; flex-basis: 100%; margin: 0; padding: 0 0 4px;
+    flex-wrap: wrap; overflow-x: visible; gap: 2px 4px;
+  }
   #site-search input { width: min(180px, 34vw); }
+}
+@media (max-width: 640px) {
+  /* the portrait-phone step for long-form copy: 19px serif reads oversized
+     against a 15px wordmark on a 390px screen */
+  :root { --fs-lg: 17px; }
 }
 @media (max-width: 480px) {
   .doors { grid-template-columns: 1fr; }
@@ -477,8 +491,11 @@ a.li svg, .d-site a svg, .cc-site a svg { vertical-align: -2px; margin-right: 4p
    economics/, safety/ and owning-one/ became reachable from anywhere. */
 nav.primary .np { position: relative; display: inline-flex; align-items: center; }
 nav.primary .np.is-here > a { color: var(--ink); box-shadow: inset 0 -2px 0 var(--yellow); }
-nav.primary .np-more { padding: 7px 6px; color: var(--muted); line-height: 1; }
-nav.primary .np-more svg { display: block; transition: transform 160ms ease; }
+/* The caret is a real control, so it reads as one: ink-2 at rest rather than
+   near-invisible muted, and enough padding to be a finger target. flex:none
+   guards it against ever being the element a squeezed row collapses. */
+nav.primary .np-more { padding: 9px 7px; color: var(--ink-2); line-height: 1; flex: none; }
+nav.primary .np-more svg { display: block; flex: none; transition: transform 160ms ease; }
 nav.primary .np.open .np-more svg { transform: rotate(180deg); }
 /* Resting on the chapter is what opens its menu, so the whole item — name and
    caret together — answers the hover in the accent colour. */

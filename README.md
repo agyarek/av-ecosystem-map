@@ -13,8 +13,8 @@ Compiled and maintained by Kofi Agyare-Kwabi, ex-Uber Country Manager, GTM & Par
 | `/` | The loop, a tilted preview of the wall chart, and the six chapters |
 | `/overview/` | The industry in plain terms: what drives the car, human vs autonomous rideshare |
 | `/media/` | Publications, podcasts and events covering autonomy |
-| `/map/` | The wall chart: all 562 on one plate with an octagonal centre; zoom, filter, full screen, export, print |
-| `/companies/` | The ledger: every field, sortable, filterable, URL-shareable, CSV/JSON export |
+| `/map/` | The wall chart: all 562 on one plate with a rectangular centre; filter, full screen, export, print |
+| `/companies/` | The directory: every field, sortable, filterable, URL-shareable, CSV/JSON export |
 | `/companies/passenger-autonomy/` + 10 pages | The operators a passenger can actually meet, in depth (under `/companies/`) |
 | `/partnerships/` | 151 mapped relationships organised by function; the demand-layer story |
 | `/economics/#funding` | $41.8B of $200M+ events with the dataset's own known gaps published |
@@ -34,9 +34,9 @@ everything derivable into `data/` at build time; the browser renders and never r
 ├── data/         source of truth + generated indexes (never edit generated files by hand)
 └── tools/
     ├── validate-data.py        invariants; run before every commit, fail on error
-    ├── build-poster-layout.py  freezes wall-chart geometry: an octagon of ten
-    │                           operators, the ten remaining layers tiling the
-    │                           frame around it (562/562 placed, verified)
+    ├── build-poster-layout.py  freezes wall-chart geometry: a rectangular
+    │                           centre of twelve operators, the ten remaining
+    │                           layers tiling the frame around it (562/562)
     ├── build-indexes.py        partner index, derived counts, search index
     ├── fetch-logos.py          OPTIONAL logo upgrade: fetches, trims and commits
     │                           real marks. Logos already load at runtime, measured

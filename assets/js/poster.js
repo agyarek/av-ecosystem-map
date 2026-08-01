@@ -1,4 +1,4 @@
-/* poster.js :: the wall chart.
+/* poster.js :: the ecosystem map.
    Renders data/poster-layout.json verbatim (geometry is frozen at build time),
    then adds camera, selection, filters, exports and keyboard navigation.
 
@@ -928,7 +928,7 @@
     setTimeout(() => { URL.revokeObjectURL(a.href); a.remove(); }, 4000);
   }
   async function exportSVG() {
-    download('av-ecosystem-wall-chart.svg',
+    download('av-ecosystem-map.svg',
       new Blob([await exportString()], { type: 'image/svg+xml' }));
   }
   async function exportPNG(mult, btn) {
@@ -946,7 +946,7 @@
       URL.revokeObjectURL(img.src);
       const blob = await new Promise(res => canvas.toBlob(res, 'image/png'));
       if (!blob) throw new Error('blob');
-      download(`av-ecosystem-wall-chart@${mult}x.png`, blob);
+      download(`av-ecosystem-map@${mult}x.png`, blob);
     } catch (e) {
       alert(`This browser cannot rasterise ${(W * mult)}×${(H * mult)} pixels in one canvas. The SVG export is lossless at any size; use it for print.`);
     } finally { btn.textContent = old; }

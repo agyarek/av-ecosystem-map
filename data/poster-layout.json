@@ -707,8 +707,8 @@
    "w": 240,
    "h": 288,
    "sub": [
-    "VW licenses its AD stack for China",
-    "EVs starting 2026"
+    "VW licenses XPeng's AD stack for",
+    "China EVs starting 2026"
    ],
    "mono": "XP",
    "hue": 265,
@@ -8141,7 +8141,7 @@
    "h": 288,
    "sub": [
     "Port-side truck charging paired",
-    "with its own electric hauling"
+    "with their own electric hauling"
    ],
    "mono": "WA",
    "hue": 320,
@@ -11198,7 +11198,7 @@
    "w": 240,
    "h": 288,
    "sub": [
-    "Published its third annual State",
+    "Published their third annual State",
     "of AV report in 2026"
    ],
    "mono": "AV",
@@ -12281,7 +12281,7 @@
    "cat": "Vehicle Platform & Manufacturing",
    "hue": 40,
    "mono": "NU",
-   "claim": "Pivoted from delivery pods to licensing its driver; now powering Uber's 35,000-vehicle Lucid robotaxi programme."
+   "claim": "Pivoted from delivery pods to licensing their driver; now powering Uber's 35,000-vehicle Lucid robotaxi programme."
   },
   {
    "name": "May Mobility",
@@ -12320,7 +12320,7 @@
    "cat": "AV Driver / Autonomy Software",
    "hue": 265,
    "mono": "AV",
-   "claim": "Yandex-lineage driver now carrying Uber riders in Dallas; $375M from Uber and Nebius behind it."
+   "claim": "Yandex-lineage driver now carrying Uber riders in Dallas; $375M from Uber and Nebius behind them."
   },
   {
    "name": "SWM",

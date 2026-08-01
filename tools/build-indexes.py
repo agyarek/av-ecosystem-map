@@ -110,7 +110,7 @@ derived = {
     },
 }
 
-# slim index for the header search on every page and the wall-chart filters:
+# slim index for the header search on every page and the ecosystem-map filters:
 # ~1/8 the size of the full dataset. 125 raw opMaturity strings collapse into
 # seven buckets here so the filter UI stays legible.
 def maturity_bucket(c):

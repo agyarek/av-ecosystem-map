@@ -310,7 +310,7 @@
           : '<p class="caption">If you know of any partnerships, please reach out to me — the button below emails me directly.</p>'}
       </div>
       <div class="d-actions">
-        <a class="btn" href="../map/#${esc(c.slug)}">SHOW ON THE WALL CHART</a>
+        <a class="btn" href="../map/#${esc(c.slug)}">SHOW ON THE ECOSYSTEM MAP</a>
         <a class="btn" href="mailto:hello@kofiagyare.com?subject=${encodeURIComponent('AV map: ' + c.name)}">HELP IMPROVE THIS CARD</a>
       </div>
     </div>`;

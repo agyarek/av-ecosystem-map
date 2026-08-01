@@ -294,13 +294,18 @@
   }
 
   /* ---------------------------------------------------------------- table 2 */
+  const signed = v => (v < 0 ? '−$' : '$') + Math.abs(Math.round(v)).toLocaleString('en-US');
+  // each formatter takes (modelResult, fleetSize); most ignore the fleet
   const OUTPUTS = [
     ['cpm', 'Fully-loaded cost per revenue mile', r => '$' + r.cpm.toFixed(2)],
     ['revPerMile', 'Revenue per paid mile', r => '$' + r.revPerMile.toFixed(2)],
     ['profitDay', 'Contribution per vehicle per day', r =>
       (r.profitDay < 0 ? '−$' : '$') + Math.abs(r.profitDay).toFixed(0)],
-    ['profitYear', 'Contribution per vehicle per year', r =>
-      (r.profitYear < 0 ? '−$' : '$') + Math.abs(Math.round(r.profitYear)).toLocaleString('en-US')],
+    ['profitYear', 'Contribution per vehicle per year', r => signed(r.profitYear)],
+    ['fleetDay', 'Contribution per fleet per day', (r, fleet) =>
+      fleet ? signed(r.profitDay * fleet) : 'set a fleet size above'],
+    ['split', 'Where the money goes, per day', r =>
+      r.split.map(([k, v]) => `${k} $${Math.round(v)}`).join(' · '), { text: true }],
     ['paybackMonths', 'Payback on capex', r => r.paybackMonths ? r.paybackMonths.toFixed(0) + ' mo' : 'never'],
     ['breakeven', 'Breakeven paid miles per day', r => r.breakeven ? Math.ceil(r.breakeven) + ' mi' : 'none'],
     ['capex', 'Capex per vehicle', r => '$' + Math.round(r.capex).toLocaleString('en-US')],
@@ -314,17 +319,27 @@
     const pick = ['waymo', 'zoox', 'baidu-apollo-go'].filter(s => ec.companies[s]).slice(0, 3);
     while (pick.length < 2) pick.push(options[pick.length].slug);
 
-    // live, per-column input values; reset when a column changes company
+    // live, per-column input values; reset when a column changes company.
+    // _fleet rides along with the model inputs: prefilled from the ledger but
+    // an open field, so a reader can run the arithmetic for any fleet they like.
     const live = {};
     const inputsFor = slug => {
-      if (!live[slug]) live[slug] = { ...ec.companies[slug].inputs };
+      if (!live[slug]) {
+        live[slug] = { ...ec.companies[slug].inputs };
+        const led = bySlug[slug];
+        live[slug]._fleet = led && led.fleetSize ? String(led.fleetSize) : '';
+      }
       return live[slug];
+    };
+    const fleetOf = slug => {
+      const v = parseFloat(inputsFor(slug)._fleet);
+      return isFinite(v) && v > 0 ? v : null;
     };
 
     const ROWS = ECON_INPUTS.map(([k, label]) => ({ k, g: 'Assumptions', label, pin: PINNED_IN.includes(k) ? 1 : 0 }))
       .concat(OUTPUTS.map(([k, label]) => ({ k, g: 'Outputs', label, pin: k === 'cpm' ? 1 : 0 })));
     const on = new Set(ROWS.filter(r => r.pin).map(r => r.k)
-      .concat(['life', 'days', 'dead', 'ratio', 'ophr', 'profitDay', 'paybackMonths', 'breakeven']));
+      .concat(['life', 'days', 'dead', 'ratio', 'ophr', 'profitDay', 'fleetDay', 'split', 'paybackMonths', 'breakeven']));
 
     function render() {
       const cols = pick.map(s => ({
@@ -334,10 +349,11 @@
       const inRows = ECON_INPUTS.filter(([k]) => on.has(k));
       const outRows = OUTPUTS.filter(([k]) => on.has(k));
 
-      const fleetRow = `<tr><th scope="row" class="mlabel">Fleet, vehicles<span class="v-sub">from the ledger, not an assumption</span></th>` +
-        cols.map(c => `<td>${c.co && c.co.fleetSize
-          ? `<span class="v-num">${c.co.fleetSize.toLocaleString('en-US')}</span>`
-          : '<span class="blank">Not disclosed</span>'}</td>`).join('') + '</tr>';
+      const fleetRow = `<tr><th scope="row" class="mlabel">Fleet, vehicles<span class="v-sub">prefilled from the ledger — overwrite it for your own arithmetic</span></th>` +
+        cols.map((c, ci) => `<td><input class="eco-in" inputmode="numeric"
+             data-col="${ci}" data-k="_fleet" value="${esc(c.inputs._fleet || '')}"
+             placeholder="fleet size"
+             aria-label="Fleet size for ${esc(c.meta.name)}"></td>`).join('') + '</tr>';
 
       $('eco-table').innerHTML = `<table class="data cmp eco">
         <thead><tr><th scope="col" class="mlabel">Metric</th>
@@ -351,8 +367,8 @@
              aria-label="${esc(label)} for ${esc(c.meta.name)}"></td>`).join('') + '</tr>').join('')}
         </tbody>
         <tbody class="out">
-          ${outRows.map(([k, label, fmt]) => `<tr><th scope="row" class="mlabel">${esc(label)}</th>` +
-          cols.map(c => `<td><span class="v-num strong">${esc(fmt(c.out))}</span></td>`).join('') + '</tr>').join('')}
+          ${outRows.map(([k, label, fmt, o]) => `<tr><th scope="row" class="mlabel">${esc(label)}</th>` +
+          cols.map(c => `<td><span class="${o && o.text ? 'v-text' : 'v-num strong'}">${esc(fmt(c.out, fleetOf(c.slug)))}</span></td>`).join('') + '</tr>').join('')}
         </tbody>
         <tfoot><tr><th scope="row" class="mlabel">Basis</th>
           ${cols.map(c => `<td><span class="v-sub basis">${esc(c.meta.note)}</span></td>`).join('')}
@@ -369,7 +385,9 @@
       const outRows = OUTPUTS.filter(([k]) => on.has(k));
       [...$('eco-table').querySelectorAll('tbody.out tr')].forEach((tr, ri) => {
         const fmt = outRows[ri][2];
-        [...tr.querySelectorAll('td span')].forEach((sp, ci) => { sp.textContent = fmt(cols[ci]); });
+        [...tr.querySelectorAll('td span')].forEach((sp, ci) => {
+          sp.textContent = fmt(cols[ci], fleetOf(pick[ci]));
+        });
       });
     });
 
@@ -398,13 +416,13 @@
       }));
       const rows = [{
         label: 'Fleet, vehicles',
-        cells: cols.map(c => ({ text: c.co && c.co.fleetSize ? c.co.fleetSize.toLocaleString('en-US') : 'Not disclosed' })),
+        cells: cols.map(c => ({ text: c.inputs._fleet ? (+c.inputs._fleet).toLocaleString('en-US') : 'Not set' })),
       }].concat(
         ECON_INPUTS.filter(([k]) => on.has(k)).map(([k, label]) => ({
           label, cells: cols.map(c => ({ text: String(c.inputs[k]) })),
         })),
-        OUTPUTS.filter(([k]) => on.has(k)).map(([k, label, fmt]) => ({
-          label, cells: cols.map(c => ({ text: fmt(c.out) })),
+        OUTPUTS.filter(([k]) => on.has(k)).map(([k, label, fmt, o]) => ({
+          label, cells: cols.map((c, ci) => ({ text: fmt(c.out, fleetOf(pick[ci])), mono: !(o && o.text) })),
         })));
       exportTablePNG({
         title: cols.map(c => c.meta.name).join('  ·  '),

@@ -58,16 +58,18 @@
   </div>
 
   <div class="ch-controls" role="group" aria-label="Chart controls">
-    <div class="ch-row"><span class="lbl">Window</span><div class="chips" id="ch-range"></div></div>
-    <div class="ch-row"><span class="lbl">View</span><div class="chips" id="ch-mode"></div></div>
-    <div class="ch-row" id="ch-by-row"><span class="lbl">Split by</span><div class="chips" id="ch-by"></div></div>
-    <div class="ch-row"><span class="lbl">Companies</span><div class="chips" id="ch-companies"></div></div>
+    <div class="ch-col"><span class="lbl">Window</span><div class="chips" id="ch-range"></div></div>
+    <div class="ch-col"><span class="lbl">View</span><div class="chips" id="ch-mode"></div></div>
+    <div class="ch-col" id="ch-by-row"><span class="lbl">Split by</span><div class="chips" id="ch-by"></div></div>
+    <div class="ch-col ch-col-wide"><span class="lbl">Companies</span><div class="chips" id="ch-companies"></div></div>
   </div>
 
   <p class="caption" id="ch-state" aria-live="polite" style="margin-top:14px"></p>
 
   <div class="ch-plot" id="ch-capital"></div>
   <div class="ch-legend" id="ch-legend"></div>
+  <p class="caption" style="margin-top:8px">Click any bar for the rounds behind it: which companies
+    were funded that quarter, and how much each raised.</p>
   <p class="ch-sub">Events per quarter</p>
   <div class="ch-plot" id="ch-count"></div>
 
@@ -79,25 +81,15 @@
   </details>
 </section>
 
-<section aria-labelledby="tl-sec">
-  <h2 class="sec" id="tl-sec">Timeline of funding announcements</h2>
-  <p class="prose">Every disclosed round of $200M or more since August 2023, newest first. The forms
-    are worth reading as strategy rather than plumbing: a <strong>Series</strong> letter is private
-    money betting on a company, an <strong>IPO</strong> is that bet being sold on to public markets,
-    and a <strong>SPAC</strong> is a shortcut to the same place — a merger with a listed shell that
-    reaches the public market faster and with less scrutiny than a conventional listing. Two
-    companies took that route here: Kodiak Robotics in September 2025 and Einride in June 2026, both
-    in freight rather than passenger autonomy.</p>
-  <div class="rail-row" id="fund-filters" style="display:flex;gap:6px;flex-wrap:wrap;margin-top:16px" role="group" aria-label="Filter by form and region"></div>
-  <p class="caption" id="fund-state" aria-live="polite" style="margin-top:8px"></p>
-  <div class="timeline-wrap"><div class="timeline" id="timeline"></div></div>
-  <p class="caption">Scroll sideways. Every event verified against a primary source or major outlet at
-    compilation; I leave out sub-$200M events and pure secondaries by design.</p>
-</section>
-
 <section aria-labelledby="cuts-sec">
   <h2 class="sec" id="cuts-sec">Who raised the most, in what form, and from where</h2>
-  <div class="prose"><p>The same thirty events, asked three different questions.</p></div>
+  <span id="tl-sec"></span>
+  <div class="prose"><p>The same thirty events, asked three different questions — then listed in
+    full, newest first. The forms are worth reading as strategy rather than plumbing: a
+    <strong>Series</strong> letter is private money betting on a company, an <strong>IPO</strong> is
+    that bet being sold on to public markets, and a <strong>SPAC</strong> is a shortcut to the same
+    place. Two companies took that route here: Kodiak Robotics in September 2025 and Einride in June
+    2026, both in freight rather than passenger autonomy.</p></div>
   <div class="fact-grid" style="grid-template-columns:repeat(auto-fit,minmax(280px,1fr))">
     <div class="fact"><span class="lbl" style="font-weight:700;color:var(--ink)">Who raised the most</span><div id="cut-raised" style="margin-top:8px"></div></div>
     <div class="fact"><span class="lbl" style="font-weight:700;color:var(--ink)">Who writes the cheques repeatedly</span><div id="cut-investors" style="margin-top:8px"></div></div>
@@ -112,6 +104,12 @@
       supply chain being purchased. NVIDIA appears across Waabi, Wayve and Nuro, in addition to selling
       all three their compute.</p>
   </div>
+  <h3 class="sub-sec">Every announcement, newest first</h3>
+  <div class="rail-row" id="fund-filters" style="display:flex;gap:6px;flex-wrap:wrap;margin-top:12px" role="group" aria-label="Filter by form and region"></div>
+  <p class="caption" id="fund-state" aria-live="polite" style="margin-top:8px"></p>
+  <div class="timeline-wrap"><div class="timeline" id="timeline"></div></div>
+  <p class="caption">Every event verified against a primary source or major outlet at
+    compilation; I leave out sub-$200M events and pure secondaries by design.</p>
 </section>
 
 <section aria-labelledby="gaps-sec">
@@ -124,34 +122,28 @@
 
 <div id="unit-economics">
 <section>
-  <h2 class="sec" id="utilisation-is-the-lever-the-whole-business-turn">Unit economics: utilisation is the lever the whole business turns on</h2>
+  <h2 class="sec" id="break-the-business-yourself">Unit economics: break the business yourself</h2>
+  <span id="utilisation-is-the-lever-the-whole-business-turn"></span>
   <div class="prose">
-    <p>Strip the branding away and every operator on this map runs the same machine: vehicles that cost
-      $50,000 to $150,000 with their autonomy kit, driven as many paid miles per day as demand allows,
-      against costs that are mostly fixed per mile. The lever that makes any of it plausible is
-      utilisation. A private car works about an hour a day; a robotaxi can work twenty. That twentyfold
-      difference is what spreads the hardware bill thin enough to compete with a human driver who brings
-      their own car to work.</p>
-    <p>The one number that matters is <strong>fully-loaded cost per revenue mile</strong>. Third-party
-      analysis puts Waymo's 2025 figure near <strong>$1.98</strong>. Every bull case in the sector
-      reduces to the same claim: that number halves. At $1.98 against a roughly $16 fare over eight
-      miles, a vehicle earns back very little. At $0.99, contribution rises to roughly $70,000 per
-      vehicle per year and a $90,000 purpose-built robotaxi pays for itself in about sixteen months.</p>
+    <p>Every operator on this map runs the same machine: a vehicle costing $50,000 to $150,000 with
+      its autonomy kit, driven as many paid miles a day as demand allows, against costs that are
+      mostly fixed per mile. The lever is <strong>utilisation</strong> — a private car works an hour
+      a day, a robotaxi can work twenty — and the one number that matters is
+      <strong>fully-loaded cost per revenue mile</strong>. Third-party analysis puts Waymo's 2025
+      figure near <strong>$1.98</strong>; every bull case in the sector is the claim that it halves.
+      Published component breakdowns land at $0.30-0.50 per mile for a mature operation — a
+      destination nobody operates at today, and the gap between it and $1.98 is the industry's
+      entire remaining homework.</p>
   </div>
   <div class="note" style="margin-top:20px">
     <p><strong>Provenance warning, before you quote anything.</strong> No operator publishes
       fully-loaded cost per mile. The $1.98 figure is a third-party analyst estimate circulating across
       several publications, and at least one trail leads back to a Reddit analysis. That is the state of
       public knowledge in this industry, which is exactly why the calculator below exists: substitute
-      your own assumptions and stop depending on anyone's estimate, including mine.</p>
+      your own assumptions and stop depending on anyone's estimate, including mine. Defaults describe
+      a plausible 2026 US robotaxi, tuned so the optimist's case just about closes; every field is an
+      editorial claim — change any of them.</p>
   </div>
-</section>
-
-<section>
-  <h2 class="sec" id="break-the-business-yourself">Break the business yourself</h2>
-  <p class="prose">Defaults describe a plausible 2026 US robotaxi, tuned so the optimist's case just
-    about closes: a purpose-built EV with a current-generation kit, twenty service hours, and a fare at
-    ride-hail rates. Every field is an editorial claim; change any of them.</p>
   <div class="calc">
     <div class="calc-inputs" id="calc-inputs"></div>
     <div class="calc-out">
@@ -168,29 +160,22 @@
       <div class="fact"><span class="lbl" style="font-weight:700;color:var(--ink)">Where the money goes, per day</span><div id="o-split" style="margin-top:8px"></div></div>
       <p class="caption calc-note">The Waymo-versus-Tesla argument lives in exactly two inputs: the
         autonomy kit cost and the vehicles-per-remote-operator ratio. Move those two and watch the
-        conclusion follow.</p>
+        conclusion follow. The tables below run this same model for the real operators, side by
+        side.</p>
     </div>
   </div>
 </section>
-
-<section>
-  <h2 class="sec" id="the-published-cost-breakdown-and-why-it-is-a-tar">The published cost breakdown, and why it is a target</h2>
-  <div class="prose">
-    <p>Published breakdowns for a mature operation land in the $0.30 to $0.50 per mile range: vehicle
-      depreciation at $0.08 to $0.12 amortised over 500,000-plus miles, energy $0.03 to $0.05,
-      maintenance $0.03 to $0.05, insurance $0.05 to $0.08 declining as safety data accumulates, remote
-      monitoring $0.05 to $0.10 declining with autonomy quality, and technology and compute $0.03 to
-      $0.05. Treat that as a destination rather than a description. Nobody operates there today, and the
-      gap between it and the $1.98 estimate is the industry's entire remaining homework.</p>
-  </div>
-</section>
+<span id="the-published-cost-breakdown-and-why-it-is-a-tar"></span>
 </div>
 
 <div id="comparing-the-operators">
 <section aria-labelledby="cmp-sec">
-  <h2 class="sec" id="cmp-sec">Two to four companies, side by side</h2>
+  <h2 class="sec" id="cmp-sec">The operators, side by side</h2>
   <div class="prose">
-    <p>Choose the companies, then choose the measures. Every figure carries a marker for how well it is
+    <p>This is where the page's arithmetic lands: two to four companies in the columns, every measure
+      you choose in the rows — including, from the model above, <strong>cost per paid mile</strong>,
+      <strong>where the money goes per day</strong> (depreciation first), and the contribution a
+      whole fleet makes once you set its size. Every figure carries a marker for how well it is
       known — <abbr class="cmark c-disclosed" title="Stated by the company or in a filing">D</abbr>isclosed,
       <abbr class="cmark c-reported" title="Carried by a major outlet, not company-confirmed">R</abbr>eported,
       <abbr class="cmark c-estimated" title="Derived or modelled by me">E</abbr>stimated,
@@ -232,17 +217,33 @@
       </div>
     </div>
   </div>
-  <div class="prose" style="margin-top:30px" id="four-operators-four-different-bets">
-    <p><strong>Four operators, four different bets.</strong> The tables above carry the detail; the
-      bets are simple to state. <strong>Waymo</strong> bets
-      that scale plus a sub-$20,000 sixth-generation kit beats everyone to the cost line, carrying a
-      $126B valuation on roughly $355M of revenue while it tries. <strong>Tesla</strong> bets that
-      cameras-only hardware and no mapping bill halve the cost line — an $8 five-mile ride against
-      Waymo's $15-17, though its Austin base fare tripling in March 2026 suggests the first data
-      argued back. <strong>Baidu</strong> and <strong>Pony.ai</strong> bet on cheaper vehicles in
-      denser cities, with breakeven claims that are vehicle-level in single cities, not company
-      profitability; <strong>Aurora</strong> bets on freight, where the benchmark is a real rate
-      rather than a subsidised fare and the headroom is thinner than the robotaxi story suggests.</p>
+</section>
+
+<section aria-labelledby="bets-sec">
+  <h2 class="sec" id="bets-sec">What each operator believes, and what it costs</h2>
+  <span id="four-operators-four-different-bets"></span>
+  <div class="prose">
+    <p>The tables above carry the detail; the philosophies behind them are simple to state, and
+      almost every strategic difference in the sector is downstream of one choice: <strong>what the
+      car is allowed to know</strong>.</p>
+    <p><strong>Cameras only.</strong> <strong>Tesla</strong> bets that a camera-only stack on a
+      mass-produced consumer vehicle, with no lidar bill and no mapping bill, halves the cost line —
+      an $8 five-mile ride against Waymo's $15-17. The wager is that software eventually closes the
+      gap that redundant sensors close today; its Austin base fare tripling in March 2026 suggests
+      the first data argued back.</p>
+    <p><strong>Sensor fusion.</strong> <strong>Waymo</strong> and <strong>Zoox</strong> bet the other
+      way: lidar, radar and cameras cross-checking each other, high-definition maps underneath, and a
+      kit cost that must be engineered down rather than deleted. Waymo's sub-$20,000 sixth-generation
+      kit is that engineering in public, carried by a $126B valuation on roughly $355M of revenue
+      while scale catches up. The wager is that safety cases, regulators and insurers price
+      redundancy long before they price promises.</p>
+    <p><strong>Cheaper vehicles, denser cities.</strong> <strong>Baidu</strong> and
+      <strong>Pony.ai</strong> take sensor fusion but attack the other term of the equation: a
+      $28,000 platform at Chinese fare levels in cities dense enough to keep utilisation high. Their
+      breakeven claims are vehicle-level in single cities, not company profitability.</p>
+    <p><strong>Freight, not fares.</strong> <strong>Aurora</strong> bets on trucking, where the
+      benchmark is a real freight rate rather than a subsidised fare — honest revenue, thinner
+      headroom than the robotaxi story suggests.</p>
   </div>
 
   <div class="hard-part" id="where-the-arithmetic-actually-stands" style="margin-top:30px">

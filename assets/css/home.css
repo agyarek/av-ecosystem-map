@@ -24,14 +24,13 @@
 
 /* The robotaxi. Tyres are a fixed near-black, never a theme token: --ink flips
    to off-white in dark mode, which is how the tyres once rendered white. The
-   headlamps, beams and tail bar were called out as working; unchanged. */
+   beams carry the headlight read on their own; the lamp dots came off. */
 .token .body { fill: var(--cyan); stroke: #171813; stroke-width: 1.4; }
 .token .livery { fill: #FFFFFF; opacity: .55; }
 .token .seam { fill: #171813; opacity: .28; }
 .token .glass { fill: var(--paper); opacity: .85; }
 .token .wheel { fill: #171813; }
 .token .blister { fill: #171813; opacity: .8; }
-.token .lamp { fill: var(--yellow); }
 .token .beam { fill: var(--yellow); opacity: .16; }
 .token .tail { fill: var(--alert); }
 .token .reverse { fill: #FFFFFF; opacity: 0; }
@@ -74,24 +73,26 @@
 .station .desc { font-size: clamp(12px, 1.15vw, 14.5px); color: var(--ink-2); margin-top: 7px; line-height: 1.45; }
 .station .layers { display: flex; gap: 5px; flex-wrap: wrap; margin-top: 9px; }
 .station .layers .chip { cursor: default; font-size: 10px; padding: 3px 8px; }
+.station .chip-count { color: var(--muted); margin-left: 6px; font-weight: 500; }
 .station .ex {
   font-size: clamp(11px, 1vw, 12.5px); color: var(--muted); margin-top: 9px;
   line-height: 1.45; border-top: 1px solid var(--rule); padding-top: 8px;
 }
 
-/* The depleting ring: a rounded rect stroked around the active card, dashed to
-   its own perimeter (pathLength=100) and drained by stroke-dashoffset. It is in
-   addition to the highlight border, not instead of it. */
+/* The depleting ring: a path traced along the active card's own outline —
+   every corner at the card's real radius — dashed to its perimeter
+   (pathLength=100) and drained by stroke-dashoffset. It is in addition to the
+   highlight border, not instead of it. */
 .st-ring {
   position: absolute; inset: 0; width: 100%; height: 100%;
   pointer-events: none; overflow: visible;
 }
-.st-ring rect {
+.st-ring path {
   fill: none; stroke: var(--cyan); stroke-width: 3;
   stroke-dasharray: 100; stroke-dashoffset: 100;
   opacity: 0; transition: opacity 200ms;
 }
-.station.active .st-ring rect { opacity: .9; }
+.station.active .st-ring path { opacity: .9; }
 
 /* ------------------------------------------------------------- controls */
 /* Where the four cards meet: back, play/pause, forward. Always visible. */
@@ -201,18 +202,23 @@
   font-size: clamp(24px, 3.6vw, 38px); font-weight: 800; letter-spacing: -0.015em;
   font-variation-settings: 'wdth' 112; color: var(--ink); margin-top: 4px;
 }
-.band-more {
-  display: grid; grid-template-rows: 0fr; opacity: 0;
-  transition: grid-template-rows 260ms ease, opacity 260ms ease, margin-top 260ms ease;
-  margin-top: 0;
-}
-.band:hover .band-more, .band:focus-visible .band-more,
-.band:focus-within .band-more { grid-template-rows: 1fr; opacity: 1; margin-top: 10px; }
-.band-more > * { overflow: hidden; }
+/* The summary is the point of the list, so it shows at rest: title, overview
+   and sub-topics are all readable without a pointer. Hover keeps the flourish
+   — background, the art sliding in, and the CTA appearing. */
+.band-more { margin-top: 10px; }
 .band-desc { font-size: var(--fs-base); color: var(--ink-2); max-width: 60ch; line-height: 1.5; }
-.band-btn { display: inline-block; margin-top: 14px; }
-.band-desc + .band-btn { margin-top: 14px; }
-.band-more { grid-auto-rows: min-content; }
+.band-topics {
+  display: flex; flex-wrap: wrap; gap: 6px 14px; margin-top: 10px;
+  font-family: var(--font-mono); font-size: var(--fs-xs); color: var(--muted);
+}
+.band-topics span::before { content: "■ "; font-size: .7em; color: var(--cyan); }
+.band-btn {
+  display: inline-block; margin-top: 14px;
+  opacity: 0; transform: translateY(4px);
+  transition: opacity 200ms ease, transform 200ms ease;
+}
+.band:hover .band-btn, .band:focus-visible .band-btn,
+.band:focus-within .band-btn { opacity: 1; transform: none; }
 .band-art {
   position: absolute; inset: 0; pointer-events: none;
   display: flex; justify-content: flex-end; align-items: center;
@@ -222,11 +228,11 @@
 .band-art svg { height: 100%; max-height: 200px; width: auto; margin-right: 4vw; }
 .band:hover .band-art, .band:focus-within .band-art { opacity: .55; transform: translateX(0); }
 @media (prefers-reduced-motion: reduce) {
-  .band-more, .band-art { transition: none; }
+  .band-btn, .band-art { transition: none; }
 }
-/* Touch and small screens: no hover, so everything shows at rest and the art
+/* Touch and small screens: no hover, so the CTA shows at rest too and the art
    stays a quiet backdrop. */
 @media (max-width: 680px), (hover: none) {
-  .band-more { grid-template-rows: 1fr; opacity: 1; margin-top: 10px; }
+  .band-btn { opacity: 1; transform: none; }
   .band-art { opacity: .18; transform: none; }
 }

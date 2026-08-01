@@ -44,8 +44,10 @@ SRC  = os.path.join(ROOT, "data", "av-companies.json")
 OUT  = os.path.join(ROOT, "data", "poster-layout.json")
 
 # ---------------------------------------------------------------- constants
-M       = 240     # chip tile, px — sized so a 180px logo fits with air around it
-PITCH   = 264     # lattice pitch: tile plus the air between tiles
+CHIP_W  = 240     # chip tile width, px — sized so a 172px logo fits with air
+CHIP_H  = 288     # taller than wide: logo, a bold name, then a one-line claim
+PITCH_X = 264     # lattice pitch: tile plus the air between tiles
+PITCH_Y = 312
 HEADER  = 280     # district header band
 PAD     = 32      # inset between a district border and its tile grid
 BAR_H   = 120     # the show-all bar reserved across the bottom of each district
@@ -104,6 +106,30 @@ HUE = {
 MED_STYLE = {"logo": 240, "logoY": 40, "nameY": 336, "nameSize": 40,
              "claimY": 384, "claimStep": 30, "claimSize": 22, "claimChars": 40}
 
+# Type inside a district chip, same contract as MED_STYLE: both renderers read
+# these offsets from meta.chipStyle rather than hardcoding their own. The name
+# went bold and dropped to ~68% of its old size; the claim line is new — every
+# chip now carries a one-liner, the way the centre tiles always have.
+CHIP_STYLE = {"logo": 172, "logoY": 16, "nameY": 208, "nameSize": 13,
+              "nameStep": 16, "nameChars": 24,
+              "descY": 244, "descStep": 14, "descSize": 11.5, "descChars": 34}
+
+# One line under each district's name saying what the layer is, sized against
+# the count so the header answers "what is this and how big is it" in a glance.
+DESC = {
+    "AV Driver / Autonomy Software": "THE {n} ORGS WRITING AND PROVING THE DRIVING SOFTWARE",
+    "Sensing & Compute Hardware": "THE {n} ORGS BUILDING THE SENSORS AND SILICON IT RUNS ON",
+    "Data, Maps & Simulation": "THE {n} ORGS SUPPLYING ITS DATA, MAPS AND PRACTICE MILES",
+    "Connectivity & Infrastructure": "THE {n} ORGS KEEPING FLEETS CONNECTED TO ROAD AND CLOUD",
+    "Vehicle Platform & Manufacturing": "THE {n} ORGS BUILDING THE VEHICLES AROUND THE DRIVER",
+    "Demand & Commercial Platforms": "THE {n} ORGS THAT BRING IT RIDERS AND FREIGHT",
+    "Fleet Operations & Depot": "THE {n} ORGS CHARGING, CLEANING AND TURNING FLEETS AROUND",
+    "Capital, Insurance & Risk": "THE {n} ORGS FUNDING AND INSURING THE INDUSTRY",
+    "Governance: Regulators & Government": "THE {n} BODIES THAT PERMIT, LICENSE AND POLICE IT",
+    "Governance: Standards, Safety & Advocacy": "THE {n} BODIES WRITING ITS STANDARDS AND MAKING ITS CASE",
+}
+DESC_SIZE = 24    # IBM Plex Mono, same voice as the org counts
+
 # centre tile grid: 6 columns x 2 rows — wide, like the plate itself
 MED_COLS, MED_ROWS = 6, 2
 MED_CW, MED_CH = 560, 500          # cell size
@@ -129,13 +155,44 @@ def grid_cells(rect):
     x0, y0, x1, y1 = rect
     cells = []
     gy = y0 + HEADER + PAD
-    while gy + M <= y1 - PAD - BAR_H:
+    while gy + CHIP_H <= y1 - PAD - BAR_H:
         gx = x0 + PAD
-        while gx + M <= x1 - PAD:
+        while gx + CHIP_W <= x1 - PAD:
             cells.append((round(gx, 1), round(gy, 1)))
-            gx += PITCH
-        gy += PITCH
+            gx += PITCH_X
+        gy += PITCH_Y
     return cells
+
+
+def wrap_plain(text, maxchars, maxlines):
+    """Word-wrap for chip claims and header descriptors, frozen at build time so
+    the JS and Python renderers print identical lines instead of each wrapping
+    their own way. Overflow ends in an ellipsis rather than clipping."""
+    words = str(text).split()
+    lines, cur = [], ""
+    for w in words:
+        t = (cur + " " + w).strip()
+        if len(t) <= maxchars:
+            cur = t
+        else:
+            if cur:
+                lines.append(cur)
+            cur = w
+            if len(lines) == maxlines:
+                break
+    if cur and len(lines) < maxlines:
+        lines.append(cur)
+    flat = " ".join(words)
+    if len(lines) == maxlines and len(flat) > len(" ".join(lines)):
+        lines[maxlines - 1] = lines[maxlines - 1][:maxchars - 1] + "…"
+    return lines[:maxlines]
+
+
+def chip_sub(c):
+    """The chip's one-liner. `sub` sometimes holds a semicolon-joined list of
+    subcategories; the first segment reads as a claim on its own."""
+    text = (c.get("sub") or "").split(";")[0].strip()
+    return wrap_plain(text, CHIP_STYLE["descChars"], 3)
 
 
 def wrap_label(label, width):
@@ -204,7 +261,7 @@ def main():
     for side in ("left", "right"):
         name = BANDS[side][0]
         for cols in range(1, 24):
-            width = cols * PITCH + 2 * PAD
+            width = cols * PITCH_X + 2 * PAD
             if side == "left":
                 rect = (-CEN_HW - width, -CEN_HH, -CEN_HW, CEN_HH)
             else:
@@ -227,18 +284,18 @@ def main():
     for band in ("top", "bottom"):
         names = BANDS[band] if band == "top" else BANDS[band][::-1]
         counts = [len(shown[n]) for n in names]
-        usable_cols = int((plate_w - 2 * PAD * len(names)) // PITCH)
+        usable_cols = int((plate_w - 2 * PAD * len(names)) // PITCH_X)
         for rows in range(1, 20):
             need = [math.ceil(n / rows) for n in counts]
             if sum(need) <= usable_cols: break
         else:
             sys.exit(f"FATAL: {band} band cannot be made deep enough")
-        depth = HEADER + rows * PITCH + 2 * PAD + BAR_H
+        depth = HEADER + rows * PITCH_Y + 2 * PAD + BAR_H
         spare = usable_cols - sum(need)
         order = sorted(range(len(need)), key=lambda i: -(counts[i] % rows or rows))
         for k in range(spare):
             need[order[k % len(need)]] += 1
-        widths = [c * PITCH + 2 * PAD for c in need]
+        widths = [c * PITCH_X + 2 * PAD for c in need]
         widths[-1] += plate_w - sum(widths)      # absorb rounding on the last one
         rects, x = [], plate_x0
         for name, w in zip(names, widths):
@@ -263,6 +320,11 @@ def main():
             total = len(buckets[name])
             lines = wrap_label(name.replace("Governance: ", "").upper(), x1 - x0)
             hidden = overflow[name]
+            # the descriptor wraps against the header width at build time, so
+            # the narrow side districts get two lines and nothing ever clips
+            desc_room = int((x1 - x0 - 60) / (DESC_SIZE * 0.62))
+            desc_lines = wrap_plain(DESC.get(name, "").format(n=total),
+                                    max(20, desc_room), 2)
             districts.append({
                 "id": slug(name), "layer": name, "band": band,
                 "hue": HUE.get(name, 220), "count": total,
@@ -283,6 +345,7 @@ def main():
                            "w": round(x1 - x0, 1), "h": HEADER,
                            "tx": round(x0, 1), "tw": round(x1 - x0, 1)},
                 "labelSize": LABEL_SIZE, "labelLines": lines,
+                "desc": desc_lines, "descSize": DESC_SIZE,
                 # The full-width door to the rest of the roster. Emitted even
                 # when nothing is hidden (then the renderer skips it), so the
                 # geometry is stable if a layer shrinks.
@@ -294,7 +357,8 @@ def main():
                 chips.append({
                     "name": c["name"], "slug": slug_of(c), "id": c["id"],
                     "district": slug(name),
-                    "x": gx, "y": gy, "w": M, "h": M,
+                    "x": gx, "y": gy, "w": CHIP_W, "h": CHIP_H,
+                    "sub": chip_sub(c),
                     "mono": c.get("mono", c["name"][:2].upper()),
                     "hue": HUE.get(name, 220),
                     "layers": len(c.get("all", [])),
@@ -356,9 +420,11 @@ def main():
     layout = {
         "meta": {
             "generatedBy": "tools/build-poster-layout.py",
-            "module": M, "pitch": PITCH, "margin": MARGIN, "headerH": HEADER,
+            "chipW": CHIP_W, "chipH": CHIP_H, "pitchX": PITCH_X, "pitchY": PITCH_Y,
+            "margin": MARGIN, "headerH": HEADER,
             "companyCount": len(companies),
-            "medallionCount": len(MEDALLION), "medStyle": MED_STYLE,
+            "medallionCount": len(MEDALLION),
+            "medStyle": MED_STYLE, "chipStyle": CHIP_STYLE,
             "width": W, "height": H,
             "plate": {"x": MARGIN, "y": MARGIN, "w": round(plate_w, 1),
                       "h": round(plate_y1 - plate_y0, 1), "rx": PLATE_R},

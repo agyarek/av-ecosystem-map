@@ -68,7 +68,7 @@
       <path id="track-dash" d="M 90 400 L 90 180 Q 90 70 200 70 L 900 70 Q 1010 70 1010 180 L 1010 600 Q 1010 710 900 710 L 200 710 Q 90 710 90 600 Z"/>
       <!-- A robotaxi seen from above: no driver's side, a symmetric cabin, sensor
            blisters at all four corners and a lidar mast standing proud of the roof.
-           Headlamps, beams and tail bar are carried over unchanged. -->
+           The beams and tail bar carry the lighting; the lamp dots are gone. -->
       <g id="token" class="token">
         <path class="beam" d="M 30 -10 L 78 -26 L 78 4 Z"/>
         <path class="beam" d="M 30 10 L 78 26 L 78 -4 Z"/>
@@ -86,8 +86,6 @@
         <circle class="blister" cx="25" cy="-11" r="2.6"/>
         <circle class="blister" cx="-25" cy="11" r="2.6"/>
         <circle class="blister" cx="25" cy="11" r="2.6"/>
-        <circle class="lamp" cx="29" cy="-8" r="3"/>
-        <circle class="lamp" cx="29" cy="8" r="3"/>
         <rect class="tail" x="-34" y="-9" width="3.2" height="18" rx="1.6"/>
         <rect class="reverse" x="-34" y="-9" width="3.2" height="18" rx="1.6"/>
         <circle class="mast" cx="0" cy="0" r="8.5"/>
@@ -98,43 +96,43 @@
 
     <div class="loop-inner">
       <div class="station st-request" data-station="request">
-        <svg class="st-ring" aria-hidden="true"><rect/></svg>
+        <svg class="st-ring" aria-hidden="true"><path/></svg>
         <h3 class="st-name">The Request <span class="st-count num" data-count="request">53 orgs</span></h3>
         <p class="desc">A rider taps a button and a marketplace prices the trip, picks a car and dispatches it.
           The platforms that own that moment own the customer.</p>
-        <p class="layers"><span class="chip"><span class="dot" style="background:oklch(var(--layer-l) var(--layer-c) 20)"></span>Demand &amp; Commercial Platforms</span></p>
+        <p class="layers"><span class="chip"><span class="dot" style="background:oklch(var(--layer-l) var(--layer-c) 20)"></span>Demand &amp; Commercial Platforms<span class="chip-count num" data-layer="Demand &amp; Commercial Platforms">53 orgs</span></span></p>
         <p class="ex">Uber alone carries 20 or more AV partnerships, yet autonomous vehicles are still about 0.1 percent of rideshare trips (late 2025).</p>
       </div>
 
       <div class="station st-driver" data-station="driver">
-        <svg class="st-ring" aria-hidden="true"><rect/></svg>
+        <svg class="st-ring" aria-hidden="true"><path/></svg>
         <h3 class="st-name">The Driver <span class="st-count num" data-count="driver">193 orgs</span></h3>
         <p class="desc">Software perceives, predicts and drives, built on sensors, silicon, data, maps,
           simulation and connectivity. This is where most of the industry lives.</p>
         <p class="layers">
-          <span class="chip"><span class="dot" style="background:oklch(var(--layer-l) var(--layer-c) 265)"></span>Autonomy Software</span>
-          <span class="chip"><span class="dot" style="background:oklch(var(--layer-l) var(--layer-c) 200)"></span>Sensing &amp; Compute</span>
-          <span class="chip"><span class="dot" style="background:oklch(var(--layer-l) var(--layer-c) 150)"></span>Data, Maps &amp; Simulation</span>
-          <span class="chip"><span class="dot" style="background:oklch(var(--layer-l) var(--layer-c) 230)"></span>Connectivity</span>
+          <span class="chip"><span class="dot" style="background:oklch(var(--layer-l) var(--layer-c) 265)"></span>Autonomy Software<span class="chip-count num" data-layer="AV Driver / Autonomy Software">57 orgs</span></span>
+          <span class="chip"><span class="dot" style="background:oklch(var(--layer-l) var(--layer-c) 200)"></span>Sensing &amp; Compute<span class="chip-count num" data-layer="Sensing &amp; Compute Hardware">38 orgs</span></span>
+          <span class="chip"><span class="dot" style="background:oklch(var(--layer-l) var(--layer-c) 150)"></span>Data, Maps &amp; Simulation<span class="chip-count num" data-layer="Data, Maps &amp; Simulation">47 orgs</span></span>
+          <span class="chip"><span class="dot" style="background:oklch(var(--layer-l) var(--layer-c) 230)"></span>Connectivity<span class="chip-count num" data-layer="Connectivity &amp; Infrastructure">55 orgs</span></span>
         </p>
         <p class="ex">Waymo's sixth-generation driver carries 42 percent fewer sensors at a reported unit cost below $20,000, less than half the prior generation.</p>
       </div>
 
       <div class="station st-pitlane" data-station="pitlane">
-        <svg class="st-ring" aria-hidden="true"><rect/></svg>
+        <svg class="st-ring" aria-hidden="true"><path/></svg>
         <h3 class="st-name">The Pitlane <span class="st-count num" data-count="pitlane">70 orgs</span></h3>
         <p class="desc">Depots charge, clean, inspect and service the fleet, then send it straight back out.
           How fast that handoff happens decides whether the economics work.</p>
-        <p class="layers"><span class="chip"><span class="dot" style="background:oklch(var(--layer-l) var(--layer-c) 320)"></span>Fleet Operations &amp; Depot</span></p>
+        <p class="layers"><span class="chip"><span class="dot" style="background:oklch(var(--layer-l) var(--layer-c) 320)"></span>Fleet Operations &amp; Depot<span class="chip-count num" data-layer="Fleet Operations &amp; Depot">70 orgs</span></span></p>
         <p class="ex">Transdev runs Waymo depot operations across Phoenix, San Francisco, Los Angeles, Austin and Nashville. The depot layer is almost entirely outsourced.</p>
       </div>
 
       <div class="station st-vehicle" data-station="vehicle">
-        <svg class="st-ring" aria-hidden="true"><rect/></svg>
+        <svg class="st-ring" aria-hidden="true"><path/></svg>
         <h3 class="st-name">The Vehicle <span class="st-count num" data-count="vehicle">64 orgs</span></h3>
         <p class="desc">A production-grade platform engineered around a driver that never gets tired:
           redundant steering, braking and power, because nobody is left to grab the wheel.</p>
-        <p class="layers"><span class="chip"><span class="dot" style="background:oklch(var(--layer-l) var(--layer-c) 40)"></span>Vehicle Platform &amp; Manufacturing</span></p>
+        <p class="layers"><span class="chip"><span class="dot" style="background:oklch(var(--layer-l) var(--layer-c) 40)"></span>Vehicle Platform &amp; Manufacturing<span class="chip-count num" data-layer="Vehicle Platform &amp; Manufacturing">67 orgs</span></span></p>
         <p class="ex">Waymo's vehicle supply chain now runs four deep: Jaguar Land Rover, Zeekr, Hyundai, and a preliminary Toyota alliance for personally owned cars.</p>
       </div>
     </div>
@@ -172,192 +170,114 @@
     </div>
     <a class="hero-stage" href="map/" tabindex="-1" aria-hidden="true">
       <div class="hero-tilt">
-      <svg class="mini-map" viewBox="0 0 4408 4294" aria-hidden="true" preserveAspectRatio="xMidYMid meet">
-      <polygon points="200,200 1676,200 1676,818 200,818" fill="oklch(0.62 0.075 265)" fill-opacity=".14" stroke="oklch(0.62 0.075 265)" stroke-opacity=".5" stroke-width="6"/>
-      <polygon points="1676,200 2796,200 2796,818 1676,818" fill="oklch(0.62 0.075 200)" fill-opacity=".14" stroke="oklch(0.62 0.075 200)" stroke-opacity=".5" stroke-width="6"/>
-      <polygon points="2796,200 4208,200 4208,818 2796,818" fill="oklch(0.62 0.075 150)" fill-opacity=".14" stroke="oklch(0.62 0.075 150)" stroke-opacity=".5" stroke-width="6"/>
-      <polygon points="4208,818 4208,1886 3266,1886 3266,1544.4 2026.0,818" fill="oklch(0.62 0.075 230)" fill-opacity=".14" stroke="oklch(0.62 0.075 230)" stroke-opacity=".5" stroke-width="6"/>
-      <polygon points="4208,1886 4208,3298 2026.0,3298 3266,2571.6 3266,1886" fill="oklch(0.62 0.075 40)" fill-opacity=".14" stroke="oklch(0.62 0.075 40)" stroke-opacity=".5" stroke-width="6"/>
-      <polygon points="200,3298 1854,3298 1854,4094 200,4094" fill="oklch(0.62 0.075 290)" fill-opacity=".14" stroke="oklch(0.62 0.075 290)" stroke-opacity=".5" stroke-width="6"/>
-      <polygon points="1854,3298 2618,3298 2618,4094 1854,4094" fill="oklch(0.62 0.075 60)" fill-opacity=".14" stroke="oklch(0.62 0.075 60)" stroke-opacity=".5" stroke-width="6"/>
-      <polygon points="2618,3298 4208,3298 4208,4094 2618,4094" fill="oklch(0.62 0.075 320)" fill-opacity=".14" stroke="oklch(0.62 0.075 320)" stroke-opacity=".5" stroke-width="6"/>
-      <polygon points="200,818 2026.0,818 786,1544.4 786,2052 200,2052" fill="oklch(0.62 0.075 20)" fill-opacity=".14" stroke="oklch(0.62 0.075 20)" stroke-opacity=".5" stroke-width="6"/>
-      <polygon points="200,2052 786,2052 786,2571.6 2026.0,3298 200,3298" fill="oklch(0.62 0.075 340)" fill-opacity=".14" stroke="oklch(0.62 0.075 340)" stroke-opacity=".5" stroke-width="6"/>
-      <polygon points="1512.4,818 2539.6,818 3266,1544.4 3266,2571.6 2539.6,3298 1512.4,3298 786,2571.6 786,1544.4" fill="oklch(0.62 0.075 265)" fill-opacity=".10" stroke="oklch(0.62 0.075 265)" stroke-opacity=".6" stroke-width="8"/>
-      <rect x="240" y="450" width="132" height="132" rx="18" fill="oklch(0.62 0.075 265)" fill-opacity=".55"/>
-      <rect x="418" y="450" width="132" height="132" rx="18" fill="oklch(0.62 0.075 265)" fill-opacity=".55"/>
-      <rect x="596" y="450" width="132" height="132" rx="18" fill="oklch(0.62 0.075 265)" fill-opacity=".55"/>
-      <rect x="774" y="450" width="132" height="132" rx="18" fill="oklch(0.62 0.075 265)" fill-opacity=".55"/>
-      <rect x="952" y="450" width="132" height="132" rx="18" fill="oklch(0.62 0.075 265)" fill-opacity=".55"/>
-      <rect x="1130" y="450" width="132" height="132" rx="18" fill="oklch(0.62 0.075 265)" fill-opacity=".55"/>
-      <rect x="1308" y="450" width="132" height="132" rx="18" fill="oklch(0.62 0.075 265)" fill-opacity=".55"/>
-      <rect x="1486" y="450" width="132" height="132" rx="18" fill="oklch(0.62 0.075 265)" fill-opacity=".55"/>
-      <rect x="240" y="628" width="132" height="132" rx="18" fill="oklch(0.62 0.075 265)" fill-opacity=".55"/>
-      <rect x="418" y="628" width="132" height="132" rx="18" fill="oklch(0.62 0.075 265)" fill-opacity=".55"/>
-      <rect x="596" y="628" width="132" height="132" rx="18" fill="oklch(0.62 0.075 265)" fill-opacity=".55"/>
-      <rect x="774" y="628" width="132" height="132" rx="18" fill="oklch(0.62 0.075 265)" fill-opacity=".55"/>
-      <rect x="952" y="628" width="132" height="132" rx="18" fill="oklch(0.62 0.075 265)" fill-opacity=".55"/>
-      <rect x="1130" y="628" width="132" height="132" rx="18" fill="oklch(0.62 0.075 265)" fill-opacity=".55"/>
-      <rect x="1308" y="628" width="132" height="132" rx="18" fill="oklch(0.62 0.075 265)" fill-opacity=".55"/>
-      <rect x="1486" y="628" width="132" height="132" rx="18" fill="oklch(0.62 0.075 265)" fill-opacity=".55"/>
-      <rect x="1716" y="450" width="132" height="132" rx="18" fill="oklch(0.62 0.075 200)" fill-opacity=".55"/>
-      <rect x="1894" y="450" width="132" height="132" rx="18" fill="oklch(0.62 0.075 200)" fill-opacity=".55"/>
-      <rect x="2072" y="450" width="132" height="132" rx="18" fill="oklch(0.62 0.075 200)" fill-opacity=".55"/>
-      <rect x="2250" y="450" width="132" height="132" rx="18" fill="oklch(0.62 0.075 200)" fill-opacity=".55"/>
-      <rect x="2428" y="450" width="132" height="132" rx="18" fill="oklch(0.62 0.075 200)" fill-opacity=".55"/>
-      <rect x="2606" y="450" width="132" height="132" rx="18" fill="oklch(0.62 0.075 200)" fill-opacity=".55"/>
-      <rect x="1716" y="628" width="132" height="132" rx="18" fill="oklch(0.62 0.075 200)" fill-opacity=".55"/>
-      <rect x="1894" y="628" width="132" height="132" rx="18" fill="oklch(0.62 0.075 200)" fill-opacity=".55"/>
-      <rect x="2072" y="628" width="132" height="132" rx="18" fill="oklch(0.62 0.075 200)" fill-opacity=".55"/>
-      <rect x="2250" y="628" width="132" height="132" rx="18" fill="oklch(0.62 0.075 200)" fill-opacity=".55"/>
-      <rect x="2428" y="628" width="132" height="132" rx="18" fill="oklch(0.62 0.075 200)" fill-opacity=".55"/>
-      <rect x="2836" y="450" width="132" height="132" rx="18" fill="oklch(0.62 0.075 150)" fill-opacity=".55"/>
-      <rect x="3014" y="450" width="132" height="132" rx="18" fill="oklch(0.62 0.075 150)" fill-opacity=".55"/>
-      <rect x="3192" y="450" width="132" height="132" rx="18" fill="oklch(0.62 0.075 150)" fill-opacity=".55"/>
-      <rect x="3370" y="450" width="132" height="132" rx="18" fill="oklch(0.62 0.075 150)" fill-opacity=".55"/>
-      <rect x="3548" y="450" width="132" height="132" rx="18" fill="oklch(0.62 0.075 150)" fill-opacity=".55"/>
-      <rect x="3726" y="450" width="132" height="132" rx="18" fill="oklch(0.62 0.075 150)" fill-opacity=".55"/>
-      <rect x="3904" y="450" width="132" height="132" rx="18" fill="oklch(0.62 0.075 150)" fill-opacity=".55"/>
-      <rect x="2836" y="628" width="132" height="132" rx="18" fill="oklch(0.62 0.075 150)" fill-opacity=".55"/>
-      <rect x="3014" y="628" width="132" height="132" rx="18" fill="oklch(0.62 0.075 150)" fill-opacity=".55"/>
-      <rect x="3192" y="628" width="132" height="132" rx="18" fill="oklch(0.62 0.075 150)" fill-opacity=".55"/>
-      <rect x="3370" y="628" width="132" height="132" rx="18" fill="oklch(0.62 0.075 150)" fill-opacity=".55"/>
-      <rect x="3548" y="628" width="132" height="132" rx="18" fill="oklch(0.62 0.075 150)" fill-opacity=".55"/>
-      <rect x="3726" y="628" width="132" height="132" rx="18" fill="oklch(0.62 0.075 150)" fill-opacity=".55"/>
-      <rect x="3904" y="628" width="132" height="132" rx="18" fill="oklch(0.62 0.075 150)" fill-opacity=".55"/>
-      <rect x="3113.6" y="1068" width="132" height="132" rx="18" fill="oklch(0.62 0.075 230)" fill-opacity=".55"/>
-      <rect x="3291.6" y="1068" width="132" height="132" rx="18" fill="oklch(0.62 0.075 230)" fill-opacity=".55"/>
-      <rect x="3469.6" y="1068" width="132" height="132" rx="18" fill="oklch(0.62 0.075 230)" fill-opacity=".55"/>
-      <rect x="3647.6" y="1068" width="132" height="132" rx="18" fill="oklch(0.62 0.075 230)" fill-opacity=".55"/>
-      <rect x="3825.6" y="1068" width="132" height="132" rx="18" fill="oklch(0.62 0.075 230)" fill-opacity=".55"/>
-      <rect x="4003.6" y="1068" width="132" height="132" rx="18" fill="oklch(0.62 0.075 230)" fill-opacity=".55"/>
-      <rect x="3291.6" y="1246" width="132" height="132" rx="18" fill="oklch(0.62 0.075 230)" fill-opacity=".55"/>
-      <rect x="3469.6" y="1246" width="132" height="132" rx="18" fill="oklch(0.62 0.075 230)" fill-opacity=".55"/>
-      <rect x="3647.6" y="1246" width="132" height="132" rx="18" fill="oklch(0.62 0.075 230)" fill-opacity=".55"/>
-      <rect x="3825.6" y="1246" width="132" height="132" rx="18" fill="oklch(0.62 0.075 230)" fill-opacity=".55"/>
-      <rect x="4003.6" y="1246" width="132" height="132" rx="18" fill="oklch(0.62 0.075 230)" fill-opacity=".55"/>
-      <rect x="3469.6" y="1424" width="132" height="132" rx="18" fill="oklch(0.62 0.075 230)" fill-opacity=".55"/>
-      <rect x="3647.6" y="1424" width="132" height="132" rx="18" fill="oklch(0.62 0.075 230)" fill-opacity=".55"/>
-      <rect x="3825.6" y="1424" width="132" height="132" rx="18" fill="oklch(0.62 0.075 230)" fill-opacity=".55"/>
-      <rect x="4003.6" y="1424" width="132" height="132" rx="18" fill="oklch(0.62 0.075 230)" fill-opacity=".55"/>
-      <rect x="3469.6" y="1602" width="132" height="132" rx="18" fill="oklch(0.62 0.075 230)" fill-opacity=".55"/>
-      <rect x="3469.6" y="2136" width="132" height="132" rx="18" fill="oklch(0.62 0.075 40)" fill-opacity=".55"/>
-      <rect x="3647.6" y="2136" width="132" height="132" rx="18" fill="oklch(0.62 0.075 40)" fill-opacity=".55"/>
-      <rect x="3825.6" y="2136" width="132" height="132" rx="18" fill="oklch(0.62 0.075 40)" fill-opacity=".55"/>
-      <rect x="4003.6" y="2136" width="132" height="132" rx="18" fill="oklch(0.62 0.075 40)" fill-opacity=".55"/>
-      <rect x="3469.6" y="2314" width="132" height="132" rx="18" fill="oklch(0.62 0.075 40)" fill-opacity=".55"/>
-      <rect x="3647.6" y="2314" width="132" height="132" rx="18" fill="oklch(0.62 0.075 40)" fill-opacity=".55"/>
-      <rect x="3825.6" y="2314" width="132" height="132" rx="18" fill="oklch(0.62 0.075 40)" fill-opacity=".55"/>
-      <rect x="4003.6" y="2314" width="132" height="132" rx="18" fill="oklch(0.62 0.075 40)" fill-opacity=".55"/>
-      <rect x="3469.6" y="2492" width="132" height="132" rx="18" fill="oklch(0.62 0.075 40)" fill-opacity=".55"/>
-      <rect x="3647.6" y="2492" width="132" height="132" rx="18" fill="oklch(0.62 0.075 40)" fill-opacity=".55"/>
-      <rect x="3825.6" y="2492" width="132" height="132" rx="18" fill="oklch(0.62 0.075 40)" fill-opacity=".55"/>
-      <rect x="4003.6" y="2492" width="132" height="132" rx="18" fill="oklch(0.62 0.075 40)" fill-opacity=".55"/>
-      <rect x="3291.6" y="2670" width="132" height="132" rx="18" fill="oklch(0.62 0.075 40)" fill-opacity=".55"/>
-      <rect x="3469.6" y="2670" width="132" height="132" rx="18" fill="oklch(0.62 0.075 40)" fill-opacity=".55"/>
-      <rect x="3647.6" y="2670" width="132" height="132" rx="18" fill="oklch(0.62 0.075 40)" fill-opacity=".55"/>
-      <rect x="3825.6" y="2670" width="132" height="132" rx="18" fill="oklch(0.62 0.075 40)" fill-opacity=".55"/>
-      <rect x="4003.6" y="2670" width="132" height="132" rx="18" fill="oklch(0.62 0.075 40)" fill-opacity=".55"/>
-      <rect x="3113.6" y="2848" width="132" height="132" rx="18" fill="oklch(0.62 0.075 40)" fill-opacity=".55"/>
-      <rect x="3291.6" y="2848" width="132" height="132" rx="18" fill="oklch(0.62 0.075 40)" fill-opacity=".55"/>
-      <rect x="240" y="3548" width="132" height="132" rx="18" fill="oklch(0.62 0.075 290)" fill-opacity=".55"/>
-      <rect x="418" y="3548" width="132" height="132" rx="18" fill="oklch(0.62 0.075 290)" fill-opacity=".55"/>
-      <rect x="596" y="3548" width="132" height="132" rx="18" fill="oklch(0.62 0.075 290)" fill-opacity=".55"/>
-      <rect x="774" y="3548" width="132" height="132" rx="18" fill="oklch(0.62 0.075 290)" fill-opacity=".55"/>
-      <rect x="952" y="3548" width="132" height="132" rx="18" fill="oklch(0.62 0.075 290)" fill-opacity=".55"/>
-      <rect x="1130" y="3548" width="132" height="132" rx="18" fill="oklch(0.62 0.075 290)" fill-opacity=".55"/>
-      <rect x="1308" y="3548" width="132" height="132" rx="18" fill="oklch(0.62 0.075 290)" fill-opacity=".55"/>
-      <rect x="1486" y="3548" width="132" height="132" rx="18" fill="oklch(0.62 0.075 290)" fill-opacity=".55"/>
-      <rect x="1664" y="3548" width="132" height="132" rx="18" fill="oklch(0.62 0.075 290)" fill-opacity=".55"/>
-      <rect x="240" y="3726" width="132" height="132" rx="18" fill="oklch(0.62 0.075 290)" fill-opacity=".55"/>
-      <rect x="418" y="3726" width="132" height="132" rx="18" fill="oklch(0.62 0.075 290)" fill-opacity=".55"/>
-      <rect x="596" y="3726" width="132" height="132" rx="18" fill="oklch(0.62 0.075 290)" fill-opacity=".55"/>
-      <rect x="774" y="3726" width="132" height="132" rx="18" fill="oklch(0.62 0.075 290)" fill-opacity=".55"/>
-      <rect x="952" y="3726" width="132" height="132" rx="18" fill="oklch(0.62 0.075 290)" fill-opacity=".55"/>
-      <rect x="1130" y="3726" width="132" height="132" rx="18" fill="oklch(0.62 0.075 290)" fill-opacity=".55"/>
-      <rect x="1308" y="3726" width="132" height="132" rx="18" fill="oklch(0.62 0.075 290)" fill-opacity=".55"/>
-      <rect x="1486" y="3726" width="132" height="132" rx="18" fill="oklch(0.62 0.075 290)" fill-opacity=".55"/>
-      <rect x="1664" y="3726" width="132" height="132" rx="18" fill="oklch(0.62 0.075 290)" fill-opacity=".55"/>
-      <rect x="240" y="3904" width="132" height="132" rx="18" fill="oklch(0.62 0.075 290)" fill-opacity=".55"/>
-      <rect x="418" y="3904" width="132" height="132" rx="18" fill="oklch(0.62 0.075 290)" fill-opacity=".55"/>
-      <rect x="596" y="3904" width="132" height="132" rx="18" fill="oklch(0.62 0.075 290)" fill-opacity=".55"/>
-      <rect x="774" y="3904" width="132" height="132" rx="18" fill="oklch(0.62 0.075 290)" fill-opacity=".55"/>
-      <rect x="952" y="3904" width="132" height="132" rx="18" fill="oklch(0.62 0.075 290)" fill-opacity=".55"/>
-      <rect x="1894" y="3548" width="132" height="132" rx="18" fill="oklch(0.62 0.075 60)" fill-opacity=".55"/>
-      <rect x="2072" y="3548" width="132" height="132" rx="18" fill="oklch(0.62 0.075 60)" fill-opacity=".55"/>
-      <rect x="2250" y="3548" width="132" height="132" rx="18" fill="oklch(0.62 0.075 60)" fill-opacity=".55"/>
-      <rect x="2428" y="3548" width="132" height="132" rx="18" fill="oklch(0.62 0.075 60)" fill-opacity=".55"/>
-      <rect x="1894" y="3726" width="132" height="132" rx="18" fill="oklch(0.62 0.075 60)" fill-opacity=".55"/>
-      <rect x="2072" y="3726" width="132" height="132" rx="18" fill="oklch(0.62 0.075 60)" fill-opacity=".55"/>
-      <rect x="2250" y="3726" width="132" height="132" rx="18" fill="oklch(0.62 0.075 60)" fill-opacity=".55"/>
-      <rect x="2428" y="3726" width="132" height="132" rx="18" fill="oklch(0.62 0.075 60)" fill-opacity=".55"/>
-      <rect x="1894" y="3904" width="132" height="132" rx="18" fill="oklch(0.62 0.075 60)" fill-opacity=".55"/>
-      <rect x="2072" y="3904" width="132" height="132" rx="18" fill="oklch(0.62 0.075 60)" fill-opacity=".55"/>
-      <rect x="2250" y="3904" width="132" height="132" rx="18" fill="oklch(0.62 0.075 60)" fill-opacity=".55"/>
-      <rect x="2658" y="3548" width="132" height="132" rx="18" fill="oklch(0.62 0.075 320)" fill-opacity=".55"/>
-      <rect x="2836" y="3548" width="132" height="132" rx="18" fill="oklch(0.62 0.075 320)" fill-opacity=".55"/>
-      <rect x="3014" y="3548" width="132" height="132" rx="18" fill="oklch(0.62 0.075 320)" fill-opacity=".55"/>
-      <rect x="3192" y="3548" width="132" height="132" rx="18" fill="oklch(0.62 0.075 320)" fill-opacity=".55"/>
-      <rect x="3370" y="3548" width="132" height="132" rx="18" fill="oklch(0.62 0.075 320)" fill-opacity=".55"/>
-      <rect x="3548" y="3548" width="132" height="132" rx="18" fill="oklch(0.62 0.075 320)" fill-opacity=".55"/>
-      <rect x="3726" y="3548" width="132" height="132" rx="18" fill="oklch(0.62 0.075 320)" fill-opacity=".55"/>
-      <rect x="3904" y="3548" width="132" height="132" rx="18" fill="oklch(0.62 0.075 320)" fill-opacity=".55"/>
-      <rect x="2658" y="3726" width="132" height="132" rx="18" fill="oklch(0.62 0.075 320)" fill-opacity=".55"/>
-      <rect x="2836" y="3726" width="132" height="132" rx="18" fill="oklch(0.62 0.075 320)" fill-opacity=".55"/>
-      <rect x="3014" y="3726" width="132" height="132" rx="18" fill="oklch(0.62 0.075 320)" fill-opacity=".55"/>
-      <rect x="3192" y="3726" width="132" height="132" rx="18" fill="oklch(0.62 0.075 320)" fill-opacity=".55"/>
-      <rect x="3370" y="3726" width="132" height="132" rx="18" fill="oklch(0.62 0.075 320)" fill-opacity=".55"/>
-      <rect x="3548" y="3726" width="132" height="132" rx="18" fill="oklch(0.62 0.075 320)" fill-opacity=".55"/>
-      <rect x="3726" y="3726" width="132" height="132" rx="18" fill="oklch(0.62 0.075 320)" fill-opacity=".55"/>
-      <rect x="3904" y="3726" width="132" height="132" rx="18" fill="oklch(0.62 0.075 320)" fill-opacity=".55"/>
-      <rect x="2658" y="3904" width="132" height="132" rx="18" fill="oklch(0.62 0.075 320)" fill-opacity=".55"/>
-      <rect x="2836" y="3904" width="132" height="132" rx="18" fill="oklch(0.62 0.075 320)" fill-opacity=".55"/>
-      <rect x="3014" y="3904" width="132" height="132" rx="18" fill="oklch(0.62 0.075 320)" fill-opacity=".55"/>
-      <rect x="3192" y="3904" width="132" height="132" rx="18" fill="oklch(0.62 0.075 320)" fill-opacity=".55"/>
-      <rect x="3370" y="3904" width="132" height="132" rx="18" fill="oklch(0.62 0.075 320)" fill-opacity=".55"/>
-      <rect x="240" y="1068" width="132" height="132" rx="18" fill="oklch(0.62 0.075 20)" fill-opacity=".55"/>
-      <rect x="418" y="1068" width="132" height="132" rx="18" fill="oklch(0.62 0.075 20)" fill-opacity=".55"/>
-      <rect x="596" y="1068" width="132" height="132" rx="18" fill="oklch(0.62 0.075 20)" fill-opacity=".55"/>
-      <rect x="774" y="1068" width="132" height="132" rx="18" fill="oklch(0.62 0.075 20)" fill-opacity=".55"/>
-      <rect x="952" y="1068" width="132" height="132" rx="18" fill="oklch(0.62 0.075 20)" fill-opacity=".55"/>
-      <rect x="240" y="1246" width="132" height="132" rx="18" fill="oklch(0.62 0.075 20)" fill-opacity=".55"/>
-      <rect x="418" y="1246" width="132" height="132" rx="18" fill="oklch(0.62 0.075 20)" fill-opacity=".55"/>
-      <rect x="596" y="1246" width="132" height="132" rx="18" fill="oklch(0.62 0.075 20)" fill-opacity=".55"/>
-      <rect x="774" y="1246" width="132" height="132" rx="18" fill="oklch(0.62 0.075 20)" fill-opacity=".55"/>
-      <rect x="240" y="1424" width="132" height="132" rx="18" fill="oklch(0.62 0.075 20)" fill-opacity=".55"/>
-      <rect x="418" y="1424" width="132" height="132" rx="18" fill="oklch(0.62 0.075 20)" fill-opacity=".55"/>
-      <rect x="596" y="1424" width="132" height="132" rx="18" fill="oklch(0.62 0.075 20)" fill-opacity=".55"/>
-      <rect x="240" y="1602" width="132" height="132" rx="18" fill="oklch(0.62 0.075 20)" fill-opacity=".55"/>
-      <rect x="418" y="1602" width="132" height="132" rx="18" fill="oklch(0.62 0.075 20)" fill-opacity=".55"/>
-      <rect x="596" y="1602" width="132" height="132" rx="18" fill="oklch(0.62 0.075 20)" fill-opacity=".55"/>
-      <rect x="240" y="1780" width="132" height="132" rx="18" fill="oklch(0.62 0.075 20)" fill-opacity=".55"/>
-      <rect x="240" y="2302" width="132" height="132" rx="18" fill="oklch(0.62 0.075 340)" fill-opacity=".55"/>
-      <rect x="418" y="2302" width="132" height="132" rx="18" fill="oklch(0.62 0.075 340)" fill-opacity=".55"/>
-      <rect x="596" y="2302" width="132" height="132" rx="18" fill="oklch(0.62 0.075 340)" fill-opacity=".55"/>
-      <rect x="240" y="2480" width="132" height="132" rx="18" fill="oklch(0.62 0.075 340)" fill-opacity=".55"/>
-      <rect x="418" y="2480" width="132" height="132" rx="18" fill="oklch(0.62 0.075 340)" fill-opacity=".55"/>
-      <rect x="596" y="2480" width="132" height="132" rx="18" fill="oklch(0.62 0.075 340)" fill-opacity=".55"/>
-      <rect x="240" y="2658" width="132" height="132" rx="18" fill="oklch(0.62 0.075 340)" fill-opacity=".55"/>
-      <rect x="418" y="2658" width="132" height="132" rx="18" fill="oklch(0.62 0.075 340)" fill-opacity=".55"/>
-      <rect x="596" y="2658" width="132" height="132" rx="18" fill="oklch(0.62 0.075 340)" fill-opacity=".55"/>
-      <rect x="240" y="2836" width="132" height="132" rx="18" fill="oklch(0.62 0.075 340)" fill-opacity=".55"/>
-      <rect x="418" y="2836" width="132" height="132" rx="18" fill="oklch(0.62 0.075 340)" fill-opacity=".55"/>
-      <rect x="596" y="2836" width="132" height="132" rx="18" fill="oklch(0.62 0.075 340)" fill-opacity=".55"/>
-      <rect x="774" y="2836" width="132" height="132" rx="18" fill="oklch(0.62 0.075 340)" fill-opacity=".55"/>
-      <rect x="240" y="3014" width="132" height="132" rx="18" fill="oklch(0.62 0.075 340)" fill-opacity=".55"/>
-      <rect x="418" y="3014" width="132" height="132" rx="18" fill="oklch(0.62 0.075 340)" fill-opacity=".55"/>
-      <rect x="596" y="3014" width="132" height="132" rx="18" fill="oklch(0.62 0.075 340)" fill-opacity=".55"/>
-      <rect x="774" y="3014" width="132" height="132" rx="18" fill="oklch(0.62 0.075 340)" fill-opacity=".55"/>
-      <rect x="1097.0" y="1268" width="606" height="372" rx="24" fill="oklch(0.62 0.075 265)" fill-opacity=".62"/>
-      <rect x="1723.0" y="1268" width="606" height="372" rx="24" fill="oklch(0.62 0.075 265)" fill-opacity=".62"/>
-      <rect x="2349.0" y="1268" width="606" height="372" rx="24" fill="oklch(0.62 0.075 40)" fill-opacity=".62"/>
-      <rect x="872.0" y="1872" width="562" height="372" rx="24" fill="oklch(0.62 0.075 40)" fill-opacity=".62"/>
-      <rect x="1454.0" y="1872" width="562" height="372" rx="24" fill="oklch(0.62 0.075 265)" fill-opacity=".62"/>
-      <rect x="2036.0" y="1872" width="562" height="372" rx="24" fill="oklch(0.62 0.075 265)" fill-opacity=".62"/>
-      <rect x="2618.0" y="1872" width="562" height="372" rx="24" fill="oklch(0.62 0.075 265)" fill-opacity=".62"/>
-      <rect x="1097.0" y="2476" width="606" height="372" rx="24" fill="oklch(0.62 0.075 40)" fill-opacity=".62"/>
-      <rect x="1723.0" y="2476" width="606" height="372" rx="24" fill="oklch(0.62 0.075 265)" fill-opacity=".62"/>
-      <rect x="2349.0" y="2476" width="606" height="372" rx="24" fill="oklch(0.62 0.075 265)" fill-opacity=".62"/>
+      <svg class="mini-map" viewBox="0 0 5752 4096" aria-hidden="true" preserveAspectRatio="xMidYMid meet">
+      <polygon points="200,200 1584,200 1584,1288 200,1288" fill="oklch(0.62 0.075 265)" fill-opacity=".14" stroke="oklch(0.62 0.075 265)" stroke-opacity=".5" stroke-width="6"/>
+      <polygon points="1584,200 2968,200 2968,1288 1584,1288" fill="oklch(0.62 0.075 200)" fill-opacity=".14" stroke="oklch(0.62 0.075 200)" stroke-opacity=".5" stroke-width="6"/>
+      <polygon points="2968,200 4088,200 4088,1288 2968,1288" fill="oklch(0.62 0.075 150)" fill-opacity=".14" stroke="oklch(0.62 0.075 150)" stroke-opacity=".5" stroke-width="6"/>
+      <polygon points="4088,200 5552,200 5552,1288 4088,1288" fill="oklch(0.62 0.075 230)" fill-opacity=".14" stroke="oklch(0.62 0.075 230)" stroke-opacity=".5" stroke-width="6"/>
+      <polygon points="4696,1288 5552,1288 5552,2808 4696,2808" fill="oklch(0.62 0.075 40)" fill-opacity=".14" stroke="oklch(0.62 0.075 40)" stroke-opacity=".5" stroke-width="6"/>
+      <polygon points="200,2808 1584,2808 1584,3896 200,3896" fill="oklch(0.62 0.075 340)" fill-opacity=".14" stroke="oklch(0.62 0.075 340)" stroke-opacity=".5" stroke-width="6"/>
+      <polygon points="1584,2808 3232,2808 3232,3896 1584,3896" fill="oklch(0.62 0.075 290)" fill-opacity=".14" stroke="oklch(0.62 0.075 290)" stroke-opacity=".5" stroke-width="6"/>
+      <polygon points="3232,2808 4088,2808 4088,3896 3232,3896" fill="oklch(0.62 0.075 60)" fill-opacity=".14" stroke="oklch(0.62 0.075 60)" stroke-opacity=".5" stroke-width="6"/>
+      <polygon points="4088,2808 5552,2808 5552,3896 4088,3896" fill="oklch(0.62 0.075 320)" fill-opacity=".14" stroke="oklch(0.62 0.075 320)" stroke-opacity=".5" stroke-width="6"/>
+      <polygon points="200,1288 1056,1288 1056,2808 200,2808" fill="oklch(0.62 0.075 20)" fill-opacity=".14" stroke="oklch(0.62 0.075 20)" stroke-opacity=".5" stroke-width="6"/>
+      <rect x="200" y="468" width="1384" height="12" fill="oklch(0.62 0.075 265)" fill-opacity=".6"/>
+      <rect x="1584" y="468" width="1384" height="12" fill="oklch(0.62 0.075 200)" fill-opacity=".6"/>
+      <rect x="2968" y="468" width="1120" height="12" fill="oklch(0.62 0.075 150)" fill-opacity=".6"/>
+      <rect x="4088" y="468" width="1464" height="12" fill="oklch(0.62 0.075 230)" fill-opacity=".6"/>
+      <rect x="4696" y="1556" width="856" height="12" fill="oklch(0.62 0.075 40)" fill-opacity=".6"/>
+      <rect x="200" y="3076" width="1384" height="12" fill="oklch(0.62 0.075 340)" fill-opacity=".6"/>
+      <rect x="1584" y="3076" width="1648" height="12" fill="oklch(0.62 0.075 290)" fill-opacity=".6"/>
+      <rect x="3232" y="3076" width="856" height="12" fill="oklch(0.62 0.075 60)" fill-opacity=".6"/>
+      <rect x="4088" y="3076" width="1464" height="12" fill="oklch(0.62 0.075 320)" fill-opacity=".6"/>
+      <rect x="200" y="1556" width="856" height="12" fill="oklch(0.62 0.075 20)" fill-opacity=".6"/>
+      <rect x="232" y="512" width="240" height="288" rx="32" fill="oklch(0.62 0.075 265)" fill-opacity=".55"/>
+      <rect x="496" y="512" width="240" height="288" rx="32" fill="oklch(0.62 0.075 265)" fill-opacity=".55"/>
+      <rect x="760" y="512" width="240" height="288" rx="32" fill="oklch(0.62 0.075 265)" fill-opacity=".55"/>
+      <rect x="1024" y="512" width="240" height="288" rx="32" fill="oklch(0.62 0.075 265)" fill-opacity=".55"/>
+      <rect x="1288" y="512" width="240" height="288" rx="32" fill="oklch(0.62 0.075 265)" fill-opacity=".55"/>
+      <rect x="232" y="824" width="240" height="288" rx="32" fill="oklch(0.62 0.075 265)" fill-opacity=".55"/>
+      <rect x="496" y="824" width="240" height="288" rx="32" fill="oklch(0.62 0.075 265)" fill-opacity=".55"/>
+      <rect x="1616" y="512" width="240" height="288" rx="32" fill="oklch(0.62 0.075 200)" fill-opacity=".55"/>
+      <rect x="1880" y="512" width="240" height="288" rx="32" fill="oklch(0.62 0.075 200)" fill-opacity=".55"/>
+      <rect x="2144" y="512" width="240" height="288" rx="32" fill="oklch(0.62 0.075 200)" fill-opacity=".55"/>
+      <rect x="2408" y="512" width="240" height="288" rx="32" fill="oklch(0.62 0.075 200)" fill-opacity=".55"/>
+      <rect x="2672" y="512" width="240" height="288" rx="32" fill="oklch(0.62 0.075 200)" fill-opacity=".55"/>
+      <rect x="1616" y="824" width="240" height="288" rx="32" fill="oklch(0.62 0.075 200)" fill-opacity=".55"/>
+      <rect x="3000" y="512" width="240" height="288" rx="32" fill="oklch(0.62 0.075 150)" fill-opacity=".55"/>
+      <rect x="3264" y="512" width="240" height="288" rx="32" fill="oklch(0.62 0.075 150)" fill-opacity=".55"/>
+      <rect x="3528" y="512" width="240" height="288" rx="32" fill="oklch(0.62 0.075 150)" fill-opacity=".55"/>
+      <rect x="3792" y="512" width="240" height="288" rx="32" fill="oklch(0.62 0.075 150)" fill-opacity=".55"/>
+      <rect x="3000" y="824" width="240" height="288" rx="32" fill="oklch(0.62 0.075 150)" fill-opacity=".55"/>
+      <rect x="3264" y="824" width="240" height="288" rx="32" fill="oklch(0.62 0.075 150)" fill-opacity=".55"/>
+      <rect x="4120" y="512" width="240" height="288" rx="32" fill="oklch(0.62 0.075 230)" fill-opacity=".55"/>
+      <rect x="4384" y="512" width="240" height="288" rx="32" fill="oklch(0.62 0.075 230)" fill-opacity=".55"/>
+      <rect x="4648" y="512" width="240" height="288" rx="32" fill="oklch(0.62 0.075 230)" fill-opacity=".55"/>
+      <rect x="4912" y="512" width="240" height="288" rx="32" fill="oklch(0.62 0.075 230)" fill-opacity=".55"/>
+      <rect x="5176" y="512" width="240" height="288" rx="32" fill="oklch(0.62 0.075 230)" fill-opacity=".55"/>
+      <rect x="4120" y="824" width="240" height="288" rx="32" fill="oklch(0.62 0.075 230)" fill-opacity=".55"/>
+      <rect x="4384" y="824" width="240" height="288" rx="32" fill="oklch(0.62 0.075 230)" fill-opacity=".55"/>
+      <rect x="4728" y="1600" width="240" height="288" rx="32" fill="oklch(0.62 0.075 40)" fill-opacity=".55"/>
+      <rect x="4992" y="1600" width="240" height="288" rx="32" fill="oklch(0.62 0.075 40)" fill-opacity=".55"/>
+      <rect x="5256" y="1600" width="240" height="288" rx="32" fill="oklch(0.62 0.075 40)" fill-opacity=".55"/>
+      <rect x="4728" y="1912" width="240" height="288" rx="32" fill="oklch(0.62 0.075 40)" fill-opacity=".55"/>
+      <rect x="4992" y="1912" width="240" height="288" rx="32" fill="oklch(0.62 0.075 40)" fill-opacity=".55"/>
+      <rect x="5256" y="1912" width="240" height="288" rx="32" fill="oklch(0.62 0.075 40)" fill-opacity=".55"/>
+      <rect x="4728" y="2224" width="240" height="288" rx="32" fill="oklch(0.62 0.075 40)" fill-opacity=".55"/>
+      <rect x="4992" y="2224" width="240" height="288" rx="32" fill="oklch(0.62 0.075 40)" fill-opacity=".55"/>
+      <rect x="232" y="3120" width="240" height="288" rx="32" fill="oklch(0.62 0.075 340)" fill-opacity=".55"/>
+      <rect x="496" y="3120" width="240" height="288" rx="32" fill="oklch(0.62 0.075 340)" fill-opacity=".55"/>
+      <rect x="760" y="3120" width="240" height="288" rx="32" fill="oklch(0.62 0.075 340)" fill-opacity=".55"/>
+      <rect x="1024" y="3120" width="240" height="288" rx="32" fill="oklch(0.62 0.075 340)" fill-opacity=".55"/>
+      <rect x="1288" y="3120" width="240" height="288" rx="32" fill="oklch(0.62 0.075 340)" fill-opacity=".55"/>
+      <rect x="232" y="3432" width="240" height="288" rx="32" fill="oklch(0.62 0.075 340)" fill-opacity=".55"/>
+      <rect x="496" y="3432" width="240" height="288" rx="32" fill="oklch(0.62 0.075 340)" fill-opacity=".55"/>
+      <rect x="760" y="3432" width="240" height="288" rx="32" fill="oklch(0.62 0.075 340)" fill-opacity=".55"/>
+      <rect x="1616" y="3120" width="240" height="288" rx="32" fill="oklch(0.62 0.075 290)" fill-opacity=".55"/>
+      <rect x="1880" y="3120" width="240" height="288" rx="32" fill="oklch(0.62 0.075 290)" fill-opacity=".55"/>
+      <rect x="2144" y="3120" width="240" height="288" rx="32" fill="oklch(0.62 0.075 290)" fill-opacity=".55"/>
+      <rect x="2408" y="3120" width="240" height="288" rx="32" fill="oklch(0.62 0.075 290)" fill-opacity=".55"/>
+      <rect x="2672" y="3120" width="240" height="288" rx="32" fill="oklch(0.62 0.075 290)" fill-opacity=".55"/>
+      <rect x="2936" y="3120" width="240" height="288" rx="32" fill="oklch(0.62 0.075 290)" fill-opacity=".55"/>
+      <rect x="1616" y="3432" width="240" height="288" rx="32" fill="oklch(0.62 0.075 290)" fill-opacity=".55"/>
+      <rect x="1880" y="3432" width="240" height="288" rx="32" fill="oklch(0.62 0.075 290)" fill-opacity=".55"/>
+      <rect x="2144" y="3432" width="240" height="288" rx="32" fill="oklch(0.62 0.075 290)" fill-opacity=".55"/>
+      <rect x="2408" y="3432" width="240" height="288" rx="32" fill="oklch(0.62 0.075 290)" fill-opacity=".55"/>
+      <rect x="3264" y="3120" width="240" height="288" rx="32" fill="oklch(0.62 0.075 60)" fill-opacity=".55"/>
+      <rect x="3528" y="3120" width="240" height="288" rx="32" fill="oklch(0.62 0.075 60)" fill-opacity=".55"/>
+      <rect x="3792" y="3120" width="240" height="288" rx="32" fill="oklch(0.62 0.075 60)" fill-opacity=".55"/>
+      <rect x="3264" y="3432" width="240" height="288" rx="32" fill="oklch(0.62 0.075 60)" fill-opacity=".55"/>
+      <rect x="3528" y="3432" width="240" height="288" rx="32" fill="oklch(0.62 0.075 60)" fill-opacity=".55"/>
+      <rect x="3792" y="3432" width="240" height="288" rx="32" fill="oklch(0.62 0.075 60)" fill-opacity=".55"/>
+      <rect x="4120" y="3120" width="240" height="288" rx="32" fill="oklch(0.62 0.075 320)" fill-opacity=".55"/>
+      <rect x="4384" y="3120" width="240" height="288" rx="32" fill="oklch(0.62 0.075 320)" fill-opacity=".55"/>
+      <rect x="4648" y="3120" width="240" height="288" rx="32" fill="oklch(0.62 0.075 320)" fill-opacity=".55"/>
+      <rect x="4912" y="3120" width="240" height="288" rx="32" fill="oklch(0.62 0.075 320)" fill-opacity=".55"/>
+      <rect x="5176" y="3120" width="240" height="288" rx="32" fill="oklch(0.62 0.075 320)" fill-opacity=".55"/>
+      <rect x="4120" y="3432" width="240" height="288" rx="32" fill="oklch(0.62 0.075 320)" fill-opacity=".55"/>
+      <rect x="4384" y="3432" width="240" height="288" rx="32" fill="oklch(0.62 0.075 320)" fill-opacity=".55"/>
+      <rect x="4648" y="3432" width="240" height="288" rx="32" fill="oklch(0.62 0.075 320)" fill-opacity=".55"/>
+      <rect x="4912" y="3432" width="240" height="288" rx="32" fill="oklch(0.62 0.075 320)" fill-opacity=".55"/>
+      <rect x="232" y="1600" width="240" height="288" rx="32" fill="oklch(0.62 0.075 20)" fill-opacity=".55"/>
+      <rect x="496" y="1600" width="240" height="288" rx="32" fill="oklch(0.62 0.075 20)" fill-opacity=".55"/>
+      <rect x="760" y="1600" width="240" height="288" rx="32" fill="oklch(0.62 0.075 20)" fill-opacity=".55"/>
+      <rect x="232" y="1912" width="240" height="288" rx="32" fill="oklch(0.62 0.075 20)" fill-opacity=".55"/>
+      <rect x="496" y="1912" width="240" height="288" rx="32" fill="oklch(0.62 0.075 20)" fill-opacity=".55"/>
+      <rect x="760" y="1912" width="240" height="288" rx="32" fill="oklch(0.62 0.075 20)" fill-opacity=".55"/>
+      <rect x="232" y="2224" width="240" height="288" rx="32" fill="oklch(0.62 0.075 20)" fill-opacity=".55"/>
+      <polygon points="1056,1288 4696,1288 4696,2808 1056,2808" fill="#12130F" fill-opacity=".92" stroke="#F2B705" stroke-width="10"/>
+      <rect x="1196" y="1588" width="560" height="500" rx="45" fill="#FFFFFF" fill-opacity=".9"/>
+      <rect x="1756" y="1588" width="560" height="500" rx="45" fill="#FFFFFF" fill-opacity=".9"/>
+      <rect x="2316" y="1588" width="560" height="500" rx="45" fill="#FFFFFF" fill-opacity=".9"/>
+      <rect x="2876" y="1588" width="560" height="500" rx="45" fill="#FFFFFF" fill-opacity=".9"/>
+      <rect x="3436" y="1588" width="560" height="500" rx="45" fill="#FFFFFF" fill-opacity=".9"/>
+      <rect x="3996" y="1588" width="560" height="500" rx="45" fill="#FFFFFF" fill-opacity=".9"/>
+      <rect x="1196" y="2088" width="560" height="500" rx="45" fill="#FFFFFF" fill-opacity=".9"/>
+      <rect x="1756" y="2088" width="560" height="500" rx="45" fill="#FFFFFF" fill-opacity=".9"/>
+      <rect x="2316" y="2088" width="560" height="500" rx="45" fill="#FFFFFF" fill-opacity=".9"/>
+      <rect x="2876" y="2088" width="560" height="500" rx="45" fill="#FFFFFF" fill-opacity=".9"/>
+      <rect x="3436" y="2088" width="560" height="500" rx="45" fill="#FFFFFF" fill-opacity=".9"/>
+      <rect x="3996" y="2088" width="560" height="500" rx="45" fill="#FFFFFF" fill-opacity=".9"/>
       </svg>
       </div>
     </a>
@@ -378,6 +298,7 @@
         <h3 class="band-title">Overview of the industry</h3>
         <div class="band-more">
           <p class="band-desc">What is actually driving the car, how an autonomous ride differs from a human-driven one, and where autonomy already works beyond roads.</p>
+          <p class="band-topics"><span>What is driving the car?</span><span>How different from human-driven?</span><span>What already works beyond roads?</span></p>
           <span class="btn band-btn">VISIT THIS CHAPTER →</span>
         </div>
       </div>
@@ -389,6 +310,7 @@
         <h3 class="band-title">The wall chart</h3>
         <div class="band-more">
           <p class="band-desc">562 organisations on one poster: passenger autonomy at the centre, eleven layers docked around it, and the partnerships drawn between them.</p>
+          <p class="band-topics"><span>All 562 on one plate</span><span>Eleven layers, one centre</span><span>Partnerships drawn live</span></p>
           <span class="btn band-btn">VISIT THIS CHAPTER →</span>
         </div>
       </div>
@@ -399,7 +321,8 @@
         <p class="band-num">CHAPTER 03</p>
         <h3 class="band-title">The directory</h3>
         <div class="band-more">
-          <p class="band-desc">The full table: 562 rows, every field, sortable, filterable and exportable — with the ten passenger-autonomy companies on pages of their own.</p>
+          <p class="band-desc">The full table: 562 rows, every field, sortable, filterable and exportable — with the twelve passenger-autonomy companies on pages of their own.</p>
+          <p class="band-topics"><span>Every field, sortable</span><span>Filter by layer, region, maturity</span><span>CSV and JSON export</span></p>
           <span class="btn band-btn">VISIT THIS CHAPTER →</span>
         </div>
       </div>
@@ -411,17 +334,19 @@
         <h3 class="band-title">Economics</h3>
         <div class="band-more">
           <p class="band-desc">$41.8B of disclosed funding, the cost per mile, a calculator you can break, and the major operators compared side by side.</p>
+          <p class="band-topics"><span>When the money arrived</span><span>Cost per paid mile</span><span>Operators side by side</span></p>
           <span class="btn band-btn">VISIT THIS CHAPTER →</span>
         </div>
       </div>
     </a>
     <a class="band" href="regulation/">
-      <div class="band-art" aria-hidden="true"><svg viewBox="0 0 300 160" preserveAspectRatio="xMaxYMid meet"><g fill="oklch(0.62 0.075 290)"><circle cx="40" cy="40" r="12" opacity=".75"/><rect x="64" y="33" width="150" height="13" rx="4" opacity=".4"/><circle cx="40" cy="80" r="12" opacity=".55"/><rect x="64" y="73" width="180" height="13" rx="4" opacity=".4"/><circle cx="40" cy="120" r="12" opacity=".75"/><rect x="64" y="113" width="130" height="13" rx="4" opacity=".4"/></g></svg></div>
+      <div class="band-art" aria-hidden="true"><svg viewBox="0 0 300 160" preserveAspectRatio="xMaxYMid meet"><g stroke="oklch(0.62 0.075 290)" stroke-width="7" stroke-linecap="round" fill="none" opacity=".7"><path d="M150 22 v106"/><path d="M112 138 h76"/><path d="M70 46 h160"/><path d="M70 46 l-26 44 M70 46 l26 44"/><path d="M230 46 l-26 44 M230 46 l26 44"/></g><path d="M44 90 a26 26 0 0 0 52 0 Z" fill="oklch(0.62 0.075 290)" opacity=".5"/><path d="M204 90 a26 26 0 0 0 52 0 Z" fill="oklch(0.62 0.075 290)" opacity=".5"/><circle cx="150" cy="22" r="7" fill="oklch(0.62 0.075 290)" opacity=".75"/></svg></div>
       <div class="container band-inner">
         <p class="band-num">CHAPTER 05</p>
         <h3 class="band-title">Regulatory</h3>
         <div class="band-more">
           <p class="band-desc">Who is allowed to drive and who signs the permits — with the incidents, recalls and independent safety studies alongside.</p>
+          <p class="band-topics"><span>Six regimes compared</span><span>Who signs the permits</span><span>Incidents and recalls</span></p>
           <span class="btn band-btn">VISIT THIS CHAPTER →</span>
         </div>
       </div>
@@ -433,6 +358,7 @@
         <h3 class="band-title">Media</h3>
         <div class="band-more">
           <p class="band-desc">The publications, podcasts and conferences covering autonomy — and a way to hear when this map changes.</p>
+          <p class="band-topics"><span>Who to read</span><span>Who to listen to</span><span>Where the industry meets</span></p>
           <span class="btn band-btn">VISIT THIS CHAPTER →</span>
         </div>
       </div>
@@ -441,7 +367,7 @@
 </section>
 </main>
 
-<footer class="site"></footer>
+<footer class="site" data-bio></footer>
 
 <script src="assets/js/core.js"></script>
 <script src="assets/js/loop.js"></script>

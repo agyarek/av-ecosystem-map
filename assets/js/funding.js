@@ -129,7 +129,23 @@
     return Math.ceil(v / mag * 2) / 2 * mag;
   };
 
-  let tip;
+  // The pinned popup a bar click opens: which companies were funded in that
+  // quarter and how much each raised. The hover tooltip stays for totals; this
+  // is the drill-down that stays put while you read it.
+  let tip, pin, pinKey = null;
+  const hidePin = () => { if (pin) { pin.hidden = true; pinKey = null; } };
+  function showPin(label, total, evList, anchor) {
+    const rows = evList.slice().sort((a, b) => b.amountUSDm - a.amountUSDm);
+    pin.innerHTML = `<b>${esc(label)} · ${fmtM(total)}</b>` +
+      `<div class="pin-rows">` + rows.map(ev =>
+        `<span class="pr"><span class="pr-co">${esc(ev.company)}</span><span class="num">${fmtM(ev.amountUSDm)}</span></span>`).join('') + `</div>` +
+      `<p class="caption">${rows.length} event${rows.length === 1 ? '' : 's'} · Esc or click away to close</p>`;
+    pin.hidden = false;
+    const r = anchor.getBoundingClientRect(), pr = pin.getBoundingClientRect();
+    pin.style.left = Math.max(8, Math.min(innerWidth - pr.width - 8, r.left + r.width / 2 - pr.width / 2)) + 'px';
+    pin.style.top = Math.max(8, r.top - pr.height - 10) + 'px';
+  }
+
   function showTip(html, x, y) {
     tip.innerHTML = html;
     tip.hidden = false;
@@ -243,6 +259,20 @@
       g.appendChild(el('rect', { x, y: M.t, width: bw, height: ih, fill: 'transparent' }));
       bindTip(g, `<b>${esc(label)}</b><br>${fmtM(total)}${opts.cumulative ? ' cumulative' : ''}` +
         (detail ? '<br>' + rows.map(r => `${esc(r.name)} ${fmtM(r.v)}`).join('<br>') : ''));
+      const evList = (opts.events && opts.events.get(k)) || [];
+      if (evList.length) {
+        g.style.cursor = 'pointer';
+        const open = () => {
+          if (pinKey === label) { hidePin(); return; }
+          pinKey = label;
+          hideTip();
+          showPin(label, total, evList, g);
+        };
+        g.addEventListener('click', e => { e.stopPropagation(); open(); });
+        g.addEventListener('keydown', e => {
+          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); }
+        });
+      }
       svg.appendChild(g);
     });
 
@@ -274,9 +304,19 @@
     const byQuarter = state.mode !== 'season';
     const agg = aggregate(evs, byQuarter);
     const colors = chartColors();
+    hidePin();
+
+    // raw events per bar, so a click can answer "who, exactly, and how much"
+    const eventsByKey = new Map();
+    evs.forEach(e => {
+      const k = byQuarter ? qKey(e.date) : qOf(e.date).q - 1;
+      if (!eventsByKey.has(k)) eventsByKey.set(k, []);
+      eventsByKey.get(k).push(e);
+    });
 
     drawChart($('ch-capital'), agg, {
       height: 250, cumulative: state.mode === 'cumulative',
+      events: state.mode === 'cumulative' ? null : eventsByKey,
       fmtAxis: v => v >= 1000 ? (v / 1000).toFixed(v % 1000 ? 1 : 0) + 'B' : Math.round(v) + 'M',
       aria: state.mode === 'season'
         ? 'Capital raised by calendar quarter, all years combined'
@@ -433,6 +473,17 @@
   tip.className = 'ch-tip';
   tip.hidden = true;
   document.body.appendChild(tip);
+  pin = document.createElement('div');
+  pin.className = 'ch-tip ch-pin';
+  pin.hidden = true;
+  document.body.appendChild(pin);
+  // dismissal listens to click, not pointerdown: the bar handler stops
+  // propagation, so a click on a bar toggles while a click anywhere else closes
+  document.addEventListener('click', e => {
+    if (!pin.hidden && !pin.contains(e.target)) hidePin();
+  });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') hidePin(); });
+  addEventListener('scroll', hidePin, { passive: true });
 
   // The disclosed-funding note used to be typed into the page, and had drifted from
   // the records it summarises: it claimed 49 plus 511 of 561, which is 560, and a
@@ -476,8 +527,15 @@
 
     buildTimeline(F, regionOf, byName);
 
+    // Themed groups, bold names, one-line reasons: a list a reader can scan
+    // for a company they care about, rather than seven paragraphs to re-read.
     $('gaps-slot').innerHTML =
-      (E.meta.knownGaps || []).map(g => `<div class="note" style="margin-top:10px">${esc(g)}</div>`).join('')
+      (E.meta.knownGaps || []).map(g => `<div class="gap-group">
+        <h3 class="gap-theme">${esc(g.theme)}</h3>
+        ${g.note ? `<p class="caption">${esc(g.note)}</p>` : ''}
+        <ul class="gap-list">${(g.items || []).map(it =>
+          `<li><strong>${esc(it.company)}</strong> — ${esc(it.reason)}.</li>`).join('')}</ul>
+      </div>`).join('')
       || '<p class="caption">No known gaps recorded.</p>';
 
     let t;

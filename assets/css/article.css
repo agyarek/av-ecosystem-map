@@ -120,29 +120,76 @@ table.spec td { font-size: 14px; }
 .compare-scroll table { min-width: 980px; }
 .compare-scroll th.op-col { white-space: nowrap; }
 
-.timeline-wrap { overflow-x: auto; padding-bottom: 12px; margin-top: 24px; }
-.timeline {
-  display: grid; grid-auto-flow: column; grid-auto-columns: 250px;
-  gap: 14px; padding: 4px 2px;
-}
+/* The event list reads down the page now, one row per announcement — the
+   sideways conveyor belt is gone. */
+.timeline-wrap { margin-top: 16px; }
+.timeline { display: grid; gap: 8px; }
 .tl-event {
   background: var(--paper-2); border: 1px solid var(--rule);
-  border-radius: var(--r-card); padding: 14px 16px;
-  display: flex; flex-direction: column; gap: 6px;
+  border-radius: var(--r-card); padding: 10px 16px;
+  display: grid; grid-template-columns: 96px 92px 1fr auto;
+  gap: 2px 16px; align-items: baseline;
 }
 .tl-event .d { font-family: var(--font-mono); font-size: 11px; color: var(--muted); }
-.tl-event .amt { font-size: 24px; font-weight: 600; font-family: var(--font-mono); }
+.tl-event .amt { font-size: 17px; font-weight: 600; font-family: var(--font-mono); }
 .tl-event .co { font-weight: 800; font-size: 15px; }
-.tl-event .form { font-size: 11px; font-family: var(--font-mono); color: var(--cyan); }
-.tl-event .note { font-size: 12.5px; color: var(--ink-2); line-height: 1.45; }
-.tl-event .inv { font-size: 11.5px; color: var(--muted); margin-top: auto; padding-top: 8px; }
+.tl-event .form { font-size: 11px; font-family: var(--font-mono); color: var(--cyan); justify-self: end; }
+.tl-event .note { font-size: 12.5px; color: var(--ink-2); line-height: 1.45; grid-column: 3 / -1; }
+.tl-event .inv { font-size: 11.5px; color: var(--muted); grid-column: 3 / -1; }
 .tl-event.dim { opacity: .25; }
+
+.sub-sec {
+  margin-top: 34px; font-size: 17px; font-weight: 800;
+  font-variation-settings: 'wdth' 112;
+}
+
+/* "What is missing": themed groups a reader can scan for a name */
+.gap-group { margin-top: 18px; }
+.gap-theme {
+  font-family: var(--font-mono); font-size: 12px; font-weight: 600;
+  letter-spacing: .08em; text-transform: uppercase;
+}
+.gap-group > .caption { margin-top: 4px; }
+.gap-list { margin: 8px 0 0 18px; display: grid; gap: 6px; }
+.gap-list li { font-size: 13.5px; color: var(--ink-2); line-height: 1.5; }
 
 .rank-table td .why { font-size: 12.5px; color: var(--muted); }
 
-.region-tabs { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 24px; }
-.region-panel { margin-top: 24px; }
+/* Six regions down the left, each behind its own mark; the selected mark takes
+   the accent and keeps it. The Q&A for the selected region reads on the right. */
+.regimes {
+  display: grid; grid-template-columns: 212px minmax(0, 1fr);
+  gap: 8px 36px; margin-top: 24px; align-items: start;
+}
+.region-tabs { display: flex; flex-direction: column; gap: 6px; }
+.region-tab {
+  display: flex; align-items: center; gap: 12px; text-align: left;
+  font-family: var(--font-mono); font-size: 12px; font-weight: 600;
+  letter-spacing: .04em; text-transform: uppercase; color: var(--ink-2);
+  border: 1px solid transparent; border-radius: var(--r-card);
+  padding: 9px 12px; cursor: pointer;
+  transition: border-color 140ms, background 140ms, color 140ms;
+}
+.region-tab .rt-icon { width: 44px; height: 44px; flex: none; color: var(--muted); transition: color 140ms; }
+.region-tab:hover { background: var(--paper-2); color: var(--ink); }
+.region-tab:hover .rt-icon { color: var(--ink-2); }
+.region-tab[aria-selected="true"] {
+  background: var(--paper-2); border-color: var(--rule); color: var(--ink);
+}
+.region-tab[aria-selected="true"] .rt-icon { color: var(--cyan); }
+.region-panel { margin-top: 0; }
 .region-panel[hidden] { display: none; }
+@media (max-width: 760px) {
+  .regimes { grid-template-columns: 1fr; }
+  .region-tabs { flex-direction: row; flex-wrap: wrap; }
+  .region-tab { padding: 6px 10px; }
+  .region-tab .rt-icon { width: 30px; height: 30px; }
+  .region-panel { margin-top: 16px; }
+}
+
+.recall-list { margin: 14px 0 0 18px; display: grid; gap: 8px; }
+.recall-list li { font-size: 14px; color: var(--ink-2); line-height: 1.5; }
+.recall-list li b { font-family: var(--font-mono); font-size: 12px; color: var(--ink); }
 .qa { margin-top: 8px; }
 .qa dt {
   font-family: var(--font-mono); font-size: 11px; font-weight: 600;
@@ -213,13 +260,20 @@ table.spec td { font-size: 14px; }
    The explorer on /funding/. Two charts stacked on one x-axis rather than one
    chart with two y-scales: capital and deal count are different measures and a
    shared axis would make one of them a lie. */
-.ch-controls { display: grid; gap: 10px; margin-top: 18px; }
-.ch-row { display: flex; gap: 10px; align-items: baseline; flex-wrap: wrap; }
-.ch-row > .lbl {
-  font-size: 11px; font-family: var(--font-mono); letter-spacing: .06em;
-  text-transform: uppercase; color: var(--muted); min-width: 74px;
+/* Window, View and Split by sit as three columns in one row, each label above
+   its own chips; the companies picker takes the full width beneath them. */
+.ch-controls {
+  display: grid; grid-template-columns: repeat(3, max-content);
+  gap: 16px 36px; margin-top: 18px;
 }
-.ch-row .chips { display: flex; gap: 6px; flex-wrap: wrap; }
+.ch-col { display: flex; flex-direction: column; gap: 7px; align-items: flex-start; }
+.ch-col > .lbl {
+  font-size: 11px; font-family: var(--font-mono); letter-spacing: .06em;
+  text-transform: uppercase; color: var(--muted);
+}
+.ch-col .chips { display: flex; gap: 6px; flex-wrap: wrap; }
+.ch-col-wide { grid-column: 1 / -1; }
+@media (max-width: 760px) { .ch-controls { grid-template-columns: 1fr; gap: 12px; } }
 .ch-plot { margin-top: 20px; }
 .ch-plot svg { display: block; overflow: visible; }
 .ch-plot g[tabindex] { outline: none; }
@@ -243,6 +297,13 @@ table.spec td { font-size: 14px; }
 }
 :root[data-theme="dark"] .ch-tip { background: var(--paper-2); color: var(--ink); border: 1px solid var(--rule); }
 .ch-tip b { font-family: var(--font-mono); font-size: 11px; }
+/* The pinned drill-down a bar click opens: interactive, wider, and it stays
+   until dismissed, unlike the hover tooltip it shares its skin with. */
+.ch-pin { pointer-events: auto; max-width: 320px; padding: 10px 12px; }
+.ch-pin .pin-rows { display: grid; gap: 3px; margin-top: 7px; }
+.ch-pin .pr { display: flex; justify-content: space-between; gap: 16px; }
+.ch-pin .pr .num { font-family: var(--font-mono); }
+.ch-pin .caption { margin-top: 7px; opacity: .7; font-size: 10.5px; }
 .ch-fallback { margin-top: 18px; }
 .ch-fallback summary { font-size: 12.5px; color: var(--muted); cursor: pointer; }
 .ch-fallback table { margin-top: 12px; }
@@ -358,16 +419,11 @@ input.eco-in:focus { border-color: var(--cyan); outline: none; }
 }
 
 /* ------------------------------------------------------------- narrow screens */
-/* The funding timeline had no responsive rule of any kind: a phone got 30 cards
-   at desktop width in a horizontal scroller, with a caption as the only hint.
-   It now stacks, which is readable without a sideways drag. */
+/* The event rows drop their four-column ruling and stack their fields. */
 @media (max-width: 700px) {
-  .timeline-wrap { overflow-x: visible; }
-  .timeline {
-    grid-auto-flow: row; grid-auto-columns: auto;
-    grid-template-columns: 1fr; gap: 10px;
-  }
-  .tl-event .amt { font-size: 21px; }
+  .tl-event { grid-template-columns: 96px 1fr; }
+  .tl-event .co, .tl-event .form { grid-column: 1 / -1; justify-self: start; }
+  .tl-event .note, .tl-event .inv { grid-column: 1 / -1; }
 
   /* the comparison tables keep their horizontal scroll, but say so rather than
      silently clipping */

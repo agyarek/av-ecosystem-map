@@ -292,14 +292,15 @@
     ['Economics', [['economics', 'economics/', 'Funding: who raised what'],
                    ['economics-unit', 'economics/#unit-economics', 'Unit economics'],
                    ['economics-compare', 'economics/#comparing-the-operators', 'Comparing the operators']]],
-    ['Regulatory', [['regulation', 'regulation/', 'Who decides'],
-                    ['safety', 'safety/', 'Incidents and recalls']]],
+    ['Regulatory', [['regulation', 'regulation/', 'Who decides, and every incident'],
+                    ['safety', 'safety/', 'The safety evidence']]],
     ['Media', [['media', 'media/', 'Who to read, listen to, and meet']]],
   ];
   const pad2 = n => String(n).padStart(2, '0');
 
   const UPDATED = fmtDate('2026-07-31');
   const CORRECTION = 'mailto:agyarek+avecosystemmap@gmail.com?subject=AV%20map%20correction';
+  window.AV.CORRECTION = CORRECTION;   // the one mailto, shared with the map card and ledger
 
   const SUN = '<svg class="sun" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="8" cy="8" r="3.2"/><path d="M8 .8v2M8 13.2v2M.8 8h2M13.2 8h2M2.9 2.9l1.4 1.4M11.7 11.7l1.4 1.4M13.1 2.9l-1.4 1.4M4.3 11.7l-1.4 1.4"/></svg>';
   const MOON = '<svg class="moon" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M13.5 9.5A5.8 5.8 0 0 1 6.5 2.5a5.8 5.8 0 1 0 7 7z"/></svg>';
@@ -350,11 +351,26 @@
     </div>
   </div>`;
 
+  // The bio renders only where a footer opts in with data-bio (the homepage),
+  // so the page ends on a person rather than a dataset.
+  const BIO = `<div class="bio">
+    <p class="bio-name">KOFI AGYARE-KWABI</p>
+    <p class="bio-text">I am an ex-Uber Country Manager with a decade of go-to-market and
+      partnerships work across mobility, and a Wharton MBA. I built this map partly because
+      I wanted it to exist and partly as evidence of how I think about the sector: every
+      company, partnership and figure here is compiled by hand from public filings, permits
+      and announcements — <a href="{ROOT}method/">the method is documented</a>.</p>
+    <p class="bio-text">If any of it is useful to you professionally, or you simply want to
+      talk autonomy, the inbox is open.</p>
+    <p class="bio-cta"><a class="btn" href="mailto:agyarek+avecosystemmap@gmail.com?subject=AV%20ecosystem%20map">EMAIL ME</a></p>
+  </div>`;
+
   const footerHTML = el => {
     const opener = el.dataset.cta === 'chart'
       ? 'A company that should be on this chart, a partnership I have not mapped, a detail that is wrong?'
       : 'A company that should be listed, a partnership I have not mapped, a detail that is wrong?';
     return `<div class="container">
+    ${el.hasAttribute('data-bio') ? BIO.replace('{ROOT}', ROOT) : ''}
     <p class="cta">${opener}
       <a href="${CORRECTION}">Tell me</a> — it comes to me directly, and it is
       how this map gets better.</p>

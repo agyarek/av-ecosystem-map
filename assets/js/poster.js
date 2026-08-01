@@ -2,8 +2,8 @@
    Renders data/poster-layout.json verbatim (geometry is frozen at build time),
    then adds camera, selection, filters, exports and keyboard navigation.
 
-   The composition is one rounded plate with an octagon cut out of the middle:
-   the passenger-autonomy companies inside the octagon, the ten remaining layers tiling the
+   The composition is one rounded plate with a rectangular centre: the
+   passenger-autonomy companies inside it, the ten remaining layers tiling the
    frame around it and sharing their borders.
 
    Filtering dims; it never reflows. One company, one chip, always. */
@@ -42,11 +42,21 @@
   };
   const REGION_KEY = r => r.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
   const MATS = ['Scaled', 'Commercial', 'Pilot', 'R&D', 'Governance', 'Historical', 'Other'];
+  // same definitions the directory shows; tooltips so the labels explain themselves
+  const MAT_DEFS = {
+    Scaled: 'commercial service at meaningful volume',
+    Commercial: 'charging real customers today',
+    Pilot: 'live trials on real roads',
+    'R&D': 'building, not yet deployed',
+    Governance: 'regulators and standards bodies, not operating companies',
+    Historical: 'shut down, exited or absorbed',
+    Other: 'does not fit the operating spectrum',
+  };
 
   let L = null, slim = null, bySlug = null, partners = null;
   let manifest = null, spriteText = null, atlasDataURL = null;
   let full = null, fullPromise = null;      // the complete records, fetched on demand
-  let W = 0, H = 0, MS = null;
+  let W = 0, H = 0, MS = null, CS = null;
   const state = {
     sel: null, layers: new Set(), regions: new Set(), mats: new Set(),
     spoken: false, exited: false, q: ''
@@ -101,9 +111,10 @@
       const href = forExport && atlasDataURL ? atlasDataURL : ROOT + 'assets/logos/atlas.png';
       return `<svg x="${cx - half}" y="${cy}" width="${size}" height="${size}" viewBox="${m.atlas.x} ${m.atlas.y} ${A.cell} ${A.cell}"><image href="${href}" width="${A.w}" height="${A.h}"/></svg>`;
     }
-    // Monogram tile in the layer hue. It always renders, and a remote logo is
-    // layered over it once loaded, so a slow or missing favicon degrades to a
-    // deliberate-looking tile rather than a hole.
+    // Monogram tile in the layer hue. It always renders, and once a remote logo
+    // loads the tile fades away and the mark sits directly on the card — no
+    // white plate, no container border. A slow or missing favicon degrades to
+    // the tile rather than a hole.
     const fill = forExport ? oklch(hue, 0.66, 0.06) : `oklch(var(--tile-l) var(--tile-c) ${hue})`;
     const txfill = forExport ? '#FFFFFF' : 'var(--tile-ink)';
     const tile =
@@ -112,8 +123,7 @@
     const domain = logoDomain(slug);
     if (forExport || !domain) return tile;
     // href is filled in by the lazy loader once the chip is near the viewport
-    return tile +
-      `<rect class="logo-bg" data-logo-bg="${esc(slug)}" x="${cx - half}" y="${cy}" width="${size}" height="${size}" rx="${size * 0.22}" fill="#FFFFFF" opacity="0"/>` +
+    return `<g class="mono-fallback" data-mono-for="${esc(slug)}">${tile}</g>` +
       `<image class="logo-img" data-logo="${esc(slug)}" data-domain="${esc(domain)}" data-try="0" ` +
       `x="${cx - half + size * 0.08}" y="${cy + size * 0.08}" width="${size * 0.84}" height="${size * 0.84}" ` +
       `preserveAspectRatio="xMidYMid meet" opacity="0"/>`;
@@ -133,8 +143,8 @@
       if (href) {
         img.setAttribute('href', href);
         img.style.opacity = '1';
-        const bg = svg.querySelector(`[data-logo-bg="${CSS.escape(img.dataset.logo)}"]`);
-        if (bg) bg.style.opacity = '1';
+        const mono = svg.querySelector(`[data-mono-for="${CSS.escape(img.dataset.logo)}"]`);
+        if (mono) mono.style.opacity = '0';
       }
       pump();
     });
@@ -226,24 +236,29 @@
       // a whisper of the layer's own colour, so the plate reads as ten layers from
       // across the room and not as ten identical white rectangles
       o.push(`<polygon class="d-wash" points="${poly(d.poly)}" fill="${hueFill(d.hue)}" opacity=".05"/>`);
+      // The header sits on the same ground as the tiles — the way the centre
+      // always has — with the hue bar alone marking where it ends.
       o.push(`<g clip-path="url(#dc-${esc(d.id)})">`);
-      o.push(`<rect class="d-tint" x="${hd.x}" y="${hd.y}" width="${hd.w}" height="${hd.h}" fill="${hueFill(d.hue)}" opacity=".13"/>`);
       o.push(`<rect x="${hd.x}" y="${hd.y + hd.h - 9}" width="${hd.w}" height="9" fill="${hueFill(d.hue)}"/>`);
       o.push(`</g>`);
       const sz = d.labelSize, n = d.labelLines.length;
-      // Narrow side districts stack the count under the name instead of racing
-      // it across the same line; wide ones keep name left, count right.
+      // Top-anchored: name, then (in narrow side districts) the count, then the
+      // one-line descriptor saying what the layer is.
       const narrow = hd.tw < 1100 && n > 1;
-      const block = n + (narrow ? 1 : 0);
-      const base = hd.y + hd.h / 2 + sz * 0.36 - (sz * 0.62 * (block - 1)) / 2;
+      const base = hd.y + 100;
       d.labelLines.forEach((line, i) => {
         o.push(`<text x="${hd.tx + 30}" y="${base + i * sz * 1.06}" font-size="${sz}" font-weight="700" fill="${C.ink}" font-family="Archivo, sans-serif">${esc(line)}</text>`);
       });
+      let descBase = base + n * sz * 1.06;
       if (narrow) {
-        o.push(`<text x="${hd.tx + 30}" y="${base + n * sz * 1.06}" font-size="${sz * 0.8}" font-weight="600" font-family="IBM Plex Mono, monospace" fill="${hueFill(d.hue)}">${d.count} orgs</text>`);
+        o.push(`<text x="${hd.tx + 30}" y="${descBase}" font-size="${sz * 0.8}" font-weight="600" font-family="IBM Plex Mono, monospace" fill="${hueFill(d.hue)}">${d.count} orgs</text>`);
+        descBase += sz * 0.9;
       } else {
-        o.push(`<text x="${hd.tx + hd.tw - 30}" y="${hd.y + hd.h / 2 + sz * 0.36}" font-size="${sz}" font-weight="600" text-anchor="end" font-family="IBM Plex Mono, monospace" fill="${hueFill(d.hue)}">${d.count} orgs</text>`);
+        o.push(`<text x="${hd.tx + hd.tw - 30}" y="${base}" font-size="${sz}" font-weight="600" text-anchor="end" font-family="IBM Plex Mono, monospace" fill="${hueFill(d.hue)}">${d.count} orgs</text>`);
       }
+      (d.desc || []).forEach((line, i) => {
+        o.push(`<text x="${hd.tx + 30}" y="${descBase + i * (d.descSize + 6)}" font-size="${d.descSize || 24}" font-family="IBM Plex Mono, monospace" letter-spacing="2" fill="${C.muted}">${esc(line)}</text>`);
+      });
       // Each room draws a slice of its layer, so it has to say so. The control
       // names what is not on the wall and opens the full roster; in an export it
       // is still worth printing, because the chart should not look complete when
@@ -254,7 +269,7 @@
         // says plainly how much of the layer is not on the wall.
         const b = d.bar;
         o.push(X ? `<g>` : `<g class="d-more" data-expand="${esc(d.id)}" role="button" tabindex="-1" aria-label="Show all ${d.count} organisations in ${esc(d.layer)}">`);
-        o.push(`<rect class="d-bar" x="${b.x}" y="${b.y}" width="${b.w}" height="${b.h}" rx="18" fill="${hueFill(d.hue)}" fill-opacity=".16" stroke="${hueFill(d.hue)}" stroke-width="3"/>`);
+        o.push(`<rect class="d-bar" x="${b.x}" y="${b.y}" width="${b.w}" height="${b.h}" rx="18" fill="${hueFill(d.hue)}" fill-opacity=".16"/>`);
         o.push(`<text x="${b.x + b.w / 2}" y="${b.y + b.h / 2 + 13}" text-anchor="middle" font-size="36" font-weight="600" font-family="IBM Plex Mono, monospace" fill="${C.ink}">SHOW ALL ${d.count} ORGS  ▾</text>`);
         o.push(`</g>`);
       }
@@ -273,10 +288,13 @@
         } else {
           o.push(`<g>`);
         }
-        o.push(`<rect class="chip-body" x="${c.x + 8}" y="${c.y + 6}" width="${c.w - 16}" height="${c.h - 12}" rx="16" fill="${C.paper}" stroke="${C.rule}"/>`);
-        o.push(logoMarkup(c.slug, cx, cy + 18, 172, c.hue, c.mono, X));
-        wrapText(c.name).forEach((ln, i) => {
-          o.push(`<text x="${cx}" y="${cy + 216 + i * 21}" font-size="19" text-anchor="middle" fill="${C.ink}" font-family="Archivo, sans-serif">${esc(ln)}</text>`);
+        o.push(`<rect class="chip-body" x="${c.x + 8}" y="${c.y + 6}" width="${c.w - 16}" height="${c.h - 12}" rx="16" fill="${C.paper}"/>`);
+        o.push(logoMarkup(c.slug, cx, cy + CS.logoY, CS.logo, c.hue, c.mono, X));
+        wrapText(c.name, CS.nameChars, 2).forEach((ln, i) => {
+          o.push(`<text x="${cx}" y="${cy + CS.nameY + i * CS.nameStep}" font-size="${CS.nameSize}" font-weight="700" text-anchor="middle" fill="${C.ink}" font-family="Archivo, sans-serif">${esc(ln)}</text>`);
+        });
+        (c.sub || []).forEach((ln, j) => {
+          o.push(`<text x="${cx}" y="${cy + CS.descY + j * CS.descStep}" font-size="${CS.descSize}" text-anchor="middle" fill="${C.muted}" font-family="Archivo, sans-serif">${esc(ln)}</text>`);
         });
         (c.pips || []).forEach((hue, i) => {
           o.push(`<circle cx="${c.x + 28 + i * 20}" cy="${c.y + 26}" r="7" fill="${hueFill(hue)}"/>`);
@@ -312,7 +330,7 @@
       // which is much of why they read as a different species from the other 551.
       // They now get the same bounded tile every district chip has, so they
       // inherit the same hover and selection states and the same logo pipeline.
-      o.push(`<rect class="chip-body" x="${c.x + 12}" y="${c.y + 8}" width="${c.w - 24}" height="${c.h - 16}" rx="22" fill="${C.paper}" stroke="${C.rule}"/>`);
+      o.push(`<rect class="chip-body" x="${c.x + 12}" y="${c.y + 8}" width="${c.w - 24}" height="${c.h - 16}" rx="22" fill="${C.paper}"/>`);
       o.push(logoMarkup(c.slug, cx, c.y + MS.logoY, MS.logo, c.hue, c.mono, X));
       o.push(`<text x="${cx}" y="${c.y + MS.nameY}" font-size="${MS.nameSize}" font-weight="700" text-anchor="middle" fill="${C.medtx}" font-family="Archivo, sans-serif">${esc(c.name)}</text>`);
       wrapText(c.claim || '', MS.claimChars, 4).forEach((ln, j) => {
@@ -619,14 +637,10 @@
     }
     renderCard(slug, partnerRows);
     if (fly) {
-      // park the company near the top left, with enough margin that it reads as
-      // the thing in focus, and leave the room to its right for the card
-      flyTo(from.x, from.y, Math.min(fitW, 2400), 0.2, 0.24);
-      if (!reducedMotion()) {
-        g.classList.remove('pulse'); void g.getBoundingClientRect();
-        g.classList.add('pulse');
-        setTimeout(() => g.classList.remove('pulse'), 2000);
-      }
+      // A gentle move, not a dive: about two thirds of the chart stays in
+      // frame, so the reader keeps their bearings while the card opens. The
+      // width scales with the canvas so a regeneration cannot re-tighten it.
+      flyTo(from.x, from.y, Math.min(fitW, W * 0.62), 0.3, 0.32);
     }
     ensureFull().then(() => { if (state.sel === slug) renderCard(slug, partnerRows); });
     history.replaceState(null, '', location.pathname + location.search + '#' + slug);
@@ -668,7 +682,11 @@
       ['Investors', rec.investors],
       ['Status', rec.status === 'active' ? 'Active'
         : (rec.acquiredBy ? 'Acquired by ' + rec.acquiredBy : 'Exited')],
-      ['Also in', (rec.all || []).filter(a => a !== rec.cat && window.AV.HUES[a]).join(' · ')],
+      // every subcategory the company is active in, primary included, so a
+      // click answers "where does this organisation sit" without zooming
+      ['Active in', ((rec.all || []).filter(a => window.AV.HUES[a]).length
+        ? (rec.all || []).filter(a => window.AV.HUES[a])
+        : [rec.cat]).join(' · ')],
       ['Last verified', rec.lastVerified],
     ].filter(([, v]) => v) : [];
     const sources = (rec && rec.sources) || [];
@@ -696,7 +714,8 @@
               ? `<button class="cc-partner" data-go="${esc(p.slug)}"><span class="mono-tile cp-logo" aria-hidden="true">${esc((p.partner || '??').slice(0, 2).toUpperCase())}${navLogo(p.slug)}</span><span>${esc(p.partner)}</span></button>`
               : `<span class="cc-partner is-plain">${esc(p.partner)}</span>`
           ).join('')}</div></div>`).join('')
-        : '<span class="caption">None mapped yet. The footer takes corrections.</span>'}</div>
+        : `<span class="caption">If you know of any partnerships, please reach out to me.</span>
+           <a class="btn cc-mail" href="${esc(window.AV.CORRECTION)}">EMAIL ME</a>`}</div>
       ${sources.length ? `<div class="cc-src"><span class="pk">SOURCES</span>${sources.map(s =>
         `<div><a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${esc(s.title)}</a>${s.date ? ` <span class="caption">${esc(s.date)}</span>` : ''}</div>`).join('')}</div>` : ''}
       <div class="cc-actions">
@@ -743,8 +762,8 @@
     // Checkbox dropdowns rather than chip rows: each group is one labelled
     // button opening a list you tick, with the count of each option beside it
     // so you can see how big a slice is before you commit to looking at it.
-    const check = (attr, val, label) =>
-      `<label><input type="checkbox" ${attr}="${esc(val)}"> ${label}</label>`;
+    const check = (attr, val, label, title) =>
+      `<label${title ? ` title="${esc(title)}"` : ''}><input type="checkbox" ${attr}="${esc(val)}"> ${label}</label>`;
     const fl = document.getElementById('f-layers');
     fl.innerHTML = L.districts.map(d =>
       check('data-flayer', SHORT[d.layer],
@@ -757,7 +776,8 @@
         `${esc(r)} <span class="n">${slim.filter(c => c.r === r).length} orgs</span>`)).join('');
     document.getElementById('f-mats').innerHTML = MATS.map(mt =>
       check('data-fmat', mt,
-        `${esc(mt)} <span class="n">${slim.filter(c => c.m === mt).length} orgs</span>`)).join('');
+        `${esc(mt)} <span class="n">${slim.filter(c => c.m === mt).length} orgs</span>`,
+        MAT_DEFS[mt])).join('');
 
     rail.addEventListener('change', e => {
       const i = e.target;
@@ -1043,7 +1063,7 @@
       json('data/poster-layout.json'), json('data/search-index.json'), json('data/partner-index.json')
     ]);
     L = layout; slim = slimIdx; partners = pIdx;
-    W = L.meta.width; H = L.meta.height; MS = L.meta.medStyle;
+    W = L.meta.width; H = L.meta.height; MS = L.meta.medStyle; CS = L.meta.chipStyle;
     bySlug = Object.fromEntries(slim.map(c => [c.s, c]));
 
     try {  // logo assets are optional by design; monograms are the default
@@ -1060,7 +1080,7 @@
     document.getElementById('legend-layers').innerHTML = L.districts.map(d =>
       `<span class="lg"><span class="sw" style="background:oklch(var(--layer-l) var(--layer-c) ${d.hue})"></span>${esc(d.layer.replace('Governance: ', ''))} <span class="n">${d.count}</span></span>`
     ).join('') + `<span class="lg"><span class="sw" style="background:oklch(var(--layer-l) var(--layer-c) 105)"></span>Middleware &amp; Tooling renders inside the autonomy district <span class="n">3</span></span>
-      <span class="lg"><span class="sw" style="background:var(--ink)"></span>Passenger autonomy, inside the octagon <span class="n">${L.medallion.length}</span></span>`;
+      <span class="lg"><span class="sw" style="background:var(--ink)"></span>Passenger autonomy, at the centre <span class="n">${L.medallion.length}</span></span>`;
 
     // capture the deep-link hash before syncURL can rewrite the address bar
     const initial = decodeURIComponent(location.hash.slice(1));

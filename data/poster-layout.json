@@ -1,8 +1,10 @@
 {
  "meta": {
   "generatedBy": "tools/build-poster-layout.py",
-  "module": 240,
-  "pitch": 264,
+  "chipW": 240,
+  "chipH": 288,
+  "pitchX": 264,
+  "pitchY": 312,
   "margin": 200,
   "headerH": 280,
   "companyCount": 562,
@@ -17,50 +19,62 @@
    "claimSize": 22,
    "claimChars": 40
   },
-  "width": 5224,
-  "height": 3904,
+  "chipStyle": {
+   "logo": 172,
+   "logoY": 16,
+   "nameY": 208,
+   "nameSize": 13,
+   "nameStep": 16,
+   "nameChars": 24,
+   "descY": 244,
+   "descStep": 14,
+   "descSize": 11.5,
+   "descChars": 34
+  },
+  "width": 5752,
+  "height": 4096,
   "plate": {
    "x": 200,
    "y": 200,
-   "w": 4824,
-   "h": 3504,
+   "w": 5352,
+   "h": 3696,
    "rx": 56
   },
   "medallionBox": {
-   "x": 792,
-   "y": 1192,
+   "x": 1056,
+   "y": 1288,
    "w": 3640,
    "h": 1520
   }
  },
  "oct": {
-  "cx": 2612,
-  "cy": 1952,
+  "cx": 2876,
+  "cy": 2048,
   "r": 760,
   "hw": 1820,
   "hh": 760,
   "points": [
    [
-    792,
-    1192
+    1056,
+    1288
    ],
    [
-    4432,
-    1192
+    4696,
+    1288
    ],
    [
-    4432,
-    2712
+    4696,
+    2808
    ],
    [
-    792,
-    2712
+    1056,
+    2808
    ]
   ],
-  "titleY": 1322,
-  "subY": 1388,
-  "ruleY": 2582,
-  "footY": 2636,
+  "titleY": 1418,
+  "subY": 1484,
+  "ruleY": 2678,
+  "footY": 2732,
   "title": "PASSENGER AUTONOMY",
   "sub": "AUTONOMOUS DRIVERS A PASSENGER CAN ACTUALLY MEET",
   "foot": "12 OF 562 ORGANISATIONS ON THIS CHART"
@@ -430,7 +444,7 @@
    "x": 200,
    "y": 200,
    "w": 1384,
-   "h": 992,
+   "h": 1088,
    "poly": [
     [
      200,
@@ -442,11 +456,11 @@
     ],
     [
      1584,
-     1192
+     1288
     ],
     [
      200,
-     1192
+     1288
     ]
    ],
    "header": {
@@ -461,9 +475,13 @@
    "labelLines": [
     "AV DRIVER / AUTONOMY SOFTWARE"
    ],
+   "desc": [
+    "THE 51 ORGS WRITING AND PROVING THE DRIVING SOFTWARE"
+   ],
+   "descSize": 24,
    "bar": {
     "x": 232,
-    "y": 1060,
+    "y": 1156,
     "w": 1320,
     "h": 100
    },
@@ -737,46 +755,50 @@
    ],
    "x": 1584,
    "y": 200,
-   "w": 1120,
-   "h": 992,
+   "w": 1384,
+   "h": 1088,
    "poly": [
     [
      1584,
      200
     ],
     [
-     2704,
+     2968,
      200
     ],
     [
-     2704,
-     1192
+     2968,
+     1288
     ],
     [
      1584,
-     1192
+     1288
     ]
    ],
    "header": {
     "x": 1584,
     "y": 200,
-    "w": 1120,
+    "w": 1384,
     "h": 280,
     "tx": 1584,
-    "tw": 1120
+    "tw": 1384
    },
    "labelSize": 44,
    "labelLines": [
     "SENSING & COMPUTE HARDWARE"
    ],
+   "desc": [
+    "THE 38 ORGS BUILDING THE SENSORS AND SILICON IT RUNS ON"
+   ],
+   "descSize": 24,
    "bar": {
     "x": 1616,
-    "y": 1060,
-    "w": 1056,
+    "y": 1156,
+    "w": 1320,
     "h": 100
    },
-   "capacity": 8,
-   "slack": 2
+   "capacity": 10,
+   "slack": 4
   },
   {
    "id": "data-maps-simulation",
@@ -1115,43 +1137,47 @@
      "spokenTo": false
     }
    ],
-   "x": 2704,
+   "x": 2968,
    "y": 200,
    "w": 1120,
-   "h": 992,
+   "h": 1088,
    "poly": [
     [
-     2704,
+     2968,
      200
     ],
     [
-     3824,
+     4088,
      200
     ],
     [
-     3824,
-     1192
+     4088,
+     1288
     ],
     [
-     2704,
-     1192
+     2968,
+     1288
     ]
    ],
    "header": {
-    "x": 2704,
+    "x": 2968,
     "y": 200,
     "w": 1120,
     "h": 280,
-    "tx": 2704,
+    "tx": 2968,
     "tw": 1120
    },
    "labelSize": 44,
    "labelLines": [
     "DATA, MAPS & SIMULATION"
    ],
+   "desc": [
+    "THE 47 ORGS SUPPLYING ITS DATA, MAPS AND PRACTICE MILES"
+   ],
+   "descSize": 24,
    "bar": {
-    "x": 2736,
-    "y": 1060,
+    "x": 3000,
+    "y": 1156,
     "w": 1056,
     "h": 100
    },
@@ -1551,48 +1577,52 @@
      "spokenTo": false
     }
    ],
-   "x": 3824,
+   "x": 4088,
    "y": 200,
-   "w": 1200,
-   "h": 992,
+   "w": 1464,
+   "h": 1088,
    "poly": [
     [
-     3824,
+     4088,
      200
     ],
     [
-     5024,
+     5552,
      200
     ],
     [
-     5024,
-     1192
+     5552,
+     1288
     ],
     [
-     3824,
-     1192
+     4088,
+     1288
     ]
    ],
    "header": {
-    "x": 3824,
+    "x": 4088,
     "y": 200,
-    "w": 1200,
+    "w": 1464,
     "h": 280,
-    "tx": 3824,
-    "tw": 1200
+    "tx": 4088,
+    "tw": 1464
    },
    "labelSize": 44,
    "labelLines": [
     "CONNECTIVITY & INFRASTRUCTURE"
    ],
+   "desc": [
+    "THE 55 ORGS KEEPING FLEETS CONNECTED TO ROAD AND CLOUD"
+   ],
+   "descSize": 24,
    "bar": {
-    "x": 3856,
-    "y": 1060,
-    "w": 1136,
+    "x": 4120,
+    "y": 1156,
+    "w": 1400,
     "h": 100
    },
-   "capacity": 8,
-   "slack": 1
+   "capacity": 10,
+   "slack": 3
   },
   {
    "id": "vehicle-platform-manufacturing",
@@ -2051,49 +2081,53 @@
      "spokenTo": false
     }
    ],
-   "x": 4432,
-   "y": 1192,
-   "w": 592,
+   "x": 4696,
+   "y": 1288,
+   "w": 856,
    "h": 1520,
    "poly": [
     [
-     4432,
-     1192
+     4696,
+     1288
     ],
     [
-     5024,
-     1192
+     5552,
+     1288
     ],
     [
-     5024,
-     2712
+     5552,
+     2808
     ],
     [
-     4432,
-     2712
+     4696,
+     2808
     ]
    ],
    "header": {
-    "x": 4432,
-    "y": 1192,
-    "w": 592,
+    "x": 4696,
+    "y": 1288,
+    "w": 856,
     "h": 280,
-    "tx": 4432,
-    "tw": 592
+    "tx": 4696,
+    "tw": 856
    },
    "labelSize": 44,
    "labelLines": [
     "VEHICLE PLATFORM",
     "& MANUFACTURING"
    ],
+   "desc": [
+    "THE 64 ORGS BUILDING THE VEHICLES AROUND THE DRIVER"
+   ],
+   "descSize": 24,
    "bar": {
-    "x": 4464,
-    "y": 2580,
-    "w": 528,
+    "x": 4728,
+    "y": 2676,
+    "w": 792,
     "h": 100
    },
-   "capacity": 8,
-   "slack": 0
+   "capacity": 9,
+   "slack": 1
   },
   {
    "id": "governance-standards-safety-advocacy",
@@ -2505,47 +2539,51 @@
     }
    ],
    "x": 200,
-   "y": 2712,
-   "w": 1120,
-   "h": 992,
+   "y": 2808,
+   "w": 1384,
+   "h": 1088,
    "poly": [
     [
      200,
-     2712
+     2808
     ],
     [
-     1320,
-     2712
+     1584,
+     2808
     ],
     [
-     1320,
-     3704
+     1584,
+     3896
     ],
     [
      200,
-     3704
+     3896
     ]
    ],
    "header": {
     "x": 200,
-    "y": 2712,
-    "w": 1120,
+    "y": 2808,
+    "w": 1384,
     "h": 280,
     "tx": 200,
-    "tw": 1120
+    "tw": 1384
    },
    "labelSize": 44,
    "labelLines": [
     "STANDARDS, SAFETY & ADVOCACY"
    ],
+   "desc": [
+    "THE 58 BODIES WRITING ITS STANDARDS AND MAKING ITS CASE"
+   ],
+   "descSize": 24,
    "bar": {
     "x": 232,
-    "y": 3572,
-    "w": 1056,
+    "y": 3764,
+    "w": 1320,
     "h": 100
    },
-   "capacity": 8,
-   "slack": 0
+   "capacity": 10,
+   "slack": 2
   },
   {
    "id": "governance-regulators-government",
@@ -3084,48 +3122,52 @@
      "spokenTo": false
     }
    ],
-   "x": 1320,
-   "y": 2712,
-   "w": 1384,
-   "h": 992,
+   "x": 1584,
+   "y": 2808,
+   "w": 1648,
+   "h": 1088,
    "poly": [
     [
-     1320,
-     2712
+     1584,
+     2808
     ],
     [
-     2704,
-     2712
+     3232,
+     2808
     ],
     [
-     2704,
-     3704
+     3232,
+     3896
     ],
     [
-     1320,
-     3704
+     1584,
+     3896
     ]
    ],
    "header": {
-    "x": 1320,
-    "y": 2712,
-    "w": 1384,
+    "x": 1584,
+    "y": 2808,
+    "w": 1648,
     "h": 280,
-    "tx": 1320,
-    "tw": 1384
+    "tx": 1584,
+    "tw": 1648
    },
    "labelSize": 44,
    "labelLines": [
     "REGULATORS & GOVERNMENT"
    ],
+   "desc": [
+    "THE 76 BODIES THAT PERMIT, LICENSE AND POLICE IT"
+   ],
+   "descSize": 24,
    "bar": {
-    "x": 1352,
-    "y": 3572,
-    "w": 1320,
+    "x": 1616,
+    "y": 3764,
+    "w": 1584,
     "h": 100
    },
-   "capacity": 10,
-   "slack": 0
+   "capacity": 12,
+   "slack": 2
   },
   {
    "id": "capital-insurance-risk",
@@ -3392,34 +3434,34 @@
      "spokenTo": false
     }
    ],
-   "x": 2704,
-   "y": 2712,
+   "x": 3232,
+   "y": 2808,
    "w": 856,
-   "h": 992,
+   "h": 1088,
    "poly": [
     [
-     2704,
-     2712
+     3232,
+     2808
     ],
     [
-     3560,
-     2712
+     4088,
+     2808
     ],
     [
-     3560,
-     3704
+     4088,
+     3896
     ],
     [
-     2704,
-     3704
+     3232,
+     3896
     ]
    ],
    "header": {
-    "x": 2704,
-    "y": 2712,
+    "x": 3232,
+    "y": 2808,
     "w": 856,
     "h": 280,
-    "tx": 2704,
+    "tx": 3232,
     "tw": 856
    },
    "labelSize": 44,
@@ -3427,9 +3469,13 @@
     "CAPITAL,",
     "INSURANCE & RISK"
    ],
+   "desc": [
+    "THE 38 ORGS FUNDING AND INSURING THE INDUSTRY"
+   ],
+   "descSize": 24,
    "bar": {
-    "x": 2736,
-    "y": 3572,
+    "x": 3264,
+    "y": 3764,
     "w": 792,
     "h": 100
    },
@@ -3933,43 +3979,47 @@
      "spokenTo": false
     }
    ],
-   "x": 3560,
-   "y": 2712,
+   "x": 4088,
+   "y": 2808,
    "w": 1464,
-   "h": 992,
+   "h": 1088,
    "poly": [
     [
-     3560,
-     2712
+     4088,
+     2808
     ],
     [
-     5024,
-     2712
+     5552,
+     2808
     ],
     [
-     5024,
-     3704
+     5552,
+     3896
     ],
     [
-     3560,
-     3704
+     4088,
+     3896
     ]
    ],
    "header": {
-    "x": 3560,
-    "y": 2712,
+    "x": 4088,
+    "y": 2808,
     "w": 1464,
     "h": 280,
-    "tx": 3560,
+    "tx": 4088,
     "tw": 1464
    },
    "labelSize": 44,
    "labelLines": [
     "FLEET OPERATIONS & DEPOT"
    ],
+   "desc": [
+    "THE 70 ORGS CHARGING, CLEANING AND TURNING FLEETS AROUND"
+   ],
+   "descSize": 24,
    "bar": {
-    "x": 3592,
-    "y": 3572,
+    "x": 4120,
+    "y": 3764,
     "w": 1400,
     "h": 100
    },
@@ -4354,48 +4404,52 @@
     }
    ],
    "x": 200,
-   "y": 1192,
-   "w": 592,
+   "y": 1288,
+   "w": 856,
    "h": 1520,
    "poly": [
     [
      200,
-     1192
+     1288
     ],
     [
-     792,
-     1192
+     1056,
+     1288
     ],
     [
-     792,
-     2712
+     1056,
+     2808
     ],
     [
      200,
-     2712
+     2808
     ]
    ],
    "header": {
     "x": 200,
-    "y": 1192,
-    "w": 592,
+    "y": 1288,
+    "w": 856,
     "h": 280,
     "tx": 200,
-    "tw": 592
+    "tw": 856
    },
    "labelSize": 44,
    "labelLines": [
     "DEMAND & COMMERCIAL",
     "PLATFORMS"
    ],
+   "desc": [
+    "THE 53 ORGS THAT BRING IT RIDERS AND FREIGHT"
+   ],
+   "descSize": 24,
    "bar": {
     "x": 232,
-    "y": 2580,
-    "w": 528,
+    "y": 2676,
+    "w": 792,
     "h": 100
    },
-   "capacity": 8,
-   "slack": 1
+   "capacity": 9,
+   "slack": 2
   }
  ],
  "chips": [
@@ -4407,7 +4461,10 @@
    "x": 232,
    "y": 512,
    "w": 240,
-   "h": 240,
+   "h": 288,
+   "sub": [
+    "Simulation & synthetic data"
+   ],
    "mono": "AI",
    "hue": 265,
    "layers": 6,
@@ -4426,7 +4483,10 @@
    "x": 496,
    "y": 512,
    "w": 240,
-   "h": 240,
+   "h": 288,
+   "sub": [
+    "Compute / SoC / AI chips"
+   ],
    "mono": "HR",
    "hue": 265,
    "layers": 3,
@@ -4444,7 +4504,11 @@
    "x": 760,
    "y": 512,
    "w": 240,
-   "h": 240,
+   "h": 288,
+   "sub": [
+    "Certified Level 3 operation in",
+    "Germany, Nevada and California"
+   ],
    "mono": "MB",
    "hue": 265,
    "layers": 2,
@@ -4462,7 +4526,11 @@
    "x": 1024,
    "y": 512,
    "w": 240,
-   "h": 240,
+   "h": 288,
+   "sub": [
+    "OEM data flywheel across 680k+",
+    "Momenta-equipped vehicles"
+   ],
    "mono": "MO",
    "hue": 265,
    "layers": 4,
@@ -4480,7 +4548,11 @@
    "x": 1288,
    "y": 512,
    "w": 240,
-   "h": 240,
+   "h": 288,
+   "sub": [
+    "Banyan 3.3.0 world-model update",
+    "rolled out to 460k+ vehicles"
+   ],
    "mono": "NI",
    "hue": 265,
    "layers": 4,
@@ -4497,9 +4569,12 @@
    "id": "c34",
    "district": "av-driver-autonomy-software",
    "x": 232,
-   "y": 776,
+   "y": 824,
    "w": 240,
-   "h": 240,
+   "h": 288,
+   "sub": [
+    "Compute / SoC / AI chips"
+   ],
    "mono": "ND",
    "hue": 265,
    "layers": 3,
@@ -4516,9 +4591,13 @@
    "id": "c52",
    "district": "av-driver-autonomy-software",
    "x": 496,
-   "y": 776,
+   "y": 824,
    "w": 240,
-   "h": 240,
+   "h": 288,
+   "sub": [
+    "VW licenses its AD stack for China",
+    "EVs starting 2026"
+   ],
    "mono": "XP",
    "hue": 265,
    "layers": 4,
@@ -4536,7 +4615,11 @@
    "x": 1616,
    "y": 512,
    "w": 240,
-   "h": 240,
+   "h": 288,
+   "sub": [
+    "Radar chips and safety MCUs inside",
+    "zonal ADAS architectures"
+   ],
    "mono": "IN",
    "hue": 200,
    "layers": 2,
@@ -4554,7 +4637,11 @@
    "x": 1880,
    "y": 512,
    "w": 240,
-   "h": 240,
+   "h": 288,
+   "sub": [
+    "Radar processors plus secure",
+    "in-vehicle networking silicon"
+   ],
    "mono": "NS",
    "hue": 200,
    "layers": 4,
@@ -4572,7 +4659,11 @@
    "x": 2144,
    "y": 512,
    "w": 240,
-   "h": 240,
+   "h": 288,
+   "sub": [
+    "Digital LiDAR at $49M quarterly",
+    "revenue, 12,600+ sensors shipped"
+   ],
    "mono": "OU",
    "hue": 200,
    "layers": 3,
@@ -4591,7 +4682,11 @@
    "x": 2408,
    "y": 512,
    "w": 240,
-   "h": 240,
+   "h": 288,
+   "sub": [
+    "Snapdragon Ride uniting cockpit,",
+    "connectivity and ADAS compute"
+   ],
    "mono": "QA",
    "hue": 200,
    "layers": 3,
@@ -4607,10 +4702,14 @@
    "slug": "robosense",
    "id": "c76",
    "district": "sensing-compute-hardware",
-   "x": 1616,
-   "y": 776,
+   "x": 2672,
+   "y": 512,
    "w": 240,
-   "h": 240,
+   "h": 288,
+   "sub": [
+    "LiDAR design wins across 177",
+    "models from 36 OEMs"
+   ],
    "mono": "RO",
    "hue": 200,
    "layers": 2,
@@ -4625,10 +4724,14 @@
    "slug": "tesla-ai-hardware",
    "id": "c82",
    "district": "sensing-compute-hardware",
-   "x": 1880,
-   "y": 776,
+   "x": 1616,
+   "y": 824,
    "w": 240,
-   "h": 240,
+   "h": 288,
+   "sub": [
+    "In-house FSD computers behind a",
+    "camera-first autonomy path"
+   ],
    "mono": "TA",
    "hue": 200,
    "layers": 3,
@@ -4644,10 +4747,14 @@
    "slug": "ansys-avxcelerate-av-simulation",
    "id": "c94",
    "district": "data-maps-simulation",
-   "x": 2736,
+   "x": 3000,
    "y": 512,
    "w": 240,
-   "h": 240,
+   "h": 288,
+   "sub": [
+    "Physics-grade sensor simulation",
+    "for virtual safety validation"
+   ],
    "mono": "AA",
    "hue": 150,
    "layers": 2,
@@ -4660,10 +4767,14 @@
    "slug": "appen",
    "id": "c95",
    "district": "data-maps-simulation",
-   "x": 3000,
+   "x": 3264,
    "y": 512,
    "w": 240,
-   "h": 240,
+   "h": 288,
+   "sub": [
+    "Crowd-powered annotation spanning",
+    "speech, text and vision"
+   ],
    "mono": "AP",
    "hue": 150,
    "layers": 2,
@@ -4676,10 +4787,14 @@
    "slug": "baidu-apollo-hd-map-baidu-maps",
    "id": "c97",
    "district": "data-maps-simulation",
-   "x": 3264,
+   "x": 3528,
    "y": 512,
    "w": 240,
-   "h": 240,
+   "h": 288,
+   "sub": [
+    "HD map backbone feeding Apollo",
+    "Go's operating cities"
+   ],
    "mono": "BA",
    "hue": 150,
    "layers": 3,
@@ -4694,10 +4809,14 @@
    "slug": "intertek",
    "id": "c113",
    "district": "data-maps-simulation",
-   "x": 3528,
+   "x": 3792,
    "y": 512,
    "w": 240,
-   "h": 240,
+   "h": 288,
+   "sub": [
+    "Global TIC network for AV hardware",
+    "and vehicle compliance"
+   ],
    "mono": "IN",
    "hue": 150,
    "layers": 2,
@@ -4712,10 +4831,14 @@
    "slug": "mobileye-rem-roadbook",
    "id": "c119",
    "district": "data-maps-simulation",
-   "x": 2736,
-   "y": 776,
+   "x": 3000,
+   "y": 824,
    "w": 240,
-   "h": 240,
+   "h": 288,
+   "sub": [
+    "Crowdsourced RoadBook maps drawn",
+    "from production ADAS cars"
+   ],
    "mono": "MR",
    "hue": 150,
    "layers": 3,
@@ -4730,10 +4853,14 @@
    "slug": "navinfo",
    "id": "c121",
    "district": "data-maps-simulation",
-   "x": 3000,
-   "y": 776,
+   "x": 3264,
+   "y": 824,
    "w": 240,
-   "h": 240,
+   "h": 288,
+   "sub": [
+    "Official-grade HD map licenses",
+    "inside China's geodata regime"
+   ],
    "mono": "NA",
    "hue": 150,
    "layers": 3,
@@ -4749,10 +4876,15 @@
    "slug": "ericsson",
    "id": "c158",
    "district": "connectivity-infrastructure",
-   "x": 3856,
+   "x": 4120,
    "y": 512,
    "w": 240,
-   "h": 240,
+   "h": 288,
+   "sub": [
+    "5GAA founding networks for",
+    "teleoperation and cooperative",
+    "driving"
+   ],
    "mono": "ER",
    "hue": 230,
    "layers": 3,
@@ -4765,10 +4897,14 @@
    "slug": "iteris",
    "id": "c168",
    "district": "connectivity-infrastructure",
-   "x": 4120,
+   "x": 4384,
    "y": 512,
    "w": 240,
-   "h": 240,
+   "h": 288,
+   "sub": [
+    "Traffic detection and road-agency",
+    "software, now under Almaviva"
+   ],
    "mono": "IT",
    "hue": 230,
    "layers": 3,
@@ -4781,10 +4917,14 @@
    "slug": "nokia",
    "id": "c172",
    "district": "connectivity-infrastructure",
-   "x": 4384,
+   "x": 4648,
    "y": 512,
    "w": 240,
-   "h": 240,
+   "h": 288,
+   "sub": [
+    "Private wireless and edge networks",
+    "for depots and remote ops"
+   ],
    "mono": "NO",
    "hue": 230,
    "layers": 3,
@@ -4797,10 +4937,14 @@
    "slug": "qualcomm",
    "id": "c180",
    "district": "connectivity-infrastructure",
-   "x": 4648,
+   "x": 4912,
    "y": 512,
    "w": 240,
-   "h": 240,
+   "h": 288,
+   "sub": [
+    "Snapdragon Digital Chassis from",
+    "modem to Ride SoC"
+   ],
    "mono": "QU",
    "hue": 230,
    "layers": 3,
@@ -4815,10 +4959,14 @@
    "slug": "ul-solutions",
    "id": "c187",
    "district": "connectivity-infrastructure",
-   "x": 3856,
-   "y": 776,
+   "x": 5176,
+   "y": 512,
    "w": 240,
-   "h": 240,
+   "h": 288,
+   "sub": [
+    "UL 4600 certification anchoring AV",
+    "safety cases"
+   ],
    "mono": "US",
    "hue": 230,
    "layers": 5,
@@ -4836,9 +4984,13 @@
    "id": "c169",
    "district": "connectivity-infrastructure",
    "x": 4120,
-   "y": 776,
+   "y": 824,
    "w": 240,
-   "h": 240,
+   "h": 288,
+   "sub": [
+    "Tolling and traffic management",
+    "converging with V2X corridors"
+   ],
    "mono": "KT",
    "hue": 230,
    "layers": 3,
@@ -4852,9 +5004,13 @@
    "id": "c139",
    "district": "connectivity-infrastructure",
    "x": 4384,
-   "y": 776,
+   "y": 824,
    "w": 240,
-   "h": 240,
+   "h": 288,
+   "sub": [
+    "Automaker-telecom alliance",
+    "steering the C-V2X 2030 roadmap"
+   ],
    "mono": "5A",
    "hue": 230,
    "layers": 2,
@@ -4867,10 +5023,14 @@
    "slug": "aptiv",
    "id": "c195",
    "district": "vehicle-platform-manufacturing",
-   "x": 4464,
-   "y": 1504,
+   "x": 4728,
+   "y": 1600,
    "w": 240,
-   "h": 240,
+   "h": 288,
+   "sub": [
+    "Vehicle architecture supplier and",
+    "Motional co-founder"
+   ],
    "mono": "AP",
    "hue": 40,
    "layers": 5,
@@ -4886,10 +5046,14 @@
    "slug": "byd",
    "id": "c200",
    "district": "vehicle-platform-manufacturing",
-   "x": 4728,
-   "y": 1504,
+   "x": 4992,
+   "y": 1600,
    "w": 240,
-   "h": 240,
+   "h": 288,
+   "sub": [
+    "EV scale champion with",
+    "Momenta-linked autonomy programs"
+   ],
    "mono": "BY",
    "hue": 40,
    "layers": 3,
@@ -4904,10 +5068,13 @@
    "slug": "geely",
    "id": "c215",
    "district": "vehicle-platform-manufacturing",
-   "x": 4464,
-   "y": 1768,
+   "x": 5256,
+   "y": 1600,
    "w": 240,
-   "h": 240,
+   "h": 288,
+   "sub": [
+    "OEM AV platform suppliers"
+   ],
    "mono": "GE",
    "hue": 40,
    "layers": 3,
@@ -4924,9 +5091,12 @@
    "id": "c228",
    "district": "vehicle-platform-manufacturing",
    "x": 4728,
-   "y": 1768,
+   "y": 1912,
    "w": 240,
-   "h": 240,
+   "h": 288,
+   "sub": [
+    "Tier-1 integrators"
+   ],
    "mono": "MA",
    "hue": 40,
    "layers": 3,
@@ -4941,10 +5111,13 @@
    "slug": "mobileye",
    "id": "c231",
    "district": "vehicle-platform-manufacturing",
-   "x": 4464,
-   "y": 2032,
+   "x": 4992,
+   "y": 1912,
    "w": 240,
-   "h": 240,
+   "h": 288,
+   "sub": [
+    "L2+/L3 consumer ADAS stacks"
+   ],
    "mono": "MO",
    "hue": 40,
    "layers": 6,
@@ -4962,10 +5135,14 @@
    "slug": "valeo",
    "id": "c249",
    "district": "vehicle-platform-manufacturing",
-   "x": 4728,
-   "y": 2032,
+   "x": 5256,
+   "y": 1912,
    "w": 240,
-   "h": 240,
+   "h": 288,
+   "sub": [
+    "Production lidar history plus",
+    "VW-Mobileye ADAS programs"
+   ],
    "mono": "VA",
    "hue": 40,
    "layers": 5,
@@ -4981,10 +5158,13 @@
    "slug": "continental",
    "id": "c201",
    "district": "vehicle-platform-manufacturing",
-   "x": 4464,
-   "y": 2296,
+   "x": 4728,
+   "y": 2224,
    "w": 240,
-   "h": 240,
+   "h": 288,
+   "sub": [
+    "Radar"
+   ],
    "mono": "CO",
    "hue": 40,
    "layers": 4,
@@ -4999,10 +5179,14 @@
    "slug": "denso",
    "id": "c204",
    "district": "vehicle-platform-manufacturing",
-   "x": 4728,
-   "y": 2296,
+   "x": 4992,
+   "y": 2224,
    "w": 240,
-   "h": 240,
+   "h": 288,
+   "sub": [
+    "Toyota-group electronics scaling",
+    "automated driving parts"
+   ],
    "mono": "DE",
    "hue": 40,
    "layers": 3,
@@ -5018,9 +5202,13 @@
    "id": "c541",
    "district": "governance-standards-safety-advocacy",
    "x": 232,
-   "y": 3024,
+   "y": 3120,
    "w": 240,
-   "h": 240,
+   "h": 288,
+   "sub": [
+    "AI condition reports for rental,",
+    "remarketing and fleet vehicles"
+   ],
    "mono": "PA",
    "hue": 340,
    "layers": 3,
@@ -5037,9 +5225,13 @@
    "id": "c495",
    "district": "governance-standards-safety-advocacy",
    "x": 496,
-   "y": 3024,
+   "y": 3120,
    "w": 240,
-   "h": 240,
+   "h": 288,
+   "sub": [
+    "Cellular standards body defining",
+    "C-V2X and 5G for smart roads"
+   ],
    "mono": "3G",
    "hue": 340,
    "layers": 1,
@@ -5053,9 +5245,13 @@
    "id": "c496",
    "district": "governance-standards-safety-advocacy",
    "x": 760,
-   "y": 3024,
+   "y": 3120,
    "w": 240,
-   "h": 240,
+   "h": 288,
+   "sub": [
+    "Research on driver understanding",
+    "and misuse of automation"
+   ],
    "mono": "AF",
    "hue": 340,
    "layers": 1,
@@ -5069,9 +5265,13 @@
    "id": "c497",
    "district": "governance-standards-safety-advocacy",
    "x": 1024,
-   "y": 3024,
+   "y": 3120,
    "w": 240,
-   "h": 240,
+   "h": 288,
+   "sub": [
+    "Coalition pushing stronger vehicle",
+    "and highway safety rules"
+   ],
    "mono": "AF",
    "hue": 340,
    "layers": 1,
@@ -5084,10 +5284,14 @@
    "slug": "alliance-for-automotive-innovation",
    "id": "c498",
    "district": "governance-standards-safety-advocacy",
-   "x": 232,
-   "y": 3288,
+   "x": 1288,
+   "y": 3120,
    "w": 240,
-   "h": 240,
+   "h": 288,
+   "sub": [
+    "Light-duty OEM trade voice on",
+    "FMVSS and ADAS policy"
+   ],
    "mono": "AF",
    "hue": 340,
    "layers": 1,
@@ -5100,10 +5304,14 @@
    "slug": "asam-e-v",
    "id": "c499",
    "district": "governance-standards-safety-advocacy",
-   "x": 496,
-   "y": 3288,
+   "x": 232,
+   "y": 3432,
    "w": 240,
-   "h": 240,
+   "h": 288,
+   "sub": [
+    "Keeper of the OpenX file formats",
+    "behind AV simulation"
+   ],
    "mono": "AE",
    "hue": 340,
    "layers": 1,
@@ -5116,10 +5324,14 @@
    "slug": "asam-opendrive",
    "id": "c500",
    "district": "governance-standards-safety-advocacy",
-   "x": 760,
-   "y": 3288,
+   "x": 496,
+   "y": 3432,
    "w": 240,
-   "h": 240,
+   "h": 288,
+   "sub": [
+    "Road-network exchange format,",
+    "version 1.9.0 shipped May 2026"
+   ],
    "mono": "AO",
    "hue": 340,
    "layers": 1,
@@ -5132,10 +5344,15 @@
    "slug": "autonomous-vehicle-industry-association-avia",
    "id": "c507",
    "district": "governance-standards-safety-advocacy",
-   "x": 1024,
-   "y": 3288,
+   "x": 760,
+   "y": 3432,
    "w": 240,
-   "h": 240,
+   "h": 288,
+   "sub": [
+    "Washington policy voice for",
+    "robotaxi and AV trucking",
+    "developers"
+   ],
    "mono": "AV",
    "hue": 340,
    "layers": 1,
@@ -5148,10 +5365,14 @@
    "slug": "abu-dhabi-itc",
    "id": "c419",
    "district": "governance-regulators-government",
-   "x": 1352,
-   "y": 3024,
+   "x": 1616,
+   "y": 3120,
    "w": 240,
-   "h": 240,
+   "h": 288,
+   "sub": [
+    "Transport regulator for Yas Island",
+    "and the emirate's robotaxis"
+   ],
    "mono": "AD",
    "hue": 290,
    "layers": 7,
@@ -5168,10 +5389,15 @@
    "slug": "dubai-rta",
    "id": "c432",
    "district": "governance-regulators-government",
-   "x": 1616,
-   "y": 3024,
+   "x": 1880,
+   "y": 3120,
    "w": 240,
-   "h": 240,
+   "h": 288,
+   "sub": [
+    "Hosts Apollo Go, WeRide and",
+    "Pony.ai trials under Dubai's AV",
+    "strategy"
+   ],
    "mono": "DR",
    "hue": 290,
    "layers": 7,
@@ -5188,10 +5414,14 @@
    "slug": "arizona-department-of-transportation-adot",
    "id": "c420",
    "district": "governance-regulators-government",
-   "x": 1880,
-   "y": 3024,
+   "x": 2144,
+   "y": 3120,
    "w": 240,
-   "h": 240,
+   "h": 288,
+   "sub": [
+    "Permissive Arizona roads hosting",
+    "Waymo, Nuro and Zoox pilots"
+   ],
    "mono": "AD",
    "hue": 290,
    "layers": 2,
@@ -5206,10 +5436,15 @@
    "slug": "california-cpuc",
    "id": "c423",
    "district": "governance-regulators-government",
-   "x": 2144,
-   "y": 3024,
+   "x": 2408,
+   "y": 3120,
    "w": 240,
-   "h": 240,
+   "h": 288,
+   "sub": [
+    "Authorized Waymo's 2024",
+    "paid-service expansion to LA and",
+    "SF peninsula"
+   ],
    "mono": "CC",
    "hue": 290,
    "layers": 2,
@@ -5224,10 +5459,14 @@
    "slug": "california-department-of-motor-vehicles-california-dmv",
    "id": "c424",
    "district": "governance-regulators-government",
-   "x": 2408,
-   "y": 3024,
+   "x": 2672,
+   "y": 3120,
    "w": 240,
-   "h": 240,
+   "h": 288,
+   "sub": [
+    "Issues California AV permits and",
+    "collects disengagement reports"
+   ],
    "mono": "CD",
    "hue": 290,
    "layers": 2,
@@ -5242,10 +5481,15 @@
    "slug": "california-dmv",
    "id": "c425",
    "district": "governance-regulators-government",
-   "x": 1352,
-   "y": 3288,
+   "x": 2936,
+   "y": 3120,
    "w": 240,
-   "h": 240,
+   "h": 288,
+   "sub": [
+    "New rules open AV trucking and",
+    "transit in California from Jul",
+    "2026"
+   ],
    "mono": "CD",
    "hue": 290,
    "layers": 3,
@@ -5261,9 +5505,13 @@
    "id": "c426",
    "district": "governance-regulators-government",
    "x": 1616,
-   "y": 3288,
+   "y": 3432,
    "w": 240,
-   "h": 240,
+   "h": 288,
+   "sub": [
+    "Gatekeeper for paid robotaxi fares",
+    "after California DMV sign-off"
+   ],
    "mono": "CP",
    "hue": 290,
    "layers": 3,
@@ -5279,9 +5527,13 @@
    "id": "c428",
    "district": "governance-regulators-government",
    "x": 1880,
-   "y": 3288,
+   "y": 3432,
    "w": 240,
-   "h": 240,
+   "h": 288,
+   "sub": [
+    "Paused new China AV licenses",
+    "during a national safety review"
+   ],
    "mono": "CM",
    "hue": 290,
    "layers": 2,
@@ -5297,9 +5549,12 @@
    "id": "c435",
    "district": "governance-regulators-government",
    "x": 2144,
-   "y": 3288,
+   "y": 3432,
    "w": 240,
-   "h": 240,
+   "h": 288,
+   "sub": [
+    "US federal"
+   ],
    "mono": "FH",
    "hue": 290,
    "layers": 2,
@@ -5315,9 +5570,12 @@
    "id": "c436",
    "district": "governance-regulators-government",
    "x": 2408,
-   "y": 3288,
+   "y": 3432,
    "w": 240,
-   "h": 240,
+   "h": 288,
+   "sub": [
+    "US federal"
+   ],
    "mono": "FE",
    "hue": 290,
    "layers": 3,
@@ -5332,10 +5590,13 @@
    "slug": "admiral-group",
    "id": "c381",
    "district": "capital-insurance-risk",
-   "x": 2736,
-   "y": 3024,
+   "x": 3264,
+   "y": 3120,
    "w": 240,
-   "h": 240,
+   "h": 288,
+   "sub": [
+    "Personal motor insurance"
+   ],
    "mono": "AD",
    "hue": 60,
    "layers": 2,
@@ -5348,10 +5609,13 @@
    "slug": "aig",
    "id": "c382",
    "district": "capital-insurance-risk",
-   "x": 3000,
-   "y": 3024,
+   "x": 3528,
+   "y": 3120,
    "w": 240,
-   "h": 240,
+   "h": 288,
+   "sub": [
+    "AV insurance & underwriting"
+   ],
    "mono": "AI",
    "hue": 60,
    "layers": 2,
@@ -5364,10 +5628,15 @@
    "slug": "allianz-commercial",
    "id": "c383",
    "district": "capital-insurance-risk",
-   "x": 3264,
-   "y": 3024,
+   "x": 3792,
+   "y": 3120,
    "w": 240,
-   "h": 240,
+   "h": 288,
+   "sub": [
+    "Munich carrier sizing",
+    "product-liability cover for AV",
+    "fleets"
+   ],
    "mono": "AC",
    "hue": 60,
    "layers": 2,
@@ -5380,10 +5649,14 @@
    "slug": "aon",
    "id": "c384",
    "district": "capital-insurance-risk",
-   "x": 2736,
-   "y": 3288,
+   "x": 3264,
+   "y": 3432,
    "w": 240,
-   "h": 240,
+   "h": 288,
+   "sub": [
+    "Risk Capital segment brokering AV",
+    "programs before they standardize"
+   ],
    "mono": "AO",
    "hue": 60,
    "layers": 2,
@@ -5396,10 +5669,14 @@
    "slug": "aviva",
    "id": "c388",
    "district": "capital-insurance-risk",
-   "x": 3000,
-   "y": 3288,
+   "x": 3528,
+   "y": 3432,
    "w": 240,
-   "h": 240,
+   "h": 288,
+   "sub": [
+    "Personal and commercial motor",
+    "insurance"
+   ],
    "mono": "AV",
    "hue": 60,
    "layers": 2,
@@ -5412,10 +5689,13 @@
    "slug": "beazley",
    "id": "c390",
    "district": "capital-insurance-risk",
-   "x": 3264,
-   "y": 3288,
+   "x": 3792,
+   "y": 3432,
    "w": 240,
-   "h": 240,
+   "h": 288,
+   "sub": [
+    "Cyber and specialty liability"
+   ],
    "mono": "BE",
    "hue": 60,
    "layers": 2,
@@ -5428,10 +5708,14 @@
    "slug": "ampcontrol",
    "id": "c313",
    "district": "fleet-operations-depot",
-   "x": 3592,
-   "y": 3024,
+   "x": 4120,
+   "y": 3120,
    "w": 240,
-   "h": 240,
+   "h": 288,
+   "sub": [
+    "Charge-scheduling software that",
+    "minimizes depot downtime"
+   ],
    "mono": "AM",
    "hue": 320,
    "layers": 2,
@@ -5446,10 +5730,14 @@
    "slug": "anyline",
    "id": "c314",
    "district": "fleet-operations-depot",
-   "x": 3856,
-   "y": 3024,
+   "x": 4384,
+   "y": 3120,
    "w": 240,
-   "h": 240,
+   "h": 288,
+   "sub": [
+    "Vienna data-capture scanning tire",
+    "sidewalls for fleet checks"
+   ],
    "mono": "AN",
    "hue": 320,
    "layers": 2,
@@ -5464,10 +5752,15 @@
    "slug": "autofleet",
    "id": "c315",
    "district": "fleet-operations-depot",
-   "x": 4120,
-   "y": 3024,
+   "x": 4648,
+   "y": 3120,
    "w": 240,
-   "h": 240,
+   "h": 288,
+   "sub": [
+    "Tel Aviv rebalancing and",
+    "utilization engine for shared",
+    "fleets"
+   ],
    "mono": "AU",
    "hue": 320,
    "layers": 2,
@@ -5482,10 +5775,14 @@
    "slug": "bp-pulse",
    "id": "c320",
    "district": "fleet-operations-depot",
-   "x": 4384,
-   "y": 3024,
+   "x": 4912,
+   "y": 3120,
    "w": 240,
-   "h": 240,
+   "h": 288,
+   "sub": [
+    "Energy major's charging arm built",
+    "for high-utilization fleets"
+   ],
    "mono": "BP",
    "hue": 320,
    "layers": 2,
@@ -5500,10 +5797,15 @@
    "slug": "chargepoint",
    "id": "c321",
    "district": "fleet-operations-depot",
-   "x": 4648,
-   "y": 3024,
+   "x": 5176,
+   "y": 3120,
    "w": 240,
-   "h": 240,
+   "h": 288,
+   "sub": [
+    "Installed charging base",
+    "repositioned as AV depot",
+    "infrastructure"
+   ],
    "mono": "CH",
    "hue": 320,
    "layers": 2,
@@ -5518,10 +5820,13 @@
    "slug": "cox-automotive",
    "id": "c323",
    "district": "fleet-operations-depot",
-   "x": 3592,
-   "y": 3288,
+   "x": 4120,
+   "y": 3432,
    "w": 240,
-   "h": 240,
+   "h": 288,
+   "sub": [
+    "Cleaning, maintenance & inspection"
+   ],
    "mono": "CA",
    "hue": 320,
    "layers": 2,
@@ -5536,10 +5841,14 @@
    "slug": "electrify-america",
    "id": "c325",
    "district": "fleet-operations-depot",
-   "x": 3856,
-   "y": 3288,
+   "x": 4384,
+   "y": 3432,
    "w": 240,
-   "h": 240,
+   "h": 288,
+   "sub": [
+    "National fast-charging backbone",
+    "across US and Canadian sites"
+   ],
    "mono": "EA",
    "hue": 320,
    "layers": 2,
@@ -5554,10 +5863,14 @@
    "slug": "element-fleet-management",
    "id": "c326",
    "district": "fleet-operations-depot",
-   "x": 4120,
-   "y": 3288,
+   "x": 4648,
+   "y": 3432,
    "w": 240,
-   "h": 240,
+   "h": 288,
+   "sub": [
+    "Toronto lessor announcing a Waymo",
+    "San Diego pact in June 2026"
+   ],
    "mono": "EF",
    "hue": 320,
    "layers": 2,
@@ -5572,10 +5885,14 @@
    "slug": "enterprise-fleet-management",
    "id": "c327",
    "district": "fleet-operations-depot",
-   "x": 4384,
-   "y": 3288,
+   "x": 4912,
+   "y": 3432,
    "w": 240,
-   "h": 240,
+   "h": 288,
+   "sub": [
+    "St. Louis fleet group whose branch",
+    "density suits AV servicing"
+   ],
    "mono": "EF",
    "hue": 320,
    "layers": 2,
@@ -5591,9 +5908,13 @@
    "id": "c274",
    "district": "demand-commercial-platforms",
    "x": 232,
-   "y": 1504,
+   "y": 1600,
    "w": 240,
-   "h": 240,
+   "h": 288,
+   "sub": [
+    "China ride-hailing leader with",
+    "DiMA LLM assistant research"
+   ],
    "mono": "DI",
    "hue": 20,
    "layers": 3,
@@ -5609,9 +5930,13 @@
    "id": "c280",
    "district": "demand-commercial-platforms",
    "x": 496,
-   "y": 1504,
+   "y": 1600,
    "w": 240,
-   "h": 240,
+   "h": 288,
+   "sub": [
+    "Oakville telematics at scale for",
+    "mixed human-AV fleet data"
+   ],
    "mono": "GE",
    "hue": 20,
    "layers": 6,
@@ -5629,10 +5954,14 @@
    "slug": "grab",
    "id": "c282",
    "district": "demand-commercial-platforms",
-   "x": 232,
-   "y": 1768,
+   "x": 760,
+   "y": 1600,
    "w": 240,
-   "h": 240,
+   "h": 288,
+   "sub": [
+    "Southeast Asia superapp operating",
+    "WeRide shuttles in Singapore"
+   ],
    "mono": "GR",
    "hue": 20,
    "layers": 3,
@@ -5647,10 +5976,13 @@
    "slug": "lyft",
    "id": "c287",
    "district": "demand-commercial-platforms",
-   "x": 496,
-   "y": 1768,
+   "x": 232,
+   "y": 1912,
    "w": 240,
-   "h": 240,
+   "h": 288,
+   "sub": [
+    "Ridehail & demand aggregation"
+   ],
    "mono": "LY",
    "hue": 20,
    "layers": 2,
@@ -5665,10 +5997,14 @@
    "slug": "samsara",
    "id": "c300",
    "district": "demand-commercial-platforms",
-   "x": 232,
-   "y": 2032,
+   "x": 496,
+   "y": 1912,
    "w": 240,
-   "h": 240,
+   "h": 288,
+   "sub": [
+    "Connected-ops telemetry feeding",
+    "underwriting for hybrid fleets"
+   ],
    "mono": "SA",
    "hue": 20,
    "layers": 5,
@@ -5685,10 +6021,13 @@
    "slug": "uber",
    "id": "c305",
    "district": "demand-commercial-platforms",
-   "x": 496,
-   "y": 2032,
+   "x": 760,
+   "y": 1912,
    "w": 240,
-   "h": 240,
+   "h": 288,
+   "sub": [
+    "Ridehail & demand aggregation"
+   ],
    "mono": "UB",
    "hue": 20,
    "layers": 3,
@@ -5704,9 +6043,13 @@
    "id": "c262",
    "district": "demand-commercial-platforms",
    "x": 232,
-   "y": 2296,
+   "y": 2224,
    "w": 240,
-   "h": 240,
+   "h": 288,
+   "sub": [
+    "China's most visible robotaxi",
+    "brand, now driverless in Dubai"
+   ],
    "mono": "AG",
    "hue": 20,
    "layers": 2,
@@ -5722,8 +6065,8 @@
    "name": "Waymo",
    "slug": "waymo",
    "id": "c49",
-   "x": 932.0,
-   "y": 1492,
+   "x": 1196.0,
+   "y": 1588,
    "w": 560,
    "h": 500,
    "cat": "AV Driver / Autonomy Software",
@@ -5735,8 +6078,8 @@
    "name": "Baidu Apollo Go",
    "slug": "baidu-apollo-go",
    "id": "c8",
-   "x": 1492.0,
-   "y": 1492,
+   "x": 1756.0,
+   "y": 1588,
    "w": 560,
    "h": 500,
    "cat": "AV Driver / Autonomy Software",
@@ -5748,8 +6091,8 @@
    "name": "Tesla",
    "slug": "tesla",
    "id": "c246",
-   "x": 2052.0,
-   "y": 1492,
+   "x": 2316.0,
+   "y": 1588,
    "w": 560,
    "h": 500,
    "cat": "Vehicle Platform & Manufacturing",
@@ -5761,8 +6104,8 @@
    "name": "Zoox",
    "slug": "zoox",
    "id": "c261",
-   "x": 2612.0,
-   "y": 1492,
+   "x": 2876.0,
+   "y": 1588,
    "w": 560,
    "h": 500,
    "cat": "Vehicle Platform & Manufacturing",
@@ -5774,8 +6117,8 @@
    "name": "Pony.ai",
    "slug": "pony-ai",
    "id": "c37",
-   "x": 3172.0,
-   "y": 1492,
+   "x": 3436.0,
+   "y": 1588,
    "w": 560,
    "h": 500,
    "cat": "AV Driver / Autonomy Software",
@@ -5787,8 +6130,8 @@
    "name": "WeRide",
    "slug": "weride",
    "id": "c51",
-   "x": 3732.0,
-   "y": 1492,
+   "x": 3996.0,
+   "y": 1588,
    "w": 560,
    "h": 500,
    "cat": "AV Driver / Autonomy Software",
@@ -5800,8 +6143,8 @@
    "name": "Wayve",
    "slug": "wayve",
    "id": "c50",
-   "x": 932.0,
-   "y": 1992,
+   "x": 1196.0,
+   "y": 2088,
    "w": 560,
    "h": 500,
    "cat": "AV Driver / Autonomy Software",
@@ -5813,8 +6156,8 @@
    "name": "Nuro",
    "slug": "nuro",
    "id": "c235",
-   "x": 1492.0,
-   "y": 1992,
+   "x": 1756.0,
+   "y": 2088,
    "w": 560,
    "h": 500,
    "cat": "Vehicle Platform & Manufacturing",
@@ -5826,8 +6169,8 @@
    "name": "May Mobility",
    "slug": "may-mobility",
    "id": "c29",
-   "x": 2052.0,
-   "y": 1992,
+   "x": 2316.0,
+   "y": 2088,
    "w": 560,
    "h": 500,
    "cat": "AV Driver / Autonomy Software",
@@ -5839,8 +6182,8 @@
    "name": "Motional",
    "slug": "motional",
    "id": "c32",
-   "x": 2612.0,
-   "y": 1992,
+   "x": 2876.0,
+   "y": 2088,
    "w": 560,
    "h": 500,
    "cat": "AV Driver / Autonomy Software",
@@ -5852,8 +6195,8 @@
    "name": "Avride",
    "slug": "avride",
    "id": "c6",
-   "x": 3172.0,
-   "y": 1992,
+   "x": 3436.0,
+   "y": 2088,
    "w": 560,
    "h": 500,
    "cat": "AV Driver / Autonomy Software",
@@ -5865,8 +6208,8 @@
    "name": "SWM",
    "slug": "swm",
    "id": "c558",
-   "x": 3732.0,
-   "y": 1992,
+   "x": 3996.0,
+   "y": 2088,
    "w": 560,
    "h": 500,
    "cat": "AV Driver / Autonomy Software",

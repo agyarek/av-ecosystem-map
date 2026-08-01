@@ -80,33 +80,43 @@
       <button class="chip" id="lg-csv">CSV</button>
       <button class="chip" id="lg-json">JSON</button>
     </div>
-    <div class="rail-row" id="lg-layers" role="group" aria-label="Layer filters"></div>
-    <div class="rail-row">
-      <span class="rail-label" id="l-region">Region</span>
-      <span role="group" aria-labelledby="l-region" id="lg-regions" class="rail-group"></span>
-      <details class="picker" id="country-picker">
-        <summary class="chip">COUNTRY</summary>
-        <div class="pop" id="country-pop" role="group" aria-label="Country filters"></div>
-      </details>
-      <span class="rail-label" id="l-mat">Maturity</span>
-      <span role="group" aria-labelledby="l-mat" id="lg-mats" class="rail-group"></span>
-    </div>
     <div class="rail-row lg-ranges">
-      <span class="rail-label">Founded</span>
-      <input class="rng" id="r-f0" inputmode="numeric" placeholder="from" aria-label="Founded from year">
-      <input class="rng" id="r-f1" inputmode="numeric" placeholder="to" aria-label="Founded to year">
       <span class="rail-label">Funding $M</span>
       <input class="rng" id="r-m0" inputmode="numeric" placeholder="min" aria-label="Minimum disclosed funding in millions">
       <input class="rng" id="r-m1" inputmode="numeric" placeholder="max" aria-label="Maximum disclosed funding in millions">
       <span class="rail-label">Fleet</span>
       <input class="rng" id="r-v0" inputmode="numeric" placeholder="min" aria-label="Minimum fleet size">
       <input class="rng" id="r-v1" inputmode="numeric" placeholder="max" aria-label="Maximum fleet size">
-      <button class="chip" id="t-spoken" aria-pressed="false"><span class="gold-dot" aria-hidden="true"></span> Spoken with</button>
-      <button class="chip" id="t-exited" aria-pressed="false">Exited only</button>
-      <button class="chip" id="t-partners" aria-pressed="false">Has mapped partners</button>
-      <button class="chip" id="t-funded" aria-pressed="false">Has disclosed funding</button>
       <button class="chip" id="lg-clear" hidden>Clear all</button>
     </div>
+    <!-- Everything else folds away: layer, region, maturity and the toggles are
+         one press deep, and the summary carries a count when any are engaged. -->
+    <details class="lg-adv" id="lg-adv">
+      <summary class="chip">MORE FILTERS <span class="pk-n" id="adv-n" hidden></span><span class="pk-caret" aria-hidden="true">▾</span></summary>
+      <div class="rail-row" id="lg-layers" role="group" aria-label="Layer filters"></div>
+      <div class="rail-row">
+        <span class="rail-label" id="l-region">Region</span>
+        <span role="group" aria-labelledby="l-region" id="lg-regions" class="rail-group"></span>
+        <details class="picker" id="country-picker">
+          <summary class="chip">COUNTRY</summary>
+          <div class="pop" id="country-pop" role="group" aria-label="Country filters"></div>
+        </details>
+      </div>
+      <div class="rail-row">
+        <span class="rail-label" id="l-mat">Maturity</span>
+        <span role="group" aria-labelledby="l-mat" id="lg-mats" class="rail-group"></span>
+      </div>
+      <p class="caption" id="lg-mat-note"></p>
+      <div class="rail-row lg-ranges">
+        <span class="rail-label">Founded</span>
+        <input class="rng" id="r-f0" inputmode="numeric" placeholder="from" aria-label="Founded from year">
+        <input class="rng" id="r-f1" inputmode="numeric" placeholder="to" aria-label="Founded to year">
+        <button class="chip" id="t-spoken" aria-pressed="false"><span class="gold-dot" aria-hidden="true"></span> Spoken with</button>
+        <button class="chip" id="t-exited" aria-pressed="false">Exited only</button>
+        <button class="chip" id="t-partners" aria-pressed="false">Has mapped partners</button>
+        <button class="chip" id="t-funded" aria-pressed="false">Has disclosed funding</button>
+      </div>
+    </details>
     <p id="lg-state" class="caption" aria-live="polite"></p>
   </div>
 

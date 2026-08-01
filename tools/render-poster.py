@@ -18,10 +18,11 @@ KNOWN = ENR.get("known", {})
 USE_LOGOS = "--logos" in sys.argv
 m = L["meta"]
 MS = m["medStyle"]
+CS = m["chipStyle"]
 PL = m["plate"]
 
 INK, PAPER, CARD, RULE, MUTED = "#12130F", "#FAFAF7", "#FFFFFF", "#DEDFD8", "#6E7268"
-YELLOW, CYAN, MEDSUB = "#F2B705", "#00A5B8", "#B9BCB2"
+YELLOW, CYAN, MED, MEDSUB = "#F2B705", "#00A5B8", "#F4F2E9", "#6E7268"
 
 def oklch(hue, l=0.62, c=0.075): return f"oklch({l} {c} {hue})"
 def esc(s): return html.escape(str(s), quote=True)
@@ -59,42 +60,61 @@ for d in L["districts"]:
     col = oklch(d["hue"])
     hd = d["header"]
     o.append(f'<polygon points="{pts(d["poly"])}" fill="{col}" opacity=".05"/>')
-    # the header band runs the district's full width and is cut by its own outline
+    # no header band: the heading sits on the same ground as the tiles, the
+    # hue bar alone marks where it ends — mirrored from poster.js
     o.append(f'<g clip-path="url(#d-{esc(d["id"])})">')
-    o.append(f'<rect x="{hd["x"]}" y="{hd["y"]}" width="{hd["w"]}" height="{hd["h"]}" '
-             f'fill="{col}" opacity=".13"/>')
     o.append(f'<rect x="{hd["x"]}" y="{hd["y"]+hd["h"]-9}" width="{hd["w"]}" height="9" fill="{col}"/>')
     o.append('</g>')
     size = d["labelSize"]
     n = len(d["labelLines"])
-    base = hd["y"] + hd["h"] / 2 + size * 0.36 - (size * 0.62 * (n - 1)) / 2
+    narrow = hd["tw"] < 1100 and n > 1
+    base = hd["y"] + 100
     for i, line in enumerate(d["labelLines"]):
         o.append(f'<text x="{hd["tx"]+30}" y="{base + i*size*1.06:.0f}" font-size="{size}" '
                  f'font-weight="700" fill="{INK}">{esc(line)}</text>')
-    o.append(f'<text x="{hd["tx"]+hd["tw"]-30}" y="{hd["y"]+hd["h"]/2+size*0.36:.0f}" '
-             f'font-size="{size}" font-weight="600" text-anchor="end" '
-             f'font-family="IBM Plex Mono, monospace" fill="{col}">{d["count"]}</text>')
+    desc_base = base + n * size * 1.06
+    if narrow:
+        o.append(f'<text x="{hd["tx"]+30}" y="{desc_base:.0f}" font-size="{size*0.8:.0f}" '
+                 f'font-weight="600" font-family="IBM Plex Mono, monospace" '
+                 f'fill="{col}">{d["count"]} orgs</text>')
+        desc_base += size * 0.9
+    else:
+        o.append(f'<text x="{hd["tx"]+hd["tw"]-30}" y="{base:.0f}" '
+                 f'font-size="{size}" font-weight="600" text-anchor="end" '
+                 f'font-family="IBM Plex Mono, monospace" fill="{col}">{d["count"]} orgs</text>')
+    for i, line in enumerate(d.get("desc", [])):
+        o.append(f'<text x="{hd["tx"]+30}" y="{desc_base + i*(d["descSize"]+6):.0f}" '
+                 f'font-size="{d["descSize"]}" font-family="IBM Plex Mono, monospace" '
+                 f'letter-spacing="2" fill="{MUTED}">{esc(line)}</text>')
     o.append(f'<polygon points="{pts(d["poly"])}" fill="none" stroke="{RULE}" stroke-width="3"/>')
 o.append('</g>')
 
-# --- chips ---------------------------------------------------------------
+# --- chips (sizes and offsets from meta.chipStyle, shared with poster.js) ---
 for c in L["chips"]:
     cx, cy = c["x"] + c["w"] / 2, c["y"]
     col = oklch(c["hue"], 0.66, 0.06)
+    lg, half = CS["logo"], CS["logo"] / 2
     o.append(f'<g class="chip" data-slug="{esc(c["slug"])}">')
     o.append(f'<rect x="{c["x"]+8}" y="{c["y"]+6}" width="{c["w"]-16}" height="{c["h"]-12}" '
-             f'rx="12" fill="{PAPER}" stroke="{RULE}"/>')
+             f'rx="16" fill="{PAPER}"/>')
     logo = os.path.join(ROOT, "assets", "logos", c["slug"] + ".svg")
     if USE_LOGOS and os.path.exists(logo):
-        o.append(f'<image href="assets/logos/{esc(c["slug"])}.svg" x="{cx-36:.0f}" '
-                 f'y="{cy+18}" width="72" height="72" preserveAspectRatio="xMidYMid meet"/>')
+        o.append(f'<image href="assets/logos/{esc(c["slug"])}.svg" x="{cx-half:.0f}" '
+                 f'y="{cy+CS["logoY"]}" width="{lg}" height="{lg}" '
+                 f'preserveAspectRatio="xMidYMid meet"/>')
     else:
-        o.append(f'<rect x="{cx-36:.0f}" y="{cy+18}" width="72" height="72" rx="16" fill="{col}"/>')
-        o.append(f'<text x="{cx:.0f}" y="{cy+68}" font-size="34" font-weight="800" '
-                 f'text-anchor="middle" fill="#FFFFFF">{esc(c["mono"])}</text>')
-    for i, ln in enumerate(wrap(c["name"])):
-        o.append(f'<text x="{cx:.0f}" y="{cy+112+i*20}" font-size="17" text-anchor="middle" '
+        o.append(f'<rect x="{cx-half:.0f}" y="{cy+CS["logoY"]}" width="{lg}" height="{lg}" '
+                 f'rx="{lg*0.22:.0f}" fill="{col}"/>')
+        o.append(f'<text x="{cx:.0f}" y="{cy+CS["logoY"]+lg*0.69:.0f}" font-size="{lg*0.47:.0f}" '
+                 f'font-weight="800" text-anchor="middle" fill="#FFFFFF">{esc(c["mono"])}</text>')
+    for i, ln in enumerate(wrap(c["name"], CS["nameChars"], 2)):
+        o.append(f'<text x="{cx:.0f}" y="{cy+CS["nameY"]+i*CS["nameStep"]}" '
+                 f'font-size="{CS["nameSize"]}" font-weight="700" text-anchor="middle" '
                  f'fill="{INK}">{esc(ln)}</text>')
+    for j, ln in enumerate(c.get("sub", [])):
+        o.append(f'<text x="{cx:.0f}" y="{cy+CS["descY"]+j*CS["descStep"]}" '
+                 f'font-size="{CS["descSize"]}" text-anchor="middle" '
+                 f'fill="{MUTED}">{esc(ln)}</text>')
     if c["exited"]:
         o.append(f'<line x1="{c["x"]+14}" y1="{c["y"]+12}" x2="{c["x"]+c["w"]-14}" '
                  f'y2="{c["y"]+c["h"]-18}" stroke="{MUTED}" stroke-width="2" opacity=".5"/>')
@@ -102,19 +122,22 @@ for c in L["chips"]:
         o.append(f'<circle cx="{c["x"]+c["w"]-22}" cy="{c["y"]+20}" r="6" fill="{YELLOW}"/>')
     o.append('</g>')
 
-# --- the octagon, and the companies inside it ----------------------------
+# --- the centre, and the companies inside it (mirrors poster.js) ----------
 oc = L["oct"]
-o.append(f'<polygon points="{pts(oc["points"])}" fill="{INK}"/>')
-o.append(f'<polygon points="{pts(oc["points"])}" fill="none" stroke="{YELLOW}" stroke-width="14"/>')
-o.append(f'<text x="{oc["cx"]}" y="{oc["titleY"]}" font-size="86" font-weight="900" '
-         f'letter-spacing="18" text-anchor="middle" fill="{PAPER}">{esc(oc["title"])}</text>')
-o.append(f'<text x="{oc["cx"]}" y="{oc["subY"]}" font-size="28" text-anchor="middle" '
-         f'fill="{YELLOW}" font-family="IBM Plex Mono, monospace" letter-spacing="4">'
-         f'{esc(oc["sub"])}</text>')
+o.append(f'<polygon points="{pts(oc["points"])}" fill="{MED}"/>')
+o.append(f'<polygon points="{pts(oc["points"])}" fill="none" stroke="{YELLOW}" stroke-width="10"/>')
+o.append(f'<text x="{oc["cx"]}" y="{oc["titleY"]}" font-size="82" font-weight="900" '
+         f'letter-spacing="16" text-anchor="middle" fill="{INK}">{esc(oc["title"])}</text>')
+o.append(f'<text x="{oc["cx"]}" y="{oc["subY"]}" font-size="27" text-anchor="middle" '
+         f'fill="{MEDSUB}" font-family="IBM Plex Mono, monospace" letter-spacing="4">'
+         f'{esc(oc["sub"])} · {esc(oc["foot"])}</text>')
 for c in L["medallion"]:
     cx = c["x"] + c["w"] / 2
     half = MS["logo"] / 2
     o.append(f'<g class="op" data-slug="{esc(c["slug"])}">')
+    # the same bounded tile every district chip has, no border
+    o.append(f'<rect x="{c["x"]+12}" y="{c["y"]+8}" width="{c["w"]-24}" height="{c["h"]-16}" '
+             f'rx="22" fill="{PAPER}"/>')
     logo = os.path.join(ROOT, "assets", "logos", c["slug"] + ".svg")
     if USE_LOGOS and os.path.exists(logo):
         o.append(f'<image href="assets/logos/{esc(c["slug"])}.svg" x="{cx-half:.0f}" '
@@ -122,23 +145,19 @@ for c in L["medallion"]:
                  f'preserveAspectRatio="xMidYMid meet"/>')
     else:
         o.append(f'<rect x="{cx-half:.0f}" y="{c["y"]+MS["logoY"]:.0f}" width="{MS["logo"]}" '
-                 f'height="{MS["logo"]}" rx="36" fill="{PAPER}"/>')
-        o.append(f'<text x="{cx:.0f}" y="{c["y"]+MS["logoY"]+MS["logo"]*0.68:.0f}" font-size="80" '
-                 f'font-weight="900" text-anchor="middle" fill="{INK}">{esc(c["mono"])}</text>')
+                 f'height="{MS["logo"]}" rx="{MS["logo"]*0.22:.0f}" fill="{oklch(c["hue"], 0.66, 0.06)}"/>')
+        o.append(f'<text x="{cx:.0f}" y="{c["y"]+MS["logoY"]+MS["logo"]*0.69:.0f}" '
+                 f'font-size="{MS["logo"]*0.47:.0f}" '
+                 f'font-weight="800" text-anchor="middle" fill="#FFFFFF">{esc(c["mono"])}</text>')
     o.append(f'<text x="{cx:.0f}" y="{c["y"]+MS["nameY"]:.0f}" font-size="{MS["nameSize"]}" '
-             f'font-weight="700" text-anchor="middle" fill="{PAPER}">{esc(c["name"])}</text>')
+             f'font-weight="700" text-anchor="middle" fill="{INK}">{esc(c["name"])}</text>')
     # The space under an operator name is the most valuable on the poster. It carries
     # the one claim that earns that company its place in the centre.
-    claim = KNOWN.get(c["name"], "")
+    claim = c.get("claim") or KNOWN.get(c["name"], "")
     for j, ln in enumerate(wrap(claim, maxchars=MS["claimChars"], maxlines=4)):
         o.append(f'<text x="{cx:.0f}" y="{c["y"]+MS["claimY"]+j*MS["claimStep"]:.0f}" '
                  f'font-size="{MS["claimSize"]}" text-anchor="middle" fill="{MEDSUB}">{esc(ln)}</text>')
     o.append('</g>')
-o.append(f'<line x1="{oc["cx"]-520}" y1="{oc["ruleY"]}" x2="{oc["cx"]+520}" y2="{oc["ruleY"]}" '
-         f'stroke="{MEDSUB}" stroke-width="2" opacity=".4"/>')
-o.append(f'<text x="{oc["cx"]}" y="{oc["footY"]}" font-size="24" text-anchor="middle" '
-         f'fill="{MEDSUB}" font-family="IBM Plex Mono, monospace" letter-spacing="3">'
-         f'{esc(oc["foot"])}</text>')
 
 o.append(f'<text x="{PL["x"]}" y="{m["height"]-70}" font-size="30" font-weight="700" '
          f'fill="{INK}">AUTONOMOUS VEHICLE ECOSYSTEM MAP</text>')

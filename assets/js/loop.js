@@ -16,9 +16,15 @@
   const { json, reducedMotion } = window.AV;
 
   // ---------------------------------------------------------- live counts
+  // Stations carry a headline count; each layer chip carries its own, keyed by
+  // the canonical layer name (the chip's visible label is a shortened form).
   json('data/derived-counts.json').then(d => {
     document.querySelectorAll('[data-count]').forEach(el => {
       const n = d.stations[el.dataset.count];
+      if (n) el.textContent = `${n} orgs`;
+    });
+    document.querySelectorAll('[data-layer]').forEach(el => {
+      const n = d.layers[el.dataset.layer];
       if (n) el.textContent = `${n} orgs`;
     });
   }).catch(() => { /* the markup ships with counts already in it */ });
@@ -90,32 +96,45 @@
       cards[s].classList.toggle('active', i === idx && atStation));
   }
   function paintRing(pct) {
-    const rect = cards[stations[idx]].querySelector('.st-ring rect');
-    if (rect) rect.style.strokeDashoffset = String(Math.min(100, 100 * pct));
+    const ring = cards[stations[idx]].querySelector('.st-ring path');
+    if (ring) ring.style.strokeDashoffset = String(Math.min(100, 100 * pct));
   }
   function clearRings() {
     stations.forEach(s => {
-      const r = cards[s].querySelector('.st-ring rect');
+      const r = cards[s].querySelector('.st-ring path');
       if (r) r.style.strokeDashoffset = '100';
     });
   }
 
-  // The ring is a real rounded rect stroked around the card, so its radius has
-  // to track the card's measured box rather than being guessed.
+  // The ring traces the card's real outline. Each card has one large outward
+  // corner and three tight ones, so the path reads all four computed radii and
+  // rounds each corner to match, rather than assuming a uniform rounded rect.
+  // It starts at top centre and runs clockwise, which is where the drain begins.
   function sizeRings() {
     stations.forEach(s => {
       const card = cards[s], svg = card.querySelector('.st-ring');
       if (!svg) return;
-      const r = card.getBoundingClientRect();
-      if (!r.width || !r.height) return;
-      const rx = parseFloat(getComputedStyle(card).borderBottomRightRadius) || 18;
-      svg.setAttribute('viewBox', `0 0 ${r.width} ${r.height}`);
-      const rect = svg.querySelector('rect');
-      rect.setAttribute('x', 1.5); rect.setAttribute('y', 1.5);
-      rect.setAttribute('width', Math.max(0, r.width - 3));
-      rect.setAttribute('height', Math.max(0, r.height - 3));
-      rect.setAttribute('rx', Math.max(0, rx - 1.5));
-      rect.setAttribute('pathLength', 100);
+      const box = card.getBoundingClientRect();
+      if (!box.width || !box.height) return;
+      const cs = getComputedStyle(card);
+      const inset = 1.5, w = box.width, h = box.height;
+      const rad = side => Math.max(0,
+        (parseFloat(cs[`border${side}Radius`]) || 0) - inset);
+      const [tl, tr, br, bl] =
+        [rad('TopLeft'), rad('TopRight'), rad('BottomRight'), rad('BottomLeft')];
+      const arc = (r, x, y) => `A ${r} ${r} 0 0 1 ${x} ${y}`;
+      const d = [
+        `M ${w / 2} ${inset}`,
+        `L ${w - inset - tr} ${inset}`, arc(tr, w - inset, inset + tr),
+        `L ${w - inset} ${h - inset - br}`, arc(br, w - inset - br, h - inset),
+        `L ${inset + bl} ${h - inset}`, arc(bl, inset, h - inset - bl),
+        `L ${inset} ${inset + tl}`, arc(tl, inset + tl, inset),
+        'Z'
+      ].join(' ');
+      svg.setAttribute('viewBox', `0 0 ${w} ${h}`);
+      const ring = svg.querySelector('path');
+      ring.setAttribute('d', d);
+      ring.setAttribute('pathLength', 100);
     });
   }
   if (window.ResizeObserver) {
@@ -181,7 +200,13 @@
         dwellDone = now - dwellStart;
         const u = dwellDone / DWELL_MS;
         paintRing(u);
-        if (u >= 1) goTo(idx + heading, heading);
+        // Reverse is a manoeuvre, not a standing direction: a back-step travels
+        // one leg the wrong way, but once the dwell there ends the car turns
+        // and resumes the clockwise ride.
+        if (u >= 1) {
+          if (heading === -1) startTurn(1, () => goTo(idx + 1, 1));
+          else goTo(idx + 1, 1);
+        }
       }
     } else if (paused) {
       legStart = now - legDone;                 // hold position on the road

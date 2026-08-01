@@ -1,43 +1,42 @@
 /* media.js :: the media page. Renders publications, podcasts and events from
    data/av-media.json, and runs the subscribe dialog.
 
-   Subscriber figures follow one rule, stated in the data file: a number appears
-   only when the outlet publishes one; nothing is estimated. Outlets with a
-   stated figure sort first, largest first. */
+   No reader counts render: a tile earns its place editorially, not by
+   audience size. Each tile carries a small mark for what kind of thing it is
+   — pen for the written word, mic for audio, calendar for a room. */
 (function () {
   'use strict';
-  const { json, esc, mountLogos, fmtDate } = window.AV;
+  const { json, esc, mountLogos } = window.AV;
 
   // Buttondown username for the subscribe form. Until it is set, the dialog
   // offers the mailto fallback instead of a dead form.
   const BUTTONDOWN = '';
   const RECOMMEND = 'mailto:agyarek+avecosystemmap@gmail.com';
 
-  const countNum = m => {
-    if (!m || !m.subscribers) return -1;
-    const n = parseInt(String(m.subscribers.label).replace(/[^0-9]/g, ''), 10);
-    return isNaN(n) ? 0 : n;
+  const KIND_ICON = {
+    read: '<svg viewBox="0 0 16 16" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11.2 2.2 13.8 4.8 5.6 13 2.2 13.8 3 10.4 Z"/></svg>',
+    listen: '<svg viewBox="0 0 16 16" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="1.5" width="4" height="8" rx="2"/><path d="M3.5 7.5a4.5 4.5 0 0 0 9 0M8 12v2.5"/></svg>',
+    meet: '<svg viewBox="0 0 16 16" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="12" height="11" rx="2"/><path d="M2 6.5h12M5.5 1.5v3M10.5 1.5v3"/></svg>',
   };
+  const KIND_LABEL = { read: 'newsletter', listen: 'podcast', meet: 'event' };
 
-  const tile = m => `
+  const tile = (m, kind) => `
     <a class="md-tile" href="${esc(m.url)}" target="_blank" rel="noopener">
       <span class="mono-tile md-logo" aria-hidden="true">${esc(m.name.slice(0, 2).toUpperCase())}${m.domain ? `<img alt="" data-logo-domain="${esc(m.domain)}" decoding="async">` : ''}</span>
       <span class="md-body">
-        <span class="md-name">${esc(m.name)}${m.pick ? '<span class="md-pick"><span class="gold-dot" aria-hidden="true"></span> LISTENED TO — RECOMMENDED</span>' : ''}</span>
+        <span class="md-name">${esc(m.name)}<span class="md-kind" title="${esc(KIND_LABEL[kind] || '')}">${KIND_ICON[kind] || ''}<span>${esc(KIND_LABEL[kind] || '')}</span></span>${m.pick ? '<span class="md-pick"><span class="gold-dot" aria-hidden="true"></span> LISTENED TO — RECOMMENDED</span>' : ''}</span>
         <span class="md-who">${esc(m.who || m.where || '')}</span>
         <span class="md-blurb">${esc(m.blurb)}</span>
-        ${m.subscribers ? `<span class="md-count"><span class="num">${esc(m.subscribers.label)}</span> · ${esc(m.subscribers.source)}, ${esc(fmtDate(m.subscribers.asOf))}</span>` : ''}
         ${m.next ? `<span class="md-count">Next: ${esc(m.next)}</span>` : ''}
       </span>
     </a>`;
 
   json('data/av-media.json').then(d => {
-    const pubs = [...d.publications].sort((a, b) => countNum(b) - countNum(a));
     const el = id => document.getElementById(id);
-    el('md-publications').innerHTML = pubs.map(tile).join('');
-    el('md-podcasts').innerHTML = d.podcasts.map(tile).join('');
+    el('md-publications').innerHTML = d.publications.map(m => tile(m, 'read')).join('');
+    el('md-podcasts').innerHTML = d.podcasts.map(m => tile(m, 'listen')).join('');
     const events = [...d.events].sort((a, b) => (b.autonomyFirst === true) - (a.autonomyFirst === true));
-    el('md-events').innerHTML = events.map(tile).join('');
+    el('md-events').innerHTML = events.map(m => tile(m, 'meet')).join('');
     mountLogos(document.getElementById('content'));
   }).catch(e => console.error(e));
 

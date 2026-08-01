@@ -2,8 +2,7 @@
   "meta": {
     "compiled": "2026-07-31",
     "countPolicy": "Subscriber figures are recorded in the data when an outlet states one publicly, but no reader counts render on the page.",
-    "pickNote": "Set pick to true on any podcast to mark it as personally listened to and recommended.",
-    "imgNote": "Set img to a repo-relative path (e.g. assets/media/name.png) to use a stored high-resolution mark instead of the runtime favicon probe."
+    "pickNote": "Set pick to true on any podcast to mark it as personally listened to and recommended."
   },
   "publications": [
     {
@@ -68,15 +67,6 @@
       "domain": "autonocast.com",
       "who": "Alex Roy, Edward Niedermeyer, Kirsten Korosec",
       "blurb": "The longest-running conversation on the future of transportation, sceptical where the industry is promotional.",
-      "subscribers": null,
-      "pick": false
-    },
-    {
-      "name": "The Road to Autonomy",
-      "url": "https://www.roadtoautonomy.com/podcast/",
-      "domain": "roadtoautonomy.com",
-      "who": "Grayson Brulte",
-      "blurb": "Interviews with the architects of the autonomy economy: operators, investors and the people writing the rules.",
       "subscribers": null,
       "pick": false
     },

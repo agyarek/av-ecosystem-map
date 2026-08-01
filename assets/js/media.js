@@ -20,13 +20,9 @@
   };
   const KIND_LABEL = { read: 'newsletter', listen: 'podcast', meet: 'event' };
 
-  // A stored high-resolution mark (m.img) beats the runtime favicon probe;
-  // the probe stays as the default for every tile without one.
   const tile = (m, kind) => `
     <a class="md-tile" href="${esc(m.url)}" target="_blank" rel="noopener">
-      <span class="mono-tile md-logo" aria-hidden="true">${esc(m.name.slice(0, 2).toUpperCase())}${m.img
-        ? `<img alt="" src="${esc(m.img)}" style="opacity:1" decoding="async">`
-        : m.domain ? `<img alt="" data-logo-domain="${esc(m.domain)}" decoding="async">` : ''}</span>
+      <span class="mono-tile md-logo" aria-hidden="true">${esc(m.name.slice(0, 2).toUpperCase())}${m.domain ? `<img alt="" data-logo-domain="${esc(m.domain)}" decoding="async">` : ''}</span>
       <span class="md-body">
         <span class="md-name">${esc(m.name)}<span class="md-kind" title="${esc(KIND_LABEL[kind] || '')}">${KIND_ICON[kind] || ''}<span>${esc(KIND_LABEL[kind] || '')}</span></span>${m.pick ? '<span class="md-pick"><span class="gold-dot" aria-hidden="true"></span> LISTENED TO — RECOMMENDED</span>' : ''}</span>
         <span class="md-who">${esc(m.who || m.where || '')}</span>

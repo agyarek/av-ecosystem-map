@@ -310,10 +310,52 @@ table.data tr:hover > td { background: color-mix(in oklab, var(--cyan) 5%, trans
   }
   #site-search input { width: min(180px, 34vw); }
 }
+/* The hamburger only exists on phones; everywhere else the chapters live on
+   the glass. */
+.nav-toggle {
+  display: none; width: 34px; height: 34px; flex: none;
+  border: 1px solid var(--rule); border-radius: var(--r-chip);
+  place-items: center; color: var(--ink-2);
+  transition: border-color 120ms, color 120ms;
+}
+.nav-toggle:hover { border-color: var(--cyan); color: var(--ink); }
+.nav-toggle .ic-close { display: none; }
+header.site.nav-open .nav-toggle .ic-menu { display: none; }
+header.site.nav-open .nav-toggle .ic-close { display: block; }
 @media (max-width: 640px) {
   /* the portrait-phone step for long-form copy: 19px serif reads oversized
      against a 15px wordmark on a 390px screen */
   :root { --fs-lg: 17px; }
+
+  /* One tidy row: wordmark, a search box that takes the slack, the theme
+     toggle, and a hamburger. The chapters fold behind the hamburger — and
+     unfold as ALL of them at once, every page visible, so nothing on a phone
+     is more than one tap past the button. */
+  .wordmark { font-size: 13px; }
+  header.site .bar { gap: 8px; }
+  .nav-toggle { display: grid; }
+  .chrome-tools { flex: 1 1 auto; min-width: 0; }
+  #site-search { flex: 1 1 0; min-width: 0; }
+  #site-search input { width: 100%; min-width: 0; }
+  nav.primary { display: none; }
+  /* the open state carries the header class, so these outrank the desktop
+     dropdown rules that sit later in this file */
+  header.site.nav-open nav.primary {
+    display: grid; grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(3, auto); grid-auto-flow: column;
+    gap: 14px 16px; padding: 12px 2px 16px;
+    border-top: 1px solid var(--rule); margin-top: 8px;
+  }
+  /* each chapter is a group: its name, then every page beneath it — the
+     per-chapter dropdowns and their carets have nothing left to hide */
+  header.site.nav-open nav.primary .np { display: block; min-width: 0; }
+  header.site.nav-open nav.primary .np > a { display: inline-block; padding: 2px 0; }
+  header.site.nav-open nav.primary .np-more { display: none; }
+  header.site.nav-open nav.primary .np-sub {
+    position: static; display: block; min-width: 0; padding: 3px 0 0;
+    background: none; border: 0; border-radius: 0; box-shadow: none;
+  }
+  header.site.nav-open nav.primary .np-sub a { white-space: normal; padding: 4px 0; }
 }
 @media (max-width: 480px) {
   .doors { grid-template-columns: 1fr; }

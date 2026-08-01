@@ -328,7 +328,7 @@
 
   const headerHTML = current => `<div class="bar">
     <a class="wordmark" href="${ROOT || './'}"><span class="dash" aria-hidden="true"></span>AV&nbsp;ECOSYSTEM&nbsp;MAP</a>
-    <nav class="primary" aria-label="Primary">
+    <nav class="primary" id="site-nav" aria-label="Primary">
       ${CHAPTERS.map(([name, pages]) => {
         const here = pages.some(([key]) => key === current);
         const items = pages.length > 1
@@ -350,6 +350,10 @@
         <div id="search-results" role="listbox" aria-label="Search results"></div>
       </div>
       <button id="theme-toggle" aria-label="Toggle light and dark theme">${SUN}${MOON}</button>
+      <button id="nav-toggle" class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open the chapter menu">
+        <svg class="ic-menu" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><path d="M2.2 4.2h11.6M2.2 8h11.6M2.2 11.8h11.6"/></svg>
+        <svg class="ic-close" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><path d="M3.2 3.2l9.6 9.6M12.8 3.2l-9.6 9.6"/></svg>
+      </button>
     </div>
   </div>`;
 
@@ -424,6 +428,27 @@
       const open = root.querySelector('.np.open .np-more');
       if (open) { shut(null); open.focus(); }
     });
+
+    // On a phone the whole nav folds behind one button; opening it shows every
+    // chapter with all of its pages at once, so any page is one tap away.
+    // Search and the theme toggle stay on the bar at all times.
+    const toggle = root.querySelector('#nav-toggle');
+    if (toggle) {
+      const setOpen = open => {
+        root.classList.toggle('nav-open', open);
+        toggle.setAttribute('aria-expanded', String(open));
+        toggle.setAttribute('aria-label', open ? 'Close the chapter menu' : 'Open the chapter menu');
+      };
+      toggle.addEventListener('click', () => setOpen(!root.classList.contains('nav-open')));
+      root.querySelectorAll('nav.primary a').forEach(a =>
+        a.addEventListener('click', () => setOpen(false)));
+      document.addEventListener('click', e => {
+        if (root.classList.contains('nav-open') && !e.target.closest('header.site')) setOpen(false);
+      });
+      document.addEventListener('keydown', e => {
+        if (e.key === 'Escape' && root.classList.contains('nav-open')) { setOpen(false); toggle.focus(); }
+      });
+    }
   }
 
   const currentPage = (document.body && document.body.dataset.page) || '';

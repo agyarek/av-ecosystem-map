@@ -42,6 +42,16 @@
   };
   const REGION_KEY = r => r.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
   const MATS = ['Scaled', 'Commercial', 'Pilot', 'R&D', 'Governance', 'Historical', 'Other'];
+  // same definitions the directory shows; tooltips so the labels explain themselves
+  const MAT_DEFS = {
+    Scaled: 'commercial service at meaningful volume',
+    Commercial: 'charging real customers today',
+    Pilot: 'live trials on real roads',
+    'R&D': 'building, not yet deployed',
+    Governance: 'regulators and standards bodies, not operating companies',
+    Historical: 'shut down, exited or absorbed',
+    Other: 'does not fit the operating spectrum',
+  };
 
   let L = null, slim = null, bySlug = null, partners = null;
   let manifest = null, spriteText = null, atlasDataURL = null;
@@ -752,8 +762,8 @@
     // Checkbox dropdowns rather than chip rows: each group is one labelled
     // button opening a list you tick, with the count of each option beside it
     // so you can see how big a slice is before you commit to looking at it.
-    const check = (attr, val, label) =>
-      `<label><input type="checkbox" ${attr}="${esc(val)}"> ${label}</label>`;
+    const check = (attr, val, label, title) =>
+      `<label${title ? ` title="${esc(title)}"` : ''}><input type="checkbox" ${attr}="${esc(val)}"> ${label}</label>`;
     const fl = document.getElementById('f-layers');
     fl.innerHTML = L.districts.map(d =>
       check('data-flayer', SHORT[d.layer],
@@ -766,7 +776,8 @@
         `${esc(r)} <span class="n">${slim.filter(c => c.r === r).length} orgs</span>`)).join('');
     document.getElementById('f-mats').innerHTML = MATS.map(mt =>
       check('data-fmat', mt,
-        `${esc(mt)} <span class="n">${slim.filter(c => c.m === mt).length} orgs</span>`)).join('');
+        `${esc(mt)} <span class="n">${slim.filter(c => c.m === mt).length} orgs</span>`,
+        MAT_DEFS[mt])).join('');
 
     rail.addEventListener('change', e => {
       const i = e.target;

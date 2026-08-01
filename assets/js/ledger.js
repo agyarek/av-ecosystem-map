@@ -21,6 +21,17 @@
 
   const RKEY = r => (r || '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
   const MATS = ['Scaled', 'Commercial', 'Pilot', 'R&D', 'Governance', 'Historical', 'Other'];
+  // The labels alone kept being misread, so each carries its definition — as a
+  // tooltip on the chip and spelled out under the row.
+  const MAT_DEFS = {
+    Scaled: 'commercial service at meaningful volume',
+    Commercial: 'charging real customers today',
+    Pilot: 'live trials on real roads',
+    'R&D': 'building, not yet deployed',
+    Governance: 'regulators and standards bodies, not operating companies',
+    Historical: 'shut down, exited or absorbed',
+    Other: 'does not fit the operating spectrum',
+  };
 
   let slimBySlug = {};
   const domainOf = c => (slimBySlug[c.slug] || {}).d || '';
@@ -118,6 +129,16 @@
     if (k === 'fleet') return state.v0 || state.v1;
     return state[k];
   });
+  // The filters living behind MORE FILTERS: everything but text and the two
+  // exposed ranges. The summary carries a count so a folded-away filter can
+  // never silently shape the table.
+  const ADV_FILTERS = ['layers', 'regions', 'countries', 'mats', 'founded',
+                       'spoken', 'exited', 'partners', 'funded'];
+  function reflectAdvBadge() {
+    const n = activeFilters().filter(k => ADV_FILTERS.includes(k)).length;
+    const el = $('adv-n');
+    if (el) { el.hidden = !n; el.textContent = n; }
+  }
 
   function applyAll() {
     const active = activeFilters();
@@ -134,6 +155,7 @@
     };
     visible.sort((a, b) => cmp(a, b, pk, pd) || (sec ? cmp(a, b, sec[0], sec[1]) : 0)
       || a.name.localeCompare(b.name));
+    reflectAdvBadge();
     render();
     syncURL();
   }
@@ -405,7 +427,9 @@
     $('lg-regions').innerHTML = regions.map(r =>
       `<button class="chip" data-fregion="${RKEY(r)}" aria-pressed="false">${esc(r)}</button>`).join('');
     $('lg-mats').innerHTML = MATS.map(mt =>
-      `<button class="chip" data-fmat="${mt}" aria-pressed="false">${mt}</button>`).join('');
+      `<button class="chip" data-fmat="${mt}" aria-pressed="false" title="${esc(MAT_DEFS[mt] || '')}">${mt}</button>`).join('');
+    $('lg-mat-note').textContent =
+      MATS.map(mt => `${mt} — ${MAT_DEFS[mt]}`).join(' · ');
     const countries = {};
     rows.forEach(c => { if (c.hqCountry) countries[c.hqCountry] = (countries[c.hqCountry] || 0) + 1; });
     $('country-pop').innerHTML = Object.entries(countries).sort((a, b) => b[1] - a[1])
@@ -624,6 +648,9 @@
     readURL();
     buildControls(slimBySlug);
     reflectChips(); reflectInputs();
+    // a URL that restores a folded-away filter opens the fold, so the state
+    // that shaped the table is visible
+    if (activeFilters().some(k => ADV_FILTERS.includes(k))) $('lg-adv').open = true;
     applyAll();
     if (state.open) {
       const tr = $('r-' + state.open);

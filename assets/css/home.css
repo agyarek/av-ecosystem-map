@@ -137,8 +137,6 @@
 #loop-play.is-paused .ic-play { display: block; }
 #loop-play.is-paused .ic-pause { display: none; }
 
-.loop-foot { margin-top: 14px; text-align: center; }
-
 /* --------------------------------------------------------------- small screens */
 /* Below the two-column threshold the loop stands upright: the cards stack in
    ride order and the track becomes a tall ring around them — the car drives
@@ -163,7 +161,6 @@
     position: static; transform: none; order: -1;
     align-self: center; margin-bottom: 14px;
   }
-  .loop-foot { text-align: left; }
 }
 @media (min-width: 681px) and (max-width: 980px) {
   .loop-inner { gap: 36px 12px; padding: 12px; }

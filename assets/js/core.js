@@ -364,7 +364,7 @@
     <p class="bio-name">ABOUT THIS WEBSITE</p>
     <p class="bio-text">Hi! <a class="li" href="${LINKEDIN}" target="_blank" rel="noopener noreferrer">${ICON.linkedin}Kofi Agyare-Kwabi</a> here:
       former Uber Country Manager and Wharton MBA with over a decade of go-to-market and
-      partnerships work, and I'm passionate about the autonomous vehicle industry.</p>
+      partnerships work. I'm passionate about the autonomous vehicle industry.</p>
     <p class="bio-text">This website is a living, breathing public repository of what I'm
       discovering about the industry through my research, conversations with experts in my
       network, and reviews of publicly available information. In case you're curious,

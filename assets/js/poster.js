@@ -616,13 +616,6 @@
       const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
       path.setAttribute('d', `M ${a.x} ${a.y} Q ${mx} ${my} ${b.x} ${b.y}`);
       links.appendChild(path);
-      if (!reducedMotion()) {
-        const len = path.getTotalLength();
-        path.style.strokeDasharray = len;
-        path.style.strokeDashoffset = len;
-        path.style.transition = 'stroke-dashoffset 400ms ease';
-        requestAnimationFrame(() => { path.style.strokeDashoffset = '0'; });
-      }
     }
     renderCard(slug, partnerRows);
     if (fly) {
@@ -698,9 +691,11 @@
         `<dt>${esc(k)}</dt><dd>${esc(String(v))}</dd>`).join('')}</dl>` : ''}
       <div class="cc-partners"><span class="pk">PARTNERSHIPS</span> ${partnerRows.length
         ? Object.entries(grouped).map(([k, ps]) =>
-          `<div><span class="pk">${esc(k.toUpperCase())}</span> ${ps.map(p =>
-            p.slug ? `<button class="co-link" data-go="${esc(p.slug)}">${esc(p.partner)}</button>` : esc(p.partner)
-          ).join(' · ')}</div>`).join('')
+          `<div class="pg-row"><span class="pk">${esc(k.toUpperCase())}</span><div class="pg-chips">${ps.map(p =>
+            p.slug
+              ? `<button class="cc-partner" data-go="${esc(p.slug)}"><span class="mono-tile cp-logo" aria-hidden="true">${esc((p.partner || '??').slice(0, 2).toUpperCase())}${navLogo(p.slug)}</span><span>${esc(p.partner)}</span></button>`
+              : `<span class="cc-partner is-plain">${esc(p.partner)}</span>`
+          ).join('')}</div></div>`).join('')
         : '<span class="caption">None mapped yet. The footer takes corrections.</span>'}</div>
       ${sources.length ? `<div class="cc-src"><span class="pk">SOURCES</span>${sources.map(s =>
         `<div><a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${esc(s.title)}</a>${s.date ? ` <span class="caption">${esc(s.date)}</span>` : ''}</div>`).join('')}</div>` : ''}

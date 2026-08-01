@@ -1,14 +1,16 @@
 {
  "meta": {
   "generatedBy": "tools/build-indexes.py",
-  "generatedAt": "2026-07-31",
+  "generatedAt": "2026-08-01",
   "companyCount": 562,
   "medallion": [
+   "Avride",
    "Baidu Apollo Go",
    "May Mobility",
    "Motional",
    "Nuro",
    "Pony.ai",
+   "SWM",
    "Tesla",
    "Waymo",
    "Wayve",
@@ -59,17 +61,17 @@
  },
  "stations": {
   "request": 53,
-  "driver": 193,
+  "driver": 191,
   "vehicle": 64,
   "pitlane": 70,
   "across": 172
  },
  "gaps": {
   "companies": 562,
-  "withMappedPartners": 128,
-  "withoutMappedPartners": 434,
-  "mappedEdges": 148,
-  "withDomain": 442,
+  "withMappedPartners": 129,
+  "withoutMappedPartners": 433,
+  "mappedEdges": 151,
+  "withDomain": 443,
   "withDisclosedFunding": 49,
   "disclosedFundingUSDm": 67128.4,
   "spokenTo": 18

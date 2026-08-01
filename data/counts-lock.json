@@ -1,8 +1,8 @@
 {
  "companies": 562,
- "withMappedPartners": 128,
- "withoutMappedPartners": 434,
- "mappedEdges": 148,
- "withDomain": 442,
+ "withMappedPartners": 129,
+ "withoutMappedPartners": 433,
+ "mappedEdges": 151,
+ "withDomain": 443,
  "withDisclosedFunding": 49
 }

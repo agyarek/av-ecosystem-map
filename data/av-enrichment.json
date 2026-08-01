@@ -9,7 +9,9 @@
   "Wayve",
   "Nuro",
   "May Mobility",
-  "Motional"
+  "Motional",
+  "Avride",
+  "SWM"
  ],
  "edges": [
   {
@@ -899,6 +901,24 @@
    "b": "Mobileye Drive",
    "k": "Software",
    "n": "The ID.Buzz AD program runs Mobileye Drive with a 27-sensor suite."
+  },
+  {
+   "a": "Avride",
+   "b": "Uber",
+   "k": "Demand",
+   "n": "Commercial robotaxi service on Uber in Dallas since December 2025; Uber and Nebius committed up to $375M in October 2025."
+  },
+  {
+   "a": "Avride",
+   "b": "Hyundai Motor Group",
+   "k": "Vehicle platform",
+   "n": "Hyundai IONIQ 5s carry the Dallas robotaxi fleet under an October 2024 partnership."
+  },
+  {
+   "a": "SWM",
+   "b": "NVIDIA",
+   "k": "Compute",
+   "n": "The driver runs on an NVIDIA DRIVE-based platform; next generation targets DRIVE AGX Thor."
   }
  ],
  "domains": {

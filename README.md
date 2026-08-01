@@ -16,7 +16,7 @@ Compiled and maintained by Kofi Agyare-Kwabi, ex-Uber Country Manager, GTM & Par
 | `/map/` | The wall chart: all 562 on one plate with an octagonal centre; zoom, filter, full screen, export, print |
 | `/companies/` | The ledger: every field, sortable, filterable, URL-shareable, CSV/JSON export |
 | `/companies/passenger-autonomy/` + 10 pages | The operators a passenger can actually meet, in depth (under `/companies/`) |
-| `/partnerships/` | 148 mapped relationships organised by function; the demand-layer story |
+| `/partnerships/` | 151 mapped relationships organised by function; the demand-layer story |
 | `/economics/#funding` | $41.8B of $200M+ events with the dataset's own known gaps published |
 | `/economics/` `/regulation/` `/safety/` `/owning-one/` `/beyond-roads/` | The deep dives |
 | `/method/` | Sources, taxonomy, coverage gaps, corrections |

@@ -1,16 +1,16 @@
 {
  "meta": {
   "generatedBy": "tools/build-indexes.py",
-  "edgeCount": 148,
-  "companiesWithPartners": 128,
-  "companiesWithout": 434,
+  "edgeCount": 151,
+  "companiesWithPartners": 129,
+  "companiesWithout": 433,
   "kinds": {
    "Same family": 33,
-   "Vehicle platform": 18,
-   "Demand": 16,
+   "Vehicle platform": 19,
+   "Demand": 17,
    "Regulatory": 13,
    "Software": 13,
-   "Compute": 10,
+   "Compute": 11,
    "Fleet ops": 8,
    "Investment": 8,
    "Delivery": 7,
@@ -1318,8 +1318,15 @@
   },
   "nvidia": {
    "name": "NVIDIA",
-   "count": 4,
+   "count": 5,
    "partners": [
+    {
+     "partner": "SWM",
+     "k": "Compute",
+     "n": "The driver runs on an NVIDIA DRIVE-based platform; next generation targets DRIVE AGX Thor.",
+     "slug": "swm",
+     "cat": "AV Driver / Autonomy Software"
+    },
     {
      "partner": "Uber",
      "k": "Compute",
@@ -1775,6 +1782,19 @@
      "n": "Long-time SAIC autonomy partner across IM Motors lines.",
      "slug": "momenta",
      "cat": "AV Driver / Autonomy Software"
+    }
+   ]
+  },
+  "swm": {
+   "name": "SWM",
+   "count": 1,
+   "partners": [
+    {
+     "partner": "NVIDIA",
+     "k": "Compute",
+     "n": "The driver runs on an NVIDIA DRIVE-based platform; next generation targets DRIVE AGX Thor.",
+     "slug": "nvidia",
+     "cat": "Sensing & Compute Hardware"
     }
    ]
   },

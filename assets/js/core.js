@@ -355,11 +355,12 @@
 
   // Every page ends on a person, not a dataset: the bio renders in every
   // footer, followed by one line of provenance.
+  const LINKEDIN = 'https://www.linkedin.com/in/kofiagyare';
   const BIO = `<div class="bio">
-    <p class="bio-name">KOFI AGYARE-KWABI</p>
-    <p class="bio-text">Hi! I'm a former Uber Country Manager and Wharton MBA with over a
-      decade of go-to-market and partnerships work, and I'm passionate about the autonomous
-      vehicle industry.</p>
+    <p class="bio-name">ABOUT THIS WEBSITE</p>
+    <p class="bio-text">Hi! <a class="li" href="${LINKEDIN}" target="_blank" rel="noopener noreferrer">${ICON.linkedin}Kofi Agyare-Kwabi</a> here:
+      former Uber Country Manager and Wharton MBA with over a decade of go-to-market and
+      partnerships work, and I'm passionate about the autonomous vehicle industry.</p>
     <p class="bio-text">This website is a living, breathing public repository of what I'm
       discovering about the industry through my research, conversations with experts in my
       network, and reviews of publicly available information. In case you're curious,
@@ -372,7 +373,7 @@
 
   const footerHTML = el => `<div class="container">
     ${BIO.replace('{ROOT}', ROOT)}
-    <p class="fine">Autonomous Vehicle Ecosystem Map · built by <a href="${ROOT}method/">Kofi Agyare-Kwabi</a> · updated <span data-updated>${UPDATED}</span></p>
+    <p class="fine">Autonomous Vehicle Ecosystem Map · built by <a href="${LINKEDIN}" target="_blank" rel="noopener noreferrer">Kofi Agyare-Kwabi</a> · updated <span data-updated>${UPDATED}</span></p>
     ${el.hasAttribute('data-trademark') ? `<p class="fine">${TRADEMARK}</p>` : ''}
   </div>`;
 

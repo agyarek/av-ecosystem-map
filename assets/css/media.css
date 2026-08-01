@@ -22,6 +22,14 @@
   font-family: var(--font-mono); font-size: var(--fs-micro); font-weight: 600;
   letter-spacing: .08em; color: var(--ink-2); white-space: nowrap;
 }
+.md-kind {
+  display: inline-flex; align-items: center; gap: 4px; margin-left: 10px;
+  vertical-align: 2px;
+  font-family: var(--font-mono); font-size: var(--fs-micro); font-weight: 600;
+  letter-spacing: .08em; text-transform: uppercase; color: var(--muted);
+  white-space: nowrap;
+}
+.md-kind svg { flex: none; }
 .md-who { font-family: var(--font-mono); font-size: var(--fs-xs); color: var(--muted); }
 .md-blurb { font-size: var(--fs-sm); color: var(--ink-2); line-height: 1.5; }
 .md-count { font-family: var(--font-mono); font-size: var(--fs-xs); color: var(--ink-2); margin-top: 2px; }

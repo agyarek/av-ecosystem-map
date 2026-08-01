@@ -1,8 +1,9 @@
 {
   "meta": {
     "compiled": "2026-07-31",
-    "countPolicy": "A subscriber figure appears only when the outlet states one publicly; everything else stays blank rather than estimated.",
-    "pickNote": "Set pick to true on any podcast to mark it as personally listened to and recommended."
+    "countPolicy": "Subscriber figures are recorded in the data when an outlet states one publicly, but no reader counts render on the page.",
+    "pickNote": "Set pick to true on any podcast to mark it as personally listened to and recommended.",
+    "imgNote": "Set img to a repo-relative path (e.g. assets/media/name.png) to use a stored high-resolution mark instead of the runtime favicon probe."
   },
   "publications": [
     {
@@ -24,11 +25,11 @@
       "pick": false
     },
     {
-      "name": "Understanding AI",
-      "url": "https://www.understandingai.org/",
-      "domain": "understandingai.org",
-      "who": "Timothy B. Lee",
-      "blurb": "AI explained for a general audience, with some of the most careful autonomous-vehicle reporting anywhere.",
+      "name": "Brad Templeton's Robocars",
+      "url": "https://www.templetons.com/brad/robocars/",
+      "domain": "templetons.com",
+      "who": "Brad Templeton, ex-Google self-driving car team",
+      "blurb": "The oldest site on the subject, writing about robocars almost exclusively since 2007: essays, analysis and field notes from inside the industry.",
       "subscribers": null,
       "pick": false
     },
@@ -143,6 +144,33 @@
       "next": "annually each autumn",
       "blurb": "Urban mobility's dealmaking floor: cities, operators and investors on how new mobility reaches the street.",
       "autonomyFirst": false
+    },
+    {
+      "name": "The Autonomous Main Event",
+      "url": "https://www.the-autonomous.com/main-event/",
+      "domain": "the-autonomous.com",
+      "where": "Vienna",
+      "next": "23–24 September 2026",
+      "blurb": "The safety-first global summit on autonomous mobility, convening OEMs, suppliers and regulators around shared architectures.",
+      "autonomyFirst": true
+    },
+    {
+      "name": "Autonomous Vehicle Technology Expo",
+      "url": "https://autonomousvehicletechnologyexpo.com/",
+      "domain": "autonomousvehicletechnologyexpo.com",
+      "where": "Stuttgart and Novi, Michigan",
+      "next": "27–29 October 2026, Novi",
+      "blurb": "The engineering-floor expo for AV development: sensors, simulation, validation and the toolchain behind the driver.",
+      "autonomyFirst": true
+    },
+    {
+      "name": "Conference on AVs and Public Transport",
+      "url": "https://avamerica.org/events/",
+      "domain": "avamerica.org",
+      "where": "San Francisco",
+      "next": "annually each January",
+      "blurb": "AV America's annual meeting on automating public transport, where transit agencies meet the operators courting them.",
+      "autonomyFirst": true
     },
     {
       "name": "IAA Mobility",

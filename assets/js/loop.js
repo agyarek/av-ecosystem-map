@@ -35,7 +35,7 @@
   if (!path || !token || !wrap) return;
 
   const TOTAL = path.getTotalLength();
-  const DWELL_MS = 7000;      // long enough to read a card; the ring shows it
+  const DWELL_MS = 11000;     // long enough to read a whole card; the ring shows it
   const LEG_MS = 3600;        // travel time between neighbouring stations
   const TURN_MS = 1150;       // the three-point turn
 

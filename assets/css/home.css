@@ -202,16 +202,11 @@
   font-size: clamp(20px, min(3.6vw, 5.5vh), 38px); font-weight: 800; letter-spacing: -0.015em;
   font-variation-settings: 'wdth' 112; color: var(--ink); margin-top: 4px;
 }
-/* The summary is the point of the list, so it shows at rest: title, overview
-   and sub-topics are all readable without a pointer. Hover keeps the flourish
-   — background, the art sliding in, and the CTA appearing. */
+/* The summary is the point of the list, so it shows at rest: title and
+   overview are readable without a pointer. Hover keeps the flourish —
+   background, the art swelling slightly, and the CTA appearing. */
 .band-more { margin-top: 10px; }
 .band-desc { font-size: var(--fs-base); color: var(--ink-2); max-width: 60ch; line-height: 1.5; }
-.band-topics {
-  display: flex; flex-wrap: wrap; gap: 6px 14px; margin-top: 10px;
-  font-family: var(--font-mono); font-size: var(--fs-xs); color: var(--muted);
-}
-.band-topics span::before { content: "■ "; font-size: .7em; color: var(--cyan); }
 .band-btn {
   display: inline-block; margin-top: 14px;
   opacity: 0; transform: translateY(4px);
@@ -219,20 +214,22 @@
 }
 .band:hover .band-btn, .band:focus-visible .band-btn,
 .band:focus-within .band-btn { opacity: 1; transform: none; }
+/* The art is part of the row, not a reward for hovering: visible at rest,
+   swelling a touch when the row is live. */
 .band-art {
   position: absolute; inset: 0; pointer-events: none;
   display: flex; justify-content: flex-end; align-items: center;
-  opacity: 0; transform: translateX(30px);
+  opacity: .45; transform: none;
   transition: opacity 320ms ease, transform 320ms ease;
 }
 .band-art svg { height: 100%; max-height: 200px; width: auto; margin-right: 4vw; }
-.band:hover .band-art, .band:focus-within .band-art { opacity: .55; transform: translateX(0); }
+.band:hover .band-art, .band:focus-within .band-art { opacity: .6; transform: scale(1.05); }
 @media (prefers-reduced-motion: reduce) {
   .band-btn, .band-art { transition: none; }
 }
 /* Touch and small screens: no hover, so the CTA shows at rest too and the art
-   stays a quiet backdrop. */
+   sits a step quieter behind the full-width text. */
 @media (max-width: 680px), (hover: none) {
   .band-btn { opacity: 1; transform: none; }
-  .band-art { opacity: .18; transform: none; }
+  .band-art { opacity: .3; transform: none; }
 }

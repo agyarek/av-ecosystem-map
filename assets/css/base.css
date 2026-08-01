@@ -207,8 +207,6 @@ footer.site {
   margin-top: clamp(64px, 10vh, 128px); border-top: 1px solid var(--rule);
   padding: 48px 0 64px; font-size: 14px; color: var(--ink-2);
 }
-footer.site .cta { max-width: var(--measure); }
-footer.site .cta a { color: var(--cyan); font-weight: 600; }
 footer.site .fine { margin-top: 24px; font-size: 12.5px; color: var(--muted); max-width: 82ch; }
 footer.site .fine + .fine { margin-top: 8px; }
 footer.site .bio {

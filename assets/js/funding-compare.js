@@ -313,6 +313,21 @@
   ];
   const PINNED_IN = ['vcap', 'kcap', 'paid', 'fare'];
 
+  // What each output actually computes, in words and symbols, verified against
+  // avEconomics in core.js. Shown when the reader hovers the metric's name.
+  const FORMULAS = {
+    cpm: 'Total cost per day ÷ paid miles per day. Cost per day = (depreciation + energy + maintenance + insurance) per mile × total miles, plus remote ops per day.',
+    revPerMile: 'The fare input, unchanged: $ per paid mile.',
+    profitDay: '(Paid miles per day × fare) − total cost per day.',
+    profitYear: 'Contribution per vehicle per day × operating days per year.',
+    fleetDay: 'Contribution per vehicle per day × fleet size (the top row).',
+    split: 'Each per-mile cost × total miles per day, plus remote ops per day (operator $ per hour × service hours ÷ vehicles per operator), largest first.',
+    paybackMonths: 'Capex ÷ cash contribution per day ÷ 30.4 days. Cash contribution = daily contribution with the depreciation charge added back.',
+    breakeven: 'Remote ops $ per day ÷ (fare − variable cost per mile ÷ (1 − deadhead %)).',
+    capex: 'Vehicle capex + autonomy kit capex.',
+    totalMiles: 'Paid miles ÷ (1 − deadhead %): the deadhead share is driven unpaid on top of every paid mile.',
+  };
+
   function buildEconomics(ec, companies) {
     const bySlug = Object.fromEntries(companies.map(c => [c.slug, c]));
     const options = Object.keys(ec.companies).map(s => ({ slug: s, name: ec.companies[s].name }));
@@ -338,8 +353,21 @@
 
     const ROWS = ECON_INPUTS.map(([k, label]) => ({ k, g: 'Assumptions', label, pin: PINNED_IN.includes(k) ? 1 : 0 }))
       .concat(OUTPUTS.map(([k, label]) => ({ k, g: 'Outputs', label, pin: k === 'cpm' ? 1 : 0 })));
-    const on = new Set(ROWS.filter(r => r.pin).map(r => r.k)
-      .concat(['life', 'days', 'dead', 'ratio', 'ophr', 'profitDay', 'fleetDay', 'split', 'paybackMonths', 'breakeven']));
+    // Every assumption shows by default — hiding is the reader's choice, so the
+    // table can never quietly look identical while differing underneath.
+    const on = new Set(ECON_INPUTS.map(([k]) => k)
+      .concat(['cpm', 'profitDay', 'fleetDay', 'split', 'paybackMonths', 'breakeven']));
+
+    // The honesty marker: which UNCHECKED inputs differ between the picked
+    // companies right now. When any do, output rows that disagree carry an
+    // asterisk naming them — otherwise identical-looking inputs producing
+    // different totals reads as a broken calculator.
+    const hiddenDiffering = cols =>
+      ECON_INPUTS.filter(([k]) => !on.has(k))
+        .filter(([k]) => new Set(cols.map(c => String(c.inputs[k]))).size > 1)
+        .map(([k, label]) => `${label}: ${cols.map(c => c.inputs[k]).join(' / ')}`);
+    const diffTip = list => list.length
+      ? 'These hidden inputs differ between the companies — ' + list.join(' · ') : '';
 
     function render() {
       const cols = pick.map(s => ({
@@ -348,12 +376,21 @@
       }));
       const inRows = ECON_INPUTS.filter(([k]) => on.has(k));
       const outRows = OUTPUTS.filter(([k]) => on.has(k));
+      const hd = diffTip(hiddenDiffering(cols));
 
       const fleetRow = `<tr><th scope="row" class="mlabel">Fleet, vehicles<span class="v-sub">prefilled from the directory — overwrite it for your own arithmetic</span></th>` +
         cols.map((c, ci) => `<td><input class="eco-in" inputmode="numeric"
              data-col="${ci}" data-k="_fleet" value="${esc(c.inputs._fleet || '')}"
              placeholder="fleet size"
              aria-label="Fleet size for ${esc(c.meta.name)}"></td>`).join('') + '</tr>';
+
+      const outRow = ([k, label, fmt, o]) => {
+        const texts = cols.map(c => fmt(c.out, fleetOf(c.slug)));
+        const differs = !!hd && new Set(texts).size > 1;
+        return `<tr><th scope="row" class="mlabel"><span class="ftip" tabindex="0" data-tip="${esc(FORMULAS[k] || '')}">${esc(label)}</span></th>` +
+          texts.map(t => `<td><span class="${o && o.text ? 'v-text' : 'v-num strong'}">${esc(t)}</span>` +
+            `<span class="ftip omark" tabindex="0" role="note" aria-label="Hidden inputs differ" data-tip="${esc(hd)}"${differs ? '' : ' hidden'}>*</span></td>`).join('') + '</tr>';
+      };
 
       $('eco-table').innerHTML = `<table class="data cmp eco">
         <thead><tr><th scope="col" class="mlabel">Metric</th>
@@ -367,8 +404,7 @@
              aria-label="${esc(label)} for ${esc(c.meta.name)}"></td>`).join('') + '</tr>').join('')}
         </tbody>
         <tbody class="out">
-          ${outRows.map(([k, label, fmt, o]) => `<tr><th scope="row" class="mlabel">${esc(label)}</th>` +
-          cols.map(c => `<td><span class="${o && o.text ? 'v-text' : 'v-num strong'}">${esc(fmt(c.out, fleetOf(c.slug)))}</span></td>`).join('') + '</tr>').join('')}
+          ${outRows.map(outRow).join('')}
         </tbody>
         <tfoot><tr><th scope="row" class="mlabel">Basis</th>
           ${cols.map(c => `<td><span class="v-sub basis">${esc(c.meta.note)}</span></td>`).join('')}
@@ -380,13 +416,20 @@
       const inp = e.target.closest('input.eco-in'); if (!inp) return;
       const slug = pick[+inp.dataset.col];
       inputsFor(slug)[inp.dataset.k] = String(inp.value).replace(/[^0-9.]/g, '');
-      // repaint outputs only, so the caret stays where the reader put it
-      const cols = pick.map(s => avEconomics(inputsFor(s)));
+      // repaint outputs only, so the caret stays where the reader put it —
+      // values and honesty markers both, without touching the input rows
+      const liveCols = pick.map(s => ({ inputs: inputsFor(s), out: avEconomics(inputsFor(s)) }));
+      const hd = diffTip(hiddenDiffering(liveCols));
       const outRows = OUTPUTS.filter(([k]) => on.has(k));
       [...$('eco-table').querySelectorAll('tbody.out tr')].forEach((tr, ri) => {
         const fmt = outRows[ri][2];
-        [...tr.querySelectorAll('td span')].forEach((sp, ci) => {
-          sp.textContent = fmt(cols[ci], fleetOf(pick[ci]));
+        const tds = [...tr.querySelectorAll('td')];
+        const texts = tds.map((td, ci) => fmt(liveCols[ci].out, fleetOf(pick[ci])));
+        const differs = !!hd && new Set(texts).size > 1;
+        tds.forEach((td, ci) => {
+          td.querySelector('.v-num, .v-text').textContent = texts[ci];
+          const m = td.querySelector('.omark');
+          if (m) { m.hidden = !differs; m.dataset.tip = hd; }
         });
       });
     });

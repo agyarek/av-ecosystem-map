@@ -1,7 +1,7 @@
 {
  "meta": {
   "compiled": "2026-07-29",
-  "warning": "Read this section as a modelling tool, not as reported results. No operator publishes fully-loaded cost per mile, and none of the figures below are disclosed. Every value is an estimate assembled on this site from vehicle platforms, published hardware-cost claims and local wage and energy levels, then run through the same arithmetic as the calculator on the economics page. They are starting points to argue with. Change them.",
+  "warning": "Read this section as a modelling tool, not as reported results. No operator publishes fully-loaded cost per mile, and none of the figures below are disclosed. Every value is an estimate assembled on this site from vehicle platforms, published hardware-cost claims and local wage and energy levels, then run through the same arithmetic for every company. They are starting points to argue with. Change them.",
   "baseline": "Where a company-specific basis was not available the value falls back to the published default on /economics/, so an unedited column is the site's generic operator, not a company-specific claim.",
   "conf": "estimated"
  },

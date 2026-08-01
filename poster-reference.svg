@@ -109,8 +109,8 @@
 <rect x="556" y="840" width="120" height="120" rx="26" fill="oklch(0.66 0.06 265)"/>
 <text x="616" y="923" font-size="56" font-weight="800" text-anchor="middle" fill="#FFFFFF">XP</text>
 <text x="616" y="996" font-size="32" font-weight="700" text-anchor="middle" fill="#12130F">XPeng</text>
-<text x="616" y="1064" font-size="11.5" text-anchor="middle" fill="#6E7268">VW licenses its AD stack for China</text>
-<text x="616" y="1078" font-size="11.5" text-anchor="middle" fill="#6E7268">EVs starting 2026</text>
+<text x="616" y="1064" font-size="11.5" text-anchor="middle" fill="#6E7268">VW licenses XPeng&#x27;s AD stack for</text>
+<text x="616" y="1078" font-size="11.5" text-anchor="middle" fill="#6E7268">China EVs starting 2026</text>
 </g>
 <g class="chip" data-slug="apex-ai">
 <rect x="768" y="830" width="224" height="276" rx="16" fill="#FAFAF7"/>
@@ -3067,7 +3067,7 @@
 <text x="5232" y="7779" font-size="56" font-weight="800" text-anchor="middle" fill="#FFFFFF">WA</text>
 <text x="5232" y="7852" font-size="32" font-weight="700" text-anchor="middle" fill="#12130F">WattEV</text>
 <text x="5232" y="7920" font-size="11.5" text-anchor="middle" fill="#6E7268">Port-side truck charging paired</text>
-<text x="5232" y="7934" font-size="11.5" text-anchor="middle" fill="#6E7268">with its own electric hauling</text>
+<text x="5232" y="7934" font-size="11.5" text-anchor="middle" fill="#6E7268">with their own electric hauling</text>
 </g>
 <g class="chip" data-slug="witricity">
 <rect x="3536" y="7998" width="224" height="276" rx="16" fill="#FAFAF7"/>
@@ -4307,7 +4307,7 @@
 <rect x="4644" y="9912" width="120" height="120" rx="26" fill="oklch(0.66 0.06 340)"/>
 <text x="4704" y="9995" font-size="56" font-weight="800" text-anchor="middle" fill="#FFFFFF">AV</text>
 <text x="4704" y="10068" font-size="32" font-weight="700" text-anchor="middle" fill="#12130F">AVIA</text>
-<text x="4704" y="10136" font-size="11.5" text-anchor="middle" fill="#6E7268">Published its third annual State</text>
+<text x="4704" y="10136" font-size="11.5" text-anchor="middle" fill="#6E7268">Published their third annual State</text>
 <text x="4704" y="10150" font-size="11.5" text-anchor="middle" fill="#6E7268">of AV report in 2026</text>
 </g>
 <g class="chip" data-slug="consumer-reports">
@@ -4801,7 +4801,7 @@
 <text x="2036" y="4982" font-size="113" font-weight="800" text-anchor="middle" fill="#FFFFFF">NU</text>
 <text x="2036" y="5112" font-size="40" font-weight="700" text-anchor="middle" fill="#12130F">Nuro</text>
 <text x="2036" y="5160" font-size="22" text-anchor="middle" fill="#6E7268">Pivoted from delivery pods to licensing</text>
-<text x="2036" y="5190" font-size="22" text-anchor="middle" fill="#6E7268">its driver; now powering Uber&#x27;s</text>
+<text x="2036" y="5190" font-size="22" text-anchor="middle" fill="#6E7268">their driver; now powering Uber&#x27;s</text>
 <text x="2036" y="5220" font-size="22" text-anchor="middle" fill="#6E7268">35,000-vehicle Lucid robotaxi programme.</text>
 </g>
 <g class="op" data-slug="may-mobility">
@@ -4829,7 +4829,7 @@
 <text x="3716" y="5112" font-size="40" font-weight="700" text-anchor="middle" fill="#12130F">Avride</text>
 <text x="3716" y="5160" font-size="22" text-anchor="middle" fill="#6E7268">Yandex-lineage driver now carrying Uber</text>
 <text x="3716" y="5190" font-size="22" text-anchor="middle" fill="#6E7268">riders in Dallas; $375M from Uber and</text>
-<text x="3716" y="5220" font-size="22" text-anchor="middle" fill="#6E7268">Nebius behind it.</text>
+<text x="3716" y="5220" font-size="22" text-anchor="middle" fill="#6E7268">Nebius behind them.</text>
 </g>
 <g class="op" data-slug="swm">
 <rect x="4008.0" y="4784" width="536" height="484" rx="22" fill="#FAFAF7"/>

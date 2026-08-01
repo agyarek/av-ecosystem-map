@@ -10,10 +10,10 @@ Compiled and maintained by Kofi Agyare-Kwabi, ex-Uber Country Manager, GTM & Par
 
 | Route | What it is |
 |---|---|
-| `/` | The loop, a tilted preview of the wall chart, and the six chapters |
+| `/` | The loop, a tilted preview of the ecosystem map, and the six chapters |
 | `/overview/` | The industry in plain terms: what drives the car, human vs autonomous rideshare |
 | `/media/` | Publications, podcasts and events covering autonomy |
-| `/map/` | The wall chart: all 562 on one plate with a rectangular centre; filter, full screen, export, print |
+| `/map/` | The ecosystem map: all 562 on one plate with a rectangular centre; filter, full screen, export, print |
 | `/companies/` | The directory: every field, sortable, filterable, URL-shareable, CSV/JSON export |
 | `/companies/passenger-autonomy/` + 10 pages | The operators a passenger can actually meet, in depth (under `/companies/`) |
 | `/partnerships/` | 151 mapped relationships organised by function; the demand-layer story |
@@ -34,7 +34,7 @@ everything derivable into `data/` at build time; the browser renders and never r
 ├── data/         source of truth + generated indexes (never edit generated files by hand)
 └── tools/
     ├── validate-data.py        invariants; run before every commit, fail on error
-    ├── build-poster-layout.py  freezes wall-chart geometry: a rectangular
+    ├── build-poster-layout.py  freezes ecosystem-map geometry: a rectangular
     │                           centre of twelve operators, the ten remaining
     │                           layers tiling the frame around it (562/562)
     ├── build-indexes.py        partner index, derived counts, search index

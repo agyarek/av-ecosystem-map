@@ -132,7 +132,7 @@
    "a": "Zoox",
    "b": "NHTSA",
    "k": "Regulatory",
-   "n": "Self-certified its purpose-built robotaxi under FMVSS; recall and inquiry dialogue ongoing."
+   "n": "Self-certified their purpose-built robotaxi under FMVSS; recall and inquiry dialogue ongoing."
   },
   {
    "a": "Zoox",
@@ -222,7 +222,7 @@
    "a": "Motional",
    "b": "Hyundai Motor Group",
    "k": "Same family",
-   "n": "Hyundai JV; the Ioniq 5 robotaxi was its purpose-built platform."
+   "n": "Hyundai JV; the Ioniq 5 robotaxi was their purpose-built platform."
   },
   {
    "a": "Motional",
@@ -372,7 +372,7 @@
    "a": "Lyft",
    "b": "FREE NOW",
    "k": "Acquisition",
-   "n": "Lyft acquired FREE NOW (2025) as its European demand arm."
+   "n": "Lyft acquired FREE NOW (2025) as their European demand arm."
   },
   {
    "a": "Lyft",
@@ -522,7 +522,7 @@
    "a": "DiDi",
    "b": "DiDi Autonomous Driving",
    "k": "Same family",
-   "n": "DiDi's robotaxi R&D arm feeding its ride-hail network."
+   "n": "DiDi's robotaxi R&D arm feeding their ride-hail network."
   },
   {
    "a": "DiDi Autonomous Driving",
@@ -876,7 +876,7 @@
    "a": "Verne",
    "b": "Pony.ai",
    "k": "Software",
-   "n": "Pony.ai supplies its Gen-7 autonomy stack for Verne's Zagreb robotaxi launch on Arcfox Alpha T5 EVs."
+   "n": "Pony.ai supplies their Gen-7 autonomy stack for Verne's Zagreb robotaxi launch on Arcfox Alpha T5 EVs."
   },
   {
    "a": "Verne",
@@ -1383,12 +1383,12 @@
   "Mobileye": "ADAS technology in 190M+ vehicles, the widest-deployed driving perception fleet on earth.",
   "Baidu Apollo Go": "Largest robotaxi operation on earth by cumulative rides: 22M+ across 27 cities, and the most international (Apr 2026).",
   "Momenta": "China's leading ADAS software exporter, shipping with Mercedes, SAIC and more.",
-  "XPeng": "Vision-based urban assisted driving at scale; VW licenses its stack from 2026.",
+  "XPeng": "Vision-based urban assisted driving at scale; VW licenses their stack from 2026.",
   "Tesla": "Largest vision-only fleet feeding one training loop; a metro-wide Austin map served by about 20 unsupervised cars (Jul 2026).",
   "Tesla Robotaxi / FSD": "Launched supervised robotaxi service in Austin (2025), expanding to Miami (2026).",
   "Tesla AI Hardware": "In-house FSD computer powering the world's largest consumer ADAS fleet.",
   "Aurora Innovation": "First driverless Class-8 trucks in commercial service on Texas highways.",
-  "Waabi": "Ported its learned driver between truck platforms without retraining; raised $1B.",
+  "Waabi": "Ported their learned driver between truck platforms without retraining; raised $1B.",
   "Kodiak AI": "First autonomous trucking company to go public; driverless operations in Texas.",
   "Torc Robotics": "Daimler-owned; targeting series-production driverless Freightliner Cascadias in 2027.",
   "Gatik": "Pioneered driverless middle-mile box-truck delivery for major retailers.",
@@ -1405,17 +1405,17 @@
   "Qualcomm Automotive": "Snapdragon Ride and Digital Chassis: a $45B automotive design-win pipeline.",
   "Horizon Robotics": "China's top automotive AI-chip maker, 10M+ Journey SoCs shipped.",
   "Magna": "The West's largest contract vehicle manufacturer, now assembling Waymo's robotaxis.",
-  "Hyundai Motor Group": "Supplies Ioniq 5 platforms to Waymo, Avride and its own Motional JV.",
+  "Hyundai Motor Group": "Supplies Ioniq 5 platforms to Waymo, Avride and their own Motional JV.",
   "Zeekr": "Purpose-built the Zeekr RT, Waymo's next-generation robotaxi.",
   "Geely": "China's most acquisitive automaker; targets 100,000 robotaxis by 2030.",
-  "BYD": "The world's largest EV maker, pushing God's Eye ADAS across its entire lineup.",
+  "BYD": "The world's largest EV maker, pushing God's Eye ADAS across their entire lineup.",
   "Toyota": "The world's #1 automaker: capital and platforms behind Pony.ai, May Mobility and Waymo.",
   "Mercedes-Benz Drive Pilot / MB.Drive": "First internationally certified Level 3 system sold to consumers.",
   "May Mobility": "Constrained-ODD transit and campus autonomy: 3.5M+ rides across the US and Japan, live on Lyft in Atlanta.",
   "WeRide": "Licensed in eight countries, the broadest regulatory footprint of any operator, and the Gulf's driverless leader.",
   "Grab": "Southeast Asia's super-app, now operating AV shuttle routes in Singapore.",
-  "DiDi": "China's dominant ride-hailing platform with its own robotaxi arm.",
-  "Nuro": "Pivoted from delivery pods to licensing its driver; now powering Uber's 35,000-vehicle Lucid robotaxi programme.",
+  "DiDi": "China's dominant ride-hailing platform with their own robotaxi arm.",
+  "Nuro": "Pivoted from delivery pods to licensing their driver; now powering Uber's 35,000-vehicle Lucid robotaxi programme.",
   "Serve Robotics": "The largest sidewalk-delivery deployment in the US, 2,000 robots for Uber Eats.",
   "Swiss Re": "Published the first underwriting-grade study showing Waymo beats human-driver claims rates.",
   "Transdev": "Operates public transit in 17 countries; runs Waymo's depots in five metros.",
@@ -1436,11 +1436,11 @@
   "Holon": "Benteler's purpose-built urban shuttle, automated by Mobileye and operated by Beep.",
   "Lucid": "Its Gravity SUV is the platform for Uber and Nuro's premium robotaxi program.",
   "Stellantis": "Fourth-largest automaker, supplying AV-ready van platforms to Uber and Pony.ai.",
-  "Volkswagen Group / CARIAD": "Europe's largest automaker, betting on XPeng, Horizon and Mobileye stacks plus its own ID. Buzz AV.",
+  "Volkswagen Group / CARIAD": "Europe's largest automaker, betting on XPeng, Horizon and Mobileye stacks plus their own ID. Buzz AV.",
   "Verne": "Rimac-born operator behind Europe's first commercial robotaxi launch, Zagreb H2 2026",
   "MOIA": "VW's autonomous ID.Buzz service, live on Uber in Los Angeles",
   "Bliq": "First company approved to run fully driverless road operations in an EU member state, in Estonia (May 2026).",
-  "Avride": "Yandex-lineage driver now carrying Uber riders in Dallas; $375M from Uber and Nebius behind it.",
+  "Avride": "Yandex-lineage driver now carrying Uber riders in Dallas; $375M from Uber and Nebius behind them.",
   "SWM": "Korea's first driverless taxi, running Seoul's Gangnam district on KG Mobility cars since 2024."
  },
  "logoDomains": {

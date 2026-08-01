@@ -40,7 +40,8 @@
   let TOTAL = 0;
   const DWELL_MS = 11000;     // long enough to read a whole card; the ring shows it
   const LEG_MS = 3600;        // travel time between neighbouring stations
-  const TURN_MS = 1150;       // the three-point turn
+  const TURN_MS = 1700;       // the three-point turn — unhurried, so it reads
+                              // as a manoeuvre rather than a glitch
 
   // Clockwise, each stop on a straight run beside its own card, so the car is
   // always level when parked rather than frozen mid-corner.
@@ -71,8 +72,9 @@
       const wb = wrap.getBoundingClientRect();
       for (const s of stations) {
         const r = cards[s].getBoundingClientRect();
-        // every stop is on the left side of the ring, in ride order down
-        anchor[s] = [22, r.top - wb.top + r.height / 2];
+        // every stop is on the right side of the ring — the down leg of a
+        // clockwise lap — in ride order
+        anchor[s] = [wb.width - 22, r.top - wb.top + r.height / 2];
       }
     } else Object.assign(anchor, GRID_ANCHOR);
     const N = 1200;
@@ -97,14 +99,16 @@
     trackKey = key;
     if (colMode) {
       // ring the card column: the lanes run inside .loop-inner's padding, so
-      // the road hugs the cards without ever running underneath them
+      // the road hugs the cards without ever running underneath them. The path
+      // starts top-right and runs DOWN the right side — a clockwise lap, same
+      // sense as the wide layout.
       const inner = wrap.querySelector('.loop-inner') || wrap;
       const y0 = Math.round(inner.offsetTop) + 12;
       const y1 = Math.round(inner.offsetTop + inner.offsetHeight) - 12;
       const x0 = 22, x1 = W - 22, r = 26;
-      const d = `M ${x0} ${y0 + r} L ${x0} ${y1 - r} Q ${x0} ${y1} ${x0 + r} ${y1} ` +
-        `L ${x1 - r} ${y1} Q ${x1} ${y1} ${x1} ${y1 - r} L ${x1} ${y0 + r} ` +
-        `Q ${x1} ${y0} ${x1 - r} ${y0} L ${x0 + r} ${y0} Q ${x0} ${y0} ${x0} ${y0 + r} Z`;
+      const d = `M ${x1} ${y0 + r} L ${x1} ${y1 - r} Q ${x1} ${y1} ${x1 - r} ${y1} ` +
+        `L ${x0 + r} ${y1} Q ${x0} ${y1} ${x0} ${y1 - r} L ${x0} ${y0 + r} ` +
+        `Q ${x0} ${y0} ${x0 + r} ${y0} L ${x1 - r} ${y0} Q ${x1} ${y0} ${x1} ${y0 + r} Z`;
       track.setAttribute('viewBox', `0 0 ${W} ${H}`);
       tokenScale = 0.42;
       ['track-shoulder', 'track-path', 'track-dash'].forEach(id => {
@@ -163,8 +167,10 @@
       cards[s].classList.toggle('active', i === idx && atStation));
   }
   function paintRing(pct) {
+    // negative offsets drain the ring in the path's own direction — clockwise,
+    // the same way the car and the clock run
     const ring = cards[stations[idx]].querySelector('.st-ring path');
-    if (ring) ring.style.strokeDashoffset = String(Math.min(100, 100 * pct));
+    if (ring) ring.style.strokeDashoffset = String(-Math.min(100, 100 * pct));
   }
   function clearRings() {
     stations.forEach(s => {
@@ -260,18 +266,21 @@
   function frameTurn(now) {
     const u = Math.min(1, (now - turn.start) / TURN_MS);
     const sign = turn.dir === 1 ? -1 : 1;
+    // Larger sweeps than the original: the old amplitudes were tuned for the
+    // desktop track and read as a jitter, not a manoeuvre. Each leg still
+    // begins and ends at rest, so the three movements stay distinct.
     let rot, along, side;
-    if (u < 1 / 3) {                            // pull out forward
+    if (u < 1 / 3) {                            // pull out forward, nose swinging
       const k = ease(u * 3);
-      rot = 70 * k; along = 7 * k; side = 5 * k;
+      rot = 80 * k; along = 14 * k; side = 9 * k;
       token.classList.remove('reversing');
     } else if (u < 2 / 3) {                     // reverse across the road
       const k = ease((u - 1 / 3) * 3);
-      rot = 70 + 40 * k; along = 7 - 17 * k; side = 5 + 3 * k;
+      rot = 80 + 45 * k; along = 14 - 34 * k; side = 9 + 5 * k;
       token.classList.add('reversing');
     } else {                                    // straighten up, new heading
       const k = ease((u - 2 / 3) * 3);
-      rot = 110 + 70 * k; along = -10 + 10 * k; side = 8 - 8 * k;
+      rot = 125 + 55 * k; along = -20 + 20 * k; side = 14 - 14 * k;
       token.classList.remove('reversing');
     }
     place(t, sign * rot, along, sign * side);

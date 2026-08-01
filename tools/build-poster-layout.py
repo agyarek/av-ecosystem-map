@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """
-build-poster-layout.py :: freeze the wall-chart geometry into data/poster-layout.json
+build-poster-layout.py :: freeze the ecosystem-map geometry into data/poster-layout.json
 
 Why this exists
 ---------------
-The wall chart is one SVG holding every company tile. If the layout were computed in
+The ecosystem map is one SVG holding every company tile. If the layout were computed in
 the browser it would reflow on every filter, every font load and every data edit, and
 the reader would lose the mental map they just built. So the layout is computed ONCE,
 here, checked into the repo, and rendered verbatim at runtime.

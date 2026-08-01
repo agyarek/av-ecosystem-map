@@ -285,7 +285,7 @@
     ['Overview', [['overview', 'overview/', 'The industry in plain terms'],
                   ['beyond-roads', 'beyond-roads/', 'Autonomy off the road'],
                   ['owning-one', 'owning-one/', 'Buying one yourself']]],
-    ['Map', [['map', 'map/', 'The wall chart']]],
+    ['Map', [['map', 'map/', 'The ecosystem map']]],
     ['Directory', [['companies', 'companies/', 'Every organisation, every field'],
                    ['operators', 'companies/passenger-autonomy/', 'Passenger autonomy'],
                    ['partnerships', 'partnerships/', 'Who works with whom']]],

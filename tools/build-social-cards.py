@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """build-social-cards.py :: render 1200x630 Open Graph cards from the poster.
 
-Each page's card is a crop of the real wall chart with a title bar, so a
+Each page's card is a crop of the real ecosystem map with a title bar, so a
 shared link is immediately legible as this site. Operator cards centre on
 that operator's medallion position, which the brief asks for by name.
 
@@ -43,7 +43,7 @@ def crop_around(cx, cy, w):
 
 CARDS = [
     ("home", "The autonomous vehicle industry, drawn to scale", f"{L['meta']['companyCount']} ORGANISATIONS · 11 LAYERS", None),
-    ("map", "The Wall Chart", f"{L['meta']['companyCount']} ORGANISATIONS · ELEVEN LAYERS", None),
+    ("map", "The Ecosystem Map", f"{L['meta']['companyCount']} ORGANISATIONS · ELEVEN LAYERS", None),
     ("companies", "Directory", f"{L['meta']['companyCount']} ROWS · EVERY FIELD · SHAREABLE VIEWS", None),
     ("operators", "Passenger Autonomy", "AUTONOMOUS DRIVERS A PASSENGER CAN ACTUALLY MEET",
      crop_around(mb["x"] + mb["w"] / 2, mb["y"] + mb["h"] / 2, mb["w"] * 1.35)),

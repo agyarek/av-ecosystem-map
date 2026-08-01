@@ -11,25 +11,25 @@ here, checked into the repo, and rendered verbatim at runtime.
 
 The composition
 ---------------
-One wide rounded rectangle with a rectangular centre holding passenger autonomy as a
-tile grid. Four districts run across the top, four across the bottom, and one tall
-district flanks the centre on each side, so the plate reads about twice as wide as it
-is tall — a wall chart, not a plaque:
+One tall rounded rectangle: full-width rows of districts stacked around a full-width
+centre row holding passenger autonomy as a tile grid. Every organisation in the data
+gets its own tile — nothing is sampled, nothing hides behind a door:
 
     +------------+-----------+-----------+--------------+
-    |   top 1    |   top 2   |   top 3   |    top 4     |
-    +-----+------+-----------+-----------+------+-------+
-    |     |        PASSENGER AUTONOMY           |       |
-    | left|   [t] [t] [t] [t]                   | right |
-    |  1  |   [t] [t] [t] [t]                   |   1   |
-    |     |   [t] [t] [t] [t]                   |       |
-    +-----+------+-----------+-----------+------+-------+
-    |  bottom 4  |  bottom 3 |  bottom 2 |   bottom 1   |
+    |  Driver    |  Sensing  |   Data    | Connectivity |
     +------------+-----------+-----------+--------------+
+    |              PASSENGER AUTONOMY                   |
+    |        [t] [t] [t] [t] [t] [t]                    |
+    |        [t] [t] [t] [t] [t] [t]                    |
+    +---------------+---------------+-------------------+
+    |    Demand     |    Vehicle    |      Fleet        |
+    +---------------+---------------+-------------------+
+    |   Capital     |  Regulators   |    Standards      |
+    +---------------+---------------+-------------------+
 
-Every district is axis-aligned, every label is horizontal and set at ONE size across
-the chart, and every district ends in a full-width bar that opens the rest of its
-roster — the tiles on the wall are a sample, the bar is the door.
+Reading top to bottom: build the driver, meet it, run the service, fund and police
+it. Every district is axis-aligned and every label is horizontal and set at ONE size
+across the chart.
 
 Run it after any edit to data/av-companies.json:
     python3 tools/build-poster-layout.py
@@ -50,15 +50,20 @@ PITCH_X = 264     # lattice pitch: tile plus the air between tiles
 PITCH_Y = 312
 HEADER  = 280     # district header band
 PAD     = 32      # inset between a district border and its tile grid
-BAR_H   = 120     # the show-all bar reserved across the bottom of each district
 MARGIN  = 200     # canvas margin outside the plate
 PLATE_R = 56      # corner radius of the plate
 LABEL_SIZE = 44   # ONE title size for every district, wrapping instead of shrinking
 
-# The centre rectangle: heading, a line of description, then a 4 x 3 grid of
-# operator tiles. Half-dimensions, because the maths runs centre-out.
-CEN_HW  = 1820    # half-width
-CEN_HH  = 760     # half-height
+# The plate width is FROZEN. The default map view shows the plate at full width,
+# so this number is the reading scale: change it and every name on the wall gets
+# bigger or smaller on screen. The chart grows downward instead.
+PLATE_W = 5352
+
+# The centre row: heading, a line of description, then a 6 x 2 grid of operator
+# tiles. The row itself runs the full plate width; CEN_HW survives only as the
+# half-width of meta.medallionBox, the crop the social-card renderer uses.
+CEN_HW  = 1820    # half-width of the medallion crop box
+CEN_HH  = 760     # half-height of the centre row
 
 # The organisations that occupy the centre. Membership is a test, not a count:
 # the company's driver — the software doing the driving — carries members of the
@@ -77,18 +82,19 @@ MEDALLION = [
 # district rather than a district of its own.
 MERGE = {"AV Middleware & Tooling": "AV Driver / Autonomy Software"}
 
-# Districts clockwise from the top left, still roughly the order a ride passes
-# through them: the autonomy stack and its inputs across the top, the machine on
-# the right, upkeep / money / permission across the bottom, demand on the left.
-BANDS = {
-    "top":    ["AV Driver / Autonomy Software", "Sensing & Compute Hardware",
-               "Data, Maps & Simulation", "Connectivity & Infrastructure"],
-    "right":  ["Vehicle Platform & Manufacturing"],
-    "bottom": ["Fleet Operations & Depot", "Capital, Insurance & Risk",
-               "Governance: Regulators & Government",
-               "Governance: Standards, Safety & Advocacy"],  # runs right to left
-    "left":   ["Demand & Commercial Platforms"],
-}
+# District rows top to bottom, each running the full plate width. Above the
+# centre: the driver and everything that makes it possible. Below it: the
+# running service (demand, the machine, its upkeep), then the foundation the
+# whole thing stands on (money and permission).
+ROW_BANDS = [
+    ("top",    ["AV Driver / Autonomy Software", "Sensing & Compute Hardware",
+                "Data, Maps & Simulation", "Connectivity & Infrastructure"]),
+    ("centre", None),
+    ("mid",    ["Demand & Commercial Platforms", "Vehicle Platform & Manufacturing",
+                "Fleet Operations & Depot"]),
+    ("bottom", ["Capital, Insurance & Risk", "Governance: Regulators & Government",
+                "Governance: Standards, Safety & Advocacy"]),
+]
 
 # Hues re-tuned for a paper-white ground: same hue wheel, lower chroma.
 HUE = {
@@ -128,7 +134,8 @@ DESC = {
     "Governance: Regulators & Government": "THE {n} BODIES THAT PERMIT, LICENSE AND POLICE IT",
     "Governance: Standards, Safety & Advocacy": "THE {n} BODIES WRITING ITS STANDARDS AND MAKING ITS CASE",
 }
-DESC_SIZE = 24    # IBM Plex Mono, same voice as the org counts
+DESC_SIZE = 36    # IBM Plex Mono, same voice as the org counts — sized to read
+                  # at the default zoom, not just in the exported poster
 
 # centre tile grid: 6 columns x 2 rows — wide, like the plate itself
 MED_COLS, MED_ROWS = 6, 2
@@ -150,12 +157,11 @@ def slug_of(c):
 
 
 def grid_cells(rect):
-    """Tile cells inside a district, in reading order. The bottom BAR_H is
-    reserved for the show-all bar, so no tile can ever sit under it."""
+    """Tile cells inside a district, in reading order."""
     x0, y0, x1, y1 = rect
     cells = []
     gy = y0 + HEADER + PAD
-    while gy + CHIP_H <= y1 - PAD - BAR_H:
+    while gy + CHIP_H <= y1 - PAD:
         gx = x0 + PAD
         while gx + CHIP_W <= x1 - PAD:
             cells.append((round(gx, 1), round(gy, 1)))
@@ -237,143 +243,94 @@ def main():
     for k in buckets:
         buckets[k].sort(key=lambda c: (-c.get("score", 0), c["name"].lower()))
 
-    # ------------------------------------------------- how many tiles to draw
-    # The tiles doubled in size so the logos could, which means the wall shows
-    # fewer of them: roughly an eighth of each layer, ranked by score, with the
-    # full roster one press of the district's bar away. Proportional rather than
-    # flat, so Governance still reads bigger than Capital at a glance.
-    SHOW_FRACTION, SHOW_MIN, SHOW_MAX = 0.13, 6, 14
-    shown, overflow = {}, {}
-    for k, v in buckets.items():
-        n = max(SHOW_MIN, min(SHOW_MAX, round(len(v) * SHOW_FRACTION)))
-        n = min(n, len(v))
-        shown[k], overflow[k] = v[:n], v[n:]
-        print(f"  show {n:3d} of {len(v):3d}  {k}")
-
-    planned = [n for b in BANDS.values() for n in b]
+    planned = [n for kind, names in ROW_BANDS if names for n in names]
     if sorted(planned) != sorted(buckets):
-        sys.exit(f"FATAL: BANDS covers {sorted(planned)}, data has {sorted(buckets)}")
+        sys.exit(f"FATAL: ROW_BANDS covers {sorted(planned)}, data has {sorted(buckets)}")
 
-    span = 2 * CEN_HH        # height shared by the left and right districts
-
-    # ------------------------------------------------- left and right widths
-    sides = {}
-    for side in ("left", "right"):
-        name = BANDS[side][0]
-        for cols in range(1, 24):
-            width = cols * PITCH_X + 2 * PAD
-            if side == "left":
-                rect = (-CEN_HW - width, -CEN_HH, -CEN_HW, CEN_HH)
-            else:
-                rect = (CEN_HW, -CEN_HH, CEN_HW + width, CEN_HH)
-            cells = grid_cells(rect)
-            if len(cells) >= len(shown[name]):
-                sides[side] = (width, [(name, rect, cells)])
-                break
-        else:
-            sys.exit(f"FATAL: {side} band cannot be made wide enough")
-
-    plate_x0 = -CEN_HW - sides["left"][0]
-    plate_x1 = CEN_HW + sides["right"][0]
-    plate_w = plate_x1 - plate_x0
-
-    # ------------------------------------------------------ top and bottom bands
-    # Both run the full width of the plate; take the shallowest depth that fits
-    # all four districts side by side.
-    horiz = {}
-    for band in ("top", "bottom"):
-        names = BANDS[band] if band == "top" else BANDS[band][::-1]
-        counts = [len(shown[n]) for n in names]
-        usable_cols = int((plate_w - 2 * PAD * len(names)) // PITCH_X)
-        for rows in range(1, 20):
+    # ------------------------------------------------- solve the stacked rows
+    # Plate-local coordinates: (0, 0) is the plate's top-left, y grows downward.
+    # Each district row takes the shallowest depth that seats every company in
+    # its districts side by side; the centre row has a fixed height.
+    y, placed, centre_y0 = 0, [], None
+    for kind, names in ROW_BANDS:
+        if kind == "centre":
+            centre_y0 = y
+            y += 2 * CEN_HH
+            continue
+        counts = [len(buckets[n]) for n in names]
+        usable_cols = int((PLATE_W - 2 * PAD * len(names)) // PITCH_X)
+        for rows in range(1, 40):
             need = [math.ceil(n / rows) for n in counts]
             if sum(need) <= usable_cols: break
         else:
-            sys.exit(f"FATAL: {band} band cannot be made deep enough")
-        depth = HEADER + rows * PITCH_Y + 2 * PAD + BAR_H
+            sys.exit(f"FATAL: band row {names} cannot be made deep enough")
+        depth = HEADER + rows * PITCH_Y + 2 * PAD
         spare = usable_cols - sum(need)
         order = sorted(range(len(need)), key=lambda i: -(counts[i] % rows or rows))
         for k in range(spare):
             need[order[k % len(need)]] += 1
         widths = [c * PITCH_X + 2 * PAD for c in need]
-        widths[-1] += plate_w - sum(widths)      # absorb rounding on the last one
-        rects, x = [], plate_x0
+        widths[-1] += PLATE_W - sum(widths)      # absorb rounding on the last one
+        x = 0
         for name, w in zip(names, widths):
-            y0 = -CEN_HH - depth if band == "top" else CEN_HH
-            rect = (x, y0, x + w, y0 + depth)
-            rects.append((name, rect, grid_cells(rect)))
+            rect = (x, y, x + w, y + depth)
+            placed.append((kind, name, rect, grid_cells(rect)))
             x += w
-        horiz[band] = (depth, rects)
-
-    plate_y0 = -CEN_HH - horiz["top"][0]
-    plate_y1 = CEN_HH + horiz["bottom"][0]
+        y += depth
+    plate_h = y
 
     # ------------------------------------------------------------ assemble
     districts, chips = [], []
-    for band in ("top", "right", "bottom", "left"):
-        rects = (horiz if band in ("top", "bottom") else sides)[band][1]
-        for name, rect, cells in rects:
-            items = shown[name]
-            if len(cells) < len(items):
-                sys.exit(f"FATAL: {name} has {len(items)} companies for {len(cells)} cells")
-            x0, y0, x1, y1 = rect
-            total = len(buckets[name])
-            lines = wrap_label(name.replace("Governance: ", "").upper(), x1 - x0)
-            hidden = overflow[name]
-            # the descriptor wraps against the header width at build time, so
-            # the narrow side districts get two lines and nothing ever clips
-            desc_room = int((x1 - x0 - 60) / (DESC_SIZE * 0.62))
-            desc_lines = wrap_plain(DESC.get(name, "").format(n=total),
-                                    max(20, desc_room), 2)
-            districts.append({
-                "id": slug(name), "layer": name, "band": band,
-                "hue": HUE.get(name, 220), "count": total,
-                "shown": len(items),
-                # Everyone this district holds but does not draw. The bar across
-                # the district's foot opens them, so the roster travels with the
-                # geometry.
-                "overflow": [{"name": c["name"], "slug": slug_of(c), "id": c["id"],
-                              "mono": c.get("mono", c["name"][:2].upper()),
-                              "exited": bool(c.get("exited")),
-                              "spokenTo": bool(c.get("spokenTo"))}
-                             for c in hidden],
-                "x": round(x0, 1), "y": round(y0, 1),
-                "w": round(x1 - x0, 1), "h": round(y1 - y0, 1),
-                "poly": [[round(px, 1), round(py, 1)] for px, py in
-                         [(x0, y0), (x1, y0), (x1, y1), (x0, y1)]],
-                "header": {"x": round(x0, 1), "y": round(y0, 1),
-                           "w": round(x1 - x0, 1), "h": HEADER,
-                           "tx": round(x0, 1), "tw": round(x1 - x0, 1)},
-                "labelSize": LABEL_SIZE, "labelLines": lines,
-                "desc": desc_lines, "descSize": DESC_SIZE,
-                # The full-width door to the rest of the roster. Emitted even
-                # when nothing is hidden (then the renderer skips it), so the
-                # geometry is stable if a layer shrinks.
-                "bar": {"x": round(x0 + PAD, 1), "y": round(y1 - PAD - BAR_H + 20, 1),
-                        "w": round(x1 - x0 - 2 * PAD, 1), "h": BAR_H - 20},
-                "capacity": len(cells), "slack": len(cells) - len(items),
+    for kind, name, rect, cells in placed:
+        items = buckets[name]
+        if len(cells) < len(items):
+            sys.exit(f"FATAL: {name} has {len(items)} companies for {len(cells)} cells")
+        x0, y0, x1, y1 = rect
+        total = len(items)
+        lines = wrap_label(name.replace("Governance: ", "").upper(), x1 - x0)
+        # the descriptor wraps against the header width at build time, so the
+        # narrowest districts get two lines and nothing ever clips. Plex Mono
+        # advances at 0.6em plus the renderers' fixed 2px letter-spacing.
+        desc_room = int((x1 - x0 - 60) / (DESC_SIZE * 0.6 + 2))
+        desc_lines = wrap_plain(DESC.get(name, "").format(n=total),
+                                max(20, desc_room), 2)
+        districts.append({
+            "id": slug(name), "layer": name, "band": kind,
+            "hue": HUE.get(name, 220), "count": total,
+            "shown": len(items),
+            "x": round(x0, 1), "y": round(y0, 1),
+            "w": round(x1 - x0, 1), "h": round(y1 - y0, 1),
+            "poly": [[round(px, 1), round(py, 1)] for px, py in
+                     [(x0, y0), (x1, y0), (x1, y1), (x0, y1)]],
+            "header": {"x": round(x0, 1), "y": round(y0, 1),
+                       "w": round(x1 - x0, 1), "h": HEADER,
+                       "tx": round(x0, 1), "tw": round(x1 - x0, 1)},
+            "labelSize": LABEL_SIZE, "labelLines": lines,
+            "desc": desc_lines, "descSize": DESC_SIZE,
+            "capacity": len(cells), "slack": len(cells) - len(items),
+        })
+        for c, (gx, gy) in zip(items, cells):
+            chips.append({
+                "name": c["name"], "slug": slug_of(c), "id": c["id"],
+                "district": slug(name),
+                "x": gx, "y": gy, "w": CHIP_W, "h": CHIP_H,
+                "sub": chip_sub(c),
+                "mono": c.get("mono", c["name"][:2].upper()),
+                "hue": HUE.get(name, 220),
+                "layers": len(c.get("all", [])),
+                "pips": [HUE[al] for al in c.get("all", [])
+                         if al in HUE and al != MERGE.get(c["cat"], c["cat"])][:4],
+                "exited": bool(c.get("exited")),
+                "spokenTo": bool(c.get("spokenTo")),
             })
-            for c, (gx, gy) in zip(items, cells):
-                chips.append({
-                    "name": c["name"], "slug": slug_of(c), "id": c["id"],
-                    "district": slug(name),
-                    "x": gx, "y": gy, "w": CHIP_W, "h": CHIP_H,
-                    "sub": chip_sub(c),
-                    "mono": c.get("mono", c["name"][:2].upper()),
-                    "hue": HUE.get(name, 220),
-                    "layers": len(c.get("all", [])),
-                    "pips": [HUE[al] for al in c.get("all", [])
-                             if al in HUE and al != MERGE.get(c["cat"], c["cat"])][:4],
-                    "exited": bool(c.get("exited")),
-                    "spokenTo": bool(c.get("spokenTo")),
-                })
 
     # ------------------------------------- passenger autonomy, inside
-    # A plain 4 x 3 grid of tiles under a centred heading: logo, name, and a
+    # A plain 6 x 2 grid of tiles under a centred heading: logo, name, and a
     # one-to-two-sentence claim per company. Tiles, not floating marks.
+    ccx = PLATE_W / 2
     grid_w = MED_COLS * MED_CW
-    gx0 = -grid_w / 2
-    gy0 = -CEN_HH + MED_TOP
+    gx0 = ccx - grid_w / 2
+    gy0 = centre_y0 + MED_TOP
     medallion = []
     for k, nm in enumerate(MEDALLION):
         c = by_name[nm]
@@ -388,31 +345,31 @@ def main():
         })
 
     centre = {
-        "cx": 0, "cy": 0,
-        "points": [[-CEN_HW, -CEN_HH], [CEN_HW, -CEN_HH],
-                   [CEN_HW, CEN_HH], [-CEN_HW, CEN_HH]],
-        "titleY": -CEN_HH + 130, "subY": -CEN_HH + 196,
-        "ruleY": CEN_HH - 130, "footY": CEN_HH - 76,
+        "cx": ccx, "cy": centre_y0 + CEN_HH,
+        "points": [[0, centre_y0], [PLATE_W, centre_y0],
+                   [PLATE_W, centre_y0 + 2 * CEN_HH], [0, centre_y0 + 2 * CEN_HH]],
+        "titleY": centre_y0 + 130, "subY": centre_y0 + 196,
+        "ruleY": centre_y0 + 2 * CEN_HH - 130, "footY": centre_y0 + 2 * CEN_HH - 76,
         "title": "PASSENGER AUTONOMY",
         "sub": "AUTONOMOUS DRIVERS A PASSENGER CAN ACTUALLY MEET",
         "foot": f"{len(MEDALLION)} OF {len(companies)} ORGANISATIONS ON THIS CHART",
     }
 
     # --------------------------------------------------------------- canvas
-    ox, oy = MARGIN - plate_x0, MARGIN - plate_y0
-    W = round(plate_w + 2 * MARGIN)
-    H = round(plate_y1 - plate_y0 + 2 * MARGIN)
+    ox = oy = MARGIN
+    W = round(PLATE_W + 2 * MARGIN)
+    H = round(plate_h + 2 * MARGIN)
 
     def shift_xy(o):
         o["x"] = round(o["x"] + ox, 1); o["y"] = round(o["y"] + oy, 1)
 
     for d in districts:
-        shift_xy(d); shift_xy(d["header"]); shift_xy(d["bar"])
+        shift_xy(d); shift_xy(d["header"])
         d["header"]["tx"] = round(d["header"]["tx"] + ox, 1)
         d["poly"] = [[round(x + ox, 1), round(y + oy, 1)] for x, y in d["poly"]]
     for c in chips: shift_xy(c)
     for c in medallion: shift_xy(c)
-    centre["cx"], centre["cy"] = round(ox, 1), round(oy, 1)
+    centre["cx"], centre["cy"] = round(centre["cx"] + ox, 1), round(centre["cy"] + oy, 1)
     centre["points"] = [[round(x + ox, 1), round(y + oy, 1)] for x, y in centre["points"]]
     for key in ("titleY", "subY", "ruleY", "footY"):
         centre[key] = round(centre[key] + oy, 1)
@@ -426,33 +383,38 @@ def main():
             "medallionCount": len(MEDALLION),
             "medStyle": MED_STYLE, "chipStyle": CHIP_STYLE,
             "width": W, "height": H,
-            "plate": {"x": MARGIN, "y": MARGIN, "w": round(plate_w, 1),
-                      "h": round(plate_y1 - plate_y0, 1), "rx": PLATE_R},
-            # the centre's bounding box, kept under its old name so the social-card
-            # renderer can keep cropping to "the centre" without knowing the shape
-            "medallionBox": {"x": round(ox - CEN_HW, 1), "y": round(oy - CEN_HH, 1),
+            "plate": {"x": MARGIN, "y": MARGIN, "w": round(PLATE_W, 1),
+                      "h": round(plate_h, 1), "rx": PLATE_R},
+            # the centre's crop box, kept under its old name and old size so the
+            # social-card renderer keeps framing "the centre" without knowing the
+            # row now runs the full plate width
+            "medallionBox": {"x": round(MARGIN + ccx - CEN_HW, 1),
+                             "y": round(MARGIN + centre_y0, 1),
                              "w": 2 * CEN_HW, "h": 2 * CEN_HH},
+            # the map's default camera: the plate at full width, vertically
+            # centred on the passenger-autonomy row. The viewer boots here and
+            # may zoom to at most 1.5x this scale.
+            "homeView": {"cx": round(MARGIN + ccx, 1),
+                         "cy": round(MARGIN + centre_y0 + CEN_HH, 1),
+                         "w": W},
         },
         # the centre travels under its old key name so every renderer keeps
         # working without knowing the shape changed; the geometry is a rectangle
         "oct": centre, "districts": districts, "chips": chips, "medallion": medallion,
     }
 
-    # Not every company gets a tile, but every company must still be reachable:
-    # drawn in a district, sitting in the centre, or listed in some district's
-    # overflow. Losing one silently is the failure this guards against.
+    # Every company gets exactly one tile: drawn in a district or sitting in
+    # the centre. Losing one silently is the failure this guards against.
     drawn = len(chips) + len(medallion)
-    held = drawn + sum(len(d["overflow"]) for d in districts)
-    if held != len(companies):
-        sys.exit(f"FATAL: {held} companies accounted for, data has {len(companies)}")
+    if drawn != len(companies):
+        sys.exit(f"FATAL: {drawn} companies drawn, data has {len(companies)}")
 
     os.makedirs(os.path.dirname(OUT), exist_ok=True)
     json.dump(layout, open(OUT, "w", encoding="utf-8"), indent=1)
     print(f"canvas   {W} x {H}  (aspect {W/H:.2f})")
-    print(f"plate    {plate_w:.0f} x {plate_y1 - plate_y0:.0f}")
+    print(f"plate    {PLATE_W:.0f} x {plate_h:.0f}")
     print(f"drawn    {drawn} of {len(companies)} companies "
-          f"({len(medallion)} in the centre + {len(chips)} in districts); "
-          f"{held - drawn} more reachable through each district's bar")
+          f"({len(medallion)} in the centre + {len(chips)} in districts)")
     for d in districts:
         print(f"  {d['band']:<6} {d['shown']:>3} of {d['count']:>3} in {d['capacity']:>3} cells "
               f"(slack {d['slack']:>2})  {d['layer']}")

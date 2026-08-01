@@ -48,7 +48,10 @@
 .loop-inner {
   position: absolute; inset: 12.5% 10.4%;
   display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr;
-  gap: 18px; padding: 20px;
+  /* The row gap is the controls' parking spot: wide enough that the pill sits
+     between the card rows without touching either. loop.js keeps the pill on
+     the true seam even when a card's content runs past its grid row. */
+  gap: 44px 18px; padding: 20px;
 }
 .station {
   position: relative; min-width: 0;
@@ -136,7 +139,7 @@
   .loop-foot { text-align: left; }
 }
 @media (min-width: 681px) and (max-width: 980px) {
-  .loop-inner { gap: 12px; padding: 12px; }
+  .loop-inner { gap: 36px 12px; padding: 12px; }
   .station { padding: 11px 13px; }
   .station .ex { display: none; }
   .station .layers { display: none; }
@@ -159,6 +162,7 @@
 .hero-stage { display: block; perspective: 1400px; text-decoration: none; }
 .hero-tilt {
   position: relative; border-radius: 14px; overflow: hidden;
+  display: flex; justify-content: center;
   transform: rotateX(38deg) rotateZ(-10deg) scale(1.08);
   transform-style: preserve-3d;
   background: var(--paper); border: 1px solid var(--rule);
@@ -166,7 +170,12 @@
   transition: transform 400ms ease;
 }
 .hero-stage:hover .hero-tilt { transform: rotateX(30deg) rotateZ(-7deg) scale(1.1); }
-.hero-tilt .mini-map { display: block; width: 100%; height: auto; padding: 4%; box-sizing: border-box; }
+/* The full-roster chart is over twice as tall as it is wide, so the preview is
+   height-capped: the whole plaque shows without swallowing the hero. */
+.hero-tilt .mini-map {
+  display: block; width: auto; max-width: 100%;
+  height: clamp(360px, 55vh, 620px); padding: 4%; box-sizing: border-box;
+}
 .hero-tilt::after {
   content: ""; position: absolute; inset: 0; pointer-events: none;
   background: linear-gradient(115deg, rgba(255,255,255,.28) 0%, rgba(255,255,255,.05) 32%,

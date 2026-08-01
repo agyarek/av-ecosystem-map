@@ -2,9 +2,9 @@
    Renders data/poster-layout.json verbatim (geometry is frozen at build time),
    then adds camera, selection, filters, exports and keyboard navigation.
 
-   The composition is one rounded plate with a rectangular centre: the
-   passenger-autonomy companies inside it, the ten remaining layers tiling the
-   frame around it and sharing their borders.
+   The composition is one tall rounded plate: full-width rows of districts
+   stacked around the passenger-autonomy row at the centre. Every organisation
+   has its own tile — the camera moves, the chart never abbreviates.
 
    Filtering dims; it never reflows. One company, one chip, always. */
 (function () {
@@ -256,20 +256,6 @@
       (d.desc || []).forEach((line, i) => {
         o.push(`<text x="${hd.tx + 30}" y="${descBase + i * (d.descSize + 6)}" font-size="${d.descSize || 24}" font-family="IBM Plex Mono, monospace" letter-spacing="2" fill="${C.muted}">${esc(line)}</text>`);
       });
-      // Each room draws a slice of its layer, so it has to say so. The control
-      // names what is not on the wall and opens the full roster; in an export it
-      // is still worth printing, because the chart should not look complete when
-      // it is not.
-      const hidden = (d.overflow || []).length;
-      if (hidden && d.bar) {
-        // The door, not a whisper: a bar the full width of the district that
-        // says plainly how much of the layer is not on the wall.
-        const b = d.bar;
-        o.push(X ? `<g>` : `<g class="d-more" data-expand="${esc(d.id)}" role="button" tabindex="-1" aria-label="Show all ${d.count} organisations in ${esc(d.layer)}">`);
-        o.push(`<rect class="d-bar" x="${b.x}" y="${b.y}" width="${b.w}" height="${b.h}" rx="18" fill="${hueFill(d.hue)}" fill-opacity=".16"/>`);
-        o.push(`<text x="${b.x + b.w / 2}" y="${b.y + b.h / 2 + 13}" text-anchor="middle" font-size="36" font-weight="600" font-family="IBM Plex Mono, monospace" fill="${C.ink}">SHOW ALL ${d.count} ORGS  ▾</text>`);
-        o.push(`</g>`);
-      }
       o.push(`<polygon class="d-edge" points="${poly(d.poly)}" fill="none" stroke="${C.rule}" stroke-width="3"/>`);
       if (!X) o.push(`<polygon class="d-glow" points="${poly(d.poly)}" fill="none" stroke="${hueFill(d.hue)}" stroke-width="9" opacity="0"/>`);
       o.push(`</g>`);
@@ -344,73 +330,9 @@
     return o.join('');
   }
 
-  // ------------------------------------------------------ the layer roster
-  // A district draws a slice of its layer; this is where the rest lives. Drawn
-  // and undrawn companies are listed together, because to a reader they are all
-  // just "the companies in this layer" — which of them happened to get a tile is
-  // an artefact of the chart, not a fact about the industry.
-  let rosterLayer = null;
-  const rosterEl = () => document.getElementById('roster');
-
-  function rosterRows(d) {
-    const drawn = L.chips.filter(c => c.district === d.id)
-      .map(c => ({ name: c.name, slug: c.slug, mono: c.mono, exited: c.exited, on: true }));
-    const rest = (d.overflow || [])
-      .map(c => ({ name: c.name, slug: c.slug, mono: c.mono, exited: c.exited, on: false }));
-    return drawn.concat(rest).sort((a, b) => a.name.localeCompare(b.name));
-  }
-
-  function paintRoster(q) {
-    const d = rosterLayer;
-    if (!d) return;
-    const rows = rosterRows(d);
-    const needle = (q || '').trim().toLowerCase();
-    const hits = needle ? rows.filter(r => r.name.toLowerCase().includes(needle)) : rows;
-    document.getElementById('roster-state').textContent =
-      needle ? `${hits.length} of ${rows.length} match` : `${rows.length} organisations`;
-    document.getElementById('roster-list').innerHTML = hits.map(r =>
-      `<li><button data-go="${esc(r.slug)}">
-        <span class="mono-tile" style="--tile:oklch(var(--tile-l) var(--tile-c) ${d.hue})">${esc(r.mono)}</span>
-        <span>${esc(r.name)}${r.exited ? ' <s class="caption">exited</s>' : ''}</span>
-        ${r.on ? '<span class="rk">on chart</span>' : ''}
-      </button></li>`).join('') ||
-      '<li><p class="caption" style="padding:8px 4px">No match in this layer.</p></li>';
-    document.getElementById('roster-list').querySelectorAll('button[data-go]').forEach(b =>
-      b.addEventListener('click', () => { closeRoster(); select(b.dataset.go); }));
-  }
-
-  function openRoster(id) {
-    const d = L.districts.find(x => x.id === id);
-    if (!d) return;
-    rosterLayer = d;
-    document.getElementById('roster-title').textContent =
-      `${d.layer.replace('Governance: ', '')} · ${d.shown} of ${d.count} on the chart`;
-    const q = document.getElementById('roster-q');
-    q.value = '';
-    paintRoster('');
-    rosterEl().hidden = false;
-    q.focus();
-  }
-  function closeRoster() {
-    rosterEl().hidden = true;
-    rosterLayer = null;
-  }
-
-  function bindRoster() {
-    if (!rosterEl()) return;
-    document.getElementById('roster-close').addEventListener('click', closeRoster);
-    document.getElementById('roster-q').addEventListener('input', e => paintRoster(e.target.value));
-    document.addEventListener('keydown', e => {
-      if (e.key === 'Escape' && !rosterEl().hidden) { closeRoster(); viewport.focus(); }
-    });
-  }
-
   // ------------------------------------------------------------ camera
   const cam = { x: 0, y: 0, w: 1, h: 1 };
   let fitW = 1;
-  const OVERSCAN = 0.3;   // how far past an edge the camera may travel, as a
-                          // fraction of the viewport, so a corner company can
-                          // still be parked near the top left
   const vpSize = () => ({ vw: viewport.clientWidth, vh: viewport.clientHeight });
 
   function applyCam() {
@@ -418,21 +340,34 @@
     sweepLogos();
     positionCard();
   }
+  // Zoom is bounded at both ends: out to the whole chart, in to 1.5x the
+  // default reading scale. Pan stops dead at the canvas edges — the chart is
+  // scrollable to its margins, never past them.
   function clampCam() {
     const { vw, vh } = vpSize();
+    fitW = Math.max(W, H * vw / vh);
     cam.h = cam.w * vh / vw;
     const s = vw / cam.w;
-    const minS = vw / fitW, maxS = 4;
+    const minS = vw / fitW;
+    const maxS = 1.5 * vw / L.meta.homeView.w;
     if (s < minS) { cam.w = fitW; cam.h = cam.w * vh / vw; }
-    if (s > maxS) { cam.w = vw / maxS; cam.h = cam.w * vh / vw; }
-    const ox = cam.w * OVERSCAN, oy = cam.h * OVERSCAN;
-    cam.x = cam.w >= W ? (W - cam.w) / 2 : Math.max(-ox, Math.min(W - cam.w + ox, cam.x));
-    cam.y = cam.h >= H ? (H - cam.h) / 2 : Math.max(-oy, Math.min(H - cam.h + oy, cam.y));
+    if (s > maxS) { cam.w = L.meta.homeView.w / 1.5; cam.h = cam.w * vh / vw; }
+    cam.x = cam.w >= W ? (W - cam.w) / 2 : Math.max(0, Math.min(W - cam.w, cam.x));
+    cam.y = cam.h >= H ? (H - cam.h) / 2 : Math.max(0, Math.min(H - cam.h, cam.y));
   }
   function fit() {
     const { vw, vh } = vpSize();
     fitW = Math.max(W, H * vw / vh);
     cam.w = fitW; clampCam(); applyCam();
+  }
+  // The default view: the plate at full width, vertically centred on the
+  // passenger-autonomy row. This is where the map boots and where it returns
+  // after a resize or a fullscreen transition.
+  function goHome() {
+    const hv = L.meta.homeView, { vw, vh } = vpSize();
+    cam.w = hv.w; cam.h = cam.w * vh / vw;
+    cam.x = hv.cx - cam.w / 2; cam.y = hv.cy - cam.h / 2;
+    clampCam(); applyCam();
   }
   function zoomAt(px, py, factor) {  // px,py in poster coords stay fixed on screen
     const rx = (px - cam.x) / cam.w, ry = (py - cam.y) / cam.h;
@@ -470,10 +405,11 @@
     })(t0);
   }
 
-  // The chart no longer zooms on its own: no wheel capture, no zoom buttons,
-  // no fly-in on selection. On a desktop it is a fixed poster that the page
-  // scrolls past like any other content. Pinch and drag survive only inside
-  // full screen — the one place a phone needs them to make 15px tiles tappable.
+  // The camera is bounded, not free: mouse drag pans anywhere, ctrl/cmd+wheel
+  // (a trackpad pinch) and the +/- keys zoom between the whole chart and 1.5x
+  // the default scale. Plain scrolling is never captured — the page scrolls
+  // past the chart like any other content. Touch drag and pinch live only
+  // inside full screen, so a phone's inline chart never traps its scroll.
   function bindCamera() {
     const pts = new Map();
     let pinch0 = null, moved = false, downOn = null;
@@ -494,7 +430,7 @@
       // a finger can wobble a few px and still mean "tap"
       const slop = e.pointerType === 'touch' ? 6 : 2;
       if (Math.abs(e.clientX - prev.x) + Math.abs(e.clientY - prev.y) > slop) moved = true;
-      if (!fsOn()) return;                        // camera only moves in full screen
+      if (!fsOn() && e.pointerType === 'touch') return;  // inline touch scrolls the page
       if (pts.size === 1) {
         const r = viewport.getBoundingClientRect();
         const dx = (e.clientX - prev.x) / r.width * cam.w;
@@ -528,10 +464,8 @@
           return;
         }
         const t = downOn && downOn.closest ? downOn : document.elementFromPoint(e.clientX, e.clientY);
-        const ex = t && t.closest ? t.closest('[data-expand]') : null;
         const g = t && t.closest ? t.closest('[data-chip]') : null;
-        if (ex) openRoster(ex.dataset.expand);
-        else if (g) select(g.dataset.slug);
+        if (g) select(g.dataset.slug);
         else clearSel();
       }
       downOn = null;
@@ -539,13 +473,22 @@
     viewport.addEventListener('pointerup', up);
     viewport.addEventListener('pointercancel', up);
 
+    // ctrl/cmd+wheel is a deliberate zoom (and how a trackpad pinch arrives);
+    // a plain wheel is the page scrolling and passes straight through.
+    viewport.addEventListener('wheel', e => {
+      if (!e.ctrlKey && !e.metaKey) return;
+      e.preventDefault();
+      const p = toPoster(e.clientX, e.clientY);
+      zoomAt(p.x, p.y, Math.exp(-e.deltaY * 0.002));
+    }, { passive: false });
+
     // hovering anywhere in a layer lights the whole layer
     svg.addEventListener('pointerover', e => setHot(e.target.closest('.district')));
     svg.addEventListener('pointerleave', () => setHot(null));
 
     // an iOS URL-bar or keyboard resize must not reset a pinched camera mid-use
     addEventListener('resize', () => {
-      if (fsOn()) { clampCam(); applyCam(); } else fit();
+      if (fsOn()) { clampCam(); applyCam(); } else goHome();
     });
   }
 
@@ -589,7 +532,7 @@
     const btn = document.getElementById('x-full');
     if (btn) { btn.textContent = on ? 'EXIT FULL SCREEN' : 'FULL SCREEN'; btn.setAttribute('aria-pressed', on); }
     chooseMode();
-    requestAnimationFrame(() => { fit(); positionCard(); });
+    requestAnimationFrame(() => { goHome(); positionCard(); });
   }
   function bindFullscreen() {
     const btn = document.getElementById('x-full');
@@ -644,10 +587,10 @@
       links.appendChild(path);
     }
     renderCard(slug, partnerRows);
-    // Selection never zooms. The one camera concession: in full screen, if the
-    // chosen chip sits outside the pinched view (a search hit, a roster row),
-    // pan it into frame at the reader's own zoom level.
-    if (fsOn()) {
+    // Selection never zooms, but it does travel: if the chosen chip (a search
+    // hit, a partner link) sits outside the current view, pan it into frame at
+    // the reader's own zoom level.
+    {
       const px = cam.w * 0.06, py = cam.h * 0.06;
       if (from.x < cam.x + px || from.x > cam.x + cam.w - px ||
           from.y < cam.y + py || from.y > cam.y + cam.h - py) {
@@ -894,6 +837,11 @@
       const DIR = { ArrowRight: [1, 0], ArrowLeft: [-1, 0], ArrowDown: [0, 1], ArrowUp: [0, -1] };
       if (e.key === 'Home') { fit(); e.preventDefault(); }
       else if (e.key === 'f' || e.key === 'F') { toggleFullscreen(); e.preventDefault(); }
+      else if (e.key === '+' || e.key === '=') {
+        zoomAt(cam.x + cam.w / 2, cam.y + cam.h / 2, 1.25); e.preventDefault();
+      } else if (e.key === '-' || e.key === '_') {
+        zoomAt(cam.x + cam.w / 2, cam.y + cam.h / 2, 0.8); e.preventDefault();
+      }
       else if (e.key === 'Escape') { clearSel(); setKbd(null); }
       else if (e.key === 'Enter' || e.key === ' ') {
         if (kbd) { select(kbd.dataset.slug); e.preventDefault(); }
@@ -983,8 +931,7 @@
     download('av-ecosystem-wall-chart.svg',
       new Blob([await exportString()], { type: 'image/svg+xml' }));
   }
-  async function exportPNG(mult) {
-    const btn = document.getElementById('x-png' + mult);
+  async function exportPNG(mult, btn) {
     const old = btn.textContent; btn.textContent = 'RENDERING…';
     try {
       const str = await exportString();
@@ -1006,8 +953,13 @@
   }
   function bindExport() {
     document.getElementById('x-svg').addEventListener('click', exportSVG);
-    document.getElementById('x-png2').addEventListener('click', () => exportPNG(2));
-    document.getElementById('x-png4').addEventListener('click', () => exportPNG(4));
+    // The chart is ~75 megapixels at 1x; browsers cap a single canvas around
+    // 268MP, so 1.5x is the largest raster that renders anywhere. Print wants
+    // the SVG, which is lossless at any size.
+    const p1 = document.getElementById('x-png1');
+    p1.addEventListener('click', () => exportPNG(1, p1));
+    const p15 = document.getElementById('x-png15');
+    p15.addEventListener('click', () => exportPNG(1.5, p15));
     // print reads the live viewBox, so square the camera up first
     document.getElementById('x-print').addEventListener('click', () => { fit(); window.print(); });
   }
@@ -1064,9 +1016,9 @@
 
     sweepLogos();
     scheduleBackfill();
-    buildRail(); readURL(); bindCamera(); bindKeys(); bindExport(); bindFullscreen(); bindRoster();
+    buildRail(); readURL(); bindCamera(); bindKeys(); bindExport(); bindFullscreen();
     chooseMode();
-    fit();
+    goHome();
     applyFilters();
     matchMedia('(max-width: 759px)').addEventListener('change', chooseMode);
     if (initial) {

@@ -87,7 +87,10 @@ def main():
     tmp = tempfile.mkdtemp(prefix="avcards-")
     made = 0
     for name, title, kicker, viewbox in CARDS:
-        vb = viewbox or f"0 0 {W} {H}"
+        # the chart is far taller than wide now, so "the whole poster" as a
+        # 1200x630 slice would land on anonymous mid-chart tiles; frame the
+        # full width centred on the medallion row instead
+        vb = viewbox or crop_around(W / 2, mb["y"] + mb["h"] / 2, W)
         svg = SVG.replace(f'viewBox="0 0 {W} {H}"', f'viewBox="{vb}" preserveAspectRatio="xMidYMid slice"', 1)
         page = PAGE.format(svg=svg, title=html.escape(title), kicker=html.escape(kicker))
         src = os.path.join(tmp, name + ".html")

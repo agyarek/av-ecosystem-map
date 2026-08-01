@@ -60,11 +60,8 @@ for d in L["districts"]:
     col = oklch(d["hue"])
     hd = d["header"]
     o.append(f'<polygon points="{pts(d["poly"])}" fill="{col}" opacity=".05"/>')
-    # no header band: the heading sits on the same ground as the tiles, the
-    # hue bar alone marks where it ends — mirrored from poster.js
-    o.append(f'<g clip-path="url(#d-{esc(d["id"])})">')
-    o.append(f'<rect x="{hd["x"]}" y="{hd["y"]+hd["h"]-9}" width="{hd["w"]}" height="9" fill="{col}"/>')
-    o.append('</g>')
+    # no header band and no rule under it: the heading sits on the same ground
+    # as the tiles, the same language as the centre — mirrored from poster.js
     size = d["labelSize"]
     n = len(d["labelLines"])
     narrow = hd["tw"] < 1100 and n > 1

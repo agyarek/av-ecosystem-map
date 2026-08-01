@@ -119,7 +119,7 @@ if os.path.exists(layout_path):
     layout = json.load(open(layout_path, encoding="utf-8"))
     # A district draws a slice of its layer and offers the rest through its expand
     # control, so not every company has a tile. What must still hold is that every
-    # company is reachable: drawn in a district, inside the octagon, or listed in
+    # company is reachable: drawn in a district, sitting in the centre, or listed in
     # some district's overflow. A company falling out of all three would vanish
     # from the chart silently, which is the failure worth catching.
     over = [c for d in layout.get("districts", []) for c in d.get("overflow", [])]

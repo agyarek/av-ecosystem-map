@@ -1,7 +1,7 @@
 /* funding-compare.js :: the two side-by-side comparisons.
 
    Both tables put companies in the columns and metrics in the rows, capped at
-   four columns. That is the opposite of the ledger's orientation and it is
+   four columns. That is the opposite of the directory's orientation and it is
    deliberate: with at most four subjects and thirty-odd measures, the reading
    direction that matters is down a company, and a four-column table still fits
    a laptop screen without horizontal scroll.
@@ -320,7 +320,7 @@
     while (pick.length < 2) pick.push(options[pick.length].slug);
 
     // live, per-column input values; reset when a column changes company.
-    // _fleet rides along with the model inputs: prefilled from the ledger but
+    // _fleet rides along with the model inputs: prefilled from the directory but
     // an open field, so a reader can run the arithmetic for any fleet they like.
     const live = {};
     const inputsFor = slug => {
@@ -349,7 +349,7 @@
       const inRows = ECON_INPUTS.filter(([k]) => on.has(k));
       const outRows = OUTPUTS.filter(([k]) => on.has(k));
 
-      const fleetRow = `<tr><th scope="row" class="mlabel">Fleet, vehicles<span class="v-sub">prefilled from the ledger — overwrite it for your own arithmetic</span></th>` +
+      const fleetRow = `<tr><th scope="row" class="mlabel">Fleet, vehicles<span class="v-sub">prefilled from the directory — overwrite it for your own arithmetic</span></th>` +
         cols.map((c, ci) => `<td><input class="eco-in" inputmode="numeric"
              data-col="${ci}" data-k="_fleet" value="${esc(c.inputs._fleet || '')}"
              placeholder="fleet size"

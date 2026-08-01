@@ -20,13 +20,13 @@
    "claimChars": 40
   },
   "chipStyle": {
-   "logo": 172,
+   "logo": 120,
    "logoY": 16,
-   "nameY": 208,
-   "nameSize": 13,
-   "nameStep": 16,
-   "nameChars": 24,
-   "descY": 244,
+   "nameY": 172,
+   "nameSize": 32,
+   "nameStep": 36,
+   "nameChars": 12,
+   "descY": 240,
    "descStep": 14,
    "descSize": 11.5,
    "descChars": 34
@@ -50,9 +50,6 @@
  "oct": {
   "cx": 2876,
   "cy": 2048,
-  "r": 760,
-  "hw": 1820,
-  "hh": 760,
   "points": [
    [
     1056,

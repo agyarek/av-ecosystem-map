@@ -37,14 +37,9 @@ def build(layout):
     out = [f'<svg class="mini-map" viewBox="0 0 {w} {h}" aria-hidden="true" '
            'preserveAspectRatio="xMidYMid meet">']
 
-    # district rooms, then a hue bar under each header, then the tiles
+    # district rooms, then the tiles (no header bars — the chart has none)
     for d in layout["districts"]:
         out.append(hue_poly(d["poly"], d["hue"]))
-    for d in layout["districts"]:
-        hd = d["header"]
-        out.append(f'<rect x="{hd["tx"]:g}" y="{hd["y"] + hd["h"] - 12:g}" '
-                   f'width="{hd["tw"]:g}" height="12" '
-                   + HUE_FILL.format(h=d["hue"], fo=".6") + "/>")
     for c in layout["chips"]:
         rx = round(c["w"] * 0.135)
         out.append(f'<rect x="{c["x"]:g}" y="{c["y"]:g}" width="{c["w"]:g}" '

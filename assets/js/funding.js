@@ -486,7 +486,7 @@
   addEventListener('scroll', hidePin, { passive: true });
 
   // The disclosed-funding note used to be typed into the page, and had drifted from
-  // the records it summarises: it claimed 49 plus 511 of 561, which is 560, and a
+  // the records it summarises: it claimed 49 plus 511 of 561 (562 now), and a
   // total $0.2B below what the records actually add up to. It is derived now.
   json('data/derived-counts.json').then(d => {
     const el = document.getElementById('disclosed-note');

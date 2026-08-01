@@ -1,8 +1,8 @@
-/* ledger.css :: the companies table. 560 rows in the DOM, browser does the rest. */
+/* ledger.css :: the companies table. 562 rows in the DOM, browser does the rest. */
 
 .ledger-head { padding-bottom: 16px; }
 .ledger-title {
-  font-size: clamp(26px, min(3.4vw, 5.2vh), 44px); font-weight: 800;
+  font-size: clamp(20px, min(3.4vw, 5.2vh), 44px); font-weight: 800;
   letter-spacing: -0.02em; font-variation-settings: 'wdth' 116; margin-top: 6px;
 }
 .ledger-honesty { margin-top: 10px; }
@@ -276,9 +276,14 @@ tr.detail > td { padding: 0; border-bottom: 1px solid var(--ink); background: va
 .scroll-nav button:active { transform: translateY(1px); }
 .scroll-nav svg { display: block; flex: none; }
 @media (max-width: 680px) {
-  /* the filters button owns the right-hand corner on a phone, so these sit
-     alongside it rather than stacking on top of it */
-  .scroll-nav { right: auto; left: 14px; flex-direction: row; }
+  /* On a phone the pane is the full table height (overflow: visible), so an
+     absolute anchor would park these thousands of pixels down at the table's
+     foot — they go back to fixed, riding the viewport where they are usable.
+     The filters button owns the right-hand corner, so these sit on the left. */
+  .scroll-nav {
+    position: fixed; right: auto; left: 14px; bottom: 14px; z-index: 125;
+    flex-direction: row;
+  }
   .scroll-nav button { padding: 8px 11px; }
 }
 @media print { .scroll-nav { display: none; } }
@@ -294,9 +299,7 @@ tr.detail > td { padding: 0; border-bottom: 1px solid var(--ink); background: va
 #lg-table tr.row { scroll-margin-top: calc(var(--stick-top, 96px) + 44px); }
 @media (min-width: 681px) { #lg-table tr.row { scroll-margin-top: 44px; } }
 
-/* The floating table controls stand down once the table itself is off screen,
-   so they stop covering whatever is below it — the chapter list, in particular. */
-.scroll-nav, .sheet-toggle { transition: opacity 160ms ease, visibility 160ms; }
+.sheet-toggle { transition: opacity 160ms ease, visibility 160ms; }
 /* The mobile filters button steps aside while the chapter block is on screen,
    so it never covers the links at the foot of the page. */
 body.at-chapters .sheet-toggle { opacity: 0; visibility: hidden; pointer-events: none; }

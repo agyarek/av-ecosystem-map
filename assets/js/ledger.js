@@ -311,7 +311,7 @@
       </div>
       <div class="d-actions">
         <a class="btn" href="../map/#${esc(c.slug)}">SHOW ON THE WALL CHART</a>
-        <a class="btn" href="mailto:agyarek+avecosystemmap@gmail.com?subject=${encodeURIComponent('AV map: ' + c.name)}">HELP IMPROVE THIS CARD</a>
+        <a class="btn" href="mailto:hello@kofiagyare.com?subject=${encodeURIComponent('AV map: ' + c.name)}">HELP IMPROVE THIS CARD</a>
       </div>
     </div>`;
   }

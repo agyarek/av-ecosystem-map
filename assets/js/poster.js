@@ -211,7 +211,7 @@
       card: X ? '#FFFFFF' : 'var(--paper-2)', rule: X ? '#DEDFD8' : 'var(--rule)',
       muted: X ? '#6E7268' : 'var(--muted)', yellow: X ? '#F2B705' : 'var(--yellow)',
       med: X ? '#F4F2E9' : 'var(--med-bg)', medtx: X ? '#12130F' : 'var(--med-ink)',
-      medsub: X ? '#6E7268' : 'var(--med-sub)'
+      medsub: X ? '#63665C' : 'var(--med-sub)'
     };
     const hueFill = h => X ? oklch(h, 0.62, 0.075) : `oklch(var(--layer-l) var(--layer-c) ${h})`;
     const o = [];
@@ -283,7 +283,7 @@
           o.push(`<circle cx="${c.x + 28 + i * 20}" cy="${c.y + 26}" r="7" fill="${hueFill(hue)}"/>`);
         });
         if (c.exited) o.push(`<line x1="${c.x + 18}" y1="${c.y + 14}" x2="${c.x + c.w - 18}" y2="${c.y + c.h - 20}" stroke="${C.muted}" stroke-width="2.5" opacity=".5"/>`);
-        if (c.spokenTo) o.push(`<circle cx="${c.x + c.w - 28}" cy="${c.y + 26}" r="7.5" fill="${C.yellow}"/>`);
+        if (c.spokenTo) o.push(`<circle cx="${c.x + c.w - 28}" cy="${c.y + 26}" r="7.5" fill="${C.yellow}" stroke="${C.ink}" stroke-width="1"/>`);
         o.push(`</g>`);
       }
       o.push(`</g>`);

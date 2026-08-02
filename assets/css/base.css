@@ -145,12 +145,12 @@ body {
 }
 img, svg, video { max-width: 100%; height: auto; }
 a { color: inherit; text-underline-offset: 2px; text-decoration-color: var(--muted); }
-a:hover { text-decoration-color: var(--cyan); color: var(--cyan); }
+a:hover { text-decoration-color: var(--cyan-text); color: var(--cyan-text); }
 button { font: inherit; color: inherit; background: none; border: none; cursor: pointer; }
 input, select { font: inherit; color: inherit; }
 ::selection { background: var(--yellow); color: #12130F; }
 
-:focus-visible { outline: 3px solid var(--cyan); outline-offset: 2px; border-radius: 2px; }
+:focus-visible { outline: 3px solid var(--cyan-text); outline-offset: 2px; border-radius: 2px; }
 .skip-link {
   position: absolute; left: 8px; top: -48px; z-index: var(--z-overlay);
   background: var(--ink); color: var(--paper); padding: 8px 16px;
@@ -242,7 +242,7 @@ nav.primary a[aria-current="page"] { color: var(--ink); box-shadow: inset 0 -2px
   background: var(--paper-2); border: 1px solid var(--rule); border-radius: var(--r-chip);
   padding: 7px 12px; width: min(220px, 38vw); outline-offset: 0;
 }
-#site-search input:focus { border-color: var(--cyan); }
+#site-search input:focus { border-color: var(--cyan-text); }
 #search-results {
   position: absolute; top: calc(100% + 6px); right: 0;
   width: min(360px, calc(100vw - 32px)); max-height: 380px; overflow: auto;
@@ -263,7 +263,7 @@ nav.primary a[aria-current="page"] { color: var(--ink); box-shadow: inset 0 -2px
   display: grid; place-items: center; color: var(--ink-2); flex: none;
   transition: border-color var(--dur-hover), color var(--dur-hover);
 }
-#theme-toggle:hover { border-color: var(--cyan); color: var(--cyan); }
+#theme-toggle:hover { border-color: var(--cyan-text); color: var(--cyan-text); }
 #theme-toggle .moon { display: none; }
 [data-theme="dark"] #theme-toggle .sun { display: none; }
 [data-theme="dark"] #theme-toggle .moon { display: block; }
@@ -282,7 +282,7 @@ footer.site .bio-name {
   letter-spacing: .12em; color: var(--muted);
 }
 footer.site .bio-text { margin-top: 10px; max-width: var(--measure); line-height: 1.55; }
-footer.site .bio-text a { color: var(--cyan); }
+footer.site .bio-text a { color: var(--cyan-text); }
 footer.site .bio-cta { margin-top: var(--sp-lg); }
 
 /* ---------------------------------------------------------------- pieces */
@@ -294,10 +294,10 @@ footer.site .bio-cta { margin-top: var(--sp-lg); }
   padding: var(--inset-control); background: var(--paper-2); color: var(--ink);
   transition: border-color var(--dur-hover), background var(--dur-hover), transform var(--dur-hover);
 }
-.btn:hover { border-color: var(--cyan); color: var(--ink); }
+.btn:hover { border-color: var(--cyan-text); color: var(--ink); }
 .btn:active { transform: translateY(1px); }
 .btn.primary { background: var(--ink); color: var(--paper); border-color: var(--ink); }
-.btn.primary:hover { border-color: var(--cyan); }
+.btn.primary:hover { border-color: var(--cyan-text); }
 .chip {
   display: inline-flex; align-items: center; gap: var(--sp-xs);
   font-family: var(--font-mono); font-size: 11.5px; font-weight: 600;
@@ -306,7 +306,7 @@ footer.site .bio-cta { margin-top: var(--sp-lg); }
   transition: border-color var(--dur-hover), background var(--dur-hover), color var(--dur-hover);
   user-select: none;
 }
-.chip:hover { border-color: var(--cyan); }
+.chip:hover { border-color: var(--cyan-text); }
 .chip[aria-pressed="true"], .chip.on {
   background: var(--ink); color: var(--paper); border-color: var(--ink);
 }
@@ -327,12 +327,12 @@ footer.site .bio-cta { margin-top: var(--sp-lg); }
   padding: var(--inset-card); text-decoration: none; position: relative; overflow: hidden;
   transition: border-color var(--dur-hover), transform var(--dur-hover);
 }
-.door:hover { border-color: var(--cyan); color: inherit; transform: translateY(-2px); }
+.door:hover { border-color: var(--cyan-text); color: inherit; transform: translateY(-2px); }
 .door .num { font-size: 22px; font-weight: 600; }
 .door .dn { font-weight: 800; font-size: 17px; font-variation-settings: 'wdth' 112; }
 .door .dd { font-size: 13px; color: var(--muted); line-height: var(--lh-card); }
 .door .arrow { position: absolute; right: 16px; top: 16px; color: var(--muted); transition: color var(--dur-hover), transform var(--dur-hover); }
-.door:hover .arrow { color: var(--cyan); transform: translateX(2px); }
+.door:hover .arrow { color: var(--cyan-text); transform: translateX(2px); }
 
 
 table.data { border-collapse: collapse; width: 100%; font-size: 14px; }
@@ -357,7 +357,7 @@ table.data tr:hover > td { background: color-mix(in oklab, var(--cyan) 5%, trans
   color: var(--ink-2); max-width: var(--measure);
 }
 .note.alert { border-left-color: var(--alert); }
-.note.live { border-left-color: var(--cyan); }
+.note.live { border-left-color: var(--cyan-text); }
 
 [aria-hidden="true"].decor { pointer-events: none; }
 .visually-hidden {
@@ -383,7 +383,7 @@ table.data tr:hover > td { background: color-mix(in oklab, var(--cyan) 5%, trans
   place-items: center; color: var(--ink-2);
   transition: border-color var(--dur-hover), color var(--dur-hover);
 }
-.nav-toggle:hover { border-color: var(--cyan); color: var(--ink); }
+.nav-toggle:hover { border-color: var(--cyan-text); color: var(--ink); }
 .nav-toggle .ic-close { display: none; }
 header.site.nav-open .nav-toggle .ic-menu { display: none; }
 header.site.nav-open .nav-toggle .ic-close { display: block; }
@@ -520,7 +520,7 @@ header.site.nav-open .nav-toggle .ic-close { display: block; }
   font-size: var(--fs-sm); color: var(--muted); text-decoration: none;
   display: inline-block; padding: 1px 0;
 }
-.ch-pages a:hover { color: var(--cyan); }
+.ch-pages a:hover { color: var(--cyan-text); }
 .ch-pages a[aria-current="page"] { color: var(--ink); }
 .ch-pages a[aria-current="page"]::before { content: "▸ "; color: var(--yellow); }
 
@@ -549,7 +549,7 @@ header.site.nav-open .nav-toggle .ic-close { display: block; }
   display: flex; gap: 9px; align-items: baseline; padding: 4px 0;
   font-size: 13px; color: var(--muted); text-decoration: none; line-height: var(--lh-dense);
 }
-.sn-body a:hover { color: var(--cyan); }
+.sn-body a:hover { color: var(--cyan-text); }
 .sn-body a[aria-current] { color: var(--ink); }
 .sn-n { font-family: var(--font-mono); font-size: 10.5px; flex: none; }
 .sn-body a[aria-current] .sn-n { color: var(--yellow); }
@@ -586,10 +586,10 @@ header.site.nav-open .nav-toggle .ic-close { display: block; }
    table and on partnerships, colour with no underline on the map card. One
    treatment now, whether the target is another page or a selection on this one. */
 .co-link {
-  color: var(--cyan); text-decoration: underline; text-underline-offset: 2px;
+  color: var(--cyan-text); text-decoration: underline; text-underline-offset: 2px;
   text-decoration-color: color-mix(in oklab, var(--cyan) 45%, transparent);
 }
-.co-link:hover { text-decoration-color: var(--cyan); }
+.co-link:hover { text-decoration-color: var(--cyan-text); }
 
 /* The leadership links sat an inline-flex box in a run of text, so their
    baseline came from the 13px icon inside rather than from the words around
@@ -612,9 +612,9 @@ nav.primary .np.open .np-more svg { transform: rotate(180deg); }
 /* Resting on the chapter is what opens its menu, so the whole item — name and
    caret together — answers the hover in the accent colour. */
 nav.primary .np:hover > a,
-nav.primary .np.open > a { color: var(--cyan); background: var(--paper-2); }
+nav.primary .np.open > a { color: var(--cyan-text); background: var(--paper-2); }
 nav.primary .np:hover .np-more,
-nav.primary .np.open .np-more { color: var(--cyan); }
+nav.primary .np.open .np-more { color: var(--cyan-text); }
 /* The nav strip scrolls horizontally, and a container that clips one axis clips
    both — an absolutely-positioned menu inside it can never be seen. So the menu
    is fixed to the viewport instead, and core.js places it under its button. */

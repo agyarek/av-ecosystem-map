@@ -26,7 +26,7 @@
   background: var(--paper-2); border: 1px solid var(--rule);
   border-radius: var(--r-pill); padding: 5px 12px; width: 150px;
 }
-.rail-text:focus { border-color: var(--cyan); }
+.rail-text:focus { border-color: var(--cyan-text); }
 .rail-spacer { flex: 1; }
 .rail-export .chip { border-radius: var(--r-chip); }
 #filter-state { min-height: 18px; }
@@ -73,15 +73,15 @@
    stroke would be a fraction of a pixel and hover/selection would be invisible. */
 #poster [data-chip]:hover .chip-body,
 #poster [data-chip].kbd-focus .chip-body {
-  stroke: var(--cyan); stroke-width: 2px; vector-effect: non-scaling-stroke;
+  stroke: var(--cyan-text); stroke-width: 2px; vector-effect: non-scaling-stroke;
 }
 #poster [data-chip].sel .chip-body {
-  stroke: var(--cyan); stroke-width: 3px; vector-effect: non-scaling-stroke;
+  stroke: var(--cyan-text); stroke-width: 3px; vector-effect: non-scaling-stroke;
 }
 /* A selected company's partners answer with a ring of their own, so the other
    end of every tether is findable at the default zoom, not just less dim. */
 #poster.has-sel [data-chip].lit:not(.sel) .chip-body {
-  stroke: var(--cyan); stroke-width: 2px; vector-effect: non-scaling-stroke;
+  stroke: var(--cyan-text); stroke-width: 2px; vector-effect: non-scaling-stroke;
 }
 /* A tile leans forward when you rest on it or pick it — a lean, not a bounce.
    Each tile is inset inside its own cell, so it has room to grow without
@@ -124,7 +124,7 @@
    back at full voice: solid, bright, and heavy enough to follow across the
    plate at a glance. */
 #poster .links path {
-  fill: none; stroke: var(--cyan); opacity: .85;
+  fill: none; stroke: var(--cyan-text); opacity: .85;
   vector-effect: non-scaling-stroke; stroke-width: 2.2px;
 }
 
@@ -154,7 +154,7 @@
 #company-card .cc-sub { font-size: var(--fs-base); color: var(--ink-2); margin-top: var(--sp-md); line-height: var(--lh-body); }
 #company-card .cc-site { margin-top: 11px; font-size: var(--fs-sm); }
 #company-card .cc-site a, #company-card .cc-lead a.li {
-  display: inline; color: var(--cyan);
+  display: inline; color: var(--cyan-text);
 }
 #company-card .cc-lead { margin-top: var(--sp-md); font-size: var(--fs-sm); line-height: 1.6; }
 #company-card .cc-lead .pk { display: inline-block; min-width: var(--cc-label); }
@@ -192,10 +192,10 @@
   background: var(--paper); border: 1px solid var(--rule); border-radius: var(--r-pill);
   transition: border-color var(--dur-hover);
 }
-#company-card .cc-partner:hover { border-color: var(--cyan); }
+#company-card .cc-partner:hover { border-color: var(--cyan-text); }
 /* A resolvable partner is a link into the chart, and reads like one. */
 #company-card .cc-partner:hover span:last-child {
-  color: var(--cyan); text-decoration: underline; text-underline-offset: 2px;
+  color: var(--cyan-text); text-decoration: underline; text-underline-offset: 2px;
 }
 #company-card .cc-partner .cp-logo { width: 26px; height: 26px; font-size: var(--fs-nano); border-radius: 7px; flex: none; }
 #company-card .cc-partner.is-plain { border-style: dashed; color: var(--ink-2); }
@@ -280,7 +280,7 @@ body.fs-pseudo #map-shell .fs-overlay { display: inline-flex; }
   padding: 7px 13px; background: var(--paper-2); user-select: none;
 }
 .map-key > summary::-webkit-details-marker { display: none; }
-.map-key > summary:hover { border-color: var(--cyan); }
+.map-key > summary:hover { border-color: var(--cyan-text); }
 .map-key .pk-caret { font-size: var(--fs-nano); transition: transform 160ms ease; }
 .map-key[open] .pk-caret { transform: rotate(180deg); }
 .map-key[open] > summary { margin-bottom: 16px; }
@@ -337,7 +337,7 @@ body.fs-pseudo #map-shell .fs-overlay { display: inline-flex; }
 .map-rail .picker { position: relative; }
 .map-rail .picker summary { list-style: none; display: inline-flex; align-items: center; gap: var(--sp-xs); }
 .map-rail .picker summary::-webkit-details-marker { display: none; }
-.map-rail .picker[open] summary { border-color: var(--cyan); color: var(--ink); }
+.map-rail .picker[open] summary { border-color: var(--cyan-text); color: var(--ink); }
 .map-rail .pk-caret { font-size: 9px; transition: transform 140ms ease; }
 .map-rail .picker[open] .pk-caret { transform: rotate(180deg); }
 .map-rail .pk-n {
@@ -357,4 +357,4 @@ body.fs-pseudo #map-shell .fs-overlay { display: inline-flex; }
 }
 .map-rail .pop label .dot { width: 9px; height: 9px; border-radius: 3px; flex: none; }
 .map-rail .pop label .n { margin-left: auto; font-family: var(--font-mono); font-size: 10.5px; color: var(--muted); }
-.map-rail .pop input { accent-color: var(--cyan); }
+.map-rail .pop input { accent-color: var(--cyan-text); }

@@ -2,64 +2,129 @@
    Design direction: field atlas. Paper ground, ink type, road-marking yellow
    used once per viewport, lidar cyan for live/selected state. */
 
+/* == tokens:begin — generated from design/design-tokens.json by tools/build-tokens.py; do not hand-edit == */
+/* Breakpoints (media queries must use exactly these values; JS mirrors in AV.bp): phone=640, ledger=680, sheet=760, nav=860, grid=960, wide=1800 */
 :root {
-  --paper:   #FAFAF7;
-  --paper-2: #FFFFFF;
-  --ink:     #12130F;
-  --ink-2:   #3B3E36;
-  --muted:   #6E7268;
-  --rule:    #DEDFD8;
-  --yellow:  #F2B705;
-  --cyan:    #00A5B8;
-  --alert:   #C4453B;
-
-  /* eleven layers, one hue wheel; chroma dropped for a paper ground */
-  --h-driver: 265; --h-sensing: 200; --h-data: 150; --h-middleware: 105;
-  --h-vehicle: 40; --h-demand: 20; --h-fleet: 320; --h-connectivity: 230;
-  --h-capital: 60; --h-regulators: 290; --h-standards: 340;
-  --layer-l: 0.62; --layer-c: 0.075;
-  --tile-l: 0.66; --tile-c: 0.06; --tile-ink: #FFFFFF;
-  --med-bg: #F4F2E9; --med-ink: #12130F; --med-sub: #6E7268;
-  --road: #E4E2D8; --road-line: #FFFFFF;
-
-  --r-chip: 8px; --r-card: 14px; --r-medallion: 20px; --r-pill: 999px;
-
+  --h-driver: 265; --h-sensing: 200; --h-data: 150; --h-middleware: 105; --h-vehicle: 40; --h-demand: 20; --h-fleet: 320; --h-connectivity: 230; --h-capital: 60; --h-regulators: 290; --h-standards: 340;
+  --ch1: 265; --ch2: 40; --ch3: 150; --ch4: 320; --ch5: 200; --ch6: 60;
   --font-display: 'Archivo', system-ui, sans-serif;
   --font-serif: 'Source Serif 4', Georgia, serif;
   --font-mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, monospace;
-
-  --col: 1240px;
-  --measure: 68ch;
-
-  /* Type scale. There were ~50 hand-picked font-size literals across five
-     stylesheets and no tokens at all, so a one-step size change meant hunting.
-     These six cover most of the site; the fluid headline clamps stay as they
-     are. Each is a step up from where it was, which is the 1-2pt lift the
-     review asked for. */
+  --fs-nano: 10px;
   --fs-micro: 11px;
-  --fs-xs:    12px;
-  --fs-sm:    13.5px;
-  --fs-base:  15.5px;
-  --fs-md:    16px;
-  --fs-lg:    19px;
+  --fs-xs: 12px;
+  --fs-sm: 13.5px;
+  --fs-base: 15.5px;
+  --fs-md: 16px;
+  --fs-mdplus: 17.5px;
+  --fs-lg: 19px;
+  --fs-xl: 24px;
+  --head-display: clamp(26px, min(5.5vw, 9vh), 76px);
+  --head-utility: clamp(22px, min(3.4vw, 5.2vh), 44px);
+  --head-section: clamp(20px, min(3vw, 4.6vh), 38px);
+  --head-article: clamp(18.5px, min(2.6vw, 4vh), 32px);
+  --head-prose3: clamp(18px, min(2.6vw, 4vh), 22px);
+  --head-metric: clamp(24px, min(3vw, 4.6vh), 40px);
+  --track-display: -0.03em;
+  --track-heading: -0.02em;
+  --track-sub: -0.01em;
+  --track-caps-dense: 0.06em;
+  --track-caps: 0.10em;
+  --track-caps-loose: 0.14em;
+  --lh-solid: 1;
+  --lh-display: 1.06;
+  --lh-heading: 1.1;
+  --lh-compact: 1.2;
+  --lh-dense: 1.35;
+  --lh-card: 1.45;
+  --lh-body: 1.5;
+  --lh-prose: 1.62;
+  --sp-3xs: 2px;
+  --sp-2xs: 4px;
+  --sp-xs: 6px;
+  --sp-sm: 8px;
+  --sp-md: 12px;
+  --sp-lg: 16px;
+  --sp-xl: 24px;
+  --sp-2xl: 32px;
+  --sp-3xl: 48px;
+  --inset-chip: 4px 11px;
+  --inset-control: 9px 14px;
+  --inset-field: 8px 12px;
+  --inset-field-sm: 5px 8px;
+  --inset-card: 18px;
+  --inset-panel: 24px;
+  --rhythm-head-top: clamp(40px, 7vh, 88px);
+  --rhythm-head-bottom: clamp(24px, 4vh, 48px);
+  --rhythm-section: clamp(48px, 8vh, 96px);
+  --rhythm-tail: clamp(64px, 10vh, 128px);
+  --col: 1240px;
+  --col-pad: clamp(16px, 4vw, 32px);
+  --measure: 68ch;
+  --measure-compact: 60ch;
+  --measure-wide: 82ch;
+  --r-chip: 8px;
+  --r-mid: 10px;
+  --r-card: 14px;
+  --r-pill: 999px;
+  --shadow-float: 0 14px 40px rgba(18,19,15,.16);
+  --shadow-raised: 0 6px 20px rgba(18,19,15,.22);
+  --dur-hover: 120ms;
+  --dur-state: 200ms;
+  --dur-slow: 320ms;
+  --dur-move: 450ms;
+  --ease-ui: ease;
+  --ease-move: cubic-bezier(0.45, 0, 0.55, 1);
+  --z-card: 30;
+  --z-pop: 60;
+  --z-header: 90;
+  --z-drop: 120;
+  --z-overlay: 200;
+  --z-fs: 300;
+  --paper: #FAFAF7;
+  --paper-2: #FFFFFF;
+  --med-bg: #F4F2E9;
+  --road: #E4E2D8;
+  --road-line: #FFFFFF;
+  --ink: #12130F;
+  --ink-2: #3B3E36;
+  --muted: #6E7268;
+  --med-sub: #6E7268;
+  --rule: #DEDFD8;
+  --yellow: #F2B705;
+  --cyan: #00A5B8;
+  --cyan-text: #007A8A;
+  --alert: #C4453B;
+  --med-ink: #12130F;
+  --tile-ink: #FFFFFF;
+  --layer-l: 0.62; --layer-c: 0.075; --tile-l: 0.66; --tile-c: 0.06;
+  --chart-l: 0.55; --chart-c: 0.115;
+  --scrim: rgba(18,19,15,.38);
   color-scheme: light;
 }
 :root[data-theme="dark"] {
-  --paper:   #14150F;
+  --paper: #14150F;
   --paper-2: #1C1E17;
-  --ink:     #F2F2EC;
-  --ink-2:   #C4C7BB;
-  --muted:   #8B8F82;
-  --rule:    #2E3128;
-  --yellow:  #FFC931;
-  --cyan:    #22C4D6;
-  --alert:   #E0655B;
-  --layer-l: 0.74; --layer-c: 0.09;
-  --tile-l: 0.42; --tile-c: 0.055; --tile-ink: #E9EAE2;
-  --med-bg: #24261D; --med-ink: #F2F2EC; --med-sub: #9DA095;
-  --road: #2B2E24; --road-line: #6E7268;
+  --med-bg: #24261D;
+  --road: #2B2E24;
+  --road-line: #6E7268;
+  --ink: #F2F2EC;
+  --ink-2: #C4C7BB;
+  --muted: #8B8F82;
+  --med-sub: #9DA095;
+  --rule: #2E3128;
+  --yellow: #FFC931;
+  --cyan: #22C4D6;
+  --cyan-text: #22C4D6;
+  --alert: #E0655B;
+  --med-ink: #F2F2EC;
+  --tile-ink: #E9EAE2;
+  --layer-l: 0.74; --layer-c: 0.09; --tile-l: 0.42; --tile-c: 0.055;
+  --chart-l: 0.7; --chart-c: 0.115;
+  --scrim: rgba(0,0,0,.5);
   color-scheme: dark;
 }
+/* == tokens:end == */
 [hidden] { display: none !important; }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }

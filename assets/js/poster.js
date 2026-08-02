@@ -458,7 +458,7 @@
       if (tap) {
         // On a phone the inline chart is a doorway: the first tap opens it full
         // screen, and only inside full screen do taps reach the tiles.
-        if (!fsOn() && e.pointerType === 'touch' && matchMedia('(max-width: 859px)').matches) {
+        if (!fsOn() && e.pointerType === 'touch' && matchMedia('(max-width: 860px)').matches) {
           toggleFullscreen();
           downOn = null;
           return;
@@ -969,7 +969,7 @@
   // inline, tap-to-fullscreen to read it. The only mode left to choose is how
   // the card presents: parked beside a chip, or a bottom sheet on a phone.
   function chooseMode() {
-    const sheet = matchMedia('(max-width: 759px)').matches;
+    const sheet = matchMedia('(max-width: 760px)').matches;
     card.classList.toggle('sheet', sheet);
     if (sheet) { card.style.left = card.style.top = ''; }
   }
@@ -1020,7 +1020,7 @@
     chooseMode();
     goHome();
     applyFilters();
-    matchMedia('(max-width: 759px)').addEventListener('change', chooseMode);
+    matchMedia('(max-width: 760px)').addEventListener('change', chooseMode);
     if (initial) {
       // let first paint land, then resolve (company slug or stage anchor)
       requestAnimationFrame(() => setTimeout(() => {

@@ -319,20 +319,6 @@ footer.site .bio-cta { margin-top: var(--sp-lg); }
 .gold-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%;
   background: var(--yellow); flex: none; }
 
-.doors { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: var(--sp-lg); margin-top: var(--sp-2xl); }
-.door {
-  display: flex; flex-direction: column; gap: var(--sp-sm); min-height: 132px;
-  background: var(--paper-2); border: 1px solid var(--rule); border-radius: var(--r-card);
-  padding: var(--inset-card); text-decoration: none; position: relative; overflow: hidden;
-  transition: border-color var(--dur-hover), transform var(--dur-hover);
-}
-.door:hover { border-color: var(--cyan-text); color: inherit; transform: translateY(-2px); }
-.door .num { font-size: 22px; font-weight: 600; }
-.door .dn { font-weight: 800; font-size: var(--fs-mdplus); font-variation-settings: 'wdth' 112; }
-.door .dd { font-size: var(--fs-sm); color: var(--muted); line-height: var(--lh-card); }
-.door .arrow { position: absolute; right: 16px; top: 16px; color: var(--muted); transition: color var(--dur-hover), transform var(--dur-hover); }
-.door:hover .arrow { color: var(--cyan-text); transform: translateX(2px); }
 
 
 table.data { border-collapse: collapse; width: 100%; font-size: var(--fs-sm); }
@@ -422,10 +408,6 @@ header.site.nav-open .nav-toggle .ic-close { display: block; }
   }
   header.site.nav-open nav.primary .np-sub a { white-space: normal; padding: 4px 0; }
 }
-@media (max-width: 480px) {
-  .doors { grid-template-columns: 1fr; }
-}
-
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after {
@@ -434,8 +416,7 @@ header.site.nav-open .nav-toggle .ic-close { display: block; }
     transition-duration: 0.001s !important;
   }
   /* one rule for every hover lift; !important so later page sheets cannot re-lift */
-  .door:hover, .op-card:hover, .md-tile:hover { transform: none !important; }
-}
+  }
 @media print {
   header.site, footer.site, #theme-toggle, .skip-link { display: none !important; }
   body { background: #fff; color: #000; }
@@ -459,9 +440,7 @@ header.site.nav-open .nav-toggle .ic-close { display: block; }
   .page-head { padding: 24px 0 16px; }
   section + section, .stack > * + * { margin-top: var(--sp-3xl); }
   footer.site { margin-top: var(--sp-3xl); padding: 28px 0 36px; }
-  .doors { gap: var(--sp-md); }
-  .door { min-height: 0; }
-}
+    }
 
 /* ------------------------------------------------------------- logo tile */
 /* A monogram in the layer's colour, with the real mark laid over it once it
@@ -559,7 +538,7 @@ header.site.nav-open .nav-toggle .ic-close { display: block; }
 @media (min-width: 1800px) {
   .secnav { left: 24px; bottom: 24px; }
 }
-@media (max-width: 720px) {
+@media (max-width: 760px) {
   /* full width along the bottom edge, so it never covers the column it indexes */
   .secnav { left: 8px; right: 8px; bottom: 8px; max-width: none; }
 }

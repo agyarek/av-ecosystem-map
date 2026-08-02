@@ -77,6 +77,8 @@ def check_js_hues():
 
 def check_breakpoints():
     named = {str(v["value"]) for k, v in J["breakpoint"].items() if not k.startswith("$")}
+    # min-width complements sit at named+1 so ranges do not overlap
+    named |= {str(int(v) + 1) for v in set(named)}
     # sanctioned non-breakpoint queries
     ok_extra = {"560"}  # landscape-phone max-height guard uses height, filtered below
     for fn in sorted(os.listdir(os.path.join(ROOT, "assets", "css"))):

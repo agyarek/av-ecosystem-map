@@ -49,7 +49,7 @@
 }
 .meet-list .m-row .k { font-weight: 700; }
 .meet-list .m-row .v { color: var(--ink-2); }
-@media (max-width: 560px) { .meet-list .m-row { grid-template-columns: 1fr; gap: var(--sp-3xs); } }
+@media (max-width: 640px) { .meet-list .m-row { grid-template-columns: 1fr; gap: var(--sp-3xs); } }
 
 .hard-part {
   border: 1px solid var(--rule); border-left: 6px solid var(--alert);
@@ -195,7 +195,7 @@ th .ftip { text-decoration: underline dotted; text-underline-offset: 3px; text-d
 /* the eco table cannot actually overflow above 700px (fixed layout, four
    columns max), so let its tooltips escape instead of being clipped by the
    scroll container; below 700px the scroll stays and clipping is accepted */
-@media (min-width: 700px) { #eco-table.table-scroll { overflow: visible; } }
+@media (min-width: 681px) { #eco-table.table-scroll { overflow: visible; } }
 
 /* Six regions down the left, each behind its own mark; the selected mark takes
    the accent and keeps it. The Q&A for the selected region reads on the right. */
@@ -255,7 +255,7 @@ th .ftip { text-decoration: underline dotted; text-underline-offset: 3px; text-d
 .world-card dl { display: grid; grid-template-columns: max-content 1fr; gap: 8px 18px; margin-top: var(--sp-lg); font-size: var(--fs-sm); }
 .world-card dt { font-family: var(--font-mono); font-size: var(--fs-micro); letter-spacing: var(--track-caps); text-transform: uppercase; color: var(--muted); padding-top: 2px; }
 .world-card dd { color: var(--ink-2); line-height: var(--lh-body); }
-@media (max-width: 560px) { .world-card dl { grid-template-columns: 1fr; gap: var(--sp-3xs); } .world-card dd { margin-bottom: 8px; } }
+@media (max-width: 640px) { .world-card dl { grid-template-columns: 1fr; gap: var(--sp-3xs); } .world-card dd { margin-bottom: 8px; } }
 
 /* ------------------------------------------------------------------ charts
    The explorer on /funding/. Two charts stacked on one x-axis rather than one
@@ -422,7 +422,7 @@ input.eco-in:focus { border-color: var(--cyan-text); outline: none; }
 }
 
 /* ------------------------------------------------------------- narrow screens */
-@media (max-width: 700px) {
+@media (max-width: 680px) {
 
   /* the comparison tables keep their horizontal scroll, but say so rather than
      silently clipping */

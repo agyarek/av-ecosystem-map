@@ -9,7 +9,7 @@
   letter-spacing: var(--track-heading); font-variation-settings: 'wdth' 118; margin-top: var(--sp-xs);
 }
 .chart-honesty { max-width: 44ch; text-align: right; }
-@media (max-width: 700px) { .chart-honesty { text-align: left; } }
+@media (max-width: 680px) { .chart-honesty { text-align: left; } }
 
 /* --------------------------------------------------------------- rail */
 .map-rail { margin-top: var(--sp-lg); display: grid; gap: var(--sp-sm); }
@@ -56,7 +56,7 @@
   padding-inline: var(--col-pad);
 }
 .poster-viewport:focus-visible { outline-offset: -3px; }
-@media (max-width: 859px) {
+@media (max-width: 860px) {
   /* the phone frame hugs the chart's aspect instead of letterboxing it */
   .poster-viewport { min-height: 0; }
 }

@@ -73,15 +73,13 @@ def build():
         lc = lay[theme]
         lines.append(f"  --layer-l: {lc['layerL']}; --layer-c: {lc['layerC']}; --tile-l: {lc['tileL']}; --tile-c: {lc['tileC']};")
         ch = t["color"]["chart"][theme]
-        lines.append(f"  --chart-l: {ch['chartL']}; --chart-c: {ch['chartC']};")
+        lines.append("  " + " ".join(f"--chart-{i+1}: {c};" for i, c in enumerate(ch)))
         lines.append(f"  --scrim: {t['color']['scrim'][theme]['value']};")
         return lines
 
     shared = []
     hues = t["color"]["layer"]["hues"]
     shared.append("  " + " ".join(f"--h-{k}: {v};" for k, v in hues.items()))
-    chues = t["color"]["chart"]["hues"]
-    shared.append("  " + " ".join(f"--ch{i + 1}: {h};" for i, h in enumerate(chues)))
     for section in ("type", "space", "layout", "radius", "shadow", "motion", "z"):
         toks = []
         walk_css_tokens(t[section], toks)

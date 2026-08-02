@@ -199,23 +199,23 @@
       }
     },
     "chart": {
-      "$doc": "Categorical series ramp DERIVED from the layer wheel (S2-11): six maximally-separated wheel hues at chart-tuned L/C. Replaces the legacy foreign CHART_LIGHT/CHART_DARK hex sets. Consumed as oklch(var(--chart-l) var(--chart-c) H).",
-      "hues": [
-        265,
-        40,
-        150,
-        320,
-        200,
-        60
+      "$doc": "Categorical series set, S2-11 RESOLVED: the pre-existing palette is KEPT and blessed as tokens rather than re-derived from the layer wheel. Rationale (in-source, core.js): the wheel runs at chroma 0.075 — right for tags, too low for adjacent chart fills to stay separable under deuteranopia; these values were validated for both page surfaces. Fixed order, never cycled. Divergence register: separability outranks system purity. Source of truth for runtime is core.js CHART_LIGHT/CHART_DARK; tools/check-palette-sync.py verifies they match these tokens.",
+      "light": [
+        "#426bce",
+        "#db6c00",
+        "#0077a9",
+        "#a78a00",
+        "#ea5da9",
+        "#207029"
       ],
-      "light": {
-        "chartL": 0.55,
-        "chartC": 0.115
-      },
-      "dark": {
-        "chartL": 0.7,
-        "chartC": 0.115
-      }
+      "dark": [
+        "#5680e6",
+        "#da720d",
+        "#0089b8",
+        "#ad9000",
+        "#db509c",
+        "#1f812d"
+      ]
     },
     "scrim": {
       "light": {

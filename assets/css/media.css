@@ -29,7 +29,7 @@
   white-space: nowrap;
 }
 .md-kind svg { flex: none; }
-.md-who { font-family: var(--font-mono); font-size: var(--fs-xs); color: var(--muted); }
+.md-who { font-size: var(--fs-sm); color: var(--muted); } /* display face: human descriptions are prose, not instrument data (principle 5) */
 .md-blurb { font-size: var(--fs-sm); color: var(--ink-2); line-height: var(--lh-body); }
 .md-count { font-family: var(--font-mono); font-size: var(--fs-xs); color: var(--ink-2); margin-top: var(--sp-3xs); }
 .md-count .num { font-weight: 700; color: var(--ink); }

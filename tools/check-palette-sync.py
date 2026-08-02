@@ -62,6 +62,19 @@ def check_python_palettes(known):
                 report("py-palette", f"tools/{tool}: {h} not a token value")
 
 
+def check_js_chart():
+    core = open(os.path.join(ROOT, "assets", "js", "core.js")).read()
+    for name, key in (("CHART_LIGHT", "light"), ("CHART_DARK", "dark")):
+        m = re.search(name + r"\s*=\s*\[([^\]]*)\]", core)
+        if not m:
+            report("js-chart", f"core.js: {name} not found")
+            continue
+        js = re.findall(r"#[0-9A-Fa-f]{6}", m.group(1))
+        want = J["color"]["chart"][key]
+        if [h.lower() for h in js] != [h.lower() for h in want]:
+            report("js-chart", f"core.js {name} != tokens.chart.{key}")
+
+
 def check_js_hues():
     # core.js keys HUES by full layer display names; tokens key by slug.
     # The duplicated fact is the HUE VALUES — compare the sorted multisets.
@@ -121,6 +134,7 @@ def check_css_conformance():
 known = token_hexes()
 check_python_palettes(known)
 check_js_hues()
+check_js_chart()
 check_breakpoints()
 check_css_conformance()
 

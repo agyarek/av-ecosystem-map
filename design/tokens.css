@@ -2,7 +2,6 @@
 /* Breakpoints (media queries must use exactly these values; JS mirrors in AV.bp): phone=640, ledger=680, sheet=760, nav=860, grid=960, wide=1800 */
 :root {
   --h-driver: 265; --h-sensing: 200; --h-data: 150; --h-middleware: 105; --h-vehicle: 40; --h-demand: 20; --h-fleet: 320; --h-connectivity: 230; --h-capital: 60; --h-regulators: 290; --h-standards: 340;
-  --ch1: 265; --ch2: 40; --ch3: 150; --ch4: 320; --ch5: 200; --ch6: 60;
   --font-display: 'Archivo', system-ui, sans-serif;
   --font-serif: 'Source Serif 4', Georgia, serif;
   --font-mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, monospace;
@@ -94,7 +93,7 @@
   --med-ink: #12130F;
   --tile-ink: #FFFFFF;
   --layer-l: 0.62; --layer-c: 0.075; --tile-l: 0.66; --tile-c: 0.06;
-  --chart-l: 0.55; --chart-c: 0.115;
+  --chart-1: #426bce; --chart-2: #db6c00; --chart-3: #0077a9; --chart-4: #a78a00; --chart-5: #ea5da9; --chart-6: #207029;
   --scrim: rgba(18,19,15,.38);
   color-scheme: light;
 }
@@ -116,7 +115,7 @@
   --med-ink: #F2F2EC;
   --tile-ink: #E9EAE2;
   --layer-l: 0.74; --layer-c: 0.09; --tile-l: 0.42; --tile-c: 0.055;
-  --chart-l: 0.7; --chart-c: 0.115;
+  --chart-1: #5680e6; --chart-2: #da720d; --chart-3: #0089b8; --chart-4: #ad9000; --chart-5: #db509c; --chart-6: #1f812d;
   --scrim: rgba(0,0,0,.5);
   color-scheme: dark;
 }

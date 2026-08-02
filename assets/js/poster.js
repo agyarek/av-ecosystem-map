@@ -980,6 +980,8 @@
       json('data/poster-layout.json'), json('data/search-index.json'), json('data/partner-index.json')
     ]);
     L = layout; slim = slimIdx; partners = pIdx;
+    const bootStatus = document.getElementById('filter-state');
+    if (bootStatus) bootStatus.textContent = 'Drawing 562 tiles…';
     W = L.meta.width; H = L.meta.height; MS = L.meta.medStyle; CS = L.meta.chipStyle;
     bySlug = Object.fromEntries(slim.map(c => [c.s, c]));
 
@@ -991,6 +993,7 @@
     } catch (e) { manifest = null; }
 
     svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
+    if (bootStatus) setTimeout(() => { if (bootStatus.textContent === 'Drawing 562 tiles…') bootStatus.textContent = ''; }, 600);
     // every layer lifts away from the same point, the centre of the plate
     svg.innerHTML = (spriteText ? `<defs>${spriteText.replace(/^[^>]*>/, '').replace(/<\/svg>\s*$/, '')}</defs>` : '') + buildSVG(false);
 

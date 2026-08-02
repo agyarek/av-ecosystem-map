@@ -5,8 +5,8 @@
   gap: var(--sp-xl); flex-wrap: wrap; padding-top: 28px;
 }
 .chart-title {
-  font-size: var(--head-section); font-weight: 800;
-  letter-spacing: var(--track-heading); font-variation-settings: 'wdth' 116; margin-top: var(--sp-xs);
+  font-size: var(--head-utility); font-weight: 800;
+  letter-spacing: var(--track-heading); font-variation-settings: 'wdth' 118; margin-top: var(--sp-xs);
 }
 .chart-honesty { max-width: 44ch; text-align: right; }
 @media (max-width: 700px) { .chart-honesty { text-align: left; } }
@@ -16,7 +16,7 @@
 .rail-row { display: flex; align-items: center; gap: var(--sp-xs); flex-wrap: wrap; }
 .rail-group { display: inline-flex; gap: var(--sp-xs); flex-wrap: wrap; }
 .rail-label {
-  font-family: var(--font-mono); font-size: 10.5px; font-weight: 600;
+  font-family: var(--font-mono); font-size: var(--fs-micro); font-weight: 600;
   letter-spacing: var(--track-caps); text-transform: uppercase; color: var(--muted);
   margin-right: 2px;
 }
@@ -137,16 +137,16 @@
   max-height: min(640px, calc(100% - 28px)); overflow: auto; overscroll-behavior: contain;
   background: var(--paper-2); border: 1px solid var(--rule);
   border-radius: var(--r-card); padding: var(--inset-card);
-  box-shadow: 0 18px 48px rgba(18, 19, 15, .2);
+  box-shadow: var(--shadow-float);
   /* One label rail for every block on the card, so HQ, LEADERSHIP and each
      partnership kind all start their values at the same left edge. */
   --cc-label: 96px;
 }
 #company-card .cc-top { display: flex; align-items: flex-start; gap: var(--sp-md); }
-#company-card .cc-logo { width: 44px; height: 44px; flex: none; font-size: var(--fs-md); border-radius: 9px; }
+#company-card .cc-logo { width: 44px; height: 44px; flex: none; font-size: 16px; border-radius: 9px; } /* monogram glyph = component ratio, not a text-scale step */
 #company-card .cc-id { min-width: 0; }
 /* Body-copy scale throughout: the card is a reading surface, not a headline. */
-#company-card h2 { font-size: 17px; font-weight: 800; font-variation-settings: 'wdth' 112; line-height: var(--lh-compact); }
+#company-card h2 { font-size: var(--fs-mdplus); font-weight: 800; font-variation-settings: 'wdth' 112; line-height: var(--lh-compact); }
 #company-card .cc-close { margin-left: auto; color: var(--muted); font-size: 20px; line-height: var(--lh-solid); padding: 2px 6px; }
 #company-card .cc-close:hover { color: var(--alert); }
 #company-card .cc-layer { font-family: var(--font-mono); font-size: var(--fs-xs); line-height: var(--lh-body); color: var(--muted); margin-top: var(--sp-xs); }
@@ -156,9 +156,9 @@
 #company-card .cc-site a, #company-card .cc-lead a.li {
   display: inline; color: var(--cyan-text);
 }
-#company-card .cc-lead { margin-top: var(--sp-md); font-size: var(--fs-sm); line-height: 1.6; }
+#company-card .cc-lead { margin-top: var(--sp-md); font-size: var(--fs-sm); line-height: var(--lh-prose); }
 #company-card .cc-lead .pk { display: inline-block; min-width: var(--cc-label); }
-#company-card .cc-shot { margin-top: 14px; }
+#company-card .cc-shot { margin-top: var(--sp-lg); }
 #company-card .cc-shot a { display: block; position: relative; }
 #company-card .cc-shot img {
   width: 100%; height: 170px; object-fit: cover;
@@ -166,20 +166,20 @@
 }
 .cc-credit, .d-credit {
   position: absolute; right: 6px; bottom: 6px;
-  font-family: var(--font-mono); font-size: 9px; letter-spacing: var(--track-caps-dense);
+  font-family: var(--font-mono); font-size: var(--fs-nano); letter-spacing: var(--track-caps-dense);
   color: #fff; background: rgba(18, 19, 15, .62); padding: 2px 6px; border-radius: 4px;
 }
 /* Spoken with directly is the most expensive fact on this site to acquire, so
    it is stated, not hinted at with a dot. */
 #company-card .cc-facts {
   display: grid; grid-template-columns: var(--cc-label) 1fr; gap: 5px 12px;
-  margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--rule);
+  margin-top: var(--sp-lg); padding-top: 12px; border-top: 1px solid var(--rule);
   font-size: var(--fs-sm); line-height: var(--lh-card);
 }
 #company-card .cc-facts dt { font-family: var(--font-mono); font-size: var(--fs-xs); letter-spacing: var(--track-caps-dense); text-transform: uppercase; color: var(--muted); padding-top: 2px; }
 #company-card .cc-facts dd { color: var(--ink-2); }
 #company-card .cc-partners, #company-card .cc-src {
-  margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--rule); font-size: var(--fs-sm);
+  margin-top: var(--sp-lg); padding-top: 12px; border-top: 1px solid var(--rule); font-size: var(--fs-sm);
 }
 /* Partners are read HERE now, not off the chart: each one a labelled logo
    chip on the same label rail as the facts above it. */
@@ -188,7 +188,7 @@
 #company-card .pg-chips { display: flex; flex-wrap: wrap; gap: var(--sp-xs); }
 #company-card .cc-partner {
   display: inline-flex; align-items: center; gap: var(--sp-sm);
-  padding: 5px 11px 5px 6px; font-size: 13px; text-align: left;
+  padding: 5px 11px 5px 6px; font-size: var(--fs-sm); text-align: left;
   background: var(--paper); border: 1px solid var(--rule); border-radius: var(--r-pill);
   transition: border-color var(--dur-hover);
 }
@@ -199,7 +199,7 @@
 }
 #company-card .cc-partner .cp-logo { width: 26px; height: 26px; font-size: var(--fs-nano); border-radius: 7px; flex: none; }
 #company-card .cc-partner.is-plain { border-style: dashed; color: var(--ink-2); }
-#company-card .cc-mail { margin-top: 10px; }
+#company-card .cc-mail { margin-top: var(--sp-sm); }
 #company-card .pk { color: var(--muted); font-family: var(--font-mono); font-size: var(--fs-xs); letter-spacing: var(--track-caps-dense); }
 #company-card .cc-src div { margin-top: var(--sp-xs); }
 #company-card .cc-actions { display: flex; gap: var(--sp-sm); margin-top: var(--sp-lg); flex-wrap: wrap; }
@@ -273,9 +273,9 @@ body.fs-pseudo #map-shell .fs-overlay { display: inline-flex; }
    reader who wants the fine print opens it once. */
 .map-legend { margin-top: var(--sp-xl); padding-bottom: 8px; }
 .map-key > summary {
-  display: inline-flex; align-items: center; gap: 7px; cursor: pointer;
+  display: inline-flex; align-items: center; gap: var(--sp-xs); cursor: pointer;
   list-style: none; font-family: var(--font-mono); font-size: var(--fs-xs);
-  font-weight: 600; letter-spacing: .08em; text-transform: uppercase;
+  font-weight: 600; letter-spacing: var(--track-caps-dense); text-transform: uppercase;
   border: 1px solid var(--rule); border-radius: var(--r-chip);
   padding: 7px 13px; background: var(--paper-2); user-select: none;
 }
@@ -286,13 +286,13 @@ body.fs-pseudo #map-shell .fs-overlay { display: inline-flex; }
 .map-key[open] > summary { margin-bottom: 16px; }
 #legend-layers { display: flex; gap: 8px 16px; flex-wrap: wrap; }
 #legend-layers .lg {
-  display: inline-flex; align-items: center; gap: 7px;
-  font-size: 12.5px; color: var(--ink-2);
+  display: inline-flex; align-items: center; gap: var(--sp-xs);
+  font-size: var(--fs-sm); color: var(--ink-2);
 }
 #legend-layers .lg .sw { width: 14px; height: 14px; border-radius: 4px; flex: none; }
 #legend-layers .lg .n { font-family: var(--font-mono); font-size: var(--fs-micro); color: var(--muted); }
 .legend-marks { display: flex; gap: 8px 22px; flex-wrap: wrap; margin-top: var(--sp-md); }
-.legend-marks > span { display: inline-flex; align-items: center; gap: 7px; }
+.legend-marks > span { display: inline-flex; align-items: center; gap: var(--sp-xs); }
 .pip-demo { display: inline-flex; gap: var(--sp-3xs); }
 .pip-demo::before, .pip-demo::after {
   content: ""; width: 7px; height: 7px; border-radius: 50%; display: inline-block;
@@ -338,7 +338,7 @@ body.fs-pseudo #map-shell .fs-overlay { display: inline-flex; }
 .map-rail .picker summary { list-style: none; display: inline-flex; align-items: center; gap: var(--sp-xs); }
 .map-rail .picker summary::-webkit-details-marker { display: none; }
 .map-rail .picker[open] summary { border-color: var(--cyan-text); color: var(--ink); }
-.map-rail .pk-caret { font-size: 9px; transition: transform 140ms ease; }
+.map-rail .pk-caret { font-size: var(--fs-nano); transition: transform 140ms ease; }
 .map-rail .picker[open] .pk-caret { transform: rotate(180deg); }
 .map-rail .pk-n {
   min-width: 16px; padding: 1px 5px; border-radius: var(--r-pill);
@@ -353,8 +353,8 @@ body.fs-pseudo #map-shell .fs-overlay { display: inline-flex; }
 }
 .map-rail .pop label {
   display: flex; align-items: center; gap: var(--sp-sm); padding: 5px 0;
-  font-size: 13px; cursor: pointer; white-space: nowrap;
+  font-size: var(--fs-sm); cursor: pointer; white-space: nowrap;
 }
 .map-rail .pop label .dot { width: 9px; height: 9px; border-radius: 3px; flex: none; }
-.map-rail .pop label .n { margin-left: auto; font-family: var(--font-mono); font-size: 10.5px; color: var(--muted); }
+.map-rail .pop label .n { margin-left: auto; font-family: var(--font-mono); font-size: var(--fs-micro); color: var(--muted); }
 .map-rail .pop input { accent-color: var(--cyan-text); }

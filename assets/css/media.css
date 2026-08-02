@@ -2,11 +2,11 @@
    comes from base.css and article.css. */
 
 .md-grid {
-  display: grid; gap: var(--sp-md); margin-top: 20px;
+  display: grid; gap: var(--sp-md); margin-top: var(--sp-xl);
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 }
 .md-tile {
-  display: flex; gap: 14px; align-items: flex-start;
+  display: flex; gap: var(--sp-lg); align-items: flex-start;
   padding: var(--inset-card); text-decoration: none;
   background: var(--paper-2); border: 1px solid var(--rule);
   border-radius: var(--r-card);
@@ -15,18 +15,18 @@
 .md-tile:hover { border-color: var(--cyan-text); transform: translateY(-2px); }
 @media (prefers-reduced-motion: reduce) { .md-tile:hover { transform: none; } }
 .md-logo { width: 52px; height: 52px; font-size: 19px; border-radius: 13px; flex: none; } /* monogram glyph = component ratio of tile size, not a text-scale step (and --fs-lg is viewport-conditional) */
-.md-body { display: flex; flex-direction: column; gap: 5px; min-width: 0; }
+.md-body { display: flex; flex-direction: column; gap: var(--sp-xs); min-width: 0; }
 .md-name { font-weight: 800; font-size: var(--fs-md); letter-spacing: var(--track-sub); }
 .md-pick {
-  display: inline-flex; align-items: center; gap: 5px; margin-left: 10px;
+  display: inline-flex; align-items: center; gap: var(--sp-xs); margin-left: 10px;
   font-family: var(--font-mono); font-size: var(--fs-micro); font-weight: 600;
-  letter-spacing: .08em; color: var(--ink-2); white-space: nowrap;
+  letter-spacing: var(--track-caps-dense); color: var(--ink-2); white-space: nowrap;
 }
 .md-kind {
   display: inline-flex; align-items: center; gap: var(--sp-2xs); margin-left: 10px;
   vertical-align: 2px;
   font-family: var(--font-mono); font-size: var(--fs-micro); font-weight: 600;
-  letter-spacing: .08em; text-transform: uppercase; color: var(--muted);
+  letter-spacing: var(--track-caps-dense); text-transform: uppercase; color: var(--muted);
   white-space: nowrap;
 }
 .md-kind svg { flex: none; }
@@ -35,7 +35,7 @@
 .md-count { font-family: var(--font-mono); font-size: var(--fs-xs); color: var(--ink-2); margin-top: var(--sp-3xs); }
 .md-count .num { font-weight: 700; color: var(--ink); }
 
-.md-recommend { margin-top: 18px; }
+.md-recommend { margin-top: var(--sp-lg); }
 
 /* ------------------------------------------------------------ subscribe */
 .sub-band {

@@ -180,3 +180,12 @@ grep -rn '@media' assets/css/ | grep -vE '640|680|760|860|960|1800'
 - [ ] sitemap.xml regenerated when routes change; README counts match the
       filesystem.
 - [ ] No legacy alias var is removed while any stylesheet still references it.
+- [ ] When a literal is replaced by a token, the token's value equals the
+      replaced literal exactly — verified against the source, not assumed.
+      (Added 2026-08-02: the Stage-1 gate caught `--head-utility` shipping a
+      22px floor against the 20px literal it replaced.)
+- [ ] Before substituting any literal with a token, confirm the token is not
+      viewport-conditional (e.g. `--fs-lg` is 19px desktop / 17px ≤ phone);
+      component-ratio values (monogram glyphs) never take text-scale tokens.
+      (Added 2026-08-02: the gate caught `.md-logo` monograms shrinking on
+      mobile after a 19px → `--fs-lg` substitution.)

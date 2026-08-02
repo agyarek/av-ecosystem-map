@@ -307,10 +307,11 @@
       },
       "utilityH1": {
         "css": "--head-utility",
-        "value": "clamp(22px, min(3.4vw, 5.2vh), 44px)",
+        "value": "clamp(20px, min(3.4vw, 5.2vh), 44px)",
         "leading": 1.1,
         "track": "-0.02em",
-        "wdth": 118
+        "wdth": 118,
+        "fixed": "2026-08-02: floor corrected 22->20px — token must equal the literal it replaced (caught by the Stage-1 pixel gate)"
       },
       "sectionH2": {
         "css": "--head-section",

@@ -16,7 +16,7 @@
   --fs-lg: 19px;
   --fs-xl: 24px;
   --head-display: clamp(26px, min(5.5vw, 9vh), 76px);
-  --head-utility: clamp(22px, min(3.4vw, 5.2vh), 44px);
+  --head-utility: clamp(20px, min(3.4vw, 5.2vh), 44px);
   --head-section: clamp(20px, min(3vw, 4.6vh), 38px);
   --head-article: clamp(18.5px, min(2.6vw, 4vh), 32px);
   --head-prose3: clamp(18px, min(2.6vw, 4vh), 22px);

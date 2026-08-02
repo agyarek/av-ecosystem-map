@@ -14,7 +14,7 @@
 }
 .md-tile:hover { border-color: var(--cyan); transform: translateY(-2px); }
 @media (prefers-reduced-motion: reduce) { .md-tile:hover { transform: none; } }
-.md-logo { width: 52px; height: 52px; font-size: var(--fs-lg); border-radius: 13px; flex: none; }
+.md-logo { width: 52px; height: 52px; font-size: 19px; border-radius: 13px; flex: none; } /* monogram glyph = component ratio of tile size, not a text-scale step (and --fs-lg is viewport-conditional) */
 .md-body { display: flex; flex-direction: column; gap: 5px; min-width: 0; }
 .md-name { font-weight: 800; font-size: var(--fs-md); letter-spacing: var(--track-sub); }
 .md-pick {

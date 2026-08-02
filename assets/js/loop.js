@@ -110,7 +110,7 @@
         `L ${x0 + r} ${y1} Q ${x0} ${y1} ${x0} ${y1 - r} L ${x0} ${y0 + r} ` +
         `Q ${x0} ${y0} ${x0 + r} ${y0} L ${x1 - r} ${y0} Q ${x1} ${y0} ${x1} ${y0 + r} Z`;
       track.setAttribute('viewBox', `0 0 ${W} ${H}`);
-      tokenScale = 0.42;
+      tokenScale = 0.59;
       ['track-shoulder', 'track-path', 'track-dash'].forEach(id => {
         const el = document.getElementById(id);
         if (el) el.setAttribute('d', d);

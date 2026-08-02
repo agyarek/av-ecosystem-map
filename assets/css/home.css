@@ -162,7 +162,10 @@
     align-self: center; margin-bottom: 14px;
   }
 }
-@media (min-width: 681px) and (max-width: 980px) {
+/* Grid-layout tuning only: the min-height keeps this off short landscape
+   screens, where the column layout needs its side padding for the ring —
+   without it the cards sat on top of the road. */
+@media (min-width: 681px) and (max-width: 980px) and (min-height: 561px) {
   .loop-inner { gap: 36px 12px; padding: 12px; }
   .station { padding: 11px 13px; }
 }

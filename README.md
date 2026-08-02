@@ -15,7 +15,7 @@ Compiled and maintained by Kofi Agyare-Kwabi, ex-Uber Country Manager, GTM & Par
 | `/media/` | Publications, podcasts and events covering autonomy |
 | `/map/` | The ecosystem map: all 562 on one plate with a rectangular centre; filter, full screen, export, print |
 | `/companies/` | The directory: every field, sortable, filterable, URL-shareable, CSV/JSON export |
-| `/companies/passenger-autonomy/` + 10 pages | The operators a passenger can actually meet, in depth (under `/companies/`) |
+| `/companies/passenger-autonomy/` + 12 pages | The operators a passenger can actually meet, in depth (under `/companies/`) |
 | `/partnerships/` | 151 mapped relationships organised by function; the demand-layer story |
 | `/economics/#funding` | $41.8B of $200M+ events with the dataset's own known gaps published |
 | `/economics/` `/regulation/` `/safety/` `/owning-one/` `/beyond-roads/` | The deep dives |

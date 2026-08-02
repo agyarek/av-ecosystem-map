@@ -65,4 +65,39 @@ The numbered value/behavior changes the audit authorizes, each implemented as it
 
 ## 6. Spec bugs from the verification loop
 
-Logged during Phase 5 (throwaway page built from the documentation alone); each patched in the docs/tokens, never in the page. See §"spec-bugs" appended below after the loop runs.
+Logged during Phase 5 (throwaway page built from the documentation alone); each patched in the docs, never in the page. Full log with the tester's guesses: `audit/spec-bugs.md` (32 entries: SB-1…26 + VISUAL-1…6). Disposition — patched-in-\<file\> (the doc now states the fact or ruling) · dissolved-by-S2-commit (the failure is a shipped token value already scheduled to flip) · documented-as-fallback (the observed rendering is the sanctioned degradation, now stated as such):
+
+| ID | Disposition |
+|---|---|
+| SB-1 | patched-in-PAGE_PATTERNS.md (appendix A, CHAPTERS mirror) |
+| SB-2 | patched-in-DESIGN_LANGUAGE.md (§11 font `<link>`s + `font-variation-settings` mechanism) |
+| SB-3 | patched-in-COMPONENT_SPECIFICATIONS.md (§13 — numerals are mono; E4 was right) |
+| SB-4 | patched-in-DESIGN_LANGUAGE.md (§11 — all display heading ranks are 800) |
+| SB-5 | patched-in-PAGE_PATTERNS.md (E2 — counter-generated `01`-style mono number, outside the terminal-period rule) |
+| SB-6 | patched-in-PAGE_PATTERNS.md (E1 — standfirst is display face, `--ink-2`) |
+| SB-7 | patched-in-DESIGN_LANGUAGE.md (§10 — intra-archetype spacing as built) |
+| SB-8 | patched-in-COMPONENT_SPECIFICATIONS.md (§7 — quiet-overline label voice) |
+| SB-9 | patched-in-COMPONENT_SPECIFICATIONS.md (§7 — native checkbox/radio, `accent-color: var(--cyan)`, label beside) |
+| SB-10 | patched-in-COMPONENT_SPECIFICATIONS.md (§7 — native range, cyan accent, mono `<output>`) |
+| SB-11 | patched-in-COMPONENT_SPECIFICATIONS.md (§7 — textarea variant + inputs-are-data voice note) |
+| SB-12 | patched-in-COMPONENT_SPECIFICATIONS.md (§16 — cmark geometry constants; native `title` static fallback) |
+| SB-13 | patched-in-COMPONENT_SPECIFICATIONS.md (§16 — `.blank` inherits the cell's face) |
+| SB-14 | patched-in-COMPONENT_SPECIFICATIONS.md (§11 — no sheet chrome; transparent scroller; header tracking) |
+| SB-15 | patched-in-COMPONENT_SPECIFICATIONS.md (§11 — text cells display face, row headers display 700) |
+| SB-16 | patched-in-COMPONENT_SPECIFICATIONS.md (§22 — chapters-cell typography, current-mark rendering, hover) |
+| SB-17 | patched-in-COMPONENT_SPECIFICATIONS.md §4 + PAGE_PATTERNS.md E9 (no portrait; names, mailtos, fine-print facts) |
+| SB-18 | patched-in-COMPONENT_SPECIFICATIONS.md (§1 — wordmark, dash geometry, translucent wash, bar padding) |
+| SB-19 | patched-in-COMPONENT_SPECIFICATIONS.md (§8 — tick is the ■ glyph at eyebrow size + word space) |
+| SB-20 | patched-in-COMPONENT_SPECIFICATIONS.md (§0 — `in oklab`, mixed into the local surface) |
+| SB-21 | patched-in-DESIGN_LANGUAGE.md (§22 known-pending sentence); the values themselves dissolve with the S2-3/S2-4/S2-6 commits |
+| SB-22 | patched-in-COMPONENT_SPECIFICATIONS.md (§18 — no sheet of its own; default `.btn`) |
+| SB-23 | patched-in-COMPONENT_SPECIFICATIONS.md (§10 — `--paper-2` fill; family label style) |
+| SB-24 | patched-in-COMPONENT_SPECIFICATIONS.md (§22 — rail ≥ grid + geometry; auto-open stays ≥ wide) + PAGE_PATTERNS.md §2 |
+| SB-25 | patched-in-COMPONENT_SPECIFICATIONS.md (§3 — off-top absolute positioning, no reflow on focus) |
+| SB-26 | patched-in-COMPONENT_SPECIFICATIONS.md (§5 primary-hover row + §6 chip fill) |
+| VISUAL-1 | patched-in-COMPONENT_SPECIFICATIONS.md §11 + PAGE_PATTERNS.md §3.8 (article-table measure + ch column widths) |
+| VISUAL-2 | dissolved-by-S2-commit (S2-6 raises the `--head-display` floor to 32px; pending flip flagged in DESIGN_LANGUAGE §22) |
+| VISUAL-3 | documented-as-fallback (COMPONENT_SPECIFICATIONS §11 — static tables scroll + fade; card conversion is ledger-JS) |
+| VISUAL-4 | documented-as-fallback (COMPONENT_SPECIFICATIONS §1 — wordmark + wrapped inline nav is the designed no-JS header) |
+| VISUAL-5 | patched-in-COMPONENT_SPECIFICATIONS.md (§11/§16 — `.blank` stays right-aligned in numeric columns) |
+| VISUAL-6 | patched-in-PAGE_PATTERNS.md P1 + COMPONENT_SPECIFICATIONS.md §9 (tint bands never host sheets/cards/forms) |

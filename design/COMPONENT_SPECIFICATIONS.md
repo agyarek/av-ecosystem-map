@@ -21,14 +21,18 @@ constant requires a dated changelog entry in DESIGN_LANGUAGE.md.
 | focus-ring | 3px solid `--cyan-text`, offset 2px | all `:focus-visible` (S2-1: ≥3:1 both themes) |
 | current-mark | inset underline, 2px `--yellow` | nav current page, chapters "you are here" |
 | gold-outline | 1px `--ink` outline on meaning-bearing gold dots | poster spoken-with dots (S2-2) |
-| tint-hover | color-mix 5% `--cyan` into surface | table rows, list rows |
-| tint-selected | color-mix 8% `--cyan` into surface | selected/expanded rows, pinned states |
-| tint-live | color-mix 16% `--cyan` into surface | live washes, compare output rows |
+| tint-hover | color-mix(in oklab) 5% `--cyan` into the local surface | table rows, list rows |
+| tint-selected | color-mix(in oklab) 8% `--cyan` into the local surface | selected/expanded rows, pinned states |
+| tint-live | color-mix(in oklab) 16% `--cyan` into the local surface | live washes, compare output rows |
 | monogram-radius | round(0.21 × tile size) | mono-tile (§14) |
 | monogram-glyph | round(0.38 × tile size) | mono-tile letter size |
 | thumb-ratio | 16:9, cover-crop | record thumbnails (§15) |
 | dl-rail | 14ch at `--fs-micro` mono | all definition lists (§12) |
 | badge-radius | `--r-chip` / 2 | credit badges, cmark squares |
+
+All tint-\* mixes use the `in oklab` colour space (the only color-mix space in this codebase) and
+mix into the **local** surface the element actually sits on — `--paper`, `--paper-2`, or
+`transparent` composited over it — never a fixed neutral.
 
 Global defaults: hover transitions `--dur-hover --ease-ui`; state changes `--dur-state`; disabled =
 `--muted` text + hairline border + no hover response + `cursor: default`. All motion gated by
@@ -42,7 +46,16 @@ Global defaults: hover transitions `--dur-hover --ease-ui`; state changes `--dur
 **Anatomy.** Sticky bar (`--z-header`, `--paper` wash + bottom hairline): wordmark with `--yellow`
 dash mark · 6 chapter items, each a link + caret button opening a dropdown · site search (§2) ·
 theme toggle (§23) · hamburger below `phone`. Current chapter carries the current-mark.
-**Variants.** None. One header site-wide.
+Geometry (as built in base.css): the wash is translucent, not solid —
+`color-mix(in oklab, var(--paper) 88%, transparent)` over a 10px backdrop blur; the bar is the
+`--col` container padded 10px `--col-pad` with an 18px flex gap; the wordmark is display 800 at
+15px (13px ≤ `phone`), `--track-sub`, 'wdth' 118, reading `AV ECOSYSTEM MAP`; its dash mark is a
+22×6px `--yellow` rounded bar (3px radius) sitting 10px before the text.
+**Variants.** None. One header site-wide. **No-JS / static fallback (the designed degradation,
+S2-16):** the search field, dropdown carets, and hamburger are JS-mounted; without JS the header
+is the wordmark plus the six chapter links as a plain inline nav that wraps onto extra rows below
+the wordmark. That wrapped bar IS the sanctioned static rendering — doc-only and no-JS builds
+ship it rather than imitating the scripted chrome.
 **States.** Nav link: default `--ink-2` mono; hover `--ink`; focus-visible focus-ring; current =
 current-mark + `aria-current="page"`. Dropdown (`.np-sub`): `--paper-2`, `--r-mid`, `--shadow-float`,
 `--z-drop`; opens on click or hover after `--dur-state` grace on fine pointers; Esc closes and
@@ -75,27 +88,42 @@ via the existing polite live region.
 ## 3. Skip link
 
 **Purpose.** First tab stop; bypasses chrome.
-**Anatomy.** Single `<a href="#main">`, visually hidden until focused; when focused: `--ink` fill,
-`--paper` text, `--inset-control`, `--r-chip`, `--z-overlay`, top-left.
+**Anatomy.** Single `<a>` targeting the page's main content, visually hidden until focused; when
+focused: `--ink` fill, `--paper` text, `--inset-control`, `--r-chip`, `--z-overlay`, top-left.
+Hiding mechanism (the one sanctioned technique, from base.css): absolutely positioned above the
+viewport (`top: -48px`), dropped to `--sp-sm` from the top-left corner on focus — because it is
+absolutely positioned, focusing it never reflows the layout (no sr-only clip pattern, no
+off-screen-left).
 **States.** Only focus-visible (its visible state IS focus).
 **A11y.** Must precede the header in DOM on every page, including 404.
-**Tokens.** `--fs-xs` mono uppercase `--track-caps-dense`.
-**Content.** Exactly "SKIP TO CONTENT".
+**Tokens.** Display face, weight 700 (as shipped site-wide — the one chrome element outside the
+mono voice, because it renders as an ink-filled announcement, not an instrument label).
+**Content.** Exactly "Skip to content".
 **Don't.** Don't restyle per page — it is the one component with a single permitted rendering.
 
 ## 4. Footer
 
 **Purpose.** Every page ends on a person (core principle 2: content → chapters → person).
-**Anatomy.** Top hairline · author bio (serif, `--measure-compact`) · `EMAIL ME` button
-(§5, default) · fine print: mono `--fs-micro` `--muted` at `--measure-wide`, includes the live
-"updated" date and licence line.
+**Anatomy** (as rendered by `core.js` footerHTML + base.css). Top hairline · bio block,
+hairline-ruled beneath: quiet-overline label `ABOUT THIS WEBSITE` (mono `--fs-xs` 600 caps
+`--muted`) + first-person bio paragraphs in the display face at the footer's body size, `--ink-2`,
+`--measure` — there is **no portrait or monogram tile**; the person is carried by the
+LinkedIn-linked name · `EMAIL ME` button (§5, default rank) · fine print: display face at
+`--fs-xs`-class size, `--muted`, `--measure-wide` — site name · builder credit · live "updated"
+date; pages carrying `data-trademark` append the nominative-use trademark paragraph. There is no
+separate licence line (the dataset licence lives in the page's JSON-LD).
+**Identity (from the `core.js` constants — the source of truth).** Author: Kofi Agyare-Kwabi
+(linkedin.com/in/kofiagyare). `EMAIL ME` →
+`mailto:hello@kofiagyare.com?subject=AV%20ecosystem%20map`. The single correction address is the
+shared `AV.CORRECTION` constant (`mailto:hello@kofiagyare.com?subject=AV%20map%20correction`),
+surfaced on the map selection card and the ledger detail — not a footer element.
 **Variants.** None; identical on all routes including 404.
 **States.** Links: `--cyan-text` underlined; hover `--ink`.
 **Responsive.** Single column below `ledger`; bio measure unchanged.
 **A11y.** `<footer>` landmark; static markup shipped in HTML, never JS-injected (S2-16).
 **Tokens.** `--rhythm-tail` above; `--sp-xl` internal stacks.
-**Content.** Bio ≤ 340 chars (standfirst budget); fine print states data date + licence, no legal
-boilerplate.
+**Content.** Fine print states the data date and credit (plus the trademark note where marked),
+no legal boilerplate.
 **Don't.** Don't append link farms or a second CTA — one address, one person.
 
 ## 5. Button (`.btn` / `.btn.primary`)
@@ -111,7 +139,7 @@ Sizes: default = `--inset-control` + `--fs-xs`; large = `--sp-md --sp-xl` paddin
 | State | Rendering |
 |---|---|
 | default | `--ink-2` text, hairline border (primary: ink fill) |
-| hover | border `--cyan`, text `--ink`, `--dur-hover` |
+| hover | border `--cyan`, text `--ink`, `--dur-hover` (primary: fill and text unchanged — ink fill, `--paper` text — only the border turns `--cyan`) |
 | focus-visible | focus-ring |
 | active | translateY(1px) |
 | disabled | global disabled defaults + `aria-disabled` |
@@ -125,7 +153,8 @@ Sizes: default = `--inset-control` + `--fs-xs`; large = `--sp-md --sp-xl` paddin
 ## 6. Chip (`.chip`)
 
 **Purpose.** Tag or filter — describes, never commits. The only pill-shaped control.
-**Anatomy.** Pill (`--r-pill`), `--inset-chip`, hairline border, mono uppercase label, optional
+**Anatomy.** Pill (`--r-pill`), `--inset-chip`, hairline border, `--paper-2` fill (the same fill
+as `.btn` — chips are never transparent), mono uppercase label, optional
 leading dot at `--sp-sm` diameter coloured `oklch(var(--layer-l) var(--layer-c) var(--h-*))`.
 **Variants.** Layer chip (dot + name) · filter chip (toggle) · count/status badge (`--fs-nano`,
 non-interactive) · partner chip (§15).
@@ -143,11 +172,21 @@ commits, it is a `.btn`.
 
 **Purpose.** All free-text, numeric, and range input. One skin site-wide (S2-12).
 **Anatomy.** Rect, `--r-chip`, hairline border, `--paper-2` fill, mono text, mono
-placeholder in `--muted`. Label above in `--ink-2` when the control is not self-labelling.
+placeholder in `--muted`. Label above the control when it is not self-labelling, in the
+quiet-overline voice: mono `--fs-micro`, weight 600, uppercase, `--track-caps-dense`, `--muted` —
+the same voice as `dt`s and the chart-control labels. User-entered content is data: the mono voice
+applies to inputs; principle 5 restricts only published prose.
 **Variants.** Default size `--inset-field` (search, ledger query) · small `--inset-field-sm`
-(ranges, calculator inputs; calculator numerals right-aligned) · **native `<select>` = THE
+(numeric range bounds, calculator inputs; calculator numerals right-aligned) · **textarea** = the
+same field skin, mono, min-height 4 rows, `resize: vertical` · **native `<select>` = THE
 documented exception**: display face at `--fs-sm`/600, sentence case (compare pickers; pragmatic OS
 rendering outweighs the mono voice — S2-24; no second exception may cite this one).
+**Controls without the field skin (closed set).** Checkbox / radio: native controls with
+`accent-color: var(--cyan)` (the implementation's standing choice — cyan is selection), no field
+box; label BESIDE the control (never above), display face, sentence case, `--fs-sm`. Range
+slider: native `<input type="range">`, `accent-color: var(--cyan)`, no field box, no border wrap;
+its value renders in a mono right-aligned `<output>` (the calculator numeral rule). No
+custom-drawn checkbox, radio, switch, or slider exists in this system.
 **States.** default hairline; hover border `--ink-2`; focus = border `--cyan` + focus-ring;
 disabled per global; invalid = border `--alert` + adjacent mono message (never colour alone).
 **Responsive.** Fields never shrink below their inset; stack below `sheet`.
@@ -161,7 +200,10 @@ feeds a model.
 ## 8. Eyebrow / overline
 
 **Purpose.** Section wayfinding label above a heading.
-**Anatomy.** Eyebrow: `--yellow` square tick glyph + mono uppercase label in `--muted`.
+**Anatomy.** Eyebrow: `--yellow` square tick glyph + mono uppercase label in `--muted`. The tick
+is literally the ■ character (U+25A0) in a `.tick` span coloured `--yellow`, set at the eyebrow's
+own `--fs-xs` mono size and separated from the label by a normal word space — a glyph, not a drawn
+box; it has no width/height rules of its own.
 **Variants.** Exactly two. Eyebrow: `--fs-xs`, `--track-caps-loose`, tick. Quiet overline:
 `--fs-micro`, `--track-caps`, no tick (rails, card headers, footer). Colour modifier: `.alert`
 recolours the label `--alert`, tick unchanged rules — used only above hard-part callouts.
@@ -185,7 +227,10 @@ kills.
 | Hairline rows | Full-width rows split by hairlines, mono lead column | The unit is a list entry: incident timeline, watch-list, media list |
 
 **Variants.** `card.ruled` may carry a top rule in an accent as a register mark. Tint-band
-(`--med-bg`) sections pace long pages (S2-17) and contain any tier.
+(`--med-bg`) sections pace long pages (S2-17) but host text, labels, and hairline-tier content
+only — **never cards, sheets, or forms**: in dark the tint sits tonally between the ground and the
+sheet (`--paper-2` is darker than `--med-bg`), so a sheet placed on a band reads as a recessed
+hole; the prohibition avoids that inversion (rule mirrored in PAGE_PATTERNS P1).
 **States.** Cards are static; interactive rows take tint-hover / tint-selected.
 **Responsive.** Grids collapse column count at `grid` and `ledger`; cards never become rows —
 demote to rows in markup if density demands it.
@@ -197,9 +242,11 @@ demote to rows in markup if density demands it.
 ## 10. Callout family (`.note` / `.hard-part` / `.watch-list`)
 
 **Purpose.** Interrupt reading with a register-marked aside. Left-edge colour states the register.
-**Anatomy.** Hairline box, radius 0 `--r-card` `--r-card` 0, coloured left edge at `--sp-2xs`
-width — one width for the whole family (the old 6px hard-part edge folds in). Optional mono label
-line, then body.
+**Anatomy.** Hairline box on a `--paper-2` fill (callouts are card-tier per §9 — "hairline box"
+never meant unfilled), radius 0 `--r-card` `--r-card` 0, coloured left edge at `--sp-2xs`
+width — one width for the whole family (the old 6px hard-part edge folds in). Optional label
+line in the one family label style — mono `--fs-micro`, 600, uppercase, `--track-caps-loose` —
+coloured `--muted` on `.note`/`.note.live` and `--alert` on `.hard-part`; then body.
 **Body voice decision (stated):** all callout bodies are serif — a callout is prose that argues,
 not chrome. `.note` body `--fs-base`; `.hard-part` body `--fs-mdplus` (its token-documented role);
 both `--lh-body`.
@@ -217,17 +264,27 @@ not highlighters.
 ## 11. Table language (`table.data`)
 
 **Purpose.** The canonical instrument for records; real tables, not decorated mockups.
-**Anatomy.** `--paper-2` sheet · headers mono `--fs-micro` uppercase `--muted` with thead-rule
-below · rows split by hairlines · numeric cells mono, right-aligned · `.table-scroll` wrapper
-(`overflow-x`) around any table wider than its column.
+**Anatomy.** No sheet chrome: a `table.data` draws no outer border, radius, or fill — it sits on
+the local ground, structured by its rules alone (`--paper-2` appears only on expanded detail
+rows) · headers mono `--fs-micro` uppercase `--muted`, tracked at the 0.08em caps constant shared
+with `.btn` labels, thead-rule below · rows split by hairlines · numeric cells mono,
+right-aligned — and `.blank` honest blanks in numeric columns stay right-aligned so the column's
+hard edge holds · ordinary text cells display face, row-header cells display face 700, sentence
+case · `.table-scroll` wrapper (`overflow-x`) around any table wider than its column — a
+transparent scroller, not a sheet. On article pages the table takes
+`max-width: var(--measure-wide)` unless the data genuinely needs more, and numeric columns take
+`ch`-based widths, so the row-header column never opens a dead field before right-aligned figures.
 **Variants (ledger extensions).** Sticky header offset by measured chrome (`--th-top`, set at
 runtime) · sticky first column with inset hairline · right-edge fade signalling more-to-scroll ·
 sort buttons in headers (`aria-sort`, active in `--cyan-text`) · compact density toggle ·
 `table.cmp` compare: sentence headers may wrap, output rows tint-live, `.blank` honest blanks
 (§16) · row-header column fixed at one width site-wide: `--measure-compact`/4 ≈ 15ch display face.
 **States.** Row hover tint-hover; expanded/selected row tint-selected + `aria-expanded`.
-**Responsive.** ≤ `ledger`: rows convert to cards (record anatomy §15, monogram + dl); the
-conversion is markup-driven, not CSS-hidden columns.
+**Responsive.** ≤ `ledger`: on the ledger, rows convert to cards (record anatomy §15, monogram +
+dl); the conversion re-renders header and rows — never CSS-hidden columns — and it is a
+**ledger-JS behaviour, not a CSS guarantee**. The sanctioned static/no-JS fallback for any
+`table.data` is `.table-scroll` horizontal scrolling plus the right-edge fade signalling buried
+columns.
 **A11y.** `scope` on all headers; `aria-sort` on sortable; expandable rows pair `aria-expanded`
 with `aria-controls` (S2-19).
 **Tokens.** cell padding `--sp-sm --sp-md`; `--fs-sm` body cells; `--lh-dense`.
@@ -253,7 +310,9 @@ summary, not the dl.
 ## 13. Metric block
 
 **Purpose.** A number with its provenance; a number without a source line is marketing.
-**Anatomy.** Numeral: display face, `--head-metric`, weight 600, `--lh-solid` · label: mono
+**Anatomy.** Numeral: **mono** — the site's `.num`/`.stat` numeral voice, tabular figures
+(PAGE_PATTERNS E4 was always right; this line's old "display face" was the error) —
+`--head-metric`, weight 600, `--lh-solid` · label: mono
 `--fs-xs` uppercase `--track-caps` `--muted` · source line: mono `--fs-micro` `--muted`, the
 trust-UI slot (§16) — always present, "—" is not a source.
 **Variants.** Stat row (flex band of blocks, gap `--sp-3xl` fluid) · fact grid (shared-hairline
@@ -335,8 +394,13 @@ status; no surface may invent a fifth honesty style.
 | Carried | `.cmark` C | `--muted` | carried from the site dataset |
 | Honest blank | italic `.blank` | `--muted` | honestly absent, with the reason |
 
-**Anatomy.** `.cmark` = `<abbr>` square, `--fs-nano` mono 600, hairline border, badge-radius,
-first-person `title` text mirrored via tooltip (§20). Credit badge: mono `--fs-nano` on `--scrim`
+**Anatomy.** `.cmark` = `<abbr>` square whose geometry is a documented component constant (like
+the monogram steps): a fixed 14×14px square (width = height, not padding-derived), glyph centred
+by a 13px line-height, mono 600 at 9px, hairline border, 3px radius, 5px leading margin off the
+value it marks; first-person `title` text, mirrored via tooltip (§20) where the shared tooltip JS
+runs — in static builds the native `title` is the sanctioned fallback. Honest blank: `.blank`
+inherits the host cell's face, italic, `--muted`, `--fs-xs`; in numeric columns it stays
+right-aligned so the column's hard edge holds. Credit badge: mono `--fs-nano` on `--scrim`
 over every borrowed image, badge-radius. Honesty caption slot: mono `--fs-micro` `--muted` line
 directly under every instrument and model output ("Exports label themselves as modelled, not
 reported").
@@ -372,9 +436,11 @@ they don't ship.
 
 **Purpose.** Never blank, never silent (principle 8); dead ends are designed and in-voice.
 **Anatomy & variants.**
-- Diagnostic empty (`.lg-empty`): centred, `--sp-3xl --sp-lg` padding; text names the single
-  blocking filter when one filter excludes everything ("Nothing matches. The **X** filter is doing
-  the excluding.") + `CLEAR ALL FILTERS` button. The container is a polite live region (S2-19).
+- Diagnostic empty (`.lg-empty`): centred, `--sp-3xl --sp-lg` padding, rendered on the local
+  ground inside the instrument's own pane — no sheet, border, or width of its own (the pane
+  provides the box); text names the single blocking filter when one filter excludes everything
+  ("Nothing matches. The **X** filter is doing the excluding.") + `CLEAR ALL FILTERS` as a
+  default `.btn`, never primary. The container is a polite live region (S2-19).
 - Generic empty: names the corpus ("No matches in 562 organisations").
 - Loading: monogram-first (§14) — records render tiles immediately; instrument captions use the
   present-progressive family ("Counting…", "Building the density grid…"); poster boot progress is
@@ -435,18 +501,29 @@ Home/End jump; automatic activation (selection follows focus); panels labelled b
 
 ## 22. Secnav / article TOC · scroll-nav · chapters block
 
-**Secnav ("On this page").** Purpose: within-page wayfinding. ≥ `wide`: an in-grid right rail on
-articles with **reserved space** — the reading column never reflows when it opens (S2-21); opens by
-default. Below `wide`: floating pill-button bottom-left (`--z-pop`, `--shadow-float`) opening a
-link list (`--paper-2`, `--r-mid`); ≤ `sheet`: bottom strip. Links mono `--fs-xs`; current section
-`aria-current="true"` in `--cyan-text`. Button carries `aria-expanded`; hidden in print.
+**Secnav ("On this page").** Purpose: within-page wayfinding. ≥ `grid` (960): an in-grid right
+rail on articles with **reserved space** — the reading column never reflows when it opens (S2-21).
+Rail geometry: 24ch wide, separated from the article column by a `--sp-2xl` gap, `position:
+sticky` just below the header. Auto-**open** by default only ≥ `wide` (1800) — between `grid` and
+`wide` the rail is present but starts closed. Below `grid`: floating pill-button bottom-left
+(`--z-pop`, `--shadow-float`) opening a link list (`--paper-2`, `--r-mid`); ≤ `sheet`: bottom
+strip. Links mono `--fs-xs`; current section `aria-current="true"` in `--cyan-text`. Button
+carries `aria-expanded`; hidden in print. (PAGE_PATTERNS §2/§3.8 said `grid` all along; this
+section's old "≥ wide" for the rail itself was the error — `wide` governs only the auto-open.)
 **Scroll-nav.** Purpose: page-length pager on the ledger. Two stacked rect buttons (§5 anatomy —
 rect, not pill, per S2-12), fixed bottom-right, icon + `aria-label`; hover per §5; hidden in print;
 inset tightens to `--sp-sm` ≤ `ledger`.
-**Chapters block.** Purpose: the atlas's spine, appended before the footer on chapter pages.
-Shared-hairline grid (§9) of 6 cells: mono number `01`–`06` (`--fs-micro` `--muted`) + display
-title + `--fs-sm` `--muted` description. Current chapter: current-mark + `aria-current="page"`.
-3×2 ≥ `grid`, 2×3 below, single column ≤ `ledger`.
+**Chapters block.** Purpose: the atlas's spine, appended before the footer on chapter pages,
+rendered from the CHAPTERS constant (mirrored in PAGE_PATTERNS appendix A). Shared-hairline grid
+(§9) of 6 cells under a `CHAPTERS` eyebrow; each cell = mono number `01`–`06` (`--fs-xs`
+`--muted`, derived from array position) + display title (`--fs-mdplus`-class — built at 17px —
+weight 700, 'wdth' 112) + the chapter's page links at `--fs-sm` `--muted`, using the labels from
+the constant (the cell lists real pages, not free-text descriptions). Current chapter: the title
+span carries the current-mark as an inset 2px `--yellow` box-shadow underline, its number flips to
+`--ink`, the head link takes `aria-current="step"`, and the current page link takes
+`aria-current="page"` with a `--yellow` ▸ prefix. Hover/focus-within fills the whole cell
+`--paper-2` (a cell is a door, not a data row — no tint-hover). Geometry: 6 equal columns ≥
+`grid`; 2×3 below `grid`, filled column-first (01–03 down the left), rules on shared edges only.
 **Don't.** Don't let the TOC push content — reserved space or floating, never reflow.
 
 ## 23. Theme toggle

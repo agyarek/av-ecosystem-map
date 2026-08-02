@@ -47,11 +47,19 @@ Container: `--col` 1240px outer, `--col-pad` clamp(16px, 4vw, 32px) → ~1176px 
 
 ## 10. Spacing
 
-4px base. Steps: 2/4/6/8/12/16/24/32/48 (`--sp-3xs`…`--sp-3xl`); insets: chip 4×11, control 9×14, field 8×12 (sm 5×8), card 18, panel 24. Vertical rhythm is fluid and singular: `--rhythm-head-top/bottom`, `--rhythm-section`, `--rhythm-tail` (clamp with vh guard — deliberate short-viewport handling; keep). Reduced: observed ~30 gap values, specified 9 steps + 6 insets; anything off-scale requires written justification. Eyebrow→heading stays in the 22–24px relationship the audit measured.
+4px base. Steps: 2/4/6/8/12/16/24/32/48 (`--sp-3xs`…`--sp-3xl`); insets: chip 4×11, control 9×14, field 8×12 (sm 5×8), card 18, panel 24. Vertical rhythm is fluid and singular: `--rhythm-head-top/bottom`, `--rhythm-section`, `--rhythm-tail` (clamp with vh guard — deliberate short-viewport handling; keep). Reduced: observed ~30 gap values, specified 9 steps + 6 insets; anything off-scale requires written justification. Eyebrow→heading stays in the 22–24px relationship the audit measured. Intra-archetype spacing, as built in `base.css` (the binding values): eyebrow→H1 = the H1's 10px top margin (the 22–24px optical relationship includes the eyebrow's own line box); H1→standfirst = `--sp-lg`; `.prose` paragraph gap (`p + p`) = `--sp-lg`; `.prose` h3 margins = 40px above / 12px below.
 
 ## 11. Typography
 
-Three families with fixed roles (§6.5). Scale: 10/11/12/13.5/15.5/17.5/19/24 (`--fs-nano`…`--fs-xl`); `--fs-md` is deprecated into `--fs-base`. Headings: six fluid tokens (`--head-display/utility/section/article/prose3/metric`) — **no new clamp() formulas, ever**; the audit found six near-duplicates and consolidated them. Tracking: six tokens (−0.03/−0.02/−0.01/.06/.10/.14em). Line heights: eight tokens (1/1.06/1.1/1.2/1.35/1.45/1.5/1.62). Weights 400/500/600/700/800. Archivo `wdth`: 118 display headings, 112 everything else. Monogram glyph sizes are component ratios (≈0.4× tile), not scale steps. Mobile: display keeps ≈2× body dominance at 390 (floor raise to 32px, decision S2-6). Body copy sits in a 60–75ch measure. `<br>` in headings marks clause boundaries only, never mimics layout.
+Three families with fixed roles (§6.5). Scale: 10/11/12/13.5/15.5/17.5/19/24 (`--fs-nano`…`--fs-xl`); `--fs-md` is deprecated into `--fs-base`. Headings: six fluid tokens (`--head-display/utility/section/article/prose3/metric`) — **no new clamp() formulas, ever**; the audit found six near-duplicates and consolidated them. Tracking: six tokens (−0.03/−0.02/−0.01/.06/.10/.14em). Line heights: eight tokens (1/1.06/1.1/1.2/1.35/1.45/1.5/1.62). Weights 400/500/600/700/800. Every display heading rank — H1 in all three registers, section and article H2s, prose H3 — is weight 800; 700 is emphasis and titles-in-rows (chapter-block titles, record names), 600 chrome. Archivo `wdth`: 118 display headings, 112 everything else — applied via `font-variation-settings: 'wdth' 118|112`, **never** `font-stretch` (which does not reliably reach the variable axis). Font loading, current mechanism: every page `<head>` carries exactly
+
+```html
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,400..900&family=Source+Serif+4:opsz,wght@8..60,400..700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+```
+
+with self-hosted subsets the tracked follow-up (§21) — a doc-only build without these `<link>`s renders fallback stacks and is wrong. Monogram glyph sizes are component ratios (≈0.4× tile), not scale steps. Mobile: display keeps ≈2× body dominance at 390 (floor raise to 32px, decision S2-6). Body copy sits in a 60–75ch measure. `<br>` in headings marks clause boundaries only, never mimics layout.
 
 ## 12. Colour
 
@@ -95,7 +103,7 @@ Structural win to preserve: no raster art; text + SVG + data (home ≈ 40KB gz).
 
 ## 22. Implementation guidance
 
-Edit `design-tokens.json` → run `tools/build-tokens.py --inject` (verifies contrast, regenerates `design/tokens.css` and the marked block in `base.css`). Run `tools/check-palette-sync.py` before commit (verifies JS/Python palette copies and breakpoint constants against the JSON). Never hand-edit generated blocks. New values enter the JSON with a dated changelog entry below — never inline in a stylesheet.
+Edit `design-tokens.json` → run `tools/build-tokens.py --inject` (verifies contrast, regenerates `design/tokens.css` and the marked block in `base.css`). Run `tools/check-palette-sync.py` before commit (verifies JS/Python palette copies and breakpoint constants against the JSON). Never hand-edit generated blocks. New values enter the JSON with a dated changelog entry below — never inline in a stylesheet. Three token values are known-pending Stage-2 fixes (S2-3 med-sub, S2-4 fs-md, S2-6 display floor) — see REFERENCE_AUDIT §4; consumers should expect those flips.
 
 ## 23. Anti-patterns (the audit's actual trip hazards)
 

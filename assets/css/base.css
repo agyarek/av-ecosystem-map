@@ -368,6 +368,8 @@ header.site.nav-open .nav-toggle .ic-close { display: block; }
     animation-iteration-count: 1 !important;
     transition-duration: 0.001s !important;
   }
+  /* one rule for every hover lift; !important so later page sheets cannot re-lift */
+  .door:hover, .op-card:hover, .md-tile:hover { transform: none !important; }
 }
 @media print {
   header.site, footer.site, #theme-toggle, .skip-link { display: none !important; }

@@ -346,7 +346,8 @@
     </nav>
     <div class="chrome-tools">
       <div id="site-search" role="search">
-        <input type="search" placeholder="SEARCH ${companyCount}" autocomplete="off" spellcheck="false" aria-label="Search companies">
+        <input type="search" placeholder="SEARCH ${companyCount}" autocomplete="off" spellcheck="false" aria-label="Search companies"
+          role="combobox" aria-expanded="false" aria-controls="search-results" aria-autocomplete="list">
         <div id="search-results" role="listbox" aria-label="Search results"></div>
       </div>
       <button id="theme-toggle" aria-label="Toggle light and dark theme">${SUN}${MOON}</button>
@@ -623,15 +624,22 @@
   };
   const render = () => {
     drop.innerHTML = hits.map((c, i) =>
-      `<button class="hit${i === active ? ' active' : ''}" role="option" aria-selected="${i === active}">
+      `<button class="hit${i === active ? ' active' : ''}" id="search-opt-${i}" role="option" aria-selected="${i === active}">
         <span class="hn">${esc(c.n)}${c.x ? ' <s class="caption">exited</s>' : ''}</span>
         <span class="hc">${esc((c.c || '').replace('Governance: ', ''))}</span>
       </button>`).join('') || `<div class="hit"><span class="caption">No matches in ${companyCount} organisations</span></div>`;
     drop.classList.toggle('open', true);
+    input.setAttribute('aria-expanded', 'true');
+    if (active >= 0) input.setAttribute('aria-activedescendant', 'search-opt-' + active);
+    else input.removeAttribute('aria-activedescendant');
     [...drop.querySelectorAll('button.hit')].forEach((b, i) =>
       b.addEventListener('click', () => go(hits[i])));
   };
-  const close = () => { drop.classList.remove('open'); active = -1; };
+  const close = () => {
+    drop.classList.remove('open'); active = -1;
+    input.setAttribute('aria-expanded', 'false');
+    input.removeAttribute('aria-activedescendant');
+  };
 
   let t = null;
   input.addEventListener('focus', loadIndex);

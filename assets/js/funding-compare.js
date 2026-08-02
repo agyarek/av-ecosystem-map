@@ -387,9 +387,11 @@
       const outRow = ([k, label, fmt, o]) => {
         const texts = cols.map(c => fmt(c.out, fleetOf(c.slug)));
         const differs = !!hd && new Set(texts).size > 1;
-        return `<tr><th scope="row" class="mlabel"><span class="ftip" tabindex="0" data-tip="${esc(FORMULAS[k] || '')}">${esc(label)}</span></th>` +
-          texts.map(t => `<td><span class="${o && o.text ? 'v-text' : 'v-num strong'}">${esc(t)}</span>` +
-            `<span class="ftip omark" tabindex="0" role="note" aria-label="Hidden inputs differ" data-tip="${esc(hd)}"${differs ? '' : ' hidden'}>*</span></td>`).join('') + '</tr>';
+        return `<tr><th scope="row" class="mlabel"><span class="ftip" tabindex="0" aria-describedby="ftip-${esc(k)}" data-tip="${esc(FORMULAS[k] || '')}">${esc(label)}</span>` +
+          `<span class="visually-hidden" id="ftip-${esc(k)}">${esc(FORMULAS[k] || '')}</span></th>` +
+          texts.map((t, ci) => `<td><span class="${o && o.text ? 'v-text' : 'v-num strong'}">${esc(t)}</span>` +
+            `<span class="ftip omark" tabindex="0" role="note" aria-label="Hidden inputs differ" aria-describedby="omark-${esc(k)}-${ci}" data-tip="${esc(hd)}"${differs ? '' : ' hidden'}>*</span>` +
+            `<span class="visually-hidden" id="omark-${esc(k)}-${ci}">${esc(hd)}</span></td>`).join('') + '</tr>';
       };
 
       $('eco-table').innerHTML = `<table class="data cmp eco">
@@ -430,9 +432,23 @@
           td.querySelector('.v-num, .v-text').textContent = texts[ci];
           const m = td.querySelector('.omark');
           if (m) { m.hidden = !differs; m.dataset.tip = hd; }
+          const d = td.querySelector('.visually-hidden');
+          if (d) d.textContent = hd;
         });
       });
     });
+
+    // WCAG 1.4.13: Escape dismisses an open tooltip; leaving the trigger
+    // (blur or mouse-out) re-arms it for the next visit.
+    $('eco-table').addEventListener('keydown', e => {
+      if (e.key !== 'Escape') return;
+      const tip = e.target.closest('.ftip');
+      if (tip) tip.classList.add('tip-off');
+    });
+    ['focusout', 'mouseout'].forEach(ev => $('eco-table').addEventListener(ev, e => {
+      const tip = e.target.closest('.ftip');
+      if (tip) tip.classList.remove('tip-off');
+    }));
 
     buildSlots($('eco-slots'), options, pick, () => { render(); });
     const rail = $('eco-rail');

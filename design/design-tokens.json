@@ -1,0 +1,794 @@
+{
+  "$meta": {
+    "name": "AV Ecosystem Map design tokens",
+    "version": "1.0.0",
+    "date": "2026-08-02",
+    "source": "Derived from the 2026-08 design audit (design/REFERENCE_AUDIT.md). Single source of truth: edit THIS file, then run tools/build-tokens.py to regenerate design/tokens.css and the token block in assets/css/base.css. Never hand-edit the generated blocks.",
+    "governance": "Tokens are added or deprecated with a dated changelog entry in DESIGN_LANGUAGE.md, never silently redefined."
+  },
+  "color": {
+    "light": {
+      "surface": {
+        "ground": {
+          "css": "--paper",
+          "value": "#FAFAF7",
+          "role": "page ground; warm paper"
+        },
+        "sheet": {
+          "css": "--paper-2",
+          "value": "#FFFFFF",
+          "role": "raised sheet: tables, cards, inputs. Earned by sheet-like content, never by sections."
+        },
+        "tint": {
+          "css": "--med-bg",
+          "value": "#F4F2E9",
+          "role": "grouping tint: medallion, tonal pacing bands on long pages"
+        },
+        "road": {
+          "css": "--road",
+          "value": "#E4E2D8",
+          "role": "illustration: road surfaces"
+        },
+        "roadline": {
+          "css": "--road-line",
+          "value": "#FFFFFF",
+          "role": "illustration: road markings"
+        }
+      },
+      "ink": {
+        "primary": {
+          "css": "--ink",
+          "value": "#12130F",
+          "role": "text, primary action fill, selection. The only permitted dark."
+        },
+        "secondary": {
+          "css": "--ink-2",
+          "value": "#3B3E36",
+          "role": "supporting text, labels"
+        },
+        "muted": {
+          "css": "--muted",
+          "value": "#6E7268",
+          "role": "meta text, captions. Bottom of the 3-step ramp; nothing grayer may carry meaning."
+        },
+        "medsub": {
+          "css": "--med-sub",
+          "value": "#6E7268",
+          "role": "sub-captions on tint surfaces",
+          "pending": "S2-3: darken to #63665C (current value 4.39:1 on --med-bg fails AA; target 5.22:1)"
+        }
+      },
+      "rule": {
+        "css": "--rule",
+        "value": "#DEDFD8",
+        "role": "the one hairline, always 1px"
+      },
+      "accent": {
+        "waymark": {
+          "css": "--yellow",
+          "value": "#F2B705",
+          "role": "wayfinding marks only: wordmark dash, current underline, eyebrow tick, gold dot, note spine. Never a fill; meaning-bearing dots get a 1px ink outline."
+        },
+        "live": {
+          "css": "--cyan",
+          "value": "#00A5B8",
+          "role": "live/selected washes, tints, large strokes"
+        },
+        "livetext": {
+          "css": "--cyan-text",
+          "value": "#007A8A",
+          "role": "cyan as TEXT or focus ring or selection ring in light theme (4.84:1 on paper). Dark theme aliases to --cyan.",
+          "changed": "2026-08-02 new token per S2-1; light links/rings previously used --cyan at 2.84:1 (failed)"
+        },
+        "alert": {
+          "css": "--alert",
+          "value": "#C4453B",
+          "role": "severity, estimates, incident outcomes. Data ink, never decoration."
+        }
+      },
+      "medink": {
+        "css": "--med-ink",
+        "value": "#12130F",
+        "role": "text on tint surface"
+      },
+      "tileink": {
+        "css": "--tile-ink",
+        "value": "#FFFFFF",
+        "role": "monogram glyph on layer tiles (decorative; name always adjacent)"
+      }
+    },
+    "dark": {
+      "surface": {
+        "ground": {
+          "css": "--paper",
+          "value": "#14150F"
+        },
+        "sheet": {
+          "css": "--paper-2",
+          "value": "#1C1E17"
+        },
+        "tint": {
+          "css": "--med-bg",
+          "value": "#24261D"
+        },
+        "road": {
+          "css": "--road",
+          "value": "#2B2E24"
+        },
+        "roadline": {
+          "css": "--road-line",
+          "value": "#6E7268"
+        }
+      },
+      "ink": {
+        "primary": {
+          "css": "--ink",
+          "value": "#F2F2EC"
+        },
+        "secondary": {
+          "css": "--ink-2",
+          "value": "#C4C7BB"
+        },
+        "muted": {
+          "css": "--muted",
+          "value": "#8B8F82"
+        },
+        "medsub": {
+          "css": "--med-sub",
+          "value": "#9DA095"
+        }
+      },
+      "rule": {
+        "css": "--rule",
+        "value": "#2E3128"
+      },
+      "accent": {
+        "waymark": {
+          "css": "--yellow",
+          "value": "#FFC931"
+        },
+        "live": {
+          "css": "--cyan",
+          "value": "#22C4D6"
+        },
+        "livetext": {
+          "css": "--cyan-text",
+          "value": "#22C4D6",
+          "role": "dark cyan already passes (8.69:1); alias of --cyan"
+        },
+        "alert": {
+          "css": "--alert",
+          "value": "#E0655B"
+        }
+      },
+      "medink": {
+        "css": "--med-ink",
+        "value": "#F2F2EC"
+      },
+      "tileink": {
+        "css": "--tile-ink",
+        "value": "#E9EAE2"
+      }
+    },
+    "layer": {
+      "$doc": "11-hue OKLCH wheel, one hue per industry layer; consumed as oklch(var(--layer-l) var(--layer-c) var(--h-*)). L/C flip per theme. Hue is taxonomy only — never the sole carrier of meaning.",
+      "hues": {
+        "driver": 265,
+        "sensing": 200,
+        "data": 150,
+        "middleware": 105,
+        "vehicle": 40,
+        "demand": 20,
+        "fleet": 320,
+        "connectivity": 230,
+        "capital": 60,
+        "regulators": 290,
+        "standards": 340
+      },
+      "light": {
+        "layerL": 0.62,
+        "layerC": 0.075,
+        "tileL": 0.66,
+        "tileC": 0.06
+      },
+      "dark": {
+        "layerL": 0.74,
+        "layerC": 0.09,
+        "tileL": 0.42,
+        "tileC": 0.055
+      }
+    },
+    "chart": {
+      "$doc": "Categorical series ramp DERIVED from the layer wheel (S2-11): six maximally-separated wheel hues at chart-tuned L/C. Replaces the legacy foreign CHART_LIGHT/CHART_DARK hex sets. Consumed as oklch(var(--chart-l) var(--chart-c) H).",
+      "hues": [
+        265,
+        40,
+        150,
+        320,
+        200,
+        60
+      ],
+      "light": {
+        "chartL": 0.55,
+        "chartC": 0.115
+      },
+      "dark": {
+        "chartL": 0.7,
+        "chartC": 0.115
+      }
+    },
+    "scrim": {
+      "light": {
+        "css": "--scrim",
+        "value": "rgba(18,19,15,.38)",
+        "role": "sheet backdrops"
+      },
+      "dark": {
+        "css": "--scrim",
+        "value": "rgba(0,0,0,.5)"
+      }
+    }
+  },
+  "type": {
+    "family": {
+      "display": {
+        "css": "--font-display",
+        "value": "'Archivo', system-ui, sans-serif",
+        "role": "argues: headings, standfirsts, UI body"
+      },
+      "serif": {
+        "css": "--font-serif",
+        "value": "'Source Serif 4', Georgia, serif",
+        "role": "reads: long-form prose, record summaries"
+      },
+      "mono": {
+        "css": "--font-mono",
+        "value": "'IBM Plex Mono', ui-monospace, SFMono-Regular, monospace",
+        "role": "operates: chrome, labels, numbers, tags. Never multi-sentence human prose."
+      }
+    },
+    "scale": {
+      "$doc": "8-step ladder; steps >=1.5px apart below 20px. Any px font-size not on the ladder (or a heading token, or a documented component ratio) is a bug.",
+      "nano": {
+        "css": "--fs-nano",
+        "value": "10px",
+        "role": "glyph badges, dense chart axes. Floor — nothing below 10px."
+      },
+      "micro": {
+        "css": "--fs-micro",
+        "value": "11px",
+        "role": "fine print, table headers"
+      },
+      "xs": {
+        "css": "--fs-xs",
+        "value": "12px",
+        "role": "chrome: nav, buttons, chips, eyebrows"
+      },
+      "sm": {
+        "css": "--fs-sm",
+        "value": "13.5px",
+        "role": "dense body, card meta"
+      },
+      "body": {
+        "css": "--fs-base",
+        "value": "15.5px",
+        "role": "UI body default (also absorbs legacy --fs-md 16 per S2-4)"
+      },
+      "md": {
+        "css": "--fs-md",
+        "value": "16px",
+        "role": "DEPRECATED: merges into body per S2-4 (pending value flip to 15.5px, then removal)"
+      },
+      "mdplus": {
+        "css": "--fs-mdplus",
+        "value": "17.5px",
+        "role": "embedded headings, hard-part body (absorbs 17/18)"
+      },
+      "lg": {
+        "css": "--fs-lg",
+        "value": "19px",
+        "role": "standfirsts, primary serif prose"
+      },
+      "xl": {
+        "css": "--fs-xl",
+        "value": "24px",
+        "role": "numerals, compact display (absorbs 20/22/24)"
+      }
+    },
+    "heading": {
+      "$doc": "Three fluid levels + article variant. The min(vw,vh) middle term is the landscape guard — keep it. One register per rank: display-H1 = narrative pages, utility-H1 = instrument pages (/map, /companies), section-H2 = all H2s, article-H1 = operator deep-dives.",
+      "displayH1": {
+        "css": "--head-display",
+        "value": "clamp(26px, min(5.5vw, 9vh), 76px)",
+        "leading": 1.06,
+        "track": "-0.03em",
+        "wdth": 118,
+        "pending": "S2-6: raise floor to 32px (mobile display dominance ~1.9x body; current 1.53x)"
+      },
+      "utilityH1": {
+        "css": "--head-utility",
+        "value": "clamp(22px, min(3.4vw, 5.2vh), 44px)",
+        "leading": 1.1,
+        "track": "-0.02em",
+        "wdth": 118
+      },
+      "sectionH2": {
+        "css": "--head-section",
+        "value": "clamp(20px, min(3vw, 4.6vh), 38px)",
+        "leading": 1.1,
+        "track": "-0.02em",
+        "wdth": 112
+      },
+      "articleH1": {
+        "css": "--head-article",
+        "value": "clamp(18.5px, min(2.6vw, 4vh), 32px)",
+        "leading": 1.1,
+        "track": "-0.02em",
+        "wdth": 112
+      },
+      "proseH3": {
+        "css": "--head-prose3",
+        "value": "clamp(18px, min(2.6vw, 4vh), 22px)",
+        "leading": 1.2,
+        "track": "-0.01em",
+        "wdth": 112
+      },
+      "metric": {
+        "css": "--head-metric",
+        "value": "clamp(24px, min(3vw, 4.6vh), 40px)",
+        "leading": 1,
+        "track": "-0.01em",
+        "wdth": 112,
+        "role": "stat/fact numerals (unifies 24 and 26 floors)"
+      }
+    },
+    "track": {
+      "$doc": "6 tracking tokens. Caps tiers: dense (buttons, dense mono), caps (labels), loose (eyebrows). Negative tiers by heading rank.",
+      "tightDisplay": {
+        "css": "--track-display",
+        "value": "-0.03em"
+      },
+      "tightHeading": {
+        "css": "--track-heading",
+        "value": "-0.02em"
+      },
+      "tightSub": {
+        "css": "--track-sub",
+        "value": "-0.01em"
+      },
+      "capsDense": {
+        "css": "--track-caps-dense",
+        "value": "0.06em",
+        "role": "absorbs .04/.05/.08 (buttons keep .08->.06: imperceptible at 12px)"
+      },
+      "caps": {
+        "css": "--track-caps",
+        "value": "0.10em"
+      },
+      "capsLoose": {
+        "css": "--track-caps-loose",
+        "value": "0.14em",
+        "role": "eyebrows; absorbs .12"
+      }
+    },
+    "leading": {
+      "$doc": "8 line-height tokens.",
+      "solid": {
+        "css": "--lh-solid",
+        "value": 1
+      },
+      "display": {
+        "css": "--lh-display",
+        "value": 1.06
+      },
+      "heading": {
+        "css": "--lh-heading",
+        "value": 1.1
+      },
+      "compact": {
+        "css": "--lh-compact",
+        "value": 1.2
+      },
+      "dense": {
+        "css": "--lh-dense",
+        "value": 1.35,
+        "role": "absorbs 1.3/1.4"
+      },
+      "card": {
+        "css": "--lh-card",
+        "value": 1.45
+      },
+      "body": {
+        "css": "--lh-body",
+        "value": 1.5,
+        "role": "absorbs 1.55"
+      },
+      "prose": {
+        "css": "--lh-prose",
+        "value": 1.62,
+        "role": "absorbs 1.6"
+      }
+    },
+    "weight": {
+      "$doc": "400 prose / 500 quiet-medium / 600 chrome / 700 emphasis / 800 display. Five, unchanged."
+    },
+    "wdth": {
+      "$doc": "Archivo width axis: 118 display headings, 112 everything else. 116 is deprecated (was utility titles)."
+    }
+  },
+  "space": {
+    "$doc": "4px base. 9 steps + fluid rhythm tokens. Gaps/margins/paddings map to the nearest step; two-axis insets use the inset tokens.",
+    "step": {
+      "s2": {
+        "css": "--sp-3xs",
+        "value": "2px"
+      },
+      "s4": {
+        "css": "--sp-2xs",
+        "value": "4px"
+      },
+      "s6": {
+        "css": "--sp-xs",
+        "value": "6px",
+        "role": "absorbs 5/7"
+      },
+      "s8": {
+        "css": "--sp-sm",
+        "value": "8px",
+        "role": "absorbs 9/10"
+      },
+      "s12": {
+        "css": "--sp-md",
+        "value": "12px",
+        "role": "absorbs 10/11 by role, 14"
+      },
+      "s16": {
+        "css": "--sp-lg",
+        "value": "16px",
+        "role": "absorbs 14/18 by role"
+      },
+      "s24": {
+        "css": "--sp-xl",
+        "value": "24px",
+        "role": "absorbs 20/22/28 by role"
+      },
+      "s32": {
+        "css": "--sp-2xl",
+        "value": "32px",
+        "role": "absorbs 36"
+      },
+      "s48": {
+        "css": "--sp-3xl",
+        "value": "48px",
+        "role": "absorbs 40/44/50/56 by role"
+      }
+    },
+    "inset": {
+      "chip": {
+        "css": "--inset-chip",
+        "value": "4px 11px"
+      },
+      "control": {
+        "css": "--inset-control",
+        "value": "9px 14px",
+        "role": ".btn and button-like summaries"
+      },
+      "field": {
+        "css": "--inset-field",
+        "value": "8px 12px"
+      },
+      "fieldsm": {
+        "css": "--inset-field-sm",
+        "value": "5px 8px"
+      },
+      "card": {
+        "css": "--inset-card",
+        "value": "18px"
+      },
+      "panel": {
+        "css": "--inset-panel",
+        "value": "24px"
+      }
+    },
+    "rhythm": {
+      "$doc": "Fluid vertical rhythm — the one system. clamp() with vh guard is deliberate (short-viewport handling).",
+      "headTop": {
+        "css": "--rhythm-head-top",
+        "value": "clamp(40px, 7vh, 88px)"
+      },
+      "headBottom": {
+        "css": "--rhythm-head-bottom",
+        "value": "clamp(24px, 4vh, 48px)"
+      },
+      "section": {
+        "css": "--rhythm-section",
+        "value": "clamp(48px, 8vh, 96px)"
+      },
+      "tail": {
+        "css": "--rhythm-tail",
+        "value": "clamp(64px, 10vh, 128px)"
+      }
+    }
+  },
+  "layout": {
+    "col": {
+      "css": "--col",
+      "value": "1240px",
+      "role": "OUTER container width; content = col - 2*padding-inline (renders ~1176px at 1440)"
+    },
+    "colPad": {
+      "css": "--col-pad",
+      "value": "clamp(16px, 4vw, 32px)",
+      "role": "container padding-inline"
+    },
+    "measure": {
+      "css": "--measure",
+      "value": "68ch",
+      "role": "standard reading column (~65-72 chars). Every reading column takes a measure token."
+    },
+    "measureCompact": {
+      "css": "--measure-compact",
+      "value": "60ch"
+    },
+    "measureWide": {
+      "css": "--measure-wide",
+      "value": "82ch",
+      "role": "footer fine print only"
+    }
+  },
+  "radius": {
+    "$doc": "4 tiers + documented component ratio. Monogram tile radius = round(0.21 x tile size). Loop-card 44px/16px asymmetric corner is a named illustration exception.",
+    "chip": {
+      "css": "--r-chip",
+      "value": "8px",
+      "role": "controls, fields, small tiles"
+    },
+    "mid": {
+      "css": "--r-mid",
+      "value": "10px",
+      "role": "popovers, mono-tiles 44-48, thumbnails (absorbs 9/10/13)"
+    },
+    "card": {
+      "css": "--r-card",
+      "value": "14px",
+      "role": "cards, panels, poster frame (absorbs 16)"
+    },
+    "pill": {
+      "css": "--r-pill",
+      "value": "999px",
+      "role": "tags/chips/badges ONLY — never action buttons"
+    }
+  },
+  "shadow": {
+    "$doc": "Elevation is earned by floating. In-flow content is flat (hairlines + tone). Two tokens; illustration shadows (hero minimap, loop car) are art constants, not tokens; yellow inset underlines are current-marks, not shadows.",
+    "float": {
+      "css": "--shadow-float",
+      "value": "0 14px 40px rgba(18,19,15,.16)",
+      "role": "dropdowns, search results, floating card, secnav, fullscreen chrome (absorbs alphas .12/.14/.2/.25)"
+    },
+    "raised": {
+      "css": "--shadow-raised",
+      "value": "0 6px 20px rgba(18,19,15,.22)",
+      "role": "bottom sheets, hover lifts",
+      "pending": "S2-10: absorb the .18/.28 variants into this value"
+    }
+  },
+  "motion": {
+    "$doc": "4 duration tiers + 2 easings. JS reads AV.motion (generated constants). Narrative loop constants (11000/3600/1700ms) are named JS constants, documented as the narrative tier.",
+    "hover": {
+      "css": "--dur-hover",
+      "value": "120ms",
+      "role": "affordance color/border"
+    },
+    "state": {
+      "css": "--dur-state",
+      "value": "200ms",
+      "role": "fades, carets, lifts (absorbs 140/160/180/220)"
+    },
+    "slow": {
+      "css": "--dur-slow",
+      "value": "320ms",
+      "role": "band art reveal"
+    },
+    "move": {
+      "css": "--dur-move",
+      "value": "450ms",
+      "role": "camera/large-object moves (absorbs 400/480)"
+    },
+    "easeUi": {
+      "css": "--ease-ui",
+      "value": "ease"
+    },
+    "easeMove": {
+      "css": "--ease-move",
+      "value": "cubic-bezier(0.45, 0, 0.55, 1)",
+      "role": "easeInOutQuad equivalent; JS twin in AV.ease"
+    }
+  },
+  "z": {
+    "$doc": "Chrome tiers. Local stacking 1-8 inside components stays component-internal.",
+    "card": {
+      "css": "--z-card",
+      "value": 30,
+      "role": "floating company card in map shell"
+    },
+    "pop": {
+      "css": "--z-pop",
+      "value": 60,
+      "role": "popovers, tooltips, secnav"
+    },
+    "header": {
+      "css": "--z-header",
+      "value": 90,
+      "role": "sticky header"
+    },
+    "drop": {
+      "css": "--z-drop",
+      "value": 120,
+      "role": "dropdowns, sheets, search results (absorbs 125/130/140)"
+    },
+    "overlay": {
+      "css": "--z-overlay",
+      "value": 200,
+      "role": "skip link, hamburger overlay"
+    },
+    "fs": {
+      "css": "--z-fs",
+      "value": 300,
+      "role": "pseudo-fullscreen shell (chrome inside it at 350 stays local)"
+    }
+  },
+  "breakpoint": {
+    "$doc": "Named set shared by CSS and JS. CSS media queries cannot consume var() — they must hardcode EXACTLY these values; tools/check-palette-sync.py verifies. JS reads AV.bp (generated constants). Consolidations (S2-9): 620->640, 700->680, 720->760, 759->760, 859->860, 980->960, 480 deleted (dead).",
+    "phone": {
+      "value": 640,
+      "role": "hamburger, base font step"
+    },
+    "ledger": {
+      "value": 680,
+      "role": "table->cards, rail->sheet, loop column mode"
+    },
+    "sheet": {
+      "value": 760,
+      "role": "company card->bottom sheet, chart controls stack, secnav strip"
+    },
+    "nav": {
+      "value": 860,
+      "role": "nav wraps, map tap-to-fullscreen"
+    },
+    "grid": {
+      "value": 960,
+      "role": "chapter grid 2x3, pa-row 3-col, home band"
+    },
+    "wide": {
+      "value": 1800,
+      "role": "secnav auto-open"
+    }
+  },
+  "aliases": {
+    "$doc": "Legacy CSS var names kept alive so Stage-1 migration is zero-diff. Deprecations dated; removal is a later cleanup commit.",
+    "--fs-md": "deprecated 2026-08-02 -> --fs-base (S2-4)",
+    "--r-medallion": "deleted 2026-08-02 (declared, never used)",
+    "--h-driver..--h-standards": "kept: layer hue tokens ARE the semantic names",
+    "--layer-l/--layer-c/--tile-l/--tile-c": "kept as-is"
+  },
+  "componentConstants": {
+    "$doc": "Documented non-token values that are ART, not system: they never migrate and never spread.",
+    "illustration": {
+      "carBody": "#171813",
+      "lidarPuck": "#2E3028",
+      "loopCardCorner": "44px 16px 16px 16px",
+      "heroTiltShadow": "24px 40px 80px rgba(18,19,15,.22)",
+      "loopTimings": {
+        "dwellMs": 11000,
+        "legMs": 3600,
+        "turnMs": 1700
+      }
+    },
+    "exportPalette": "Exports and social cards pin the LIGHT palette by design; their constants are generated from this file's light theme (poster.js, export-png.js read computed styles at runtime; Python tools verified by tools/check-palette-sync.py)."
+  },
+  "contrastAssertions": {
+    "$doc": "Verified by tools/build-tokens.py on every run; build fails if any assertion breaks.",
+    "light": [
+      [
+        "#12130F",
+        "#FAFAF7",
+        4.5,
+        "ink on paper"
+      ],
+      [
+        "#3B3E36",
+        "#FAFAF7",
+        4.5,
+        "ink-2 on paper"
+      ],
+      [
+        "#6E7268",
+        "#FAFAF7",
+        4.5,
+        "muted on paper"
+      ],
+      [
+        "#6E7268",
+        "#F4F2E9",
+        4.5,
+        "med-sub on med-bg",
+        "pending:S2-3"
+      ],
+      [
+        "#007A8A",
+        "#FAFAF7",
+        4.5,
+        "cyan-text on paper"
+      ],
+      [
+        "#007A8A",
+        "#FFFFFF",
+        4.5,
+        "cyan-text on sheet"
+      ],
+      [
+        "#007A8A",
+        "#FAFAF7",
+        3.0,
+        "focus ring on paper"
+      ],
+      [
+        "#C4453B",
+        "#FAFAF7",
+        4.5,
+        "alert on paper"
+      ]
+    ],
+    "dark": [
+      [
+        "#F2F2EC",
+        "#14150F",
+        4.5,
+        "ink on paper"
+      ],
+      [
+        "#C4C7BB",
+        "#14150F",
+        4.5,
+        "ink-2 on paper"
+      ],
+      [
+        "#8B8F82",
+        "#14150F",
+        4.5,
+        "muted on paper"
+      ],
+      [
+        "#8B8F82",
+        "#1C1E17",
+        4.5,
+        "muted on sheet"
+      ],
+      [
+        "#9DA095",
+        "#24261D",
+        4.5,
+        "med-sub on med-bg"
+      ],
+      [
+        "#22C4D6",
+        "#14150F",
+        4.5,
+        "cyan-text on paper"
+      ],
+      [
+        "#E0655B",
+        "#14150F",
+        4.5,
+        "alert on paper"
+      ],
+      [
+        "#FFC931",
+        "#14150F",
+        3.0,
+        "gold mark on paper"
+      ]
+    ]
+  }
+}

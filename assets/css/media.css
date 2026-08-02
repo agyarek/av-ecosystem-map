@@ -2,28 +2,28 @@
    comes from base.css and article.css. */
 
 .md-grid {
-  display: grid; gap: 12px; margin-top: 20px;
+  display: grid; gap: var(--sp-md); margin-top: 20px;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 }
 .md-tile {
   display: flex; gap: 14px; align-items: flex-start;
-  padding: 18px; text-decoration: none;
+  padding: var(--inset-card); text-decoration: none;
   background: var(--paper-2); border: 1px solid var(--rule);
   border-radius: var(--r-card);
-  transition: border-color 120ms, transform 120ms;
+  transition: border-color var(--dur-hover), transform var(--dur-hover);
 }
 .md-tile:hover { border-color: var(--cyan); transform: translateY(-2px); }
 @media (prefers-reduced-motion: reduce) { .md-tile:hover { transform: none; } }
-.md-logo { width: 52px; height: 52px; font-size: 19px; border-radius: 13px; flex: none; }
+.md-logo { width: 52px; height: 52px; font-size: var(--fs-lg); border-radius: 13px; flex: none; }
 .md-body { display: flex; flex-direction: column; gap: 5px; min-width: 0; }
-.md-name { font-weight: 800; font-size: var(--fs-md); letter-spacing: -0.01em; }
+.md-name { font-weight: 800; font-size: var(--fs-md); letter-spacing: var(--track-sub); }
 .md-pick {
   display: inline-flex; align-items: center; gap: 5px; margin-left: 10px;
   font-family: var(--font-mono); font-size: var(--fs-micro); font-weight: 600;
   letter-spacing: .08em; color: var(--ink-2); white-space: nowrap;
 }
 .md-kind {
-  display: inline-flex; align-items: center; gap: 4px; margin-left: 10px;
+  display: inline-flex; align-items: center; gap: var(--sp-2xs); margin-left: 10px;
   vertical-align: 2px;
   font-family: var(--font-mono); font-size: var(--fs-micro); font-weight: 600;
   letter-spacing: .08em; text-transform: uppercase; color: var(--muted);
@@ -31,14 +31,14 @@
 }
 .md-kind svg { flex: none; }
 .md-who { font-family: var(--font-mono); font-size: var(--fs-xs); color: var(--muted); }
-.md-blurb { font-size: var(--fs-sm); color: var(--ink-2); line-height: 1.5; }
-.md-count { font-family: var(--font-mono); font-size: var(--fs-xs); color: var(--ink-2); margin-top: 2px; }
+.md-blurb { font-size: var(--fs-sm); color: var(--ink-2); line-height: var(--lh-body); }
+.md-count { font-family: var(--font-mono); font-size: var(--fs-xs); color: var(--ink-2); margin-top: var(--sp-3xs); }
 .md-count .num { font-weight: 700; color: var(--ink); }
 
 .md-recommend { margin-top: 18px; }
 
 /* ------------------------------------------------------------ subscribe */
 .sub-band {
-  margin-top: 48px; padding: 28px; text-align: left;
+  margin-top: var(--sp-3xl); padding: 28px; text-align: left;
   background: var(--paper-2); border: 1px solid var(--rule); border-radius: var(--r-card);
 }

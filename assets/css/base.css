@@ -139,7 +139,7 @@ html {
 body {
   background: var(--paper); color: var(--ink);
   font-family: var(--font-display);
-  font-size: var(--fs-base); line-height: 1.5;
+  font-size: var(--fs-base); line-height: var(--lh-body);
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
@@ -152,7 +152,7 @@ input, select { font: inherit; color: inherit; }
 
 :focus-visible { outline: 3px solid var(--cyan); outline-offset: 2px; border-radius: 2px; }
 .skip-link {
-  position: absolute; left: 8px; top: -48px; z-index: 200;
+  position: absolute; left: 8px; top: -48px; z-index: var(--z-overlay);
   background: var(--ink); color: var(--paper); padding: 8px 16px;
   border-radius: var(--r-chip); font-weight: 700; text-decoration: none;
 }
@@ -160,36 +160,36 @@ input, select { font: inherit; color: inherit; }
 
 /* ---------------------------------------------------------------- type */
 .eyebrow {
-  font-family: var(--font-mono); font-size: 12px; font-weight: 600;
-  letter-spacing: .14em; text-transform: uppercase; color: var(--muted);
+  font-family: var(--font-mono); font-size: var(--fs-xs); font-weight: 600;
+  letter-spacing: var(--track-caps-loose); text-transform: uppercase; color: var(--muted);
 }
 .eyebrow .tick { color: var(--yellow); }
 /* Clamp floors are the phone sizes: the fluid middle term dies below ~690px,
    so the floor must itself be a deliberate mobile step — nothing here should
    dwarf the 15px wordmark in the bar. */
 h1.page-title {
-  font-size: clamp(26px, min(5.5vw, 9vh), 76px); font-weight: 800; line-height: 1.06;
-  letter-spacing: -0.03em; font-variation-settings: 'wdth' 118;
+  font-size: var(--head-display); font-weight: 800; line-height: var(--lh-display);
+  letter-spacing: var(--track-display); font-variation-settings: 'wdth' 118;
   margin: 10px 0 0; text-wrap: balance;
 }
 h2.section-head, .section-head {
-  font-size: clamp(20px, min(3vw, 4.6vh), 38px); font-weight: 800; line-height: 1.1;
-  letter-spacing: -0.02em; font-variation-settings: 'wdth' 112;
+  font-size: var(--head-section); font-weight: 800; line-height: var(--lh-heading);
+  letter-spacing: var(--track-heading); font-variation-settings: 'wdth' 112;
 }
 .standfirst {
   font-size: var(--fs-lg); line-height: 1.55; color: var(--ink-2);
-  max-width: var(--measure); margin-top: 16px; text-wrap: pretty;
+  max-width: var(--measure); margin-top: var(--sp-lg); text-wrap: pretty;
 }
 .prose {
-  font-family: var(--font-serif); font-size: var(--fs-lg); line-height: 1.62;
+  font-family: var(--font-serif); font-size: var(--fs-lg); line-height: var(--lh-prose);
   max-width: var(--measure);
 }
-.prose p + p { margin-top: 16px; }
+.prose p + p { margin-top: var(--sp-lg); }
 .prose h3 { font-family: var(--font-display); font-weight: 800;
-  font-size: clamp(18px, min(2.6vw, 4vh), 22px);
-  letter-spacing: -0.01em; font-variation-settings: 'wdth' 112; margin: 40px 0 12px; }
+  font-size: var(--head-prose3);
+  letter-spacing: var(--track-sub); font-variation-settings: 'wdth' 112; margin: 40px 0 12px; }
 .prose ul, .prose ol { padding-left: 22px; margin: 14px 0; }
-.prose li + li { margin-top: 8px; }
+.prose li + li { margin-top: var(--sp-sm); }
 .prose strong { font-weight: 700; }
 .mono, .num {
   font-family: var(--font-mono); font-size: 14px; font-weight: 500;
@@ -199,43 +199,43 @@ h2.section-head, .section-head {
 small { font-size: 13px; }
 
 /* ---------------------------------------------------------------- layout */
-.container { max-width: var(--col); margin-inline: auto; padding-inline: clamp(16px, 4vw, 32px); }
-.page-head { padding: clamp(40px, 7vh, 88px) 0 clamp(24px, 4vh, 48px); }
-section + section, .stack > * + * { margin-top: clamp(48px, 8vh, 96px); }
+.container { max-width: var(--col); margin-inline: auto; padding-inline: var(--col-pad); }
+.page-head { padding: var(--rhythm-head-top) 0 var(--rhythm-head-bottom); }
+section + section, .stack > * + * { margin-top: var(--rhythm-section); }
 .hairline { border: 0; border-top: 1px solid var(--rule); }
 
 /* ---------------------------------------------------------------- chrome */
 header.site {
-  position: sticky; top: 0; z-index: 90;
+  position: sticky; top: 0; z-index: var(--z-header);
   background: color-mix(in oklab, var(--paper) 88%, transparent);
   backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--rule);
 }
 header.site .bar {
   max-width: var(--col); margin-inline: auto;
-  padding: 10px clamp(16px, 4vw, 32px);
+  padding: 10px var(--col-pad);
   display: flex; align-items: center; gap: 18px; flex-wrap: wrap;
 }
 .wordmark {
   display: flex; align-items: center; gap: 10px;
-  font-weight: 800; font-size: 15px; letter-spacing: -0.01em;
+  font-weight: 800; font-size: 15px; letter-spacing: var(--track-sub);
   font-variation-settings: 'wdth' 118; text-decoration: none; white-space: nowrap;
 }
 .wordmark:hover { color: inherit; }
 .wordmark .dash {
   width: 22px; height: 6px; border-radius: 3px; background: var(--yellow); flex: none;
 }
-nav.primary { display: flex; gap: 2px; overflow-x: auto; scrollbar-width: none; }
+nav.primary { display: flex; gap: var(--sp-3xs); overflow-x: auto; scrollbar-width: none; }
 nav.primary::-webkit-scrollbar { display: none; }
 nav.primary a {
   font-family: var(--font-mono); font-size: 11.5px; font-weight: 600;
-  letter-spacing: .1em; text-transform: uppercase; text-decoration: none;
+  letter-spacing: var(--track-caps); text-transform: uppercase; text-decoration: none;
   color: var(--ink-2); padding: 7px 10px; border-radius: var(--r-chip);
-  white-space: nowrap; transition: background 120ms, color 120ms;
+  white-space: nowrap; transition: background var(--dur-hover), color var(--dur-hover);
 }
 nav.primary a:hover { color: var(--ink); background: var(--paper-2); }
 nav.primary a[aria-current="page"] { color: var(--ink); box-shadow: inset 0 -2px 0 var(--yellow); }
-.chrome-tools { margin-left: auto; display: flex; align-items: center; gap: 8px; }
+.chrome-tools { margin-left: auto; display: flex; align-items: center; gap: var(--sp-sm); }
 #site-search { position: relative; }
 #site-search input {
   font-family: var(--font-mono); font-size: 12.5px;
@@ -246,8 +246,8 @@ nav.primary a[aria-current="page"] { color: var(--ink); box-shadow: inset 0 -2px
 #search-results {
   position: absolute; top: calc(100% + 6px); right: 0;
   width: min(360px, calc(100vw - 32px)); max-height: 380px; overflow: auto;
-  background: var(--paper-2); border: 1px solid var(--rule); border-radius: 10px;
-  box-shadow: 0 14px 40px rgba(18, 19, 15, .16); display: none; z-index: 120;
+  background: var(--paper-2); border: 1px solid var(--rule); border-radius: var(--r-mid);
+  box-shadow: var(--shadow-float); display: none; z-index: var(--z-drop);
 }
 #search-results.open { display: block; }
 #search-results .hit {
@@ -261,7 +261,7 @@ nav.primary a[aria-current="page"] { color: var(--ink); box-shadow: inset 0 -2px
 #theme-toggle {
   width: 34px; height: 34px; border: 1px solid var(--rule); border-radius: var(--r-chip);
   display: grid; place-items: center; color: var(--ink-2); flex: none;
-  transition: border-color 120ms, color 120ms;
+  transition: border-color var(--dur-hover), color var(--dur-hover);
 }
 #theme-toggle:hover { border-color: var(--cyan); color: var(--cyan); }
 #theme-toggle .moon { display: none; }
@@ -269,11 +269,11 @@ nav.primary a[aria-current="page"] { color: var(--ink); box-shadow: inset 0 -2px
 [data-theme="dark"] #theme-toggle .moon { display: block; }
 
 footer.site {
-  margin-top: clamp(64px, 10vh, 128px); border-top: 1px solid var(--rule);
+  margin-top: var(--rhythm-tail); border-top: 1px solid var(--rule);
   padding: 48px 0 64px; font-size: 14px; color: var(--ink-2);
 }
-footer.site .fine { margin-top: 24px; font-size: 12.5px; color: var(--muted); max-width: 82ch; }
-footer.site .fine + .fine { margin-top: 8px; }
+footer.site .fine { margin-top: var(--sp-xl); font-size: 12.5px; color: var(--muted); max-width: var(--measure-wide); }
+footer.site .fine + .fine { margin-top: var(--sp-sm); }
 footer.site .bio {
   margin-bottom: 36px; padding-bottom: 32px; border-bottom: 1px solid var(--rule);
 }
@@ -283,27 +283,27 @@ footer.site .bio-name {
 }
 footer.site .bio-text { margin-top: 10px; max-width: var(--measure); line-height: 1.55; }
 footer.site .bio-text a { color: var(--cyan); }
-footer.site .bio-cta { margin-top: 16px; }
+footer.site .bio-cta { margin-top: var(--sp-lg); }
 
 /* ---------------------------------------------------------------- pieces */
 .btn {
-  display: inline-flex; align-items: center; gap: 8px;
-  font-family: var(--font-mono); font-size: 12px; font-weight: 600;
+  display: inline-flex; align-items: center; gap: var(--sp-sm);
+  font-family: var(--font-mono); font-size: var(--fs-xs); font-weight: 600;
   letter-spacing: .08em; text-transform: uppercase; text-decoration: none;
   border: 1px solid var(--rule); border-radius: var(--r-chip);
-  padding: 9px 14px; background: var(--paper-2); color: var(--ink);
-  transition: border-color 120ms, background 120ms, transform 120ms;
+  padding: var(--inset-control); background: var(--paper-2); color: var(--ink);
+  transition: border-color var(--dur-hover), background var(--dur-hover), transform var(--dur-hover);
 }
 .btn:hover { border-color: var(--cyan); color: var(--ink); }
 .btn:active { transform: translateY(1px); }
 .btn.primary { background: var(--ink); color: var(--paper); border-color: var(--ink); }
 .btn.primary:hover { border-color: var(--cyan); }
 .chip {
-  display: inline-flex; align-items: center; gap: 6px;
+  display: inline-flex; align-items: center; gap: var(--sp-xs);
   font-family: var(--font-mono); font-size: 11.5px; font-weight: 600;
   border: 1px solid var(--rule); border-radius: var(--r-pill);
-  padding: 4px 11px; background: var(--paper-2); cursor: pointer;
-  transition: border-color 120ms, background 120ms, color 120ms;
+  padding: var(--inset-chip); background: var(--paper-2); cursor: pointer;
+  transition: border-color var(--dur-hover), background var(--dur-hover), color var(--dur-hover);
   user-select: none;
 }
 .chip:hover { border-color: var(--cyan); }
@@ -320,24 +320,24 @@ footer.site .bio-cta { margin-top: 16px; }
   background: var(--yellow); flex: none; }
 
 .doors { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 16px; margin-top: 32px; }
+  gap: var(--sp-lg); margin-top: var(--sp-2xl); }
 .door {
-  display: flex; flex-direction: column; gap: 8px; min-height: 132px;
+  display: flex; flex-direction: column; gap: var(--sp-sm); min-height: 132px;
   background: var(--paper-2); border: 1px solid var(--rule); border-radius: var(--r-card);
-  padding: 18px; text-decoration: none; position: relative; overflow: hidden;
-  transition: border-color 120ms, transform 120ms;
+  padding: var(--inset-card); text-decoration: none; position: relative; overflow: hidden;
+  transition: border-color var(--dur-hover), transform var(--dur-hover);
 }
 .door:hover { border-color: var(--cyan); color: inherit; transform: translateY(-2px); }
 .door .num { font-size: 22px; font-weight: 600; }
 .door .dn { font-weight: 800; font-size: 17px; font-variation-settings: 'wdth' 112; }
-.door .dd { font-size: 13px; color: var(--muted); line-height: 1.45; }
-.door .arrow { position: absolute; right: 16px; top: 16px; color: var(--muted); transition: color 120ms, transform 120ms; }
+.door .dd { font-size: 13px; color: var(--muted); line-height: var(--lh-card); }
+.door .arrow { position: absolute; right: 16px; top: 16px; color: var(--muted); transition: color var(--dur-hover), transform var(--dur-hover); }
 .door:hover .arrow { color: var(--cyan); transform: translateX(2px); }
 
 
 table.data { border-collapse: collapse; width: 100%; font-size: 14px; }
 table.data th {
-  font-family: var(--font-mono); font-size: 11px; font-weight: 600;
+  font-family: var(--font-mono); font-size: var(--fs-micro); font-weight: 600;
   letter-spacing: .08em; text-transform: uppercase; color: var(--muted);
   text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--ink);
   white-space: nowrap;
@@ -381,7 +381,7 @@ table.data tr:hover > td { background: color-mix(in oklab, var(--cyan) 5%, trans
   display: none; width: 34px; height: 34px; flex: none;
   border: 1px solid var(--rule); border-radius: var(--r-chip);
   place-items: center; color: var(--ink-2);
-  transition: border-color 120ms, color 120ms;
+  transition: border-color var(--dur-hover), color var(--dur-hover);
 }
 .nav-toggle:hover { border-color: var(--cyan); color: var(--ink); }
 .nav-toggle .ic-close { display: none; }
@@ -397,7 +397,7 @@ header.site.nav-open .nav-toggle .ic-close { display: block; }
      unfold as ALL of them at once, every page visible, so nothing on a phone
      is more than one tap past the button. */
   .wordmark { font-size: 13px; }
-  header.site .bar { gap: 8px; }
+  header.site .bar { gap: var(--sp-sm); }
   .nav-toggle { display: grid; }
   .chrome-tools { flex: 1 1 auto; min-width: 0; }
   #site-search { flex: 1 1 0; min-width: 0; }
@@ -409,7 +409,7 @@ header.site.nav-open .nav-toggle .ic-close { display: block; }
     display: grid; grid-template-columns: 1fr 1fr;
     grid-template-rows: repeat(3, auto); grid-auto-flow: column;
     gap: 14px 16px; padding: 12px 2px 16px;
-    border-top: 1px solid var(--rule); margin-top: 8px;
+    border-top: 1px solid var(--rule); margin-top: var(--sp-sm);
   }
   /* each chapter is a group: its name, then every page beneath it — the
      per-chapter dropdowns and their carets have nothing left to hide */
@@ -447,7 +447,7 @@ header.site.nav-open .nav-toggle .ic-close { display: block; }
    is deliberately not reduced; it is already at its portrait size, which is
    the size that reads correctly. */
 @media (orientation: landscape) and (max-height: 560px) {
-  header.site .bar { padding: 6px clamp(12px, 3vw, 24px); gap: 12px; flex-wrap: nowrap; }
+  header.site .bar { padding: 6px clamp(12px, 3vw, 24px); gap: var(--sp-md); flex-wrap: nowrap; }
   /* The width breakpoint below wraps the nav onto its own row, which costs a
      quarter of a landscape phone's height. There is enough width here to keep
      one row and let the nav scroll instead. */
@@ -456,8 +456,8 @@ header.site.nav-open .nav-toggle .ic-close { display: block; }
   #site-search input { width: min(140px, 22vw); }
   .page-head { padding: 24px 0 16px; }
   section + section, .stack > * + * { margin-top: 40px; }
-  footer.site { margin-top: 48px; padding: 28px 0 36px; }
-  .doors { gap: 12px; }
+  footer.site { margin-top: var(--sp-3xl); padding: 28px 0 36px; }
+  .doors { gap: var(--sp-md); }
   .door { min-height: 0; }
 }
 
@@ -467,7 +467,7 @@ header.site.nav-open .nav-toggle .ic-close { display: block; }
    rather than in one surface's stylesheet. */
 .mono-tile {
   display: grid; place-items: center; width: 48px; height: 48px;
-  border-radius: 10px; color: #fff; font-weight: 800; font-size: 18px;
+  border-radius: var(--r-mid); color: #fff; font-weight: 800; font-size: 18px;
   background: var(--tile, var(--ink-2));
   position: relative; overflow: hidden;
 }
@@ -482,7 +482,7 @@ header.site.nav-open .nav-toggle .ic-close { display: block; }
    next. One deliberate band: six equal columns with a rule between each, so no
    chapter ever wraps alone, and the whole block answers hover — the auto-fit
    grid this replaces fit five columns and orphaned Media on its own row. */
-.chapters-wrap { margin-top: clamp(48px, 8vh, 96px); padding-bottom: clamp(32px, 5vh, 56px); }
+.chapters-wrap { margin-top: var(--rhythm-section); padding-bottom: clamp(32px, 5vh, 56px); }
 .chapters { border-top: 1px solid var(--rule); padding-top: 24px; }
 .ch-list {
   list-style: none; margin-top: 14px;
@@ -511,13 +511,13 @@ header.site.nav-open .nav-toggle .ic-close { display: block; }
   .ch:nth-child(n+4) { border-left: 1px solid var(--rule); }
 }
 .ch-head { display: flex; align-items: baseline; gap: 9px; text-decoration: none; }
-.ch-n { font-family: var(--font-mono); font-size: 12px; color: var(--muted); flex: none; }
+.ch-n { font-family: var(--font-mono); font-size: var(--fs-xs); color: var(--muted); flex: none; }
 .ch-name { font-size: 17px; font-weight: 700; font-variation-settings: 'wdth' 112; }
 .ch.is-here .ch-name { box-shadow: inset 0 -2px 0 var(--yellow); }
 .ch.is-here .ch-n { color: var(--ink); }
-.ch-pages { list-style: none; margin-top: 8px; display: grid; gap: 4px; }
+.ch-pages { list-style: none; margin-top: var(--sp-sm); display: grid; gap: var(--sp-2xs); }
 .ch-pages a {
-  font-size: 13.5px; color: var(--muted); text-decoration: none;
+  font-size: var(--fs-sm); color: var(--muted); text-decoration: none;
   display: inline-block; padding: 1px 0;
 }
 .ch-pages a:hover { color: var(--cyan); }
@@ -528,7 +528,7 @@ header.site.nav-open .nav-toggle .ic-close { display: block; }
 .secnav {
   /* Parked bottom-left at every width — the reading eye starts on the left, so
      that is where the index lives. */
-  position: fixed; z-index: 60; left: 16px; bottom: 16px;
+  position: fixed; z-index: var(--z-pop); left: 16px; bottom: 16px;
   max-width: min(260px, calc(100vw - 32px));
   background: color-mix(in oklab, var(--paper-2) 92%, transparent);
   backdrop-filter: blur(8px);
@@ -537,7 +537,7 @@ header.site.nav-open .nav-toggle .ic-close { display: block; }
   overflow: hidden;
 }
 .sn-toggle {
-  display: flex; align-items: center; gap: 8px; width: 100%;
+  display: flex; align-items: center; gap: var(--sp-sm); width: 100%;
   padding: 9px 12px; font-family: var(--font-mono); font-size: 10.5px;
   letter-spacing: .12em; text-transform: uppercase; color: var(--ink-2);
 }
@@ -547,7 +547,7 @@ header.site.nav-open .nav-toggle .ic-close { display: block; }
 .secnav.open .sn-body { display: block; }
 .sn-body a {
   display: flex; gap: 9px; align-items: baseline; padding: 4px 0;
-  font-size: 13px; color: var(--muted); text-decoration: none; line-height: 1.35;
+  font-size: 13px; color: var(--muted); text-decoration: none; line-height: var(--lh-dense);
 }
 .sn-body a:hover { color: var(--cyan); }
 .sn-body a[aria-current] { color: var(--ink); }
@@ -569,8 +569,8 @@ header.site.nav-open .nav-toggle .ic-close { display: block; }
    like a button you could press. It is a mark and a word now: the same gold dot
    the chart uses, so the two agree. */
 .spoken-bar, .spoken-tag {
-  display: inline-flex; align-items: center; gap: 6px; white-space: nowrap;
-  font-family: var(--font-mono); font-weight: 600; letter-spacing: .1em;
+  display: inline-flex; align-items: center; gap: var(--sp-xs); white-space: nowrap;
+  font-family: var(--font-mono); font-weight: 600; letter-spacing: var(--track-caps);
   color: var(--ink-2); background: none; padding: 0; border-radius: 0;
 }
 .spoken-bar::before, .spoken-tag::before {
@@ -578,7 +578,7 @@ header.site.nav-open .nav-toggle .ic-close { display: block; }
   background: var(--yellow);
 }
 .spoken-tag { font-size: 9px; }
-.spoken-bar { font-size: 10px; margin-top: 10px; }
+.spoken-bar { font-size: var(--fs-nano); margin-top: 10px; }
 
 /* ------------------------------------------------------- company links */
 /* A company name that goes somewhere looked different in all four places it was
@@ -606,7 +606,7 @@ nav.primary .np.is-here > a { color: var(--ink); box-shadow: inset 0 -2px 0 var(
 /* The caret is a real control, so it reads as one: ink-2 at rest rather than
    near-invisible muted, and enough padding to be a finger target. flex:none
    guards it against ever being the element a squeezed row collapses. */
-nav.primary .np-more { padding: 9px 7px; color: var(--ink-2); line-height: 1; flex: none; }
+nav.primary .np-more { padding: 9px 7px; color: var(--ink-2); line-height: var(--lh-solid); flex: none; }
 nav.primary .np-more svg { display: block; flex: none; transition: transform 160ms ease; }
 nav.primary .np.open .np-more svg { transform: rotate(180deg); }
 /* Resting on the chapter is what opens its menu, so the whole item — name and
@@ -619,7 +619,7 @@ nav.primary .np.open .np-more { color: var(--cyan); }
    both — an absolutely-positioned menu inside it can never be seen. So the menu
    is fixed to the viewport instead, and core.js places it under its button. */
 nav.primary .np-sub {
-  position: fixed; z-index: 200; display: none;
+  position: fixed; z-index: var(--z-overlay); display: none;
   min-width: 190px; padding: 6px; list-style: none;
   background: var(--paper-2); border: 1px solid var(--rule);
   border-radius: var(--r-card); box-shadow: 0 12px 30px rgba(18, 19, 15, .14);

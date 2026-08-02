@@ -2,27 +2,27 @@
 
 .map-head {
   display: flex; align-items: flex-end; justify-content: space-between;
-  gap: 24px; flex-wrap: wrap; padding-top: 28px;
+  gap: var(--sp-xl); flex-wrap: wrap; padding-top: 28px;
 }
 .chart-title {
-  font-size: clamp(20px, min(3vw, 4.6vh), 38px); font-weight: 800;
-  letter-spacing: -0.02em; font-variation-settings: 'wdth' 116; margin-top: 6px;
+  font-size: var(--head-section); font-weight: 800;
+  letter-spacing: var(--track-heading); font-variation-settings: 'wdth' 116; margin-top: var(--sp-xs);
 }
 .chart-honesty { max-width: 44ch; text-align: right; }
 @media (max-width: 700px) { .chart-honesty { text-align: left; } }
 
 /* --------------------------------------------------------------- rail */
-.map-rail { margin-top: 16px; display: grid; gap: 8px; }
-.rail-row { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
-.rail-group { display: inline-flex; gap: 6px; flex-wrap: wrap; }
+.map-rail { margin-top: var(--sp-lg); display: grid; gap: var(--sp-sm); }
+.rail-row { display: flex; align-items: center; gap: var(--sp-xs); flex-wrap: wrap; }
+.rail-group { display: inline-flex; gap: var(--sp-xs); flex-wrap: wrap; }
 .rail-label {
   font-family: var(--font-mono); font-size: 10.5px; font-weight: 600;
-  letter-spacing: .1em; text-transform: uppercase; color: var(--muted);
+  letter-spacing: var(--track-caps); text-transform: uppercase; color: var(--muted);
   margin-right: 2px;
 }
 .rail-label:not(:first-child) { margin-left: 10px; }
 .rail-text {
-  font-family: var(--font-mono); font-size: 12px;
+  font-family: var(--font-mono); font-size: var(--fs-xs);
   background: var(--paper-2); border: 1px solid var(--rule);
   border-radius: var(--r-pill); padding: 5px 12px; width: 150px;
 }
@@ -32,7 +32,7 @@
 #filter-state { min-height: 18px; }
 
 /* --------------------------------------------------------------- stage */
-.poster-stage { position: relative; margin-top: 12px; }
+.poster-stage { position: relative; margin-top: var(--sp-md); }
 .poster-viewport {
   position: relative; overflow: hidden;
   background: var(--paper);
@@ -53,7 +53,7 @@
    became a zoom. The gutters give the page back its scroll lane. */
 #map-shell {
   max-width: var(--col); margin-inline: auto;
-  padding-inline: clamp(16px, 4vw, 32px);
+  padding-inline: var(--col-pad);
 }
 .poster-viewport:focus-visible { outline-offset: -3px; }
 @media (max-width: 859px) {
@@ -110,7 +110,7 @@
 #poster .d-edge { stroke-width: 1.2px; }
 #poster .d-glow { stroke-width: 3px; }
 #poster .oct-edge { stroke-width: 3px; }
-#poster .d-glow, #poster .d-wash { transition: opacity 200ms ease; }
+#poster .d-glow, #poster .d-wash { transition: opacity var(--dur-state) ease; }
 #poster .district.hot .d-glow { opacity: .95; }
 #poster .district.hot .d-wash { opacity: .13; }
 /* The octagon used to answer hover by inflating its border from 3px to 26px, the
@@ -132,31 +132,31 @@
 /* The card opens beside the company it belongs to and follows it while the
    camera moves; poster.js writes left/top. */
 #company-card {
-  position: absolute; left: 16px; top: 16px; z-index: 30;
+  position: absolute; left: 16px; top: 16px; z-index: var(--z-card);
   width: min(440px, calc(100vw - 32px));
   max-height: min(640px, calc(100% - 28px)); overflow: auto; overscroll-behavior: contain;
   background: var(--paper-2); border: 1px solid var(--rule);
-  border-radius: var(--r-card); padding: 18px;
+  border-radius: var(--r-card); padding: var(--inset-card);
   box-shadow: 0 18px 48px rgba(18, 19, 15, .2);
   /* One label rail for every block on the card, so HQ, LEADERSHIP and each
      partnership kind all start their values at the same left edge. */
   --cc-label: 96px;
 }
-#company-card .cc-top { display: flex; align-items: flex-start; gap: 12px; }
-#company-card .cc-logo { width: 44px; height: 44px; flex: none; font-size: 16px; border-radius: 9px; }
+#company-card .cc-top { display: flex; align-items: flex-start; gap: var(--sp-md); }
+#company-card .cc-logo { width: 44px; height: 44px; flex: none; font-size: var(--fs-md); border-radius: 9px; }
 #company-card .cc-id { min-width: 0; }
 /* Body-copy scale throughout: the card is a reading surface, not a headline. */
-#company-card h2 { font-size: 17px; font-weight: 800; font-variation-settings: 'wdth' 112; line-height: 1.2; }
-#company-card .cc-close { margin-left: auto; color: var(--muted); font-size: 20px; line-height: 1; padding: 2px 6px; }
+#company-card h2 { font-size: 17px; font-weight: 800; font-variation-settings: 'wdth' 112; line-height: var(--lh-compact); }
+#company-card .cc-close { margin-left: auto; color: var(--muted); font-size: 20px; line-height: var(--lh-solid); padding: 2px 6px; }
 #company-card .cc-close:hover { color: var(--alert); }
-#company-card .cc-layer { font-family: var(--font-mono); font-size: 12px; line-height: 1.5; color: var(--muted); margin-top: 6px; }
+#company-card .cc-layer { font-family: var(--font-mono); font-size: var(--fs-xs); line-height: var(--lh-body); color: var(--muted); margin-top: var(--sp-xs); }
 #company-card .cc-layer .dot { display: inline-block; vertical-align: -1px; width: 10px; height: 10px; border-radius: 3px; margin-right: 6px; }
-#company-card .cc-sub { font-size: var(--fs-base); color: var(--ink-2); margin-top: 12px; line-height: 1.5; }
+#company-card .cc-sub { font-size: var(--fs-base); color: var(--ink-2); margin-top: var(--sp-md); line-height: var(--lh-body); }
 #company-card .cc-site { margin-top: 11px; font-size: var(--fs-sm); }
 #company-card .cc-site a, #company-card .cc-lead a.li {
   display: inline; color: var(--cyan);
 }
-#company-card .cc-lead { margin-top: 12px; font-size: var(--fs-sm); line-height: 1.6; }
+#company-card .cc-lead { margin-top: var(--sp-md); font-size: var(--fs-sm); line-height: 1.6; }
 #company-card .cc-lead .pk { display: inline-block; min-width: var(--cc-label); }
 #company-card .cc-shot { margin-top: 14px; }
 #company-card .cc-shot a { display: block; position: relative; }
@@ -166,7 +166,7 @@
 }
 .cc-credit, .d-credit {
   position: absolute; right: 6px; bottom: 6px;
-  font-family: var(--font-mono); font-size: 9px; letter-spacing: .06em;
+  font-family: var(--font-mono); font-size: 9px; letter-spacing: var(--track-caps-dense);
   color: #fff; background: rgba(18, 19, 15, .62); padding: 2px 6px; border-radius: 4px;
 }
 /* Spoken with directly is the most expensive fact on this site to acquire, so
@@ -174,36 +174,36 @@
 #company-card .cc-facts {
   display: grid; grid-template-columns: var(--cc-label) 1fr; gap: 5px 12px;
   margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--rule);
-  font-size: var(--fs-sm); line-height: 1.45;
+  font-size: var(--fs-sm); line-height: var(--lh-card);
 }
-#company-card .cc-facts dt { font-family: var(--font-mono); font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); padding-top: 2px; }
+#company-card .cc-facts dt { font-family: var(--font-mono); font-size: var(--fs-xs); letter-spacing: var(--track-caps-dense); text-transform: uppercase; color: var(--muted); padding-top: 2px; }
 #company-card .cc-facts dd { color: var(--ink-2); }
 #company-card .cc-partners, #company-card .cc-src {
   margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--rule); font-size: var(--fs-sm);
 }
 /* Partners are read HERE now, not off the chart: each one a labelled logo
    chip on the same label rail as the facts above it. */
-#company-card .pg-row { display: grid; grid-template-columns: var(--cc-label) 1fr; gap: 4px 12px; margin-top: 8px; }
+#company-card .pg-row { display: grid; grid-template-columns: var(--cc-label) 1fr; gap: 4px 12px; margin-top: var(--sp-sm); }
 #company-card .pg-row .pk { padding-top: 7px; }
-#company-card .pg-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+#company-card .pg-chips { display: flex; flex-wrap: wrap; gap: var(--sp-xs); }
 #company-card .cc-partner {
-  display: inline-flex; align-items: center; gap: 8px;
+  display: inline-flex; align-items: center; gap: var(--sp-sm);
   padding: 5px 11px 5px 6px; font-size: 13px; text-align: left;
   background: var(--paper); border: 1px solid var(--rule); border-radius: var(--r-pill);
-  transition: border-color 120ms;
+  transition: border-color var(--dur-hover);
 }
 #company-card .cc-partner:hover { border-color: var(--cyan); }
 /* A resolvable partner is a link into the chart, and reads like one. */
 #company-card .cc-partner:hover span:last-child {
   color: var(--cyan); text-decoration: underline; text-underline-offset: 2px;
 }
-#company-card .cc-partner .cp-logo { width: 26px; height: 26px; font-size: 10px; border-radius: 7px; flex: none; }
+#company-card .cc-partner .cp-logo { width: 26px; height: 26px; font-size: var(--fs-nano); border-radius: 7px; flex: none; }
 #company-card .cc-partner.is-plain { border-style: dashed; color: var(--ink-2); }
 #company-card .cc-mail { margin-top: 10px; }
-#company-card .pk { color: var(--muted); font-family: var(--font-mono); font-size: 12px; letter-spacing: .06em; }
-#company-card .cc-src div { margin-top: 6px; }
-#company-card .cc-actions { display: flex; gap: 8px; margin-top: 16px; flex-wrap: wrap; }
-#company-card .cc-actions a { font-size: 11px; }
+#company-card .pk { color: var(--muted); font-family: var(--font-mono); font-size: var(--fs-xs); letter-spacing: var(--track-caps-dense); }
+#company-card .cc-src div { margin-top: var(--sp-xs); }
+#company-card .cc-actions { display: flex; gap: var(--sp-sm); margin-top: var(--sp-lg); flex-wrap: wrap; }
+#company-card .cc-actions a { font-size: var(--fs-micro); }
 #company-card.sheet {
   position: fixed; left: 50%; top: auto; transform: translateX(-50%);
   right: auto; bottom: 12px; z-index: 350;
@@ -221,7 +221,7 @@ body.fs-pseudo #company-card.sheet { max-height: 44vh; }
   display: flex; flex-direction: column; background: var(--paper);
   padding: 8px 0 0; max-width: none;
 }
-body.fs-pseudo #map-shell { position: fixed; inset: 0; z-index: 300; }
+body.fs-pseudo #map-shell { position: fixed; inset: 0; z-index: var(--z-fs); }
 body.fs-pseudo { overflow: hidden; }
 /* The rail travels into full screen, but on a phone the filter chips would eat
    the screen they were meant to free, so it is capped and scrolls instead. */
@@ -243,7 +243,7 @@ body.fs-pseudo { overflow: hidden; }
   #map-shell:fullscreen #filter-state, body.fs-pseudo #map-shell #filter-state { display: none; }
 }
 #map-shell:fullscreen .poster-stage, body.fs-pseudo #map-shell .poster-stage {
-  flex: 1 1 auto; min-height: 0; margin-top: 8px;
+  flex: 1 1 auto; min-height: 0; margin-top: var(--sp-sm);
 }
 #map-shell:fullscreen .poster-viewport, body.fs-pseudo #map-shell .poster-viewport {
   aspect-ratio: auto; max-height: none; max-width: none; height: 100%; border: 0;
@@ -259,9 +259,9 @@ body.fs-pseudo { overscroll-behavior: none; }
    corner and a way back to the whole chart top-right. CSS-only visibility —
    they exist in the markup at all times and appear with the mode. */
 .fs-overlay {
-  display: none; position: absolute; top: 10px; z-index: 60;
+  display: none; position: absolute; top: 10px; z-index: var(--z-pop);
   min-height: 40px; align-items: center;
-  box-shadow: 0 6px 20px rgba(18, 19, 15, .22);
+  box-shadow: var(--shadow-raised);
 }
 #fs-exit { left: 10px; }
 #fs-fit { right: 10px; }
@@ -271,17 +271,17 @@ body.fs-pseudo #map-shell .fs-overlay { display: inline-flex; }
 /* --------------------------------------------------------------- legend */
 /* The key folds away by default: the chart explains most of itself, and the
    reader who wants the fine print opens it once. */
-.map-legend { margin-top: 24px; padding-bottom: 8px; }
+.map-legend { margin-top: var(--sp-xl); padding-bottom: 8px; }
 .map-key > summary {
   display: inline-flex; align-items: center; gap: 7px; cursor: pointer;
-  list-style: none; font-family: var(--font-mono); font-size: 12px;
+  list-style: none; font-family: var(--font-mono); font-size: var(--fs-xs);
   font-weight: 600; letter-spacing: .08em; text-transform: uppercase;
   border: 1px solid var(--rule); border-radius: var(--r-chip);
   padding: 7px 13px; background: var(--paper-2); user-select: none;
 }
 .map-key > summary::-webkit-details-marker { display: none; }
 .map-key > summary:hover { border-color: var(--cyan); }
-.map-key .pk-caret { font-size: 10px; transition: transform 160ms ease; }
+.map-key .pk-caret { font-size: var(--fs-nano); transition: transform 160ms ease; }
 .map-key[open] .pk-caret { transform: rotate(180deg); }
 .map-key[open] > summary { margin-bottom: 16px; }
 #legend-layers { display: flex; gap: 8px 16px; flex-wrap: wrap; }
@@ -290,10 +290,10 @@ body.fs-pseudo #map-shell .fs-overlay { display: inline-flex; }
   font-size: 12.5px; color: var(--ink-2);
 }
 #legend-layers .lg .sw { width: 14px; height: 14px; border-radius: 4px; flex: none; }
-#legend-layers .lg .n { font-family: var(--font-mono); font-size: 11px; color: var(--muted); }
-.legend-marks { display: flex; gap: 8px 22px; flex-wrap: wrap; margin-top: 12px; }
+#legend-layers .lg .n { font-family: var(--font-mono); font-size: var(--fs-micro); color: var(--muted); }
+.legend-marks { display: flex; gap: 8px 22px; flex-wrap: wrap; margin-top: var(--sp-md); }
 .legend-marks > span { display: inline-flex; align-items: center; gap: 7px; }
-.pip-demo { display: inline-flex; gap: 2px; }
+.pip-demo { display: inline-flex; gap: var(--sp-3xs); }
 .pip-demo::before, .pip-demo::after {
   content: ""; width: 7px; height: 7px; border-radius: 50%; display: inline-block;
   background: oklch(var(--layer-l) var(--layer-c) 150);
@@ -335,24 +335,24 @@ body.fs-pseudo #map-shell .fs-overlay { display: inline-flex; }
 /* ------------------------------------------------ filter dropdowns */
 /* Layers / Region / Maturity as checkbox menus, the ledger's picker idiom. */
 .map-rail .picker { position: relative; }
-.map-rail .picker summary { list-style: none; display: inline-flex; align-items: center; gap: 6px; }
+.map-rail .picker summary { list-style: none; display: inline-flex; align-items: center; gap: var(--sp-xs); }
 .map-rail .picker summary::-webkit-details-marker { display: none; }
 .map-rail .picker[open] summary { border-color: var(--cyan); color: var(--ink); }
 .map-rail .pk-caret { font-size: 9px; transition: transform 140ms ease; }
 .map-rail .picker[open] .pk-caret { transform: rotate(180deg); }
 .map-rail .pk-n {
   min-width: 16px; padding: 1px 5px; border-radius: var(--r-pill);
-  background: var(--cyan); color: #12130F; font-weight: 700; font-size: 10px;
+  background: var(--cyan); color: #12130F; font-weight: 700; font-size: var(--fs-nano);
   text-align: center;
 }
 .map-rail .pop {
   position: absolute; top: calc(100% + 6px); left: 0; z-index: 140;
-  background: var(--paper-2); border: 1px solid var(--rule); border-radius: 10px;
-  box-shadow: 0 14px 40px rgba(18, 19, 15, .16);
+  background: var(--paper-2); border: 1px solid var(--rule); border-radius: var(--r-mid);
+  box-shadow: var(--shadow-float);
   padding: 10px 12px; min-width: 250px; max-height: 340px; overflow: auto;
 }
 .map-rail .pop label {
-  display: flex; align-items: center; gap: 8px; padding: 5px 0;
+  display: flex; align-items: center; gap: var(--sp-sm); padding: 5px 0;
   font-size: 13px; cursor: pointer; white-space: nowrap;
 }
 .map-rail .pop label .dot { width: 9px; height: 9px; border-radius: 3px; flex: none; }

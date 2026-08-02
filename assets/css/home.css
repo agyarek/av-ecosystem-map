@@ -70,16 +70,16 @@
 .station .st-name {
   font-weight: 800; font-size: clamp(15px, 1.5vw, 19px);
   font-variation-settings: 'wdth' 114;
-  display: flex; align-items: baseline; justify-content: space-between; gap: 8px;
+  display: flex; align-items: baseline; justify-content: space-between; gap: var(--sp-sm);
 }
 .station .st-count { font-size: var(--fs-xs); color: var(--muted); font-weight: 500; white-space: nowrap; }
-.station .desc { font-size: clamp(12px, 1.15vw, 14.5px); color: var(--ink-2); margin-top: 7px; line-height: 1.45; }
+.station .desc { font-size: clamp(12px, 1.15vw, 14.5px); color: var(--ink-2); margin-top: 7px; line-height: var(--lh-card); }
 .station .layers { display: flex; gap: 5px; flex-wrap: wrap; margin-top: 9px; }
 /* Each pill is a door into the directory, filtered to its layer; the tooltip
    says so before anyone commits to the jump. */
 .station .layers .chip {
-  position: relative; cursor: pointer; font-size: 10px; padding: 3px 8px;
-  text-decoration: none; transition: border-color 120ms, color 120ms;
+  position: relative; cursor: pointer; font-size: var(--fs-nano); padding: 3px 8px;
+  text-decoration: none; transition: border-color var(--dur-hover), color var(--dur-hover);
 }
 .station .layers .chip:hover, .station .layers .chip:focus-visible {
   border-color: var(--cyan); color: var(--ink);
@@ -89,7 +89,7 @@
   content: attr(data-tip);
   position: absolute; left: 0; bottom: calc(100% + 6px); z-index: 8;
   white-space: nowrap; pointer-events: none;
-  font-family: var(--font-mono); font-size: 10px; font-weight: 600;
+  font-family: var(--font-mono); font-size: var(--fs-nano); font-weight: 600;
   letter-spacing: .04em; color: var(--paper); background: var(--ink);
   padding: 5px 9px; border-radius: 7px;
   box-shadow: 0 6px 18px rgba(18, 19, 15, .18);
@@ -107,7 +107,7 @@
 .st-ring path {
   fill: none; stroke: var(--cyan); stroke-width: 3;
   stroke-dasharray: 100; stroke-dashoffset: 100;
-  opacity: 0; transition: opacity 200ms;
+  opacity: 0; transition: opacity var(--dur-state);
 }
 .station.active .st-ring path { opacity: .9; }
 
@@ -115,7 +115,7 @@
 /* Where the four cards meet: back, play/pause, forward. Always visible. */
 .loop-controls {
   position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
-  display: flex; align-items: center; gap: 6px; z-index: 5;
+  display: flex; align-items: center; gap: var(--sp-xs); z-index: 5;
   background: var(--paper); border: 1px solid var(--rule);
   border-radius: var(--r-pill); padding: 6px;
   box-shadow: 0 10px 30px rgba(18, 19, 15, .16);
@@ -124,12 +124,12 @@
   display: inline-flex; align-items: center; justify-content: center; gap: 7px;
   min-width: 40px; height: 40px; padding: 0 12px;
   border-radius: var(--r-pill); color: var(--ink-2);
-  transition: background 120ms, color 120ms;
+  transition: background var(--dur-hover), color var(--dur-hover);
 }
 .loop-controls button:hover { background: var(--paper-2); color: var(--ink); }
 #loop-play {
   background: var(--ink); color: var(--paper);
-  font-family: var(--font-mono); font-size: 11px; font-weight: 600; letter-spacing: .1em;
+  font-family: var(--font-mono); font-size: var(--fs-micro); font-weight: 600; letter-spacing: var(--track-caps);
   padding: 0 16px;
 }
 #loop-play:hover { background: var(--cyan); color: #12130F; }
@@ -186,7 +186,7 @@
 .hero-btn { font-size: 15px; padding: 14px 26px; }
 .hero-stage { display: block; perspective: 1400px; text-decoration: none; }
 .hero-tilt {
-  position: relative; border-radius: 14px; overflow: hidden;
+  position: relative; border-radius: var(--r-card); overflow: hidden;
   display: flex; justify-content: center;
   transform: rotateX(38deg) rotateZ(-10deg) scale(1.08);
   transform-style: preserve-3d;
@@ -224,7 +224,7 @@
 .band {
   position: relative; display: block; text-decoration: none;
   border-bottom: 1px solid var(--rule); overflow: hidden;
-  transition: background 200ms;
+  transition: background var(--dur-state);
 }
 .band:hover, .band:focus-visible { background: var(--paper-2); }
 .band-inner { position: relative; padding-top: 26px; padding-bottom: 26px; }
@@ -234,17 +234,17 @@
 }
 .band-title {
   font-size: clamp(20px, min(3.6vw, 5.5vh), 38px); font-weight: 800; letter-spacing: -0.015em;
-  font-variation-settings: 'wdth' 112; color: var(--ink); margin-top: 4px;
+  font-variation-settings: 'wdth' 112; color: var(--ink); margin-top: var(--sp-2xs);
 }
 /* The summary is the point of the list, so it shows at rest: title and
    overview are readable without a pointer. Hover keeps the flourish —
    background, the art swelling slightly, and the CTA appearing. */
 .band-more { margin-top: 10px; }
-.band-desc { font-size: var(--fs-base); color: var(--ink-2); max-width: 60ch; line-height: 1.5; }
+.band-desc { font-size: var(--fs-base); color: var(--ink-2); max-width: var(--measure-compact); line-height: var(--lh-body); }
 .band-btn {
   display: inline-block; margin-top: 14px;
   opacity: 0; transform: translateY(4px);
-  transition: opacity 200ms ease, transform 200ms ease;
+  transition: opacity var(--dur-state) ease, transform var(--dur-state) ease;
 }
 .band:hover .band-btn, .band:focus-visible .band-btn,
 .band:focus-within .band-btn { opacity: 1; transform: none; }
@@ -256,10 +256,10 @@
      width with the container's own padding, so its right edge lands on the
      content's right edge rather than the page's. */
   max-width: var(--col); margin-inline: auto;
-  padding-inline: clamp(16px, 4vw, 32px); box-sizing: border-box;
+  padding-inline: var(--col-pad); box-sizing: border-box;
   display: flex; justify-content: flex-end; align-items: center;
   opacity: .45; transform: none;
-  transition: opacity 320ms ease, transform 320ms ease;
+  transition: opacity var(--dur-slow) ease, transform var(--dur-slow) ease;
 }
 .band-art svg { height: 100%; max-height: 200px; width: auto; }
 .band:hover .band-art, .band:focus-within .band-art { opacity: .6; transform: scale(1.05); }

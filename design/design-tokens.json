@@ -53,9 +53,9 @@
         },
         "medsub": {
           "css": "--med-sub",
-          "value": "#6E7268",
+          "value": "#63665C",
           "role": "sub-captions on tint surfaces",
-          "pending": "S2-3: darken to #63665C (current value 4.39:1 on --med-bg fails AA; target 5.22:1)"
+          "changed": "2026-08-02 S2-3: #6E7268 (4.39:1 on --med-bg, failed AA) -> #63665C (5.22:1)"
         }
       },
       "rule": {
@@ -276,8 +276,8 @@
       },
       "md": {
         "css": "--fs-md",
-        "value": "16px",
-        "role": "DEPRECATED: merges into body per S2-4 (pending value flip to 15.5px, then removal)"
+        "value": "15.5px",
+        "role": "DEPRECATED alias of body (S2-4 applied: was 16px); migrate uses to --fs-base, then remove"
       },
       "mdplus": {
         "css": "--fs-mdplus",
@@ -299,11 +299,11 @@
       "$doc": "Three fluid levels + article variant. The min(vw,vh) middle term is the landscape guard — keep it. One register per rank: display-H1 = narrative pages, utility-H1 = instrument pages (/map, /companies), section-H2 = all H2s, article-H1 = operator deep-dives.",
       "displayH1": {
         "css": "--head-display",
-        "value": "clamp(26px, min(5.5vw, 9vh), 76px)",
+        "value": "clamp(32px, min(5.5vw, 9vh), 76px)",
         "leading": 1.06,
         "track": "-0.03em",
         "wdth": 118,
-        "pending": "S2-6: raise floor to 32px (mobile display dominance ~1.9x body; current 1.53x)"
+        "changed": "2026-08-02 S2-6: floor 26->32px; mobile display:body dominance 1.53x -> ~1.9x"
       },
       "utilityH1": {
         "css": "--head-utility",
@@ -710,11 +710,10 @@
         "muted on paper"
       ],
       [
-        "#6E7268",
+        "#63665C",
         "#F4F2E9",
         4.5,
-        "med-sub on med-bg",
-        "pending:S2-3"
+        "med-sub on med-bg"
       ],
       [
         "#007A8A",

@@ -11,11 +11,11 @@
   --fs-xs: 12px;
   --fs-sm: 13.5px;
   --fs-base: 15.5px;
-  --fs-md: 16px;
+  --fs-md: 15.5px;
   --fs-mdplus: 17.5px;
   --fs-lg: 19px;
   --fs-xl: 24px;
-  --head-display: clamp(26px, min(5.5vw, 9vh), 76px);
+  --head-display: clamp(32px, min(5.5vw, 9vh), 76px);
   --head-utility: clamp(20px, min(3.4vw, 5.2vh), 44px);
   --head-section: clamp(20px, min(3vw, 4.6vh), 38px);
   --head-article: clamp(18.5px, min(2.6vw, 4vh), 32px);
@@ -85,7 +85,7 @@
   --ink: #12130F;
   --ink-2: #3B3E36;
   --muted: #6E7268;
-  --med-sub: #6E7268;
+  --med-sub: #63665C;
   --rule: #DEDFD8;
   --yellow: #F2B705;
   --cyan: #00A5B8;

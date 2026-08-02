@@ -189,3 +189,8 @@ grep -rn '@media' assets/css/ | grep -vE '640|680|760|860|960|1800'
       component-ratio values (monogram glyphs) never take text-scale tokens.
       (Added 2026-08-02: the gate caught `.md-logo` monograms shrinking on
       mobile after a 19px → `--fs-lg` substitution.)
+- [ ] Absolutely-positioned helper elements (`.visually-hidden`, badges) are
+      pinned (`left/top`) — an absolute box left at its static position inside
+      a wide scrolled table extends the document. (Added 2026-08-02: the
+      Phase-7 sweep caught /economics/ at 529px wide on a 390 viewport after
+      a11y description spans landed inside the calculator table.)

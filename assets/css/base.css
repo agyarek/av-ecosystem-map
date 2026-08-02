@@ -346,7 +346,10 @@ table.data tr:hover > td { background: color-mix(in oklab, var(--cyan) 5%, trans
 
 [aria-hidden="true"].decor { pointer-events: none; }
 .visually-hidden {
-  position: absolute; width: 1px; height: 1px; margin: -1px;
+  /* left/top pin the 1px box to its containing block: an absolute box left at
+     its static position inside a wide scrolled table extends the DOCUMENT
+     (caught by the Phase-7 sweep at 390: economics grew to 529px wide) */
+  position: absolute; left: 0; top: 0; width: 1px; height: 1px; margin: -1px;
   clip-path: inset(50%); overflow: hidden; white-space: nowrap;
 }
 

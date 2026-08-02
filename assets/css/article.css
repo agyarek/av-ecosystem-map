@@ -262,7 +262,9 @@ th .ftip { text-decoration: underline dotted; text-underline-offset: 3px; text-d
 /* Window, View and Split by sit as three columns in one row, each label above
    its own chips; the companies picker takes the full width beneath them. */
 .ch-controls {
-  display: grid; grid-template-columns: repeat(3, max-content);
+  /* flex-wrap, not max-content grid tracks: the company-chip row must never
+     widen the document (a page never scrolls horizontally, DESIGN_LANGUAGE 9) */
+  display: flex; flex-wrap: wrap;
   gap: 16px 36px; margin-top: var(--sp-lg);
 }
 .ch-col { display: flex; flex-direction: column; gap: var(--sp-xs); align-items: flex-start; }
@@ -271,7 +273,7 @@ th .ftip { text-decoration: underline dotted; text-underline-offset: 3px; text-d
   text-transform: uppercase; color: var(--muted);
 }
 .ch-col .chips { display: flex; gap: var(--sp-xs); flex-wrap: wrap; }
-.ch-col-wide { grid-column: 1 / -1; }
+.ch-col-wide { flex-basis: 100%; min-width: 0; }
 @media (max-width: 760px) { .ch-controls { grid-template-columns: 1fr; gap: var(--sp-md); } }
 .ch-plot { margin-top: var(--sp-xl); }
 .ch-plot svg { display: block; overflow: visible; }

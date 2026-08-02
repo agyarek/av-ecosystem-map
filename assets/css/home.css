@@ -25,19 +25,19 @@
 /* The robotaxi. Tyres are a fixed near-black, never a theme token: --ink flips
    to off-white in dark mode, which is how the tyres once rendered white. The
    beams carry the headlight read on their own; the lamp dots came off. */
-.token .body { fill: var(--cyan); stroke: #171813; stroke-width: 1.4; }
-.token .livery { fill: #FFFFFF; opacity: .55; }
-.token .seam { fill: #171813; opacity: .28; }
+.token .body { fill: var(--cyan); stroke: #171813; stroke-width: 1.4; } /* tokens-exempt: illustration constant */
+.token .livery { fill: #FFFFFF; opacity: .55; } /* tokens-exempt: illustration constant */
+.token .seam { fill: #171813; opacity: .28; } /* tokens-exempt: illustration constant */
 .token .glass { fill: var(--paper); opacity: .85; }
-.token .wheel { fill: #171813; }
-.token .blister { fill: #171813; opacity: .8; }
+.token .wheel { fill: #171813; } /* tokens-exempt: illustration constant */
+.token .blister { fill: #171813; opacity: .8; } /* tokens-exempt: illustration constant */
 .token .beam { fill: var(--yellow); opacity: .16; }
 .token .tail { fill: var(--alert); }
-.token .reverse { fill: #FFFFFF; opacity: 0; }
+.token .reverse { fill: #FFFFFF; opacity: 0; } /* tokens-exempt: illustration constant */
 .token.reversing .reverse { opacity: .95; }
 .token.reversing .beam { opacity: 0; }
-.token .mast { fill: #171813; }
-.token .puck { fill: #2E3028; }
+.token .mast { fill: #171813; } /* tokens-exempt: illustration constant */
+.token .puck { fill: #2E3028; } /* tokens-exempt: illustration constant */
 .token .lidar { fill: var(--yellow); }
 
 /* --------------------------------------------- quadrant cards inside the track */
@@ -132,7 +132,7 @@
   font-family: var(--font-mono); font-size: var(--fs-micro); font-weight: 600; letter-spacing: var(--track-caps);
   padding: 0 16px;
 }
-#loop-play:hover { background: var(--cyan); color: #12130F; }
+#loop-play:hover { background: var(--cyan); color: #12130F; } /* tokens-exempt: ink-on-cyan control state, both themes */
 #loop-play .ic-play { display: none; }
 #loop-play.is-paused .ic-play { display: block; }
 #loop-play.is-paused .ic-pause { display: none; }
@@ -191,7 +191,7 @@
   transform: rotateX(38deg) rotateZ(-10deg) scale(1.08);
   transform-style: preserve-3d;
   background: var(--paper); border: 1px solid var(--rule);
-  box-shadow: 24px 40px 80px rgba(18, 19, 15, .22);
+  box-shadow: 24px 40px 80px rgba(18, 19, 15, .22); /* tokens-exempt: illustration shadow (hero object) */
   transition: transform 400ms ease;
 }
 .hero-stage:hover .hero-tilt { transform: rotateX(30deg) rotateZ(-7deg) scale(1.1); }

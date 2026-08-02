@@ -148,7 +148,7 @@ a { color: inherit; text-underline-offset: 2px; text-decoration-color: var(--mut
 a:hover { text-decoration-color: var(--cyan-text); color: var(--cyan-text); }
 button { font: inherit; color: inherit; background: none; border: none; cursor: pointer; }
 input, select { font: inherit; color: inherit; }
-::selection { background: var(--yellow); color: #12130F; }
+::selection { background: var(--yellow); color: #12130F; } /* tokens-exempt: text on yellow stays dark in both themes */
 
 :focus-visible { outline: 3px solid var(--cyan-text); outline-offset: 2px; border-radius: 2px; }
 .skip-link {
@@ -419,7 +419,7 @@ header.site.nav-open .nav-toggle .ic-close { display: block; }
   }
 @media print {
   header.site, footer.site, #theme-toggle, .skip-link { display: none !important; }
-  body { background: #fff; color: #000; }
+  body { background: #fff; color: #000; } /* tokens-exempt: print is always light */
 }
 
 /* ---------------------------------------------------------------- short viewports
@@ -448,13 +448,13 @@ header.site.nav-open .nav-toggle .ic-close { display: block; }
    rather than in one surface's stylesheet. */
 .mono-tile {
   display: grid; place-items: center; width: 48px; height: 48px;
-  border-radius: var(--r-mid); color: #fff; font-weight: 800; font-size: var(--fs-mdplus);
+  border-radius: var(--r-mid); color: var(--tile-ink); font-weight: 800; font-size: var(--fs-mdplus);
   background: var(--tile, var(--ink-2));
   position: relative; overflow: hidden;
 }
 .mono-tile img {
   position: absolute; inset: 0; width: 100%; height: 100%;
-  object-fit: contain; background: #fff; border-radius: inherit;
+  object-fit: contain; background: #fff; border-radius: inherit; /* tokens-exempt: logo plate stays white; third-party marks assume a light ground */
   opacity: 0; transition: opacity 220ms ease;
 }
 

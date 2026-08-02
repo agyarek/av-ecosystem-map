@@ -143,11 +143,11 @@
   --cc-label: 96px;
 }
 #company-card .cc-top { display: flex; align-items: flex-start; gap: var(--sp-md); }
-#company-card .cc-logo { width: 44px; height: 44px; flex: none; font-size: 16px; border-radius: 9px; } /* monogram glyph = component ratio, not a text-scale step */
+#company-card .cc-logo { width: 44px; height: 44px; flex: none; font-size: 16px; border-radius: 9px; } /* tokens-exempt: monogram glyph = component ratio */
 #company-card .cc-id { min-width: 0; }
 /* Body-copy scale throughout: the card is a reading surface, not a headline. */
 #company-card h2 { font-size: var(--fs-mdplus); font-weight: 800; font-variation-settings: 'wdth' 112; line-height: var(--lh-compact); }
-#company-card .cc-close { margin-left: auto; color: var(--muted); font-size: 20px; line-height: var(--lh-solid); padding: 2px 6px; }
+#company-card .cc-close { margin-left: auto; color: var(--muted); font-size: 20px; /* tokens-exempt: glyph button */ line-height: var(--lh-solid); padding: 2px 6px; }
 #company-card .cc-close:hover { color: var(--alert); }
 #company-card .cc-layer { font-family: var(--font-mono); font-size: var(--fs-xs); line-height: var(--lh-body); color: var(--muted); margin-top: var(--sp-xs); }
 #company-card .cc-layer .dot { display: inline-block; vertical-align: -1px; width: 10px; height: 10px; border-radius: 3px; margin-right: 6px; }
@@ -167,7 +167,7 @@
 .cc-credit, .d-credit {
   position: absolute; right: 6px; bottom: 6px;
   font-family: var(--font-mono); font-size: var(--fs-nano); letter-spacing: var(--track-caps-dense);
-  color: #fff; background: rgba(18, 19, 15, .62); padding: 2px 6px; border-radius: 4px;
+  color: #fff; background: rgba(18, 19, 15, .62); padding: 2px 6px; border-radius: 4px; /* tokens-exempt: credit badge scrim, theme-independent */
 }
 /* Spoken with directly is the most expensive fact on this site to acquire, so
    it is stated, not hinted at with a dot. */
@@ -342,7 +342,7 @@ body.fs-pseudo #map-shell .fs-overlay { display: inline-flex; }
 .map-rail .picker[open] .pk-caret { transform: rotate(180deg); }
 .map-rail .pk-n {
   min-width: 16px; padding: 1px 5px; border-radius: var(--r-pill);
-  background: var(--cyan); color: #12130F; font-weight: 700; font-size: var(--fs-nano);
+  background: var(--cyan); color: #12130F; font-weight: 700; font-size: var(--fs-nano); /* tokens-exempt: ink-on-cyan badge, both themes */
   text-align: center;
 }
 .map-rail .pop {

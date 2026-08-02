@@ -90,7 +90,7 @@
 .partner-groups .pg li .caption { display: block; margin-top: 1px; }
 
 .op-hero { display: flex; align-items: center; gap: var(--sp-xl); }
-.op-hero .mono-tile { width: 74px; height: 74px; font-size: 30px; border-radius: 16px; }
+.op-hero .mono-tile { width: 74px; height: 74px; font-size: 30px; border-radius: 16px; } /* tokens-exempt: monogram glyph = component ratio */
 .op-hero .oh-meta { font-size: var(--fs-sm); color: var(--muted); margin-top: var(--sp-xs); }
 
 table.spec { margin-top: var(--sp-xl); }
@@ -250,7 +250,7 @@ th .ftip { text-decoration: underline dotted; text-underline-offset: 3px; text-d
 }
 
 .world-card { border: 1px solid var(--rule); border-radius: var(--r-card); background: var(--paper-2); padding: 22px; margin-top: var(--sp-xl); }
-.world-card h3 { font-size: 20px; font-weight: 800; font-variation-settings: 'wdth' 112; display: flex; justify-content: space-between; align-items: baseline; gap: var(--sp-sm); flex-wrap: wrap; }
+.world-card h3 { font-size: var(--fs-mdplus); font-weight: 800; font-variation-settings: 'wdth' 112; display: flex; justify-content: space-between; align-items: baseline; gap: var(--sp-sm); flex-wrap: wrap; }
 .world-card h3 .since { font-family: var(--font-mono); font-size: var(--fs-xs); color: var(--cyan-text); font-weight: 600; }
 .world-card dl { display: grid; grid-template-columns: max-content 1fr; gap: 8px 18px; margin-top: var(--sp-lg); font-size: var(--fs-sm); }
 .world-card dt { font-family: var(--font-mono); font-size: var(--fs-micro); letter-spacing: var(--track-caps); text-transform: uppercase; color: var(--muted); padding-top: 2px; }

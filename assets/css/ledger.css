@@ -42,7 +42,7 @@
 .lg-adv > .rail-row { margin-top: var(--sp-sm); }
 .lg-adv .pk-n {
   min-width: 17px; height: 17px; padding: 0 5px; border-radius: 9px;
-  background: var(--cyan); color: #12130F; font-size: var(--fs-micro); font-weight: 700;
+  background: var(--cyan); color: #12130F; font-size: var(--fs-micro); font-weight: 700; /* tokens-exempt: ink-on-cyan badge, both themes */
   display: inline-flex; align-items: center; justify-content: center;
 }
 #lg-mat-note { margin-top: var(--sp-xs); max-width: 110ch; }
@@ -142,7 +142,7 @@ tr.detail > td { padding: 0; border-bottom: 1px solid var(--ink); background: va
    the table's own horizontal scroll can hide it. */
 .detail-inner { padding: var(--inset-panel); max-width: 78ch; }
 .detail-inner .d-head { display: flex; align-items: center; gap: var(--sp-md); flex-wrap: wrap; }
-.detail-inner .d-logo { width: 44px; height: 44px; flex: none; font-size: 16px; border-radius: var(--r-mid); } /* monogram glyph = component ratio, not a text-scale step */
+.detail-inner .d-logo { width: 44px; height: 44px; flex: none; font-size: 16px; border-radius: var(--r-mid); } /* tokens-exempt: monogram glyph = component ratio */
 .detail-inner .d-head .spoken-bar { margin: 0 0 0 auto; }
 .detail-inner .d-site { margin-top: var(--sp-md); font-size: var(--fs-sm); display: flex; align-items: center; gap: var(--sp-lg); flex-wrap: wrap; }
 .detail-inner .d-site a, .detail-inner .d-people a.li {
@@ -167,7 +167,7 @@ tr.detail > td { padding: 0; border-bottom: 1px solid var(--ink); background: va
 .detail-inner ul.d-metrics li { font-size: var(--fs-sm); line-height: var(--lh-body); padding: 2px 0; }
 .detail-inner .d-src div { display: flex; align-items: baseline; gap: var(--sp-xs); padding: 3px 0; }
 .detail-inner .d-src svg { flex: none; color: var(--muted); align-self: center; }
-.detail-inner h3 { font-size: 20px; font-weight: 800; font-variation-settings: 'wdth' 112; }
+.detail-inner h3 { font-size: var(--fs-mdplus); font-weight: 800; font-variation-settings: 'wdth' 112; }
 .detail-inner .about { font-family: var(--font-serif); font-size: var(--fs-base); line-height: var(--lh-body); margin-top: var(--sp-sm); max-width: 62ch; }
 .detail-inner dl {
   display: grid; grid-template-columns: max-content 1fr; gap: 6px 16px;
@@ -232,7 +232,7 @@ tr.detail > td { padding: 0; border-bottom: 1px solid var(--ink); background: va
     background: var(--paper); border-top: 1px solid var(--rule);
     border-radius: 16px 16px 0 0; padding: 16px;
     max-height: 72vh; overflow: auto;
-    box-shadow: 0 -14px 40px rgba(18,19,15,.16) /* raised sheet, upward float */;
+    box-shadow: 0 -14px 40px rgba(18,19,15,.16) /* tokens-exempt: --shadow-float mirrored upward for the bottom sheet */;
   }
 }
 
@@ -275,7 +275,7 @@ tr.detail > td { padding: 0; border-bottom: 1px solid var(--ink); background: va
   font-family: var(--font-mono); font-size: var(--fs-micro); font-weight: 600; letter-spacing: var(--track-caps);
   cursor: pointer;
 }
-.scroll-nav button:hover { background: var(--cyan); border-color: var(--cyan-text); color: #12130F; }
+.scroll-nav button:hover { background: var(--cyan); border-color: var(--cyan-text); color: #12130F; } /* tokens-exempt: ink-on-cyan control state, both themes */
 .scroll-nav button:active { transform: translateY(1px); }
 .scroll-nav svg { display: block; flex: none; }
 @media (max-width: 680px) {
@@ -294,7 +294,7 @@ tr.detail > td { padding: 0; border-bottom: 1px solid var(--ink); background: va
 .d-credit {
   position: absolute; right: 8px; bottom: 8px;
   font-family: var(--font-mono); font-size: var(--fs-nano); letter-spacing: var(--track-caps-dense);
-  color: #fff; background: rgba(18, 19, 15, .62); padding: 2px 6px; border-radius: 4px;
+  color: #fff; background: rgba(18, 19, 15, .62); padding: 2px 6px; border-radius: 4px; /* tokens-exempt: credit badge scrim, theme-independent */
 }
 /* An opened row scrolls to the top of the page, clear of the sticky chrome, so
    the company in focus is the first thing under it — and clear of the sticky

@@ -105,7 +105,7 @@ def check_css_conformance():
             continue
         src = open(os.path.join(ROOT, "assets", "css", fn)).read()
         if begin in src:
-            src = re.sub(re.escape(begin) + r".*?" + re.escape(end), "", src, flags=re.S)
+            src = re.sub(re.escape(begin) + r".*?" + re.escape(end), lambda m: "\n" * m.group(0).count("\n"), src, flags=re.S)
         for i, line in enumerate(src.splitlines(), 1):
             if "tokens-exempt" in line:
                 continue

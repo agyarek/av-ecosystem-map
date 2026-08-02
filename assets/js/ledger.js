@@ -3,7 +3,7 @@
 (function () {
   'use strict';
   const { ROOT, esc, fmtM, json, HUES, layerColor, mountLogos, ICON,
-          linkedinSearch, wikiSummary, stockQuote } = window.AV;
+          linkedinSearch, wikiSummary, stockQuote, reducedMotion } = window.AV;
 
   const SHORT = {
     'AV Driver / Autonomy Software': 'driver', 'Sensing & Compute Hardware': 'sensing',
@@ -57,7 +57,7 @@
     { k: 'name', l: 'Company', on: 1, cls: 'c-name', v: c => c.name,
       // one flex wrapper inside the cell: a display value on the <td> itself would
       // drop it out of the table layout and its border would stop meeting the row's
-      h: c => `<span class="nm-wrap"><span class="mono-tile row-logo" aria-hidden="true" style="--tile:${layerColor(c.cat)}">${esc((c.mono || c.name.slice(0, 2)).toUpperCase())}${logoDomainOf(c) ? `<img alt="" data-logo-domain="${esc(logoDomainOf(c))}" decoding="async">` : ''}</span><span class="nm">${esc(c.name)}</span>${c.spokenTo ? '<span class="spoken-tag">SPOKEN WITH DIRECTLY</span>' : ''}</span>` },
+      h: c => `<span class="nm-wrap"><span class="mono-tile row-logo" aria-hidden="true" style="--tile:${layerColor(c.cat)}">${esc((c.mono || c.name.slice(0, 2)).toUpperCase())}${logoDomainOf(c) ? `<img alt="" data-logo-domain="${esc(logoDomainOf(c))}" decoding="async">` : ''}</span><span class="nm">${esc(c.name)}</span><span class="visually-hidden">, expand details</span>${c.spokenTo ? '<span class="spoken-tag">SPOKEN WITH DIRECTLY</span>' : ''}</span>` },
     { k: 'cat', l: 'Layer', on: 1, cls: 'c-cat', v: c => c.cat, h: c => layerTag(c.cat) },
     { k: 'sub', l: 'Sub-focus', on: 1, cls: 'c-sub', v: c => c.sub, h: c => `<span class="clamp">${esc(c.sub)}</span>` },
     { k: 'hq', l: 'HQ', on: 1, v: c => c.hq, h: c => esc(c.hq) },
@@ -177,7 +177,7 @@
     const cols = shownCols().map(col =>
       `<td class="${col.cls || ''}">${col.h(c) ?? ''}</td>`).join('');
     return `<tr class="row${c.status !== 'active' ? ' exited' : ''}" data-slug="${esc(c.slug)}" id="r-${esc(c.slug)}"
-      tabindex="0" aria-expanded="${state.open === c.slug}" aria-label="${esc(c.name)}, expand details">${cols}</tr>`;
+      tabindex="0" aria-expanded="${state.open === c.slug}" aria-controls="d-${esc(c.slug)}">${cols}</tr>`;
   }
 
   function render() {
@@ -203,6 +203,7 @@
     $('lg-state').textContent = `${visible.length} of ${rows.length} organisations shown` +
       (sortName ? `, sorted by ${sortName.l.toLowerCase()} ${state.sort[0][1] === 'asc' ? 'ascending' : 'descending'}` : '') +
       (activeFilters().length ? `. Filters active: ${activeFilters().map(k => FILTER_NAMES[k]).join(', ')}.` : '.');
+    if (!visible.length) $('lg-state').textContent += ` ${empty.querySelector('p').textContent}`;
     $('lg-clear').hidden = !activeFilters().length;
   }
 
@@ -348,6 +349,7 @@
     tr.setAttribute('aria-expanded', 'true');
     const dt = document.createElement('tr');
     dt.className = 'detail';
+    dt.id = 'd-' + slug;
     dt.innerHTML = `<td colspan="${shownCols().length}">${detailHTML(c)}</td>`;
     tr.after(dt);
     mountLogos(dt);
@@ -579,14 +581,14 @@
         // pin the pane first, so both ends of the table land fully on screen
         const anchor = scroller.getBoundingClientRect().top + scrollY
           - (siteHeader ? siteHeader.offsetHeight : 0);
-        scrollTo({ top: Math.max(0, anchor), behavior: 'smooth' });
-        scroller.scrollTo({ top: end ? scroller.scrollHeight : 0, behavior: 'smooth' });
+        scrollTo({ top: Math.max(0, anchor), behavior: reducedMotion() ? 'auto' : 'smooth' });
+        scroller.scrollTo({ top: end ? scroller.scrollHeight : 0, behavior: reducedMotion() ? 'auto' : 'smooth' });
       } else {
         const r = scroller.getBoundingClientRect();
         scrollTo({
           top: Math.max(0, end ? r.bottom + scrollY - innerHeight + 12
             : r.top + scrollY - (siteHeader ? siteHeader.offsetHeight : 0) - 8),
-          behavior: 'smooth'
+          behavior: reducedMotion() ? 'auto' : 'smooth'
         });
       }
     };

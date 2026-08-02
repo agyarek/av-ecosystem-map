@@ -456,6 +456,8 @@
   document.body.appendChild(tip);
   pin = document.createElement('div');
   pin.className = 'ch-tip ch-pin';
+  // a status live region, so opening the drilldown is announced to AT
+  pin.setAttribute('role', 'status');
   pin.hidden = true;
   document.body.appendChild(pin);
   // dismissal listens to click, not pointerdown: the bar handler stops

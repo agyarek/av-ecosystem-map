@@ -69,7 +69,7 @@
   font-size: 15px; line-height: 1.55;
 }
 .watch-list li::before {
-  content: "◍"; position: absolute; left: 4px; top: 11px; color: var(--cyan);
+  content: "◍"; position: absolute; left: 4px; top: 11px; color: var(--cyan-text);
 }
 .watch-list .caption { display: block; margin-top: 3px; }
 
@@ -86,7 +86,7 @@
 .partner-groups .pg li { padding: 5px 0; font-size: 14px; border-top: 1px solid var(--rule); }
 .partner-groups .pg li:first-child { border-top: 0; }
 .partner-groups .pg li a { font-weight: 700; text-decoration: none; color: var(--ink); }
-.partner-groups .pg li a:hover { color: var(--cyan); }
+.partner-groups .pg li a:hover { color: var(--cyan-text); }
 .partner-groups .pg li .caption { display: block; margin-top: 1px; }
 
 .op-hero { display: flex; align-items: center; gap: 20px; }
@@ -109,7 +109,7 @@ table.spec td { font-size: 14px; }
   border-radius: var(--r-card); padding: 20px; text-decoration: none;
   transition: border-color 120ms, transform 120ms;
 }
-.op-card:hover { border-color: var(--cyan); color: inherit; transform: translateY(-2px); }
+.op-card:hover { border-color: var(--cyan-text); color: inherit; transform: translateY(-2px); }
 .op-card .oc-top { display: flex; align-items: center; gap: 12px; }
 .op-card .mono-tile { width: 44px; height: 44px; font-size: 17px; }
 .op-card h3 { font-size: 18px; font-weight: 800; font-variation-settings: 'wdth' 112; }
@@ -189,7 +189,7 @@ th .ftip { text-decoration: underline dotted; text-underline-offset: 3px; text-d
 }
 .omark {
   margin-left: 5px; font-family: var(--font-mono); font-weight: 700;
-  color: var(--cyan); cursor: help;
+  color: var(--cyan-text); cursor: help;
 }
 .omark::after { left: auto; right: 0; }
 /* the eco table cannot actually overflow above 700px (fixed layout, four
@@ -218,7 +218,7 @@ th .ftip { text-decoration: underline dotted; text-underline-offset: 3px; text-d
 .region-tab[aria-selected="true"] {
   background: var(--paper-2); border-color: var(--rule); color: var(--ink);
 }
-.region-tab[aria-selected="true"] .rt-icon { color: var(--cyan); }
+.region-tab[aria-selected="true"] .rt-icon { color: var(--cyan-text); }
 .region-panel { margin-top: 0; }
 .region-panel[hidden] { display: none; }
 @media (max-width: 760px) {
@@ -251,7 +251,7 @@ th .ftip { text-decoration: underline dotted; text-underline-offset: 3px; text-d
 
 .world-card { border: 1px solid var(--rule); border-radius: var(--r-card); background: var(--paper-2); padding: 22px; margin-top: 20px; }
 .world-card h3 { font-size: 20px; font-weight: 800; font-variation-settings: 'wdth' 112; display: flex; justify-content: space-between; align-items: baseline; gap: 10px; flex-wrap: wrap; }
-.world-card h3 .since { font-family: var(--font-mono); font-size: 12px; color: var(--cyan); font-weight: 600; }
+.world-card h3 .since { font-family: var(--font-mono); font-size: 12px; color: var(--cyan-text); font-weight: 600; }
 .world-card dl { display: grid; grid-template-columns: max-content 1fr; gap: 8px 18px; margin-top: 14px; font-size: 14px; }
 .world-card dt { font-family: var(--font-mono); font-size: 10.5px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); padding-top: 2px; }
 .world-card dd { color: var(--ink-2); line-height: 1.5; }
@@ -264,8 +264,10 @@ th .ftip { text-decoration: underline dotted; text-underline-offset: 3px; text-d
 /* Window, View and Split by sit as three columns in one row, each label above
    its own chips; the companies picker takes the full width beneath them. */
 .ch-controls {
-  display: grid; grid-template-columns: repeat(3, max-content);
-  gap: 16px 36px; margin-top: 18px;
+  /* flex-wrap, not max-content grid tracks: the company-chip row must never
+     widen the document (a page never scrolls horizontally) */
+  display: flex; flex-wrap: wrap;
+  gap: 16px 36px; margin-top: 16px;
 }
 .ch-col { display: flex; flex-direction: column; gap: 7px; align-items: flex-start; }
 .ch-col > .lbl {
@@ -273,7 +275,7 @@ th .ftip { text-decoration: underline dotted; text-underline-offset: 3px; text-d
   text-transform: uppercase; color: var(--muted);
 }
 .ch-col .chips { display: flex; gap: 6px; flex-wrap: wrap; }
-.ch-col-wide { grid-column: 1 / -1; }
+.ch-col-wide { flex-basis: 100%; min-width: 0; }
 @media (max-width: 760px) { .ch-controls { grid-template-columns: 1fr; gap: 12px; } }
 .ch-plot { margin-top: 20px; }
 .ch-plot svg { display: block; overflow: visible; }
@@ -328,7 +330,7 @@ th .ftip { text-decoration: underline dotted; text-underline-offset: 3px; text-d
   display: flex; align-items: baseline; gap: 8px;
   font-size: 13px; color: var(--ink-2); padding: 3px 0; cursor: pointer;
 }
-.rail-row input { accent-color: var(--cyan); }
+.rail-row input { accent-color: var(--cyan-text); }
 .rail-row.pinned { color: var(--muted); cursor: default; }
 .rail-row .pin {
   font-size: 9.5px; font-family: var(--font-mono); text-transform: uppercase;
@@ -348,7 +350,7 @@ th .ftip { text-decoration: underline dotted; text-underline-offset: 3px; text-d
   border: 1px solid var(--rule); border-radius: var(--r-chip);
   padding: 7px 10px; max-width: 190px;
 }
-.cmp-slots select:focus { border-color: var(--cyan); outline: none; }
+.cmp-slots select:focus { border-color: var(--cyan-text); outline: none; }
 .cmp-slots .drop {
   position: absolute; top: 16px; right: -7px;
   width: 18px; height: 18px; line-height: 1; border-radius: 50%;
@@ -389,9 +391,9 @@ table.cmp tfoot th, table.cmp tfoot td { border-top: 2px solid var(--rule); vert
   border: 1px solid var(--rule); color: var(--muted);
   text-decoration: none; cursor: help;
 }
-.cmark.c-disclosed { color: var(--cyan); border-color: color-mix(in oklab, var(--cyan) 40%, var(--rule)); }
+.cmark.c-disclosed { color: var(--cyan-text); border-color: color-mix(in oklab, var(--cyan) 40%, var(--rule)); }
 .cmark.c-estimated, .cmark.c-unverified { color: var(--alert); border-color: color-mix(in oklab, var(--alert) 35%, var(--rule)); }
-.cite { font-size: 10.5px; font-family: var(--font-mono); color: var(--cyan); margin-left: 4px; }
+.cite { font-size: 10.5px; font-family: var(--font-mono); color: var(--cyan-text); margin-left: 4px; }
 
 input.eco-in {
   font-family: var(--font-mono); font-size: 13px; text-align: right;
@@ -399,7 +401,7 @@ input.eco-in {
   border-radius: var(--r-chip); padding: 5px 8px; width: 100%; max-width: 120px;
   color: var(--ink);
 }
-input.eco-in:focus { border-color: var(--cyan); outline: none; }
+input.eco-in:focus { border-color: var(--cyan-text); outline: none; }
 
 .cmp-actions { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; margin-top: 16px; }
 

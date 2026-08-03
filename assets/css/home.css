@@ -64,7 +64,7 @@
 .st-pitlane { grid-area: 2 / 1; border-radius: 16px 16px 16px 44px; }
 .st-vehicle { grid-area: 2 / 2; border-radius: 16px 16px 44px 16px; }
 .station.active {
-  border-color: var(--cyan);
+  border-color: var(--cyan-text);
   box-shadow: 0 0 0 3px color-mix(in oklab, var(--cyan) 20%, transparent);
 }
 .station .st-name {
@@ -82,7 +82,7 @@
   text-decoration: none; transition: border-color 120ms, color 120ms;
 }
 .station .layers .chip:hover, .station .layers .chip:focus-visible {
-  border-color: var(--cyan); color: var(--ink);
+  border-color: var(--cyan-text); color: var(--ink);
 }
 .station .layers .chip[data-tip]:hover::after,
 .station .layers .chip[data-tip]:focus-visible::after {
@@ -105,7 +105,7 @@
   pointer-events: none; overflow: visible;
 }
 .st-ring path {
-  fill: none; stroke: var(--cyan); stroke-width: 3;
+  fill: none; stroke: var(--cyan-text); stroke-width: 3;
   stroke-dasharray: 100; stroke-dashoffset: 100;
   opacity: 0; transition: opacity 200ms;
 }

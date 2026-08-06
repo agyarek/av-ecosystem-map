@@ -1,0 +1,42 @@
+name: Fetch logos
+
+# Runs tools/fetch-logos.py where company sites and icon services are
+# actually reachable, then commits the outputs (assets/logos/, sprite,
+# atlas, data/logo-manifest.json) back to the branch it was run on.
+# Manual trigger only; the script's own docs suggest a quarterly refresh.
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: fetch-logos-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install pipeline dependencies
+        run: pip install requests pillow
+
+      - name: Fetch, normalise and assemble
+        run: python3 tools/fetch-logos.py
+
+      - name: Commit the results
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/logos data/logo-manifest.json
+          if git diff --cached --quiet; then
+            echo "nothing new fetched"; exit 0
+          fi
+          git commit -m "Fetch and commit company logos (tools/fetch-logos.py, run in CI)"
+          git pull --rebase origin "${GITHUB_REF_NAME}"
+          git push origin HEAD:"${GITHUB_REF_NAME}"

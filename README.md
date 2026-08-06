@@ -60,7 +60,8 @@ That one command validates the data, regenerates every derived surface
 (indexes, shards, frozen geometry, baked HTML, CSV, sitemap, synced counts)
 and validates again. `python3 tools/render-poster.py` refreshes the reference
 SVG when you want it. Push to `main`; GitHub Pages serves the branch root
-directly.
+directly. `main` is the deployed source; the `gh-pages` branch is an archive
+of the pre-August-2026 single-page build and is not served.
 
 ## One optional key
 

@@ -136,6 +136,21 @@ input, select { font: inherit; color: inherit; }
 }
 .skip-link:focus { top: 8px; color: var(--paper); }
 
+/* The layer-grouped organisation index that renders when JavaScript is off.
+   Lives inside <noscript>, so with JS on none of this paints. */
+.ns-index { margin: 24px auto; }
+.ns-index section { margin: 20px 0; }
+.ns-index h2 {
+  font-size: 17px; font-weight: 700; font-variation-settings: 'wdth' 112;
+  margin: 0 0 8px;
+}
+.ns-index .ns-n { font-family: var(--font-mono); font-size: 12px; color: var(--muted); font-weight: 600; }
+.ns-index ul {
+  list-style: none; columns: 220px 4; column-gap: 28px;
+  font-size: var(--fs-sm); line-height: 1.9;
+}
+.ns-index a { text-decoration-color: var(--rule); }
+
 /* ---------------------------------------------------------------- type */
 .eyebrow {
   font-family: var(--font-mono); font-size: 12px; font-weight: 600;

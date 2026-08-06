@@ -53,14 +53,14 @@ everything derivable into `data/` at build time; the browser renders and never r
 
 ```bash
 # edit data/av-companies.json, av-enrichment.json or av-funding-timeline.json, then:
-python3 tools/validate-data.py        # must pass
-python3 tools/build-poster-layout.py  # regenerate frozen geometry
-python3 tools/build-indexes.py        # regenerate indexes
-python3 tools/make-csv.py             # regenerate the flat export
-python3 tools/render-poster.py        # optional: refresh the reference SVG
+./tools/build-all.sh
 ```
 
-Push to `main`; GitHub Pages serves the branch root directly.
+That one command validates the data, regenerates every derived surface
+(indexes, shards, frozen geometry, baked HTML, CSV, sitemap, synced counts)
+and validates again. `python3 tools/render-poster.py` refreshes the reference
+SVG when you want it. Push to `main`; GitHub Pages serves the branch root
+directly.
 
 ## One optional key
 

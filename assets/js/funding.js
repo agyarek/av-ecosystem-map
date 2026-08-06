@@ -484,7 +484,7 @@
       `Blank is honest.`;
   }).catch(() => {});
 
-  Promise.all([
+  const bootFunding = () => Promise.all([
     json('data/av-funding-events.json'),
     json('data/search-index.json'),
   ]).then(([E, slim]) => {
@@ -530,4 +530,16 @@
       if (h) h.innerHTML = '<p class="caption">The funding data failed to load.</p>';
     });
   });
+
+  // the funding payload waits until the reader is actually approaching the
+  // section; 600px of margin means the charts are drawn before they scroll in
+  const fundingHost = document.getElementById('funding');
+  if (fundingHost && 'IntersectionObserver' in window) {
+    const io = new IntersectionObserver(entries => {
+      if (entries.some(e => e.isIntersecting)) { io.disconnect(); bootFunding(); }
+    }, { rootMargin: '600px 0px' });
+    io.observe(fundingHost);
+  } else {
+    bootFunding();
+  }
 })();

@@ -892,19 +892,24 @@
   }
 
   // ------------------------------------------------------------ export
+  // The standalone SVG carries its own type: the site's committed woff2 files,
+  // embedded as data URIs. The chart's text uses Archivo 600-900 and Plex Mono
+  // 400 and 600; the serif never appears on the chart.
+  const EXPORT_FONTS = [
+    ["'Archivo'", 'assets/fonts/archivo-var.woff2', '400 900'],
+    ["'IBM Plex Mono'", 'assets/fonts/plex-mono-400.woff2', '400'],
+    ["'IBM Plex Mono'", 'assets/fonts/plex-mono-600.woff2', '600'],
+  ];
   async function fontCSSWithData() {
     try {
-      const cssURL = 'https://fonts.googleapis.com/css2?family=Archivo:wght@400;700;800;900&family=IBM+Plex+Mono:wght@500;600&display=swap';
-      const css = await (await fetch(cssURL)).text();
-      const urls = [...css.matchAll(/url\((https:[^)]+\.woff2)\)/g)].map(mm => mm[1]);
-      let out = css;
-      await Promise.all(urls.slice(0, 8).map(async u => {
-        const buf = await (await fetch(u)).arrayBuffer();
+      const faces = await Promise.all(EXPORT_FONTS.map(async ([family, path, weight]) => {
+        const buf = await (await fetch(ROOT + path)).arrayBuffer();
         let bin = ''; const bytes = new Uint8Array(buf);
         for (let i = 0; i < bytes.length; i += 32768) bin += String.fromCharCode(...bytes.subarray(i, i + 32768));
-        out = out.replace(u, 'data:font/woff2;base64,' + btoa(bin));
+        return `@font-face{font-family:${family};font-weight:${weight};` +
+          `src:url(data:font/woff2;base64,${btoa(bin)}) format('woff2');}`;
       }));
-      return out;
+      return faces.join('');
     } catch (e) { return ''; }
   }
   async function exportString() {

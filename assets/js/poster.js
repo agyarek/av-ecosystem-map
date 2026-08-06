@@ -54,7 +54,8 @@
 
   let L = null, slim = null, bySlug = null, partners = null;
   let manifest = null, spriteText = null, atlasDataURL = null;
-  let full = null, fullPromise = null;      // the complete records, fetched on demand
+  const fullRecs = {};                       // complete records, one shard per selection
+  const fullFetches = new Map();
   let W = 0, H = 0, MS = null, CS = null;
   const state = {
     sel: null, layers: new Set(), regions: new Set(), mats: new Set(),
@@ -188,9 +189,9 @@
         const meta = bySlug[c.slug] || {};
         if (!X) {
           const aria = [c.name, meta.c || '', meta.r || ''].filter(Boolean).join(', ')
-            + (partners.bySlug[c.slug] ? `; ${partners.bySlug[c.slug].count} mapped partners` : '')
+            + (c.pc ? `; ${c.pc} mapped partners` : '')
             + (c.spokenTo ? '; spoken with directly' : '') + (c.exited ? '; exited' : '');
-          o.push(`<g data-chip data-slug="${esc(c.slug)}" data-cx="${cx}" data-cy="${c.y + c.h / 2}" data-bx="${c.x + 8}" data-by="${c.y + 6}" data-bw="${c.w - 16}" data-bh="${c.h - 12}" data-cat="${esc(SHORT[meta.c] || '')}" data-region="${esc(REGION_KEY(meta.r || ''))}" data-mat="${esc(meta.m || '')}" data-text="${esc((c.name + ' ' + (meta.b || '')).toLowerCase())}" ${c.spokenTo ? 'data-spoken="1"' : ''} ${c.exited ? 'data-exited="1"' : ''} tabindex="-1" role="button" aria-label="${esc(aria)}">`);
+          o.push(`<g data-chip data-slug="${esc(c.slug)}" data-cx="${cx}" data-cy="${c.y + c.h / 2}" data-bx="${c.x + 8}" data-by="${c.y + 6}" data-bw="${c.w - 16}" data-bh="${c.h - 12}" data-cat="${esc(SHORT[meta.c] || '')}" data-region="${esc(REGION_KEY(meta.r || ''))}" data-mat="${esc(meta.m || '')}" data-text="${esc(c.name.toLowerCase())}" ${c.spokenTo ? 'data-spoken="1"' : ''} ${c.exited ? 'data-exited="1"' : ''} tabindex="-1" role="button" aria-label="${esc(aria)}">`);
         } else {
           o.push(`<g>`);
         }
@@ -230,7 +231,7 @@
       const cx = c.x + c.w / 2;
       const meta = bySlug[c.slug] || {};
       if (!X) {
-        o.push(`<g data-chip data-med data-slug="${esc(c.slug)}" data-cx="${cx}" data-cy="${c.y + c.h / 2}" data-bx="${c.x + 12}" data-by="${c.y + 8}" data-bw="${c.w - 24}" data-bh="${c.h - 16}" data-cat="${esc(SHORT[meta.c] || '')}" data-region="${esc(REGION_KEY(meta.r || ''))}" data-mat="${esc(meta.m || '')}" data-text="${esc((c.name + ' ' + (meta.b || '')).toLowerCase())}" ${meta.g ? 'data-spoken="1"' : ''} tabindex="-1" role="button" aria-label="${esc(c.name + '; operator; ' + (c.claim || ''))}">`);
+        o.push(`<g data-chip data-med data-slug="${esc(c.slug)}" data-cx="${cx}" data-cy="${c.y + c.h / 2}" data-bx="${c.x + 12}" data-by="${c.y + 8}" data-bw="${c.w - 24}" data-bh="${c.h - 16}" data-cat="${esc(SHORT[meta.c] || '')}" data-region="${esc(REGION_KEY(meta.r || ''))}" data-mat="${esc(meta.m || '')}" data-text="${esc(c.name.toLowerCase())}" ${meta.g ? 'data-spoken="1"' : ''} tabindex="-1" role="button" aria-label="${esc(c.name + '; operator; ' + (c.claim || ''))}">`);
       } else o.push(`<g>`);
       // These used to be a bare mark on a dark slab, with no tile of their own,
       // which is much of why they read as a different species from the other 551.
@@ -484,13 +485,15 @@
       : { x: cx, y: dy >= 0 ? y + h : y };
   }
 
-  function select(slug) {
+  async function select(slug) {
     const g = chipEl(slug);
     if (!g) return;
     clearSel(true);
     state.sel = slug;
     svg.classList.add('has-sel');
     g.classList.add('sel', 'lit');
+    await Promise.all([ensurePartners(), ensureSlim()]);
+    if (state.sel !== slug) return;   // superseded while the indexes loaded
     const links = svg.querySelector('.links');
     const from = centerOf(g);
     const rec = partners.bySlug[slug];
@@ -519,7 +522,7 @@
         flyTo(from.x, from.y, cam.w);
       }
     }
-    ensureFull().then(() => { if (state.sel === slug) renderCard(slug, partnerRows); });
+    ensureFullRec(slug).then(() => { if (state.sel === slug) renderCard(slug, partnerRows); });
     history.replaceState(null, '', location.pathname + location.search + '#' + slug);
   }
 
@@ -533,17 +536,42 @@
     if (!soft) history.replaceState(null, '', location.pathname + location.search);
   }
 
-  // The full records are 700KB, which is not worth loading for a page nobody may
-  // click into. The card renders from the slim index first and fills in.
-  function ensureFull() {
-    return fullPromise || (fullPromise = json('data/av-companies.json')
-      .then(a => { full = Object.fromEntries(a.map(c => [c.slug, c])); })
-      .catch(() => { full = {}; }));
+  // Nothing beyond the layout loads at boot. The three detail payloads are
+  // priced per interaction: the company's own ~1.5KB shard, the partner index
+  // and the search index (for blurbs and site domains) all arrive on first
+  // selection and are cached after that.
+  function ensureFullRec(slug) {
+    if (!fullFetches.has(slug)) {
+      fullFetches.set(slug, json('data/companies/' + slug + '.json')
+        .then(rec => { fullRecs[slug] = rec; })
+        .catch(() => {}));
+    }
+    return fullFetches.get(slug);
+  }
+  let partnersPromise = null;
+  function ensurePartners() {
+    return partnersPromise || (partnersPromise = json('data/partner-index.json')
+      .then(p => { partners = p; })
+      .catch(() => { partners = { bySlug: {} }; }));
+  }
+  let slimPromise = null;
+  function ensureSlim() {
+    return slimPromise || (slimPromise = json('data/search-index.json').then(list => {
+      for (const c of list) {
+        const meta = bySlug[c.s];
+        if (meta) { meta.b = c.b; meta.d = c.d; meta.t = c.t; }
+      }
+      // the boot chips filter on names only; blurbs join the haystack now
+      svg.querySelectorAll('[data-chip]').forEach(g => {
+        const meta = bySlug[g.dataset.slug];
+        if (meta && meta.b) g.dataset.text += ' ' + String(meta.b).toLowerCase();
+      });
+    }).catch(() => {}));
   }
 
   function renderCard(slug, partnerRows) {
     const meta = bySlug[slug] || {};
-    const rec = (full && full[slug]) || null;
+    const rec = fullRecs[slug] || null;
     const op = isOperator(slug);
     const hue = window.AV.HUES[meta.c] ?? 220;
     const grouped = {};
@@ -680,6 +708,7 @@
     });
     let ft;
     document.getElementById('f-text').addEventListener('input', e => {
+      ensureSlim();   // widen the haystack from names to names + blurbs
       clearTimeout(ft);
       ft = setTimeout(() => { state.q = e.target.value.trim().toLowerCase(); applyFilters(); }, 120);
     });
@@ -892,15 +921,46 @@
   }
 
   // ------------------------------------------------------------ boot
+  // v2 wire format: chips travel as per-district rows sharing the district's
+  // tile size and hue. Inflate them back into the chip objects the renderer
+  // was written against.
+  function inflate(raw) {
+    if (!raw.v) return raw;
+    const chips = [];
+    const districts = raw.districts.map(d => {
+      const { rows, cw, ch, ...rest } = d;
+      for (const r of rows) {
+        const [slug, name, x, y, wh, mono, sub, pips, flags, region, mat, pc] = r;
+        chips.push({
+          district: rest.id, layer: rest.layer, hue: rest.hue, slug, name, x, y,
+          w: wh ? wh[0] : cw, h: wh ? wh[1] : ch, mono,
+          sub: sub ? sub.split('\n') : [], pips: pips || [],
+          spokenTo: !!(flags & 1), exited: !!(flags & 2), p: !!(flags & 4),
+          region, mat, pc,
+        });
+      }
+      return rest;
+    });
+    return { ...raw, districts, chips };
+  }
+
   async function boot() {
-    const [layout, slimIdx, pIdx] = await Promise.all([
-      json('data/poster-layout.json'), json('data/search-index.json'), json('data/partner-index.json')
-    ]);
-    L = layout; slim = slimIdx; partners = pIdx;
+    L = inflate(await json('data/poster-layout.json'));
     const bootStatus = document.getElementById('filter-state');
     if (bootStatus) bootStatus.textContent = 'Drawing 562 tiles…';
     W = L.meta.width; H = L.meta.height; MS = L.meta.medStyle; CS = L.meta.chipStyle;
-    bySlug = Object.fromEntries(slim.map(c => [c.s, c]));
+    bySlug = {};
+    for (const c of L.chips) {
+      bySlug[c.slug] = { n: c.name, c: c.layer, r: c.region, m: c.mat,
+        ...(c.spokenTo ? { g: 1 } : {}), ...(c.exited ? { x: 1 } : {}),
+        ...(c.p ? { p: 1 } : {}), pc: c.pc };
+    }
+    for (const mo of L.medallion) {
+      bySlug[mo.slug] = { n: mo.name, c: mo.cat, r: mo.r, m: mo.m,
+        ...((mo.f & 1) ? { g: 1 } : {}), ...((mo.f & 2) ? { x: 1 } : {}),
+        ...((mo.f & 4) ? { p: 1 } : {}), pc: mo.pc };
+    }
+    slim = Object.values(bySlug);
 
     // committed marks only; a slug absent from the manifest keeps its tile
     manifest = await logoManifest();

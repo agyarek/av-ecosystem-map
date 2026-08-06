@@ -162,5 +162,22 @@ dump(partner_index, "partner-index.json")
 dump(derived, "derived-counts.json", pretty=True)
 dump(search, "search-index.json")
 dump(skeleton, "skeleton.json")
+
+# per-company detail shards: what the map card fetches on selection, so a
+# single click costs ~1.5KB instead of the whole 750KB dataset. The full
+# av-companies.json stays untouched as the table's source and the advertised
+# download.
+shard_dir = os.path.join(ROOT, "data", "companies")
+os.makedirs(shard_dir, exist_ok=True)
+stale = {f for f in os.listdir(shard_dir) if f.endswith(".json")}
+for c in companies:
+    name = c["slug"] + ".json"
+    stale.discard(name)
+    json.dump(c, open(os.path.join(shard_dir, name), "w", encoding="utf-8"),
+              ensure_ascii=False, separators=(",", ":"))
+for f in sorted(stale):
+    os.remove(os.path.join(shard_dir, f))
+    print("removed stale shard", f)
+print(f"wrote {len(companies)} shards to data/companies/")
 print("stations:", derived["stations"])
 print("gaps:", derived["gaps"])

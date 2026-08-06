@@ -123,13 +123,16 @@ if os.path.exists(layout_path):
     # some district's overflow. A company falling out of all three would vanish
     # from the chart silently, which is the failure worth catching.
     over = [c for d in layout.get("districts", []) for c in d.get("overflow", [])]
-    reachable = ({ch["slug"] for ch in layout.get("chips", [])}
+    # v2 wire format: chips are per-district rows, [slug, name, x, y, ...]
+    reachable = ({row[0] for d in layout.get("districts", []) for row in d.get("rows", [])}
                  | {mo["slug"] for mo in layout.get("medallion", [])}
                  | {c["slug"] for c in over})
     if reachable != slugs:
         err(f"poster-layout reaches {len(reachable)} companies, data has {len(slugs)} "
             f"(differ by {len(reachable ^ slugs)}); re-run build-poster-layout.py")
     for d in layout.get("districts", []):
+        if len(d.get("rows", [])) != d.get("shown", 0):
+            err(f"district {d['id']}: {len(d.get('rows', []))} rows != shown {d.get('shown')}")
         if d.get("shown", 0) + len(d.get("overflow", [])) != d.get("count", 0):
             err(f"district {d['id']}: shown {d.get('shown')} + overflow "
                 f"{len(d.get('overflow', []))} != count {d.get('count')}")

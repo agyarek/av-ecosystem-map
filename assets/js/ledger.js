@@ -3,7 +3,7 @@
 (function () {
   'use strict';
   const { ROOT, esc, fmtM, json, HUES, layerColor, mountLogos, ICON,
-          linkedinSearch, wikiSummary, stockQuote, reducedMotion } = window.AV;
+          linkedinSearch, stockQuote, reducedMotion } = window.AV;
 
   const SHORT = {
     'AV Driver / Autonomy Software': 'driver', 'Sensing & Compute Hardware': 'sensing',
@@ -36,7 +36,6 @@
   let slimBySlug = {};
   const domainOf = c => (slimBySlug[c.slug] || {}).d || '';
   const logoDomainOf = c => (slimBySlug[c.slug] || {}).l || domainOf(c);
-  const wikiOf = c => (slimBySlug[c.slug] || {}).w || '';
   const tickerOf = c => (slimBySlug[c.slug] || {}).t || '';
   // "Jane Doe and John Roe, co-CEOs" becomes linked names. The dataset holds no
   // verified profile URLs, so each links to a LinkedIn people search scoped by
@@ -239,15 +238,6 @@
   // configured. Both fail silently, because a detail panel that is missing a
   // photo is fine and one showing a wrong price is not.
   function fillDetailExtras(c, dt) {
-    const title = wikiOf(c);
-    if (title) wikiSummary(title).then(w => {
-      const box = dt.querySelector('.d-shot');
-      if (!w || !box || !box.isConnected) return;
-      box.innerHTML = `<a href="${esc(w.page)}" target="_blank" rel="noopener noreferrer">
-        <img src="${esc(w.thumb)}" alt="${esc(c.name)}" loading="lazy" decoding="async">
-        <span class="d-credit">Wikipedia</span></a>`;
-      box.hidden = false;
-    });
     const slot = dt.querySelector('.d-quote');
     const ticker = slot && slot.dataset.ticker;
     if (!ticker) return;
@@ -289,7 +279,6 @@
       </div>
       ${site ? `<p class="d-site"><a href="https://${esc(site)}" target="_blank" rel="noopener noreferrer">${ICON.globe}${esc(site)}</a>
         <span class="d-quote" data-ticker="${esc(tickerOf(c))}"></span></p>` : ''}
-      <div class="d-shot" hidden></div>
       <p class="about">${esc(c.about || c.sub || '')}</p>
       ${c.leadership && c.leadership !== 'N/A (defunct)'
         ? `<div class="d-block"><h4>Leadership</h4><p class="d-people">${people(c.leadership, c.name, c.linkedin)}</p></div>` : ''}

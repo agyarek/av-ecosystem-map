@@ -142,31 +142,6 @@
     'https://www.linkedin.com/search/results/people/?keywords=' +
     encodeURIComponent([person, company].filter(Boolean).join(' '));
 
-  // -------------------------------------------------------- wikipedia
-  // A freely licensed picture and a one-line description, fetched when a card
-  // opens. The REST summary endpoint is CORS-open, needs no key, and follows
-  // redirects, so a near-miss title still resolves. A wrong or missing title
-  // returns 404 and the caller shows nothing, which is the whole failure mode.
-  const wikiCache = new Map();
-  function wikiSummary(title) {
-    if (!title) return Promise.resolve(null);
-    if (!wikiCache.has(title)) {
-      const url = 'https://en.wikipedia.org/api/rest_v1/page/summary/' +
-        encodeURIComponent(String(title).replace(/ /g, '_'));
-      wikiCache.set(title, fetch(url).then(r => r.ok ? r.json() : null).then(j => {
-        if (!j || j.type === 'disambiguation') return null;
-        const img = (j.originalimage && j.originalimage.source) || (j.thumbnail && j.thumbnail.source);
-        if (!img) return null;
-        return {
-          img, thumb: (j.thumbnail && j.thumbnail.source) || img,
-          page: (j.content_urls && j.content_urls.desktop && j.content_urls.desktop.page) ||
-                ('https://en.wikipedia.org/wiki/' + encodeURIComponent(String(title).replace(/ /g, '_'))),
-          extract: j.extract || '', title: j.title || title,
-        };
-      }).catch(() => null));
-    }
-    return wikiCache.get(title);
-  }
 
   // ----------------------------------------------------------- quotes
   // A static site cannot fetch a share price without a provider: none of the free
@@ -264,7 +239,7 @@
 
   window.AV = { ROOT, esc, fmtM, fmtDate, json, HUES, layerColor, reducedMotion,
                 LOGO_SOURCES, LOGO_MIN, probeLogo, mountLogos, ICON, linkedinSearch,
-                wikiSummary, stockQuote, stockEnabled,
+                stockQuote, stockEnabled,
                 ECON_INPUTS, avEconomics, chartColors, OTHER_SERIES };
 
   // ------------------------------------------------------------- chrome

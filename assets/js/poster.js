@@ -657,7 +657,6 @@
       </div>
       ${meta.g ? '<p class="spoken-bar">SPOKEN WITH DIRECTLY</p>' : ''}
       ${site ? `<p class="cc-site"><a href="https://${esc(site)}" target="_blank" rel="noopener noreferrer">${ICON.globe}${esc(site)}</a></p>` : ''}
-      <div class="cc-shot" hidden></div>
       ${(rec && (rec.about || rec.sub)) || meta.b ? `<p class="cc-sub">${esc((rec && (rec.about || rec.sub)) || meta.b)}</p>` : ''}
       ${rec && rec.leadership && rec.leadership !== 'N/A (defunct)' ? `<p class="cc-lead"><span class="pk">LEADERSHIP</span> ${people(rec.leadership, rec.name, rec.linkedin)}</p>` : ''}
       ${facts.length ? `<dl class="cc-facts">${facts.map(([k, v]) =>
@@ -682,15 +681,6 @@
     card.querySelectorAll('[data-go]').forEach(b =>
       b.addEventListener('click', () => select(b.dataset.go)));
     mountLogos(card);
-    if (meta.w) window.AV.wikiSummary(meta.w).then(w => {
-      const box = card.querySelector('.cc-shot');
-      if (!w || !box || state.sel !== slug) return;
-      box.innerHTML = `<a href="${esc(w.page)}" target="_blank" rel="noopener noreferrer">
-        <img src="${esc(w.thumb)}" alt="${esc(meta.n || slug)}" loading="lazy" decoding="async">
-        <span class="cc-credit">Wikipedia</span></a>`;
-      box.hidden = false;
-      positionCard();
-    });
     positionCard();
   }
 

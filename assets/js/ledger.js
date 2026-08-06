@@ -35,7 +35,6 @@
 
   let slimBySlug = {};
   const domainOf = c => (slimBySlug[c.slug] || {}).d || '';
-  const logoDomainOf = c => (slimBySlug[c.slug] || {}).l || domainOf(c);
   const tickerOf = c => (slimBySlug[c.slug] || {}).t || '';
   // "Jane Doe and John Roe, co-CEOs" becomes linked names. The dataset holds no
   // verified profile URLs, so each links to a LinkedIn people search scoped by
@@ -56,7 +55,7 @@
     { k: 'name', l: 'Company', on: 1, cls: 'c-name', v: c => c.name,
       // one flex wrapper inside the cell: a display value on the <td> itself would
       // drop it out of the table layout and its border would stop meeting the row's
-      h: c => `<span class="nm-wrap"><span class="mono-tile row-logo" aria-hidden="true" style="--tile:${layerColor(c.cat)}">${esc((c.mono || c.name.slice(0, 2)).toUpperCase())}${logoDomainOf(c) ? `<img alt="" data-logo-domain="${esc(logoDomainOf(c))}" decoding="async">` : ''}</span><span class="nm">${esc(c.name)}</span><span class="visually-hidden">, expand details</span>${c.spokenTo ? '<span class="spoken-tag">SPOKEN WITH DIRECTLY</span>' : ''}</span>` },
+      h: c => `<span class="nm-wrap"><span class="mono-tile row-logo" aria-hidden="true" style="--tile:${layerColor(c.cat)}">${esc((c.mono || c.name.slice(0, 2)).toUpperCase())}<img alt="${esc(c.name)}" data-logo="${esc(c.slug)}" width="256" height="256" decoding="async"></span><span class="nm">${esc(c.name)}</span><span class="visually-hidden">, expand details</span>${c.spokenTo ? '<span class="spoken-tag">SPOKEN WITH DIRECTLY</span>' : ''}</span>` },
     { k: 'cat', l: 'Layer', on: 1, cls: 'c-cat', v: c => c.cat, h: c => layerTag(c.cat) },
     { k: 'sub', l: 'Sub-focus', on: 1, cls: 'c-sub', v: c => c.sub, h: c => `<span class="clamp">${esc(c.sub)}</span>` },
     { k: 'hq', l: 'HQ', on: 1, v: c => c.hq, h: c => esc(c.hq) },
@@ -270,7 +269,7 @@
     ].filter(([, v]) => v || v === 0);
     return `<div class="detail-inner">
       <div class="d-head">
-        <span class="mono-tile d-logo" aria-hidden="true" style="--tile:${layerColor(c.cat)}">${esc(c.mono || c.name.slice(0, 2).toUpperCase())}${site ? `<img alt="" data-logo-domain="${esc(site)}" decoding="async">` : ''}</span>
+        <span class="mono-tile d-logo" aria-hidden="true" style="--tile:${layerColor(c.cat)}">${esc(c.mono || c.name.slice(0, 2).toUpperCase())}<img alt="${esc(c.name)}" data-logo="${esc(c.slug)}" width="256" height="256" decoding="async"></span>
         <div>
           <h3>${esc(c.name)}</h3>
           <p class="caption">${layerTag(c.cat)} · ${esc(c.region)}</p>

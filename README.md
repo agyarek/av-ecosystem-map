@@ -38,11 +38,12 @@ everything derivable into `data/` at build time; the browser renders and never r
     │                           centre of twelve operators, the ten remaining
     │                           layers tiling the frame around it (562/562)
     ├── build-indexes.py        partner index, derived counts, search index
-    ├── fetch-logos.py          OPTIONAL logo upgrade: fetches, trims and commits
-    │                           real marks. Logos already load at runtime, measured
-    │                           before display so a low-resolution icon is passed
-    │                           over; this is for print/export quality and offline
-    │                           resilience, not a prerequisite
+    ├── fetch-logos.py          the logo pipeline: fetches, trims and commits
+    │                           every mark (companies and media) into
+    │                           assets/logos/ plus data/logo-manifest.json; the
+    │                           pages render only these committed assets. Run it
+    │                           with the Fetch logos workflow (Actions tab),
+    │                           which commits the results back
     ├── build-social-cards.py   1200×630 OG cards rendered from the poster
     ├── render-poster.py        proofing render → poster-reference.svg
     └── make-csv.py             flat CSV export
@@ -61,13 +62,12 @@ python3 tools/render-poster.py        # optional: refresh the reference SVG
 
 Push to `main`; GitHub Pages serves the branch root directly.
 
-## Two optional keys
+## One optional key
 
-Both are off by default and the site works without either.
+Off by default; the site works without it.
 
 | Where | What it buys |
 |---|---|
-| `LOGO_DEV_TOKEN` in `assets/js/core.js` | a real logo CDN in front of the keyless chain |
 | `STOCK_ENDPOINT` in `assets/js/core.js` | live share prices on listed companies; needs a provider that sends CORS headers |
 
 ## Corrections

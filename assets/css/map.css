@@ -309,7 +309,6 @@ body.fs-pseudo #map-shell .fs-overlay { display: inline-flex; }
 
 /* Remote logos fade in over their monogram tile, so a slow favicon never
    shows as a blank square. */
-#poster image.logo-img, #poster .mono-fallback { transition: opacity 220ms ease; }
 
 /* The chart's other motion is gated in JS by reducedMotion(). The hover and
    selection lifts are CSS, so they are gated here. Colour and weight still

@@ -56,73 +56,26 @@
   const reducedMotion = () => matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   // ------------------------------------------------------------- logos
-  // Remote logo sources, tried in order. These are what make marks appear with no
-  // build step; the committed assets from tools/fetch-logos.py are an optional
-  // quality upgrade rather than a prerequisite.
-  //
-  // Order is by resolution first and connection cost second. The aggregators live
-  // on one host each, so hundreds of companies share a handful of connections; a
-  // company's own touch icon is usually the sharpest mark available but costs a
-  // fresh DNS lookup and handshake per company, so it is only reached when the
-  // shared hosts return something too small to use. Clearbit's free logo API, the
-  // usual answer here, shut down in December 2025. Set LOGO_DEV_TOKEN to a
-  // logo.dev publishable token to put a real logo CDN in front; the keyless
-  // sources still apply without one.
-  const LOGO_DEV_TOKEN = '';
-  const LOGO_SOURCES = [
-    d => LOGO_DEV_TOKEN && `https://img.logo.dev/${encodeURIComponent(d)}?token=${LOGO_DEV_TOKEN}&size=256&format=png&retina=true`,
-    d => `https://unavatar.io/${encodeURIComponent(d)}?fallback=false`,
-    d => `https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=${encodeURIComponent('https://' + d)}&size=256`,
-    d => `https://${d}/apple-touch-icon.png`,
-    d => `https://${d}/apple-touch-icon-precomposed.png`,
-    d => `https://www.google.com/s2/favicons?domain=${encodeURIComponent(d)}&sz=128`,
-    d => `https://icons.duckduckgo.com/ip3/${encodeURIComponent(d)}.ico`,
-  ];
-  const LOGO_MIN = 64;   // below this a mark is only used if nothing better exists
+  // Marks render from committed assets only: tools/fetch-logos.py (run via the
+  // Fetch logos workflow) freezes every mark into assets/logos/ and
+  // data/logo-manifest.json. Nothing is looked up remotely at runtime; a key
+  // absent from the manifest keeps its typographic tile.
+  let manifestPromise = null;
+  const logoManifest = () => manifestPromise ||
+    (manifestPromise = json('data/logo-manifest.json').catch(() => ({})));
 
-  // Probe each candidate with a plain Image so its real pixel size is known before
-  // anything is shown. The first mark at LOGO_MIN or better wins; if none clears
-  // the bar the largest one seen is used anyway, so a company with only a small
-  // icon still gets its logo rather than dropping to a monogram. `apply` receives
-  // the winning URL, or null when every source failed.
-  // Results are memoised per domain: renderCard calls mountLogos twice for a single
-  // click (once on the slim record, again once the full one arrives), and a company
-  // can appear on a card, in the navigator and in the table at the same time. Without
-  // this the same ladder of probes ran from scratch every time, and the mark visibly
-  // re-resolved on each render.
-  const logoCache = new Map();
-  function probeLogo(domain, apply) {
-    if (logoCache.has(domain)) return logoCache.get(domain).then(apply);
-    let settle;
-    logoCache.set(domain, new Promise(res => { settle = res; }));
-    const done = url => { settle(url); apply(url); };
-    let best = null, bestPx = 0;
-    (function step(i) {
-      if (i >= LOGO_SOURCES.length) return done(best);
-      const url = LOGO_SOURCES[i](domain);
-      if (!url) return step(i + 1);
-      const test = new Image();
-      test.decoding = 'async';
-      test.onload = () => {
-        const px = Math.max(test.naturalWidth || 0, test.naturalHeight || 0);
-        if (px >= LOGO_MIN) return done(url);
-        if (px > bestPx) { best = url; bestPx = px; }
-        step(i + 1);
-      };
-      test.onerror = () => step(i + 1);
-      test.src = url;
-    })(0);
-  }
-
-  // Fill every <img data-logo-domain="..."> under `root` with the best mark
-  // available, or remove it so whatever sits behind it (a monogram) shows through.
+  // Fill every <img data-logo="<key>"> under `root` with its committed mark,
+  // or remove the img so the tile behind it shows through. A key is a company
+  // slug, or media-<domain> for the media page.
   const mountLogos = root => {
-    (root || document).querySelectorAll('img[data-logo-domain]').forEach(el => {
-      const domain = el.dataset.logoDomain;
-      delete el.dataset.logoDomain;
-      probeLogo(domain, url => {
-        if (!url) return el.remove();
-        el.src = url; el.style.opacity = '1';
+    logoManifest().then(man => {
+      (root || document).querySelectorAll('img[data-logo]').forEach(el => {
+        const key = el.dataset.logo;
+        delete el.dataset.logo;
+        const m = man[key];
+        if (!m || !m.format) return el.remove();
+        el.src = ROOT + 'assets/logos/' + key + (m.format === 'svg' ? '.svg' : '.png');
+        el.style.opacity = '1';
       });
     });
   };
@@ -238,7 +191,7 @@
   const OTHER_SERIES = 'Other';
 
   window.AV = { ROOT, esc, fmtM, fmtDate, json, HUES, layerColor, reducedMotion,
-                LOGO_SOURCES, LOGO_MIN, probeLogo, mountLogos, ICON, linkedinSearch,
+                logoManifest, mountLogos, ICON, linkedinSearch,
                 stockQuote, stockEnabled,
                 ECON_INPUTS, avEconomics, chartColors, OTHER_SERIES };
 

@@ -9,8 +9,8 @@
    Filtering dims; it never reflows. One company, one chip, always. */
 (function () {
   'use strict';
-  const { ROOT, esc, json, fmtM, reducedMotion, LOGO_SOURCES, LOGO_MIN,
-          probeLogo, mountLogos, ICON, linkedinSearch } = window.AV;
+  const { ROOT, esc, json, fmtM, reducedMotion, logoManifest,
+          mountLogos, ICON, linkedinSearch } = window.AV;
 
   const svg = document.getElementById('poster');
   const viewport = document.getElementById('poster-viewport');
@@ -78,7 +78,6 @@
   };
   const oklch = (hue, l, c) => `oklch(${l} ${c} ${hue})`;
   const isOperator = slug => L.medallion.some(mo => mo.slug === slug);
-  const logoDomain = slug => (bySlug[slug] && (bySlug[slug].l || bySlug[slug].d)) || '';
   const siteDomain = slug => (bySlug[slug] && bySlug[slug].d) || '';
   // Deployment answers "where can I ride one", which is only a question for the
   // organisations that carry passengers.
@@ -110,96 +109,20 @@
       const href = forExport && atlasDataURL ? atlasDataURL : ROOT + 'assets/logos/atlas.png';
       return `<svg x="${cx - half}" y="${cy}" width="${size}" height="${size}" viewBox="${m.atlas.x} ${m.atlas.y} ${A.cell} ${A.cell}"><image href="${href}" width="${A.w}" height="${A.h}"/></svg>`;
     }
-    // Monogram tile in the layer hue. It always renders, and once a remote logo
-    // loads the tile fades away and the mark sits directly on the card — no
-    // white plate, no container border. A slow or missing favicon degrades to
-    // the tile rather than a hole.
+    // Typographic tile in the layer hue, for every mark the committed
+    // manifest does not carry.
     const fill = forExport ? oklch(hue, 0.66, 0.06) : `oklch(var(--tile-l) var(--tile-c) ${hue})`;
     const txfill = forExport ? '#FFFFFF' : 'var(--tile-ink)';
     const tile =
       `<rect x="${cx - half}" y="${cy}" width="${size}" height="${size}" rx="${size * 0.22}" fill="${fill}"/>` +
       `<text x="${cx}" y="${cy + size * 0.69}" font-size="${size * 0.47}" font-weight="800" text-anchor="middle" fill="${txfill}" font-family="Archivo, sans-serif">${esc(mono)}</text>`;
-    const domain = logoDomain(slug);
-    if (forExport || !domain) return tile;
-    // href is filled in by the lazy loader once the chip is near the viewport
-    return `<g class="mono-fallback" data-mono-for="${esc(slug)}">${tile}</g>` +
-      `<image class="logo-img" data-logo="${esc(slug)}" data-domain="${esc(domain)}" data-try="0" ` +
-      `x="${cx - half + size * 0.08}" y="${cy + size * 0.08}" width="${size * 0.84}" height="${size * 0.84}" ` +
-      `preserveAspectRatio="xMidYMid meet" opacity="0"/>`;
+    return tile;
   }
 
-  // ------------------------------------------------------------ lazy logos
-  // 442 favicon requests at once would stall a phone, so load only what is on
-  // or near screen, newest camera position first, and top up after each move.
-  const logoQueue = { pending: new Set(), inflight: 0, MAX: 8 };
-  // Each candidate is probed with a plain Image first, so its real pixel size is
-  // known before anything is shown. The first mark at LOGO_MIN or better wins; if
-  // no source clears the bar the largest one seen is used anyway, so a company
-  // with only a small icon still gets its logo rather than dropping to a monogram.
-  function bindLogo(img) {
-    probeLogo(img.dataset.domain, href => {
-      logoQueue.inflight--;
-      if (href) {
-        img.setAttribute('href', href);
-        img.style.opacity = '1';
-        const mono = svg.querySelector(`[data-mono-for="${CSS.escape(img.dataset.logo)}"]`);
-        if (mono) mono.style.opacity = '0';
-      }
-      pump();
-    });
-  }
-  function pump() {
-    while (logoQueue.inflight < logoQueue.MAX && logoQueue.pending.size) {
-      const img = logoQueue.pending.values().next().value;
-      logoQueue.pending.delete(img);
-      logoQueue.inflight++;
-      bindLogo(img);
-    }
-  }
-  let logoSweepScheduled = false;
-  function sweepLogos() {
-    if (logoSweepScheduled) return;
-    logoSweepScheduled = true;
-    requestAnimationFrame(() => {
-      logoSweepScheduled = false;
-      const pad = cam.w * 0.35;
-      const x0 = cam.x - pad, x1 = cam.x + cam.w + pad;
-      const y0 = cam.y - pad, y1 = cam.y + cam.h + pad;
-      svg.querySelectorAll('image.logo-img:not([data-queued])').forEach(img => {
-        const x = +img.getAttribute('x'), y = +img.getAttribute('y');
-        if (x < x0 || x > x1 || y < y0 || y > y1) return;
-        img.dataset.queued = '1';
-        logoQueue.pending.add(img);
-      });
-      pump();
-    });
-  }
-
-  // The viewport sweep only ever loads what the camera has visited, so marks kept
-  // appearing one patch at a time as you panned, and a chip you never scrolled to
-  // stayed a monogram forever. Once the on-screen marks are in flight, queue every
-  // remaining one so the chart finishes loading on its own. Still capped at MAX
-  // concurrent probes, so this fills in behind you rather than firing 562 requests
-  // at once — the stall the sweep was written to avoid.
-  //
-  // Skipped entirely when the committed logo assets are present: those render
-  // inline from the sprite and atlas, with no probing and nothing to stagger.
-  function backfillLogos() {
-    if (manifest) return;
-    svg.querySelectorAll('image.logo-img:not([data-queued])').forEach(img => {
-      img.dataset.queued = '1';
-      logoQueue.pending.add(img);
-    });
-    pump();
-  }
-  const scheduleBackfill = () => (window.requestIdleCallback || (fn => setTimeout(fn, 1200)))(backfillLogos);
-
-  // Navigator tiles and the card header are HTML, so a plain lazy <img> over the
-  // monogram is enough.
-  const navLogo = slug => {
-    const d = logoDomain(slug);
-    return d ? `<img alt="" data-logo-domain="${esc(d)}" decoding="async">` : '';
-  };
+  // Navigator tiles and the card header are HTML; mountLogos resolves these
+  // from the committed manifest.
+  const navLogo = (slug, name) =>
+    `<img alt="${esc(name || '')}" data-logo="${esc(slug)}" width="256" height="256" decoding="async">`;
 
   const poly = pts => pts.map(p => p.join(',')).join(' ');
 
@@ -337,7 +260,6 @@
 
   function applyCam() {
     svg.setAttribute('viewBox', `${cam.x} ${cam.y} ${cam.w} ${cam.h}`);
-    sweepLogos();
     positionCard();
   }
   // Zoom is bounded at both ends: out to the whole chart, in to 1.5x the
@@ -648,7 +570,7 @@
     const site = siteDomain(slug);
     card.innerHTML = `
       <div class="cc-top">
-        <span class="mono-tile cc-logo" aria-hidden="true" style="--tile:oklch(var(--layer-l) var(--layer-c) ${hue})">${esc((rec && rec.mono) || (meta.n || slug).slice(0, 2).toUpperCase())}${navLogo(slug)}</span>
+        <span class="mono-tile cc-logo" aria-hidden="true" style="--tile:oklch(var(--layer-l) var(--layer-c) ${hue})">${esc((rec && rec.mono) || (meta.n || slug).slice(0, 2).toUpperCase())}${navLogo(slug, meta.n || slug)}</span>
         <div class="cc-id">
           <h2>${esc(meta.n || slug)}</h2>
           <p class="cc-layer"><span class="dot" style="background:oklch(var(--layer-l) var(--layer-c) ${hue})"></span>${esc(meta.c || '')}${meta.r ? ' · ' + esc(meta.r) : ''}${meta.x ? ' · exited' : ''}</p>
@@ -665,7 +587,7 @@
         ? Object.entries(grouped).map(([k, ps]) =>
           `<div class="pg-row"><span class="pk">${esc(k.toUpperCase())}</span><div class="pg-chips">${ps.map(p =>
             p.slug
-              ? `<button class="cc-partner" data-go="${esc(p.slug)}"><span class="mono-tile cp-logo" aria-hidden="true">${esc((p.partner || '??').slice(0, 2).toUpperCase())}${navLogo(p.slug)}</span><span>${esc(p.partner)}</span></button>`
+              ? `<button class="cc-partner" data-go="${esc(p.slug)}"><span class="mono-tile cp-logo" aria-hidden="true">${esc((p.partner || '??').slice(0, 2).toUpperCase())}${navLogo(p.slug, p.partner)}</span><span>${esc(p.partner)}</span></button>`
               : `<span class="cc-partner is-plain">${esc(p.partner)}</span>`
           ).join('')}</div></div>`).join('')
         : `<span class="caption">If you know of any partnerships, please reach out to me.</span>
@@ -980,12 +902,14 @@
     W = L.meta.width; H = L.meta.height; MS = L.meta.medStyle; CS = L.meta.chipStyle;
     bySlug = Object.fromEntries(slim.map(c => [c.s, c]));
 
-    try {  // logo assets are optional by design; monograms are the default
-      manifest = await json('data/logo-manifest.json');
+    // committed marks only; a slug absent from the manifest keeps its tile
+    manifest = await logoManifest();
+    if (!Object.keys(manifest).length) manifest = null;
+    try {
       if (manifest && Object.keys(manifest).some(k => manifest[k].format === 'svg')) {
         spriteText = await (await fetch(ROOT + 'assets/logos/sprite.svg')).text();
       }
-    } catch (e) { manifest = null; }
+    } catch (e) { spriteText = null; }
 
     svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
     if (bootStatus) setTimeout(() => { if (bootStatus.textContent === 'Drawing 562 tiles…') bootStatus.textContent = ''; }, 600);
@@ -1012,8 +936,6 @@
       return true;
     };
 
-    sweepLogos();
-    scheduleBackfill();
     buildRail(); readURL(); bindCamera(); bindKeys(); bindExport(); bindFullscreen();
     chooseMode();
     goHome();

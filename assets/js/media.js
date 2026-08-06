@@ -7,6 +7,8 @@
 (function () {
   'use strict';
   const { json, esc, mountLogos } = window.AV;
+  // must match tools/fetch-logos.py media_key()
+  const logoKey = d => 'media-' + d.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
 
   const KIND_ICON = {
     read: '<svg viewBox="0 0 16 16" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11.2 2.2 13.8 4.8 5.6 13 2.2 13.8 3 10.4 Z"/></svg>',
@@ -17,7 +19,7 @@
 
   const tile = (m, kind) => `
     <a class="md-tile" href="${esc(m.url)}" target="_blank" rel="noopener">
-      <span class="mono-tile md-logo" aria-hidden="true">${esc(m.name.slice(0, 2).toUpperCase())}${m.domain ? `<img alt="" data-logo-domain="${esc(m.domain)}" decoding="async">` : ''}</span>
+      <span class="mono-tile md-logo" aria-hidden="true">${esc(m.name.slice(0, 2).toUpperCase())}${m.domain ? `<img alt="${esc(m.name)}" data-logo="${esc(logoKey(m.domain))}" width="256" height="256" decoding="async">` : ''}</span>
       <span class="md-body">
         <span class="md-name">${esc(m.name)}<span class="md-kind" title="${esc(KIND_LABEL[kind] || '')}">${KIND_ICON[kind] || ''}<span>${esc(KIND_LABEL[kind] || '')}</span></span>${m.pick ? '<span class="md-pick"><span class="gold-dot" aria-hidden="true"></span> LISTENED TO — RECOMMENDED</span>' : ''}</span>
         <span class="md-who">${esc(m.who || m.where || '')}</span>

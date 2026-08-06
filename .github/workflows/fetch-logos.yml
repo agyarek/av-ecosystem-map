@@ -7,6 +7,12 @@ name: Fetch logos
 
 on:
   workflow_dispatch:
+  # workflow_dispatch is only addressable once this file reaches the default
+  # branch, so on the feature branch a push that touches this file is the
+  # trigger. Scoped to this path: ordinary commits never rerun the fetch.
+  push:
+    branches: [upgrade/harden-and-ship]
+    paths: ['.github/workflows/fetch-logos.yml']
 
 permissions:
   contents: write

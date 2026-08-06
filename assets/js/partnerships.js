@@ -105,14 +105,14 @@
         const rows = enr.edges.filter(e => kinds.some(k => norm(e.k) === norm(k)));
         rows.forEach(e => used.add(e));
         if (!rows.length) return '';
-        return `<div class="pg" style="margin-top:14px"><h4>${esc(label)} · ${rows.length}</h4><ul>
+        return `<div class="pg" style="margin-top:14px"><h3>${esc(label)} · ${rows.length}</h3><ul>
           ${rows.map(e => `<li>${link(e.a)} <span class="caption">×</span> ${link(e.b)}
             ${e.n ? `<span class="caption">${esc(e.n)}</span>` : ''}</li>`).join('')}</ul></div>`;
       }).join('');
       const rest = enr.edges.filter(e => !used.has(e));
       document.getElementById('edges-slot').innerHTML =
         `<div class="partner-groups" style="margin-top:0">${sections}
-        ${rest.length ? `<div class="pg"><h4>Other · ${rest.length}</h4><ul>${rest.map(e =>
+        ${rest.length ? `<div class="pg"><h3>Other · ${rest.length}</h3><ul>${rest.map(e =>
           `<li>${link(e.a)} <span class="caption">×</span> ${link(e.b)}
            ${e.n ? `<span class="caption">${esc(e.n)}</span>` : ''}</li>`).join('')}</ul></div>` : ''}</div>`;
     })

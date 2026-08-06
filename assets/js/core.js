@@ -79,6 +79,7 @@
         if (!f) return el.remove();
         el.src = ROOT + 'assets/logos/' + key + (f === 'svg' ? '.svg' : '.png');
         el.style.opacity = '1';
+        if (el.parentElement) el.parentElement.classList.add('has-mark');
       });
     });
   };
@@ -267,8 +268,8 @@
           : (SOLO_MENUS[pages[0][0]] || [[pages[0][1], pages[0][2]]]).map(([href, label]) => [href, label, false]);
         return `<span class="np${here ? ' is-here' : ''}">
           <a data-nav="${pages[0][0]}" href="${ROOT}${pages[0][1]}"${here ? ' aria-current="page"' : ''}>${esc(name)}</a>
-          <button class="np-more" aria-expanded="false" aria-label="Show the pages in ${esc(name)}">${CARET}</button>
-          <ul class="np-sub">
+          <button class="np-more" aria-expanded="false" aria-controls="np-sub-${pages[0][0]}" aria-label="Show the pages in ${esc(name)}">${CARET}</button>
+          <ul class="np-sub" id="np-sub-${pages[0][0]}">
             ${items.map(([href, label, cur]) =>
               `<li><a href="${ROOT}${href}"${cur ? ' aria-current="page"' : ''}>${esc(label)}</a></li>`).join('')}
           </ul>

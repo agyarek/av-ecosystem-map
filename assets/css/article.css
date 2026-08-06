@@ -78,7 +78,7 @@
   background: var(--paper-2); border: 1px solid var(--rule);
   border-radius: var(--r-card); padding: 14px 18px;
 }
-.partner-groups .pg h4 {
+.partner-groups .pg h3 {
   font-family: var(--font-mono); font-size: 11px; font-weight: 600;
   letter-spacing: .12em; text-transform: uppercase; color: var(--muted);
 }

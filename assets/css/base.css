@@ -136,6 +136,17 @@ input, select { font: inherit; color: inherit; }
 }
 .skip-link:focus { top: 8px; color: var(--paper); }
 
+/* Touch targets: the chip controls render at ~32px, which reads right at
+   desktop density but is under the 44px floor for fingers. On coarse
+   pointers only, an invisible hit-area extension makes up the difference;
+   nothing changes visually anywhere. */
+@media (pointer: coarse) {
+  .chip, .np-more, .cc-close, #theme-toggle { position: relative; }
+  .chip::after, .np-more::after, .cc-close::after, #theme-toggle::after {
+    content: ''; position: absolute; inset: -7px;
+  }
+}
+
 /* The layer-grouped organisation index that renders when JavaScript is off.
    Lives inside <noscript>, so with JS on none of this paints. */
 .ns-index { margin: 24px auto; }
@@ -466,6 +477,10 @@ header.site.nav-open .nav-toggle .ic-close { display: block; }
   background: var(--tile, var(--ink-2));
   position: relative; overflow: hidden;
 }
+/* Once a real mark mounts it covers the tile completely; the monogram
+   letters underneath leave the paint so nothing unreadable sits behind it. */
+.mono-tile.has-mark { visibility: hidden; }
+.mono-tile.has-mark img { visibility: visible; }
 .mono-tile img {
   position: absolute; inset: 0; width: 100%; height: 100%;
   object-fit: contain; background: #fff; border-radius: inherit;

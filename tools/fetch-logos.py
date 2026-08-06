@@ -209,10 +209,18 @@ def main():
     # the full bookkeeping lives in provenance; the manifest keeps only what
     # the pages read at runtime. Older combined manifests migrate transparently.
     companies = load("av-companies.json")
-    domains = load("av-enrichment.json").get("domains", {})
+    enrichment = load("av-enrichment.json")
+    domains = enrichment.get("domains", {})
+    # logoDomains says "this company's usable mark lives on its parent's
+    # domain"; honour it first, then fall back to the company's own site
+    logo_domains = enrichment.get("logoDomains", {})
     slug_by_name = {c["name"]: c["slug"] for c in companies}
-    items = [(name, dom, slug_by_name[name]) for name, dom in sorted(domains.items())
-             if name in slug_by_name]
+    items = []
+    for name, dom in sorted(domains.items()):
+        if name not in slug_by_name:
+            continue
+        doms = [d for d in (logo_domains.get(name), dom) if d]
+        items.append((name, doms, slug_by_name[name]))
     # the media page's marks ride the same pipeline, keyed media-<domain>
     media_key = lambda d: "media-" + re.sub(r"[^a-z0-9]+", "-", d.lower()).strip("-")
     seen = set()
@@ -221,7 +229,7 @@ def main():
             dom = (m.get("domain") or "").strip()
             if dom and dom not in seen:
                 seen.add(dom)
-                items.append((m.get("name", dom), dom, media_key(dom)))
+                items.append((m.get("name", dom), [dom], media_key(dom)))
     manifest = {}
     if os.path.exists(PROVENANCE):
         manifest = json.load(open(PROVENANCE, encoding="utf-8"))
@@ -233,14 +241,14 @@ def main():
     if not assemble_only:
         os.makedirs(LOGO_DIR, exist_ok=True)
         sess = requests.Session()
-        todo = [(name, dom, slug) for name, dom, slug in items
+        todo = [(name, doms, slug) for name, doms, slug in items
                 if (not only or slug in only)
                 and (force or slug not in manifest)]
         log(f"{len(todo)} marks to fetch ({len(domains)} company domains known)")
         ok = fail = 0
-        for name, dom, slug in todo:
+        for name, doms, slug in todo:
             got = None
-            for kind, url in find_candidates(dom, sess):
+            for kind, url in (c for d in doms for c in find_candidates(d, sess)):
                 r = get(url, sess)
                 if r is None: continue
                 blob, ctype = r.content, r.headers.get("content-type", "")
@@ -262,7 +270,7 @@ def main():
                 log(f"  ok   {slug:36s} {got['source']:16s} {got['quality']}")
             else:
                 fail += 1
-                log(f"  MISS {slug:36s} ({dom})")
+                log(f"  MISS {slug:36s} ({', '.join(doms)})")
         log(f"fetched {ok}, missed {fail}")
 
     if manifest:

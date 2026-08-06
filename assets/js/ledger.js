@@ -55,7 +55,7 @@
     { k: 'name', l: 'Company', on: 1, cls: 'c-name', v: c => c.name,
       // one flex wrapper inside the cell: a display value on the <td> itself would
       // drop it out of the table layout and its border would stop meeting the row's
-      h: c => `<span class="nm-wrap"><span class="mono-tile row-logo" aria-hidden="true" style="--tile:${layerColor(c.cat)}">${esc((c.mono || c.name.slice(0, 2)).toUpperCase())}<img alt="${esc(c.name)}" data-logo="${esc(c.slug)}" width="256" height="256" decoding="async"></span><span class="nm">${esc(c.name)}</span><span class="visually-hidden">, expand details</span>${c.spokenTo ? '<span class="spoken-tag">SPOKEN WITH DIRECTLY</span>' : ''}</span>` },
+      h: c => `<button class="nm-wrap" type="button" aria-expanded="${state.open === c.slug}" aria-controls="d-${esc(c.slug)}"><span class="mono-tile row-logo" aria-hidden="true" style="--tile:${layerColor(c.cat)}">${esc((c.mono || c.name.slice(0, 2)).toUpperCase())}<img alt="${esc(c.name)}" data-logo="${esc(c.slug)}" width="256" height="256" decoding="async"></span><span class="nm">${esc(c.name)}</span><span class="visually-hidden">, expand details</span>${c.spokenTo ? '<span class="spoken-tag">SPOKEN WITH DIRECTLY</span>' : ''}</button>` },
     { k: 'cat', l: 'Layer', on: 1, cls: 'c-cat', v: c => c.cat, h: c => layerTag(c.cat) },
     { k: 'sub', l: 'Sub-focus', on: 1, cls: 'c-sub', v: c => c.sub, h: c => `<span class="clamp">${esc(c.sub)}</span>` },
     { k: 'hq', l: 'HQ', on: 1, v: c => c.hq, h: c => esc(c.hq) },
@@ -174,8 +174,7 @@
   function rowHTML(c) {
     const cols = shownCols().map(col =>
       `<td class="${col.cls || ''}">${col.h(c) ?? ''}</td>`).join('');
-    return `<tr class="row${c.status !== 'active' ? ' exited' : ''}" data-slug="${esc(c.slug)}" id="r-${esc(c.slug)}"
-      tabindex="0" aria-expanded="${state.open === c.slug}" aria-controls="d-${esc(c.slug)}">${cols}</tr>`;
+    return `<tr class="row${c.status !== 'active' ? ' exited' : ''}" data-slug="${esc(c.slug)}" id="r-${esc(c.slug)}">${cols}</tr>`;
   }
 
   function render() {
@@ -280,18 +279,18 @@
         <span class="d-quote" data-ticker="${esc(tickerOf(c))}"></span></p>` : ''}
       <p class="about">${esc(c.about || c.sub || '')}</p>
       ${c.leadership && c.leadership !== 'N/A (defunct)'
-        ? `<div class="d-block"><h4>Leadership</h4><p class="d-people">${people(c.leadership, c.name, c.linkedin)}</p></div>` : ''}
-      ${facts.length || caveats.length ? `<div class="d-block"><h4>Key metrics</h4>
+        ? `<div class="d-block"><h3>Leadership</h3><p class="d-people">${people(c.leadership, c.name, c.linkedin)}</p></div>` : ''}
+      ${facts.length || caveats.length ? `<div class="d-block"><h3>Key metrics</h3>
         ${facts.length ? `<ul class="d-metrics">${facts.map(s => `<li>${esc(s)}</li>`).join('')}</ul>` : ''}
         ${caveats.map(s => `<p class="caption">${esc(s)}</p>`).join('')}</div>` : ''}
-      <div class="d-block"><h4>Record</h4>
+      <div class="d-block"><h3>Record</h3>
         <dl>${dl.map(([k, v]) => `<dt>${esc(k)}</dt><dd>${esc(String(v))}</dd>`).join('')}</dl></div>
-      <div class="d-block d-src"><h4>In the news</h4>
+      <div class="d-block d-src"><h3>In the news</h3>
         ${(c.sources || []).length ? c.sources.map(s =>
           `<div>${ICON.news} <a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${esc(s.title)}</a> <span class="caption">${esc(s.date)}</span></div>`).join('')
           : `<p class="caption">No article filed against this record yet. <a href="https://news.google.com/search?q=${encodeURIComponent('"' + c.name + '" autonomous')}" target="_blank" rel="noopener noreferrer">Search the news</a>, and if you spot something worth adding, please reach out to me.</p>`}
       </div>
-      <div class="d-block d-partners"><h4>Mapped partnerships${p ? ` · ${p.count}` : ''}</h4>
+      <div class="d-block d-partners"><h3>Mapped partnerships${p ? ` · ${p.count}` : ''}</h3>
         ${p ? '<ul>' + p.partners.map(pp =>
           `<li><span class="pk">${esc(pp.k.toUpperCase())}</span>${pp.slug
             ? `<a class="co-link" href="../companies/?open=${encodeURIComponent(pp.slug)}">${esc(pp.partner)}</a>`
@@ -326,7 +325,7 @@
 
   function closeDetail() {
     document.querySelectorAll('tr.detail').forEach(t => t.remove());
-    document.querySelectorAll('tr.row[aria-expanded="true"]').forEach(t => t.setAttribute('aria-expanded', 'false'));
+    document.querySelectorAll('.nm-wrap[aria-expanded="true"]').forEach(t => t.setAttribute('aria-expanded', 'false'));
     state.open = null;
   }
   function openDetail(tr, slug, scroll) {
@@ -334,7 +333,8 @@
     const c = rows.find(r => r.slug === slug);
     if (!c) return;
     state.open = slug;
-    tr.setAttribute('aria-expanded', 'true');
+    const expand = tr.querySelector('.nm-wrap');
+    if (expand) expand.setAttribute('aria-expanded', 'true');
     const dt = document.createElement('tr');
     dt.className = 'detail';
     dt.id = 'd-' + slug;

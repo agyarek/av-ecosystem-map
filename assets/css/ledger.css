@@ -151,7 +151,7 @@ tr.detail > td { padding: 0; border-bottom: 1px solid var(--ink); background: va
 .detail-inner .d-quote { display: inline-flex; align-items: baseline; gap: 7px; }
 .detail-inner .d-quote .tick { font-family: var(--font-mono); font-size: 11px; color: var(--muted); }
 .detail-inner .d-block { margin-top: 20px; }
-.detail-inner .d-block h4 {
+.detail-inner .d-block h3 {
   font-family: var(--font-mono); font-size: 10.5px; font-weight: 600;
   letter-spacing: .1em; text-transform: uppercase; color: var(--muted);
   padding-bottom: 6px; border-bottom: 1px solid var(--rule); margin-bottom: 10px;
@@ -243,6 +243,8 @@ tr.detail > td { padding: 0; border-bottom: 1px solid var(--ink); background: va
 #lg-table td.c-name .nm-wrap {
   display: grid; grid-template-columns: auto minmax(0, 1fr);
   align-items: center; gap: 5px 9px;
+  /* it is a button now; keep the span's geometry */
+  width: 100%; text-align: left;
 }
 #lg-table td.c-name .nm { grid-column: 2; }
 #lg-table td.c-name .spoken-tag { grid-column: 2; justify-self: start; }

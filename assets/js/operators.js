@@ -41,7 +41,7 @@
       const grouped = {};
       for (const p of rec.partners) (grouped[p.k] = grouped[p.k] || []).push(p);
       slot.innerHTML = Object.entries(grouped).map(([k, ps]) => `
-        <div class="pg"><h4>${esc(k)}</h4><ul>
+        <div class="pg"><h3>${esc(k)}</h3><ul>
           ${ps.map(p => `<li>${p.slug
             ? `<a href="${ROOT}map/#${esc(p.slug)}">${esc(p.partner)}</a>`
             : `<strong>${esc(p.partner)}</strong>`}

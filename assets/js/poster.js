@@ -9,7 +9,7 @@
    Filtering dims; it never reflows. One company, one chip, always. */
 (function () {
   'use strict';
-  const { ROOT, esc, json, fmtM, reducedMotion, logoManifest,
+  const { ROOT, esc, json, fmtM, reducedMotion,
           mountLogos, ICON, linkedinSearch } = window.AV;
 
   const svg = document.getElementById('poster');
@@ -53,7 +53,7 @@
   };
 
   let L = null, slim = null, bySlug = null, partners = null;
-  let manifest = null, spriteText = null, atlasDataURL = null;
+  let spriteText = null, atlasDataURL = null;
   const fullRecs = {};                       // complete records, one shard per selection
   const fullFetches = new Map();
   let W = 0, H = 0, MS = null, CS = null;
@@ -99,16 +99,19 @@
 
   // ------------------------------------------------------------ SVG build
 
-  function logoMarkup(slug, cx, cy, size, hue, mono, forExport) {
-    const m = manifest && manifest[slug];
+  // lg is the chip's baked logo ref: 1 = sprite symbol, [x, y] = atlas cell,
+  // 0 = no committed mark
+  function logoMarkup(slug, lg, cx, cy, size, hue, mono, forExport) {
     const half = size / 2;
-    if (m && m.format === 'svg' && spriteText) {
+    if (lg === 1 && spriteText) {
       return `<use href="#logo-${esc(slug)}" x="${cx - half}" y="${cy}" width="${size}" height="${size}"/>`;
     }
-    if (m && m.format === 'png' && m.atlas && manifest.__atlas__) {
-      const A = manifest.__atlas__;
-      const href = forExport && atlasDataURL ? atlasDataURL : ROOT + 'assets/logos/atlas.png';
-      return `<svg x="${cx - half}" y="${cy}" width="${size}" height="${size}" viewBox="${m.atlas.x} ${m.atlas.y} ${A.cell} ${A.cell}"><image href="${href}" width="${A.w}" height="${A.h}"/></svg>`;
+    if (Array.isArray(lg) && L.meta.atlas) {
+      const A = L.meta.atlas;
+      // webp for live rendering (2.6x lighter); the export embeds the PNG so
+      // the standalone SVG opens in editors that never learned webp
+      const href = forExport && atlasDataURL ? atlasDataURL : ROOT + 'assets/logos/atlas.webp';
+      return `<svg x="${cx - half}" y="${cy}" width="${size}" height="${size}" viewBox="${lg[0]} ${lg[1]} ${A.cell} ${A.cell}"><image href="${href}" width="${A.w}" height="${A.h}"/></svg>`;
     }
     // Typographic tile in the layer hue, for every mark the committed
     // manifest does not carry.
@@ -196,7 +199,7 @@
           o.push(`<g>`);
         }
         o.push(`<rect class="chip-body" x="${c.x + 8}" y="${c.y + 6}" width="${c.w - 16}" height="${c.h - 12}" rx="16" fill="${C.paper}"/>`);
-        o.push(logoMarkup(c.slug, cx, cy + CS.logoY, CS.logo, c.hue, c.mono, X));
+        o.push(logoMarkup(c.slug, c.logo, cx, cy + CS.logoY, CS.logo, c.hue, c.mono, X));
         wrapText(c.name, CS.nameChars, 2).forEach((ln, i) => {
           o.push(`<text x="${cx}" y="${cy + CS.nameY + i * CS.nameStep}" font-size="${CS.nameSize}" font-weight="700" text-anchor="middle" fill="${C.ink}" font-family="Archivo, sans-serif">${esc(ln)}</text>`);
         });
@@ -238,7 +241,7 @@
       // They now get the same bounded tile every district chip has, so they
       // inherit the same hover and selection states and the same logo pipeline.
       o.push(`<rect class="chip-body" x="${c.x + 12}" y="${c.y + 8}" width="${c.w - 24}" height="${c.h - 16}" rx="22" fill="${C.paper}"/>`);
-      o.push(logoMarkup(c.slug, cx, c.y + MS.logoY, MS.logo, c.hue, c.mono, X));
+      o.push(logoMarkup(c.slug, c.logo, cx, c.y + MS.logoY, MS.logo, c.hue, c.mono, X));
       o.push(`<text x="${cx}" y="${c.y + MS.nameY}" font-size="${MS.nameSize}" font-weight="700" text-anchor="middle" fill="${C.medtx}" font-family="Archivo, sans-serif">${esc(c.name)}</text>`);
       wrapText(c.claim || '', MS.claimChars, 4).forEach((ln, j) => {
         o.push(`<text x="${cx}" y="${c.y + MS.claimY + j * MS.claimStep}" font-size="${MS.claimSize}" text-anchor="middle" fill="${C.medsub}" font-family="Archivo, sans-serif">${esc(ln)}</text>`);
@@ -854,7 +857,7 @@
     } catch (e) { return ''; }
   }
   async function exportString() {
-    if (manifest && !atlasDataURL) {
+    if (L.meta.atlas && !atlasDataURL) {
       try {
         const blob = await (await fetch(ROOT + 'assets/logos/atlas.png')).blob();
         atlasDataURL = await new Promise(res => {
@@ -930,13 +933,13 @@
     const districts = raw.districts.map(d => {
       const { rows, cw, ch, ...rest } = d;
       for (const r of rows) {
-        const [slug, name, x, y, wh, mono, sub, pips, flags, region, mat, pc] = r;
+        const [slug, name, x, y, wh, mono, sub, pips, flags, region, mat, pc, logo] = r;
         chips.push({
           district: rest.id, layer: rest.layer, hue: rest.hue, slug, name, x, y,
           w: wh ? wh[0] : cw, h: wh ? wh[1] : ch, mono,
           sub: sub ? sub.split('\n') : [], pips: pips || [],
           spokenTo: !!(flags & 1), exited: !!(flags & 2), p: !!(flags & 4),
-          region, mat, pc,
+          region, mat, pc, logo: logo || 0,
         });
       }
       return rest;
@@ -962,14 +965,13 @@
     }
     slim = Object.values(bySlug);
 
-    // committed marks only; a slug absent from the manifest keeps its tile
-    manifest = await logoManifest();
-    if (!Object.keys(manifest).length) manifest = null;
-    try {
-      if (manifest && Object.keys(manifest).some(k => manifest[k].format === 'svg')) {
+    // committed marks only, baked into the layout; the sprite rides along
+    // when any chip references a vector symbol
+    if (L.chips.some(c => c.logo === 1) || L.medallion.some(mo => mo.logo === 1)) {
+      try {
         spriteText = await (await fetch(ROOT + 'assets/logos/sprite.svg')).text();
-      }
-    } catch (e) { spriteText = null; }
+      } catch (e) { spriteText = null; }
+    }
 
     svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
     if (bootStatus) setTimeout(() => { if (bootStatus.textContent === 'Drawing 562 tiles…') bootStatus.textContent = ''; }, 600);

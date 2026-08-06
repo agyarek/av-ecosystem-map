@@ -423,6 +423,26 @@ def main():
     if not os.path.exists(slim_path):
         sys.exit("FATAL: data/search-index.json missing; run tools/build-indexes.py first")
     slim = {c["s"]: c for c in json.load(open(slim_path, encoding="utf-8"))}
+    # committed logo refs bake into the wire so the poster never fetches the
+    # manifest: 1 = sprite symbol, [x, y] = atlas cell, 0 = typographic tile
+    man_path = os.path.join(ROOT, "data", "logo-manifest.json")
+    logo_ref = {}
+    atlas_meta = None
+    if os.path.exists(man_path):
+        man = json.load(open(man_path, encoding="utf-8"))
+        for k, v in man.items():
+            if k == "__atlas__":
+                atlas_meta = {"w": v["w"], "h": v["h"], "cell": v["cell"]}
+            elif not isinstance(v, dict):
+                continue
+            elif (v.get("f") or v.get("format")) == "svg":
+                logo_ref[k] = 1
+            elif "a" in v:
+                logo_ref[k] = v["a"]
+            elif isinstance(v.get("atlas"), dict):
+                logo_ref[k] = [v["atlas"]["x"], v["atlas"]["y"]]
+    if atlas_meta:
+        layout["meta"]["atlas"] = atlas_meta
     flags_of = lambda m: (1 if m.get("g") else 0) | (2 if m.get("x") else 0) | (4 if m.get("p") else 0)
 
     by_district = collections.defaultdict(list)
@@ -443,6 +463,7 @@ def main():
                 c["mono"], "\n".join(c["sub"]) if c.get("sub") else "",
                 c["pips"] or 0, flags_of(m),
                 m.get("r", ""), m.get("m", ""), m.get("pc", 0),
+                logo_ref.get(c["slug"], 0),
             ])
         v2_districts.append({**d, "cw": CHIP_W, "ch": CHIP_H, "rows": rows})
     v2_medallion = []
@@ -450,7 +471,8 @@ def main():
         m = slim.get(c["slug"]) or sys.exit(f"FATAL: {c['slug']} missing from search-index")
         v2_medallion.append({**{k: v for k, v in c.items() if k != "id"},
                              "r": m.get("r", ""), "m": m.get("m", ""),
-                             "f": flags_of(m), "pc": m.get("pc", 0)})
+                             "f": flags_of(m), "pc": m.get("pc", 0),
+                             "logo": logo_ref.get(c["slug"], 0)})
     layout_v2 = {"v": 2, "meta": layout["meta"], "oct": layout["oct"],
                  "districts": v2_districts, "medallion": v2_medallion}
 

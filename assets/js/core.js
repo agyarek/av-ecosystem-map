@@ -68,13 +68,16 @@
   // or remove the img so the tile behind it shows through. A key is a company
   // slug, or media-<domain> for the media page.
   const mountLogos = root => {
+    const imgs = (root || document).querySelectorAll('img[data-logo]');
+    if (!imgs.length) return;   // no marks here: the manifest is never fetched
     logoManifest().then(man => {
-      (root || document).querySelectorAll('img[data-logo]').forEach(el => {
+      imgs.forEach(el => {
         const key = el.dataset.logo;
         delete el.dataset.logo;
         const m = man[key];
-        if (!m || !m.format) return el.remove();
-        el.src = ROOT + 'assets/logos/' + key + (m.format === 'svg' ? '.svg' : '.png');
+        const f = m && (m.f || m.format);
+        if (!f) return el.remove();
+        el.src = ROOT + 'assets/logos/' + key + (f === 'svg' ? '.svg' : '.png');
         el.style.opacity = '1';
       });
     });

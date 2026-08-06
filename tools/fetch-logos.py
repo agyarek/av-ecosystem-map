@@ -9,7 +9,11 @@ square transparent asset, and freezes the results into committed files:
     assets/logos/<slug>.svg|png     per-company asset
     assets/logos/sprite.svg         every vector mark as a <symbol id="logo-<slug>">
     assets/logos/atlas.png|webp     grid atlas of raster-only marks
-    data/logo-manifest.json         source, fetch date, format, quality per company
+    data/logo-manifest.json         the runtime index, lean: format (+ atlas cell)
+    data/logo-provenance.json       source, url, fetch date, quality per mark
+
+After a fetch, re-run tools/build-indexes.py and tools/build-poster-layout.py:
+the poster embeds atlas cells at build time and must agree with the atlas.
 
 The site renders monogram tiles for any company absent from the manifest, so
 this script can be re-run quarterly (or never) without breaking a page.
@@ -27,6 +31,7 @@ import json, os, re, sys, io, base64, datetime, urllib.parse
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 LOGO_DIR = os.path.join(ROOT, "assets", "logos")
 MANIFEST = os.path.join(ROOT, "data", "logo-manifest.json")
+PROVENANCE = os.path.join(ROOT, "data", "logo-provenance.json")
 UA = {"User-Agent": "Mozilla/5.0 (compatible; av-ecosystem-map logo pipeline; "
       "+https://github.com/agyarek/av-ecosystem-map)"}
 TIMEOUT = 12
@@ -201,6 +206,8 @@ def main():
     if "--only" in sys.argv:
         only = set(sys.argv[sys.argv.index("--only") + 1].split(","))
 
+    # the full bookkeeping lives in provenance; the manifest keeps only what
+    # the pages read at runtime. Older combined manifests migrate transparently.
     companies = load("av-companies.json")
     domains = load("av-enrichment.json").get("domains", {})
     slug_by_name = {c["name"]: c["slug"] for c in companies}
@@ -216,8 +223,12 @@ def main():
                 seen.add(dom)
                 items.append((m.get("name", dom), dom, media_key(dom)))
     manifest = {}
-    if os.path.exists(MANIFEST):
-        manifest = json.load(open(MANIFEST, encoding="utf-8"))
+    if os.path.exists(PROVENANCE):
+        manifest = json.load(open(PROVENANCE, encoding="utf-8"))
+    elif os.path.exists(MANIFEST):
+        old = json.load(open(MANIFEST, encoding="utf-8"))
+        if any(isinstance(v, dict) and "source" in v for v in old.values()):
+            manifest = old
 
     if not assemble_only:
         os.makedirs(LOGO_DIR, exist_ok=True)
@@ -256,9 +267,20 @@ def main():
 
     if manifest:
         assemble(manifest)
-    json.dump(manifest, open(MANIFEST, "w", encoding="utf-8"), indent=1, sort_keys=True)
-    log(f"wrote data/logo-manifest.json ({len(manifest)} entries). "
-        f"Companies absent from the manifest render as monogram tiles by design.")
+    json.dump(manifest, open(PROVENANCE, "w", encoding="utf-8"), indent=1, sort_keys=True)
+    lean = {}
+    for k, v in manifest.items():
+        if k == "__atlas__":
+            lean[k] = v
+        elif v.get("format") == "svg":
+            lean[k] = {"f": "svg"}
+        elif "atlas" in v:
+            lean[k] = {"f": "png", "a": [v["atlas"]["x"], v["atlas"]["y"]]}
+    json.dump(lean, open(MANIFEST, "w", encoding="utf-8"),
+              ensure_ascii=False, separators=(",", ":"), sort_keys=True)
+    log(f"wrote data/logo-provenance.json ({len(manifest)} entries) and the lean "
+        f"runtime manifest ({os.path.getsize(MANIFEST)} bytes). Marks absent from "
+        f"the manifest render as monogram tiles by design.")
 
 if __name__ == "__main__":
     main()

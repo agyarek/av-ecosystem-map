@@ -35,11 +35,19 @@ jobs:
       - name: Fetch, normalise and assemble
         run: python3 tools/fetch-logos.py
 
+      # the poster embeds atlas cells at build time, so a fresh atlas means
+      # regenerated indexes and layout, validated before anything is committed
+      - name: Rebuild derived data against the new atlas
+        run: |
+          python3 tools/build-indexes.py
+          python3 tools/build-poster-layout.py
+          python3 tools/validate-data.py
+
       - name: Commit the results
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add assets/logos data/logo-manifest.json
+          git add assets/logos data/logo-manifest.json data/logo-provenance.json data/
           if git diff --cached --quiet; then
             echo "nothing new fetched"; exit 0
           fi

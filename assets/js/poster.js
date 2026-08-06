@@ -626,11 +626,27 @@
       ${sources.length ? `<div class="cc-src"><span class="pk">SOURCES</span>${sources.map(s =>
         `<div><a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${esc(s.title)}</a>${s.date ? ` <span class="caption">${esc(s.date)}</span>` : ''}</div>`).join('')}</div>` : ''}
       <div class="cc-actions">
+        <button class="btn" id="cc-copy" type="button">COPY LINK</button>
         ${op ? `<a class="btn" href="${ROOT}companies/${esc(slug)}/">OPERATOR PAGE</a>` : ''}
         <a class="btn" href="${ROOT}companies/?open=${encodeURIComponent(slug)}">${op ? 'DIRECTORY ROW' : 'OPEN IN THE DIRECTORY'}</a>
       </div>`;
     card.hidden = false;
-    card.querySelector('.cc-close').addEventListener('click', () => clearSel());
+    card.addEventListener('keydown', e => {
+      if (e.key === 'Escape') { e.stopPropagation(); clearSel(); viewport.focus(); }
+    });
+    card.querySelector('.cc-close').addEventListener('click', () => { clearSel(); viewport.focus(); });
+    // the canonical link to this selection: path plus hash, no filter noise
+    const copyBtn = card.querySelector('#cc-copy');
+    copyBtn.addEventListener('click', () => {
+      const url = location.origin + location.pathname + '#' + encodeURIComponent(slug);
+      const done = ok => {
+        copyBtn.textContent = ok ? 'COPIED' : 'COPY FAILED';
+        setTimeout(() => { copyBtn.textContent = 'COPY LINK'; }, 1600);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(url).then(() => done(true), () => done(false));
+      } else done(false);
+    });
     card.querySelectorAll('[data-go]').forEach(b =>
       b.addEventListener('click', () => select(b.dataset.go)));
     mountLogos(card);

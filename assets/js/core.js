@@ -311,6 +311,7 @@
   const footerHTML = el => `<div class="container">
     ${BIO.replace('{ROOT}', ROOT)}
     <p class="fine">Autonomous Vehicle Ecosystem Map · built by <a href="${LINKEDIN}" target="_blank" rel="noopener noreferrer">Kofi Agyare-Kwabi</a> · updated <span data-updated>${UPDATED}</span></p>
+    <p class="fine">Companion reading: <a href="https://agyarek.github.io/autonomy-explained/">Autonomy, explained</a>, the field guide to how the industry works.</p>
     ${el.hasAttribute('data-trademark') ? `<p class="fine">${TRADEMARK}</p>` : ''}
   </div>`;
 

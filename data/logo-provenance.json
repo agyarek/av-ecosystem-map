@@ -485,7 +485,7 @@
   "source": "apple-touch",
   "url": "https://cdn.prod.website-files.com/650dd89f9d632d99c3f3ec7a/6a3d10771b93733032cb2755_favicon-light.png"
  },
- "baidu-apollo-hd-map-baidu-maps": {
+ "baidu-apollo-ace-vehicle-road-cloud": {
   "atlas": {
    "x": 3264,
    "y": 192
@@ -497,10 +497,34 @@
   "source": "link-icon",
   "url": "https://www.baidu.com/favicon.ico"
  },
- "beazley": {
+ "baidu-apollo-go": {
   "atlas": {
    "x": 3456,
    "y": 192
+  },
+  "fetched": "2026-08-06",
+  "format": "png",
+  "px": 64,
+  "quality": "poor",
+  "source": "link-icon",
+  "url": "https://www.baidu.com/favicon.ico"
+ },
+ "baidu-apollo-hd-map-baidu-maps": {
+  "atlas": {
+   "x": 0,
+   "y": 384
+  },
+  "fetched": "2026-08-06",
+  "format": "png",
+  "px": 64,
+  "quality": "poor",
+  "source": "link-icon",
+  "url": "https://www.baidu.com/favicon.ico"
+ },
+ "beazley": {
+  "atlas": {
+   "x": 192,
+   "y": 384
   },
   "fetched": "2026-08-06",
   "format": "png",
@@ -511,7 +535,7 @@
  },
  "beep": {
   "atlas": {
-   "x": 0,
+   "x": 384,
    "y": 384
   },
   "fetched": "2026-08-06",
@@ -530,7 +554,7 @@
  },
  "bliq": {
   "atlas": {
-   "x": 192,
+   "x": 576,
    "y": 384
   },
   "fetched": "2026-08-06",
@@ -542,7 +566,7 @@
  },
  "bmw-personal-pilot-adas": {
   "atlas": {
-   "x": 384,
+   "x": 768,
    "y": 384
   },
   "fetched": "2026-08-06",
@@ -568,7 +592,7 @@
  },
  "bot-auto": {
   "atlas": {
-   "x": 576,
+   "x": 960,
    "y": 384
   },
   "fetched": "2026-08-06",
@@ -587,7 +611,7 @@
  },
  "byd": {
   "atlas": {
-   "x": 768,
+   "x": 1152,
    "y": 384
   },
   "fetched": "2026-08-06",
@@ -606,7 +630,7 @@
  },
  "california-department-of-motor-vehicles-california-dmv": {
   "atlas": {
-   "x": 960,
+   "x": 1344,
    "y": 384
   },
   "fetched": "2026-08-06",
@@ -618,7 +642,7 @@
  },
  "california-dmv": {
   "atlas": {
-   "x": 1152,
+   "x": 1536,
    "y": 384
   },
   "fetched": "2026-08-06",
@@ -630,7 +654,7 @@
  },
  "cambridge-mobile-telematics": {
   "atlas": {
-   "x": 1344,
+   "x": 1728,
    "y": 384
   },
   "fetched": "2026-08-06",
@@ -642,7 +666,7 @@
  },
  "caocao-mobility": {
   "atlas": {
-   "x": 1536,
+   "x": 1920,
    "y": 384
   },
   "fetched": "2026-08-06",
@@ -654,7 +678,7 @@
  },
  "carla": {
   "atlas": {
-   "x": 1728,
+   "x": 2112,
    "y": 384
   },
   "fetched": "2026-08-06",
@@ -666,7 +690,7 @@
  },
  "cartken": {
   "atlas": {
-   "x": 1920,
+   "x": 2304,
    "y": 384
   },
   "fetched": "2026-08-06",
@@ -678,7 +702,7 @@
  },
  "cavnue": {
   "atlas": {
-   "x": 2112,
+   "x": 2496,
    "y": 384
   },
   "fetched": "2026-08-06",
@@ -690,7 +714,7 @@
  },
  "ccc-intelligent-solutions": {
   "atlas": {
-   "x": 2304,
+   "x": 2688,
    "y": 384
   },
   "fetched": "2026-08-06",
@@ -702,7 +726,7 @@
  },
  "cepton": {
   "atlas": {
-   "x": 2496,
+   "x": 2880,
    "y": 384
   },
   "fetched": "2026-08-06",
@@ -714,7 +738,7 @@
  },
  "chargepoint": {
   "atlas": {
-   "x": 2688,
+   "x": 3072,
    "y": 384
   },
   "fetched": "2026-08-06",
@@ -726,7 +750,7 @@
  },
  "chubb": {
   "atlas": {
-   "x": 2880,
+   "x": 3264,
    "y": 384
   },
   "fetched": "2026-08-06",
@@ -738,7 +762,7 @@
  },
  "coco": {
   "atlas": {
-   "x": 3072,
+   "x": 3456,
    "y": 384
   },
   "fetched": "2026-08-06",
@@ -750,8 +774,8 @@
  },
  "coco-robotics": {
   "atlas": {
-   "x": 3264,
-   "y": 384
+   "x": 0,
+   "y": 576
   },
   "fetched": "2026-08-06",
   "format": "png",
@@ -762,8 +786,8 @@
  },
  "cognata": {
   "atlas": {
-   "x": 3456,
-   "y": 384
+   "x": 192,
+   "y": 576
   },
   "fetched": "2026-08-06",
   "format": "png",
@@ -774,7 +798,7 @@
  },
  "cohda-wireless": {
   "atlas": {
-   "x": 0,
+   "x": 384,
    "y": 576
   },
   "fetched": "2026-08-06",
@@ -786,7 +810,7 @@
  },
  "comfortdelgro-zig": {
   "atlas": {
-   "x": 192,
+   "x": 576,
    "y": 576
   },
   "fetched": "2026-08-06",
@@ -798,7 +822,7 @@
  },
  "comma-ai": {
   "atlas": {
-   "x": 384,
+   "x": 768,
    "y": 576
   },
   "fetched": "2026-08-06",
@@ -810,7 +834,7 @@
  },
  "commsignia": {
   "atlas": {
-   "x": 576,
+   "x": 960,
    "y": 576
   },
   "fetched": "2026-08-06",
@@ -822,7 +846,7 @@
  },
  "consumer-reports": {
   "atlas": {
-   "x": 768,
+   "x": 1152,
    "y": 576
   },
   "fetched": "2026-08-06",
@@ -834,7 +858,7 @@
  },
  "continental": {
   "atlas": {
-   "x": 960,
+   "x": 1344,
    "y": 576
   },
   "fetched": "2026-08-06",
@@ -846,7 +870,7 @@
  },
  "cover-whale": {
   "atlas": {
-   "x": 1152,
+   "x": 1536,
    "y": 576
   },
   "fetched": "2026-08-06",
@@ -858,7 +882,7 @@
  },
  "cox-automotive": {
   "atlas": {
-   "x": 1344,
+   "x": 1728,
    "y": 576
   },
   "fetched": "2026-08-06",
@@ -870,7 +894,7 @@
  },
  "cvat-ai": {
   "atlas": {
-   "x": 1536,
+   "x": 1920,
    "y": 576
   },
   "fetched": "2026-08-06",
@@ -882,7 +906,7 @@
  },
  "cybellum": {
   "atlas": {
-   "x": 1728,
+   "x": 2112,
    "y": 576
   },
   "fetched": "2026-08-06",
@@ -908,7 +932,7 @@
  },
  "deepen-ai": {
   "atlas": {
-   "x": 1920,
+   "x": 2304,
    "y": 576
   },
   "fetched": "2026-08-06",
@@ -920,7 +944,7 @@
  },
  "deeproute-ai": {
   "atlas": {
-   "x": 2112,
+   "x": 2496,
    "y": 576
   },
   "fetched": "2026-08-06",
@@ -932,7 +956,7 @@
  },
  "dekra": {
   "atlas": {
-   "x": 2304,
+   "x": 2688,
    "y": 576
   },
   "fetched": "2026-08-06",
@@ -944,7 +968,7 @@
  },
  "derq": {
   "atlas": {
-   "x": 2496,
+   "x": 2880,
    "y": 576
   },
   "fetched": "2026-08-06",
@@ -956,7 +980,7 @@
  },
  "didi": {
   "atlas": {
-   "x": 2688,
+   "x": 3072,
    "y": 576
   },
   "fetched": "2026-08-06",
@@ -968,7 +992,7 @@
  },
  "didi-autonomous-driving": {
   "atlas": {
-   "x": 2880,
+   "x": 3264,
    "y": 576
   },
   "fetched": "2026-08-06",
@@ -980,7 +1004,7 @@
  },
  "doordash": {
   "atlas": {
-   "x": 3072,
+   "x": 3456,
    "y": 576
   },
   "fetched": "2026-08-06",
@@ -992,8 +1016,8 @@
  },
  "doordash-dot": {
   "atlas": {
-   "x": 3264,
-   "y": 576
+   "x": 0,
+   "y": 768
   },
   "fetched": "2026-08-06",
   "format": "png",
@@ -1004,8 +1028,8 @@
  },
  "driveu-auto": {
   "atlas": {
-   "x": 3456,
-   "y": 576
+   "x": 192,
+   "y": 768
   },
   "fetched": "2026-08-06",
   "format": "png",
@@ -1037,7 +1061,7 @@
  },
  "econolite": {
   "atlas": {
-   "x": 0,
+   "x": 384,
    "y": 768
   },
   "fetched": "2026-08-06",
@@ -1049,7 +1073,7 @@
  },
  "einride": {
   "atlas": {
-   "x": 192,
+   "x": 576,
    "y": 768
   },
   "fetched": "2026-08-06",
@@ -1061,7 +1085,7 @@
  },
  "electrify-america": {
   "atlas": {
-   "x": 384,
+   "x": 768,
    "y": 768
   },
   "fetched": "2026-08-06",
@@ -1073,7 +1097,7 @@
  },
  "elektrobit": {
   "atlas": {
-   "x": 576,
+   "x": 960,
    "y": 768
   },
   "fetched": "2026-08-06",
@@ -1085,7 +1109,7 @@
  },
  "element-fleet-management": {
   "atlas": {
-   "x": 768,
+   "x": 1152,
    "y": 768
   },
   "fetched": "2026-08-06",
@@ -1104,7 +1128,7 @@
  },
  "enterprise-fleet-management": {
   "atlas": {
-   "x": 960,
+   "x": 1344,
    "y": 768
   },
   "fetched": "2026-08-06",
@@ -1116,7 +1140,7 @@
  },
  "ericsson": {
   "atlas": {
-   "x": 1152,
+   "x": 1536,
    "y": 768
   },
   "fetched": "2026-08-06",
@@ -1128,7 +1152,7 @@
  },
  "etas-escrypt": {
   "atlas": {
-   "x": 1344,
+   "x": 1728,
    "y": 768
   },
   "fetched": "2026-08-06",
@@ -1140,7 +1164,7 @@
  },
  "etsi-tc-its": {
   "atlas": {
-   "x": 1536,
+   "x": 1920,
    "y": 768
   },
   "fetched": "2026-08-06",
@@ -1152,7 +1176,7 @@
  },
  "eu-type-approval-ai-act": {
   "atlas": {
-   "x": 1728,
+   "x": 2112,
    "y": 768
   },
   "fetched": "2026-08-06",
@@ -1164,7 +1188,7 @@
  },
  "european-commission-dg-grow-dg-move": {
   "atlas": {
-   "x": 1920,
+   "x": 2304,
    "y": 768
   },
   "fetched": "2026-08-06",
@@ -1176,7 +1200,7 @@
  },
  "evgo": {
   "atlas": {
-   "x": 2112,
+   "x": 2496,
    "y": 768
   },
   "fetched": "2026-08-06",
@@ -1185,6 +1209,18 @@
   "quality": "poor",
   "source": "favicon-service",
   "url": "https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://evgo.com&size=256"
+ },
+ "exida": {
+  "atlas": {
+   "x": 2688,
+   "y": 768
+  },
+  "fetched": "2026-08-06",
+  "format": "png",
+  "px": 60,
+  "quality": "poor",
+  "source": "apple-touch",
+  "url": "https://exida.com/apple-touch-icon.png"
  },
  "fairmatic": {
   "fetched": "2026-08-06",
@@ -1195,7 +1231,7 @@
  },
  "fernride": {
   "atlas": {
-   "x": 2304,
+   "x": 2880,
    "y": 768
   },
   "fetched": "2026-08-06",
@@ -1207,7 +1243,7 @@
  },
  "fibocom": {
   "atlas": {
-   "x": 2496,
+   "x": 3072,
    "y": 768
   },
   "fetched": "2026-08-06",
@@ -1219,7 +1255,7 @@
  },
  "fleetio": {
   "atlas": {
-   "x": 2688,
+   "x": 3264,
    "y": 768
   },
   "fetched": "2026-08-06",
@@ -1231,7 +1267,7 @@
  },
  "flexport": {
   "atlas": {
-   "x": 2880,
+   "x": 3456,
    "y": 768
   },
   "fetched": "2026-08-06",
@@ -1243,8 +1279,8 @@
  },
  "florida-department-of-highway-safety-and-motor-vehicles-flhsmv": {
   "atlas": {
-   "x": 3072,
-   "y": 768
+   "x": 0,
+   "y": 960
   },
   "fetched": "2026-08-06",
   "format": "png",
@@ -1255,8 +1291,8 @@
  },
  "ford": {
   "atlas": {
-   "x": 3264,
-   "y": 768
+   "x": 192,
+   "y": 960
   },
   "fetched": "2026-08-06",
   "format": "png",
@@ -1267,8 +1303,8 @@
  },
  "foretellix": {
   "atlas": {
-   "x": 3456,
-   "y": 768
+   "x": 384,
+   "y": 960
   },
   "fetched": "2026-08-06",
   "format": "png",
@@ -1279,7 +1315,7 @@
  },
  "forum-mobility": {
   "atlas": {
-   "x": 0,
+   "x": 576,
    "y": 960
   },
   "fetched": "2026-08-06",
@@ -1291,7 +1327,7 @@
  },
  "forvia": {
   "atlas": {
-   "x": 192,
+   "x": 768,
    "y": 960
   },
   "fetched": "2026-08-06",
@@ -1303,7 +1339,7 @@
  },
  "forvia-hella": {
   "atlas": {
-   "x": 384,
+   "x": 960,
    "y": 960
   },
   "fetched": "2026-08-06",
@@ -1315,7 +1351,7 @@
  },
  "free-now": {
   "atlas": {
-   "x": 576,
+   "x": 1152,
    "y": 960
   },
   "fetched": "2026-08-06",
@@ -1327,7 +1363,7 @@
  },
  "gac-group-gac-toyota": {
   "atlas": {
-   "x": 768,
+   "x": 1344,
    "y": 960
   },
   "fetched": "2026-08-06",
@@ -1339,7 +1375,7 @@
  },
  "gallagher": {
   "atlas": {
-   "x": 960,
+   "x": 1536,
    "y": 960
   },
   "fetched": "2026-08-06",
@@ -1365,7 +1401,7 @@
  },
  "geely": {
   "atlas": {
-   "x": 1152,
+   "x": 1728,
    "y": 960
   },
   "fetched": "2026-08-06",
@@ -1384,7 +1420,7 @@
  },
  "geotab": {
   "atlas": {
-   "x": 1344,
+   "x": 1920,
    "y": 960
   },
   "fetched": "2026-08-06",
@@ -1396,7 +1432,7 @@
  },
  "germany-federal-ministry-for-digital-and-transport-bmdv": {
   "atlas": {
-   "x": 1536,
+   "x": 2112,
    "y": 960
   },
   "fetched": "2026-08-06",
@@ -1408,7 +1444,7 @@
  },
  "germany-kba": {
   "atlas": {
-   "x": 1728,
+   "x": 2304,
    "y": 960
   },
   "fetched": "2026-08-06",
@@ -1420,7 +1456,7 @@
  },
  "go-inc": {
   "atlas": {
-   "x": 1920,
+   "x": 2496,
    "y": 960
   },
   "fetched": "2026-08-06",
@@ -1432,7 +1468,7 @@
  },
  "grab": {
   "atlas": {
-   "x": 2112,
+   "x": 2688,
    "y": 960
   },
   "fetched": "2026-08-06",
@@ -1444,7 +1480,7 @@
  },
  "guardknox": {
   "atlas": {
-   "x": 2304,
+   "x": 2880,
    "y": 960
   },
   "fetched": "2026-08-06",
@@ -1456,7 +1492,7 @@
  },
  "hayden-ai": {
   "atlas": {
-   "x": 2496,
+   "x": 3072,
    "y": 960
   },
   "fetched": "2026-08-06",
@@ -1489,7 +1525,7 @@
  },
  "hertz": {
   "atlas": {
-   "x": 2688,
+   "x": 3264,
    "y": 960
   },
   "fetched": "2026-08-06",
@@ -1501,7 +1537,7 @@
  },
  "hesai": {
   "atlas": {
-   "x": 2880,
+   "x": 3456,
    "y": 960
   },
   "fetched": "2026-08-06",
@@ -1513,8 +1549,8 @@
  },
  "hexagon-novatel": {
   "atlas": {
-   "x": 3072,
-   "y": 960
+   "x": 0,
+   "y": 1152
   },
   "fetched": "2026-08-06",
   "format": "png",
@@ -1525,8 +1561,8 @@
  },
  "hexagon-vires-virtual-test-drive": {
   "atlas": {
-   "x": 3264,
-   "y": 960
+   "x": 192,
+   "y": 1152
   },
   "fetched": "2026-08-06",
   "format": "png",
@@ -1537,8 +1573,8 @@
  },
  "highway-loss-data-institute-hldi": {
   "atlas": {
-   "x": 3456,
-   "y": 960
+   "x": 384,
+   "y": 1152
   },
   "fetched": "2026-08-06",
   "format": "png",
@@ -1556,7 +1592,7 @@
  },
  "horizon-robotics": {
   "atlas": {
-   "x": 0,
+   "x": 576,
    "y": 1152
   },
   "fetched": "2026-08-06",
@@ -1603,7 +1639,7 @@
  },
  "hyundai-motor-group": {
   "atlas": {
-   "x": 192,
+   "x": 768,
    "y": 1152
   },
   "fetched": "2026-08-06",
@@ -1615,7 +1651,7 @@
  },
  "ieee": {
   "atlas": {
-   "x": 384,
+   "x": 960,
    "y": 1152
   },
   "fetched": "2026-08-06",
@@ -1627,7 +1663,7 @@
  },
  "ieee-2846": {
   "atlas": {
-   "x": 576,
+   "x": 1152,
    "y": 1152
   },
   "fetched": "2026-08-06",
@@ -1639,7 +1675,7 @@
  },
  "ieee-p2851": {
   "atlas": {
-   "x": 768,
+   "x": 1344,
    "y": 1152
   },
   "fetched": "2026-08-06",
@@ -1651,7 +1687,7 @@
  },
  "ieee-standards-association": {
   "atlas": {
-   "x": 960,
+   "x": 1536,
    "y": 1152
   },
   "fetched": "2026-08-06",
@@ -1684,7 +1720,7 @@
  },
  "innoviz": {
   "atlas": {
-   "x": 1152,
+   "x": 1728,
    "y": 1152
   },
   "fetched": "2026-08-06",
@@ -1696,7 +1732,7 @@
  },
  "instacart": {
   "atlas": {
-   "x": 1344,
+   "x": 1920,
    "y": 1152
   },
   "fetched": "2026-08-06",
@@ -1708,7 +1744,7 @@
  },
  "insurance-institute-for-highway-safety-iihs": {
   "atlas": {
-   "x": 1536,
+   "x": 2112,
    "y": 1152
   },
   "fetched": "2026-08-06",
@@ -1727,7 +1763,7 @@
  },
  "international-organization-for-standardization-iso": {
   "atlas": {
-   "x": 1728,
+   "x": 2304,
    "y": 1152
   },
   "fetched": "2026-08-06",
@@ -1739,7 +1775,7 @@
  },
  "intertek": {
   "atlas": {
-   "x": 1920,
+   "x": 2496,
    "y": 1152
   },
   "fetched": "2026-08-06",
@@ -1751,7 +1787,7 @@
  },
  "ionity": {
   "atlas": {
-   "x": 2112,
+   "x": 2688,
    "y": 1152
   },
   "fetched": "2026-08-06",
@@ -1770,7 +1806,7 @@
  },
  "iso": {
   "atlas": {
-   "x": 2304,
+   "x": 2880,
    "y": 1152
   },
   "fetched": "2026-08-06",
@@ -1782,7 +1818,7 @@
  },
  "iso-21448-sotif": {
   "atlas": {
-   "x": 2496,
+   "x": 3072,
    "y": 1152
   },
   "fetched": "2026-08-06",
@@ -1794,7 +1830,7 @@
  },
  "iso-26262": {
   "atlas": {
-   "x": 2688,
+   "x": 3264,
    "y": 1152
   },
   "fetched": "2026-08-06",
@@ -1806,7 +1842,7 @@
  },
  "iso-34501": {
   "atlas": {
-   "x": 2880,
+   "x": 3456,
    "y": 1152
   },
   "fetched": "2026-08-06",
@@ -1818,42 +1854,6 @@
  },
  "iso-34502": {
   "atlas": {
-   "x": 3072,
-   "y": 1152
-  },
-  "fetched": "2026-08-06",
-  "format": "png",
-  "px": 152,
-  "quality": "raster",
-  "source": "favicon-service",
-  "url": "https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://iso.org&size=256"
- },
- "iso-34503": {
-  "atlas": {
-   "x": 3264,
-   "y": 1152
-  },
-  "fetched": "2026-08-06",
-  "format": "png",
-  "px": 152,
-  "quality": "raster",
-  "source": "favicon-service",
-  "url": "https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://iso.org&size=256"
- },
- "iso-34504": {
-  "atlas": {
-   "x": 3456,
-   "y": 1152
-  },
-  "fetched": "2026-08-06",
-  "format": "png",
-  "px": 152,
-  "quality": "raster",
-  "source": "favicon-service",
-  "url": "https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://iso.org&size=256"
- },
- "iso-tc-204": {
-  "atlas": {
    "x": 0,
    "y": 1344
   },
@@ -1864,7 +1864,7 @@
   "source": "favicon-service",
   "url": "https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://iso.org&size=256"
  },
- "iso-tc-204-intelligent-transport-systems": {
+ "iso-34503": {
   "atlas": {
    "x": 192,
    "y": 1344
@@ -1876,7 +1876,7 @@
   "source": "favicon-service",
   "url": "https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://iso.org&size=256"
  },
- "iso-tc-22-road-vehicles": {
+ "iso-34504": {
   "atlas": {
    "x": 384,
    "y": 1344
@@ -1888,7 +1888,7 @@
   "source": "favicon-service",
   "url": "https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://iso.org&size=256"
  },
- "iso-tr-4804": {
+ "iso-tc-204": {
   "atlas": {
    "x": 576,
    "y": 1344
@@ -1900,9 +1900,45 @@
   "source": "favicon-service",
   "url": "https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://iso.org&size=256"
  },
- "iteris": {
+ "iso-tc-204-intelligent-transport-systems": {
   "atlas": {
    "x": 768,
+   "y": 1344
+  },
+  "fetched": "2026-08-06",
+  "format": "png",
+  "px": 152,
+  "quality": "raster",
+  "source": "favicon-service",
+  "url": "https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://iso.org&size=256"
+ },
+ "iso-tc-22-road-vehicles": {
+  "atlas": {
+   "x": 960,
+   "y": 1344
+  },
+  "fetched": "2026-08-06",
+  "format": "png",
+  "px": 152,
+  "quality": "raster",
+  "source": "favicon-service",
+  "url": "https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://iso.org&size=256"
+ },
+ "iso-tr-4804": {
+  "atlas": {
+   "x": 1152,
+   "y": 1344
+  },
+  "fetched": "2026-08-06",
+  "format": "png",
+  "px": 152,
+  "quality": "raster",
+  "source": "favicon-service",
+  "url": "https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://iso.org&size=256"
+ },
+ "iteris": {
+  "atlas": {
+   "x": 1344,
    "y": 1344
   },
   "fetched": "2026-08-06",
@@ -1914,7 +1950,7 @@
  },
  "its-america": {
   "atlas": {
-   "x": 960,
+   "x": 1536,
    "y": 1344
   },
   "fetched": "2026-08-06",
@@ -1926,7 +1962,7 @@
  },
  "iveco-group": {
   "atlas": {
-   "x": 1152,
+   "x": 1728,
    "y": 1344
   },
   "fetched": "2026-08-06",
@@ -1938,7 +1974,7 @@
  },
  "jaguar-land-rover": {
   "atlas": {
-   "x": 1344,
+   "x": 1920,
    "y": 1344
   },
   "fetched": "2026-08-06",
@@ -1950,7 +1986,7 @@
  },
  "kapsch-trafficcom": {
   "atlas": {
-   "x": 1536,
+   "x": 2112,
    "y": 1344
   },
   "fetched": "2026-08-06",
@@ -1969,7 +2005,7 @@
  },
  "kempower": {
   "atlas": {
-   "x": 1728,
+   "x": 2304,
    "y": 1344
   },
   "fetched": "2026-08-06",
@@ -1981,7 +2017,7 @@
  },
  "kia": {
   "atlas": {
-   "x": 1920,
+   "x": 2496,
    "y": 1344
   },
   "fetched": "2026-08-06",
@@ -1993,7 +2029,7 @@
  },
  "kiwibot": {
   "atlas": {
-   "x": 2112,
+   "x": 2688,
    "y": 1344
   },
   "fetched": "2026-08-06",
@@ -2005,7 +2041,7 @@
  },
  "kodiak-ai": {
   "atlas": {
-   "x": 2304,
+   "x": 2880,
    "y": 1344
   },
   "fetched": "2026-08-06",
@@ -2017,7 +2053,7 @@
  },
  "kodiak-commercial-network": {
   "atlas": {
-   "x": 2496,
+   "x": 3072,
    "y": 1344
   },
   "fetched": "2026-08-06",
@@ -2029,7 +2065,7 @@
  },
  "kognic": {
   "atlas": {
-   "x": 2688,
+   "x": 3264,
    "y": 1344
   },
   "fetched": "2026-08-06",
@@ -2041,7 +2077,7 @@
  },
  "kraftfahrt-bundesamt-kba": {
   "atlas": {
-   "x": 2880,
+   "x": 3456,
    "y": 1344
   },
   "fetched": "2026-08-06",
@@ -2053,8 +2089,8 @@
  },
  "labelbox": {
   "atlas": {
-   "x": 3072,
-   "y": 1344
+   "x": 0,
+   "y": 1536
   },
   "fetched": "2026-08-06",
   "format": "png",
@@ -2065,8 +2101,8 @@
  },
  "leddartech": {
   "atlas": {
-   "x": 3264,
-   "y": 1344
+   "x": 192,
+   "y": 1536
   },
   "fetched": "2026-08-06",
   "format": "png",
@@ -2077,8 +2113,8 @@
  },
  "lexisnexis-risk-solutions": {
   "atlas": {
-   "x": 3456,
-   "y": 1344
+   "x": 384,
+   "y": 1536
   },
   "fetched": "2026-08-06",
   "format": "png",
@@ -2089,7 +2125,7 @@
  },
  "livox": {
   "atlas": {
-   "x": 0,
+   "x": 576,
    "y": 1536
   },
   "fetched": "2026-08-06",
@@ -2101,7 +2137,7 @@
  },
  "lockton": {
   "atlas": {
-   "x": 192,
+   "x": 768,
    "y": 1536
   },
   "fetched": "2026-08-06",
@@ -2113,7 +2149,7 @@
  },
  "lucid": {
   "atlas": {
-   "x": 384,
+   "x": 960,
    "y": 1536
   },
   "fetched": "2026-08-06",
@@ -2125,7 +2161,7 @@
  },
  "lucid-motors": {
   "atlas": {
-   "x": 576,
+   "x": 1152,
    "y": 1536
   },
   "fetched": "2026-08-06",
@@ -2137,7 +2173,7 @@
  },
  "luminar": {
   "atlas": {
-   "x": 768,
+   "x": 1344,
    "y": 1536
   },
   "fetched": "2026-08-06",
@@ -2149,7 +2185,7 @@
  },
  "lyft": {
   "atlas": {
-   "x": 960,
+   "x": 1536,
    "y": 1536
   },
   "fetched": "2026-08-06",
@@ -2161,7 +2197,7 @@
  },
  "lyft-flexdrive": {
   "atlas": {
-   "x": 1152,
+   "x": 1728,
    "y": 1536
   },
   "fetched": "2026-08-06",
@@ -2173,7 +2209,7 @@
  },
  "magna": {
   "atlas": {
-   "x": 1344,
+   "x": 1920,
    "y": 1536
   },
   "fetched": "2026-08-06",
@@ -2185,7 +2221,7 @@
  },
  "magna-steyr": {
   "atlas": {
-   "x": 1536,
+   "x": 2112,
    "y": 1536
   },
   "fetched": "2026-08-06",
@@ -2197,7 +2233,7 @@
  },
  "mapbox": {
   "atlas": {
-   "x": 1728,
+   "x": 2304,
    "y": 1536
   },
   "fetched": "2026-08-06",
@@ -2209,7 +2245,7 @@
  },
  "marsh": {
   "atlas": {
-   "x": 1920,
+   "x": 2496,
    "y": 1536
   },
   "fetched": "2026-08-06",
@@ -2221,7 +2257,7 @@
  },
  "mathworks": {
   "atlas": {
-   "x": 2112,
+   "x": 2688,
    "y": 1536
   },
   "fetched": "2026-08-06",
@@ -2254,7 +2290,7 @@
  },
  "mcity": {
   "atlas": {
-   "x": 2304,
+   "x": 2880,
    "y": 1536
   },
   "fetched": "2026-08-06",
@@ -2266,7 +2302,7 @@
  },
  "mclane-company": {
   "atlas": {
-   "x": 2496,
+   "x": 3072,
    "y": 1536
   },
   "fetched": "2026-08-06",
@@ -2276,10 +2312,163 @@
   "source": "apple-touch",
   "url": "https://www.mclaneco.com/wp-content/themes/hahn/images/favicon/app_icon_144x144.png"
  },
+ "media-autonocast-com": {
+  "atlas": {
+   "x": 3264,
+   "y": 1536
+  },
+  "fetched": "2026-08-06",
+  "format": "png",
+  "px": 1102,
+  "quality": "raster",
+  "source": "og-image",
+  "url": "http://static1.squarespace.com/static/580913e6d482e9d2da296701/t/6a3aa690b2d5c84bd0158595/1782228624306/Autonocast+Logo+NEW.png?format=1500w"
+ },
+ "media-autonomous-vehicles-conference-com": {
+  "atlas": {
+   "x": 3456,
+   "y": 1536
+  },
+  "fetched": "2026-08-06",
+  "format": "png",
+  "px": 32,
+  "quality": "poor",
+  "source": "link-icon",
+  "url": "https://www.autonomous-vehicles-conference.com/images/avu/favicon.ico"
+ },
+ "media-avamerica-org": {
+  "atlas": {
+   "x": 0,
+   "y": 1728
+  },
+  "fetched": "2026-08-06",
+  "format": "png",
+  "px": 100,
+  "quality": "raster",
+  "source": "apple-touch",
+  "url": "https://avamerica.org/apple-touch-icon.png"
+ },
+ "media-avmarketstrategist-substack-com": {
+  "atlas": {
+   "x": 192,
+   "y": 1728
+  },
+  "fetched": "2026-08-06",
+  "format": "png",
+  "px": 114,
+  "quality": "raster",
+  "source": "favicon-service",
+  "url": "https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://avmarketstrategist.substack.com&size=256"
+ },
+ "media-comotionla-com": {
+  "atlas": {
+   "x": 384,
+   "y": 1728
+  },
+  "fetched": "2026-08-06",
+  "format": "png",
+  "px": 256,
+  "quality": "raster",
+  "source": "apple-touch",
+  "url": "https://cdn.prod.website-files.com/68ad9bfb650af05d69b9d635/68b54fc618815e14f8976807_Webclip.png"
+ },
+ "media-curbivore-co": {
+  "atlas": {
+   "x": 576,
+   "y": 1728
+  },
+  "fetched": "2026-08-06",
+  "format": "png",
+  "px": 180,
+  "quality": "raster",
+  "source": "apple-touch",
+  "url": "https://curbivore.co/wp-content/uploads/2021/10/cropped-android-chrome-512x512-1-180x180.png"
+ },
+ "media-iaa-mobility-com": {
+  "fetched": "2026-08-06",
+  "format": "svg",
+  "quality": "vector",
+  "source": "site-svg-icon",
+  "url": "https://iaa-mobility.com/favicon-IAAM.svg"
+ },
+ "media-linkedin-com": {
+  "atlas": {
+   "x": 768,
+   "y": 1728
+  },
+  "fetched": "2026-08-06",
+  "format": "png",
+  "px": 64,
+  "quality": "poor",
+  "source": "favicon-service",
+  "url": "https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://linkedin.com&size=256"
+ },
+ "media-rideai-org": {
+  "atlas": {
+   "x": 960,
+   "y": 1728
+  },
+  "fetched": "2026-08-06",
+  "format": "png",
+  "px": 850,
+  "quality": "raster",
+  "source": "og-image",
+  "url": "https://www.rideai.org/images/sfjazz-rideai-stage.png"
+ },
+ "media-roadtoautonomy-com": {
+  "atlas": {
+   "x": 1152,
+   "y": 1728
+  },
+  "fetched": "2026-08-06",
+  "format": "png",
+  "px": 180,
+  "quality": "raster",
+  "source": "apple-touch",
+  "url": "https://media.roadtoautonomy.com/wp-content/uploads/2024/06/cropped-AUT-NMY_SOCIAL-512-180x180.jpg"
+ },
+ "media-templetons-com": {
+  "atlas": {
+   "x": 1344,
+   "y": 1728
+  },
+  "fetched": "2026-08-06",
+  "format": "png",
+  "px": 32,
+  "quality": "poor",
+  "source": "favicon-service",
+  "url": "https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://templetons.com&size=256"
+ },
+ "media-the-autonomous-com": {
+  "fetched": "2026-08-06",
+  "format": "svg",
+  "quality": "vector",
+  "source": "site-svg-icon",
+  "url": "https://www.the-autonomous.com/wp-content/themes/functn/assets/favicons/safari-pinned-tab.svg"
+ },
+ "media-thedriverlessdigest-com": {
+  "atlas": {
+   "x": 1536,
+   "y": 1728
+  },
+  "fetched": "2026-08-06",
+  "format": "png",
+  "px": 57,
+  "quality": "poor",
+  "source": "apple-touch",
+  "url": "https://substackcdn.com/image/fetch/$s_!RnGA!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F301d8b66-b540-4dd5-985d-6c9c8c60f49e%2Fapple-touch-icon-57x57.png"
+ },
+ "media-trb-org": {
+  "fetched": "2026-08-06",
+  "format": "svg",
+  "quality": "vector",
+  "source": "site-svg-icon",
+  "url": "https://www.nationalacademies.org/favicon.svg"
+ },
  "mercedes-benz": {
   "atlas": {
-   "x": 2688,
-   "y": 1536
+   "x": 1728,
+   "y": 1728
   },
   "fetched": "2026-08-06",
   "format": "png",
@@ -2290,8 +2479,8 @@
  },
  "mercedes-benz-drive-pilot-mb-drive": {
   "atlas": {
-   "x": 2880,
-   "y": 1536
+   "x": 1920,
+   "y": 1728
   },
   "fetched": "2026-08-06",
   "format": "png",
@@ -2302,8 +2491,8 @@
  },
  "microvision": {
   "atlas": {
-   "x": 3072,
-   "y": 1536
+   "x": 2112,
+   "y": 1728
   },
   "fetched": "2026-08-06",
   "format": "png",
@@ -2314,8 +2503,8 @@
  },
  "miovision": {
   "atlas": {
-   "x": 3264,
-   "y": 1536
+   "x": 2304,
+   "y": 1728
   },
   "fetched": "2026-08-06",
   "format": "png",
@@ -2326,8 +2515,8 @@
  },
  "mitchell-enlyte": {
   "atlas": {
-   "x": 3456,
-   "y": 1536
+   "x": 2496,
+   "y": 1728
   },
   "fetched": "2026-08-06",
   "format": "png",
@@ -2338,7 +2527,7 @@
  },
  "mobileye": {
   "atlas": {
-   "x": 0,
+   "x": 2688,
    "y": 1728
   },
   "fetched": "2026-08-06",
@@ -2350,7 +2539,7 @@
  },
  "mobileye-drive": {
   "atlas": {
-   "x": 192,
+   "x": 2880,
    "y": 1728
   },
   "fetched": "2026-08-06",
@@ -2362,7 +2551,7 @@
  },
  "mobileye-rem-roadbook": {
   "atlas": {
-   "x": 384,
+   "x": 3072,
    "y": 1728
   },
   "fetched": "2026-08-06",
@@ -2374,7 +2563,7 @@
  },
  "mobileye-responsibility-sensitive-safety-rss": {
   "atlas": {
-   "x": 576,
+   "x": 3264,
    "y": 1728
   },
   "fetched": "2026-08-06",
@@ -2386,7 +2575,7 @@
  },
  "moia": {
   "atlas": {
-   "x": 768,
+   "x": 3456,
    "y": 1728
   },
   "fetched": "2026-08-06",
@@ -2398,8 +2587,8 @@
  },
  "momenta": {
   "atlas": {
-   "x": 960,
-   "y": 1728
+   "x": 0,
+   "y": 1920
   },
   "fetched": "2026-08-06",
   "format": "png",
@@ -2410,8 +2599,8 @@
  },
  "moove": {
   "atlas": {
-   "x": 1152,
-   "y": 1728
+   "x": 192,
+   "y": 1920
   },
   "fetched": "2026-08-06",
   "format": "png",
@@ -2422,8 +2611,8 @@
  },
  "moove-av-moove": {
   "atlas": {
-   "x": 1344,
-   "y": 1728
+   "x": 384,
+   "y": 1920
   },
   "fetched": "2026-08-06",
   "format": "png",
@@ -2434,8 +2623,8 @@
  },
  "motional": {
   "atlas": {
-   "x": 1536,
-   "y": 1728
+   "x": 576,
+   "y": 1920
   },
   "fetched": "2026-08-06",
   "format": "png",
@@ -2453,8 +2642,8 @@
  },
  "munich-re": {
   "atlas": {
-   "x": 1728,
-   "y": 1728
+   "x": 768,
+   "y": 1920
   },
   "fetched": "2026-08-06",
   "format": "png",
@@ -2465,8 +2654,8 @@
  },
  "national-safety-council": {
   "atlas": {
-   "x": 1920,
-   "y": 1728
+   "x": 960,
+   "y": 1920
   },
   "fetched": "2026-08-06",
   "format": "png",
@@ -2477,8 +2666,8 @@
  },
  "navinfo": {
   "atlas": {
-   "x": 2112,
-   "y": 1728
+   "x": 1152,
+   "y": 1920
   },
   "fetched": "2026-08-06",
   "format": "png",
@@ -2489,8 +2678,8 @@
  },
  "netherlands-rdw": {
   "atlas": {
-   "x": 2304,
-   "y": 1728
+   "x": 1344,
+   "y": 1920
   },
   "fetched": "2026-08-06",
   "format": "png",
@@ -2501,8 +2690,8 @@
  },
  "netradyne": {
   "atlas": {
-   "x": 2496,
-   "y": 1728
+   "x": 1536,
+   "y": 1920
   },
   "fetched": "2026-08-06",
   "format": "png",
@@ -2513,8 +2702,8 @@
  },
  "nevada-department-of-motor-vehicles-nevada-dmv": {
   "atlas": {
-   "x": 2688,
-   "y": 1728
+   "x": 1728,
+   "y": 1920
   },
   "fetched": "2026-08-06",
   "format": "png",
@@ -2525,8 +2714,8 @@
  },
  "nevada-dmv": {
   "atlas": {
-   "x": 2880,
-   "y": 1728
+   "x": 1920,
+   "y": 1920
   },
   "fetched": "2026-08-06",
   "format": "png",
@@ -2537,8 +2726,8 @@
  },
  "new-york-state-department-of-motor-vehicles": {
   "atlas": {
-   "x": 3072,
-   "y": 1728
+   "x": 2112,
+   "y": 1920
   },
   "fetched": "2026-08-06",
   "format": "png",
@@ -2549,8 +2738,8 @@
  },
  "nexar": {
   "atlas": {
-   "x": 3264,
-   "y": 1728
+   "x": 2304,
+   "y": 1920
   },
   "fetched": "2026-08-06",
   "format": "png",
@@ -2561,8 +2750,8 @@
  },
  "nio": {
   "atlas": {
-   "x": 3456,
-   "y": 1728
+   "x": 2496,
+   "y": 1920
   },
   "fetched": "2026-08-06",
   "format": "png",
@@ -2573,7 +2762,7 @@
  },
  "nissan": {
   "atlas": {
-   "x": 0,
+   "x": 2688,
    "y": 1920
   },
   "fetched": "2026-08-06",
@@ -2585,7 +2774,7 @@
  },
  "nokia": {
   "atlas": {
-   "x": 192,
+   "x": 2880,
    "y": 1920
   },
   "fetched": "2026-08-06",
@@ -2597,7 +2786,7 @@
  },
  "nuro": {
   "atlas": {
-   "x": 384,
+   "x": 3072,
    "y": 1920
   },
   "fetched": "2026-08-06",
@@ -2609,7 +2798,7 @@
  },
  "nuro-delivery": {
   "atlas": {
-   "x": 576,
+   "x": 3264,
    "y": 1920
   },
   "fetched": "2026-08-06",
@@ -2621,7 +2810,7 @@
  },
  "nuro-driver": {
   "atlas": {
-   "x": 768,
+   "x": 3456,
    "y": 1920
   },
   "fetched": "2026-08-06",
@@ -2633,8 +2822,8 @@
  },
  "nvidia": {
   "atlas": {
-   "x": 960,
-   "y": 1920
+   "x": 0,
+   "y": 2112
   },
   "fetched": "2026-08-06",
   "format": "png",
@@ -2645,8 +2834,8 @@
  },
  "nvidia-drive": {
   "atlas": {
-   "x": 1152,
-   "y": 1920
+   "x": 192,
+   "y": 2112
   },
   "fetched": "2026-08-06",
   "format": "png",
@@ -2657,8 +2846,8 @@
  },
  "nvidia-drive-halos": {
   "atlas": {
-   "x": 1344,
-   "y": 1920
+   "x": 384,
+   "y": 2112
   },
   "fetched": "2026-08-06",
   "format": "png",
@@ -2669,8 +2858,8 @@
  },
  "nvidia-drive-sim-omniverse-cosmos": {
   "atlas": {
-   "x": 1536,
-   "y": 1920
+   "x": 576,
+   "y": 2112
   },
   "fetched": "2026-08-06",
   "format": "png",
@@ -2681,8 +2870,8 @@
  },
  "nxp-semiconductors": {
   "atlas": {
-   "x": 1728,
-   "y": 1920
+   "x": 768,
+   "y": 2112
   },
   "fetched": "2026-08-06",
   "format": "png",
@@ -2693,8 +2882,8 @@
  },
  "omnivision": {
   "atlas": {
-   "x": 1920,
-   "y": 1920
+   "x": 960,
+   "y": 2112
   },
   "fetched": "2026-08-06",
   "format": "png",
@@ -2712,8 +2901,8 @@
  },
  "open-mobility-foundation": {
   "atlas": {
-   "x": 2112,
-   "y": 1920
+   "x": 1152,
+   "y": 2112
   },
   "fetched": "2026-08-06",
   "format": "png",
@@ -2724,8 +2913,8 @@
  },
  "optibus": {
   "atlas": {
-   "x": 2304,
-   "y": 1920
+   "x": 1344,
+   "y": 2112
   },
   "fetched": "2026-08-06",
   "format": "png",
@@ -2736,8 +2925,8 @@
  },
  "ottopia": {
   "atlas": {
-   "x": 2496,
-   "y": 1920
+   "x": 1536,
+   "y": 2112
   },
   "fetched": "2026-08-06",
   "format": "png",
@@ -2769,8 +2958,8 @@
  },
  "paccar": {
   "atlas": {
-   "x": 2688,
-   "y": 1920
+   "x": 1728,
+   "y": 2112
   },
   "fetched": "2026-08-06",
   "format": "png",
@@ -2781,8 +2970,8 @@
  },
  "parallel-domain": {
   "atlas": {
-   "x": 2880,
-   "y": 1920
+   "x": 1920,
+   "y": 2112
   },
   "fetched": "2026-08-06",
   "format": "png",
@@ -2793,8 +2982,8 @@
  },
  "parkmobile": {
   "atlas": {
-   "x": 3072,
-   "y": 1920
+   "x": 2112,
+   "y": 2112
   },
   "fetched": "2026-08-06",
   "format": "png",
@@ -2805,8 +2994,8 @@
  },
  "partners-for-automated-vehicle-education-pave": {
   "atlas": {
-   "x": 3264,
-   "y": 1920
+   "x": 2304,
+   "y": 2112
   },
   "fetched": "2026-08-06",
   "format": "png",
@@ -2817,8 +3006,8 @@
  },
  "pave": {
   "atlas": {
-   "x": 3456,
-   "y": 1920
+   "x": 2496,
+   "y": 2112
   },
   "fetched": "2026-08-06",
   "format": "png",
@@ -2829,7 +3018,7 @@
  },
  "paybyphone": {
   "atlas": {
-   "x": 0,
+   "x": 2688,
    "y": 2112
   },
   "fetched": "2026-08-06",
@@ -2848,7 +3037,7 @@
  },
  "plaxidityx-argus-cyber-security": {
   "atlas": {
-   "x": 192,
+   "x": 2880,
    "y": 2112
   },
   "fetched": "2026-08-06",
@@ -2860,7 +3049,7 @@
  },
  "plaxidityx-ex-argus": {
   "atlas": {
-   "x": 384,
+   "x": 3072,
    "y": 2112
   },
   "fetched": "2026-08-06",
@@ -2872,7 +3061,7 @@
  },
  "plus": {
   "atlas": {
-   "x": 576,
+   "x": 3264,
    "y": 2112
   },
   "fetched": "2026-08-06",
@@ -2884,7 +3073,7 @@
  },
  "point-one-navigation": {
   "atlas": {
-   "x": 768,
+   "x": 3456,
    "y": 2112
   },
   "fetched": "2026-08-06",
@@ -2896,8 +3085,8 @@
  },
  "pony-ai": {
   "atlas": {
-   "x": 960,
-   "y": 2112
+   "x": 0,
+   "y": 2304
   },
   "fetched": "2026-08-06",
   "format": "png",
@@ -2908,8 +3097,8 @@
  },
  "ponypilot-pony-ai-robotaxi": {
   "atlas": {
-   "x": 1152,
-   "y": 2112
+   "x": 192,
+   "y": 2304
   },
   "fetched": "2026-08-06",
   "format": "png",
@@ -2920,8 +3109,8 @@
  },
  "populus": {
   "atlas": {
-   "x": 1344,
-   "y": 2112
+   "x": 384,
+   "y": 2304
   },
   "fetched": "2026-08-06",
   "format": "png",
@@ -2932,8 +3121,8 @@
  },
  "powerflex": {
   "atlas": {
-   "x": 1536,
-   "y": 2112
+   "x": 576,
+   "y": 2304
   },
   "fetched": "2026-08-06",
   "format": "png",
@@ -2951,8 +3140,8 @@
  },
  "pronto-ai": {
   "atlas": {
-   "x": 1728,
-   "y": 2112
+   "x": 768,
+   "y": 2304
   },
   "fetched": "2026-08-06",
   "format": "png",
@@ -2963,8 +3152,8 @@
  },
  "qualcomm": {
   "atlas": {
-   "x": 1920,
-   "y": 2112
+   "x": 960,
+   "y": 2304
   },
   "fetched": "2026-08-06",
   "format": "png",
@@ -2975,8 +3164,8 @@
  },
  "qualcomm-automotive": {
   "atlas": {
-   "x": 2112,
-   "y": 2112
+   "x": 1152,
+   "y": 2304
   },
   "fetched": "2026-08-06",
   "format": "png",
@@ -2987,8 +3176,8 @@
  },
  "qualcomm-snapdragon-ride": {
   "atlas": {
-   "x": 2304,
-   "y": 2112
+   "x": 1344,
+   "y": 2304
   },
   "fetched": "2026-08-06",
   "format": "png",
@@ -2999,8 +3188,8 @@
  },
  "quectel-wireless": {
   "atlas": {
-   "x": 2496,
-   "y": 2112
+   "x": 1536,
+   "y": 2304
   },
   "fetched": "2026-08-06",
   "format": "png",
@@ -3011,8 +3200,8 @@
  },
  "ree-automotive": {
   "atlas": {
-   "x": 2688,
-   "y": 2112
+   "x": 1728,
+   "y": 2304
   },
   "fetched": "2026-08-06",
   "format": "png",
@@ -3023,8 +3212,8 @@
  },
  "rekor-systems": {
   "atlas": {
-   "x": 2880,
-   "y": 2112
+   "x": 1920,
+   "y": 2304
   },
   "fetched": "2026-08-06",
   "format": "png",
@@ -3035,8 +3224,8 @@
  },
  "renault-group": {
   "atlas": {
-   "x": 3072,
-   "y": 2112
+   "x": 2112,
+   "y": 2304
   },
   "fetched": "2026-08-06",
   "format": "png",
@@ -3047,8 +3236,8 @@
  },
  "renesas-electronics": {
   "atlas": {
-   "x": 3264,
-   "y": 2112
+   "x": 2304,
+   "y": 2304
   },
   "fetched": "2026-08-06",
   "format": "png",
@@ -3059,8 +3248,8 @@
  },
  "rfpro": {
   "atlas": {
-   "x": 3456,
-   "y": 2112
+   "x": 2496,
+   "y": 2304
   },
   "fetched": "2026-08-06",
   "format": "png",
@@ -3071,7 +3260,7 @@
  },
  "rideco": {
   "atlas": {
-   "x": 0,
+   "x": 2688,
    "y": 2304
   },
   "fetched": "2026-08-06",
@@ -3083,7 +3272,7 @@
  },
  "rivian": {
   "atlas": {
-   "x": 192,
+   "x": 2880,
    "y": 2304
   },
   "fetched": "2026-08-06",
@@ -3095,7 +3284,7 @@
  },
  "rivian-autonomy-platform": {
   "atlas": {
-   "x": 384,
+   "x": 3072,
    "y": 2304
   },
   "fetched": "2026-08-06",
@@ -3107,7 +3296,7 @@
  },
  "robosense": {
   "atlas": {
-   "x": 576,
+   "x": 3264,
    "y": 2304
   },
   "fetched": "2026-08-06",
@@ -3119,7 +3308,7 @@
  },
  "rocsys": {
   "atlas": {
-   "x": 768,
+   "x": 3456,
    "y": 2304
   },
   "fetched": "2026-08-06",
@@ -3131,8 +3320,8 @@
  },
  "roush-industries": {
   "atlas": {
-   "x": 960,
-   "y": 2304
+   "x": 0,
+   "y": 2496
   },
   "fetched": "2026-08-06",
   "format": "png",
@@ -3143,8 +3332,8 @@
  },
  "sama": {
   "atlas": {
-   "x": 1152,
-   "y": 2304
+   "x": 192,
+   "y": 2496
   },
   "fetched": "2026-08-06",
   "format": "png",
@@ -3155,8 +3344,8 @@
  },
  "samsara": {
   "atlas": {
-   "x": 1344,
-   "y": 2304
+   "x": 384,
+   "y": 2496
   },
   "fetched": "2026-08-06",
   "format": "png",
@@ -3167,8 +3356,8 @@
  },
  "san-francisco-international-airport-commission-sfo": {
   "atlas": {
-   "x": 1536,
-   "y": 2304
+   "x": 576,
+   "y": 2496
   },
   "fetched": "2026-08-06",
   "format": "png",
@@ -3179,8 +3368,8 @@
  },
  "san-francisco-municipal-transportation-agency-sfmta": {
   "atlas": {
-   "x": 1728,
-   "y": 2304
+   "x": 768,
+   "y": 2496
   },
   "fetched": "2026-08-06",
   "format": "png",
@@ -3191,8 +3380,8 @@
  },
  "sbg-systems": {
   "atlas": {
-   "x": 1920,
-   "y": 2304
+   "x": 960,
+   "y": 2496
   },
   "fetched": "2026-08-06",
   "format": "png",
@@ -3210,8 +3399,8 @@
  },
  "septentrio": {
   "atlas": {
-   "x": 2112,
-   "y": 2304
+   "x": 1152,
+   "y": 2496
   },
   "fetched": "2026-08-06",
   "format": "png",
@@ -3229,8 +3418,8 @@
  },
  "seyond": {
   "atlas": {
-   "x": 2304,
-   "y": 2304
+   "x": 1344,
+   "y": 2496
   },
   "fetched": "2026-08-06",
   "format": "png",
@@ -3241,8 +3430,8 @@
  },
  "sfmta": {
   "atlas": {
-   "x": 2496,
-   "y": 2304
+   "x": 1536,
+   "y": 2496
   },
   "fetched": "2026-08-06",
   "format": "png",
@@ -3253,8 +3442,8 @@
  },
  "singapore-land-transport-authority-lta": {
   "atlas": {
-   "x": 2688,
-   "y": 2304
+   "x": 1728,
+   "y": 2496
   },
   "fetched": "2026-08-06",
   "format": "png",
@@ -3265,8 +3454,8 @@
  },
  "singapore-lta": {
   "atlas": {
-   "x": 2880,
-   "y": 2304
+   "x": 1920,
+   "y": 2496
   },
   "fetched": "2026-08-06",
   "format": "png",
@@ -3277,8 +3466,8 @@
  },
  "sonatus": {
   "atlas": {
-   "x": 3072,
-   "y": 2304
+   "x": 2112,
+   "y": 2496
   },
   "fetched": "2026-08-06",
   "format": "png",
@@ -3289,8 +3478,8 @@
  },
  "sony-semiconductor-solutions": {
   "atlas": {
-   "x": 3264,
-   "y": 2304
+   "x": 2304,
+   "y": 2496
   },
   "fetched": "2026-08-06",
   "format": "png",
@@ -3301,8 +3490,8 @@
  },
  "south-korea-ministry-of-land-infrastructure-and-transport-molit": {
   "atlas": {
-   "x": 3456,
-   "y": 2304
+   "x": 2496,
+   "y": 2496
   },
   "fetched": "2026-08-06",
   "format": "png",
@@ -3313,7 +3502,7 @@
  },
  "spare": {
   "atlas": {
-   "x": 0,
+   "x": 2688,
    "y": 2496
   },
   "fetched": "2026-08-06",
@@ -3325,7 +3514,7 @@
  },
  "spothero": {
   "atlas": {
-   "x": 192,
+   "x": 2880,
    "y": 2496
   },
   "fetched": "2026-08-06",
@@ -3337,7 +3526,7 @@
  },
  "stack-av": {
   "atlas": {
-   "x": 384,
+   "x": 3072,
    "y": 2496
   },
   "fetched": "2026-08-06",
@@ -3349,7 +3538,7 @@
  },
  "starship-technologies": {
   "atlas": {
-   "x": 576,
+   "x": 3264,
    "y": 2496
   },
   "fetched": "2026-08-06",
@@ -3361,7 +3550,7 @@
  },
  "state-farm-ventures": {
   "atlas": {
-   "x": 768,
+   "x": 3456,
    "y": 2496
   },
   "fetched": "2026-08-06",
@@ -3373,8 +3562,8 @@
  },
  "stellantis": {
   "atlas": {
-   "x": 960,
-   "y": 2496
+   "x": 0,
+   "y": 2688
   },
   "fetched": "2026-08-06",
   "format": "png",
@@ -3385,8 +3574,8 @@
  },
  "superannotate": {
   "atlas": {
-   "x": 1152,
-   "y": 2496
+   "x": 192,
+   "y": 2688
   },
   "fetched": "2026-08-06",
   "format": "png",
@@ -3397,8 +3586,8 @@
  },
  "swarco": {
   "atlas": {
-   "x": 1344,
-   "y": 2496
+   "x": 384,
+   "y": 2688
   },
   "fetched": "2026-08-06",
   "format": "png",
@@ -3409,8 +3598,8 @@
  },
  "swedish-transport-agency": {
   "atlas": {
-   "x": 1536,
-   "y": 2496
+   "x": 576,
+   "y": 2688
   },
   "fetched": "2026-08-06",
   "format": "png",
@@ -3421,8 +3610,8 @@
  },
  "swift-navigation": {
   "atlas": {
-   "x": 1728,
-   "y": 2496
+   "x": 768,
+   "y": 2688
   },
   "fetched": "2026-08-06",
   "format": "png",
@@ -3433,8 +3622,8 @@
  },
  "swiss-re": {
   "atlas": {
-   "x": 1920,
-   "y": 2496
+   "x": 960,
+   "y": 2688
   },
   "fetched": "2026-08-06",
   "format": "png",
@@ -3445,8 +3634,8 @@
  },
  "switzerland-federal-roads-office-fedro-astra": {
   "atlas": {
-   "x": 2112,
-   "y": 2496
+   "x": 1152,
+   "y": 2688
   },
   "fetched": "2026-08-06",
   "format": "png",
@@ -3464,8 +3653,8 @@
  },
  "telus-digital-ai-playment": {
   "atlas": {
-   "x": 2304,
-   "y": 2496
+   "x": 1344,
+   "y": 2688
   },
   "fetched": "2026-08-06",
   "format": "png",
@@ -3476,8 +3665,8 @@
  },
  "tencent-cloud": {
   "atlas": {
-   "x": 2496,
-   "y": 2496
+   "x": 1536,
+   "y": 2688
   },
   "fetched": "2026-08-06",
   "format": "png",
@@ -3488,8 +3677,8 @@
  },
  "terawatt-infrastructure": {
   "atlas": {
-   "x": 2688,
-   "y": 2496
+   "x": 1728,
+   "y": 2688
   },
   "fetched": "2026-08-06",
   "format": "png",
@@ -3500,8 +3689,8 @@
  },
  "tesla": {
   "atlas": {
-   "x": 2880,
-   "y": 2496
+   "x": 1920,
+   "y": 2688
   },
   "fetched": "2026-08-06",
   "format": "png",
@@ -3512,8 +3701,8 @@
  },
  "tesla-ai-hardware": {
   "atlas": {
-   "x": 3072,
-   "y": 2496
+   "x": 2112,
+   "y": 2688
   },
   "fetched": "2026-08-06",
   "format": "png",
@@ -3524,8 +3713,8 @@
  },
  "tesla-robotaxi": {
   "atlas": {
-   "x": 3264,
-   "y": 2496
+   "x": 2304,
+   "y": 2688
   },
   "fetched": "2026-08-06",
   "format": "png",
@@ -3536,8 +3725,8 @@
  },
  "tesla-robotaxi-fsd": {
   "atlas": {
-   "x": 3456,
-   "y": 2496
+   "x": 2496,
+   "y": 2688
   },
   "fetched": "2026-08-06",
   "format": "png",
@@ -3548,7 +3737,7 @@
  },
  "tesla-supercharger-robotaxi": {
   "atlas": {
-   "x": 0,
+   "x": 2688,
    "y": 2688
   },
   "fetched": "2026-08-06",
@@ -3560,7 +3749,7 @@
  },
  "texas-department-of-transportation-txdot": {
   "atlas": {
-   "x": 192,
+   "x": 2880,
    "y": 2688
   },
   "fetched": "2026-08-06",
@@ -3572,7 +3761,7 @@
  },
  "texas-instruments": {
   "atlas": {
-   "x": 384,
+   "x": 3072,
    "y": 2688
   },
   "fetched": "2026-08-06",
@@ -3584,7 +3773,7 @@
  },
  "tier-iv": {
   "atlas": {
-   "x": 576,
+   "x": 3264,
    "y": 2688
   },
   "fetched": "2026-08-06",
@@ -3596,7 +3785,7 @@
  },
  "tier-iv-autoware": {
   "atlas": {
-   "x": 768,
+   "x": 3456,
    "y": 2688
   },
   "fetched": "2026-08-06",
@@ -3608,8 +3797,8 @@
  },
  "tomtom": {
   "atlas": {
-   "x": 960,
-   "y": 2688
+   "x": 0,
+   "y": 2880
   },
   "fetched": "2026-08-06",
   "format": "png",
@@ -3620,8 +3809,8 @@
  },
  "tomtom-orbis-maps-apis": {
   "atlas": {
-   "x": 1152,
-   "y": 2688
+   "x": 192,
+   "y": 2880
   },
   "fetched": "2026-08-06",
   "format": "png",
@@ -3632,8 +3821,8 @@
  },
  "torc-robotics": {
   "atlas": {
-   "x": 1344,
-   "y": 2688
+   "x": 384,
+   "y": 2880
   },
   "fetched": "2026-08-06",
   "format": "png",
@@ -3644,8 +3833,8 @@
  },
  "toyota": {
   "atlas": {
-   "x": 1536,
-   "y": 2688
+   "x": 576,
+   "y": 2880
   },
   "fetched": "2026-08-06",
   "format": "png",
@@ -3656,8 +3845,8 @@
  },
  "tractable": {
   "atlas": {
-   "x": 1728,
-   "y": 2688
+   "x": 768,
+   "y": 2880
   },
   "fetched": "2026-08-06",
   "format": "png",
@@ -3675,8 +3864,8 @@
  },
  "trimble-applanix": {
   "atlas": {
-   "x": 1920,
-   "y": 2688
+   "x": 960,
+   "y": 2880
   },
   "fetched": "2026-08-06",
   "format": "png",
@@ -3687,8 +3876,8 @@
  },
  "tuv-sud": {
   "atlas": {
-   "x": 2112,
-   "y": 2688
+   "x": 1152,
+   "y": 2880
   },
   "fetched": "2026-08-06",
   "format": "png",
@@ -3706,8 +3895,8 @@
  },
  "t\u00fcv-s\u00fcd": {
   "atlas": {
-   "x": 2304,
-   "y": 2688
+   "x": 1344,
+   "y": 2880
   },
   "fetched": "2026-08-06",
   "format": "png",
@@ -3718,8 +3907,8 @@
  },
  "u-blox": {
   "atlas": {
-   "x": 2496,
-   "y": 2688
+   "x": 1536,
+   "y": 2880
   },
   "fetched": "2026-08-06",
   "format": "png",
@@ -3730,8 +3919,8 @@
  },
  "u-s-department-of-transportation-usdot": {
   "atlas": {
-   "x": 2688,
-   "y": 2688
+   "x": 1728,
+   "y": 2880
   },
   "fetched": "2026-08-06",
   "format": "png",
@@ -3742,8 +3931,8 @@
  },
  "uber": {
   "atlas": {
-   "x": 2880,
-   "y": 2688
+   "x": 1920,
+   "y": 2880
   },
   "fetched": "2026-08-06",
   "format": "png",
@@ -3754,8 +3943,8 @@
  },
  "uber-av-infrastructure": {
   "atlas": {
-   "x": 3072,
-   "y": 2688
+   "x": 2112,
+   "y": 2880
   },
   "fetched": "2026-08-06",
   "format": "png",
@@ -3766,8 +3955,8 @@
  },
  "uber-eats": {
   "atlas": {
-   "x": 3264,
-   "y": 2688
+   "x": 2304,
+   "y": 2880
   },
   "fetched": "2026-08-06",
   "format": "png",
@@ -3785,8 +3974,8 @@
  },
  "uhnder": {
   "atlas": {
-   "x": 3456,
-   "y": 2688
+   "x": 2496,
+   "y": 2880
   },
   "fetched": "2026-08-06",
   "format": "png",
@@ -3832,7 +4021,7 @@
  },
  "ul-solutions": {
   "atlas": {
-   "x": 0,
+   "x": 2688,
    "y": 2880
   },
   "fetched": "2026-08-06",
@@ -3844,7 +4033,7 @@
  },
  "ul-standards-engagement": {
   "atlas": {
-   "x": 192,
+   "x": 2880,
    "y": 2880
   },
   "fetched": "2026-08-06",
@@ -3856,7 +4045,7 @@
  },
  "ul-standards-ul-4600": {
   "atlas": {
-   "x": 384,
+   "x": 3072,
    "y": 2880
   },
   "fetched": "2026-08-06",
@@ -3868,7 +4057,7 @@
  },
  "unece-wp-29": {
   "atlas": {
-   "x": 576,
+   "x": 3264,
    "y": 2880
   },
   "fetched": "2026-08-06",
@@ -3880,7 +4069,7 @@
  },
  "unece-wp-29-grva": {
   "atlas": {
-   "x": 768,
+   "x": 3456,
    "y": 2880
   },
   "fetched": "2026-08-06",
@@ -3892,8 +4081,8 @@
  },
  "upstream-security": {
   "atlas": {
-   "x": 960,
-   "y": 2880
+   "x": 0,
+   "y": 3072
   },
   "fetched": "2026-08-06",
   "format": "png",
@@ -3904,8 +4093,8 @@
  },
  "usdot": {
   "atlas": {
-   "x": 1152,
-   "y": 2880
+   "x": 192,
+   "y": 3072
   },
   "fetched": "2026-08-06",
   "format": "png",
@@ -3916,8 +4105,8 @@
  },
  "uveye": {
   "atlas": {
-   "x": 1344,
-   "y": 2880
+   "x": 384,
+   "y": 3072
   },
   "fetched": "2026-08-06",
   "format": "png",
@@ -3928,8 +4117,8 @@
  },
  "v7-labs": {
   "atlas": {
-   "x": 1536,
-   "y": 2880
+   "x": 576,
+   "y": 3072
   },
   "fetched": "2026-08-06",
   "format": "png",
@@ -3940,8 +4129,8 @@
  },
  "valeo": {
   "atlas": {
-   "x": 1728,
-   "y": 2880
+   "x": 768,
+   "y": 3072
   },
   "fetched": "2026-08-06",
   "format": "png",
@@ -3952,8 +4141,8 @@
  },
  "vay": {
   "atlas": {
-   "x": 1920,
-   "y": 2880
+   "x": 960,
+   "y": 3072
   },
   "fetched": "2026-08-06",
   "format": "png",
@@ -3971,8 +4160,8 @@
  },
  "verisk-analytics": {
   "atlas": {
-   "x": 2112,
-   "y": 2880
+   "x": 1152,
+   "y": 3072
   },
   "fetched": "2026-08-06",
   "format": "png",
@@ -3983,8 +4172,8 @@
  },
  "via": {
   "atlas": {
-   "x": 2304,
-   "y": 2880
+   "x": 1344,
+   "y": 3072
   },
   "fetched": "2026-08-06",
   "format": "png",
@@ -3995,8 +4184,8 @@
  },
  "vicone": {
   "atlas": {
-   "x": 2496,
-   "y": 2880
+   "x": 1536,
+   "y": 3072
   },
   "fetched": "2026-08-06",
   "format": "png",
@@ -4014,8 +4203,8 @@
  },
  "volvo-autonomous-solutions": {
   "atlas": {
-   "x": 2688,
-   "y": 2880
+   "x": 1728,
+   "y": 3072
   },
   "fetched": "2026-08-06",
   "format": "png",
@@ -4026,8 +4215,8 @@
  },
  "volvo-cars": {
   "atlas": {
-   "x": 2880,
-   "y": 2880
+   "x": 1920,
+   "y": 3072
   },
   "fetched": "2026-08-06",
   "format": "png",
@@ -4038,8 +4227,8 @@
  },
  "volvo-group-trucks": {
   "atlas": {
-   "x": 3072,
-   "y": 2880
+   "x": 2112,
+   "y": 3072
   },
   "fetched": "2026-08-06",
   "format": "png",
@@ -4050,8 +4239,8 @@
  },
  "volvo-trucks-volvo-autonomous-solutions": {
   "atlas": {
-   "x": 3264,
-   "y": 2880
+   "x": 2304,
+   "y": 3072
   },
   "fetched": "2026-08-06",
   "format": "png",
@@ -4062,8 +4251,8 @@
  },
  "w3c-automotive-working-group": {
   "atlas": {
-   "x": 3456,
-   "y": 2880
+   "x": 2496,
+   "y": 3072
   },
   "fetched": "2026-08-06",
   "format": "png",
@@ -4074,7 +4263,7 @@
  },
  "waabi": {
   "atlas": {
-   "x": 0,
+   "x": 2688,
    "y": 3072
   },
   "fetched": "2026-08-06",
@@ -4086,7 +4275,7 @@
  },
  "waabi-driver-commercial-network": {
   "atlas": {
-   "x": 192,
+   "x": 2880,
    "y": 3072
   },
   "fetched": "2026-08-06",
@@ -4098,7 +4287,7 @@
  },
  "waabi-world": {
   "atlas": {
-   "x": 384,
+   "x": 3072,
    "y": 3072
   },
   "fetched": "2026-08-06",
@@ -4110,7 +4299,7 @@
  },
  "wattev": {
   "atlas": {
-   "x": 576,
+   "x": 3264,
    "y": 3072
   },
   "fetched": "2026-08-06",
@@ -4122,7 +4311,7 @@
  },
  "waymo": {
   "atlas": {
-   "x": 768,
+   "x": 3456,
    "y": 3072
   },
   "fetched": "2026-08-06",
@@ -4134,8 +4323,8 @@
  },
  "waymo-one": {
   "atlas": {
-   "x": 960,
-   "y": 3072
+   "x": 0,
+   "y": 3264
   },
   "fetched": "2026-08-06",
   "format": "png",
@@ -4146,8 +4335,8 @@
  },
  "waymo-safety-framework": {
   "atlas": {
-   "x": 1152,
-   "y": 3072
+   "x": 192,
+   "y": 3264
   },
   "fetched": "2026-08-06",
   "format": "png",
@@ -4158,8 +4347,8 @@
  },
  "wayve": {
   "atlas": {
-   "x": 1344,
-   "y": 3072
+   "x": 384,
+   "y": 3264
   },
   "fetched": "2026-08-06",
   "format": "png",
@@ -4170,8 +4359,8 @@
  },
  "wayve-ai-driver": {
   "atlas": {
-   "x": 1536,
-   "y": 3072
+   "x": 576,
+   "y": 3264
   },
   "fetched": "2026-08-06",
   "format": "png",
@@ -4182,8 +4371,8 @@
  },
  "weride": {
   "atlas": {
-   "x": 1728,
-   "y": 3072
+   "x": 768,
+   "y": 3264
   },
   "fetched": "2026-08-06",
   "format": "png",
@@ -4194,8 +4383,8 @@
  },
  "weride-go-weride-robotaxi": {
   "atlas": {
-   "x": 1920,
-   "y": 3072
+   "x": 960,
+   "y": 3264
   },
   "fetched": "2026-08-06",
   "format": "png",
@@ -4206,8 +4395,8 @@
  },
  "werner-enterprises": {
   "atlas": {
-   "x": 2112,
-   "y": 3072
+   "x": 1152,
+   "y": 3264
   },
   "fetched": "2026-08-06",
   "format": "png",
@@ -4225,8 +4414,8 @@
  },
  "woven-by-toyota": {
   "atlas": {
-   "x": 2304,
-   "y": 3072
+   "x": 1344,
+   "y": 3264
   },
   "fetched": "2026-08-06",
   "format": "png",
@@ -4237,8 +4426,8 @@
  },
  "wtw": {
   "atlas": {
-   "x": 2496,
-   "y": 3072
+   "x": 1536,
+   "y": 3264
   },
   "fetched": "2026-08-06",
   "format": "png",
@@ -4263,8 +4452,8 @@
  },
  "yunex-traffic": {
   "atlas": {
-   "x": 2688,
-   "y": 3072
+   "x": 1728,
+   "y": 3264
   },
   "fetched": "2026-08-06",
   "format": "png",
@@ -4275,8 +4464,8 @@
  },
  "yutong-bus": {
   "atlas": {
-   "x": 2880,
-   "y": 3072
+   "x": 1920,
+   "y": 3264
   },
   "fetched": "2026-08-06",
   "format": "png",
@@ -4287,8 +4476,8 @@
  },
  "zeekr": {
   "atlas": {
-   "x": 3072,
-   "y": 3072
+   "x": 2112,
+   "y": 3264
   },
   "fetched": "2026-08-06",
   "format": "png",
@@ -4299,8 +4488,8 @@
  },
  "zf": {
   "atlas": {
-   "x": 3264,
-   "y": 3072
+   "x": 2304,
+   "y": 3264
   },
   "fetched": "2026-08-06",
   "format": "png",
@@ -4311,8 +4500,8 @@
  },
  "zf-friedrichshafen": {
   "atlas": {
-   "x": 3456,
-   "y": 3072
+   "x": 2496,
+   "y": 3264
   },
   "fetched": "2026-08-06",
   "format": "png",
@@ -4323,7 +4512,7 @@
  },
  "zoox": {
   "atlas": {
-   "x": 0,
+   "x": 2688,
    "y": 3264
   },
   "fetched": "2026-08-06",
@@ -4335,7 +4524,7 @@
  },
  "zurich-insurance-group": {
   "atlas": {
-   "x": 192,
+   "x": 2880,
    "y": 3264
   },
   "fetched": "2026-08-06",

@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 """fetch-logos.py :: build-time logo pipeline (brief section 8).
 
-Reads the domains map from data/av-enrichment.json, walks a fallback chain per
-company, normalises every mark to a square transparent asset, and freezes the
-results into committed files:
+Reads the domains map from data/av-enrichment.json (companies) and the
+publication, podcast and event domains from data/av-media.json (keyed
+media-<domain>), walks a fallback chain per domain, normalises every mark to a
+square transparent asset, and freezes the results into committed files:
 
     assets/logos/<slug>.svg|png     per-company asset
     assets/logos/sprite.svg         every vector mark as a <symbol id="logo-<slug>">
@@ -203,6 +204,17 @@ def main():
     companies = load("av-companies.json")
     domains = load("av-enrichment.json").get("domains", {})
     slug_by_name = {c["name"]: c["slug"] for c in companies}
+    items = [(name, dom, slug_by_name[name]) for name, dom in sorted(domains.items())
+             if name in slug_by_name]
+    # the media page's marks ride the same pipeline, keyed media-<domain>
+    media_key = lambda d: "media-" + re.sub(r"[^a-z0-9]+", "-", d.lower()).strip("-")
+    seen = set()
+    for kind in ("publications", "podcasts", "events"):
+        for m in load("av-media.json").get(kind, []):
+            dom = (m.get("domain") or "").strip()
+            if dom and dom not in seen:
+                seen.add(dom)
+                items.append((m.get("name", dom), dom, media_key(dom)))
     manifest = {}
     if os.path.exists(MANIFEST):
         manifest = json.load(open(MANIFEST, encoding="utf-8"))
@@ -210,14 +222,12 @@ def main():
     if not assemble_only:
         os.makedirs(LOGO_DIR, exist_ok=True)
         sess = requests.Session()
-        todo = [(name, dom) for name, dom in sorted(domains.items())
-                if name in slug_by_name
-                and (not only or slug_by_name[name] in only)
-                and (force or slug_by_name[name] not in manifest)]
-        log(f"{len(todo)} companies to fetch ({len(domains)} domains known)")
+        todo = [(name, dom, slug) for name, dom, slug in items
+                if (not only or slug in only)
+                and (force or slug not in manifest)]
+        log(f"{len(todo)} marks to fetch ({len(domains)} company domains known)")
         ok = fail = 0
-        for name, dom in todo:
-            slug = slug_by_name[name]
+        for name, dom, slug in todo:
             got = None
             for kind, url in find_candidates(dom, sess):
                 r = get(url, sess)

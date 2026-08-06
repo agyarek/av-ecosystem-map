@@ -12,7 +12,7 @@ on:
   # trigger. Scoped to this path: ordinary commits never rerun the fetch.
   push:
     branches: [upgrade/harden-and-ship]
-    paths: ['.github/workflows/fetch-logos.yml']
+    paths: ['.github/workflows/fetch-logos.yml', 'tools/fetch-logos.py']
 
 permissions:
   contents: write

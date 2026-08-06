@@ -495,7 +495,7 @@
   }
 
   /* ---------------------------------------------------------------- boot */
-  Promise.all([
+  const bootCompare = () => Promise.all([
     json('data/av-companies.json'),
     json('data/av-financials.json'),
     json('data/av-funding-events.json'),
@@ -532,4 +532,16 @@
       if (h) h.innerHTML = '<p class="caption">The comparison data failed to load.</p>';
     });
   });
+
+  // ~850KB of comparison inputs never load unless the reader heads for the
+  // side-by-side tables
+  const cmpHost = document.getElementById('cmp-slots');
+  if (cmpHost && 'IntersectionObserver' in window) {
+    const io = new IntersectionObserver(entries => {
+      if (entries.some(e => e.isIntersecting)) { io.disconnect(); bootCompare(); }
+    }, { rootMargin: '600px 0px' });
+    io.observe(cmpHost);
+  } else {
+    bootCompare();
+  }
 })();

@@ -150,14 +150,8 @@ tr.detail > td { padding: 0; border-bottom: 1px solid var(--ink); background: va
 }
 .detail-inner .d-quote { display: inline-flex; align-items: baseline; gap: 7px; }
 .detail-inner .d-quote .tick { font-family: var(--font-mono); font-size: 11px; color: var(--muted); }
-.detail-inner .d-shot { margin-top: 14px; max-width: 420px; }
-.detail-inner .d-shot a { display: block; position: relative; }
-.detail-inner .d-shot img {
-  width: 100%; height: 210px; object-fit: cover; display: block;
-  border-radius: var(--r-card); background: var(--paper);
-}
 .detail-inner .d-block { margin-top: 20px; }
-.detail-inner .d-block h4 {
+.detail-inner .d-block h3 {
   font-family: var(--font-mono); font-size: 10.5px; font-weight: 600;
   letter-spacing: .1em; text-transform: uppercase; color: var(--muted);
   padding-bottom: 6px; border-bottom: 1px solid var(--rule); margin-bottom: 10px;
@@ -249,6 +243,8 @@ tr.detail > td { padding: 0; border-bottom: 1px solid var(--ink); background: va
 #lg-table td.c-name .nm-wrap {
   display: grid; grid-template-columns: auto minmax(0, 1fr);
   align-items: center; gap: 5px 9px;
+  /* it is a button now; keep the span's geometry */
+  width: 100%; text-align: left;
 }
 #lg-table td.c-name .nm { grid-column: 2; }
 #lg-table td.c-name .spoken-tag { grid-column: 2; justify-self: start; }
@@ -291,11 +287,6 @@ tr.detail > td { padding: 0; border-bottom: 1px solid var(--ink); background: va
 }
 @media print { .scroll-nav { display: none; } }
 
-.d-credit {
-  position: absolute; right: 8px; bottom: 8px;
-  font-family: var(--font-mono); font-size: 9px; letter-spacing: .06em;
-  color: #fff; background: rgba(18, 19, 15, .62); padding: 2px 6px; border-radius: 4px;
-}
 /* An opened row scrolls to the top of the page, clear of the sticky chrome, so
    the company in focus is the first thing under it — and clear of the sticky
    column headers too. */

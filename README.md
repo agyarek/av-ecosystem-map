@@ -38,11 +38,12 @@ everything derivable into `data/` at build time; the browser renders and never r
     │                           centre of twelve operators, the ten remaining
     │                           layers tiling the frame around it (562/562)
     ├── build-indexes.py        partner index, derived counts, search index
-    ├── fetch-logos.py          OPTIONAL logo upgrade: fetches, trims and commits
-    │                           real marks. Logos already load at runtime, measured
-    │                           before display so a low-resolution icon is passed
-    │                           over; this is for print/export quality and offline
-    │                           resilience, not a prerequisite
+    ├── fetch-logos.py          the logo pipeline: fetches, trims and commits
+    │                           every mark (companies and media) into
+    │                           assets/logos/ plus data/logo-manifest.json; the
+    │                           pages render only these committed assets. Run it
+    │                           with the Fetch logos workflow (Actions tab),
+    │                           which commits the results back
     ├── build-social-cards.py   1200×630 OG cards rendered from the poster
     ├── render-poster.py        proofing render → poster-reference.svg
     └── make-csv.py             flat CSV export
@@ -52,22 +53,22 @@ everything derivable into `data/` at build time; the browser renders and never r
 
 ```bash
 # edit data/av-companies.json, av-enrichment.json or av-funding-timeline.json, then:
-python3 tools/validate-data.py        # must pass
-python3 tools/build-poster-layout.py  # regenerate frozen geometry
-python3 tools/build-indexes.py        # regenerate indexes
-python3 tools/make-csv.py             # regenerate the flat export
-python3 tools/render-poster.py        # optional: refresh the reference SVG
+./tools/build-all.sh
 ```
 
-Push to `main`; GitHub Pages serves the branch root directly.
+That one command validates the data, regenerates every derived surface
+(indexes, shards, frozen geometry, baked HTML, CSV, sitemap, synced counts)
+and validates again. `python3 tools/render-poster.py` refreshes the reference
+SVG when you want it. Push to `main`; GitHub Pages serves the branch root
+directly. `main` is the deployed source; the `gh-pages` branch is an archive
+of the pre-August-2026 single-page build and is not served.
 
-## Two optional keys
+## One optional key
 
-Both are off by default and the site works without either.
+Off by default; the site works without it.
 
 | Where | What it buys |
 |---|---|
-| `LOGO_DEV_TOKEN` in `assets/js/core.js` | a real logo CDN in front of the keyless chain |
 | `STOCK_ENDPOINT` in `assets/js/core.js` | live share prices on listed companies; needs a provider that sends CORS headers |
 
 ## Corrections

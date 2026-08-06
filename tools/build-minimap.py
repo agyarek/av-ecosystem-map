@@ -31,6 +31,20 @@ def hue_poly(points, h, fo=".14", so=".5", sw=6):
             + HUE_STROKE.format(h=h, so=so, sw=sw) + "/>")
 
 
+def inflate(layout):
+    """v2 wire format: chips are per-district rows [slug, name, x, y, wh, ...].
+    The minimap only needs geometry and hue."""
+    if not layout.get("v"):
+        return layout
+    chips = []
+    for d in layout["districts"]:
+        for r in d.get("rows", []):
+            wh = r[4] or [d["cw"], d["ch"]]
+            chips.append({"x": r[2], "y": r[3], "w": wh[0], "h": wh[1],
+                          "hue": d["hue"]})
+    return {**layout, "chips": chips}
+
+
 def build(layout):
     meta = layout["meta"]
     w, h = meta["width"], meta["height"]
@@ -61,7 +75,7 @@ def build(layout):
 
 def main():
     with open(LAYOUT) as f:
-        layout = json.load(f)
+        layout = inflate(json.load(f))
     svg = build(layout)
     with open(PAGE) as f:
         page = f.read()

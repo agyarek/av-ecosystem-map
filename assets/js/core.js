@@ -56,73 +56,30 @@
   const reducedMotion = () => matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   // ------------------------------------------------------------- logos
-  // Remote logo sources, tried in order. These are what make marks appear with no
-  // build step; the committed assets from tools/fetch-logos.py are an optional
-  // quality upgrade rather than a prerequisite.
-  //
-  // Order is by resolution first and connection cost second. The aggregators live
-  // on one host each, so hundreds of companies share a handful of connections; a
-  // company's own touch icon is usually the sharpest mark available but costs a
-  // fresh DNS lookup and handshake per company, so it is only reached when the
-  // shared hosts return something too small to use. Clearbit's free logo API, the
-  // usual answer here, shut down in December 2025. Set LOGO_DEV_TOKEN to a
-  // logo.dev publishable token to put a real logo CDN in front; the keyless
-  // sources still apply without one.
-  const LOGO_DEV_TOKEN = '';
-  const LOGO_SOURCES = [
-    d => LOGO_DEV_TOKEN && `https://img.logo.dev/${encodeURIComponent(d)}?token=${LOGO_DEV_TOKEN}&size=256&format=png&retina=true`,
-    d => `https://unavatar.io/${encodeURIComponent(d)}?fallback=false`,
-    d => `https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=${encodeURIComponent('https://' + d)}&size=256`,
-    d => `https://${d}/apple-touch-icon.png`,
-    d => `https://${d}/apple-touch-icon-precomposed.png`,
-    d => `https://www.google.com/s2/favicons?domain=${encodeURIComponent(d)}&sz=128`,
-    d => `https://icons.duckduckgo.com/ip3/${encodeURIComponent(d)}.ico`,
-  ];
-  const LOGO_MIN = 64;   // below this a mark is only used if nothing better exists
+  // Marks render from committed assets only: tools/fetch-logos.py (run via the
+  // Fetch logos workflow) freezes every mark into assets/logos/ and
+  // data/logo-manifest.json. Nothing is looked up remotely at runtime; a key
+  // absent from the manifest keeps its typographic tile.
+  let manifestPromise = null;
+  const logoManifest = () => manifestPromise ||
+    (manifestPromise = json('data/logo-manifest.json').catch(() => ({})));
 
-  // Probe each candidate with a plain Image so its real pixel size is known before
-  // anything is shown. The first mark at LOGO_MIN or better wins; if none clears
-  // the bar the largest one seen is used anyway, so a company with only a small
-  // icon still gets its logo rather than dropping to a monogram. `apply` receives
-  // the winning URL, or null when every source failed.
-  // Results are memoised per domain: renderCard calls mountLogos twice for a single
-  // click (once on the slim record, again once the full one arrives), and a company
-  // can appear on a card, in the navigator and in the table at the same time. Without
-  // this the same ladder of probes ran from scratch every time, and the mark visibly
-  // re-resolved on each render.
-  const logoCache = new Map();
-  function probeLogo(domain, apply) {
-    if (logoCache.has(domain)) return logoCache.get(domain).then(apply);
-    let settle;
-    logoCache.set(domain, new Promise(res => { settle = res; }));
-    const done = url => { settle(url); apply(url); };
-    let best = null, bestPx = 0;
-    (function step(i) {
-      if (i >= LOGO_SOURCES.length) return done(best);
-      const url = LOGO_SOURCES[i](domain);
-      if (!url) return step(i + 1);
-      const test = new Image();
-      test.decoding = 'async';
-      test.onload = () => {
-        const px = Math.max(test.naturalWidth || 0, test.naturalHeight || 0);
-        if (px >= LOGO_MIN) return done(url);
-        if (px > bestPx) { best = url; bestPx = px; }
-        step(i + 1);
-      };
-      test.onerror = () => step(i + 1);
-      test.src = url;
-    })(0);
-  }
-
-  // Fill every <img data-logo-domain="..."> under `root` with the best mark
-  // available, or remove it so whatever sits behind it (a monogram) shows through.
+  // Fill every <img data-logo="<key>"> under `root` with its committed mark,
+  // or remove the img so the tile behind it shows through. A key is a company
+  // slug, or media-<domain> for the media page.
   const mountLogos = root => {
-    (root || document).querySelectorAll('img[data-logo-domain]').forEach(el => {
-      const domain = el.dataset.logoDomain;
-      delete el.dataset.logoDomain;
-      probeLogo(domain, url => {
-        if (!url) return el.remove();
-        el.src = url; el.style.opacity = '1';
+    const imgs = (root || document).querySelectorAll('img[data-logo]');
+    if (!imgs.length) return;   // no marks here: the manifest is never fetched
+    logoManifest().then(man => {
+      imgs.forEach(el => {
+        const key = el.dataset.logo;
+        delete el.dataset.logo;
+        const m = man[key];
+        const f = m && (m.f || m.format);
+        if (!f) return el.remove();
+        el.src = ROOT + 'assets/logos/' + key + (f === 'svg' ? '.svg' : '.png');
+        el.style.opacity = '1';
+        if (el.parentElement) el.parentElement.classList.add('has-mark');
       });
     });
   };
@@ -142,31 +99,6 @@
     'https://www.linkedin.com/search/results/people/?keywords=' +
     encodeURIComponent([person, company].filter(Boolean).join(' '));
 
-  // -------------------------------------------------------- wikipedia
-  // A freely licensed picture and a one-line description, fetched when a card
-  // opens. The REST summary endpoint is CORS-open, needs no key, and follows
-  // redirects, so a near-miss title still resolves. A wrong or missing title
-  // returns 404 and the caller shows nothing, which is the whole failure mode.
-  const wikiCache = new Map();
-  function wikiSummary(title) {
-    if (!title) return Promise.resolve(null);
-    if (!wikiCache.has(title)) {
-      const url = 'https://en.wikipedia.org/api/rest_v1/page/summary/' +
-        encodeURIComponent(String(title).replace(/ /g, '_'));
-      wikiCache.set(title, fetch(url).then(r => r.ok ? r.json() : null).then(j => {
-        if (!j || j.type === 'disambiguation') return null;
-        const img = (j.originalimage && j.originalimage.source) || (j.thumbnail && j.thumbnail.source);
-        if (!img) return null;
-        return {
-          img, thumb: (j.thumbnail && j.thumbnail.source) || img,
-          page: (j.content_urls && j.content_urls.desktop && j.content_urls.desktop.page) ||
-                ('https://en.wikipedia.org/wiki/' + encodeURIComponent(String(title).replace(/ /g, '_'))),
-          extract: j.extract || '', title: j.title || title,
-        };
-      }).catch(() => null));
-    }
-    return wikiCache.get(title);
-  }
 
   // ----------------------------------------------------------- quotes
   // A static site cannot fetch a share price without a provider: none of the free
@@ -263,8 +195,8 @@
   const OTHER_SERIES = 'Other';
 
   window.AV = { ROOT, esc, fmtM, fmtDate, json, HUES, layerColor, reducedMotion,
-                LOGO_SOURCES, LOGO_MIN, probeLogo, mountLogos, ICON, linkedinSearch,
-                wikiSummary, stockQuote, stockEnabled,
+                logoManifest, mountLogos, ICON, linkedinSearch,
+                stockQuote, stockEnabled,
                 ECON_INPUTS, avEconomics, chartColors, OTHER_SERIES };
 
   // ------------------------------------------------------------- chrome
@@ -336,8 +268,8 @@
           : (SOLO_MENUS[pages[0][0]] || [[pages[0][1], pages[0][2]]]).map(([href, label]) => [href, label, false]);
         return `<span class="np${here ? ' is-here' : ''}">
           <a data-nav="${pages[0][0]}" href="${ROOT}${pages[0][1]}"${here ? ' aria-current="page"' : ''}>${esc(name)}</a>
-          <button class="np-more" aria-expanded="false" aria-label="Show the pages in ${esc(name)}">${CARET}</button>
-          <ul class="np-sub">
+          <button class="np-more" aria-expanded="false" aria-controls="np-sub-${pages[0][0]}" aria-label="Show the pages in ${esc(name)}">${CARET}</button>
+          <ul class="np-sub" id="np-sub-${pages[0][0]}">
             ${items.map(([href, label, cur]) =>
               `<li><a href="${ROOT}${href}"${cur ? ' aria-current="page"' : ''}>${esc(label)}</a></li>`).join('')}
           </ul>
@@ -379,6 +311,7 @@
   const footerHTML = el => `<div class="container">
     ${BIO.replace('{ROOT}', ROOT)}
     <p class="fine">Autonomous Vehicle Ecosystem Map · built by <a href="${LINKEDIN}" target="_blank" rel="noopener noreferrer">Kofi Agyare-Kwabi</a> · updated <span data-updated>${UPDATED}</span></p>
+    <p class="fine">Companion reading: <a href="https://agyarek.github.io/autonomy-explained/">Autonomy, explained</a>, the field guide to how the industry works.</p>
     ${el.hasAttribute('data-trademark') ? `<p class="fine">${TRADEMARK}</p>` : ''}
   </div>`;
 

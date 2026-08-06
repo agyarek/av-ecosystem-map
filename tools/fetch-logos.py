@@ -1,14 +1,19 @@
 #!/usr/bin/env python3
 """fetch-logos.py :: build-time logo pipeline (brief section 8).
 
-Reads the domains map from data/av-enrichment.json, walks a fallback chain per
-company, normalises every mark to a square transparent asset, and freezes the
-results into committed files:
+Reads the domains map from data/av-enrichment.json (companies) and the
+publication, podcast and event domains from data/av-media.json (keyed
+media-<domain>), walks a fallback chain per domain, normalises every mark to a
+square transparent asset, and freezes the results into committed files:
 
     assets/logos/<slug>.svg|png     per-company asset
     assets/logos/sprite.svg         every vector mark as a <symbol id="logo-<slug>">
     assets/logos/atlas.png|webp     grid atlas of raster-only marks
-    data/logo-manifest.json         source, fetch date, format, quality per company
+    data/logo-manifest.json         the runtime index, lean: format (+ atlas cell)
+    data/logo-provenance.json       source, url, fetch date, quality per mark
+
+After a fetch, re-run tools/build-indexes.py and tools/build-poster-layout.py:
+the poster embeds atlas cells at build time and must agree with the atlas.
 
 The site renders monogram tiles for any company absent from the manifest, so
 this script can be re-run quarterly (or never) without breaking a page.
@@ -26,6 +31,7 @@ import json, os, re, sys, io, base64, datetime, urllib.parse
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 LOGO_DIR = os.path.join(ROOT, "assets", "logos")
 MANIFEST = os.path.join(ROOT, "data", "logo-manifest.json")
+PROVENANCE = os.path.join(ROOT, "data", "logo-provenance.json")
 UA = {"User-Agent": "Mozilla/5.0 (compatible; av-ecosystem-map logo pipeline; "
       "+https://github.com/agyarek/av-ecosystem-map)"}
 TIMEOUT = 12
@@ -200,26 +206,49 @@ def main():
     if "--only" in sys.argv:
         only = set(sys.argv[sys.argv.index("--only") + 1].split(","))
 
+    # the full bookkeeping lives in provenance; the manifest keeps only what
+    # the pages read at runtime. Older combined manifests migrate transparently.
     companies = load("av-companies.json")
-    domains = load("av-enrichment.json").get("domains", {})
+    enrichment = load("av-enrichment.json")
+    domains = enrichment.get("domains", {})
+    # logoDomains says "this company's usable mark lives on its parent's
+    # domain"; honour it first, then fall back to the company's own site
+    logo_domains = enrichment.get("logoDomains", {})
     slug_by_name = {c["name"]: c["slug"] for c in companies}
+    items = []
+    for name, dom in sorted(domains.items()):
+        if name not in slug_by_name:
+            continue
+        doms = [d for d in (logo_domains.get(name), dom) if d]
+        items.append((name, doms, slug_by_name[name]))
+    # the media page's marks ride the same pipeline, keyed media-<domain>
+    media_key = lambda d: "media-" + re.sub(r"[^a-z0-9]+", "-", d.lower()).strip("-")
+    seen = set()
+    for kind in ("publications", "podcasts", "events"):
+        for m in load("av-media.json").get(kind, []):
+            dom = (m.get("domain") or "").strip()
+            if dom and dom not in seen:
+                seen.add(dom)
+                items.append((m.get("name", dom), [dom], media_key(dom)))
     manifest = {}
-    if os.path.exists(MANIFEST):
-        manifest = json.load(open(MANIFEST, encoding="utf-8"))
+    if os.path.exists(PROVENANCE):
+        manifest = json.load(open(PROVENANCE, encoding="utf-8"))
+    elif os.path.exists(MANIFEST):
+        old = json.load(open(MANIFEST, encoding="utf-8"))
+        if any(isinstance(v, dict) and "source" in v for v in old.values()):
+            manifest = old
 
     if not assemble_only:
         os.makedirs(LOGO_DIR, exist_ok=True)
         sess = requests.Session()
-        todo = [(name, dom) for name, dom in sorted(domains.items())
-                if name in slug_by_name
-                and (not only or slug_by_name[name] in only)
-                and (force or slug_by_name[name] not in manifest)]
-        log(f"{len(todo)} companies to fetch ({len(domains)} domains known)")
+        todo = [(name, doms, slug) for name, doms, slug in items
+                if (not only or slug in only)
+                and (force or slug not in manifest)]
+        log(f"{len(todo)} marks to fetch ({len(domains)} company domains known)")
         ok = fail = 0
-        for name, dom in todo:
-            slug = slug_by_name[name]
+        for name, doms, slug in todo:
             got = None
-            for kind, url in find_candidates(dom, sess):
+            for kind, url in (c for d in doms for c in find_candidates(d, sess)):
                 r = get(url, sess)
                 if r is None: continue
                 blob, ctype = r.content, r.headers.get("content-type", "")
@@ -241,14 +270,25 @@ def main():
                 log(f"  ok   {slug:36s} {got['source']:16s} {got['quality']}")
             else:
                 fail += 1
-                log(f"  MISS {slug:36s} ({dom})")
+                log(f"  MISS {slug:36s} ({', '.join(doms)})")
         log(f"fetched {ok}, missed {fail}")
 
     if manifest:
         assemble(manifest)
-    json.dump(manifest, open(MANIFEST, "w", encoding="utf-8"), indent=1, sort_keys=True)
-    log(f"wrote data/logo-manifest.json ({len(manifest)} entries). "
-        f"Companies absent from the manifest render as monogram tiles by design.")
+    json.dump(manifest, open(PROVENANCE, "w", encoding="utf-8"), indent=1, sort_keys=True)
+    lean = {}
+    for k, v in manifest.items():
+        if k == "__atlas__":
+            lean[k] = v
+        elif v.get("format") == "svg":
+            lean[k] = {"f": "svg"}
+        elif "atlas" in v:
+            lean[k] = {"f": "png", "a": [v["atlas"]["x"], v["atlas"]["y"]]}
+    json.dump(lean, open(MANIFEST, "w", encoding="utf-8"),
+              ensure_ascii=False, separators=(",", ":"), sort_keys=True)
+    log(f"wrote data/logo-provenance.json ({len(manifest)} entries) and the lean "
+        f"runtime manifest ({os.path.getsize(MANIFEST)} bytes). Marks absent from "
+        f"the manifest render as monogram tiles by design.")
 
 if __name__ == "__main__":
     main()

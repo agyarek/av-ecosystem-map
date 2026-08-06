@@ -1,0 +1,56 @@
+name: Fetch logos
+
+# Runs tools/fetch-logos.py where company sites and icon services are
+# actually reachable, then commits the outputs (assets/logos/, sprite,
+# atlas, data/logo-manifest.json) back to the branch it was run on.
+# Manual trigger only; the script's own docs suggest a quarterly refresh.
+
+on:
+  workflow_dispatch:
+  # workflow_dispatch is only addressable once this file reaches the default
+  # branch, so on the feature branch a push that touches this file is the
+  # trigger. Scoped to this path: ordinary commits never rerun the fetch.
+  push:
+    branches: [upgrade/harden-and-ship]
+    paths: ['.github/workflows/fetch-logos.yml', 'tools/fetch-logos.py']
+
+permissions:
+  contents: write
+
+concurrency:
+  group: fetch-logos-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install pipeline dependencies
+        run: pip install requests pillow
+
+      - name: Fetch, normalise and assemble
+        run: python3 tools/fetch-logos.py
+
+      # the poster embeds atlas cells at build time, so a fresh atlas means
+      # regenerated indexes and layout, validated before anything is committed
+      - name: Rebuild derived data against the new atlas
+        run: |
+          python3 tools/build-indexes.py
+          python3 tools/build-poster-layout.py
+          python3 tools/validate-data.py
+
+      - name: Commit the results
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/logos data/logo-manifest.json data/logo-provenance.json data/
+          if git diff --cached --quiet; then
+            echo "nothing new fetched"; exit 0
+          fi
+          git commit -m "Fetch and commit company logos (tools/fetch-logos.py, run in CI)"
+          git pull --rebase origin "${GITHUB_REF_NAME}"
+          git push origin HEAD:"${GITHUB_REF_NAME}"

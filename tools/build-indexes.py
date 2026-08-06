@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""build-indexes.py :: freeze derived data into data/partner-index.json and
-data/derived-counts.json so no page computes at runtime what the build can
-compute once.
+"""build-indexes.py :: freeze derived data into data/partner-index.json,
+data/derived-counts.json, data/search-index.json and data/skeleton.json so no
+page computes at runtime what the build can compute once.
 
     python3 tools/build-indexes.py
 
@@ -10,16 +10,23 @@ partner-index.json   per-company partner lists (with relationship type and
 derived-counts.json  layer, region, stage, maturity and status counts, the
                      loop-station counts (medallion excluded), and the gap
                      figures published on /map/, /partnerships/ and /method/.
+search-index.json    the header-search index: name, blurb, layer, flags.
+                     Loaded on focus, never at boot.
+skeleton.json        the boot-time slim index: one small record per
+                     organisation, no prose. Budget: 60KB raw.
 """
 import json, os, collections
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 def load(name):
     return json.load(open(os.path.join(ROOT, "data", name), encoding="utf-8"))
-def dump(obj, name):
+def dump(obj, name, pretty=False):
     path = os.path.join(ROOT, "data", name)
-    json.dump(obj, open(path, "w", encoding="utf-8"), indent=1, ensure_ascii=False)
-    print("wrote", os.path.relpath(path, ROOT))
+    # the big indexes ship to every reader: minified. derived-counts is the one
+    # humans diff in review, and it is tiny: pretty.
+    kw = {"indent": 1} if pretty else {"separators": (",", ":")}
+    json.dump(obj, open(path, "w", encoding="utf-8"), ensure_ascii=False, **kw)
+    print("wrote", os.path.relpath(path, ROOT), os.path.getsize(path), "bytes")
 
 companies = load("av-companies.json")
 enrichment = load("av-enrichment.json")
@@ -127,32 +134,50 @@ def maturity_bucket(c):
     return "Other"
 
 domains = enrichment.get("domains", {})
-logo_domains = enrichment.get("logoDomains", {})
-wiki = enrichment.get("wiki", {})
 tickers = enrichment.get("tickers", {})
 passenger = set(enrichment.get("passengerOperators", []))
-search = [{"n": c["name"], "s": c["slug"], "c": c["cat"],
-           "b": (c.get("sub") or "")[:80],
-           "r": c.get("region", ""), "m": maturity_bucket(c),
-           # domain travels with the index so the browser can load a real logo
-           # and link to the company site without a build step; see poster.js.
-           # "l" overrides it for logos only, where a sub-brand's own site has no
-           # usable mark but its parent's does.
-           **({"d": domains[c["name"]]} if c["name"] in domains else {}),
-           **({"l": logo_domains[c["name"]]} if c["name"] in logo_domains else {}),
-           # "w" is a Wikipedia article title, used at runtime for a freely
-           # licensed picture; "t" an exchange-qualified ticker
-           **({"w": wiki[c["name"]]} if c["name"] in wiki else {}),
-           **({"t": tickers[c["name"]]} if c["name"] in tickers else {}),
-           # "p" marks the organisations that carry passengers, which is who
-           # a deployment footprint is a real question for
-           **({"p": 1} if c["name"] in passenger else {}),
-           **({"x": 1} if c["status"] != "active" else {}),
-           **({"g": 1} if c.get("spokenTo") else {})}
-          for c in companies]
+def base_rec(c):
+    return {"n": c["name"], "s": c["slug"], "c": c["cat"],
+            "r": c.get("region", ""), "m": maturity_bucket(c),
+            # "d" is the company site, for the card's link. Logos resolve from
+            # the committed manifest, never from a domain: see core.js.
+            **({"d": domains[c["name"]]} if c["name"] in domains else {}),
+            # "t" is an exchange-qualified ticker (used only when a quote
+            # provider is configured)
+            **({"t": tickers[c["name"]]} if c["name"] in tickers else {}),
+            # "p" marks the organisations that carry passengers, which is who
+            # a deployment footprint is a real question for
+            **({"p": 1} if c["name"] in passenger else {}),
+            **({"x": 1} if c["status"] != "active" else {}),
+            **({"g": 1} if c.get("spokenTo") else {}),
+            # mapped-partner count, so cards and aria labels can state coverage
+            # before the partner index has loaded
+            **({"pc": partners[c["slug"]]["count"]} if c["slug"] in partners else {})}
+
+# the header search wants prose to rank on; the boot skeleton wants none
+search = [{**base_rec(c), "b": (c.get("sub") or "")[:80]} for c in companies]
+skeleton = [base_rec(c) for c in companies]
 
 dump(partner_index, "partner-index.json")
-dump(derived, "derived-counts.json")
+dump(derived, "derived-counts.json", pretty=True)
 dump(search, "search-index.json")
+dump(skeleton, "skeleton.json")
+
+# per-company detail shards: what the map card fetches on selection, so a
+# single click costs ~1.5KB instead of the whole 750KB dataset. The full
+# av-companies.json stays untouched as the table's source and the advertised
+# download.
+shard_dir = os.path.join(ROOT, "data", "companies")
+os.makedirs(shard_dir, exist_ok=True)
+stale = {f for f in os.listdir(shard_dir) if f.endswith(".json")}
+for c in companies:
+    name = c["slug"] + ".json"
+    stale.discard(name)
+    json.dump(c, open(os.path.join(shard_dir, name), "w", encoding="utf-8"),
+              ensure_ascii=False, separators=(",", ":"))
+for f in sorted(stale):
+    os.remove(os.path.join(shard_dir, f))
+    print("removed stale shard", f)
+print(f"wrote {len(companies)} shards to data/companies/")
 print("stations:", derived["stations"])
 print("gaps:", derived["gaps"])

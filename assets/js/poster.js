@@ -9,8 +9,8 @@
    Filtering dims; it never reflows. One company, one chip, always. */
 (function () {
   'use strict';
-  const { ROOT, esc, json, fmtM, reducedMotion, LOGO_SOURCES, LOGO_MIN,
-          probeLogo, mountLogos, ICON, linkedinSearch } = window.AV;
+  const { ROOT, esc, json, fmtM, reducedMotion,
+          mountLogos, ICON, linkedinSearch } = window.AV;
 
   const svg = document.getElementById('poster');
   const viewport = document.getElementById('poster-viewport');
@@ -53,8 +53,9 @@
   };
 
   let L = null, slim = null, bySlug = null, partners = null;
-  let manifest = null, spriteText = null, atlasDataURL = null;
-  let full = null, fullPromise = null;      // the complete records, fetched on demand
+  let spriteText = null, atlasDataURL = null;
+  const fullRecs = {};                       // complete records, one shard per selection
+  const fullFetches = new Map();
   let W = 0, H = 0, MS = null, CS = null;
   const state = {
     sel: null, layers: new Set(), regions: new Set(), mats: new Set(),
@@ -78,7 +79,6 @@
   };
   const oklch = (hue, l, c) => `oklch(${l} ${c} ${hue})`;
   const isOperator = slug => L.medallion.some(mo => mo.slug === slug);
-  const logoDomain = slug => (bySlug[slug] && (bySlug[slug].l || bySlug[slug].d)) || '';
   const siteDomain = slug => (bySlug[slug] && bySlug[slug].d) || '';
   // Deployment answers "where can I ride one", which is only a question for the
   // organisations that carry passengers.
@@ -99,107 +99,34 @@
 
   // ------------------------------------------------------------ SVG build
 
-  function logoMarkup(slug, cx, cy, size, hue, mono, forExport) {
-    const m = manifest && manifest[slug];
+  // lg is the chip's baked logo ref: 1 = sprite symbol, [x, y] = atlas cell,
+  // 0 = no committed mark
+  function logoMarkup(slug, lg, cx, cy, size, hue, mono, forExport) {
     const half = size / 2;
-    if (m && m.format === 'svg' && spriteText) {
+    if (lg === 1 && spriteText) {
       return `<use href="#logo-${esc(slug)}" x="${cx - half}" y="${cy}" width="${size}" height="${size}"/>`;
     }
-    if (m && m.format === 'png' && m.atlas && manifest.__atlas__) {
-      const A = manifest.__atlas__;
-      const href = forExport && atlasDataURL ? atlasDataURL : ROOT + 'assets/logos/atlas.png';
-      return `<svg x="${cx - half}" y="${cy}" width="${size}" height="${size}" viewBox="${m.atlas.x} ${m.atlas.y} ${A.cell} ${A.cell}"><image href="${href}" width="${A.w}" height="${A.h}"/></svg>`;
+    if (Array.isArray(lg) && L.meta.atlas) {
+      const A = L.meta.atlas;
+      // webp for live rendering (2.6x lighter); the export embeds the PNG so
+      // the standalone SVG opens in editors that never learned webp
+      const href = forExport && atlasDataURL ? atlasDataURL : ROOT + 'assets/logos/atlas.webp';
+      return `<svg x="${cx - half}" y="${cy}" width="${size}" height="${size}" viewBox="${lg[0]} ${lg[1]} ${A.cell} ${A.cell}"><image href="${href}" width="${A.w}" height="${A.h}"/></svg>`;
     }
-    // Monogram tile in the layer hue. It always renders, and once a remote logo
-    // loads the tile fades away and the mark sits directly on the card — no
-    // white plate, no container border. A slow or missing favicon degrades to
-    // the tile rather than a hole.
+    // Typographic tile in the layer hue, for every mark the committed
+    // manifest does not carry.
     const fill = forExport ? oklch(hue, 0.66, 0.06) : `oklch(var(--tile-l) var(--tile-c) ${hue})`;
     const txfill = forExport ? '#FFFFFF' : 'var(--tile-ink)';
     const tile =
       `<rect x="${cx - half}" y="${cy}" width="${size}" height="${size}" rx="${size * 0.22}" fill="${fill}"/>` +
       `<text x="${cx}" y="${cy + size * 0.69}" font-size="${size * 0.47}" font-weight="800" text-anchor="middle" fill="${txfill}" font-family="Archivo, sans-serif">${esc(mono)}</text>`;
-    const domain = logoDomain(slug);
-    if (forExport || !domain) return tile;
-    // href is filled in by the lazy loader once the chip is near the viewport
-    return `<g class="mono-fallback" data-mono-for="${esc(slug)}">${tile}</g>` +
-      `<image class="logo-img" data-logo="${esc(slug)}" data-domain="${esc(domain)}" data-try="0" ` +
-      `x="${cx - half + size * 0.08}" y="${cy + size * 0.08}" width="${size * 0.84}" height="${size * 0.84}" ` +
-      `preserveAspectRatio="xMidYMid meet" opacity="0"/>`;
+    return tile;
   }
 
-  // ------------------------------------------------------------ lazy logos
-  // 442 favicon requests at once would stall a phone, so load only what is on
-  // or near screen, newest camera position first, and top up after each move.
-  const logoQueue = { pending: new Set(), inflight: 0, MAX: 8 };
-  // Each candidate is probed with a plain Image first, so its real pixel size is
-  // known before anything is shown. The first mark at LOGO_MIN or better wins; if
-  // no source clears the bar the largest one seen is used anyway, so a company
-  // with only a small icon still gets its logo rather than dropping to a monogram.
-  function bindLogo(img) {
-    probeLogo(img.dataset.domain, href => {
-      logoQueue.inflight--;
-      if (href) {
-        img.setAttribute('href', href);
-        img.style.opacity = '1';
-        const mono = svg.querySelector(`[data-mono-for="${CSS.escape(img.dataset.logo)}"]`);
-        if (mono) mono.style.opacity = '0';
-      }
-      pump();
-    });
-  }
-  function pump() {
-    while (logoQueue.inflight < logoQueue.MAX && logoQueue.pending.size) {
-      const img = logoQueue.pending.values().next().value;
-      logoQueue.pending.delete(img);
-      logoQueue.inflight++;
-      bindLogo(img);
-    }
-  }
-  let logoSweepScheduled = false;
-  function sweepLogos() {
-    if (logoSweepScheduled) return;
-    logoSweepScheduled = true;
-    requestAnimationFrame(() => {
-      logoSweepScheduled = false;
-      const pad = cam.w * 0.35;
-      const x0 = cam.x - pad, x1 = cam.x + cam.w + pad;
-      const y0 = cam.y - pad, y1 = cam.y + cam.h + pad;
-      svg.querySelectorAll('image.logo-img:not([data-queued])').forEach(img => {
-        const x = +img.getAttribute('x'), y = +img.getAttribute('y');
-        if (x < x0 || x > x1 || y < y0 || y > y1) return;
-        img.dataset.queued = '1';
-        logoQueue.pending.add(img);
-      });
-      pump();
-    });
-  }
-
-  // The viewport sweep only ever loads what the camera has visited, so marks kept
-  // appearing one patch at a time as you panned, and a chip you never scrolled to
-  // stayed a monogram forever. Once the on-screen marks are in flight, queue every
-  // remaining one so the chart finishes loading on its own. Still capped at MAX
-  // concurrent probes, so this fills in behind you rather than firing 562 requests
-  // at once — the stall the sweep was written to avoid.
-  //
-  // Skipped entirely when the committed logo assets are present: those render
-  // inline from the sprite and atlas, with no probing and nothing to stagger.
-  function backfillLogos() {
-    if (manifest) return;
-    svg.querySelectorAll('image.logo-img:not([data-queued])').forEach(img => {
-      img.dataset.queued = '1';
-      logoQueue.pending.add(img);
-    });
-    pump();
-  }
-  const scheduleBackfill = () => (window.requestIdleCallback || (fn => setTimeout(fn, 1200)))(backfillLogos);
-
-  // Navigator tiles and the card header are HTML, so a plain lazy <img> over the
-  // monogram is enough.
-  const navLogo = slug => {
-    const d = logoDomain(slug);
-    return d ? `<img alt="" data-logo-domain="${esc(d)}" decoding="async">` : '';
-  };
+  // Navigator tiles and the card header are HTML; mountLogos resolves these
+  // from the committed manifest.
+  const navLogo = (slug, name) =>
+    `<img alt="${esc(name || '')}" data-logo="${esc(slug)}" width="256" height="256" decoding="async">`;
 
   const poly = pts => pts.map(p => p.join(',')).join(' ');
 
@@ -265,14 +192,14 @@
         const meta = bySlug[c.slug] || {};
         if (!X) {
           const aria = [c.name, meta.c || '', meta.r || ''].filter(Boolean).join(', ')
-            + (partners.bySlug[c.slug] ? `; ${partners.bySlug[c.slug].count} mapped partners` : '')
+            + (c.pc ? `; ${c.pc} mapped partners` : '')
             + (c.spokenTo ? '; spoken with directly' : '') + (c.exited ? '; exited' : '');
-          o.push(`<g data-chip data-slug="${esc(c.slug)}" data-cx="${cx}" data-cy="${c.y + c.h / 2}" data-bx="${c.x + 8}" data-by="${c.y + 6}" data-bw="${c.w - 16}" data-bh="${c.h - 12}" data-cat="${esc(SHORT[meta.c] || '')}" data-region="${esc(REGION_KEY(meta.r || ''))}" data-mat="${esc(meta.m || '')}" data-text="${esc((c.name + ' ' + (meta.b || '')).toLowerCase())}" ${c.spokenTo ? 'data-spoken="1"' : ''} ${c.exited ? 'data-exited="1"' : ''} tabindex="-1" role="button" aria-label="${esc(aria)}">`);
+          o.push(`<g data-chip data-slug="${esc(c.slug)}" data-cx="${cx}" data-cy="${c.y + c.h / 2}" data-bx="${c.x + 8}" data-by="${c.y + 6}" data-bw="${c.w - 16}" data-bh="${c.h - 12}" data-cat="${esc(SHORT[meta.c] || '')}" data-region="${esc(REGION_KEY(meta.r || ''))}" data-mat="${esc(meta.m || '')}" data-text="${esc(c.name.toLowerCase())}" ${c.spokenTo ? 'data-spoken="1"' : ''} ${c.exited ? 'data-exited="1"' : ''} tabindex="-1" role="button" aria-label="${esc(aria)}">`);
         } else {
           o.push(`<g>`);
         }
         o.push(`<rect class="chip-body" x="${c.x + 8}" y="${c.y + 6}" width="${c.w - 16}" height="${c.h - 12}" rx="16" fill="${C.paper}"/>`);
-        o.push(logoMarkup(c.slug, cx, cy + CS.logoY, CS.logo, c.hue, c.mono, X));
+        o.push(logoMarkup(c.slug, c.logo, cx, cy + CS.logoY, CS.logo, c.hue, c.mono, X));
         wrapText(c.name, CS.nameChars, 2).forEach((ln, i) => {
           o.push(`<text x="${cx}" y="${cy + CS.nameY + i * CS.nameStep}" font-size="${CS.nameSize}" font-weight="700" text-anchor="middle" fill="${C.ink}" font-family="Archivo, sans-serif">${esc(ln)}</text>`);
         });
@@ -307,14 +234,14 @@
       const cx = c.x + c.w / 2;
       const meta = bySlug[c.slug] || {};
       if (!X) {
-        o.push(`<g data-chip data-med data-slug="${esc(c.slug)}" data-cx="${cx}" data-cy="${c.y + c.h / 2}" data-bx="${c.x + 12}" data-by="${c.y + 8}" data-bw="${c.w - 24}" data-bh="${c.h - 16}" data-cat="${esc(SHORT[meta.c] || '')}" data-region="${esc(REGION_KEY(meta.r || ''))}" data-mat="${esc(meta.m || '')}" data-text="${esc((c.name + ' ' + (meta.b || '')).toLowerCase())}" ${meta.g ? 'data-spoken="1"' : ''} tabindex="-1" role="button" aria-label="${esc(c.name + '; operator; ' + (c.claim || ''))}">`);
+        o.push(`<g data-chip data-med data-slug="${esc(c.slug)}" data-cx="${cx}" data-cy="${c.y + c.h / 2}" data-bx="${c.x + 12}" data-by="${c.y + 8}" data-bw="${c.w - 24}" data-bh="${c.h - 16}" data-cat="${esc(SHORT[meta.c] || '')}" data-region="${esc(REGION_KEY(meta.r || ''))}" data-mat="${esc(meta.m || '')}" data-text="${esc(c.name.toLowerCase())}" ${meta.g ? 'data-spoken="1"' : ''} tabindex="-1" role="button" aria-label="${esc(c.name + '; operator; ' + (c.claim || ''))}">`);
       } else o.push(`<g>`);
       // These used to be a bare mark on a dark slab, with no tile of their own,
       // which is much of why they read as a different species from the other 551.
       // They now get the same bounded tile every district chip has, so they
       // inherit the same hover and selection states and the same logo pipeline.
       o.push(`<rect class="chip-body" x="${c.x + 12}" y="${c.y + 8}" width="${c.w - 24}" height="${c.h - 16}" rx="22" fill="${C.paper}"/>`);
-      o.push(logoMarkup(c.slug, cx, c.y + MS.logoY, MS.logo, c.hue, c.mono, X));
+      o.push(logoMarkup(c.slug, c.logo, cx, c.y + MS.logoY, MS.logo, c.hue, c.mono, X));
       o.push(`<text x="${cx}" y="${c.y + MS.nameY}" font-size="${MS.nameSize}" font-weight="700" text-anchor="middle" fill="${C.medtx}" font-family="Archivo, sans-serif">${esc(c.name)}</text>`);
       wrapText(c.claim || '', MS.claimChars, 4).forEach((ln, j) => {
         o.push(`<text x="${cx}" y="${c.y + MS.claimY + j * MS.claimStep}" font-size="${MS.claimSize}" text-anchor="middle" fill="${C.medsub}" font-family="Archivo, sans-serif">${esc(ln)}</text>`);
@@ -337,7 +264,6 @@
 
   function applyCam() {
     svg.setAttribute('viewBox', `${cam.x} ${cam.y} ${cam.w} ${cam.h}`);
-    sweepLogos();
     positionCard();
   }
   // Zoom is bounded at both ends: out to the whole chart, in to 1.5x the
@@ -562,13 +488,15 @@
       : { x: cx, y: dy >= 0 ? y + h : y };
   }
 
-  function select(slug) {
+  async function select(slug) {
     const g = chipEl(slug);
     if (!g) return;
     clearSel(true);
     state.sel = slug;
     svg.classList.add('has-sel');
     g.classList.add('sel', 'lit');
+    await Promise.all([ensurePartners(), ensureSlim()]);
+    if (state.sel !== slug) return;   // superseded while the indexes loaded
     const links = svg.querySelector('.links');
     const from = centerOf(g);
     const rec = partners.bySlug[slug];
@@ -597,7 +525,7 @@
         flyTo(from.x, from.y, cam.w);
       }
     }
-    ensureFull().then(() => { if (state.sel === slug) renderCard(slug, partnerRows); });
+    ensureFullRec(slug).then(() => { if (state.sel === slug) renderCard(slug, partnerRows); });
     history.replaceState(null, '', location.pathname + location.search + '#' + slug);
   }
 
@@ -611,17 +539,42 @@
     if (!soft) history.replaceState(null, '', location.pathname + location.search);
   }
 
-  // The full records are 700KB, which is not worth loading for a page nobody may
-  // click into. The card renders from the slim index first and fills in.
-  function ensureFull() {
-    return fullPromise || (fullPromise = json('data/av-companies.json')
-      .then(a => { full = Object.fromEntries(a.map(c => [c.slug, c])); })
-      .catch(() => { full = {}; }));
+  // Nothing beyond the layout loads at boot. The three detail payloads are
+  // priced per interaction: the company's own ~1.5KB shard, the partner index
+  // and the search index (for blurbs and site domains) all arrive on first
+  // selection and are cached after that.
+  function ensureFullRec(slug) {
+    if (!fullFetches.has(slug)) {
+      fullFetches.set(slug, json('data/companies/' + slug + '.json')
+        .then(rec => { fullRecs[slug] = rec; })
+        .catch(() => {}));
+    }
+    return fullFetches.get(slug);
+  }
+  let partnersPromise = null;
+  function ensurePartners() {
+    return partnersPromise || (partnersPromise = json('data/partner-index.json')
+      .then(p => { partners = p; })
+      .catch(() => { partners = { bySlug: {} }; }));
+  }
+  let slimPromise = null;
+  function ensureSlim() {
+    return slimPromise || (slimPromise = json('data/search-index.json').then(list => {
+      for (const c of list) {
+        const meta = bySlug[c.s];
+        if (meta) { meta.b = c.b; meta.d = c.d; meta.t = c.t; }
+      }
+      // the boot chips filter on names only; blurbs join the haystack now
+      svg.querySelectorAll('[data-chip]').forEach(g => {
+        const meta = bySlug[g.dataset.slug];
+        if (meta && meta.b) g.dataset.text += ' ' + String(meta.b).toLowerCase();
+      });
+    }).catch(() => {}));
   }
 
   function renderCard(slug, partnerRows) {
     const meta = bySlug[slug] || {};
-    const rec = (full && full[slug]) || null;
+    const rec = fullRecs[slug] || null;
     const op = isOperator(slug);
     const hue = window.AV.HUES[meta.c] ?? 220;
     const grouped = {};
@@ -648,7 +601,7 @@
     const site = siteDomain(slug);
     card.innerHTML = `
       <div class="cc-top">
-        <span class="mono-tile cc-logo" aria-hidden="true" style="--tile:oklch(var(--layer-l) var(--layer-c) ${hue})">${esc((rec && rec.mono) || (meta.n || slug).slice(0, 2).toUpperCase())}${navLogo(slug)}</span>
+        <span class="mono-tile cc-logo" aria-hidden="true" style="--tile:oklch(var(--layer-l) var(--layer-c) ${hue})">${esc((rec && rec.mono) || (meta.n || slug).slice(0, 2).toUpperCase())}${navLogo(slug, meta.n || slug)}</span>
         <div class="cc-id">
           <h2>${esc(meta.n || slug)}</h2>
           <p class="cc-layer"><span class="dot" style="background:oklch(var(--layer-l) var(--layer-c) ${hue})"></span>${esc(meta.c || '')}${meta.r ? ' · ' + esc(meta.r) : ''}${meta.x ? ' · exited' : ''}</p>
@@ -657,7 +610,6 @@
       </div>
       ${meta.g ? '<p class="spoken-bar">SPOKEN WITH DIRECTLY</p>' : ''}
       ${site ? `<p class="cc-site"><a href="https://${esc(site)}" target="_blank" rel="noopener noreferrer">${ICON.globe}${esc(site)}</a></p>` : ''}
-      <div class="cc-shot" hidden></div>
       ${(rec && (rec.about || rec.sub)) || meta.b ? `<p class="cc-sub">${esc((rec && (rec.about || rec.sub)) || meta.b)}</p>` : ''}
       ${rec && rec.leadership && rec.leadership !== 'N/A (defunct)' ? `<p class="cc-lead"><span class="pk">LEADERSHIP</span> ${people(rec.leadership, rec.name, rec.linkedin)}</p>` : ''}
       ${facts.length ? `<dl class="cc-facts">${facts.map(([k, v]) =>
@@ -666,7 +618,7 @@
         ? Object.entries(grouped).map(([k, ps]) =>
           `<div class="pg-row"><span class="pk">${esc(k.toUpperCase())}</span><div class="pg-chips">${ps.map(p =>
             p.slug
-              ? `<button class="cc-partner" data-go="${esc(p.slug)}"><span class="mono-tile cp-logo" aria-hidden="true">${esc((p.partner || '??').slice(0, 2).toUpperCase())}${navLogo(p.slug)}</span><span>${esc(p.partner)}</span></button>`
+              ? `<button class="cc-partner" data-go="${esc(p.slug)}"><span class="mono-tile cp-logo" aria-hidden="true">${esc((p.partner || '??').slice(0, 2).toUpperCase())}${navLogo(p.slug, p.partner)}</span><span>${esc(p.partner)}</span></button>`
               : `<span class="cc-partner is-plain">${esc(p.partner)}</span>`
           ).join('')}</div></div>`).join('')
         : `<span class="caption">If you know of any partnerships, please reach out to me.</span>
@@ -674,23 +626,30 @@
       ${sources.length ? `<div class="cc-src"><span class="pk">SOURCES</span>${sources.map(s =>
         `<div><a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${esc(s.title)}</a>${s.date ? ` <span class="caption">${esc(s.date)}</span>` : ''}</div>`).join('')}</div>` : ''}
       <div class="cc-actions">
+        <button class="btn" id="cc-copy" type="button">COPY LINK</button>
         ${op ? `<a class="btn" href="${ROOT}companies/${esc(slug)}/">OPERATOR PAGE</a>` : ''}
         <a class="btn" href="${ROOT}companies/?open=${encodeURIComponent(slug)}">${op ? 'DIRECTORY ROW' : 'OPEN IN THE DIRECTORY'}</a>
       </div>`;
     card.hidden = false;
-    card.querySelector('.cc-close').addEventListener('click', () => clearSel());
+    card.addEventListener('keydown', e => {
+      if (e.key === 'Escape') { e.stopPropagation(); clearSel(); viewport.focus(); }
+    });
+    card.querySelector('.cc-close').addEventListener('click', () => { clearSel(); viewport.focus(); });
+    // the canonical link to this selection: path plus hash, no filter noise
+    const copyBtn = card.querySelector('#cc-copy');
+    copyBtn.addEventListener('click', () => {
+      const url = location.origin + location.pathname + '#' + encodeURIComponent(slug);
+      const done = ok => {
+        copyBtn.textContent = ok ? 'COPIED' : 'COPY FAILED';
+        setTimeout(() => { copyBtn.textContent = 'COPY LINK'; }, 1600);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(url).then(() => done(true), () => done(false));
+      } else done(false);
+    });
     card.querySelectorAll('[data-go]').forEach(b =>
       b.addEventListener('click', () => select(b.dataset.go)));
     mountLogos(card);
-    if (meta.w) window.AV.wikiSummary(meta.w).then(w => {
-      const box = card.querySelector('.cc-shot');
-      if (!w || !box || state.sel !== slug) return;
-      box.innerHTML = `<a href="${esc(w.page)}" target="_blank" rel="noopener noreferrer">
-        <img src="${esc(w.thumb)}" alt="${esc(meta.n || slug)}" loading="lazy" decoding="async">
-        <span class="cc-credit">Wikipedia</span></a>`;
-      box.hidden = false;
-      positionCard();
-    });
     positionCard();
   }
 
@@ -768,6 +727,7 @@
     });
     let ft;
     document.getElementById('f-text').addEventListener('input', e => {
+      ensureSlim();   // widen the haystack from names to names + blurbs
       clearTimeout(ft);
       ft = setTimeout(() => { state.q = e.target.value.trim().toLowerCase(); applyFilters(); }, 120);
     });
@@ -892,23 +852,28 @@
   }
 
   // ------------------------------------------------------------ export
+  // The standalone SVG carries its own type: the site's committed woff2 files,
+  // embedded as data URIs. The chart's text uses Archivo 600-900 and Plex Mono
+  // 400 and 600; the serif never appears on the chart.
+  const EXPORT_FONTS = [
+    ["'Archivo'", 'assets/fonts/archivo-var.woff2', '400 900'],
+    ["'IBM Plex Mono'", 'assets/fonts/plex-mono-400.woff2', '400'],
+    ["'IBM Plex Mono'", 'assets/fonts/plex-mono-600.woff2', '600'],
+  ];
   async function fontCSSWithData() {
     try {
-      const cssURL = 'https://fonts.googleapis.com/css2?family=Archivo:wght@400;700;800;900&family=IBM+Plex+Mono:wght@500;600&display=swap';
-      const css = await (await fetch(cssURL)).text();
-      const urls = [...css.matchAll(/url\((https:[^)]+\.woff2)\)/g)].map(mm => mm[1]);
-      let out = css;
-      await Promise.all(urls.slice(0, 8).map(async u => {
-        const buf = await (await fetch(u)).arrayBuffer();
+      const faces = await Promise.all(EXPORT_FONTS.map(async ([family, path, weight]) => {
+        const buf = await (await fetch(ROOT + path)).arrayBuffer();
         let bin = ''; const bytes = new Uint8Array(buf);
         for (let i = 0; i < bytes.length; i += 32768) bin += String.fromCharCode(...bytes.subarray(i, i + 32768));
-        out = out.replace(u, 'data:font/woff2;base64,' + btoa(bin));
+        return `@font-face{font-family:${family};font-weight:${weight};` +
+          `src:url(data:font/woff2;base64,${btoa(bin)}) format('woff2');}`;
       }));
-      return out;
+      return faces.join('');
     } catch (e) { return ''; }
   }
   async function exportString() {
-    if (manifest && !atlasDataURL) {
+    if (L.meta.atlas && !atlasDataURL) {
       try {
         const blob = await (await fetch(ROOT + 'assets/logos/atlas.png')).blob();
         atlasDataURL = await new Promise(res => {
@@ -975,22 +940,54 @@
   }
 
   // ------------------------------------------------------------ boot
+  // v2 wire format: chips travel as per-district rows sharing the district's
+  // tile size and hue. Inflate them back into the chip objects the renderer
+  // was written against.
+  function inflate(raw) {
+    if (!raw.v) return raw;
+    const chips = [];
+    const districts = raw.districts.map(d => {
+      const { rows, cw, ch, ...rest } = d;
+      for (const r of rows) {
+        const [slug, name, x, y, wh, mono, sub, pips, flags, region, mat, pc, logo] = r;
+        chips.push({
+          district: rest.id, layer: rest.layer, hue: rest.hue, slug, name, x, y,
+          w: wh ? wh[0] : cw, h: wh ? wh[1] : ch, mono,
+          sub: sub ? sub.split('\n') : [], pips: pips || [],
+          spokenTo: !!(flags & 1), exited: !!(flags & 2), p: !!(flags & 4),
+          region, mat, pc, logo: logo || 0,
+        });
+      }
+      return rest;
+    });
+    return { ...raw, districts, chips };
+  }
+
   async function boot() {
-    const [layout, slimIdx, pIdx] = await Promise.all([
-      json('data/poster-layout.json'), json('data/search-index.json'), json('data/partner-index.json')
-    ]);
-    L = layout; slim = slimIdx; partners = pIdx;
+    L = inflate(await json('data/poster-layout.json'));
     const bootStatus = document.getElementById('filter-state');
     if (bootStatus) bootStatus.textContent = 'Drawing 562 tiles…';
     W = L.meta.width; H = L.meta.height; MS = L.meta.medStyle; CS = L.meta.chipStyle;
-    bySlug = Object.fromEntries(slim.map(c => [c.s, c]));
+    bySlug = {};
+    for (const c of L.chips) {
+      bySlug[c.slug] = { n: c.name, c: c.layer, r: c.region, m: c.mat,
+        ...(c.spokenTo ? { g: 1 } : {}), ...(c.exited ? { x: 1 } : {}),
+        ...(c.p ? { p: 1 } : {}), pc: c.pc };
+    }
+    for (const mo of L.medallion) {
+      bySlug[mo.slug] = { n: mo.name, c: mo.cat, r: mo.r, m: mo.m,
+        ...((mo.f & 1) ? { g: 1 } : {}), ...((mo.f & 2) ? { x: 1 } : {}),
+        ...((mo.f & 4) ? { p: 1 } : {}), pc: mo.pc };
+    }
+    slim = Object.values(bySlug);
 
-    try {  // logo assets are optional by design; monograms are the default
-      manifest = await json('data/logo-manifest.json');
-      if (manifest && Object.keys(manifest).some(k => manifest[k].format === 'svg')) {
+    // committed marks only, baked into the layout; the sprite rides along
+    // when any chip references a vector symbol
+    if (L.chips.some(c => c.logo === 1) || L.medallion.some(mo => mo.logo === 1)) {
+      try {
         spriteText = await (await fetch(ROOT + 'assets/logos/sprite.svg')).text();
-      }
-    } catch (e) { manifest = null; }
+      } catch (e) { spriteText = null; }
+    }
 
     svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
     if (bootStatus) setTimeout(() => { if (bootStatus.textContent === 'Drawing 562 tiles…') bootStatus.textContent = ''; }, 600);
@@ -1017,8 +1014,6 @@
       return true;
     };
 
-    sweepLogos();
-    scheduleBackfill();
     buildRail(); readURL(); bindCamera(); bindKeys(); bindExport(); bindFullscreen();
     chooseMode();
     goHome();
